@@ -7,7 +7,7 @@ import json
 
 from gradmatch.schemas import (
     ApplicantProfile, CheckStatus, ConstraintCheck, ConstraintReport,
-    ProgramRecord, SourceRecord, TuitionEstimate, TuitionPolicy,
+    ProgramRecord, SourceRecord, TuitionEstimate, TuitionPolicy, EnglishRequirement, AdmissionEvidence,
 )
 
 
@@ -24,9 +24,11 @@ def estimate_tuition(policy: TuitionPolicy) -> TuitionEstimate:
         return TuitionEstimate(reason_code="MISSING_TOTAL_UNITS", **base)
     rate_high = policy.unit_rate_upper if policy.unit_rate_upper is not None else policy.unit_rate_lower
     return TuitionEstimate(
-        lower_usd=policy.unit_rate_lower * units_low,
-        upper_usd=rate_high * units_high,
-        formula=f"{policy.unit_rate_lower}–{rate_high} USD × {units_low}–{units_high} ({policy.basis})",
+        lower_usd=policy.unit_rate_lower * units_low + policy.additional_required_tuition_lower_usd,
+        upper_usd=rate_high * units_high + policy.additional_required_tuition_upper_usd,
+        formula=f"{policy.unit_rate_lower}–{rate_high} USD × {units_low}–{units_high} ({policy.basis})"
+            + (f" + {policy.additional_required_tuition_lower_usd}–{policy.additional_required_tuition_upper_usd} USD required additional tuition"
+               if policy.additional_required_tuition_upper_usd else ""),
         reason_code="PUBLISHED_RATE_ESTIMATE", **base,
     )
 
@@ -55,6 +57,15 @@ def evidence_ids(program: ProgramRecord, group: str, sources: dict[str, SourceRe
                     actual = actual[int(key)] if isinstance(actual, list) else actual[key]
             except (KeyError, IndexError, TypeError, ValueError):
                 return []
+            # Old immutable snapshots omit fields added with conservative defaults.
+            # Normalize expected values through the same schema; changed new values
+            # still fail the exact comparison and need new evidence.
+            if path == "english":
+                expected = [EnglishRequirement.model_validate(v).model_dump(mode="json") for v in expected]
+            elif path == "tuition":
+                expected = TuitionPolicy.model_validate(expected).model_dump(mode="json")
+            elif path == "admission_evidence":
+                expected = [AdmissionEvidence.model_validate(v).model_dump(mode="json") for v in expected]
             if json.dumps(actual, sort_keys=True) != json.dumps(expected, sort_keys=True):
                 return []
     return list(ids)
@@ -131,17 +142,27 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("english", "unknown", "ENGLISH_TEST_IN_FUTURE", "The test date is later than the assessment date.")
     else:
         expiry = None
-        if english_rule.validity_years is not None:
-            year = score.test_date.year + english_rule.validity_years
-            expiry = date(year, score.test_date.month, min(score.test_date.day, monthrange(year, score.test_date.month)[1]))
-        expired = expiry and (as_of > expiry if english_rule.valid_on_anniversary else as_of >= expiry)
-        if expired:
-            add("english", "fail", "ENGLISH_EXPIRED", "The English score has expired as of the application assessment date.")
+        cutoff = english_rule.minimum_test_date
+        if (profile.degree and profile.degree.country and profile.degree.country.upper() == "US"
+                and profile.degree.completion in {"completed", "expected_before_enrollment"}
+                and english_rule.us_degree_minimum_test_date):
+            cutoff = english_rule.us_degree_minimum_test_date
+        if cutoff and score.test_date is None:
+            add("english", "unknown", "MISSING_ENGLISH_TEST_DATE", "A test date is required to check the intake-specific score cutoff.")
+        elif cutoff and score.test_date < cutoff:
+            add("english", "fail", "ENGLISH_BEFORE_INTAKE_CUTOFF", "The test predates the verified intake-specific cutoff.")
         else:
-            warnings = []
-            if english_rule.recommended_total is not None and score.total < english_rule.recommended_total:
-                warnings.append(english_rule.condition_below_recommended or "Below the officially recommended score.")
-            add("english", "pass", "ENGLISH_MEETS_MINIMUM", "The English score meets the verified minimum. Additional conditions may still apply.", warnings)
+            if not cutoff and english_rule.validity_years is not None:
+                year = score.test_date.year + english_rule.validity_years
+                expiry = date(year, score.test_date.month, min(score.test_date.day, monthrange(year, score.test_date.month)[1]))
+            expired = expiry and (as_of > expiry if english_rule.valid_on_anniversary else as_of >= expiry)
+            if expired:
+                add("english", "fail", "ENGLISH_EXPIRED", "The English score has expired as of the application assessment date.")
+            else:
+                warnings = []
+                if english_rule.recommended_total is not None and score.total < english_rule.recommended_total:
+                    warnings.append(english_rule.condition_below_recommended or "Below the officially recommended score.")
+                add("english", "pass", "ENGLISH_MEETS_MINIMUM", "The English score meets the verified minimum. Additional conditions may still apply.", warnings)
 
     if not supported("prerequisites") or not program.prerequisites_complete:
         add("prerequisites", "unknown", "PREREQUISITES_REQUIRE_REVIEW", "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.")
@@ -192,10 +213,40 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
     else:
         add("deadline", "unknown", "FINAL_DEADLINE_NOT_VERIFIED", "Known rounds have passed, but the complete applicable final deadline schedule is not verified.")
 
+    if program.degree_required or program.eligibility_review_complete:
+        degree = profile.degree
+        if not supported("degree"):
+            add("degree", "unknown", "DEGREE_POLICY_NOT_VERIFIED", "The applicable degree requirement is not supported by reviewed evidence.")
+        elif degree is None or degree.completion == "unknown" or degree.recognition == "unknown":
+            add("degree", "unknown", "MISSING_DEGREE_BACKGROUND", "Provide degree completion and recognized-bachelor/equivalency status; unknown is not assumed eligible.")
+        elif degree.completion == "not_before_enrollment" or degree.recognition == "not_recognized":
+            add("degree", "fail", "DEGREE_REQUIREMENT_NOT_MET", "The declared degree completion/recognition does not meet the published requirement.")
+        elif program.accepted_degree_fields and degree.field == "unknown":
+            add("degree", "unknown", "MISSING_DEGREE_FIELD", "The academic field is needed for the program's degree requirement.")
+        elif program.accepted_degree_fields and degree.field not in program.accepted_degree_fields:
+            add("degree", "fail", "DEGREE_FIELD_NOT_ACCEPTED", "The declared degree field does not meet the verified field requirement.")
+        else:
+            add("degree", "pass", "DEGREE_SELF_REPORTED", "The declared recognized degree meets the reviewed planning requirement. The university makes the final credential-equivalency decision.")
+    if program.gre_policy != "unknown" or program.eligibility_review_complete:
+        gre = profile.gre
+        if not supported("gre") or program.gre_policy == "unknown":
+            add("gre", "unknown", "GRE_POLICY_NOT_VERIFIED", "The program's applicable GRE rule is not verified.")
+        elif program.gre_policy == "not_required":
+            add("gre", "not_applicable", "GRE_NOT_REQUIRED", "The applicable official policy does not require GRE scores.")
+        elif gre is None or gre.test_date is None or gre.format == "unknown":
+            add("gre", "unknown", "MISSING_REQUIRED_GRE", "Provide the required GRE result, test date and test format, or leave eligibility unverified.")
+        elif gre.test_date > as_of:
+            add("gre", "unknown", "GRE_TEST_IN_FUTURE", "The GRE test date is later than the assessment date.")
+        elif gre.format == "at_home" and program.gre_at_home_accepted is not True:
+            add("gre", "unknown", "GRE_FORMAT_NOT_VERIFIED", "Acceptance of this GRE test format has not been established.")
+        elif program.gre_validity_years is not None and (as_of.year, as_of.month, as_of.day) >= (gre.test_date.year + program.gre_validity_years, gre.test_date.month, gre.test_date.day):
+            add("gre", "fail", "GRE_EXPIRED", "The GRE result is outside the verified validity period.")
+        else:
+            add("gre", "pass", "GRE_SELF_REPORTED", "The declared GRE report meets the reviewed presence/date/format rule; no unsupported score cutoff is imposed.")
     coverage_ids = evidence_ids(program, "remaining_eligibility", sources, profile)
-    coverage_bound = any(sources[sid].verified_values.get("remaining_eligibility", {}).get("eligibility_review_complete") is True for sid in coverage_ids)
+    coverage_bound = bool(coverage_ids) and supported("degree") and supported("gre")
     if program.eligibility_review_complete and coverage_bound:
-        add("remaining_eligibility", "pass", "REMAINING_ELIGIBILITY_REVIEWED", "The remaining eligibility checklist has applicable reviewed evidence. This is not an admission guarantee.")
+        add("remaining_eligibility", "pass", "REMAINING_ELIGIBILITY_REVIEWED", "The planning eligibility rules are covered by reviewed sources. Required application documents are listed separately; submission and admission are not asserted.")
     else:
         add("remaining_eligibility", "unknown", "M1_PARTIAL_RULE_COVERAGE", "Degree equivalency, complete application materials, and other program conditions still require review.")
     status = (CheckStatus.FAIL if any(check.status == CheckStatus.FAIL for check in checks)

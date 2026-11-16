@@ -76,6 +76,8 @@ class ApplicantProfile(Record):
     intake: Intake | None = None
     applicant_category: Literal["international", "domestic"] = "international"
     study_mode: Literal["full_time", "part_time"] = "full_time"
+    degree: "DegreeBackground | None" = None
+    gre: "GREScore | None" = None
 
     @model_validator(mode="after")
     def score_and_status_agree(self):
@@ -93,6 +95,24 @@ class GPARequirement(Record):
     no_hard_minimum: bool = False
 
 
+class DegreeBackground(Record):
+    completion: Literal["completed", "expected_before_enrollment", "not_before_enrollment", "unknown"]
+    recognition: Literal["recognized_bachelors_or_equivalent", "not_recognized", "unknown"]
+    field: Literal["CS", "ECE", "STEM", "other", "unknown"]
+    country: str | None = None
+
+
+class GREScore(Record):
+    verbal: int = Field(ge=130, le=170)
+    quantitative: int = Field(ge=130, le=170)
+    writing: NonNegative = Field(le=6)
+    test_date: date | None = None
+    format: Literal["in_person", "at_home", "unknown"] = "in_person"
+
+
+ApplicantProfile.model_rebuild()
+
+
 class EnglishRequirement(Record):
     version: Literal["toefl_120", "toefl_6", "ielts_9", "det_160"]
     minimum_total: NonNegative
@@ -101,6 +121,8 @@ class EnglishRequirement(Record):
     validity_years: int | None = Field(default=None, ge=1, le=5)
     valid_on_anniversary: bool = False
     condition_below_recommended: str | None = None
+    minimum_test_date: date | None = None
+    us_degree_minimum_test_date: date | None = None
 
 
 class TuitionPolicy(Record):
@@ -114,11 +136,14 @@ class TuitionPolicy(Record):
     guaranteed_for_intake: str | None = None
     mandatory_fees_usd: NonNegative | None = None
     assumptions: list[str] = Field(default_factory=list)
+    additional_required_tuition_lower_usd: NonNegative = Decimal("0")
+    additional_required_tuition_upper_usd: NonNegative = Decimal("0")
 
     @model_validator(mode="after")
     def ranges_are_ordered(self):
         for lower, upper in [(self.unit_rate_lower, self.unit_rate_upper),
-                             (self.required_units_lower, self.required_units_upper)]:
+                             (self.required_units_lower, self.required_units_upper),
+                             (self.additional_required_tuition_lower_usd, self.additional_required_tuition_upper_usd)]:
             if lower is not None and upper is not None and lower > upper:
                 raise ValueError("Range lower bound exceeds upper bound.")
         return self
@@ -186,6 +211,12 @@ class ProgramRecord(Record):
     eligibility_review_complete: bool = False
     goal_features: list["GoalFeature"] = Field(default_factory=list)
     admission_evidence: list["AdmissionEvidence"] = Field(default_factory=list)
+    degree_required: bool = False
+    accepted_degree_fields: list[Literal["CS", "ECE", "STEM", "other"]] = Field(default_factory=list)
+    gre_policy: Literal["required", "not_required", "unknown"] = "unknown"
+    gre_validity_years: int | None = Field(default=None, ge=1, le=5)
+    gre_at_home_accepted: bool | None = None
+    application_materials: list[str] = Field(default_factory=list)
     catalog_version: str
 
     @model_validator(mode="after")
@@ -214,6 +245,14 @@ class AdmissionEvidence(Record):
     permitted_tiers: list[Literal["Lottery", "Reach", "Target", "Safer"]]
     statement: str
     reviewed: bool = False
+    applications: int | None = Field(default=None, gt=0)
+    offers: int | None = Field(default=None, ge=0)
+
+    @model_validator(mode="after")
+    def cohort_counts_agree(self):
+        if self.applications is not None and self.offers is not None and self.offers > self.applications:
+            raise ValueError("Admission offers cannot exceed applications in the same cohort.")
+        return self
 
 
 ProgramRecord.model_rebuild()

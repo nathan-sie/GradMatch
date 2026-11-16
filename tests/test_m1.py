@@ -12,7 +12,7 @@ import pytest
 from pydantic import ValidationError
 from streamlit.testing.v1 import AppTest
 
-from gradmatch.catalog import DEFAULT_SEED, coverage_rows, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import M1_SEED, coverage_rows, import_catalog, load_seed, read_catalog
 from gradmatch.constraints import check_constraints, estimate_tuition
 from gradmatch.schemas import (
     ApplicantProfile, EnglishScore, GPA, GPARequirement, Intake, ProgramRecord,
@@ -177,7 +177,7 @@ def test_english_version_range_and_negative_budget_are_rejected():
 
 
 def test_seed_has_eight_distinct_programs_and_real_official_provenance():
-    programs, sources = load_seed()
+    programs, sources = load_seed(M1_SEED)
     assert len(programs) == 8 and len(sources) == 20
     assert len({item.program_id for item in programs}) == 8
     assert all(source.url.host.endswith(".edu") for source in sources.values())
@@ -189,11 +189,11 @@ def test_seed_has_eight_distinct_programs_and_real_official_provenance():
 
 def test_import_is_repeatable_and_wrong_evidence_does_not_write(tmp_path):
     database = tmp_path / "catalog.db"
-    import_catalog(database=database)
-    import_catalog(database=database)
+    import_catalog(seed=M1_SEED, database=database)
+    import_catalog(seed=M1_SEED, database=database)
     assert inspect_catalog(database).program_count == 8
     assert inspect_catalog(database).source_count == 20
-    document = json.loads(DEFAULT_SEED.read_text(encoding="utf-8"))
+    document = json.loads(M1_SEED.read_text(encoding="utf-8"))
     document["programs"][0]["tuition"]["unit_rate_lower"] = "1"
     invalid = tmp_path / "invalid_seed.json"
     invalid.write_text(json.dumps(document), encoding="utf-8")

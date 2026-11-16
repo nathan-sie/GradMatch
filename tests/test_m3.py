@@ -26,7 +26,7 @@ from gradmatch.validation import data_hash
 
 def test_cold_bootstrap_rebuilds_valid_public_records_and_stays_read_only(tmp_path):
     database = bootstrap_public_catalog(tmp_path)
-    assert inspect_catalog(database).program_count == 8
+    assert inspect_catalog(database).program_count == 10
     expected, expected_sources = load_seed()
     actual, actual_sources = read_catalog(database)
     assert data_hash(actual, actual_sources) == data_hash(expected, expected_sources)
@@ -38,7 +38,7 @@ def test_cold_bootstrap_rebuilds_valid_public_records_and_stays_read_only(tmp_pa
             connection.execute("DELETE FROM programs")
     database.unlink()
     restored = bootstrap_public_catalog(tmp_path)
-    assert inspect_catalog(restored).source_count == 20
+    assert inspect_catalog(restored).source_count == 30
 
 
 def test_concurrent_cold_start_and_corrupt_managed_cache_are_recoverable(tmp_path):
@@ -46,7 +46,7 @@ def test_concurrent_cold_start_and_corrupt_managed_cache_are_recoverable(tmp_pat
         results = list(pool.map(lambda _: bootstrap_public_catalog(tmp_path), range(3)))
     assert len(set(results)) == 1
     results[0].write_bytes(b"corrupt managed cache")
-    assert inspect_catalog(bootstrap_public_catalog(tmp_path)).program_count == 8
+    assert inspect_catalog(bootstrap_public_catalog(tmp_path)).program_count == 10
 
 
 def test_explicit_missing_database_is_not_replaced_by_automatic_bootstrap(tmp_path, monkeypatch):

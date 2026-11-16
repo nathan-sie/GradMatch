@@ -11,7 +11,8 @@ from gradmatch.storage import DEFAULT_DATABASE, PROJECT_ROOT, connect_read_only
 from scripts.build_catalog import build_empty_catalog
 
 
-DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m1_seed.json"
+M1_SEED = PROJECT_ROOT / "data" / "catalog" / "m1_seed.json"
+DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m35_seed.json"
 
 
 def load_seed(path: Path = DEFAULT_SEED) -> tuple[list[ProgramRecord], dict[str, SourceRecord]]:
@@ -101,7 +102,7 @@ def coverage_rows(programs, sources) -> list[dict]:
     rows = []
     for program in programs:
         estimate = estimate_tuition(program.tuition)
-        missing = ["remaining_eligibility", "admission_risk_evidence"] + [group for group in ["intake", "gpa", "english", "prerequisites", "tuition", "deadline"]
+        missing = ([] if program.eligibility_review_complete else ["remaining_eligibility"]) + ([] if program.admission_evidence else ["admission_risk_evidence"]) + [group for group in ["intake", "gpa", "english", "prerequisites", "tuition", "deadline"]
                    if not program.field_sources.get(group)]
         if estimate.upper_usd is None and "tuition" not in missing:
             missing.append("tuition_not_computable")
@@ -116,7 +117,7 @@ def coverage_rows(programs, sources) -> list[dict]:
             "required_credits": str(program.required_credits) if program.required_credits is not None else None,
             "tuition_estimate_usd": str(estimate.upper_usd) if estimate.upper_usd is not None else None,
             "rate_year": estimate.rate_year, "source_count": sum(s.program_id == program.program_id for s in sources.values()),
-            "missing_fields": missing, "admission_risk_evidence": "not_collected",
+            "missing_fields": missing, "admission_risk_evidence": "reviewed_cohort" if program.admission_evidence else "not_collected",
             "recommendation_ready": False})
     return rows
 

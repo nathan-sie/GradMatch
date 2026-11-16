@@ -155,7 +155,7 @@ def test_empty_patch_for_explicit_update_still_requests_clarification():
 
 def test_unknown_user_answer_stays_unknown_and_no_data_is_assumed():
     session = Session()
-    unknown = {"gpa", "tuition_budget_usd", "intake", "goal", "major", "english"}
+    unknown = {"gpa", "tuition_budget_usd", "intake", "goal", "major", "english", "degree", "gre"}
     result = run(session, provider=Stub(), changes={"goal": None}, unknown_fields=unknown)
     assert result["status"] == "insufficient_evidence" and not result["recommendations"]
     assert session.profile.gpa is None and session.profile.tuition_budget_usd is None
@@ -178,17 +178,20 @@ def test_missing_api_configuration_gives_real_checks_and_never_fake_model_output
 
 def positive_fixture():
     program, sources = fixture_catalog(eligibility_review_complete=True)
+    program.degree_required = True
+    program.gre_policy = "not_required"
     program.goal_features = [GoalFeature(feature_id="feature-capstone", goal="employment", statement="Synthetic capstone.", source_ids=["fixture-source"])]
     program.admission_evidence = [AdmissionEvidence(evidence_id=f"admit-{i}", kind="admitted_case", source_ids=["fixture-source"],
         cycle_year=2025, independence_key=f"case-{i}", gpa={"value": "3.5", "scale": "4", "scope": "last_60_semester"},
         major="CS", experience_dimensions=["work_experience"], permitted_tiers=["Target", "Safer"],
         statement="Synthetic admitted applicant.", reviewed=True) for i in [1, 2]]
     source = sources["fixture-source"]
-    for group in ["remaining_eligibility", "goal_features", "admission_evidence"]:
+    for group in ["remaining_eligibility", "degree", "gre", "goal_features", "admission_evidence"]:
         program.field_sources[group] = [source.source_id]
         source.field_groups.append(group)
-        source.verified_values[group] = {"eligibility_review_complete": True} if group == "remaining_eligibility" else {group: program.model_dump(mode="json")[group]}
+        source.verified_values[group] = {"degree_required": True, "gre_policy": "not_required"} if group in {"remaining_eligibility", "degree", "gre"} else {group: program.model_dump(mode="json")[group]}
     applicant = profile(major="CS", goal="employment", work_experience=["Synthetic internship"],
+        degree={"completion":"completed","recognition":"recognized_bachelors_or_equivalent","field":"CS"},
         english={"version": "ielts_9", "total": "7", "subscores": {"speaking": "7"}, "test_date": "2025-11-01"})
     item = {"program_id": program.program_id, "tier": "Target", "goal_feature_ids": ["feature-capstone"],
         "tier_evidence_ids": ["admit-1", "admit-2"], "comparison_dimensions": ["gpa", "work_experience"],
@@ -259,8 +262,8 @@ def test_model_status_is_recomputed_and_false_completed_is_never_accepted():
 def test_fixed_retrieval_is_stable_and_budget_change_rechecks_entire_known_set():
     programs, sources = load_seed()
     applicant = synthetic_profile()
-    assert retrieve(applicant, programs, 8) == retrieve(applicant, list(reversed(programs)), 8)
-    assert len(retrieve(applicant, programs, 8)) == len(programs)
+    assert retrieve(applicant, programs, 10) == retrieve(applicant, list(reversed(programs)), 10)
+    assert len(retrieve(applicant, programs, 10)) == len(programs)
     assert data_hash(programs, sources) == data_hash(list(reversed(programs)), dict(reversed(list(sources.items()))))
 
 

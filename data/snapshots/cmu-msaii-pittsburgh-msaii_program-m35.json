@@ -1,0 +1,93 @@
+{
+  "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+  "retrieved_at": "2026-11-16T23:35:10.016825+00:00",
+  "raw_response_sha256": "3a3347a5a9f268d139d80e33fce7f1d40e287d94f3de3ab7447bedee98d079b1",
+  "verified_values": {
+    "identity": {
+      "university": "Carnegie Mellon University",
+      "school": "School of Computer Science / Language Technologies Institute",
+      "program_name": "Master of Science in Artificial Intelligence and Innovation",
+      "degree": "MSAII",
+      "campus": "Pittsburgh",
+      "track": "Professional (20 months)",
+      "official_url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "gre": {
+      "gre_policy": "required",
+      "gre_validity_years": 5,
+      "gre_at_home_accepted": null
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-18",
+          "label": "Early (3 p.m. EST)",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-09",
+          "label": "Final (3 p.m. EST)",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "cmu-msaii-pittsburgh-industry",
+          "goal": "employment",
+          "statement": "Industry internship and a practical capstone support preparation for applied technical work.",
+          "source_ids": [
+            "cmu-msaii-pittsburgh-msaii_program-m35"
+          ]
+        }
+      ]
+    },
+    "remaining_eligibility": {
+      "application_materials": [
+        "Online application and fee or approved waiver",
+        "Transcripts from every attended university",
+        "Current resume / CV",
+        "Statement of purpose",
+        "Three recommendation letters",
+        "Official GRE and applicable English reports",
+        "Required 2–3 minute video"
+      ],
+      "degree_required": true,
+      "gre_policy": "required"
+    }
+  },
+  "source_excerpt": "Three letters of recommendation",
+  "fact_summary": "Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.",
+  "locator": "MSAII current program: Admissions; Overview; Curriculum"
+}

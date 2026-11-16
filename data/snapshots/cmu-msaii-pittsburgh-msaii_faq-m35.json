@@ -1,0 +1,47 @@
+{
+  "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+  "retrieved_at": "2026-11-16T23:35:11.197303+00:00",
+  "raw_response_sha256": "b21a04a058d08763c8f76110338f0376b10a099c085e535ed26810fb632306e8",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "100",
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "recommended_total": null,
+          "condition_below_recommended": null,
+          "minimum_test_date": "2024-09-01",
+          "us_degree_minimum_test_date": "2021-09-01"
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7.5",
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "recommended_total": null,
+          "condition_below_recommended": null,
+          "minimum_test_date": "2024-09-01",
+          "us_degree_minimum_test_date": "2021-09-01"
+        }
+      ]
+    },
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "prerequisites": {
+      "required_topics": [
+        "undergraduate_cs",
+        "undergraduate_math"
+      ],
+      "prerequisites_complete": true
+    }
+  },
+  "source_excerpt": "a strong background in computer science and mathematics",
+  "fact_summary": "A bachelor-level background and strong undergraduate computer science and mathematics preparation are expected, including for non-CS majors. Published legacy TOEFL minimum 100 or IELTS 7.5; GRE is required without a score cutoff. Intake-specific validity dates come from current central admissions.",
+  "locator": "MSAII FAQ: admission criteria and undergraduate background"
+}

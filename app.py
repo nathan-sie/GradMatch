@@ -17,13 +17,13 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/m1_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/m35_seed.json", language="bash")
     st.stop()
 
 left, right = st.columns(2)
 left.metric("Programs in catalog", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M3-2026-11-15 · Read-only public catalog · Profile and chat memory are private to this browser session")
+st.caption("Release M3.5-2026-11-16 · Read-only public catalog · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")

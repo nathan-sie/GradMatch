@@ -1,0 +1,34 @@
+{
+  "url": "https://www.cs.cmu.edu/rs-datasources/data-source/scs-masters-programs-anyyear",
+  "retrieved_at": "2026-11-16T23:35:12.160918+00:00",
+  "raw_response_sha256": "14d8bdecdfd7b9b0549e1efd6a99f778d151fe3fb03efa808dcdd04490d8ba96",
+  "verified_values": {
+    "admission_evidence": {
+      "admission_evidence": [
+        {
+          "evidence_id": "cmu-mcds-pittsburgh-2025-cohort",
+          "kind": "program_selectivity",
+          "source_ids": [
+            "cmu-mcds-pittsburgh-stats_data-m35",
+            "cmu-mcds-pittsburgh-stats-m35"
+          ],
+          "cycle_year": 2025,
+          "independence_key": "cmu-mcds-pittsburgh-official-2025",
+          "gpa": null,
+          "major": null,
+          "experience_dimensions": [],
+          "permitted_tiers": [
+            "Reach"
+          ],
+          "statement": "Official 2025 cohort: 145 admission offers from 481 applications. Aggregate selectivity is not an individual admission probability.",
+          "reviewed": true,
+          "applications": 481,
+          "offers": 145
+        }
+      ]
+    }
+  },
+  "source_excerpt": "",
+  "fact_summary": "MCDS 2025 cohort: 481 applications and 145 offers. Year is identified by the comparison-page column group; exact counts come from its official JSON datasource. Cohort statistics do not describe an individual applicant probability.",
+  "locator": "Official SCS comparison JSON: MCDS row, apps/admitted; comparison page: Admissions 2025"
+}

@@ -2,7 +2,7 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M3 deployed and verified**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The catalog contains 8 programs and 20 sources. Regression passes 84 checks; hosted model interaction, budget updates, isolated connections, reboot recovery and another-device access passed. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
+Current stage: **M3.5 recommendation pilot**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 official sources. M3's hosted model interaction, session isolation, reboot recovery and another-device access passed. The pilot adds explicit degree / GRE inputs and evidence-backed planning tiers. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
 
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
@@ -17,12 +17,12 @@ Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/Gr
 The project uses an isolated Python 3.12 environment. If `.venv` is already prepared, run these commands from the repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m1_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m2
+.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m35_seed.json
+.\.venv\Scripts\python.exe -m scripts.verify_m35
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
-Open `http://127.0.0.1:8501`. In **Applicant workflow (M2)** click **Load synthetic example**, then **Generate / rerun**. Send **Change my tuition budget to 50000** and inspect the updated profile and removal reasons. See the [M2 acceptance steps](docs/verification/M2.md). **Data and rule checks (M1)** retains the earlier verification page. Press `Ctrl+C` to stop the local server.
+Open `http://127.0.0.1:8501`. Click **Load tiering example (USD 140,000)**, enable the per-session paid-call checkbox, then **Generate / rerun**. Expect MSAII in Lottery with source-linked eligibility, costs and limitations. Send **Change my tuition budget to 100000**; MSAII should be excluded by budget while other background stays intact. MCDS remains pending; Target/Safer have no qualifying comparable cases yet. The original **Load synthetic example** and **Data and rule checks (M1)** remain available. Press `Ctrl+C` to stop the local server.
 
 ## OpenAI model configuration
 
@@ -31,10 +31,10 @@ Copy `.env.example` to `.env` only if it does not exist. Fill `OPENAI_API_KEY` l
 Run explicit real-model acceptance after configuring the key:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.verify_m2 --live-model
+.\.venv\Scripts\python.exe -m scripts.verify_m35 --live-model
 ```
 
-This uses only the synthetic applicant and records actual call/token/latency/cost data. Ordinary `verify_m2` uses offline stubs, which do not count as live results. A reusable task entry is `python -m scripts.run_task --synthetic --followup "Change my tuition budget to 50000"`; add `--live-model` to explicitly permit paid requests. See [M2 verification](docs/verification/M2.md) for limits and the complete checkpoint.
+`verify_m35 --live-model` permits at most two paid requests using only the fictional tiering applicant and records actual call/token/latency/cost data. Ordinary `verify_m35` runs regression without paid calls. Offline stubs do not count as live results. Earlier M2/M3 records are historical checkpoints and are not overwritten by this verifier.
 
 ## Install in a clean environment
 
@@ -61,12 +61,12 @@ Windows application control blocked the downloaded portable Python 3.11 during M
 
 `build_catalog --input data/catalog/m1_seed.json` validates and imports records using stable program IDs, preserving other records and historical sources. Add `--validate` to validate without writing. Without `--input`, it only creates the empty schema or checks an existing database. Missing or invalid databases produce an explicit error.
 
-Only UW ECE PMP, USC non-thesis MSCS, and Northeastern Boston standard MSCS have reproducible published-rate tuition estimates. Other programs remain unknown where billing periods or fee breakdowns are incomplete. These estimates do not guarantee future actual tuition. Remaining eligibility, goal-fit and risk evidence is incomplete, so M2 cannot populate real tiers yet. It separates pending candidates from formal recommendations.
+Five programs have computable published-rate tuition: the original UW ECE PMP, USC MSCS and Northeastern Boston MSCS, plus CMU MCDS (USD 97,200, standard three-semester timing) and MSAII (USD 133,500–137,400 including required summer tuition). These estimates use stated rate years and exclude unverified fees/living costs; future prices are not guaranteed. MSAII has a supported pilot recommendation path. MCDS and other programs remain pending where entry requirements or tier evidence are incomplete. Cohort-selectivity planning tiers are not personal admission probabilities. See [the M3.5 scope](docs/M35_SCOPE.md) and [source audit](docs/M35_SOURCES.md).
 
 ## Data and secrets
 
 - `data/schema.sql` is versioned; the generated `data/gradmatch.db` is rebuildable and ignored.
-- `data/catalog/m1_seed.json` and `data/snapshots/` contain versioned public records and short evidence snapshots for offline rebuilding. Full-page research material stays in the ignored `work` directory.
+- `data/catalog/m35_seed.json` is the current seed. `m1_seed.json` preserves the historical eight-program baseline. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`.
 - Applicant profiles and sessions are not written into the public catalog.
 - `.venv`, `.tools`, temporary records, `.env`, and `.streamlit/secrets.toml` are ignored.
 - A real OpenAI key is needed for explicit M2 live checks. Never commit secrets.

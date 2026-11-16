@@ -16,11 +16,14 @@ TOPICS = {
     "linear_algebra": "Linear algebra", "programming": "Programming",
     "object_oriented_programming": "Object-oriented programming", "data_structures": "Data structures",
     "algorithms": "Algorithms", "probability_statistics": "Probability and statistics", "discrete_math": "Discrete mathematics",
+    "undergraduate_cs": "Strong undergraduate computer science preparation",
+    "undergraduate_math": "Strong undergraduate mathematics / statistics preparation",
 }
 STATUS = {"pass": "Meets checked requirement", "fail": "Does not meet requirement", "unknown": "Needs verification", "not_applicable": "Not applicable"}
 RULE_NAMES = {"identity": "Program identity", "intake": "Intake", "gpa": "GPA",
     "english": "English proficiency", "prerequisites": "Prerequisite coursework", "tuition": "Tuition budget",
-    "deadline": "Application deadline", "remaining_eligibility": "Other eligibility / materials"}
+    "deadline": "Application deadline", "degree": "Bachelor's degree / equivalency", "gre": "GRE",
+    "remaining_eligibility": "Other reviewed planning requirements"}
 MISSING_NAMES = {**RULE_NAMES, "admission_risk_evidence": "Admission-tier evidence", "tuition_not_computable": "Full-program tuition basis",
     "hard_gpa_minimum_not_verified": "Hard GPA minimum", "prerequisites_need_review": "Prerequisites need review",
     "final_deadline_schedule_partial": "Complete applicable deadline schedule"}

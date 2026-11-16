@@ -39,7 +39,7 @@ def release_files():
         if (len(key) >= 10 and key in payload) or re.search(rb"sk-(?:proj-)?[A-Za-z0-9_-]{32,}", payload):
             raise ValueError(f"A possible API secret was detected in {name}. No secret value has been printed.")
         manifest.append({"path": name, "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload)})
-    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/schema.sql", "gradmatch/bootstrap.py"}
+    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/catalog/m35_seed.json", "data/schema.sql", "gradmatch/bootstrap.py"}
     if not required <= set(names):
         raise ValueError("The release is missing a required application/data/dependency file.")
     return manifest
@@ -62,7 +62,7 @@ assert not (PROJECT_ROOT / ".streamlit/secrets.toml").exists()
 assert not load_settings().ready
 app=AppTest.from_file(str(PROJECT_ROOT/"app.py"),default_timeout=20).run()
 assert not app.exception
-assert [m.value for m in app.metric] == ["8","20"]
+assert [m.value for m in app.metric] == ["10","30"]
 assert app.session_state["m2_session"].profile.tuition_budget_usd is None
 assert not app.session_state["m2_session"].messages
 app.button(key="m2_load_example").click().run()

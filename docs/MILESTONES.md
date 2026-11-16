@@ -22,6 +22,7 @@ Product language: English for the current application and every future user-faci
 | M1 数据与规则 | 8–12 个真实项目、来源追溯、资格与费用计算 | 边界测试、来源抽查、预算变化后筛选结果正确 | 官网公开资料；不依赖收费模型 | 自动验收通过，待用户页面/来源抽查 |
 | M2 固定基线与会话 | 表单、追问、结构化背景更新、一次推荐生成、统一验证 | 真实模型推荐与 70,000 → 50,000 更新，其他背景保留 | 需要选定模型并配置密钥，有 API 用量 | User-accepted on 2026-11-15 |
 | M3 早期公开部署 | Streamlit 公共 URL、服务器端密钥与用户隔离 | 另一设备无痕访问，两用户独立，重启后基础库可恢复 | GitHub/Streamlit 账号，免费托管 | Passed: public URL, hosted model, isolation, reboot and user another-device check |
+| M3.5 Recommendation pilot | Degree / GRE inputs, sourced tier explanation, full tuition and application checklist | Fictional profile: USD 140,000 → 100,000, preserved background, unsupported evidence blocked | Official sources; bounded real model checks | Implementation and verification in progress; user acceptance pending |
 | M4 ReAct 与实时工具 | 自适应工具调用、官方 HTML/PDF、暂停恢复与预算限制 | 缺证据会补查、失败能停止、真实官网核验 | 模型/搜索服务；计量真实费用 | 待开始 |
 | M5 显式规划 Agent | Plan-and-replan、计划版本与重规划日志 | 同一任务在工具失败/条件变化后调整计划 | 沿用同一模型、证据和预算 | 待开始 |
 | M6 数据集与评测工具 | 40–60 个项目、210 主任务、50 安全提示、可复现 runner | 数据一致性、参考答案隔离、断点继续、少量真实试运行 | 小规模 API 试运行 | 待开始 |

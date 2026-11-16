@@ -1,14 +1,17 @@
-# Conservative admission-tier rubric (conservative-v1)
+# Conservative admission-tier rubric (conservative-v1.1)
 
-Only candidates with every applicable hard check passing or explicitly not applicable may enter the four admission tiers. Unknown requirements are not passes. Budget, eligibility, goal fit, and admission risk are separate assessments.
+Every applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.
 
-- Lottery: identifiable program-level extreme selectivity evidence or a major gap against comparable admission evidence.
-- Reach: a traceable, comparable background gap with a plausible application rationale.
-- Target: at least two independent, recent, traceable admission cases covering comparable GPA/academic background and a relevant experience dimension.
-- Safer: the Target evidence threshold, plus a supported comparison explaining relatively lower risk. Never a guarantee.
+For reviewed, program-specific cohort counts from the latest three admission cycles:
 
-Admission cases must identify the same degree/track and normally fall within the latest three completed admission cycles. Repeated copies are one case. School reputation, a minimum GPA, low tuition, and isolated anecdotes do not establish a tier. Do not convert GPA scales or infer missing backgrounds. Provide comparison dimensions and limitations. Semantic support requires human audit beyond automated checks.
+- Lottery: offers / applications <= 15%.
+- Reach: offers / applications > 15% and <= 35%.
+- Above 35%: aggregate counts alone do not establish a tier.
 
-Goal-fit claims require traceable program features such as curriculum, capstone, or thesis options. Never infer employment outcomes from a school name. Return zero formal recommendations when evidence is insufficient. Keep pending-verification candidates separate; never fill an empty tier by relaxing constraints. At most five recommendations per tier. Explain a shortfall below three. Do not invent admission probabilities or promise admission, funding, jobs, or visa outcomes.
+These are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=["selectivity"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.
 
-M2's real catalog has no reviewed admission-case or goal-feature claims and incomplete eligibility coverage. Its honest current result is pending candidates / insufficient evidence, not four populated tiers. Synthetic positive-path fixtures are tests, never user-facing school records.
+Target requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.
+
+Goal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.
+
+Current pilot: MSAII has reviewed eligibility, professional-goal and 2025 cohort evidence. MCDS has tuition and cohort evidence but remains pending because complete entry requirements were not verified. There are no qualifying comparable cases for Target / Safer. Fictional applicant examples are for validation, never admission-case evidence.

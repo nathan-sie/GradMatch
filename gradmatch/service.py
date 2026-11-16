@@ -88,6 +88,12 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
                         "user_message": message, "referenced_program_ids": references,
                         "programs": [p.model_dump(mode="json") for p, _ in ranking_pairs],
                         "reports": [r.model_dump(mode="json") for _, r in ranking_pairs],
+                        "allowed_recommendation_program_ids": [p.program_id for p,r in ranking_pairs if r.recommendation_ready],
+                        "ready_recommendation_options": [{"program_id":p.program_id,
+                            "goal_feature_ids":[f.feature_id for f in p.goal_features if f.goal in {session.profile.goal,"mixed"}],
+                            "tier_evidence_options":[{"evidence_id":e.evidence_id,"permitted_tiers":e.permitted_tiers}
+                                for e in p.admission_evidence if e.reviewed]}
+                            for p,r in ranking_pairs if r.recommendation_ready],
                         "allowed_pending_program_ids": [p.program_id for p, _ in ranking_pairs],
                         "excluded_summary": [{"program_id": r.program_id,
                             "failed_checks": [c.model_dump(mode="json") for c in r.checks if c.status == "fail"]}
@@ -99,6 +105,7 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
                         "all_catalog_retrieved": len(retrieved) == len(programs),
                         "rubric": (PROJECT_ROOT / "config" / "ranking_rubric.md").read_text(encoding="utf-8")}, session)
                     model_status = "completed" if isinstance(provider, OpenAIProvider) else "test_stub"
+                    session.event("ranking_draft", draft=draft.model_dump(mode="json"))
                 except ModelUnavailable as error:
                     model_error, model_status = str(error), "error"
             result = validate_shortlist(draft, session.profile, programs, retrieved, retrieved_sources, as_of=as_of)

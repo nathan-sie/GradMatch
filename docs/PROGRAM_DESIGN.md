@@ -1,5 +1,7 @@
 # GradMatch 程序设计文档 v1.0
 
+Implementation update (2026-11-16, M3.5): the current seed is `data/catalog/m35_seed.json` (10 programs, 30 official sources); `m1_seed.json` remains an immutable historical baseline. Fixed retrieval now uses top-k 10. Degree completion/equivalency and GRE presence/date/format are explicit inputs. English validity may use a verified intake-specific cutoff rather than rolling expiry. Full tuition includes required pre-arrival courses; application documents are a cited preparation checklist, separate from submission verification. See `docs/M35_SCOPE.md` for the limited pilot and `config/ranking_rubric.md` for conservative-v1.1, which supersedes the older risk rubric below: recent official exact-program counts permit cohort-selectivity Lottery (<=15%) or Reach (>15%, <=35%) planning labels, explicitly without personal admission probabilities. Target/Safer retain the two-comparable-case threshold. MSAII provides one supported positive path; MCDS remains pending despite its cohort evidence. M4 has not started. All later strategies must share the current catalog, rubric and validator; formal benchmark scores are not yet available.
+
 更新日期：2026-11-13
 适用项目：EE P 500 D — GradMatch  
 文档状态：开发设计基线；实际完成情况见 `docs/MILESTONES.md`，尚无正式 benchmark 成绩

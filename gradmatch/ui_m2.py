@@ -13,7 +13,7 @@ from gradmatch.catalog import read_catalog
 from gradmatch.config import ConfigurationError, load_settings
 from gradmatch.schemas import ApplicantProfile
 from gradmatch.service import export_session, start_task
-from gradmatch.session import Session, synthetic_profile
+from gradmatch.session import Session, synthetic_profile, tiering_profile
 from gradmatch.ui_m1 import RULE_NAMES, STATUS, TOPICS, show_table
 
 
@@ -27,13 +27,16 @@ def render_m2(database):
     if "m2_session" not in st.session_state:
         st.session_state["m2_session"] = Session()
     session = st.session_state["m2_session"]
-    st.subheader("M2 · Applicant profile and conversation")
+    st.subheader("Applicant profile and recommendations")
     st.caption("Fixed baseline · official snapshots · no live website retrieval · no adaptive agent yet")
-    st.info("The current catalog has incomplete eligibility and admission-tier evidence. Expect pending candidates and honest shortfalls, rather than four populated tiers.")
+    st.info("Pilot tiering uses reviewed official cohort statistics. Lottery / Reach are planning labels, not personal admission probabilities. Target / Safer require comparable cases and may remain empty. Other programs may still need verification.")
     st.caption("When you enable model calls, your profile and submitted messages are sent to OpenAI. Use synthetic information for milestone testing. Session history lasts only for this browser connection and is not stored in the public catalog.")
     left, right = st.columns(2)
     if left.button("Load synthetic example", key="m2_load_example", disabled=session.active):
         session.update(synthetic_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+    if left.button("Load tiering example (USD 140,000)", key="m35_load_example", disabled=session.active):
+        session.update(tiering_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+    st.caption("Tiering example: fictional completed CS degree, GPA 3.5/4 overall, TOEFL 110 (2025), in-person GRE, confirmed CS/math preparation. Try reducing its tuition budget to 100000 after generating.")
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
         for key in list(st.session_state):
@@ -77,7 +80,7 @@ def render_m2(database):
             ApplicantProfile.model_validate(changes)
             run(changes=changes, unknown_fields=unknown)
         except ValidationError:
-            st.error("The GPA or English score exceeds the selected scale, or a required date is invalid. Correct the form and submit again.")
+            st.error("A GPA, test score, budget or date is invalid for the selected format. Correct the form and submit again.")
     if st.button("Generate / rerun", key="m2_generate", disabled=session.active):
         run()
     with st.expander("Current structured profile", expanded=False):
@@ -121,6 +124,19 @@ def profile_form(profile):
         institution = st.text_input("Undergraduate institution (optional)", value=profile.institution or "", key=key("institution"))
         country = st.text_input("Institution country (optional)", value=profile.institution_country or "", key=key("country"))
         major = st.text_input("Undergraduate major (blank means unknown)", value=profile.major or "", key=key("major"))
+        st.write("**Degree background**")
+        degree = profile.degree
+        degree_values = {}
+        for field, label, options in [
+            ("completion", "Degree completion", ["unknown", "completed", "expected_before_enrollment", "not_before_enrollment"]),
+            ("recognition", "Credential status (self-reported)", ["unknown", "recognized_bachelors_or_equivalent", "not_recognized"]),
+            ("field", "Degree field", ["unknown", "CS", "ECE", "STEM", "other"])]:
+            selected = getattr(degree, field) if degree else "unknown"
+            degree_values[field] = st.selectbox(label, options, index=options.index(selected),
+                format_func=lambda v: v.replace("_", " ").capitalize() if v not in {"CS", "ECE", "STEM"} else v, key=key("degree_"+field))
+        degree_values["country"] = st.text_input("Degree country (ISO code, e.g. US; blank means unknown)",
+            value=degree.country or "" if degree else "", key=key("degree_country")).strip().upper() or None
+        st.caption("The university makes the final credential-equivalency decision. Application document preparation is listed separately.")
         goals = [None, "employment", "research", "mixed"]
         goal = st.selectbox("Main goal", goals, index=goals.index(profile.goal),
             format_func=lambda value: value.title() if value else "Unknown", key=key("goal"))
@@ -157,6 +173,19 @@ def profile_form(profile):
         for name in ["reading", "listening", "speaking", "writing"]:
             raw = st.text_input(f"English {name} subscore", value=str(profile.english.subscores.get(name, "")) if profile.english else "", key=key(name))
             if raw.strip(): subscores[name] = raw.strip()
+        st.write("**GRE (needed only by some programs)**")
+        has_gre = st.checkbox("GRE result is known", value=profile.gre is not None, key=key("has_gre"))
+        gre_values = {}
+        for field, label, minimum, maximum, default in [("verbal", "GRE Verbal",130,170,130), ("quantitative", "GRE Quantitative",130,170,130)]:
+            gre_values[field] = st.number_input(label, min_value=minimum, max_value=maximum,
+                value=getattr(profile.gre,field) if profile.gre else default, key=key("gre_"+field))
+        gre_values["writing"] = str(st.number_input("GRE Analytical Writing", min_value=0.0,max_value=6.0,step=0.5,
+            value=float(profile.gre.writing) if profile.gre else 0.0,key=key("gre_writing")))
+        gre_values["test_date"] = st.date_input("GRE test date (leave blank if unknown)", value=profile.gre.test_date if profile.gre else None,
+            min_value=date(2000,1,1),max_value=date(2100,12,31),key=key("gre_date"))
+        formats=["unknown","in_person","at_home"]
+        gre_values["format"] = st.selectbox("GRE test format",formats,index=formats.index(profile.gre.format) if profile.gre else 0,
+            format_func=lambda v:v.replace("_"," ").title(),key=key("gre_format"))
         st.caption("Only confirmed completed courses are marked present. Unselected topics remain unknown.")
         courses = st.multiselect("Completed coursework / demonstrated skills", list(TOPICS),
             default=[name for name, complete in profile.coursework.items() if complete and name in TOPICS], format_func=TOPICS.get, key=key("courses"))
@@ -175,7 +204,8 @@ def profile_form(profile):
         return None
     changes = {"gpa": {"value": str(gpa), "scale": str(scale), "scope": scope} if has_gpa else None,
         "institution": institution.strip() or None, "institution_country": country.strip() or None,
-        "major": major.strip() or None, "goal": goal,
+        "major": major.strip() or None, "goal": goal, "degree": degree_values,
+        "gre": gre_values if has_gre else None,
         "tuition_budget_usd": str(budget) if has_budget else None, "budget_basis": basis,
         "intake": {"year": year, "term": term} if has_intake else None,
         "applicant_category": category, "study_mode": mode,
@@ -186,6 +216,8 @@ def profile_form(profile):
     unknown = {field for field in ["gpa", "major", "goal", "tuition_budget_usd", "intake"] if changes[field] is None}
     if version in {"unknown", "not_taken"}: unknown.add("english")
     if not has_date: unknown.add("english.test_date")
+    if degree_values["completion"] == "unknown" or degree_values["recognition"] == "unknown": unknown.add("degree")
+    if not has_gre or not gre_values["test_date"]: unknown.add("gre")
     unknown |= {"english.subscores." + name for name in ["reading", "listening", "speaking", "writing"] if name not in subscores}
     return changes, unknown
 
@@ -213,10 +245,25 @@ def render_result(result, programs, sources):
         st.write(f"{tier}: {len(items)}")
         for item in items:
             st.markdown(f"[{names[item['program_id']]}]({item['identity']['official_url']})")
+            st.caption(item["identity"]["track"])
+            st.write(item["planning_reason"])
+            tuition = item["checks"]["tuition"]
+            st.write(f"Estimated full-program tuition: USD {tuition['lower_usd']}–{tuition['upper_usd']}")
+            st.caption(f"Published rate year: {tuition['rate_year']} · {tuition['formula']}")
+            for assumption in tuition["assumptions"]: st.caption(assumption)
             for feature in item["goal_features"]: st.write(feature["statement"])
+            for limitation in item["limitations"]: st.caption(limitation)
+            with st.expander("Eligibility checks, sources and application checklist"):
+                show_table([{"Check": RULE_NAMES.get(c["rule_id"], c["rule_id"]), "Status": STATUS[c["status"]], "Reason": c["explanation"]} for c in item["checks"]["checks"]])
+                st.write("Application preparation checklist — submission is not verified:")
+                for material in item["application_materials"]: st.write("• " + material)
+                for sid in sorted({sid for c in item["checks"]["checks"] for sid in c["source_ids"]}):
+                    source=sources[sid]
+                    show_citation({"source_id":sid,"url":str(source.url),"retrieved_at":source.retrieved_at.isoformat(),"quote":source.fact_summary})
             st.caption("Automated validation checks structure and evidence bindings; admission comparisons still need human review. No outcome is guaranteed.")
             for c in item["citations"]: show_citation(c)
-        if len(items) < 3: st.caption("Shortfall: insufficient verified eligibility, goal-fit, admission-tier evidence, or validated ranking.")
+        if len(items) < 3:
+            st.caption("Shortfall: Target and Safer require at least two independent, recent comparable admission cases; this pilot has no qualifying cases." if tier in {"Target","Safer"} else "Shortfall: only reviewed cohort evidence supports these planning tiers; eligibility and budget must also pass.")
     st.write(f"**Pending verification ({len(result['pending_verification'])})**")
     for item in result["pending_verification"]:
         with st.expander(names[item["program_id"]]):

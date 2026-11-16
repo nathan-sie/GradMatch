@@ -7,6 +7,7 @@ import json
 
 from gradmatch.constraints import check_constraints, evidence_ids
 from gradmatch.ranking import TIERS, RankingDraft
+from gradmatch.tiers import RUBRIC_VERSION, planning_reason, selectivity_tier
 
 
 def data_hash(programs, sources):
@@ -43,6 +44,9 @@ def tier_errors(item, profile, program, sources, as_of):
             errors.append("UNSUPPORTED_TIER_EVIDENCE")
             continue
         used.append(evidence)
+        if evidence.kind == "program_selectivity" and (
+                selectivity_tier(evidence) != item.tier or "selectivity" not in item.comparison_dimensions):
+            errors.append("COHORT_DOES_NOT_SUPPORT_REQUESTED_TIER")
     if not used or len(item.tier_evidence_ids) != len(set(item.tier_evidence_ids)):
         errors.append("MISSING_OR_DUPLICATE_TIER_EVIDENCE")
     if not item.limitations or not item.comparison_dimensions:
@@ -92,6 +96,8 @@ def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrie
         source_ids = sorted({sid for f in program.goal_features if f.feature_id in item.goal_feature_ids for sid in f.source_ids}
             | {sid for e in program.admission_evidence if e.evidence_id in item.tier_evidence_ids for sid in e.source_ids})
         accepted.append({**item.model_dump(mode="json"), "identity": identity(program),
+            "planning_reason": planning_reason(item, program),
+            "application_materials": list(program.application_materials),
             "checks": reports[item.program_id].model_dump(mode="json"),
             "goal_features": [f.model_dump(mode="json") for f in program.goal_features if f.feature_id in item.goal_feature_ids],
             "tier_evidence": [e.model_dump(mode="json") for e in program.admission_evidence if e.evidence_id in item.tier_evidence_ids],
@@ -141,7 +147,7 @@ def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrie
             for tier in TIERS if counts[tier] < 3],
         "retrieved_program_ids": list(by_id), "catalog_program_count": len(all_programs),
         "all_catalog_retrieved": all_retrieved,
-        "rubric_version": "conservative-v1"}
+        "rubric_version": RUBRIC_VERSION}
 
 
 def identity(program):

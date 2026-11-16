@@ -14,12 +14,15 @@ from gradmatch.schemas import ApplicantProfile, Record
 
 TOPICS = {"calculus", "differential_equations", "linear_algebra", "programming",
           "object_oriented_programming", "data_structures", "algorithms", "probability_statistics", "discrete_math"}
+TOPICS |= {"undergraduate_cs", "undergraduate_math"}
 ROOT_FIELDS = set(ApplicantProfile.model_fields) - {"profile_version"}
 LEAF_FIELDS = {"gpa.value", "gpa.scale", "gpa.scope", "english.version", "english.total", "english.test_date",
     "english_status", "goal", "tuition_budget_usd", "budget_basis", "intake.year", "intake.term",
     "institution", "institution_country", "major", "research", "work_experience", "applicant_category", "study_mode"}
 LEAF_FIELDS |= {"english.subscores." + key for key in ["reading", "listening", "speaking", "writing"]}
 LEAF_FIELDS |= {"coursework." + key for key in TOPICS}
+LEAF_FIELDS |= {"degree.completion", "degree.recognition", "degree.field", "degree.country",
+    "gre.verbal", "gre.quantitative", "gre.writing", "gre.test_date", "gre.format"}
 
 
 class PatchOperation(Record):
@@ -80,6 +83,7 @@ def synthetic_profile():
         work_experience=["One synthetic software internship"], goal="employment",
         tuition_budget_usd="70000", intake={"year": 2027, "term": "fall"},
         english_status="known", english={"version": "toefl_120", "total": "100", "test_date": "2025-11-01"},
+        degree={"completion": "completed", "recognition": "recognized_bachelors_or_equivalent", "field": "ECE", "country": "US"},
         coursework=dict.fromkeys(TOPICS - {"discrete_math"}, True))
 
 
@@ -98,16 +102,34 @@ def questions(profile: ApplicantProfile, programs, *, as_of: date, unknown_field
         ask("goal", "Is your main goal employment, research, or a mix of both?")
     if profile.major is None:
         ask("major", "What is your undergraduate major? You can mark it unknown in the profile form.")
+    from gradmatch.constraints import estimate_tuition
+    candidates = [p for p in programs if profile.tuition_budget_usd is None
+        or estimate_tuition(p.tuition).upper_usd is None or estimate_tuition(p.tuition).upper_usd <= profile.tuition_budget_usd]
+    if any(p.degree_required for p in candidates) and (profile.degree is None or profile.degree.completion == "unknown" or profile.degree.recognition == "unknown"):
+        ask("degree", "What is your degree completion and recognized-bachelor/equivalency status? Please use the degree section of the form.")
+    if any(p.gre_policy == "required" for p in candidates) and (profile.gre is None or profile.gre.test_date is None):
+        ask("gre", "A candidate requires GRE scores. Provide the report and test date, or explicitly mark them unknown.")
     relevant = [p for p in programs if p.english and any(d.intake == profile.intake for d in p.deadlines)]
     if relevant and profile.english_status == "unknown":
         ask("english", "Which English test/version, score, and test date do you have? If unavailable, select Unknown or Not taken yet explicitly.")
     if profile.english:
         rules = [r for p in relevant for r in p.english if r.version == profile.english.version]
-        if any(r.validity_years for r in rules) and profile.english.test_date is None:
+        if any(r.validity_years or r.minimum_test_date for r in rules) and profile.english.test_date is None:
             ask("english.test_date", "What is the English test date? Mark it unknown if you cannot provide it.")
         for name in sorted({name for r in rules for name in r.minimum_subscores} - profile.english.subscores.keys()):
             ask("english.subscores." + name, f"What is your {name} subscore on the same test scale? It is required by a candidate's rule.")
     return missing
+
+
+def tiering_profile():
+    """Fictional evidence-complete test profile, never a real applicant record."""
+    data = synthetic_profile().model_dump(exclude={"profile_version"})
+    data.update(gpa={"value": "3.5", "scale": "4", "scope": "overall"},
+        major="Computer Science", tuition_budget_usd="140000",
+        degree={"completion": "completed", "recognition": "recognized_bachelors_or_equivalent", "field": "CS", "country": "US"},
+        english={"version": "toefl_120", "total": "110", "test_date": "2025-11-01"},
+        gre={"verbal":160,"quantitative":165,"writing":"4","test_date":"2025-06-01","format":"in_person"})
+    return ApplicantProfile.model_validate(data)
 
 
 def quick_patch(message: str) -> ProfilePatch | None:
@@ -168,6 +190,7 @@ def literal_support(path, value, span):
         "english_status": ["english", "test", "toefl", "ielts", "英语", "托福", "雅思"],
         "budget_basis": ["published", "estimate", "guarantee", "估算", "保证"],
         "applicant_category": ["international", "domestic", "国际"], "study_mode": ["full-time", "part-time", "全日制", "非全日制"]}
+    cues.update(degree=["degree", "bachelor", "学历", "学位"], gre=["gre"])
     if not any(cue in text for cue in cues.get(root, [])):
         return False
     if value is None:
@@ -179,7 +202,7 @@ def literal_support(path, value, span):
     if isinstance(value, (list, dict)):
         return isinstance(value, list) and ((not value and bool(re.search(r"\b(none|no)\b|没有", text)))
             or (bool(value) and all(isinstance(item, str) and item.lower() in text for item in value)))
-    if path in {"tuition_budget_usd", "gpa.value", "gpa.scale", "english.total", "intake.year"} or path.startswith("english.subscores."):
+    if path in {"tuition_budget_usd", "gpa.value", "gpa.scale", "english.total", "intake.year", "gre.verbal", "gre.quantitative", "gre.writing"} or path.startswith("english.subscores."):
         try:
             numbers = [Decimal(n.replace(",", "")) for n in re.findall(r"(?<![0-9.])-?\d+(?:,\d{3})*(?:\.\d+)?", text)]
             return Decimal(str(value)) in numbers

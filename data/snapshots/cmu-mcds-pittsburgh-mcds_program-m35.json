@@ -1,0 +1,93 @@
+{
+  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+  "retrieved_at": "2026-11-16T23:35:10.030490+00:00",
+  "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+  "verified_values": {
+    "identity": {
+      "university": "Carnegie Mellon University",
+      "school": "School of Computer Science / Language Technologies Institute",
+      "program_name": "Master of Computational Data Science",
+      "degree": "MCDS",
+      "campus": "Pittsburgh",
+      "track": "Standard timing (16 months)",
+      "official_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "gre": {
+      "gre_policy": "required",
+      "gre_validity_years": 5,
+      "gre_at_home_accepted": true
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-18",
+          "label": "Early (3 p.m. EST)",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-09",
+          "label": "Final (3 p.m. EST)",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "cmu-mcds-pittsburgh-industry",
+          "goal": "employment",
+          "statement": "Industry internship and a practical capstone support preparation for applied technical work.",
+          "source_ids": [
+            "cmu-mcds-pittsburgh-mcds_program-m35"
+          ]
+        }
+      ]
+    },
+    "remaining_eligibility": {
+      "application_materials": [
+        "Online application and fee or approved waiver",
+        "Transcripts from every attended university",
+        "Current resume / CV",
+        "Statement of purpose",
+        "Three recommendation letters",
+        "Official GRE and applicable English reports",
+        "Optional 1–3 minute video (strongly suggested)"
+      ],
+      "degree_required": true,
+      "gre_policy": "required"
+    }
+  },
+  "source_excerpt": "Three letters of recommendation",
+  "fact_summary": "Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.",
+  "locator": "MCDS current program: Admissions; Overview; Curriculum"
+}

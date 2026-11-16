@@ -1,0 +1,31 @@
+{
+  "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+  "retrieved_at": "2026-11-16T23:35:11.320677+00:00",
+  "raw_response_sha256": "be5a7e8ea19195ea139b76b066528dbc3a18f95a57d466da6205049d57c30ec2",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "per_term",
+        "unit_rate_lower": "32400",
+        "unit_rate_upper": null,
+        "required_units_lower": "4",
+        "required_units_upper": null,
+        "rate_year": "2026-2027",
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "Department-specific published 2026–2027 rate reused as a planning estimate for Fall 2027; future increases are unknown.",
+          "Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.",
+          "Four academic semesters plus the required 6–12 unit pre-arrival summer course at USD 650/unit; no internship tuition.",
+          "No unconfirmed scholarship or assistantship is deducted."
+        ],
+        "additional_required_tuition_lower_usd": "3900",
+        "additional_required_tuition_upper_usd": "7800"
+      }
+    }
+  },
+  "source_excerpt": "Tuition and fees",
+  "fact_summary": "Department-specific 2026–2027 tuition is USD 32,400 per academic semester. Four academic semesters plus required summer course: 6–12 units at USD 650/unit. Total tuition estimate USD 133,500–137,400.",
+  "locator": "MSAII admitted-student information: Tuition and fees"
+}
