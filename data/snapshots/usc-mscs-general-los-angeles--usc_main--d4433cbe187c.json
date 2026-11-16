@@ -1,0 +1,20 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science-/",
+  "retrieved_at": "2026-11-13T04:46:17.496428+00:00",
+  "source_excerpt": "This program requires completion of 32 units of coursework",
+  "fact_summary": "Los Angeles general MSCS coursework requires 32 units; the thesis option adds four. This record selects the non-thesis track and does not infer credits from the old candidate ID cs28.",
+  "locator": "MS Computer Science: Program Overview; coursework units",
+  "verified_values": {
+    "identity": {
+      "university": "University of Southern California",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "Los Angeles",
+      "track": "General coursework, non-thesis"
+    },
+    "credits": {
+      "required_credits": "32"
+    }
+  },
+  "raw_response_sha256": "8d1b3d444532fd21a2c10a7cceecf30346b67c28091dc7bb6fb83058fd3d17f5"
+}

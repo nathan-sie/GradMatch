@@ -1,0 +1,84 @@
+{
+  "url": "https://www.ece.uw.edu/academics/pmp/admissions/",
+  "retrieved_at": "2026-11-13T04:46:14.972521+00:00",
+  "source_excerpt": "Cycle 2 March 5, 2027 April 19, 2027 International and domestic full-time students (limited spots)",
+  "fact_summary": "Seattle MSECE PMP: international full-time rounds for Fall 2027 are January 5 and March 5; May 14 is part-time only. The minimum GPA is 3.0/4.0 over the last 60 semester or 90 quarter credits, with consultation below the threshold. Preparation covers calculus/differential equations, linear algebra, programming/data structures/algorithms, and probability/statistics.",
+  "locator": "Admissions Requirements: deadline table; Criteria for Admission; Prerequisites; How to Apply",
+  "verified_values": {
+    "identity": {
+      "university": "University of Washington",
+      "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+      "degree": "MSECE",
+      "campus": "Seattle",
+      "track": "PMP coursework, full-time"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3.0",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "last_60_semester",
+          "last_90_quarter"
+        ],
+        "below_minimum_review_possible": true,
+        "no_hard_minimum": false
+      }
+    },
+    "prerequisites": {
+      "required_topics": [
+        "calculus",
+        "differential_equations",
+        "linear_algebra",
+        "programming",
+        "data_structures",
+        "algorithms",
+        "probability_statistics"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-01-05",
+          "label": "Cycle 1: priority",
+          "audience": "international_full_time"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-03-05",
+          "label": "Cycle 2: limited spots",
+          "audience": "international_full_time"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-05-14",
+          "label": "Cycle 3: part-time only",
+          "audience": "part_time"
+        }
+      ],
+      "deadline_schedule_complete": true
+    }
+  },
+  "raw_response_sha256": "431df3d3aeedc04ea458f3ffdd398481cb75c2f43b6ea783cac575fbc64aa0fc"
+}

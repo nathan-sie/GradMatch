@@ -1,0 +1,20 @@
+{
+  "url": "https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/",
+  "retrieved_at": "2026-11-13T04:46:17.689564+00:00",
+  "source_excerpt": "32 total semester hours required",
+  "fact_summary": "Boston standard MSCS requires 32 semester hours. It is not Align or a Canadian-campus program. The catalog's 3.000 GPA is a graduation requirement.",
+  "locator": "Computer Science MSCS (Boston): Program Credit/GPA Requirements",
+  "verified_values": {
+    "identity": {
+      "university": "Northeastern University",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "Boston",
+      "track": "Standard MSCS (not Align, not Canada)"
+    },
+    "credits": {
+      "required_credits": "32"
+    }
+  },
+  "raw_response_sha256": "97557a96862c1990291d345a404d3ce1e3ada06d2e5cebbb5c08514d10b90a74"
+}

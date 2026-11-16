@@ -1,0 +1,17 @@
+{
+  "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+  "retrieved_at": "2026-11-13T04:49:32.612926+00:00",
+  "source_excerpt": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+  "fact_summary": "Boston standard MSCS Estimated Total Tuition is USD 61,504 at 2026–2027 rates, excluding fees and other expenses. Course-specific pricing and future changes can affect the total.",
+  "locator": "Cost of attendance: Tuition and financial aid",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "full_program",
+      "tuition.unit_rate_lower": "61504",
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": "2026-2027"
+    }
+  },
+  "raw_response_sha256": "b47e1d3e50c4057bbe67c6690bcb69489a1abee6b36cf76224d8fbe14aca9e8d"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/tuition-funding/tuition-funding-masters/",
+  "retrieved_at": "2026-11-13T04:46:17.231215+00:00",
+  "source_excerpt": "Fall 2026 - Summer 2027* $2,742 $8,226 $10,968",
+  "fact_summary": "Viterbi's 2026–2027 tuition is USD 2,742 per unit for on-campus and online students, subject to change. Mandatory fees and insurance are separate; living costs are excluded from tuition.",
+  "locator": "Tuition table: Academic Year / Per Unit Rate",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_credit",
+      "tuition.unit_rate_lower": "2742",
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": "2026-2027"
+    }
+  },
+  "raw_response_sha256": "53a16270693e761e0515afad1420bd22539cea68686a9f4c31ee65add7c1a8fe"
+}

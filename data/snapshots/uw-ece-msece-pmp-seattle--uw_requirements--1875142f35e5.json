@@ -1,0 +1,13 @@
+{
+  "url": "https://www.ece.uw.edu/academics/pmp/requirements/",
+  "retrieved_at": "2026-11-13T04:46:14.934114+00:00",
+  "source_excerpt": "The Professional Master’s Program requires 45 credits to graduate",
+  "fact_summary": "Graduation requires 45 credits, including coursework and colloquium credits. Graduation GPA and admission GPA are treated separately.",
+  "locator": "Degree Requirements",
+  "verified_values": {
+    "credits": {
+      "required_credits": "45"
+    }
+  },
+  "raw_response_sha256": "20f5558fea34304815326de2133f0c9f73a93cef5f39b6621f99472f8682ddfd"
+}

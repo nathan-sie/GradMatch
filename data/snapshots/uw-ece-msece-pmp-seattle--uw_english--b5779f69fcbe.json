@@ -1,0 +1,42 @@
+{
+  "url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+  "retrieved_at": "2026-11-13T04:49:31.896734+00:00",
+  "source_excerpt": "4.0 (80 for tests taken before Jan 21, 2026) 115 6.5",
+  "fact_summary": "Minimums: legacy TOEFL 80, new TOEFL 4.0, IELTS 6.5. Recommended scores to satisfy ELP without conditions: legacy TOEFL 92, new TOEFL 4.5, IELTS 7. Lower scores may require AEP and extra fees. Scores must be valid within two years when applying. No conversion between test versions is performed.",
+  "locator": "Policy 3.2: 3.2.1 score table and 3.2.2 additional conditions",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": "92",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below 92 may require AEP courses and additional fees."
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": "4.5",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below 4.5 may require AEP courses and additional fees."
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": "7",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below 7 may require AEP courses and additional fees."
+        }
+      ],
+      "english_not_required": false
+    }
+  },
+  "raw_response_sha256": "bd17162cac7cd4ffb466c4be352a4d9e5234a09d25d5c711cd29fcd068885fe1"
+}

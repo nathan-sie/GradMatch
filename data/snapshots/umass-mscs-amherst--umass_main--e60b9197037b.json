@@ -1,0 +1,52 @@
+{
+  "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+  "retrieved_at": "2026-11-13T04:46:16.912126+00:00",
+  "source_excerpt": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+  "fact_summary": "On-campus Amherst MSCS: 30 credits. Fall early decision: 2026-12-15; regular decision: 2027-03-15. Complete schedules for all applicant categories have not been established here.",
+  "locator": "MS On Campus: degree requirements; Application information & deadlines",
+  "verified_values": {
+    "identity": {
+      "university": "University of Massachusetts Amherst",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "Amherst",
+      "track": "On-campus"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-15",
+          "label": "Fall early decision",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-03-15",
+          "label": "Fall regular decision",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": false
+    }
+  },
+  "raw_response_sha256": "3a972b677c6c3da1de335a94e767e9b902e9a68008f95cbd2a12692dfaa40983"
+}

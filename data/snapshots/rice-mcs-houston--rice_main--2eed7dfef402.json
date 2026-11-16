@@ -1,0 +1,64 @@
+{
+  "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+  "retrieved_at": "2026-11-13T04:46:16.224173+00:00",
+  "source_excerpt": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+  "fact_summary": "On-campus Houston MCS: 30 semester hours, non-thesis, typically three semesters. Fall 2027 is open. February 10 is the early scholarship deadline; July 1 is explicitly domestic. The preparation list includes a 3.0+ GPA, but an exception-free hard minimum has not been established here.",
+  "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines",
+  "verified_values": {
+    "identity": {
+      "university": "Rice University",
+      "program_name": "Master of Computer Science",
+      "degree": "MCS",
+      "campus": "Houston",
+      "track": "On-campus non-thesis"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": "3.0",
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-10",
+          "label": "Early scholarship consideration",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-07-01",
+          "label": "Domestic deadline",
+          "audience": "domestic"
+        }
+      ],
+      "deadline_schedule_complete": false
+    }
+  },
+  "raw_response_sha256": "02dfd4e8cbffce4af0f33c3124574320fe93b3134c6cbdba659b2880b38b7332"
+}

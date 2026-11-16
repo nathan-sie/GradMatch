@@ -1,0 +1,33 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+  "retrieved_at": "2026-11-13T04:46:15.725575+00:00",
+  "source_excerpt": "3.2/4.0 or higher.",
+  "fact_summary": "3.2/4.0 is the recommended undergraduate GPA. Prerequisite coursework or equivalent experience covers object-oriented programming, data structures, algorithms, linear algebra, and statistics/probability.",
+  "locator": "Who may apply?",
+  "verified_values": {
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": "3.2",
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "prerequisites": {
+      "required_topics": [
+        "object_oriented_programming",
+        "data_structures",
+        "algorithms",
+        "linear_algebra",
+        "probability_statistics"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    }
+  },
+  "raw_response_sha256": "731996c1c928c1bf44c40c3857357df38d1dcd28e5075b07c2b2cd42a6abebcb"
+}

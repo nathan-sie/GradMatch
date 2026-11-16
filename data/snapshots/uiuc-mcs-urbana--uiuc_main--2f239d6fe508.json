@@ -1,0 +1,29 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+  "retrieved_at": "2026-11-13T04:46:15.506805+00:00",
+  "source_excerpt": "Fall 2027 applications are open",
+  "fact_summary": "On-campus Urbana-Champaign MCS: 32 credits, no thesis. Fall 2027 applications are open. This record does not describe Chicago or Online MCS.",
+  "locator": "MCS Urbana-Champaign: Fall 2027; program description",
+  "verified_values": {
+    "identity": {
+      "university": "University of Illinois Urbana-Champaign",
+      "program_name": "Master of Computer Science",
+      "degree": "MCS",
+      "campus": "Urbana-Champaign",
+      "track": "On-campus coursework"
+    },
+    "credits": {
+      "required_credits": "32"
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    }
+  },
+  "raw_response_sha256": "0e3a989afdf0d069f9c01f15a7b929fded49ab17230184a185862958bd9dc0b7"
+}

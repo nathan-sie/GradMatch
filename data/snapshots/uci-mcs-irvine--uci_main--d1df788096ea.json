@@ -1,0 +1,17 @@
+{
+  "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+  "retrieved_at": "2026-11-13T04:46:16.285944+00:00",
+  "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+  "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+  "locator": "Master of Computer Science: program description",
+  "verified_values": {
+    "identity": {
+      "university": "University of California, Irvine",
+      "program_name": "Master of Computer Science",
+      "degree": "MCS",
+      "campus": "Irvine",
+      "track": "Professional capstone"
+    }
+  },
+  "raw_response_sha256": "6a7f718d53407ca4670cd3068551beb2c9f7bb56a49dab21b667f7e2dc826981"
+}

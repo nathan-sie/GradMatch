@@ -1,0 +1,17 @@
+{
+  "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+  "retrieved_at": "2026-11-13T04:46:16.001018+00:00",
+  "source_excerpt": "PM Engineering Tuition $30,720 $61,440",
+  "fact_summary": "For 2026–2027, full-time professional master's tuition is USD 30,720 per semester; approved part-time tuition is USD 2,560 per credit. Thirty credits and a typical three-semester duration do not establish a mandatory billing schedule. The online MCS rate of USD 1,700 per credit is a different modality.",
+  "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "unknown",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": null
+    }
+  },
+  "raw_response_sha256": "c3346fa1f291b86145ce1d917789a1e259b379ea8546affc12dbb7e7b7a52729"
+}

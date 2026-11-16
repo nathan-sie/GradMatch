@@ -1,0 +1,17 @@
+{
+  "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+  "retrieved_at": "2026-11-13T04:46:17.232972+00:00",
+  "source_excerpt": "Total Tuition & Mandatory Fees In-State: $29,435 Out-of-State/International: $60,750",
+  "fact_summary": "The page lists USD 60,750 in combined international/out-of-state tuition and mandatory fees. Tuition alone and the complete billing period are not established and are not entered as a full-program tuition amount.",
+  "locator": "Total Tuition & Mandatory Fees",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "unknown",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": null
+    }
+  },
+  "raw_response_sha256": "52d4c4988cea45e131b5e4879a9384ca2ff624488f884ae8ea6a835d6c9515b2"
+}

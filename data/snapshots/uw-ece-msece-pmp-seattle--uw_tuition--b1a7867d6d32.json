@@ -1,0 +1,17 @@
+{
+  "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+  "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+  "source_excerpt": "2026-2027 Tuition Rate $1,130 USD per credit",
+  "fact_summary": "The 2026–2027 rate is USD 1,130 per credit for residents and nonresidents. Rates may change; scholarships are not deducted and future rates are not guaranteed.",
+  "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_credit",
+      "tuition.unit_rate_lower": "1130",
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": "2026-2027"
+    }
+  },
+  "raw_response_sha256": "fa85439cc41ec804cb1460fb07107a1c6e7fcf26427573d9fa9247fb4c35f8c9"
+}

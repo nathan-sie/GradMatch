@@ -1,0 +1,47 @@
+{
+  "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+  "retrieved_at": "2026-11-13T04:49:31.685329+00:00",
+  "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+  "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+  "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "6",
+            "listening": "6",
+            "speaking": "6",
+            "writing": "6"
+          },
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null
+        }
+      ],
+      "english_not_required": false
+    }
+  },
+  "raw_response_sha256": "6c1ce9a17f45c242a045e11ce3259295b7d52000648eb8bf517e200cb5fba3bd"
+}

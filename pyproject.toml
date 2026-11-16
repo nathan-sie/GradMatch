@@ -1,0 +1,20 @@
+[project]
+name = "gradmatch"
+version = "0.0.1"
+description = "Evidence-grounded CS/ECE master's program selection course project"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "beautifulsoup4>=4.13,<5",
+    "openai>=2,<3",
+    "python-dotenv>=1,<2",
+    "pydantic>=2.12,<3",
+    "streamlit>=1.50,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+

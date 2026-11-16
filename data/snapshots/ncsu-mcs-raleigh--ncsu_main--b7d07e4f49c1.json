@@ -1,0 +1,20 @@
+{
+  "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+  "retrieved_at": "2026-11-13T04:49:31.128466+00:00",
+  "source_excerpt": "Total Hours 31",
+  "fact_summary": "The Graduate School's MR identifies the general non-thesis Master of Computer Science, requiring 31 credits. It is distinct from the thesis MS and online program.",
+  "locator": "Computer Science (MR): general degree requirements",
+  "verified_values": {
+    "identity": {
+      "university": "North Carolina State University",
+      "program_name": "Master of Computer Science",
+      "degree": "MCS",
+      "campus": "Raleigh",
+      "track": "General non-thesis / Graduate School code MR"
+    },
+    "credits": {
+      "required_credits": "31"
+    }
+  },
+  "raw_response_sha256": "8bb64c36ffc3994779556af5178ccbd487de713d7862e4fce131b4cf76716091"
+}

@@ -1,0 +1,53 @@
+{
+  "url": "https://mcs.ics.uci.edu/how-to-apply/",
+  "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+  "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+  "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+  "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-01-15",
+          "label": "International applicants",
+          "audience": "international"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-15",
+          "label": "Domestic applicants",
+          "audience": "domestic"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "prerequisites": {
+      "required_topics": [],
+      "recommended_topics": [
+        "programming",
+        "data_structures",
+        "algorithms",
+        "discrete_math",
+        "linear_algebra"
+      ],
+      "prerequisites_complete": false
+    }
+  },
+  "raw_response_sha256": "5ed790ab9b43e1f7a59b103c5ad480432cf8e363d38983267998cd539326866d"
+}

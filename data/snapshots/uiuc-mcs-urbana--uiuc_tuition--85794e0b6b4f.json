@@ -1,0 +1,17 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+  "retrieved_at": "2026-11-13T04:46:15.540044+00:00",
+  "source_excerpt": "the Master of Computer Science will become a self-supporting degree program",
+  "fact_summary": "The program becomes self-supporting in Fall 2027. Applicants are directed to the calculator for the matching MCS program and campus; this source does not directly establish a reproducible full-program tuition amount.",
+  "locator": "Tuition & Fees; Financial Assistance",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "unknown",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": null,
+      "tuition.rate_year": null
+    }
+  },
+  "raw_response_sha256": "d1a076f823820c0524c44b98c53038ff4ba8366b0436c708d1b18a3b519896d3"
+}
