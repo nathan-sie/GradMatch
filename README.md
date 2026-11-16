@@ -4,6 +4,8 @@ An evidence-grounded U.S. CS/ECE master's program matching course project.
 
 Current stage: **M3.5 recommendation pilot**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 official sources. M3's hosted model interaction, session isolation, reboot recovery and another-device access passed. The pilot adds explicit degree / GRE inputs and evidence-backed planning tiers. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
 
+M3.5 passed 107 checks, clean-host recovery and actual local/hosted model generation plus budget updates. User acceptance remains pending. See [the M3.5 checkpoint and acceptance steps](docs/verification/M35.md).
+
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
 ## Cloud deployment
@@ -79,6 +81,7 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 - [M1 verification and page acceptance](docs/verification/M1.md)
 - [M2 verification and page acceptance](docs/verification/M2.md)
 - [M3 deployment verification](docs/verification/M3.md)
+- [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
 M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. The page requires its per-session paid-call checkbox. M4 and later agents/formal evaluation have not started.
