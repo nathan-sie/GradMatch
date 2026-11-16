@@ -2,6 +2,7 @@
 
 import argparse
 from datetime import datetime, timezone
+from http.cookiejar import CookieJar
 import hashlib
 import json
 import os
@@ -12,7 +13,7 @@ import subprocess
 import sys
 import tempfile
 from urllib.parse import urlparse
-from urllib.request import urlopen
+from urllib.request import build_opener, HTTPCookieProcessor
 
 from gradmatch.config import load_settings
 from gradmatch.storage import PROJECT_ROOT
@@ -133,10 +134,16 @@ def main():
             if parsed.scheme != "https" or not (parsed.hostname or "").endswith(".streamlit.app") or parsed.username or parsed.password or parsed.query or parsed.fragment:
                 raise ValueError("A real public HTTPS Streamlit app URL is required.")
             url = args.public_url.rstrip("/")
-            with urlopen(url + "/_stcore/health", timeout=20) as response:
+            # Community Cloud's observed frontend embeds the app at /~/+/.
+            # Start with an empty guest cookie jar, never the owner's browser session.
+            visitor = build_opener(HTTPCookieProcessor(CookieJar()))
+            with visitor.open(url + "/", timeout=20) as response:
+                if response.status != 200:
+                    raise ValueError("The anonymous public landing page is unavailable.")
+            with visitor.open(url + "/~/+/_stcore/health", timeout=20) as response:
                 if response.status != 200 or response.read() != b"ok":
                     raise ValueError("The unauthenticated public health check did not return ok.")
-            report.update(public_url=url, cloud_status="health_passed_browser_acceptance_pending")
+            report.update(public_url=url, anonymous_health_path="/~/+/_stcore/health", cloud_status="health_passed_browser_acceptance_pending")
     except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as error:
         report["error"] = str(error)
         code = 1

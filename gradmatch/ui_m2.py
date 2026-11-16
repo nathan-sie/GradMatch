@@ -34,7 +34,6 @@ def render_m2(database):
     left, right = st.columns(2)
     if left.button("Load synthetic example", key="m2_load_example", disabled=session.active):
         session.update(synthetic_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
-        st.rerun()
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
         for key in list(st.session_state):

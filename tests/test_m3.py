@@ -93,6 +93,19 @@ def test_cloud_secrets_support_and_malformed_secrets_do_not_expose_values(tmp_pa
     assert "SYNTHETIC-PRIVATE-VALUE" not in str(error.value)
 
 
+def test_loading_example_preserves_explicit_model_opt_in_without_calling_api(tmp_path, monkeypatch):
+    monkeypatch.setenv("MODEL_ENABLED", "true")
+    monkeypatch.setenv("OPENAI_API_KEY", "SYNTHETIC-TEST-ONLY")
+    monkeypatch.setenv("GRADMATCH_DB_PATH", str(bootstrap_public_catalog(tmp_path)))
+    app = AppTest.from_file(str(PROJECT_ROOT / "app.py"), default_timeout=20).run()
+    app.checkbox(key="m2_allow_model").check().run()
+    assert app.checkbox(key="m2_allow_model").value
+    app.button(key="m2_load_example").click().run()
+    assert not app.exception and app.checkbox(key="m2_allow_model").value
+    assert app.session_state["m2_session"].profile.tuition_budget_usd == 70000
+    assert not app.session_state["m2_session"].usage
+
+
 def test_third_paid_request_is_refused_while_two_are_active(monkeypatch):
     entered = [Event(), Event()]
     release = Event()
