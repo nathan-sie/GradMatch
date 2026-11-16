@@ -21,7 +21,7 @@ Product language: English for the current application and every future user-faci
 | M0 工程基础 | 独立 Python 环境、最小网页、SQLite 只读访问、测试入口 | 页面能启动、HTTP 健康检查、禁止数据库写入、断网运行检查 | 无 API 密钥，无调用费用 | 已验收（用户确认可正常打开） |
 | M1 数据与规则 | 8–12 个真实项目、来源追溯、资格与费用计算 | 边界测试、来源抽查、预算变化后筛选结果正确 | 官网公开资料；不依赖收费模型 | 自动验收通过，待用户页面/来源抽查 |
 | M2 固定基线与会话 | 表单、追问、结构化背景更新、一次推荐生成、统一验证 | 真实模型推荐与 70,000 → 50,000 更新，其他背景保留 | 需要选定模型并配置密钥，有 API 用量 | User-accepted on 2026-11-15 |
-| M3 早期公开部署 | Streamlit 公共 URL、服务器端密钥与用户隔离 | 另一设备无痕访问，两用户独立，重启后基础库可恢复 | GitHub/Streamlit 账号，免费托管 | Offline preparation passed; cloud sign-in/deployment pending |
+| M3 早期公开部署 | Streamlit 公共 URL、服务器端密钥与用户隔离 | 另一设备无痕访问，两用户独立，重启后基础库可恢复 | GitHub/Streamlit 账号，免费托管 | Passed: public URL, hosted model, isolation, reboot and user another-device check |
 | M4 ReAct 与实时工具 | 自适应工具调用、官方 HTML/PDF、暂停恢复与预算限制 | 缺证据会补查、失败能停止、真实官网核验 | 模型/搜索服务；计量真实费用 | 待开始 |
 | M5 显式规划 Agent | Plan-and-replan、计划版本与重规划日志 | 同一任务在工具失败/条件变化后调整计划 | 沿用同一模型、证据和预算 | 待开始 |
 | M6 数据集与评测工具 | 40–60 个项目、210 主任务、50 安全提示、可复现 runner | 数据一致性、参考答案隔离、断点继续、少量真实试运行 | 小规模 API 试运行 | 待开始 |
@@ -204,3 +204,5 @@ ReAct 可通过同一应用服务运行并有可审查的工具日志；安全/�
 
 OpenAI integration passed on 2026-11-15 after local key configuration and two fixes exposed by real output: exclude failed candidates from ranking input and handle an empty informational patch despite a mistaken intent label. All evidence and hard-check gates remain enforced. Regression now passes 77 checks. Six API requests in total, including the preserved failed attempt, used 62,615 input and 1,125 output tokens at an estimated USD 0.05202375. The valid initial response was reused transparently while retrying the remaining acceptance steps; failed artifacts remain under `work/m2_live_attempts/attempt_01/`. The user accepted M2 and requested M3. M3 offline preparation passes 83 checks, and the runtime release is published to GitHub; cloud account sign-in and hosted acceptance are pending. `verify_m0`, `verify_m1`, `verify_m2`, and `run_task` are implemented. Later commands remain planned. Real catalog evidence still cannot support formal admission tiers; synthetic fixtures do not fill this data gap.
 
+
+M3 acceptance completed on 2026-11-15: https://gradmatch-nathan-sie.streamlit.app/ . All 84 regressions, anonymous access, hosted real-model generation/update/follow-up, two-connection isolation, actual reboot recovery and the user another-device check passed. Cloud usage: four requests, 43,501 input / 946 output tokens, estimated USD 0.03688275. M4 has not started. See `docs/verification/M3.md`.

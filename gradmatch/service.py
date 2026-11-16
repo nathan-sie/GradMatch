@@ -109,7 +109,7 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
                 result.update(status="error", message=model_error)
             elif model_status == "not_configured":
                 result["message"] = "Deterministic checks only. The model has not run; configure the local API key and enable model calls to generate a model-backed result."
-            result["changes_from_previous"] = changes_from_previous(session.previous_result or session.current_result, result)
+            result["changes_from_previous"] = changes_from_previous(session.current_result or session.previous_result, result)
             result["profile_summary"] = session.profile.model_dump(mode="json")
             if input_intent == "explain_previous" and not any(p.goal_features for p in retrieved):
                 result["followup_answer"] = ("Goal-fit evidence has not been verified for the remaining candidates, so no supported employment/research comparison can be made yet. "

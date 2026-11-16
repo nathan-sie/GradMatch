@@ -2,7 +2,7 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M2 user-accepted; M3 cloud deployment in progress**. The catalog contains 8 programs and 20 sources. M3 adds automatic public-catalog recovery, clean-host verification and deployment configuration. Regression passes 83 checks. The separate 83-record CS Grad tracker database remains an unverified candidate pool. A real public URL and hosted interaction acceptance are pending.
+Current stage: **M3 deployed and verified**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The catalog contains 8 programs and 20 sources. Regression passes 84 checks; hosted model interaction, budget updates, isolated connections, reboot recovery and another-device access passed. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
 
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
@@ -10,7 +10,7 @@ Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DE
 
 Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/GradMatch`, branch `main`, entrypoint `app.py`, Python **3.12** and server-side Streamlit Secrets. A clean host rebuilds public SQLite from the versioned seed/snapshots automatically and uses read-only connections. Profiles and chats remain private to each connection.
 
-`python -m scripts.verify_m3` checks release files, regression, cold start, restart and cache recovery without paid requests. See [the actual M3 checkpoint](docs/verification/M3.md); this does not claim a deployed public app.
+`python -m scripts.verify_m3` checks release files, regression, cold start, restart and cache recovery without paid requests. See [the actual M3 checkpoint](docs/verification/M3.md) for hosted results and usage. Add `--public-url https://gradmatch-nathan-sie.streamlit.app` for an anonymous Cloud health check.
 
 ## Run locally
 
@@ -81,4 +81,4 @@ Only UW ECE PMP, USC non-thesis MSCS, and Northeastern Boston standard MSCS have
 - [M3 deployment verification](docs/verification/M3.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
-M0 and M2 are user-accepted. M3 offline preparation passed on 2026-11-15; cloud account setup and hosted acceptance are pending. The page still requires its per-session paid-call checkbox. Agents and formal evaluation remain pending. Localhost does not satisfy the public deployment requirement.
+M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. The page requires its per-session paid-call checkbox. M4 and later agents/formal evaluation have not started.

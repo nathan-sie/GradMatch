@@ -134,6 +134,8 @@ def test_followup_uses_current_profile_and_previous_ids_without_extra_changes(in
     before = session.profile.model_copy(deep=True)
     result = run(session, provider=stub, request_id="explain", message="Which remaining candidates fit employment goals? Do not change my profile.")
     assert session.profile == before and result["model_calls"] == 2
+    assert result["changes_from_previous"]["removed"] == []
+    assert result["changes_from_previous"]["previous_profile_version"] == before.profile_version
     interpreted = stub.calls[-2][1]
     assert interpreted["profile"]["tuition_budget_usd"] == "50000" and interpreted["previous_programs"]
     assert all(p["program_id"] in result["retrieved_program_ids"] for p in interpreted["previous_programs"])
