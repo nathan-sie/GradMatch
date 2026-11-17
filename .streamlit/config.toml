@@ -3,6 +3,7 @@ gatherUsageStats = false
 
 [server]
 headless = true
+fileWatcherType = "poll"
 
 [client]
 showErrorDetails = "none"
