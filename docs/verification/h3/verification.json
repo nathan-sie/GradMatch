@@ -1,0 +1,22 @@
+{
+  "checkpoint": "H3",
+  "verified_at": "2026-11-17T19:10:11.660910+00:00",
+  "h3_tests": 43,
+  "regression_tests": 197,
+  "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "candidate_code_hash": "8d3cb91b32f0052c1cb205bc6b8f562c2077c6cb4382465b7ba61d655894cc21",
+  "h2_candidate_code": "unchanged",
+  "sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "actual_judge_requests": 8,
+  "new_candidate_requests": 0,
+  "human_binary_labels": 5,
+  "human_skipped": 1,
+  "semantic_agreement_count": 5,
+  "reference_isolation": "candidate modules unchanged; judge packages omit strategy and candidate usage",
+  "environment": {
+    "python": "3.12.14",
+    "openai": "2.54.0",
+    "pydantic": "2.14.3"
+  },
+  "formal_evaluation": "not_run"
+}

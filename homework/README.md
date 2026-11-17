@@ -1,8 +1,8 @@
-# Homework evaluation: H1 data and H2 candidate runner
+# Homework evaluation: H1 data, H2 candidates and H3 graders
 
-Checkpoint date: 2026-11-16 (America/Los_Angeles). Branch: `homework/eval-harness-50`.
+H1 data freeze: 2026-11-16. Latest checkpoint: H3, 2026-11-17 (America/Los_Angeles). Branch: `homework/eval-harness-50`.
 
-H1 provides the frozen evaluation data and validation rules. H2 now provides the minimal snapshot Agent, fixed RAG baseline adapter and observable development CLI; see [H2 runner](H2_RUNNER.md) and [actual verification](../docs/verification/H2.md). Independent graders and the full evaluation runner remain H3-H4 work. There are no formal model benchmark results. Main and the deployed app retain their existing project checkpoint.
+H1 provides the frozen evaluation data and validation rules. H2 provides the minimal snapshot Agent, fixed RAG baseline adapter and observable development CLI; see [H2 runner](H2_RUNNER.md) and [actual verification](../docs/verification/H2.md). H3 adds independent [graders and calibration](H3_GRADING.md), with [actual verification](../docs/verification/H3.md). The full evaluation runner remains H4 work. There are no formal model benchmark results. Main and the deployed app retain their existing project checkpoint.
 
 ## Validate without model calls
 
@@ -63,4 +63,4 @@ The assessment date is 2026-11-16; data mode is snapshot. Candidate model: `gpt-
 
 One baseline repeat and three total Agent repeats schedule 200 candidate task executions. Candidate turns count all candidate model calls; latency includes candidate tools/waits but excludes grading; tokens sum input and output without double-counting cached input. The p95 convention is nearest-rank. The designated first Agent repeat supplies the side-by-side accuracy/efficiency row; all three repeats supply pass@3, pass^3 and flip IDs. Missing token usage stays unknown; failures/timeouts stay in task denominators. See the exact formulas in `experiment.json` and the six-part plan.
 
-H2 is complete; H3-H6 remain future checkpoints. An H1 validation pass or H2 smoke check is not an Agent success rate, a 50-task model evaluation, or completion of the full M4 live-tool milestone.
+H1-H3 are complete; H4-H6 remain future checkpoints. An offline validation, development smoke or tiny calibration sample is not an Agent success rate, a 50-task model evaluation, or completion of the full M4 live-tool milestone.

@@ -1,0 +1,50 @@
+{
+  "checkpoint": "H3",
+  "verified_at": "2026-11-17T19:03:24.523026+00:00",
+  "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "calibration_cases": 6,
+  "human_review": "Five binary user labels, one user-skipped incomplete answer; presented in Chinese with the same facts and meaning as the English fixtures.",
+  "semantic_judge_vs_human": {
+    "labelled": 5,
+    "evaluated": 5,
+    "agreement_count": 5,
+    "agreement_rate": 1.0,
+    "excluded_skipped_labels": 1,
+    "error_or_ungraded_count": 0
+  },
+  "combined_pipeline_vs_human": {
+    "labelled": 5,
+    "evaluated": 5,
+    "agreement_count": 5,
+    "agreement_rate": 1.0,
+    "excluded_skipped_labels": 1,
+    "error_or_ungraded_count": 0
+  },
+  "authored_fixture_agreement": {
+    "matched": 6,
+    "total": 6,
+    "not_human_agreement": true
+  },
+  "actual_judge_requests": 8,
+  "new_candidate_requests": 0,
+  "judge_model": "gpt-5.4-mini-2026-03-17",
+  "same_model_family_limitation": "Judge and candidate use the same model family; correlated errors remain possible.",
+  "judge_input_tokens": 37644,
+  "judge_output_tokens": 3018,
+  "usage_complete": true,
+  "estimated_judge_cost_usd": "0.04181400",
+  "cost_is_partial": false,
+  "existing_development_grades": [
+    {
+      "task_id": "d08",
+      "status": "passed",
+      "passed": true
+    },
+    {
+      "task_id": "d07",
+      "status": "passed",
+      "passed": true
+    }
+  ],
+  "formal_evaluation": "not_run"
+}

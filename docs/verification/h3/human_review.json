@@ -1,0 +1,17 @@
+{
+  "reviewer": "project user",
+  "presentation_language": "Chinese",
+  "english_wording_separately_reviewed": false,
+  "labels": {
+    "A": "pass",
+    "B": "fail",
+    "C": "pass",
+    "D": "skip",
+    "E": "pass",
+    "F": "fail"
+  },
+  "D_note": "User described it as incomplete and explicitly chose to skip; excluded from agreement.",
+  "binary_labels": 5,
+  "skipped": 1,
+  "not_a_50_answer_review": true
+}
