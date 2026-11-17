@@ -66,7 +66,11 @@ def render_m2(database):
         st.session_state["m2_form_version"] = session.profile.profile_version
     st.caption(f"Current profile version: {session.profile.profile_version} · Tuition budget: "
         + (f"USD {session.profile.tuition_budget_usd:,.2f}" if session.profile.tuition_budget_usd is not None else "Unknown"))
-    with st.expander("Applicant information", expanded=session.profile.tuition_budget_usd is None):
+    gpa_summary = (f"{session.profile.gpa.value} / {session.profile.gpa.scale} ({session.profile.gpa.scope.replace('_', ' ')})"
+        if session.profile.gpa else "Unknown")
+    st.caption(f"GPA: {gpa_summary} · Major: {session.profile.major or 'Unknown'}")
+    st.caption("Review or edit your GPA, degree, tests, coursework and experience below, then select Save profile and generate.")
+    with st.expander("Applicant information", expanded=True):
         form = profile_form(session.profile)
     def run(**kwargs):
         with st.spinner("Checking the current profile and evidence..."):
