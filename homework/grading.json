@@ -1,5 +1,6 @@
 {
-  "schema_version": "h3-v1",
+  "schema_version": "h3-v3",
+  "evidence_quote_policy": "Judge selects a candidate-only evidence span ID from a strict schema enum. The evaluator copies the exact answer/profile substring; the judge cannot write a quote. Criterion keys are strict required schema properties.",
   "judge_model": "gpt-5.4-mini-2026-03-17",
   "model_family_limitation": "Judge and candidate use the same model family; correlated errors remain possible.",
   "judge_timeout_seconds": 45,

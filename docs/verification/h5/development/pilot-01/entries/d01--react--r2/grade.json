@@ -1,0 +1,69 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "57fb4781-213d-44ec-87e7-9cfebd8c8719",
+  "run_id": "d01--react--r2",
+  "plan_hash": "011e93f2db9084eb08803023cc37fb7715ccf4e05228ac48ae19a9cc908c0ae2",
+  "kind": "grade",
+  "saved_at": "2026-11-17T23:25:50.033228+00:00",
+  "payload_sha256": "5ff2661ea28b8a14d226e6b81694a11596f80c6071f3406e5d969a79ee93a81a",
+  "payload": {
+    "schema_version": "h3-v1",
+    "grade_id": "4516aa88-6fcb-4d98-a491-a219d89858dc",
+    "task_id": "d01",
+    "candidate_trace_id": "6d8c7a61-7bf6-4154-ad31-d8c6d34cd0d6",
+    "candidate_record_sha256": "371f7197d9954fbbf69c079c04ac5b843ac4dd690f9d9e0539a4b2a61ed07f9a",
+    "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+    "status": "failed",
+    "passed": false,
+    "code_checks": [
+      {
+        "criterion_id": "execution_completed",
+        "passed": true,
+        "reason": "Candidate execution completed."
+      },
+      {
+        "criterion_id": "initial_profile",
+        "passed": true,
+        "reason": "Initial profile must equal the declared task profile."
+      },
+      {
+        "criterion_id": "citation_integrity",
+        "passed": true,
+        "reason": "Citation IDs and metadata must be real, unique and actually observed."
+      },
+      {
+        "criterion_id": "answer_urls",
+        "passed": true,
+        "reason": "Answer URLs must name observed program/source URLs."
+      },
+      {
+        "criterion_id": "profile_state",
+        "passed": true,
+        "reason": "Apply only expected explicit root-field changes, preserve other fields and advance the version only for an actual change."
+      },
+      {
+        "criterion_id": "formal_recommendation_scope",
+        "passed": true,
+        "reason": "Formal recommendations must be observed and not expressly forbidden by the task reference."
+      },
+      {
+        "criterion_id": "exact_value",
+        "passed": false,
+        "reason": "Expected whole quantity/date/text must occur in the answer."
+      },
+      {
+        "criterion_id": "exact_unit",
+        "passed": true,
+        "reason": "The quantity must have the requested type of unit."
+      },
+      {
+        "criterion_id": "exact_cited_basis",
+        "passed": false,
+        "reason": "An exact factual answer needs an observed citation to its reference basis; semantic judging checks actual support."
+      }
+    ],
+    "criteria": [],
+    "judge_record": null,
+    "error": null
+  }
+}

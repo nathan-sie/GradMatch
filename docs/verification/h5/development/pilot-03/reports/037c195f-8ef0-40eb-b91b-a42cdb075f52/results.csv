@@ -1,0 +1,3 @@
+label,scheduled,passed,failed,unresolved,grading_errors,interrupted_unknown,accuracy,accuracy_final,pass_fraction_of_scheduled,provisional_fraction,avg_turns,avg_latency_ms,p95_latency_ms,avg_tokens,tokens_known_count,tokens_unknown_count
+Fixed baseline,8,6,2,0,0,0,0.75,True,0.75,False,1.25,2939.375,5813.0,7436.25,8,0
+Agent repeat 1,8,8,0,0,0,0,1.0,True,1.0,False,2.375,3810.375,5922.0,8191.5,8,0

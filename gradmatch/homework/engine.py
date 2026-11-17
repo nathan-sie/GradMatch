@@ -102,6 +102,13 @@ class CandidateRun:
                 'user_message':message,'allowed_program_ids':self.candidate.program_ids},[],parent)
         span = self.trace.start('profile','apply_explicit_patch',parent,patch.model_dump(mode='json'),'shared_interpreter')
         before = self.session.profile.model_dump(mode='json')
+        normalized_spans=[]
+        patch=patch.model_copy(deep=True)
+        for operation in patch.operations:
+            quoted=operation.explicit_span
+            if quoted not in message and len(quoted)>2 and (quoted[0],quoted[-1]) in {('"','"'),("'","'"),('\u201c','\u201d'),('\u2018','\u2019')} and quoted[1:-1] in message:
+                operation.explicit_span=quoted[1:-1]
+                normalized_spans.append({'field':operation.field,'original':quoted,'literal_substring':operation.explicit_span})
         try:
             if not patch.operations or patch.ambiguous_fields:raise ValueError('Ambiguous patch')
             changed = apply_patch(self.session,patch,message)
@@ -112,7 +119,8 @@ class CandidateRun:
             self.cache.clear()
             self.checked_versions.clear()
         self.trace.finish(span,outputs={'changed_roots':changed,'before':before,
-            'after':self.session.profile.model_dump(mode='json'),'checks_invalidated':bool(changed)})
+            'after':self.session.profile.model_dump(mode='json'),'checks_invalidated':bool(changed),
+            'presentation_normalizations':normalized_spans})
         return None
 
     def payload(self, message):

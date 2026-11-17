@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "d01",
+    "outcomes": [
+      true,
+      false,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d02",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d03",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d04",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d05",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d06",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d07",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  },
+  {
+    "task_id": "d08",
+    "outcomes": [
+      null,
+      null,
+      null
+    ],
+    "complete": false
+  }
+]

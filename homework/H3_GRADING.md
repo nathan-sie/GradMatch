@@ -2,6 +2,8 @@
 
 The evaluator grades a saved H2 result without rerunning the candidate. Answer keys, criteria and human labels never enter candidate inputs. Full scheduling and aggregate metrics remain H4 work.
 
+Current revision: H5 uses grader v3. The original H3 checkpoint and its actual decisions remain historical records in `docs/verification/H3.md`. v3 keeps the semantic criteria but replaces model-written evidence quotes with selections from exact candidate-only spans; v1/v2 development failures are retained separately.
+
 ## One-result CLI
 
 From the repository root:
@@ -37,7 +39,7 @@ Final state must contain only the reference's explicit changes, preserve other f
 
 The judge receives question/setup, criteria, reference facts, relevant frozen evidence, final answer, observed source IDs, reported checks and before/after profile. Strategy, candidate model/run IDs, usage, latency and calibration labels are omitted. The answer and source text are untrusted data.
 
-Each criterion returns a strict boolean, concise reason and exact quote from the answer or canonical final profile. A missing requirement uses `missing`, an empty quote and a failing verdict. Missing/duplicate criterion IDs, invented quotes and invalid booleans are rejected. Brief assessment evidence is recorded, never private model reasoning.
+The model returns a strict object with every criterion as a required key. Each value has a strict boolean, concise reason and an `evidence_id` selected from an enum of exact candidate answer/profile spans. The evaluator copies the chosen source substring into the final grade; the model does not write quotes. A missing requirement may use a null ID only with a failing verdict. Criterion keys, span IDs, offsets and booleans are checked. The final record preserves the raw verdict, span ID and exact quote. Brief assessment evidence is recorded, never private model reasoning. Legacy quote validation remains available for diagnostic replay of old records and offline fixtures.
 
 Grading uses a separate provider/trace/usage record: `store=False`, no tools or prior response state, at most one request per grade, a 45-second timeout, 2,400 output tokens and no automatic retries. Failed/incomplete/invalid responses retain measured usage and raw output when available; SDK exception messages and API keys are not logged.
 

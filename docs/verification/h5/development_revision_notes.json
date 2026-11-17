@@ -1,0 +1,8 @@
+{
+  "purpose": "development revisions, excluded from formal metrics",
+  "pilot_01": "Stopped after four completed executions after a source-ID choice failure and invalid free-text judge quote; 28 scheduled development entries intentionally remain unexecuted.",
+  "pilot_02": "All 32 executions retained; free-text quote validation errors motivated v3 candidate-only span selection. Other semantic/state failures remain recorded.",
+  "pilot_03": "Final 32-execution development pilot, 30 passed/2 failed, no judge errors. Only this revision supplies the formal cost forecast.",
+  "calibration": "Original five binary user labels reused; D remains excluded. Semantic decisions on an old saved H2 answer vary across judge revisions; all records retained.",
+  "formal_evaluation": "not_run_yet"
+}

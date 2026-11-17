@@ -5,10 +5,10 @@ from uuid import uuid4
 from openai import OpenAI, OpenAIError, AuthenticationError, RateLimitError, APITimeoutError, APIConnectionError
 from pydantic import ValidationError
 from gradmatch.config import estimate_cost
-from gradmatch.homework.grade_models import JudgeVerdict
+from gradmatch.homework.grade_models import SpanJudgeVerdict, span_verdict_schema
 from gradmatch.homework.grading_prompt import JUDGE_INSTRUCTIONS
 from gradmatch.homework.trace import Trace
-from gradmatch.providers import strict_schema, _PAID_SLOTS
+from gradmatch.providers import _PAID_SLOTS
 
 
 class JudgeFailure(RuntimeError):
@@ -46,7 +46,7 @@ class JudgeProvider:
                 input=[{'role':'developer','content':JUDGE_INSTRUCTIONS},
                     {'role':'user','content':json.dumps(package,ensure_ascii=False)}],
                 store=False,timeout=timeout,max_output_tokens=self.context.config['max_output_tokens'],
-                text={'format':{'type':'json_schema','name':'JudgeVerdict','strict':True,'schema':strict_schema(JudgeVerdict)}})
+                text={'format':{'type':'json_schema','name':'SpanJudgeVerdict','strict':True,'schema':span_verdict_schema(package)}})
             usage.update(model=response.model,response_id=response.id)
             if response.usage is not None:
                 u=response.usage
@@ -58,7 +58,7 @@ class JudgeProvider:
                     cost_status='estimated_from_published_prices' if cost is not None else 'unknown')
             record['raw_output_text']=response.output_text
             if response.status!='completed' or not response.output_text:raise JudgeFailure('judge_incomplete_response',record)
-            verdict=JudgeVerdict.model_validate_json(response.output_text)
+            verdict=SpanJudgeVerdict.model_validate_json(response.output_text)
             usage['status']='completed'
             trace.finish(span,outputs=verdict.model_dump(mode='json'))
         except JudgeFailure as error:

@@ -14,3 +14,6 @@ FIXED = POLICY + """You are the non-agentic classic RAG baseline. Retrieval and 
 """
 
 INTERPRET = INSTRUCTIONS['interpret']
+INTERPRET += " explicit_span is the exact substring inside the user message, without adding quotation marks around it. Values remain JSON-encoded in value_json."
+
+REACT += " Program IDs and source IDs are different identifiers. To inspect one scoped program, get_program exposes its complete facts and valid source IDs. Use get_evidence only with a source ID actually supplied by the user or observed in tool output; do not guess opaque IDs or use placeholders. If a source lookup fails, use the available program lookup or catalog search to resolve it. Do not ask the user for internal source IDs when the catalog tools can supply them. Follow an explicit user search/lookup request; ask clarification only for genuinely missing user intent or applicant information."

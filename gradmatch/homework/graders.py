@@ -10,7 +10,7 @@ import re
 import unicodedata
 from uuid import uuid4
 from gradmatch.homework.contracts import TOOL_ARGUMENTS
-from gradmatch.homework.grade_models import CodeCheck, criteria_for
+from gradmatch.homework.grade_models import CodeCheck, SpanJudgeVerdict, criteria_for
 from gradmatch.homework.runtime import load_runtime
 from gradmatch.schemas import ApplicantProfile
 from gradmatch.storage import PROJECT_ROOT
@@ -203,22 +203,80 @@ def build_judge_package(task,reference,view,context):
             'source_assertions':[c.model_dump(mode='json') for c in reference.source_assertions]},
         'criteria':criteria_for(task),'candidate':deepcopy(view),
         'frozen_programs':[p.model_dump(mode='json') for p in context.runtime.programs if p.program_id in program_ids],
-        'frozen_sources':sources,'conservative_tier_rubric':context.runtime.rubric}
+        'frozen_sources':sources,'conservative_tier_rubric':context.runtime.rubric,
+        'evidence_spans':evidence_spans(view)}
+
+
+def evidence_spans(view):
+    """Stable exact substrings of candidate output/state; references never become quote options."""
+    spans=[]
+    text=view['answer']
+    for line in re.finditer(r'[^\n]+',text):
+        for sentence in re.finditer(r'.+?(?:[.!?](?=\s|$)|$)',line.group()):
+            start=line.start()+sentence.start();end=line.start()+sentence.end()
+            while start<end:
+                cut=min(start+450,end)
+                if cut<end:
+                    boundary=text.rfind(' ',start,cut)
+                    if boundary>start:cut=boundary
+                if text[start:cut].strip():
+                    spans.append({'evidence_id':f'a_{len(spans)+1:03d}','kind':'answer','text':text[start:cut],
+                        'start':start,'end':cut})
+                start=cut
+    profile=view['profile_after_text']
+    for key,value in view['profile_after'].items():
+        fragment=stable_json(key)+':'+stable_json(value)
+        start=profile.find(fragment)
+        if start<0:raise ValueError('Canonical profile span could not be located.')
+        spans.append({'evidence_id':'p_'+key,'kind':'profile_after','text':fragment,
+            'start':start,'end':start+len(fragment)})
+    return spans
+
+
+def rendered_evidence(text):
+    """Ignore paired presentation markup and whitespace; retain wording, numbers and IDs."""
+    for pattern in [r'(?<!\w)(\*\*|__)(.+?)\1(?!\w)',r'(?<!\w)(\*)([^*\n]+?)\1(?!\w)',r'(?<!\w)(`)([^`\n]+?)\1(?!\w)']:
+        text=re.sub(pattern,lambda match:match.group(2),text,flags=re.S)
+    return ' '.join(text.split())
 
 
 def validate_verdict(verdict,package):
     expected=[c['criterion_id'] for c in package['criteria']]
+    if isinstance(verdict,SpanJudgeVerdict):
+        if set(verdict.criteria)!=set(expected):raise ValueError('Judge criterion keys do not match.')
+        options={item['evidence_id']:item for item in package['evidence_spans']}
+        result=[]
+        for key in expected:
+            item=verdict.criteria[key]
+            if item.evidence_id is None:
+                if item.passed:raise ValueError('A passing criterion requires a real candidate evidence span.')
+                kind,quote,mode='missing','','missing'
+            else:
+                if item.evidence_id not in options:raise ValueError('Judge evidence ID is not in the candidate span index.')
+                option=options[item.evidence_id];kind,quote,mode=option['kind'],option['text'],'selected_span'
+                original=package['candidate']['answer'] if kind=='answer' else package['candidate']['profile_after_text']
+                if original[option['start']:option['end']]!=quote:raise ValueError('Evidence span does not match candidate bytes.')
+            result.append({'criterion_id':key,'passed':item.passed,'evidence_id':item.evidence_id,
+                'evidence_kind':kind,'evidence_quote':quote,'quote_match':mode,'reason':item.reason})
+        return result
     ids=[c.criterion_id for c in verdict.criteria]
     if len(ids)!=len(set(ids)) or set(ids)!=set(expected):raise ValueError('Judge criterion IDs do not match.')
+    modes={}
     for c in verdict.criteria:
         quote=c.evidence_quote
         if c.evidence_kind=='missing':
             if c.passed or quote:raise ValueError('A missing item cannot pass or contain a fabricated quote.')
+            modes[c.criterion_id]='missing'
         else:
             haystack=package['candidate']['answer'] if c.evidence_kind=='answer' else package['candidate']['profile_after_text']
-            if not quote or quote not in haystack:raise ValueError('Judge evidence is not a verbatim candidate quote.')
+            if not quote or not any(char.isalnum() for char in rendered_evidence(quote)):
+                raise ValueError('Judge evidence quote has no substantive text.')
+            if quote in haystack:modes[c.criterion_id]='verbatim'
+            elif c.evidence_kind=='answer' and rendered_evidence(quote) in rendered_evidence(haystack):
+                modes[c.criterion_id]='rendered_markdown'
+            else:raise ValueError('Judge evidence is not an exact candidate quote after permitted presentation normalization.')
     by_id={c.criterion_id:c for c in verdict.criteria}
-    return [by_id[key].model_dump(mode='json') for key in expected]
+    return [by_id[key].model_dump(mode='json') | {'quote_match':modes[key]} for key in expected]
 
 
 def grade(task,reference,result,context,*,judge=None):

@@ -16,6 +16,27 @@ class JudgeVerdict(Record):
     criteria: list[CriterionVerdict]
 
 
+class SpanVerdict(Record):
+    passed: StrictBool
+    evidence_id: str | None
+    reason: str = Field(min_length=1,max_length=1200)
+
+
+class SpanJudgeVerdict(Record):
+    criteria: dict[str,SpanVerdict]
+
+
+def span_verdict_schema(package):
+    """Strict dynamic keys and evidence enum prevent missing criteria or invented span IDs."""
+    ids=[item['evidence_id'] for item in package['evidence_spans']]
+    item={'type':'object','additionalProperties':False,'required':['passed','evidence_id','reason'],
+        'properties':{'passed':{'type':'boolean'},'evidence_id':{'anyOf':[{'type':'string','enum':ids},{'type':'null'}]},
+            'reason':{'type':'string'}}}
+    criteria={c['criterion_id']:{'$ref':'#/$defs/EvidenceAssessment'} for c in package['criteria']}
+    return {'type':'object','additionalProperties':False,'required':['criteria'],'$defs':{'EvidenceAssessment':item},'properties':{
+        'criteria':{'type':'object','additionalProperties':False,'required':list(criteria),'properties':criteria}}}
+
+
 class CodeCheck(Record):
     criterion_id: str
     passed: StrictBool

@@ -1,12 +1,12 @@
 {
-  "schema_version": "h3-v1",
-  "status": "H3 checkpoint grader frozen after bounded development calibration; not a full H5 experiment freeze",
-  "frozen_at": "2026-11-17T19:10:11.641069+00:00",
-  "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "schema_version": "h3-v3",
+  "status": "H5 grader v3 frozen after actual evidence-span recalibration; semantic thresholds unchanged",
+  "frozen_at": "2026-11-17T23:42:13.307136+00:00",
+  "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
   "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
-  "grading_config_sha256": "a0bbf10d80cf484ebb4a3585ad5aadfcab17f5fc19849b18087448caa2687769",
+  "grading_config_sha256": "54faa3b717af026d2f66978b418b1b82dbd6d540b6a4bfec5272e7aa00298d2a",
   "calibration_cases_sha256": "b92cc6c78975ccb7ae9e2b2db2ddb19043a2020a44bbf68bf397d7d118bf43ec",
-  "calibration_summary_sha256": "1e8c5c4286c2164a9022ab07af15525fb78fb4aa72c8577e0832ccf3994622f5",
+  "calibration_summary_sha256": "7c5d12f344e66eaf91125e27c3417247a5d3041da6544fa6f8e55b6e86736e87",
   "human_binary_labels": 5,
   "human_skipped": 1,
   "judge_model": "gpt-5.4-mini-2026-03-17",
@@ -18,5 +18,9 @@
     "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
     "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
   },
-  "formal_evaluation": "not_run"
+  "formal_evaluation": "not_run",
+  "previous_grader_hash": "08038babbd5ee9faaa369db018f04a6563aada34ecee9a3579ca98c784dc1cdf",
+  "change_reason": "Strict criterion object and candidate-only span ID enum; exact quotes copied by code, semantic pass criteria unchanged.",
+  "calibration_record_path": "docs/verification/h5/grader_v3_calibration/summary.json",
+  "calibration_note": "Five original binary user labels agreed; skipped D excluded. v1/v2/v3 judgments are separately retained; no claim of broad reliability."
 }

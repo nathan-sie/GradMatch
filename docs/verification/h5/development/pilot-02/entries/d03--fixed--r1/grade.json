@@ -1,0 +1,59 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "67946777-f681-4846-8e70-a171542b6695",
+  "run_id": "d03--fixed--r1",
+  "plan_hash": "b781c4ced48c96a39c29ad8307acaa0c3dcdfe7a7eaa25a4419bef424d644e21",
+  "kind": "grade",
+  "saved_at": "2026-11-17T23:34:29.150428+00:00",
+  "payload_sha256": "ec4f01272a14025e15eb9451dc775781cf0c77dea6152c4aaaf90cb00a07bf7d",
+  "payload": {
+    "schema_version": "h3-v1",
+    "grade_id": "6a9ad22c-4f9a-437f-adcb-52bad3ee018c",
+    "task_id": "d03",
+    "candidate_trace_id": "8f210b89-c250-4632-9bb9-6a307e732839",
+    "candidate_record_sha256": "56daf7012abb314aa8a0faf6765da5f03906f62f8e99cb79bbd11306724387c3",
+    "grader_hash": "08038babbd5ee9faaa369db018f04a6563aada34ecee9a3579ca98c784dc1cdf",
+    "status": "failed",
+    "passed": false,
+    "code_checks": [
+      {
+        "criterion_id": "execution_completed",
+        "passed": true,
+        "reason": "Candidate execution completed."
+      },
+      {
+        "criterion_id": "initial_profile",
+        "passed": true,
+        "reason": "Initial profile must equal the declared task profile."
+      },
+      {
+        "criterion_id": "citation_integrity",
+        "passed": true,
+        "reason": "Citation IDs and metadata must be real, unique and actually observed."
+      },
+      {
+        "criterion_id": "answer_urls",
+        "passed": true,
+        "reason": "Answer URLs must name observed program/source URLs."
+      },
+      {
+        "criterion_id": "profile_state",
+        "passed": true,
+        "reason": "Apply only expected explicit root-field changes, preserve other fields and advance the version only for an actual change."
+      },
+      {
+        "criterion_id": "formal_recommendation_scope",
+        "passed": true,
+        "reason": "Formal recommendations must be observed and not expressly forbidden by the task reference."
+      },
+      {
+        "criterion_id": "first_tool_call",
+        "passed": false,
+        "reason": "Compare the first actual tool span, never a later call or tool name mentioned in answer prose."
+      }
+    ],
+    "criteria": [],
+    "judge_record": null,
+    "error": null
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "h3-v2",
+  "evidence_quote_policy": "Exact wording after paired Markdown presentation/whitespace normalization for answer quotes; strict literal profile quotes; raw verdict and match mode retained.",
+  "judge_model": "gpt-5.4-mini-2026-03-17",
+  "model_family_limitation": "Judge and candidate use the same model family; correlated errors remain possible.",
+  "judge_timeout_seconds": 45,
+  "max_output_tokens": 2400,
+  "automatic_retries": 0,
+  "max_judge_calls_per_grade": 1,
+  "exact_policy": "Whole numeric/date/text match plus unit and citation guards; semantic judge must also pass.",
+  "tool_policy": "First actual tool span, exact name and schema-valid arguments; no later-call substitution.",
+  "open_answer_policy": "All standard and task-specific criteria must pass; no weighted average.",
+  "judge_error_policy": "Keep an explicit ungraded/error status; never silently pass or drop it.",
+  "human_calibration_policy": "Report observed labels only, exclude skipped labels, do not claim a 50-answer review."
+}

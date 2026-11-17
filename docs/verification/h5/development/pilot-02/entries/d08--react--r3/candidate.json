@@ -1,0 +1,1176 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "67946777-f681-4846-8e70-a171542b6695",
+  "run_id": "d08--react--r3",
+  "plan_hash": "b781c4ced48c96a39c29ad8307acaa0c3dcdfe7a7eaa25a4419bef424d644e21",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:36:12.503662+00:00",
+  "payload_sha256": "2527099ee81dae788f0c03501dc097b3ce235e268e9b6763d2585a86e162a578",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "d08",
+    "strategy": "react",
+    "trace_id": "9a72b983-480c-41b7-b5bc-0397e8d9b7fa",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+      "citations": [
+        {
+          "source_id": "neu-mscs-boston--neu_program--e841b232af72",
+          "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+          "retrieved_at": "2026-11-13T04:49:32.612926+00:00",
+          "applicable_intake": null,
+          "quote": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+          "locator": "Cost of attendance: Tuition and financial aid"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "60000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "60000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability.",
+        "assistant": {
+          "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+          "citations": [
+            {
+              "source_id": "neu-mscs-boston--neu_program--e841b232af72",
+              "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+              "retrieved_at": "2026-11-13T04:49:32.612926+00:00",
+              "applicable_intake": null,
+              "quote": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+              "locator": "Cost of attendance: Tuition and financial aid"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 3,
+    "tool_calls": 2,
+    "actual_requests": 3,
+    "latency_ms": 3921.0,
+    "usage": [
+      {
+        "call_id": "df5a0e9a-d55b-448c-8543-a984254b756e",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2510,
+        "output_tokens": 33,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.002031",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0b906ad3eef43375016afce4e9aa4c87d0ac46020aa5ff9040"
+      },
+      {
+        "call_id": "c9ceaa19-64c8-4bf8-b671-7f8514546115",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2618,
+        "output_tokens": 23,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0005118",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0c0193c8a588cd27016afce4eaa79887d088e7a8145157a964"
+      },
+      {
+        "call_id": "1c4b98d6-a755-411b-8b45-34387bc8274b",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 3721,
+        "output_tokens": 112,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00173955",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_08a2ac8fbe837a83016afce4ebefc487d0a2091a7cc8d8209d"
+      }
+    ],
+    "estimated_cost_usd": "0.00428235",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "bbcbdab082fa3b34c7b91e55f71305e0b5f531a000534969bc387735fe90a525",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "9a72b983-480c-41b7-b5bc-0397e8d9b7fa",
+      "spans": [
+        {
+          "span_id": "ad4de549-18a4-4260-b0c5-687ba3b45411",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:36:08.579430+00:00",
+          "finished_at": "2026-11-17T23:36:12.502660+00:00",
+          "duration_ms": 3921.0,
+          "inputs": {
+            "task_id": "d08",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "d08",
+              "question": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "60000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "neu-mscs-boston"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+              "citations": [
+                {
+                  "source_id": "neu-mscs-boston--neu_program--e841b232af72",
+                  "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+                  "retrieved_at": "2026-11-13T04:49:32.612926+00:00",
+                  "applicable_intake": null,
+                  "quote": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+                  "locator": "Cost of attendance: Tuition and financial aid"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "c08e59f3-cb53-4544-9810-950dbfecde01",
+          "parent_id": "ad4de549-18a4-4260-b0c5-687ba3b45411",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:36:08.579430+00:00",
+          "finished_at": "2026-11-17T23:36:12.502660+00:00",
+          "duration_ms": 3921.0,
+          "inputs": {
+            "message": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability."
+          },
+          "outputs": {
+            "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+            "citations": [
+              {
+                "source_id": "neu-mscs-boston--neu_program--e841b232af72",
+                "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+                "retrieved_at": "2026-11-13T04:49:32.612926+00:00",
+                "applicable_intake": null,
+                "quote": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+                "locator": "Cost of attendance: Tuition and financial aid"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "920d8f1a-275c-4542-8d4c-b7c7d0d7d495",
+          "parent_id": "c08e59f3-cb53-4544-9810-950dbfecde01",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:36:08.580577+00:00",
+          "finished_at": "2026-11-17T23:36:09.539627+00:00",
+          "duration_ms": 953.0,
+          "inputs": {
+            "payload": {
+              "question": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "60000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "neu-mscs-boston"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_VctSiIhJtOcU8B8LU8bgu7pd",
+                "name": "search_programs",
+                "arguments": "{\"university\":\"Northeastern University\",\"campus\":\"Boston\",\"discipline\":\"CS\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "df5a0e9a-d55b-448c-8543-a984254b756e",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2510,
+            "output_tokens": 33,
+            "cached_input_tokens": 0,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.002031",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0b906ad3eef43375016afce4e9aa4c87d0ac46020aa5ff9040"
+          }
+        },
+        {
+          "span_id": "7c2dbe01-7f39-445c-94a2-ef2456b86221",
+          "parent_id": "920d8f1a-275c-4542-8d4c-b7c7d0d7d495",
+          "kind": "tool",
+          "name": "search_programs",
+          "started_at": "2026-11-17T23:36:09.539627+00:00",
+          "finished_at": "2026-11-17T23:36:09.540627+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "university": "Northeastern University",
+              "campus": "Boston",
+              "discipline": "CS"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "programs": [
+              {
+                "program_id": "neu-mscs-boston",
+                "university": "Northeastern University",
+                "program_name": "Master of Science in Computer Science",
+                "degree": "MS",
+                "campus": "Boston",
+                "discipline": "CS"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "c895d9ea-171e-47ea-ad2e-2932bf3a69d7",
+          "parent_id": "c08e59f3-cb53-4544-9810-950dbfecde01",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:36:09.541628+00:00",
+          "finished_at": "2026-11-17T23:36:10.760671+00:00",
+          "duration_ms": 1219.0,
+          "inputs": {
+            "payload": {
+              "question": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "60000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "neu-mscs-boston"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_VctSiIhJtOcU8B8LU8bgu7pd",
+                "name": "search_programs",
+                "arguments": "{\"university\":\"Northeastern University\",\"campus\":\"Boston\",\"discipline\":\"CS\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_VctSiIhJtOcU8B8LU8bgu7pd",
+                "output": "{\"ok\": true, \"programs\": [{\"program_id\": \"neu-mscs-boston\", \"university\": \"Northeastern University\", \"program_name\": \"Master of Science in Computer Science\", \"degree\": \"MS\", \"campus\": \"Boston\", \"discipline\": \"CS\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_cM77mlecxFLp15cXv1j11zIP",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"neu-mscs-boston\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "c9ceaa19-64c8-4bf8-b671-7f8514546115",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2618,
+            "output_tokens": 23,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.0005118",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0c0193c8a588cd27016afce4eaa79887d088e7a8145157a964"
+          }
+        },
+        {
+          "span_id": "f4328efb-412d-4df7-b7a9-e2a83ecbc021",
+          "parent_id": "c895d9ea-171e-47ea-ad2e-2932bf3a69d7",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:36:10.760671+00:00",
+          "finished_at": "2026-11-17T23:36:10.761651+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "neu-mscs-boston"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "neu-mscs-boston",
+              "university": "Northeastern University",
+              "school": "Khoury College of Computer Sciences",
+              "program_name": "Master of Science in Computer Science",
+              "degree": "MS",
+              "campus": "Boston",
+              "track": "Standard MSCS (not Align, not Canada)",
+              "discipline": "CS",
+              "official_url": "https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/",
+              "allowed_official_hosts": [
+                "catalog.northeastern.edu",
+                "graduate.northeastern.edu"
+              ],
+              "candidate_source_id": "b-neu-mscs",
+              "required_credits": "32",
+              "gpa": null,
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [],
+              "prerequisites_complete": false,
+              "supported_intakes": [],
+              "closed_intakes": [],
+              "deadlines": [],
+              "deadline_schedule_complete": false,
+              "tuition": {
+                "currency": "USD",
+                "basis": "full_program",
+                "unit_rate_lower": "61504",
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": "2026-2027",
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "Uses the Boston official page's 2026–2027 Estimated Total Tuition. Excludes fees and other expenses; course rates may affect the actual total.",
+                  "Canadian campuses, Align, and other degrees' rates have not been used."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "neu-mscs-boston--neu_main--31dfc1f1819d"
+                ],
+                "credits": [
+                  "neu-mscs-boston--neu_main--31dfc1f1819d"
+                ],
+                "tuition": [
+                  "neu-mscs-boston--neu_program--e841b232af72"
+                ]
+              },
+              "notes": [
+                "The catalog's 3.000 GPA is a graduation requirement, not an admission minimum.",
+                "The official page lists Fall/Spring without a year in the reviewed section. The 2027 intake and exact applicable deadlines remain unverified."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "neu-mscs-boston--neu_main--31dfc1f1819d",
+                "program_id": "neu-mscs-boston",
+                "url": "https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/",
+                "title": "Computer Science, MSCS (Boston) < Northeastern University Academic Catalog",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits"
+                ],
+                "locator": "Computer Science MSCS (Boston): Program Credit/GPA Requirements",
+                "retrieved_at": "2026-11-13T04:46:17.689564Z",
+                "source_excerpt": "32 total semester hours required",
+                "fact_summary": "Boston standard MSCS requires 32 semester hours. It is not Align or a Canadian-campus program. The catalog's 3.000 GPA is a graduation requirement.",
+                "content_hash": "b7b59704e43748e648f3dbccb7fe0cbd819e7a857d502b04f2d0f6acb1ea99e6"
+              },
+              {
+                "source_id": "neu-mscs-boston--neu_program--e841b232af72",
+                "program_id": "neu-mscs-boston",
+                "url": "https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/",
+                "title": "neu_program",
+                "applicable_intake": null,
+                "effective_period": "2026-2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "Cost of attendance: Tuition and financial aid",
+                "retrieved_at": "2026-11-13T04:49:32.612926Z",
+                "source_excerpt": "$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition",
+                "fact_summary": "Boston standard MSCS Estimated Total Tuition is USD 61,504 at 2026–2027 rates, excluding fees and other expenses. Course-specific pricing and future changes can affect the total.",
+                "content_hash": "55ee1b289a83878ee8dbcf1d291f67bb04b6670c7bc5f844192a9fccf754c551"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "6068e52d-40d0-45ad-ae41-50bcfeb51d60",
+          "parent_id": "c08e59f3-cb53-4544-9810-950dbfecde01",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:36:10.762652+00:00",
+          "finished_at": "2026-11-17T23:36:12.499667+00:00",
+          "duration_ms": 1734.0,
+          "inputs": {
+            "payload": {
+              "question": "At a tuition-only budget of USD 60000, does the published Northeastern Boston standard MSCS estimate fit? Keep the scope to tuition affordability.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "60000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "neu-mscs-boston"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 6,
+                "tool_calls": 10
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_VctSiIhJtOcU8B8LU8bgu7pd",
+                "name": "search_programs",
+                "arguments": "{\"university\":\"Northeastern University\",\"campus\":\"Boston\",\"discipline\":\"CS\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_VctSiIhJtOcU8B8LU8bgu7pd",
+                "output": "{\"ok\": true, \"programs\": [{\"program_id\": \"neu-mscs-boston\", \"university\": \"Northeastern University\", \"program_name\": \"Master of Science in Computer Science\", \"degree\": \"MS\", \"campus\": \"Boston\", \"discipline\": \"CS\"}]}"
+              },
+              {
+                "type": "function_call",
+                "call_id": "call_cM77mlecxFLp15cXv1j11zIP",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"neu-mscs-boston\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_cM77mlecxFLp15cXv1j11zIP",
+                "output": "{\"ok\": true, \"program\": {\"program_id\": \"neu-mscs-boston\", \"university\": \"Northeastern University\", \"school\": \"Khoury College of Computer Sciences\", \"program_name\": \"Master of Science in Computer Science\", \"degree\": \"MS\", \"campus\": \"Boston\", \"track\": \"Standard MSCS (not Align, not Canada)\", \"discipline\": \"CS\", \"official_url\": \"https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/\", \"allowed_official_hosts\": [\"catalog.northeastern.edu\", \"graduate.northeastern.edu\"], \"candidate_source_id\": \"b-neu-mscs\", \"required_credits\": \"32\", \"gpa\": null, \"english\": [], \"english_not_required\": false, \"required_topics\": [], \"recommended_topics\": [], \"prerequisites_complete\": false, \"supported_intakes\": [], \"closed_intakes\": [], \"deadlines\": [], \"deadline_schedule_complete\": false, \"tuition\": {\"currency\": \"USD\", \"basis\": \"full_program\", \"unit_rate_lower\": \"61504\", \"unit_rate_upper\": null, \"required_units_lower\": null, \"required_units_upper\": null, \"rate_year\": \"2026-2027\", \"guaranteed_for_intake\": null, \"mandatory_fees_usd\": null, \"assumptions\": [\"Uses the Boston official page's 2026–2027 Estimated Total Tuition. Excludes fees and other expenses; course rates may affect the actual total.\", \"Canadian campuses, Align, and other degrees' rates have not been used.\"], \"additional_required_tuition_lower_usd\": \"0\", \"additional_required_tuition_upper_usd\": \"0\"}, \"field_sources\": {\"identity\": [\"neu-mscs-boston--neu_main--31dfc1f1819d\"], \"credits\": [\"neu-mscs-boston--neu_main--31dfc1f1819d\"], \"tuition\": [\"neu-mscs-boston--neu_program--e841b232af72\"]}, \"notes\": [\"The catalog's 3.000 GPA is a graduation requirement, not an admission minimum.\", \"The official page lists Fall/Spring without a year in the reviewed section. The 2027 intake and exact applicable deadlines remain unverified.\"], \"eligibility_review_complete\": false, \"goal_features\": [], \"admission_evidence\": [], \"degree_required\": false, \"accepted_degree_fields\": [], \"gre_policy\": \"unknown\", \"gre_validity_years\": null, \"gre_at_home_accepted\": null, \"application_materials\": [], \"catalog_version\": \"m35-2026-11-16\"}, \"sources\": [{\"source_id\": \"neu-mscs-boston--neu_main--31dfc1f1819d\", \"program_id\": \"neu-mscs-boston\", \"url\": \"https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/\", \"title\": \"Computer Science, MSCS (Boston) < Northeastern University Academic Catalog\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"identity\", \"credits\"], \"locator\": \"Computer Science MSCS (Boston): Program Credit/GPA Requirements\", \"retrieved_at\": \"2026-11-13T04:46:17.689564Z\", \"source_excerpt\": \"32 total semester hours required\", \"fact_summary\": \"Boston standard MSCS requires 32 semester hours. It is not Align or a Canadian-campus program. The catalog's 3.000 GPA is a graduation requirement.\", \"content_hash\": \"b7b59704e43748e648f3dbccb7fe0cbd819e7a857d502b04f2d0f6acb1ea99e6\"}, {\"source_id\": \"neu-mscs-boston--neu_program--e841b232af72\", \"program_id\": \"neu-mscs-boston\", \"url\": \"https://graduate.northeastern.edu/programs/mscs-computer-science/master-of-science-in-computer-science-boston/\", \"title\": \"neu_program\", \"applicable_intake\": null, \"effective_period\": \"2026-2027\", \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"locator\": \"Cost of attendance: Tuition and financial aid\", \"retrieved_at\": \"2026-11-13T04:49:32.612926Z\", \"source_excerpt\": \"$61,504 Tuition in USD Read full tuition disclaimer Estimated Total Tuition\", \"fact_summary\": \"Boston standard MSCS Estimated Total Tuition is USD 61,504 at 2026–2027 rates, excluding fees and other expenses. Course-specific pricing and future changes can affect the total.\", \"content_hash\": \"55ee1b289a83878ee8dbcf1d291f67bb04b6670c7bc5f844192a9fccf754c551\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+              "citations": [
+                "neu-mscs-boston--neu_program--e841b232af72"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "1c4b98d6-a755-411b-8b45-34387bc8274b",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 3721,
+            "output_tokens": 112,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00173955",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_08a2ac8fbe837a83016afce4ebefc487d0a2091a7cc8d8209d"
+          }
+        },
+        {
+          "span_id": "4570839b-7288-4dce-b364-c04a8722d227",
+          "parent_id": "6068e52d-40d0-45ad-ae41-50bcfeb51d60",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:36:12.499667+00:00",
+          "finished_at": "2026-11-17T23:36:12.502660+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "No. The published Northeastern Boston standard MSCS estimated total tuition is USD 61,504 for 2026–2027, which is above your tuition-only budget of USD 60,000. So it does not fit on published tuition alone. Note that this estimate excludes fees and other expenses, and actual tuition can vary with course pricing.",
+            "citations": [
+              "neu-mscs-boston--neu_program--e841b232af72"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

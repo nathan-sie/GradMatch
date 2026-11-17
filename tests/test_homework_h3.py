@@ -191,7 +191,9 @@ def test_judge_provider_is_separate_metered_and_has_no_tools(context):
     captured={}
     t,r,result=submitted(context);view,_=project_run(t,r,result,context)
     package=build_judge_package(t,r,view,context)
-    verdict,_=MockJudge().invoke(package)
+    from gradmatch.homework.grade_models import SpanJudgeVerdict,SpanVerdict
+    verdict=SpanJudgeVerdict(criteria={c['criterion_id']:SpanVerdict(passed=True,
+        evidence_id=package['evidence_spans'][0]['evidence_id'],reason='Selected exact candidate span.') for c in package['criteria']})
     response=NS(model=context.config['judge_model'],id='judge-test',status='completed',output_text=verdict.model_dump_json(),
         usage=NS(input_tokens=100,output_tokens=20,input_tokens_details=NS(cached_tokens=10),output_tokens_details=NS(reasoning_tokens=0)))
     def create(**kwargs):captured.update(kwargs);return response

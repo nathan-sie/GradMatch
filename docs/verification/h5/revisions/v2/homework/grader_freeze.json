@@ -1,0 +1,26 @@
+{
+  "schema_version": "h3-v2",
+  "status": "H5 grader v2 frozen after development recalibration; semantic thresholds unchanged",
+  "frozen_at": "2026-11-17T23:33:32.148308+00:00",
+  "grader_hash": "08038babbd5ee9faaa369db018f04a6563aada34ecee9a3579ca98c784dc1cdf",
+  "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+  "grading_config_sha256": "5cbda14178a691acbcf77827556f3f4c8348e13969ab3a0d5b596a462529d01f",
+  "calibration_cases_sha256": "b92cc6c78975ccb7ae9e2b2db2ddb19043a2020a44bbf68bf397d7d118bf43ec",
+  "calibration_summary_sha256": "3412a05b8113b310a3f164749671029ba11273179747b7f5b2817e836f82bfdd",
+  "human_binary_labels": 5,
+  "human_skipped": 1,
+  "judge_model": "gpt-5.4-mini-2026-03-17",
+  "same_model_family_limitation": true,
+  "frozen_h1_files": {
+    "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+    "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+    "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+    "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+    "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+  },
+  "formal_evaluation": "not_run",
+  "previous_grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "change_reason": "Permit presentation-only Markdown quote normalization; do not change semantic grading thresholds.",
+  "calibration_record_path": "docs/verification/h5/grader_v2_calibration/summary.json",
+  "calibration_note": "Five original binary user labels still agree; user-skipped D excluded. A saved H2 output received a different semantic judgment; both actual judgments are retained."
+}

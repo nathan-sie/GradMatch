@@ -1,0 +1,988 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "67946777-f681-4846-8e70-a171542b6695",
+  "run_id": "d03--react--r3",
+  "plan_hash": "b781c4ced48c96a39c29ad8307acaa0c3dcdfe7a7eaa25a4419bef424d644e21",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:34:24.434644+00:00",
+  "payload_sha256": "3333f77d4bd779d58ce081b0e1a1a41ccebe6d05168440db7e7fe71d154cbda3",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "d03",
+    "strategy": "react",
+    "trace_id": "6516ce27-a137-493d-adc4-c1e7f517f546",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+      "citations": [
+        {
+          "source_id": "rice-mcs-houston--rice_main--2eed7dfef402",
+          "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+          "retrieved_at": "2026-11-13T04:46:16.224173+00:00",
+          "applicable_intake": null,
+          "quote": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+          "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines"
+        },
+        {
+          "source_id": "rice-mcs-houston--rice_tuition--3462a78195c9",
+          "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+          "retrieved_at": "2026-11-13T04:46:16.001018+00:00",
+          "applicable_intake": null,
+          "quote": "PM Engineering Tuition $30,720 $61,440",
+          "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "Read the complete saved catalog record for program ID rice-mcs-houston; the ID is supplied so use the program lookup.",
+        "assistant": {
+          "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+          "citations": [
+            {
+              "source_id": "rice-mcs-houston--rice_main--2eed7dfef402",
+              "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+              "retrieved_at": "2026-11-13T04:46:16.224173+00:00",
+              "applicable_intake": null,
+              "quote": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+              "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines"
+            },
+            {
+              "source_id": "rice-mcs-houston--rice_tuition--3462a78195c9",
+              "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+              "retrieved_at": "2026-11-13T04:46:16.001018+00:00",
+              "applicable_intake": null,
+              "quote": "PM Engineering Tuition $30,720 $61,440",
+              "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 4703.0,
+    "usage": [
+      {
+        "call_id": "24b8d26f-d4f8-44f7-ba0e-d01d80f3ddb3",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2507,
+        "output_tokens": 24,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00043305",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_06b358a88262b803016afce47cd64087d0b38812ec69a45b08"
+      },
+      {
+        "call_id": "4071b335-214c-494b-a38f-dd46e435a917",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 3870,
+        "output_tokens": 527,
+        "cached_input_tokens": 3712,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0027684",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0017ffe1b2a35ca2016afce47dc8d887d088ae109b5c351f7a"
+      }
+    ],
+    "estimated_cost_usd": "0.00320145",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "bbcbdab082fa3b34c7b91e55f71305e0b5f531a000534969bc387735fe90a525",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "6516ce27-a137-493d-adc4-c1e7f517f546",
+      "spans": [
+        {
+          "span_id": "0c6c8709-4673-4eed-940b-0b7818d78fb6",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:34:19.732713+00:00",
+          "finished_at": "2026-11-17T23:34:24.434644+00:00",
+          "duration_ms": 4703.0,
+          "inputs": {
+            "task_id": "d03",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "d03",
+              "question": "Read the complete saved catalog record for program ID rice-mcs-houston; the ID is supplied so use the program lookup.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "rice-mcs-houston"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+              "citations": [
+                {
+                  "source_id": "rice-mcs-houston--rice_main--2eed7dfef402",
+                  "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+                  "retrieved_at": "2026-11-13T04:46:16.224173+00:00",
+                  "applicable_intake": null,
+                  "quote": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+                  "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines"
+                },
+                {
+                  "source_id": "rice-mcs-houston--rice_tuition--3462a78195c9",
+                  "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+                  "retrieved_at": "2026-11-13T04:46:16.001018+00:00",
+                  "applicable_intake": null,
+                  "quote": "PM Engineering Tuition $30,720 $61,440",
+                  "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "5fdd996e-5516-4725-ae13-f6b991830a4f",
+          "parent_id": "0c6c8709-4673-4eed-940b-0b7818d78fb6",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:34:19.732713+00:00",
+          "finished_at": "2026-11-17T23:34:24.434644+00:00",
+          "duration_ms": 4703.0,
+          "inputs": {
+            "message": "Read the complete saved catalog record for program ID rice-mcs-houston; the ID is supplied so use the program lookup."
+          },
+          "outputs": {
+            "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+            "citations": [
+              {
+                "source_id": "rice-mcs-houston--rice_main--2eed7dfef402",
+                "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+                "retrieved_at": "2026-11-13T04:46:16.224173+00:00",
+                "applicable_intake": null,
+                "quote": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+                "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines"
+              },
+              {
+                "source_id": "rice-mcs-houston--rice_tuition--3462a78195c9",
+                "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+                "retrieved_at": "2026-11-13T04:46:16.001018+00:00",
+                "applicable_intake": null,
+                "quote": "PM Engineering Tuition $30,720 $61,440",
+                "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "b955c40e-081f-4979-af4b-3d3185859551",
+          "parent_id": "5fdd996e-5516-4725-ae13-f6b991830a4f",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:34:19.732713+00:00",
+          "finished_at": "2026-11-17T23:34:20.665083+00:00",
+          "duration_ms": 922.0,
+          "inputs": {
+            "payload": {
+              "question": "Read the complete saved catalog record for program ID rice-mcs-houston; the ID is supplied so use the program lookup.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "rice-mcs-houston"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_fOU1kyB63dKFe19BCm6spU46",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"rice-mcs-houston\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "24b8d26f-d4f8-44f7-ba0e-d01d80f3ddb3",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2507,
+            "output_tokens": 24,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00043305",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_06b358a88262b803016afce47cd64087d0b38812ec69a45b08"
+          }
+        },
+        {
+          "span_id": "2e90efb6-ff35-4dfa-89b7-9bd7f9cc0432",
+          "parent_id": "b955c40e-081f-4979-af4b-3d3185859551",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:34:20.665083+00:00",
+          "finished_at": "2026-11-17T23:34:20.665083+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "rice-mcs-houston"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "rice-mcs-houston",
+              "university": "Rice University",
+              "school": "Department of Computer Science",
+              "program_name": "Master of Computer Science",
+              "degree": "MCS",
+              "campus": "Houston",
+              "track": "On-campus non-thesis",
+              "discipline": "CS",
+              "official_url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+              "allowed_official_hosts": [
+                "cs.rice.edu",
+                "bursar.rice.edu"
+              ],
+              "candidate_source_id": "b-plus-rics-mcs",
+              "required_credits": "30",
+              "gpa": {
+                "minimum": null,
+                "recommended": "3.0",
+                "scale": "4",
+                "accepted_scopes": [
+                  "overall"
+                ],
+                "below_minimum_review_possible": false,
+                "no_hard_minimum": false
+              },
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [],
+              "prerequisites_complete": false,
+              "supported_intakes": [
+                {
+                  "year": 2027,
+                  "term": "fall"
+                }
+              ],
+              "closed_intakes": [],
+              "deadlines": [
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2027-02-10",
+                  "label": "Early scholarship consideration",
+                  "audience": "all"
+                },
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2027-07-01",
+                  "label": "Domestic deadline",
+                  "audience": "domestic"
+                }
+              ],
+              "deadline_schedule_complete": false,
+              "tuition": {
+                "currency": "USD",
+                "basis": "unknown",
+                "unit_rate_lower": null,
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": null,
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "Professional master's tuition is listed as USD 30,720 per semester. Three semesters is a typical duration, not a verified required billing schedule, so no full-program total is calculated.",
+                  "The online MCS per-credit rate has not been used."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "rice-mcs-houston--rice_main--2eed7dfef402"
+                ],
+                "credits": [
+                  "rice-mcs-houston--rice_main--2eed7dfef402"
+                ],
+                "gpa": [
+                  "rice-mcs-houston--rice_main--2eed7dfef402"
+                ],
+                "intake": [
+                  "rice-mcs-houston--rice_main--2eed7dfef402"
+                ],
+                "deadline": [
+                  "rice-mcs-houston--rice_main--2eed7dfef402"
+                ],
+                "tuition": [
+                  "rice-mcs-houston--rice_tuition--3462a78195c9"
+                ]
+              },
+              "notes": [
+                "Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "rice-mcs-houston--rice_main--2eed7dfef402",
+                "program_id": "rice-mcs-houston",
+                "url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+                "title": "Master of Computer Science | Computer Science | Rice University",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits",
+                  "gpa",
+                  "intake",
+                  "deadline"
+                ],
+                "locator": "MCS Curriculum; Program Details; Admission requirements; Application Deadlines",
+                "retrieved_at": "2026-11-13T04:46:16.224173Z",
+                "source_excerpt": "The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.",
+                "fact_summary": "On-campus Houston MCS: 30 semester hours, non-thesis, typically three semesters. Fall 2027 is open. February 10 is the early scholarship deadline; July 1 is explicitly domestic. The preparation list includes a 3.0+ GPA, but an exception-free hard minimum has not been established here.",
+                "content_hash": "561233a5e2e2567ca977c5862f82842082d35f50d8c247c0f07b6991367df2b2"
+              },
+              {
+                "source_id": "rice-mcs-houston--rice_tuition--3462a78195c9",
+                "program_id": "rice-mcs-houston",
+                "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+                "title": "Engineering | Bursar's Office | Rice University",
+                "applicable_intake": null,
+                "effective_period": "2026-2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "Fall 2026 / Spring 2027 Professional Masters in Engineering",
+                "retrieved_at": "2026-11-13T04:46:16.001018Z",
+                "source_excerpt": "PM Engineering Tuition $30,720 $61,440",
+                "fact_summary": "For 2026–2027, full-time professional master's tuition is USD 30,720 per semester; approved part-time tuition is USD 2,560 per credit. Thirty credits and a typical three-semester duration do not establish a mandatory billing schedule. The online MCS rate of USD 1,700 per credit is a different modality.",
+                "content_hash": "36c2d3071ac3dec2cc004eb12740b85334529744fbd9766bf57ed3632dbbb46b"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "48975045-b451-436e-b4e5-e8dd9dfdb65d",
+          "parent_id": "5fdd996e-5516-4725-ae13-f6b991830a4f",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:34:20.666090+00:00",
+          "finished_at": "2026-11-17T23:34:24.429134+00:00",
+          "duration_ms": 3765.0,
+          "inputs": {
+            "payload": {
+              "question": "Read the complete saved catalog record for program ID rice-mcs-houston; the ID is supplied so use the program lookup.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "rice-mcs-houston"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_fOU1kyB63dKFe19BCm6spU46",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"rice-mcs-houston\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_fOU1kyB63dKFe19BCm6spU46",
+                "output": "{\"ok\": true, \"program\": {\"program_id\": \"rice-mcs-houston\", \"university\": \"Rice University\", \"school\": \"Department of Computer Science\", \"program_name\": \"Master of Computer Science\", \"degree\": \"MCS\", \"campus\": \"Houston\", \"track\": \"On-campus non-thesis\", \"discipline\": \"CS\", \"official_url\": \"https://cs.rice.edu/academics/graduate-programs/master-computer-science\", \"allowed_official_hosts\": [\"cs.rice.edu\", \"bursar.rice.edu\"], \"candidate_source_id\": \"b-plus-rics-mcs\", \"required_credits\": \"30\", \"gpa\": {\"minimum\": null, \"recommended\": \"3.0\", \"scale\": \"4\", \"accepted_scopes\": [\"overall\"], \"below_minimum_review_possible\": false, \"no_hard_minimum\": false}, \"english\": [], \"english_not_required\": false, \"required_topics\": [], \"recommended_topics\": [], \"prerequisites_complete\": false, \"supported_intakes\": [{\"year\": 2027, \"term\": \"fall\"}], \"closed_intakes\": [], \"deadlines\": [{\"intake\": {\"year\": 2027, \"term\": \"fall\"}, \"date\": \"2027-02-10\", \"label\": \"Early scholarship consideration\", \"audience\": \"all\"}, {\"intake\": {\"year\": 2027, \"term\": \"fall\"}, \"date\": \"2027-07-01\", \"label\": \"Domestic deadline\", \"audience\": \"domestic\"}], \"deadline_schedule_complete\": false, \"tuition\": {\"currency\": \"USD\", \"basis\": \"unknown\", \"unit_rate_lower\": null, \"unit_rate_upper\": null, \"required_units_lower\": null, \"required_units_upper\": null, \"rate_year\": null, \"guaranteed_for_intake\": null, \"mandatory_fees_usd\": null, \"assumptions\": [\"Professional master's tuition is listed as USD 30,720 per semester. Three semesters is a typical duration, not a verified required billing schedule, so no full-program total is calculated.\", \"The online MCS per-credit rate has not been used.\"], \"additional_required_tuition_lower_usd\": \"0\", \"additional_required_tuition_upper_usd\": \"0\"}, \"field_sources\": {\"identity\": [\"rice-mcs-houston--rice_main--2eed7dfef402\"], \"credits\": [\"rice-mcs-houston--rice_main--2eed7dfef402\"], \"gpa\": [\"rice-mcs-houston--rice_main--2eed7dfef402\"], \"intake\": [\"rice-mcs-houston--rice_main--2eed7dfef402\"], \"deadline\": [\"rice-mcs-houston--rice_main--2eed7dfef402\"], \"tuition\": [\"rice-mcs-houston--rice_tuition--3462a78195c9\"]}, \"notes\": [\"Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\"], \"eligibility_review_complete\": false, \"goal_features\": [], \"admission_evidence\": [], \"degree_required\": false, \"accepted_degree_fields\": [], \"gre_policy\": \"unknown\", \"gre_validity_years\": null, \"gre_at_home_accepted\": null, \"application_materials\": [], \"catalog_version\": \"m35-2026-11-16\"}, \"sources\": [{\"source_id\": \"rice-mcs-houston--rice_main--2eed7dfef402\", \"program_id\": \"rice-mcs-houston\", \"url\": \"https://cs.rice.edu/academics/graduate-programs/master-computer-science\", \"title\": \"Master of Computer Science | Computer Science | Rice University\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"identity\", \"credits\", \"gpa\", \"intake\", \"deadline\"], \"locator\": \"MCS Curriculum; Program Details; Admission requirements; Application Deadlines\", \"retrieved_at\": \"2026-11-13T04:46:16.224173Z\", \"source_excerpt\": \"The Rice Master of Computer Science is a 30-semester-hour, non-thesis degree that typically takes three semesters to complete.\", \"fact_summary\": \"On-campus Houston MCS: 30 semester hours, non-thesis, typically three semesters. Fall 2027 is open. February 10 is the early scholarship deadline; July 1 is explicitly domestic. The preparation list includes a 3.0+ GPA, but an exception-free hard minimum has not been established here.\", \"content_hash\": \"561233a5e2e2567ca977c5862f82842082d35f50d8c247c0f07b6991367df2b2\"}, {\"source_id\": \"rice-mcs-houston--rice_tuition--3462a78195c9\", \"program_id\": \"rice-mcs-houston\", \"url\": \"https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering\", \"title\": \"Engineering | Bursar's Office | Rice University\", \"applicable_intake\": null, \"effective_period\": \"2026-2027\", \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"locator\": \"Fall 2026 / Spring 2027 Professional Masters in Engineering\", \"retrieved_at\": \"2026-11-13T04:46:16.001018Z\", \"source_excerpt\": \"PM Engineering Tuition $30,720 $61,440\", \"fact_summary\": \"For 2026–2027, full-time professional master's tuition is USD 30,720 per semester; approved part-time tuition is USD 2,560 per credit. Thirty credits and a typical three-semester duration do not establish a mandatory billing schedule. The online MCS rate of USD 1,700 per credit is a different modality.\", \"content_hash\": \"36c2d3071ac3dec2cc004eb12740b85334529744fbd9766bf57ed3632dbbb46b\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+              "citations": [
+                "rice-mcs-houston--rice_main--2eed7dfef402",
+                "rice-mcs-houston--rice_tuition--3462a78195c9"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "4071b335-214c-494b-a38f-dd46e435a917",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 3870,
+            "output_tokens": 527,
+            "cached_input_tokens": 3712,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.0027684",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0017ffe1b2a35ca2016afce47dc8d887d088ae109b5c351f7a"
+          }
+        },
+        {
+          "span_id": "67c479a4-e1db-42c9-a59a-c165fef727fc",
+          "parent_id": "48975045-b451-436e-b4e5-e8dd9dfdb65d",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:34:24.429134+00:00",
+          "finished_at": "2026-11-17T23:34:24.434644+00:00",
+          "duration_ms": 16.0,
+          "inputs": {
+            "answer": "Here is the complete saved catalog record for rice-mcs-houston (Rice University, Master of Computer Science, Houston campus):\n\n- Program ID: rice-mcs-houston\n- University: Rice University\n- School: Department of Computer Science\n- Program name: Master of Computer Science\n- Degree: MCS\n- Campus: Houston\n- Track: On-campus non-thesis\n- Discipline: CS\n- Official URL: https://cs.rice.edu/academics/graduate-programs/master-computer-science\n- Allowed official hosts: cs.rice.edu, bursar.rice.edu\n- Candidate source ID: b-plus-rics-mcs\n- Required credits: 30\n- GPA requirement: recommended 3.0 on a 4.0 scale; accepted scope overall; no hard minimum established in this record\n- English: not required\n- Supported intake: Fall 2027\n- Deadlines recorded:\n  - 2027-02-10: Early scholarship consideration (all)\n  - 2027-07-01: Domestic deadline (domestic only)\n- Notes: Fall 2027 applications are open. The reviewed section does not establish the international final deadline; the July domestic deadline is not used for international applicants.\n- Tuition record: basis unknown; no full-program total calculated\n  - Assumption recorded: professional master’s tuition is listed as USD 30,720 per semester, and three semesters is a typical duration, not a verified required billing schedule\n  - Additional required tuition: USD 0 to USD 0\n- Eligibility review complete: false\n- Goal features: none recorded\n- Admission evidence: none recorded\n- Degree required: false\n- Accepted degree fields: none recorded\n- GRE policy: unknown\n- GRE validity years: null\n- GRE at home accepted: null\n- Application materials: none recorded\n- Catalog version: m35-2026-11-16\n\nSource metadata:\n- rice-mcs-houston--rice_main--2eed7dfef402: verified source from Rice CS program page\n- rice-mcs-houston--rice_tuition--3462a78195c9: verified source from Rice bursar tuition page",
+            "citations": [
+              "rice-mcs-houston--rice_main--2eed7dfef402",
+              "rice-mcs-houston--rice_tuition--3462a78195c9"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}
