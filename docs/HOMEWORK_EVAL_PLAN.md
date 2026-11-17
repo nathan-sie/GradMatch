@@ -33,7 +33,7 @@ Required submission artifacts:
 | H5: real pilot and formal runs | Validate a small development pilot, freeze versions, then run the complete comparison. | 50 baseline and 150 Agent executions have distinct IDs and saved actual usage/outcomes; pilot and formal results remain separate. |
 | H6: failure analysis and submission | Explain an actual failed step and package the tasks, script, table and report. | The failure paragraph links to the trace; all reported values can be recomputed; the submission reproduces from documented commands. |
 
-H0 is complete. H1-H6 are planned and are not implemented by this document. Each checkpoint should finish with its actual validation record before moving on. The paths and commands below are implementation targets, not commands that already exist.
+H0 and H1 are complete. H1's actual artifacts, offline command and verification are documented in `homework/README.md` and `docs/verification/H1.md`. H2-H6 remain planned. Each checkpoint should finish with its actual validation record before moving on. Apart from H1's validator, commands below remain implementation targets rather than available Agent/evaluation commands.
 
 ## H1 - Task set and experiment contract
 
@@ -43,7 +43,7 @@ Use all four task types shown on page 56: `exact`, `tool`, `rubric` and `unanswe
 
 Set one assessment date, model/version, catalog hash, tier rubric and per-strategy resource ceiling. Candidate model inputs receive the question, declared profile/history and accessible evidence only. They do not receive expected answers, expected calls, scoring rubrics or hidden reference facts. Draft and review the final set before examining its formal model results. Use a separate small development set for debugging and judge calibration.
 
-Acceptance: a proposed `python -m scripts.homework.validate_tasks` validates the 50 records, IDs, task-specific fields, coverage minima and source bindings. Manually review whether the tasks are distinct and answerable as labelled. No model request is needed for schema/coverage validation.
+Acceptance: `python -m scripts.homework.validate_tasks` is implemented and validates the 50 records, IDs, task-specific fields, coverage minima, source bindings and arithmetic bases. Review whether the tasks are distinct and answerable as labelled using `homework/TASK_REVIEW.md`; user/peer spot checks and H3 human judge calibration are separate from automated validation. No model request is needed for H1 validation.
 
 ## H2 - Minimal Agent, baseline and observability
 
@@ -128,4 +128,4 @@ Page 57 asks students to read OWASP Top 10 for LLM Applications (2025), bring th
 
 ## Status
 
-H0 is complete, and the six-part plan has been checked against the full 57-page lecture. H1-H6 remain unstarted. No homework model requests or formal evaluation were executed while planning. No benchmark scores are claimed. The existing M3.5 acceptance records remain historical project evidence.
+H0 and H1 are complete. H1 has 50 formal tasks (18 exact, 8 tool, 20 rubric, 4 unanswerable), including 11 overlapping edge cases, plus 8 separate development tasks. Offline evidence/data validation and all 130 regression tests passed, including 22 H1 checks. H2-H6 remain unstarted. No homework model requests or formal evaluation have been executed, and no benchmark score is claimed. The existing M3.5 acceptance records remain historical project evidence.

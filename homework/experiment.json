@@ -1,0 +1,61 @@
+{
+  "agent_repeats": 3,
+  "assessment_date": "2026-11-16",
+  "baseline_repeats": 1,
+  "candidate_limits": {
+    "automatic_model_retries": 0,
+    "max_model_calls_per_task": 8,
+    "max_output_tokens_per_call": 1800,
+    "max_task_seconds": 120,
+    "max_tool_calls_per_task": 12,
+    "model_timeout_seconds": 45
+  },
+  "candidate_visibility": [
+    "task_id",
+    "question",
+    "profile",
+    "setup_messages",
+    "program_ids",
+    "as_of_date"
+  ],
+  "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+  "catalog_path": "data/catalog/m35_seed.json",
+  "catalog_sha256": "b70231a85ef883d15712870bf312ac2e9fc79724b0b8208408ff5c0eb586f06f",
+  "data_mode": "snapshot",
+  "files": {
+    "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+    "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+    "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+    "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+    "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+  },
+  "formal_results_status": "not_run",
+  "formal_tasks": 50,
+  "freeze_status": "H1 dataset/config frozen for review; candidate/runner/judge revisions will be pinned after H2-H4, before formal H5",
+  "grading_visibility": "expected/expected_call/rubric, tags, family, and references are evaluator-only",
+  "homework_model_calls": 0,
+  "metrics": {
+    "accuracy": "all 50 tasks; designated first Agent repeat; failed/timeout tasks count as failures",
+    "flip": "mixed pass/fail vector over the 3 designated repeats",
+    "latency": "candidate start through final answer or terminal failure; includes setup/tools/waits; excludes grader",
+    "p95_method": "nearest_rank: sorted seconds[ceil(0.95*n)-1]; all completed terminal executions, not successful-only",
+    "pass_all_3": "tasks with 3 passes / 50",
+    "pass_at_3": "tasks with at least one pass among 3 / 50",
+    "tokens": "candidate input+output across all calls; cached input is not counted twice; missing usage stays unknown",
+    "turns": "all candidate model calls in the task including setup and follow-up"
+  },
+  "model": "gpt-5.4-mini-2026-03-17",
+  "planned_candidate_executions": 200,
+  "profile_semantics": "Fictional self-reports. setup_messages execute before question in a fresh session per task/repeat; do not preload assistant answers or later user instructions.",
+  "program_count": 10,
+  "rubric_version": "conservative-v1.1",
+  "schema_version": "hw50-h1-v1",
+  "source_count": 30,
+  "source_semantics": "Fact claims use pinned official records; snapshot_state observations describe catalog coverage, not universal university policies.",
+  "strategies": [
+    "fixed",
+    "react"
+  ],
+  "tier_rubric_path": "config/ranking_rubric.md",
+  "tier_rubric_sha256": "b27a76c711b2e131741f0de8eaf49fec4cbaa6a611b60628856b4908f37887a3"
+}

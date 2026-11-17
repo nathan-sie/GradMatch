@@ -2,6 +2,8 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
+Homework branch note: `homework/eval-harness-50` adds the separate 50-task evaluation assignment. H1 data/contracts passed offline validation and 130 regression checks; no homework model evaluation has run. See [H1 data and commands](homework/README.md) and [the checkpoint](docs/verification/H1.md). The existing public deployment continues to use the preserved main branch.
+
 Current stage: **M3.5 recommendation pilot**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 official sources. M3's hosted model interaction, session isolation, reboot recovery and another-device access passed. The pilot adds explicit degree / GRE inputs and evidence-backed planning tiers. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
 
 M3.5 passed 107 checks, clean-host recovery and actual local/hosted model generation plus budget updates. User acceptance remains pending. See [the M3.5 checkpoint and acceptance steps](docs/verification/M35.md).

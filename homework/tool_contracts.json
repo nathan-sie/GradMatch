@@ -1,0 +1,111 @@
+{
+  "check_program": {
+    "arguments_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "profile_version": {
+          "minimum": 1,
+          "title": "Profile Version",
+          "type": "integer"
+        },
+        "program_id": {
+          "title": "Program Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "program_id",
+        "profile_version"
+      ],
+      "title": "CheckProgramArgs",
+      "type": "object"
+    },
+    "description": "Check one program against the current session profile at the frozen assessment date. Reject a stale profile_version; never mutate the applicant profile."
+  },
+  "get_evidence": {
+    "arguments_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id"
+      ],
+      "title": "GetEvidenceArgs",
+      "type": "object"
+    },
+    "description": "Read one allowlisted frozen SourceRecord and its verified snapshot, with URL, date, locator and bound facts."
+  },
+  "get_program": {
+    "arguments_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "program_id": {
+          "title": "Program Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "program_id"
+      ],
+      "title": "GetProgramArgs",
+      "type": "object"
+    },
+    "description": "Read one complete frozen program record and its source metadata; no network access."
+  },
+  "search_programs": {
+    "arguments_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "campus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Campus"
+        },
+        "discipline": {
+          "anyOf": [
+            {
+              "enum": [
+                "CS",
+                "ECE"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Discipline"
+        },
+        "university": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "University"
+        }
+      },
+      "required": [
+        "university",
+        "campus",
+        "discipline"
+      ],
+      "title": "SearchProgramsArgs",
+      "type": "object"
+    },
+    "description": "Filter the frozen catalog by exact university/campus/discipline; null means unrestricted. Return matching IDs sorted ascending. No implicit fuzzy matching or top-k truncation."
+  }
+}
