@@ -1,0 +1,10 @@
+{
+  "event": "smoke_console_output_failure",
+  "candidate_attempt": "01-react-h2-observation-recovery.json",
+  "candidate_saved_before_failure": true,
+  "error_type": "TypeError",
+  "cause": "flush was passed to json.dumps instead of print",
+  "resolution": "Corrected the console statement and resumed saved attempts; no model execution was rerun.",
+  "additional_requests_caused_by_incident": 0,
+  "discarded_attempts": 0
+}

@@ -1,0 +1,23 @@
+{
+  "checkpoint": "H2",
+  "verified_at": "2026-11-17T18:28:50.146638+00:00",
+  "offline_h2_tests": 24,
+  "full_regression_tests": 154,
+  "actual_smoke_checks": {
+    "all_executions_completed": true,
+    "agent_missing_source_observed": true,
+    "agent_selected_different_action": true,
+    "agent_answer_contains_50850": true,
+    "baseline_answer_contains_61504": true,
+    "goal_changed_to_mixed_only": true,
+    "all_live_usage_measured": true,
+    "traces_complete": true
+  },
+  "actual_requests": 7,
+  "candidate_code_hash": "8d3cb91b32f0052c1cb205bc6b8f562c2077c6cb4382465b7ba61d655894cc21",
+  "sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "main_commit": "6ae734828c160b6f1fee5d3088b1b52b5f0b3ba9",
+  "formal_evaluation": "not_run",
+  "smoke_candidate_code_hash": "95b602ad83c54bea9c728d66fc6302a9b3f2bd05a8a19b712b962512a3dd7e8d",
+  "post_smoke_change": "Refined only the explicit combined-budget clarification gate; added offline regression; no extra paid calls."
+}

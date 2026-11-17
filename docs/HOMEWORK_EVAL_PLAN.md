@@ -33,7 +33,7 @@ Required submission artifacts:
 | H5: real pilot and formal runs | Validate a small development pilot, freeze versions, then run the complete comparison. | 50 baseline and 150 Agent executions have distinct IDs and saved actual usage/outcomes; pilot and formal results remain separate. |
 | H6: failure analysis and submission | Explain an actual failed step and package the tasks, script, table and report. | The failure paragraph links to the trace; all reported values can be recomputed; the submission reproduces from documented commands. |
 
-H0 and H1 are complete. H1's actual artifacts, offline command and verification are documented in `homework/README.md` and `docs/verification/H1.md`. H2-H6 remain planned. Each checkpoint should finish with its actual validation record before moving on. Apart from H1's validator, commands below remain implementation targets rather than available Agent/evaluation commands.
+H0-H2 are complete. H1's artifacts and verification are documented in `homework/README.md` and `docs/verification/H1.md`. The implemented H2 CLI and actual traces are documented in `homework/H2_RUNNER.md` and `docs/verification/H2.md`. H3-H6 remain planned; their proposed grading/evaluation commands below are implementation targets. Each checkpoint finishes with its actual validation record before moving on.
 
 ## H1 - Task set and experiment contract
 
@@ -128,4 +128,4 @@ Page 57 asks students to read OWASP Top 10 for LLM Applications (2025), bring th
 
 ## Status
 
-H0 and H1 are complete. H1 has 50 formal tasks (18 exact, 8 tool, 20 rubric, 4 unanswerable), including 11 overlapping edge cases, plus 8 separate development tasks. Offline evidence/data validation and all 130 regression tests passed, including 22 H1 checks. H2-H6 remain unstarted. No homework model requests or formal evaluation have been executed, and no benchmark score is claimed. The existing M3.5 acceptance records remain historical project evidence.
+H0-H2 are complete. H1 retains 50 frozen formal tasks (18 exact, 8 tool, 20 rubric, 4 unanswerable), including 11 overlapping edge cases, plus 8 separate development tasks. H2 adds the native tool-using snapshot Agent, fixed RAG adapter and span traces. All 154 regression tests passed, including 24 H2 checks. A bounded three-execution H2 development inspection used seven actual model requests, with measured usage and retained traces; it demonstrated observation-dependent recovery and profile preservation. H3-H6 remain pending. No judge or formal evaluation has been run, and no benchmark score is claimed. Main and the public app remain at their accepted checkpoint.

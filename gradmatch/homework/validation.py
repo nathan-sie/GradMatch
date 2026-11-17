@@ -239,4 +239,4 @@ def validate_bundle():
         "catalog_data_hash":manifest["catalog_data_hash"],"assessment_date":manifest["assessment_date"],
         "snapshot_hashes":"verified","artifact_hashes":"verified","candidate_projection":"whitelisted",
         "reference_review":"authored and checked against snapshot fields/text; not a claim of human judge calibration",
-        "model_api_calls":0,"network_requests":0,"formal_evaluation":"not_run","h2_agent":"not_implemented"}
+        "model_api_calls":0,"network_requests":0,"formal_evaluation":"not_run","h2_agent":"not_assessed_by_h1_validator"}

@@ -1,8 +1,8 @@
-# H1: frozen tasks and experiment contract
+# Homework evaluation: H1 data and H2 candidate runner
 
 Checkpoint date: 2026-11-16 (America/Los_Angeles). Branch: `homework/eval-harness-50`.
 
-This checkpoint contains the evaluation data and validation rules. It does not implement the Agent, judge or evaluation runner, and contains no model benchmark results. Main and the deployed app retain their existing project checkpoint.
+H1 provides the frozen evaluation data and validation rules. H2 now provides the minimal snapshot Agent, fixed RAG baseline adapter and observable development CLI; see [H2 runner](H2_RUNNER.md) and [actual verification](../docs/verification/H2.md). Independent graders and the full evaluation runner remain H3-H4 work. There are no formal model benchmark results. Main and the deployed app retain their existing project checkpoint.
 
 ## Validate without model calls
 
@@ -23,7 +23,7 @@ The validator reads the versioned seed and snapshots, not a mutable SQLite datab
 | `references.jsonl` | Authored reference answers, source IDs, fact claims, check/state expectations and independent exact-answer bases. | No. |
 | `dev_tasks.jsonl`, `dev_references.jsonl` | Eight development/calibration cases, never counted in formal results. | Only their projected user inputs during pilot runs. |
 | `experiment.json` | Frozen date, model, data/rubric hashes, candidate budgets, metric conventions and artifact checksums. | H2 uses only relevant execution settings. |
-| `tool_contracts.json` | Four declared snapshot tool schemas and semantics for H2 implementation. | Yes. These are contracts; the tool implementations are H2 work. |
+| `tool_contracts.json` | Four frozen snapshot tool schemas and semantics, implemented in H2. | Yes. |
 | `TASK_REVIEW.md` | Readable index of all formal questions and reference answers for review. | No. |
 | `gradmatch.homework.dataset.load_candidate_inputs` | Builds `CandidateInput` objects by an explicit whitelist. | Yes. This is the required H2 input boundary. |
 
@@ -63,4 +63,4 @@ The assessment date is 2026-11-16; data mode is snapshot. Candidate model: `gpt-
 
 One baseline repeat and three total Agent repeats schedule 200 candidate task executions. Candidate turns count all candidate model calls; latency includes candidate tools/waits but excludes grading; tokens sum input and output without double-counting cached input. The p95 convention is nearest-rank. The designated first Agent repeat supplies the side-by-side accuracy/efficiency row; all three repeats supply pass@3, pass^3 and flip IDs. Missing token usage stays unknown; failures/timeouts stay in task denominators. See the exact formulas in `experiment.json` and the six-part plan.
 
-H2-H6 remain future checkpoints. An H1 validation pass is not an Agent success rate, a 50-task model evaluation, or completion of the full M4 live-tool milestone.
+H2 is complete; H3-H6 remain future checkpoints. An H1 validation pass or H2 smoke check is not an Agent success rate, a 50-task model evaluation, or completion of the full M4 live-tool milestone.

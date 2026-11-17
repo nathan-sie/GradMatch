@@ -1,0 +1,26 @@
+{
+  "checkpoint": "H2",
+  "purpose": "bounded_development_smoke_not_benchmark",
+  "checks": {
+    "all_executions_completed": true,
+    "agent_missing_source_observed": true,
+    "agent_selected_different_action": true,
+    "agent_answer_contains_50850": true,
+    "baseline_answer_contains_61504": true,
+    "goal_changed_to_mixed_only": true,
+    "all_live_usage_measured": true,
+    "traces_complete": true
+  },
+  "status": "passed",
+  "actual_requests": 7,
+  "input_tokens": 30956,
+  "output_tokens": 786,
+  "estimated_cost_usd": "0.02364360",
+  "cost_is_partial": false,
+  "trace_ids": [
+    "20f51246-f960-47bd-abc0-7c92954e8836",
+    "d0b8a107-c158-4a35-8782-d61885dd59b4",
+    "3c9d9be6-6b5e-4ae8-b9e1-72d9c0aec82d"
+  ],
+  "formal_evaluation": "not_run"
+}
