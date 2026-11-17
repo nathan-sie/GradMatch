@@ -1,0 +1,59 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "c897642a-b6c2-463d-a6b9-530eebf913f7",
+  "run_id": "d03--react--r2",
+  "plan_hash": "3098a147f17db24bf3ab357907961d142bdfda67ceb5c22693d88f7a51ade654",
+  "kind": "grade",
+  "saved_at": "2026-11-17T21:27:51.201049+00:00",
+  "payload_sha256": "c35e5685ab129f86d185369838b74579f1d7c2a840084dfa5e401f2c8cab45a9",
+  "payload": {
+    "schema_version": "h3-v1",
+    "grade_id": "cf40ad03-fb76-441a-b3b6-1a2b62796e94",
+    "task_id": "d03",
+    "candidate_trace_id": "46dfd076-2bc3-41d8-8000-a182a3461f71",
+    "candidate_record_sha256": "6abb76bfb38fa0b4e135e13cbb1316ca021ec0e104d138aa0b16878a84a36af5",
+    "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+    "status": "passed",
+    "passed": true,
+    "code_checks": [
+      {
+        "criterion_id": "execution_completed",
+        "passed": true,
+        "reason": "Candidate execution completed."
+      },
+      {
+        "criterion_id": "initial_profile",
+        "passed": true,
+        "reason": "Initial profile must equal the declared task profile."
+      },
+      {
+        "criterion_id": "citation_integrity",
+        "passed": true,
+        "reason": "Citation IDs and metadata must be real, unique and actually observed."
+      },
+      {
+        "criterion_id": "answer_urls",
+        "passed": true,
+        "reason": "Answer URLs must name observed program/source URLs."
+      },
+      {
+        "criterion_id": "profile_state",
+        "passed": true,
+        "reason": "Apply only expected explicit root-field changes, preserve other fields and advance the version only for an actual change."
+      },
+      {
+        "criterion_id": "formal_recommendation_scope",
+        "passed": true,
+        "reason": "Formal recommendations must be observed and not expressly forbidden by the task reference."
+      },
+      {
+        "criterion_id": "first_tool_call",
+        "passed": true,
+        "reason": "Compare the first actual tool span, never a later call or tool name mentioned in answer prose."
+      }
+    ],
+    "criteria": [],
+    "judge_record": null,
+    "error": null
+  }
+}

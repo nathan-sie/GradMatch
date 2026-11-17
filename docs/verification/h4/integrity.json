@@ -1,0 +1,18 @@
+{
+  "checkpoint": "H4",
+  "verified_at": "2026-11-17T21:28:50.417197+00:00",
+  "h4_tests": 27,
+  "regression_tests": 224,
+  "runner_hash": "0e7bf2ee122845a9f824064ecb038faac4388c5ab1cb58edb80feea4f14c53ee",
+  "candidate_code_hash": "8d3cb91b32f0052c1cb205bc6b8f562c2077c6cb4382465b7ba61d655894cc21",
+  "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "h1_data": "unchanged",
+  "h2_code": "unchanged",
+  "h3_grader": "unchanged",
+  "new_candidate_requests": 0,
+  "new_judge_requests": 0,
+  "formal_evaluation": "not_run",
+  "raw_fixture_bytes": "copied_identically",
+  "earlier_offline_verifications": "retained as separate revisions"
+}

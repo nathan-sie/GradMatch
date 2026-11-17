@@ -33,7 +33,7 @@ Required submission artifacts:
 | H5: real pilot and formal runs | Validate a small development pilot, freeze versions, then run the complete comparison. | 50 baseline and 150 Agent executions have distinct IDs and saved actual usage/outcomes; pilot and formal results remain separate. |
 | H6: failure analysis and submission | Explain an actual failed step and package the tasks, script, table and report. | The failure paragraph links to the trace; all reported values can be recomputed; the submission reproduces from documented commands. |
 
-H0-H3 are complete. H1's artifacts are documented in `homework/README.md` and `docs/verification/H1.md`; the H2 CLI and traces in `homework/H2_RUNNER.md` and `docs/verification/H2.md`; and independent H3 grading/calibration in `homework/H3_GRADING.md` and `docs/verification/H3.md`. H4-H6 remain planned; their proposed scheduling/evaluation commands below are implementation targets. Each checkpoint finishes with its actual validation record before moving on.
+H0-H4 are complete. H1 data, H2 candidates, H3 grading and the H4 runner have their respective guides under `homework/` and actual records in `docs/verification/H1.md` through `H4.md`. H4's evaluation and summary commands are implemented; H5-H6 remain planned. Each checkpoint finishes with its actual validation record before moving on.
 
 ## H1 - Task set and experiment contract
 
@@ -128,4 +128,4 @@ Page 57 asks students to read OWASP Top 10 for LLM Applications (2025), bring th
 
 ## Status
 
-H0-H3 are complete. The 50 formal tasks and eight development tasks remain frozen. H2 provides native snapshot tool use, a fixed RAG baseline and traces. H3 provides four task-type graders, blinded criterion-based judging, final-state/source guards and a revision lock. All 197 regression tests passed, including 43 H3 checks. H3 used eight actual judge requests and zero new candidate requests: the semantic judge agreed with all five evaluated binary user labels; one user-skipped item was excluded. Both saved H2 development outputs also passed individual grading. The tiny sample and same-model-family limitation are documented; no broad reliability claim is made. H4-H6 remain pending, and no formal benchmark score is claimed. Main and the public app remain unchanged.
+H0-H4 are complete. Frozen H1 tasks, H2 candidate code and the calibrated H3 grader remain unchanged. H4 adds an immutable 50-baseline/150-Agent schedule, execution/grading persistence, conservative crash recovery, resume and offline metrics/CSV/Markdown reports. All 224 regression tests passed, including 27 H4 checks. The H4 verifier used zero model/judge requests and exercised explicitly labelled offline fixtures; no formal score exists. H5 real pilot/formal execution and H6 failure analysis/submission remain pending. Main and the public app remain unchanged.

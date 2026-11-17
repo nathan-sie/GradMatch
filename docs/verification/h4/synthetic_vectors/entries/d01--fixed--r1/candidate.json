@@ -1,0 +1,35 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "d2bd2133-acd9-4fb6-bf81-c694fd83aa5a",
+  "run_id": "d01--fixed--r1",
+  "plan_hash": "7f0752ed81d9fb108b1e6a4272b8b5a31d132705f4057cb00a317c0f6c36347e",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T21:27:51.254839+00:00",
+  "payload_sha256": "cb1a2ae7165369eb5b5049a514bc198cce6eb3a3acb589caba16565608aecd76",
+  "payload": {
+    "task_id": "d01",
+    "strategy": "fixed",
+    "trace_id": "d89d55a2-b8e3-4879-8a13-7a795e773668",
+    "execution_mode": "offline_test_double",
+    "status": "completed",
+    "model_calls": 1,
+    "tool_calls": 1,
+    "latency_ms": 1000,
+    "usage": [
+      {
+        "actual_request": false,
+        "input_tokens": 100,
+        "output_tokens": 20,
+        "cached_input_tokens": 80,
+        "estimated_cost_usd": "0"
+      }
+    ],
+    "configuration": {
+      "candidate_code_hash": "8d3cb91b32f0052c1cb205bc6b8f562c2077c6cb4382465b7ba61d655894cc21",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17"
+    },
+    "fixture_note": "Hand-authored arithmetic input, not a candidate response or measured latency."
+  }
+}

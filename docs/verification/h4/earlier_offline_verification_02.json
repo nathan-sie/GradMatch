@@ -1,0 +1,29 @@
+{
+  "checkpoint": "H4",
+  "purpose": "offline_harness_verification_not_benchmark",
+  "status": "passed",
+  "checks": {
+    "formal_schedule_200": true,
+    "schedule_50_baseline_150_agent": true,
+    "dry_run_no_scores": true,
+    "real_engine_offline_adapter_and_grader_connected": true,
+    "resume_preserved_prior_bytes_and_skipped_completed": true,
+    "repeat_vectors_and_denominators": true,
+    "failure_tail_in_p95": true,
+    "cached_input_not_counted_twice": true,
+    "interrupted_attempt_not_reissued": true,
+    "uncertain_usage_not_zero_filled": true,
+    "network_and_paid_providers_guarded": true
+  },
+  "h4_tests": 27,
+  "regression_tests": 224,
+  "formal_scheduled_executions": 200,
+  "actual_formal_executions": 0,
+  "actual_candidate_requests": 0,
+  "actual_judge_requests": 0,
+  "estimated_actual_cost_usd": "0",
+  "runner_hash": "47a0cacb711e2c62d7d229f885f0ab24fc99d3a4942d88325377971d38de6767",
+  "candidate_code_hash": "8d3cb91b32f0052c1cb205bc6b8f562c2077c6cb4382465b7ba61d655894cc21",
+  "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+  "formal_evaluation": "not_run"
+}

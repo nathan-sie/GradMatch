@@ -1,0 +1,19 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "d2bd2133-acd9-4fb6-bf81-c694fd83aa5a",
+  "run_id": "d01--react--r3",
+  "plan_hash": "7f0752ed81d9fb108b1e6a4272b8b5a31d132705f4057cb00a317c0f6c36347e",
+  "kind": "grade",
+  "saved_at": "2026-11-17T21:27:51.274437+00:00",
+  "payload_sha256": "424fb2cc5bca01414599a7027f50b93e68c39e4f1c92f2fb9005e20033e6cc28",
+  "payload": {
+    "task_id": "d01",
+    "candidate_trace_id": "6a99c5bf-c10b-48ad-be46-0f0ab3a54fb7",
+    "candidate_record_sha256": "b94ee7b409bb06da967560a3f2a3e913d420bd0a5cbd15456768352b14058471",
+    "grader_hash": "59c3c01781bb0f8ae80460abb36f33f43ba123be8d86f8eaf63eaf25207e0f0c",
+    "status": "passed",
+    "passed": true,
+    "judge_record": null,
+    "fixture_note": "Hand-authored outcome vector; not an actual judge decision."
+  }
+}

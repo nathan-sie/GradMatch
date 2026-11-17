@@ -1,0 +1,11 @@
+[
+  {
+    "task_id": "d01",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  }
+]
