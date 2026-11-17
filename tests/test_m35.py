@@ -117,3 +117,29 @@ def test_full_service_recomputes_budget_without_changing_background():
     assert session.profile.model_dump(mode='json')=={**before,'tuition_budget_usd':'100000','profile_version':2}
     removed=next(x for x in second['changes_from_previous']['removed'] if x['program_id']=='cmu-msaii-pittsburgh')
     assert any('budget' in r for r in removed['reasons'])
+
+
+def test_reloading_same_example_discards_unsaved_form_edits_and_preserves_model_opt_in(tmp_path,monkeypatch):
+    database=tmp_path/'catalog.db'; import_catalog(database=database)
+    monkeypatch.setenv('GRADMATCH_DB_PATH',str(database))
+    monkeypatch.setenv('MODEL_ENABLED','true')
+    monkeypatch.setenv('OPENAI_API_KEY','SYNTHETIC-TEST-ONLY')
+    app=AppTest.from_file(str(PROJECT_ROOT/'app.py'),default_timeout=20).run()
+    app.checkbox(key='m2_allow_model').check().run()
+    app.button(key='m35_load_example').click().run()
+    expected=app.session_state['m2_session'].profile.model_copy(deep=True)
+    app.number_input(key='m2_input_gpa').set_value(2.0)
+    app.text_input(key='m2_input_budget').set_value('1')
+    app.button(key='m35_load_example').click().run()
+    assert not app.exception
+    assert app.number_input(key='m2_input_gpa').value==3.5
+    assert app.text_input(key='m2_input_budget').value=='140000'
+    assert app.number_input(key='m2_input_english_total').value==110
+    assert app.number_input(key='m2_input_gre_quantitative').value==165
+    assert app.checkbox(key='m2_allow_model').value is True
+    assert app.session_state['m2_session'].profile==expected
+    app.checkbox(key='m2_allow_model').uncheck().run()
+    app.button(key='m2_save_profile').click().run()
+    saved=app.session_state['m2_session'].profile
+    assert saved.model_dump(exclude={'profile_version'})==expected.model_dump(exclude={'profile_version'})
+    assert not app.session_state['m2_session'].usage

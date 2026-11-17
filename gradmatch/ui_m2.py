@@ -34,8 +34,10 @@ def render_m2(database):
     left, right = st.columns(2)
     if left.button("Load synthetic example", key="m2_load_example", disabled=session.active):
         session.update(synthetic_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+        st.session_state.pop("m2_form_version", None)
     if left.button("Load tiering example (USD 140,000)", key="m35_load_example", disabled=session.active):
         session.update(tiering_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+        st.session_state.pop("m2_form_version", None)
     st.caption("Tiering example: fictional completed CS degree, GPA 3.5/4 overall, TOEFL 110 (2025), in-person GRE, confirmed CS/math preparation. Try reducing its tuition budget to 100000 after generating.")
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
@@ -60,9 +62,7 @@ def render_m2(database):
     active_settings = replace(settings, enabled=settings.enabled and allow_model)
     # Restore form widgets from the authoritative profile after chat or sample updates.
     if st.session_state.get("m2_form_version") != session.profile.profile_version:
-        for key in list(st.session_state):
-            if key.startswith("m2_input_"):
-                del st.session_state[key]
+        sync_profile_inputs(session.profile)
         st.session_state["m2_form_version"] = session.profile.profile_version
     st.caption(f"Current profile version: {session.profile.profile_version} · Tuition budget: "
         + (f"USD {session.profile.tuition_budget_usd:,.2f}" if session.profile.tuition_budget_usd is not None else "Unknown"))
@@ -111,6 +111,51 @@ def render_m2(database):
     st.download_button("Download current session JSON", json.dumps(export_session(session), ensure_ascii=False, indent=2),
         file_name="gradmatch_m2_session.json", mime="application/json", key="m2_export")
     st.caption("The download contains the profile and messages you entered. Keep it private if you used personal information.")
+
+
+def sync_profile_inputs(profile):
+    """Send authoritative values to existing keyed browser widgets.
+
+    Deleting a key and changing its default does not update an existing
+    Streamlit 1.67 browser widget. Explicit assignments also preserve the
+    paid-call checkbox, which is outside this form.
+    """
+    english, degree, gre = profile.english, profile.degree, profile.gre
+    values = {
+        "has_gpa": profile.gpa is not None,
+        "gpa": float(profile.gpa.value) if profile.gpa else 0.0,
+        "scale": float(profile.gpa.scale) if profile.gpa else 4.0,
+        "scope": profile.gpa.scope if profile.gpa else "overall",
+        "institution": profile.institution or "", "country": profile.institution_country or "",
+        "major": profile.major or "", "goal": profile.goal,
+        "degree_completion": degree.completion if degree else "unknown",
+        "degree_recognition": degree.recognition if degree else "unknown",
+        "degree_field": degree.field if degree else "unknown",
+        "degree_country": (degree.country or "") if degree else "",
+        "has_budget": profile.tuition_budget_usd is not None,
+        "budget": str(profile.tuition_budget_usd) if profile.tuition_budget_usd is not None else "",
+        "basis": profile.budget_basis, "has_intake": profile.intake is not None,
+        "year": profile.intake.year if profile.intake else 2027,
+        "term": profile.intake.term if profile.intake else "fall",
+        "category": profile.applicant_category, "mode": profile.study_mode,
+        "english_version": english.version if english else profile.english_status,
+        "english_total": float(english.total) if english else 0.0,
+        "has_date": bool(english and english.test_date), "test_date": english.test_date if english else None,
+        "has_gre": gre is not None,
+        "gre_verbal": gre.verbal if gre else 130,
+        "gre_quantitative": gre.quantitative if gre else 130,
+        "gre_writing": float(gre.writing) if gre else 0.0,
+        "gre_date": gre.test_date if gre else None,
+        "gre_format": gre.format if gre else "unknown",
+        "courses": [name for name, complete in profile.coursework.items() if complete is True and name in TOPICS],
+        "absent_courses": [name for name, complete in profile.coursework.items() if complete is False and name in TOPICS],
+    }
+    for name in ["reading", "listening", "speaking", "writing"]:
+        values[name] = str(english.subscores.get(name, "")) if english else ""
+    for field in ["research", "work_experience"]:
+        values[field + "_known"] = getattr(profile, field) is not None
+        values[field] = "\n".join(getattr(profile, field) or [])
+    st.session_state.update({"m2_input_" + name: value for name, value in values.items()})
 
 
 def profile_form(profile):
