@@ -1,0 +1,1498 @@
+{
+  "schema_version": "h4-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "created_at": "2026-11-17T23:47:50.742797+00:00",
+  "split": "formal",
+  "execution_mode": "live_model",
+  "fingerprint": {
+    "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+    "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
+    "runner_hash": "0e7bf2ee122845a9f824064ecb038faac4388c5ab1cb58edb80feea4f14c53ee",
+    "h1_manifest_sha256": "50af7c2a0cec9e6addd83cc54ed2619e3b374428e9ce84e411d6e0718bc86df1",
+    "frozen_files": {
+      "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+      "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+      "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+      "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+      "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+    },
+    "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+    "grading_freeze_sha256": "36644f23d0f78845b54f8968999b88f784b72cfe216754900426c98df8b50c76",
+    "app_config_sha256": "880860cfa19de57f88950e906604fc69c84f6f499bc4520a66066712ca4e4917",
+    "dependency_lock_sha256": "d2986f902d2e3bedee6f490da399b7eafee459f0771703bfe9a371c224e858de",
+    "assessment_date": "2026-11-16",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "candidate_limits": {
+      "automatic_model_retries": 0,
+      "max_model_calls_per_task": 8,
+      "max_output_tokens_per_call": 1800,
+      "max_task_seconds": 120,
+      "max_tool_calls_per_task": 12,
+      "model_timeout_seconds": 45
+    },
+    "environment": {
+      "python": "3.12.14",
+      "openai": "2.54.0",
+      "pydantic": "2.14.3"
+    }
+  },
+  "task_ids": [
+    "t01",
+    "t02",
+    "t03",
+    "t04",
+    "t05",
+    "t06",
+    "t07",
+    "t08",
+    "t09",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50"
+  ],
+  "agent_repeats": 3,
+  "baseline_repeats": 1,
+  "metrics_version": "h4-v1",
+  "schedule": [
+    {
+      "sequence": 1,
+      "task_id": "t01",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t01--fixed--r1"
+    },
+    {
+      "sequence": 2,
+      "task_id": "t01",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t01--react--r1"
+    },
+    {
+      "sequence": 3,
+      "task_id": "t01",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t01--react--r2"
+    },
+    {
+      "sequence": 4,
+      "task_id": "t01",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t01--react--r3"
+    },
+    {
+      "sequence": 5,
+      "task_id": "t02",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t02--react--r1"
+    },
+    {
+      "sequence": 6,
+      "task_id": "t02",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t02--react--r2"
+    },
+    {
+      "sequence": 7,
+      "task_id": "t02",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t02--react--r3"
+    },
+    {
+      "sequence": 8,
+      "task_id": "t02",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t02--fixed--r1"
+    },
+    {
+      "sequence": 9,
+      "task_id": "t03",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t03--react--r2"
+    },
+    {
+      "sequence": 10,
+      "task_id": "t03",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t03--react--r3"
+    },
+    {
+      "sequence": 11,
+      "task_id": "t03",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t03--fixed--r1"
+    },
+    {
+      "sequence": 12,
+      "task_id": "t03",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t03--react--r1"
+    },
+    {
+      "sequence": 13,
+      "task_id": "t04",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t04--react--r3"
+    },
+    {
+      "sequence": 14,
+      "task_id": "t04",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t04--fixed--r1"
+    },
+    {
+      "sequence": 15,
+      "task_id": "t04",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t04--react--r1"
+    },
+    {
+      "sequence": 16,
+      "task_id": "t04",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t04--react--r2"
+    },
+    {
+      "sequence": 17,
+      "task_id": "t05",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t05--fixed--r1"
+    },
+    {
+      "sequence": 18,
+      "task_id": "t05",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t05--react--r1"
+    },
+    {
+      "sequence": 19,
+      "task_id": "t05",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t05--react--r2"
+    },
+    {
+      "sequence": 20,
+      "task_id": "t05",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t05--react--r3"
+    },
+    {
+      "sequence": 21,
+      "task_id": "t06",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t06--react--r1"
+    },
+    {
+      "sequence": 22,
+      "task_id": "t06",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t06--react--r2"
+    },
+    {
+      "sequence": 23,
+      "task_id": "t06",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t06--react--r3"
+    },
+    {
+      "sequence": 24,
+      "task_id": "t06",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t06--fixed--r1"
+    },
+    {
+      "sequence": 25,
+      "task_id": "t07",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t07--react--r2"
+    },
+    {
+      "sequence": 26,
+      "task_id": "t07",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t07--react--r3"
+    },
+    {
+      "sequence": 27,
+      "task_id": "t07",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t07--fixed--r1"
+    },
+    {
+      "sequence": 28,
+      "task_id": "t07",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t07--react--r1"
+    },
+    {
+      "sequence": 29,
+      "task_id": "t08",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t08--react--r3"
+    },
+    {
+      "sequence": 30,
+      "task_id": "t08",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t08--fixed--r1"
+    },
+    {
+      "sequence": 31,
+      "task_id": "t08",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t08--react--r1"
+    },
+    {
+      "sequence": 32,
+      "task_id": "t08",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t08--react--r2"
+    },
+    {
+      "sequence": 33,
+      "task_id": "t09",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t09--fixed--r1"
+    },
+    {
+      "sequence": 34,
+      "task_id": "t09",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t09--react--r1"
+    },
+    {
+      "sequence": 35,
+      "task_id": "t09",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t09--react--r2"
+    },
+    {
+      "sequence": 36,
+      "task_id": "t09",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t09--react--r3"
+    },
+    {
+      "sequence": 37,
+      "task_id": "t10",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t10--react--r1"
+    },
+    {
+      "sequence": 38,
+      "task_id": "t10",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t10--react--r2"
+    },
+    {
+      "sequence": 39,
+      "task_id": "t10",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t10--react--r3"
+    },
+    {
+      "sequence": 40,
+      "task_id": "t10",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t10--fixed--r1"
+    },
+    {
+      "sequence": 41,
+      "task_id": "t11",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t11--react--r2"
+    },
+    {
+      "sequence": 42,
+      "task_id": "t11",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t11--react--r3"
+    },
+    {
+      "sequence": 43,
+      "task_id": "t11",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t11--fixed--r1"
+    },
+    {
+      "sequence": 44,
+      "task_id": "t11",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t11--react--r1"
+    },
+    {
+      "sequence": 45,
+      "task_id": "t12",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t12--react--r3"
+    },
+    {
+      "sequence": 46,
+      "task_id": "t12",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t12--fixed--r1"
+    },
+    {
+      "sequence": 47,
+      "task_id": "t12",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t12--react--r1"
+    },
+    {
+      "sequence": 48,
+      "task_id": "t12",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t12--react--r2"
+    },
+    {
+      "sequence": 49,
+      "task_id": "t13",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t13--fixed--r1"
+    },
+    {
+      "sequence": 50,
+      "task_id": "t13",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t13--react--r1"
+    },
+    {
+      "sequence": 51,
+      "task_id": "t13",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t13--react--r2"
+    },
+    {
+      "sequence": 52,
+      "task_id": "t13",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t13--react--r3"
+    },
+    {
+      "sequence": 53,
+      "task_id": "t14",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t14--react--r1"
+    },
+    {
+      "sequence": 54,
+      "task_id": "t14",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t14--react--r2"
+    },
+    {
+      "sequence": 55,
+      "task_id": "t14",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t14--react--r3"
+    },
+    {
+      "sequence": 56,
+      "task_id": "t14",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t14--fixed--r1"
+    },
+    {
+      "sequence": 57,
+      "task_id": "t15",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t15--react--r2"
+    },
+    {
+      "sequence": 58,
+      "task_id": "t15",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t15--react--r3"
+    },
+    {
+      "sequence": 59,
+      "task_id": "t15",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t15--fixed--r1"
+    },
+    {
+      "sequence": 60,
+      "task_id": "t15",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t15--react--r1"
+    },
+    {
+      "sequence": 61,
+      "task_id": "t16",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t16--react--r3"
+    },
+    {
+      "sequence": 62,
+      "task_id": "t16",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t16--fixed--r1"
+    },
+    {
+      "sequence": 63,
+      "task_id": "t16",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t16--react--r1"
+    },
+    {
+      "sequence": 64,
+      "task_id": "t16",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t16--react--r2"
+    },
+    {
+      "sequence": 65,
+      "task_id": "t17",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t17--fixed--r1"
+    },
+    {
+      "sequence": 66,
+      "task_id": "t17",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t17--react--r1"
+    },
+    {
+      "sequence": 67,
+      "task_id": "t17",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t17--react--r2"
+    },
+    {
+      "sequence": 68,
+      "task_id": "t17",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t17--react--r3"
+    },
+    {
+      "sequence": 69,
+      "task_id": "t18",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t18--react--r1"
+    },
+    {
+      "sequence": 70,
+      "task_id": "t18",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t18--react--r2"
+    },
+    {
+      "sequence": 71,
+      "task_id": "t18",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t18--react--r3"
+    },
+    {
+      "sequence": 72,
+      "task_id": "t18",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t18--fixed--r1"
+    },
+    {
+      "sequence": 73,
+      "task_id": "t19",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t19--react--r2"
+    },
+    {
+      "sequence": 74,
+      "task_id": "t19",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t19--react--r3"
+    },
+    {
+      "sequence": 75,
+      "task_id": "t19",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t19--fixed--r1"
+    },
+    {
+      "sequence": 76,
+      "task_id": "t19",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t19--react--r1"
+    },
+    {
+      "sequence": 77,
+      "task_id": "t20",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t20--react--r3"
+    },
+    {
+      "sequence": 78,
+      "task_id": "t20",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t20--fixed--r1"
+    },
+    {
+      "sequence": 79,
+      "task_id": "t20",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t20--react--r1"
+    },
+    {
+      "sequence": 80,
+      "task_id": "t20",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t20--react--r2"
+    },
+    {
+      "sequence": 81,
+      "task_id": "t21",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t21--fixed--r1"
+    },
+    {
+      "sequence": 82,
+      "task_id": "t21",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t21--react--r1"
+    },
+    {
+      "sequence": 83,
+      "task_id": "t21",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t21--react--r2"
+    },
+    {
+      "sequence": 84,
+      "task_id": "t21",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t21--react--r3"
+    },
+    {
+      "sequence": 85,
+      "task_id": "t22",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t22--react--r1"
+    },
+    {
+      "sequence": 86,
+      "task_id": "t22",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t22--react--r2"
+    },
+    {
+      "sequence": 87,
+      "task_id": "t22",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t22--react--r3"
+    },
+    {
+      "sequence": 88,
+      "task_id": "t22",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t22--fixed--r1"
+    },
+    {
+      "sequence": 89,
+      "task_id": "t23",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t23--react--r2"
+    },
+    {
+      "sequence": 90,
+      "task_id": "t23",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t23--react--r3"
+    },
+    {
+      "sequence": 91,
+      "task_id": "t23",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t23--fixed--r1"
+    },
+    {
+      "sequence": 92,
+      "task_id": "t23",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t23--react--r1"
+    },
+    {
+      "sequence": 93,
+      "task_id": "t24",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t24--react--r3"
+    },
+    {
+      "sequence": 94,
+      "task_id": "t24",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t24--fixed--r1"
+    },
+    {
+      "sequence": 95,
+      "task_id": "t24",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t24--react--r1"
+    },
+    {
+      "sequence": 96,
+      "task_id": "t24",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t24--react--r2"
+    },
+    {
+      "sequence": 97,
+      "task_id": "t25",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t25--fixed--r1"
+    },
+    {
+      "sequence": 98,
+      "task_id": "t25",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t25--react--r1"
+    },
+    {
+      "sequence": 99,
+      "task_id": "t25",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t25--react--r2"
+    },
+    {
+      "sequence": 100,
+      "task_id": "t25",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t25--react--r3"
+    },
+    {
+      "sequence": 101,
+      "task_id": "t26",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t26--react--r1"
+    },
+    {
+      "sequence": 102,
+      "task_id": "t26",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t26--react--r2"
+    },
+    {
+      "sequence": 103,
+      "task_id": "t26",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t26--react--r3"
+    },
+    {
+      "sequence": 104,
+      "task_id": "t26",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t26--fixed--r1"
+    },
+    {
+      "sequence": 105,
+      "task_id": "t27",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t27--react--r2"
+    },
+    {
+      "sequence": 106,
+      "task_id": "t27",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t27--react--r3"
+    },
+    {
+      "sequence": 107,
+      "task_id": "t27",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t27--fixed--r1"
+    },
+    {
+      "sequence": 108,
+      "task_id": "t27",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t27--react--r1"
+    },
+    {
+      "sequence": 109,
+      "task_id": "t28",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t28--react--r3"
+    },
+    {
+      "sequence": 110,
+      "task_id": "t28",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t28--fixed--r1"
+    },
+    {
+      "sequence": 111,
+      "task_id": "t28",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t28--react--r1"
+    },
+    {
+      "sequence": 112,
+      "task_id": "t28",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t28--react--r2"
+    },
+    {
+      "sequence": 113,
+      "task_id": "t29",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t29--fixed--r1"
+    },
+    {
+      "sequence": 114,
+      "task_id": "t29",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t29--react--r1"
+    },
+    {
+      "sequence": 115,
+      "task_id": "t29",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t29--react--r2"
+    },
+    {
+      "sequence": 116,
+      "task_id": "t29",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t29--react--r3"
+    },
+    {
+      "sequence": 117,
+      "task_id": "t30",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t30--react--r1"
+    },
+    {
+      "sequence": 118,
+      "task_id": "t30",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t30--react--r2"
+    },
+    {
+      "sequence": 119,
+      "task_id": "t30",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t30--react--r3"
+    },
+    {
+      "sequence": 120,
+      "task_id": "t30",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t30--fixed--r1"
+    },
+    {
+      "sequence": 121,
+      "task_id": "t31",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t31--react--r2"
+    },
+    {
+      "sequence": 122,
+      "task_id": "t31",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t31--react--r3"
+    },
+    {
+      "sequence": 123,
+      "task_id": "t31",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t31--fixed--r1"
+    },
+    {
+      "sequence": 124,
+      "task_id": "t31",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t31--react--r1"
+    },
+    {
+      "sequence": 125,
+      "task_id": "t32",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t32--react--r3"
+    },
+    {
+      "sequence": 126,
+      "task_id": "t32",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t32--fixed--r1"
+    },
+    {
+      "sequence": 127,
+      "task_id": "t32",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t32--react--r1"
+    },
+    {
+      "sequence": 128,
+      "task_id": "t32",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t32--react--r2"
+    },
+    {
+      "sequence": 129,
+      "task_id": "t33",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t33--fixed--r1"
+    },
+    {
+      "sequence": 130,
+      "task_id": "t33",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t33--react--r1"
+    },
+    {
+      "sequence": 131,
+      "task_id": "t33",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t33--react--r2"
+    },
+    {
+      "sequence": 132,
+      "task_id": "t33",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t33--react--r3"
+    },
+    {
+      "sequence": 133,
+      "task_id": "t34",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t34--react--r1"
+    },
+    {
+      "sequence": 134,
+      "task_id": "t34",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t34--react--r2"
+    },
+    {
+      "sequence": 135,
+      "task_id": "t34",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t34--react--r3"
+    },
+    {
+      "sequence": 136,
+      "task_id": "t34",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t34--fixed--r1"
+    },
+    {
+      "sequence": 137,
+      "task_id": "t35",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t35--react--r2"
+    },
+    {
+      "sequence": 138,
+      "task_id": "t35",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t35--react--r3"
+    },
+    {
+      "sequence": 139,
+      "task_id": "t35",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t35--fixed--r1"
+    },
+    {
+      "sequence": 140,
+      "task_id": "t35",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t35--react--r1"
+    },
+    {
+      "sequence": 141,
+      "task_id": "t36",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t36--react--r3"
+    },
+    {
+      "sequence": 142,
+      "task_id": "t36",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t36--fixed--r1"
+    },
+    {
+      "sequence": 143,
+      "task_id": "t36",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t36--react--r1"
+    },
+    {
+      "sequence": 144,
+      "task_id": "t36",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t36--react--r2"
+    },
+    {
+      "sequence": 145,
+      "task_id": "t37",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t37--fixed--r1"
+    },
+    {
+      "sequence": 146,
+      "task_id": "t37",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t37--react--r1"
+    },
+    {
+      "sequence": 147,
+      "task_id": "t37",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t37--react--r2"
+    },
+    {
+      "sequence": 148,
+      "task_id": "t37",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t37--react--r3"
+    },
+    {
+      "sequence": 149,
+      "task_id": "t38",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t38--react--r1"
+    },
+    {
+      "sequence": 150,
+      "task_id": "t38",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t38--react--r2"
+    },
+    {
+      "sequence": 151,
+      "task_id": "t38",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t38--react--r3"
+    },
+    {
+      "sequence": 152,
+      "task_id": "t38",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t38--fixed--r1"
+    },
+    {
+      "sequence": 153,
+      "task_id": "t39",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t39--react--r2"
+    },
+    {
+      "sequence": 154,
+      "task_id": "t39",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t39--react--r3"
+    },
+    {
+      "sequence": 155,
+      "task_id": "t39",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t39--fixed--r1"
+    },
+    {
+      "sequence": 156,
+      "task_id": "t39",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t39--react--r1"
+    },
+    {
+      "sequence": 157,
+      "task_id": "t40",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t40--react--r3"
+    },
+    {
+      "sequence": 158,
+      "task_id": "t40",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t40--fixed--r1"
+    },
+    {
+      "sequence": 159,
+      "task_id": "t40",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t40--react--r1"
+    },
+    {
+      "sequence": 160,
+      "task_id": "t40",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t40--react--r2"
+    },
+    {
+      "sequence": 161,
+      "task_id": "t41",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t41--fixed--r1"
+    },
+    {
+      "sequence": 162,
+      "task_id": "t41",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t41--react--r1"
+    },
+    {
+      "sequence": 163,
+      "task_id": "t41",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t41--react--r2"
+    },
+    {
+      "sequence": 164,
+      "task_id": "t41",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t41--react--r3"
+    },
+    {
+      "sequence": 165,
+      "task_id": "t42",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t42--react--r1"
+    },
+    {
+      "sequence": 166,
+      "task_id": "t42",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t42--react--r2"
+    },
+    {
+      "sequence": 167,
+      "task_id": "t42",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t42--react--r3"
+    },
+    {
+      "sequence": 168,
+      "task_id": "t42",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t42--fixed--r1"
+    },
+    {
+      "sequence": 169,
+      "task_id": "t43",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t43--react--r2"
+    },
+    {
+      "sequence": 170,
+      "task_id": "t43",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t43--react--r3"
+    },
+    {
+      "sequence": 171,
+      "task_id": "t43",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t43--fixed--r1"
+    },
+    {
+      "sequence": 172,
+      "task_id": "t43",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t43--react--r1"
+    },
+    {
+      "sequence": 173,
+      "task_id": "t44",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t44--react--r3"
+    },
+    {
+      "sequence": 174,
+      "task_id": "t44",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t44--fixed--r1"
+    },
+    {
+      "sequence": 175,
+      "task_id": "t44",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t44--react--r1"
+    },
+    {
+      "sequence": 176,
+      "task_id": "t44",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t44--react--r2"
+    },
+    {
+      "sequence": 177,
+      "task_id": "t45",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t45--fixed--r1"
+    },
+    {
+      "sequence": 178,
+      "task_id": "t45",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t45--react--r1"
+    },
+    {
+      "sequence": 179,
+      "task_id": "t45",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t45--react--r2"
+    },
+    {
+      "sequence": 180,
+      "task_id": "t45",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t45--react--r3"
+    },
+    {
+      "sequence": 181,
+      "task_id": "t46",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t46--react--r1"
+    },
+    {
+      "sequence": 182,
+      "task_id": "t46",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t46--react--r2"
+    },
+    {
+      "sequence": 183,
+      "task_id": "t46",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t46--react--r3"
+    },
+    {
+      "sequence": 184,
+      "task_id": "t46",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t46--fixed--r1"
+    },
+    {
+      "sequence": 185,
+      "task_id": "t47",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t47--react--r2"
+    },
+    {
+      "sequence": 186,
+      "task_id": "t47",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t47--react--r3"
+    },
+    {
+      "sequence": 187,
+      "task_id": "t47",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t47--fixed--r1"
+    },
+    {
+      "sequence": 188,
+      "task_id": "t47",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t47--react--r1"
+    },
+    {
+      "sequence": 189,
+      "task_id": "t48",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t48--react--r3"
+    },
+    {
+      "sequence": 190,
+      "task_id": "t48",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t48--fixed--r1"
+    },
+    {
+      "sequence": 191,
+      "task_id": "t48",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t48--react--r1"
+    },
+    {
+      "sequence": 192,
+      "task_id": "t48",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t48--react--r2"
+    },
+    {
+      "sequence": 193,
+      "task_id": "t49",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t49--fixed--r1"
+    },
+    {
+      "sequence": 194,
+      "task_id": "t49",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t49--react--r1"
+    },
+    {
+      "sequence": 195,
+      "task_id": "t49",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t49--react--r2"
+    },
+    {
+      "sequence": 196,
+      "task_id": "t49",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t49--react--r3"
+    },
+    {
+      "sequence": 197,
+      "task_id": "t50",
+      "strategy": "react",
+      "repeat": 1,
+      "run_id": "t50--react--r1"
+    },
+    {
+      "sequence": 198,
+      "task_id": "t50",
+      "strategy": "react",
+      "repeat": 2,
+      "run_id": "t50--react--r2"
+    },
+    {
+      "sequence": 199,
+      "task_id": "t50",
+      "strategy": "react",
+      "repeat": 3,
+      "run_id": "t50--react--r3"
+    },
+    {
+      "sequence": 200,
+      "task_id": "t50",
+      "strategy": "fixed",
+      "repeat": 1,
+      "run_id": "t50--fixed--r1"
+    }
+  ],
+  "initial_state": "planned_only",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412"
+}

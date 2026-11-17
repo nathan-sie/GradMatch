@@ -1,0 +1,127 @@
+{
+  "schema_version": "h5-formal-freeze-v1",
+  "frozen_at": "2026-11-17T23:47:54.551993+00:00",
+  "source_git_commit": "61d7b844bf201ed55e12196678779c8c63807ba9",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "fingerprint": {
+    "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+    "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
+    "runner_hash": "0e7bf2ee122845a9f824064ecb038faac4388c5ab1cb58edb80feea4f14c53ee",
+    "h1_manifest_sha256": "50af7c2a0cec9e6addd83cc54ed2619e3b374428e9ce84e411d6e0718bc86df1",
+    "frozen_files": {
+      "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+      "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+      "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+      "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+      "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+    },
+    "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+    "grading_freeze_sha256": "36644f23d0f78845b54f8968999b88f784b72cfe216754900426c98df8b50c76",
+    "app_config_sha256": "880860cfa19de57f88950e906604fc69c84f6f499bc4520a66066712ca4e4917",
+    "dependency_lock_sha256": "d2986f902d2e3bedee6f490da399b7eafee459f0771703bfe9a371c224e858de",
+    "assessment_date": "2026-11-16",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "candidate_limits": {
+      "automatic_model_retries": 0,
+      "max_model_calls_per_task": 8,
+      "max_output_tokens_per_call": 1800,
+      "max_task_seconds": 120,
+      "max_tool_calls_per_task": 12,
+      "model_timeout_seconds": 45
+    },
+    "environment": {
+      "python": "3.12.14",
+      "openai": "2.54.0",
+      "pydantic": "2.14.3"
+    }
+  },
+  "pilot_experiment_id": "18c60837-af02-4dc1-b177-fa169686a8c9",
+  "cost_forecast": {
+    "method": "Per-strategy/per-task-type pilot means, weighted by the 50-task formal distribution and 1+3 repeats.",
+    "cells": [
+      {
+        "strategy": "fixed",
+        "task_type": "exact",
+        "pilot_executions": 2,
+        "formal_executions": 18,
+        "candidate_mean_usd": "0.001194675",
+        "judge_mean_usd": "0.00631425",
+        "projected_usd": "0.135160650"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "rubric",
+        "pilot_executions": 4,
+        "formal_executions": 20,
+        "candidate_mean_usd": "0.0032560125",
+        "judge_mean_usd": "0.00692025",
+        "projected_usd": "0.2035252500"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "tool",
+        "pilot_executions": 1,
+        "formal_executions": 8,
+        "candidate_mean_usd": "0.0041736",
+        "judge_mean_usd": "0",
+        "projected_usd": "0.0333888"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "unanswerable",
+        "pilot_executions": 1,
+        "formal_executions": 4,
+        "candidate_mean_usd": "0.00141405",
+        "judge_mean_usd": "0.005757",
+        "projected_usd": "0.02868420"
+      },
+      {
+        "strategy": "react",
+        "task_type": "exact",
+        "pilot_executions": 6,
+        "formal_executions": 54,
+        "candidate_mean_usd": "0.0015225",
+        "judge_mean_usd": "0.005709625",
+        "projected_usd": "0.390534750"
+      },
+      {
+        "strategy": "react",
+        "task_type": "rubric",
+        "pilot_executions": 12,
+        "formal_executions": 60,
+        "candidate_mean_usd": "0.00292235",
+        "judge_mean_usd": "0.00633075",
+        "projected_usd": "0.55518600"
+      },
+      {
+        "strategy": "react",
+        "task_type": "tool",
+        "pilot_executions": 3,
+        "formal_executions": 24,
+        "candidate_mean_usd": "0.00372075",
+        "judge_mean_usd": "0",
+        "projected_usd": "0.08929800"
+      },
+      {
+        "strategy": "react",
+        "task_type": "unanswerable",
+        "pilot_executions": 3,
+        "formal_executions": 12,
+        "candidate_mean_usd": "0.00265155",
+        "judge_mean_usd": "0.00557150",
+        "projected_usd": "0.09867660"
+      }
+    ],
+    "estimated_formal_usd": "1.5344542500",
+    "two_times_planning_allowance_usd": "3.07",
+    "complete": true,
+    "limitation": "Eight selected development questions may underrepresent multi-program and long follow-up tasks. The allowance is a planning estimate, not a price guarantee or API spending limit."
+  },
+  "scheduled_baseline": 50,
+  "scheduled_agent": 150,
+  "designated_comparison_repeat": 1,
+  "source_changes_during_formal": "none permitted; a changed revision requires a new labelled experiment",
+  "automatic_candidate_or_judge_retries": 0,
+  "formal_results": "pending_at_freeze"
+}
