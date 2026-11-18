@@ -1,0 +1,14 @@
+{
+  "scope": "future_development_regression_only",
+  "derived_from": "t26--react--r2",
+  "expected_first_call": {
+    "name": "check_program",
+    "arguments": {
+      "program_id": "uci-mcs-irvine",
+      "profile_version": 3
+    }
+  },
+  "not_in_formal_task_set": true,
+  "fix_status": "proposed, not implemented or model-tested in H6",
+  "reason": "Honor an explicit direct-check request before discretionary program lookup; preserve declared module scores and current version."
+}

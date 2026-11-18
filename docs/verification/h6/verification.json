@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "members": 1397,
+  "formal_tasks": 50,
+  "formal_executions": 200,
+  "raw_candidate_records": 200,
+  "secrets": "no credentials or runtime database",
+  "results": "frozen values verified",
+  "archive_sha256": "0f23f1fc83dc00691a636e11f0cc2e1f2b2cdff884054c2e7ce2294ef7c1dd3d",
+  "archive_bytes": 6202212,
+  "offline_extraction": {
+    "status": "passed",
+    "fresh_root": true,
+    "key_ready": false,
+    "sqlite_absent": true,
+    "source_fingerprint_match": true,
+    "frozen_tasks": 50,
+    "formal_records": 200,
+    "metrics_match": true,
+    "dry_schedule": 200,
+    "candidate_requests": 0,
+    "judge_requests": 0,
+    "network_guarded": true
+  },
+  "checkpoint": "H6",
+  "verified_at": "2026-11-18T01:10:25.625633+00:00",
+  "tests": {
+    "passed": 266,
+    "failed": 0
+  },
+  "pdf": {
+    "pages": 3,
+    "visually_reviewed": true,
+    "sha256": "46582ea12093faa995ab7dd0ac1f9e1d1545a4baba83ec55360125d347356bbe"
+  },
+  "frozen_fingerprint_match": true,
+  "h5_manifest_members_unchanged": 1123,
+  "sqlite_unchanged": true,
+  "main_commit_unchanged": "6ae734828c160b6f1fee5d3088b1b52b5f0b3ba9",
+  "failure_run": "t26--react--r2",
+  "proposed_fix_applied": false,
+  "canvas_uploaded": false
+}

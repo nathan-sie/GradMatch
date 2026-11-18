@@ -42,4 +42,4 @@ The formal run used 409 candidate and 160 judge requests, estimated USD 1.928699
 
 The accuracy difference is concentrated in first-tool-call tasks: baseline 1/8 versus Agent repeat 1 at 8/8. Exact and unanswerable primary rates are equal; rubric accuracy differs by one task. The small corpus and same-family judge with five human labels limit generalization.
 
-H6 remains: select an actual formal failed step, write the required failure paragraph and package tasks, runner, results and report. The final project's broader/safety benchmarks remain separate.
+H6 is complete: see the [final report](FINAL_REPORT.md), [failure analysis](FAILURE_ANALYSIS.md), [submission instructions](SUBMISSION_README.md) and [verification](../docs/verification/H6.md). The final project's broader/safety benchmarks remain separate.

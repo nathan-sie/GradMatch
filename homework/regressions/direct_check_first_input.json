@@ -1,0 +1,72 @@
+{
+  "task_id": "regression_direct_check_first_v3",
+  "question": "Run the program checks for uci-mcs-irvine against my supplied current profile version 3. Inspect my declared IELTS module scores, without substituting the overall score.",
+  "profile": {
+    "profile_version": 3,
+    "gpa": {
+      "value": "3.5",
+      "scale": "4",
+      "scope": "overall"
+    },
+    "institution": "Fictional Example University",
+    "institution_country": "US",
+    "major": "Computer Science",
+    "coursework": {
+      "algorithms": true,
+      "calculus": true,
+      "data_structures": true,
+      "differential_equations": true,
+      "linear_algebra": true,
+      "object_oriented_programming": true,
+      "probability_statistics": true,
+      "programming": true,
+      "undergraduate_cs": true,
+      "undergraduate_math": true
+    },
+    "research": [
+      "One synthetic research project"
+    ],
+    "work_experience": [
+      "One synthetic software internship"
+    ],
+    "english": {
+      "version": "ielts_9",
+      "total": "7",
+      "test_date": "2025-11-01",
+      "subscores": {
+        "listening": "6",
+        "reading": "6",
+        "speaking": "5.5",
+        "writing": "6"
+      }
+    },
+    "english_status": "known",
+    "goal": "employment",
+    "tuition_budget_usd": "140000",
+    "budget_basis": "published_rate_estimate",
+    "intake": {
+      "year": 2027,
+      "term": "fall"
+    },
+    "applicant_category": "international",
+    "study_mode": "full_time",
+    "degree": {
+      "completion": "completed",
+      "recognition": "recognized_bachelors_or_equivalent",
+      "field": "CS",
+      "country": "US"
+    },
+    "gre": {
+      "verbal": 160,
+      "quantitative": 165,
+      "writing": "4",
+      "test_date": "2025-06-01",
+      "format": "in_person"
+    }
+  },
+  "setup_messages": [],
+  "program_ids": [
+    "uci-mcs-irvine"
+  ],
+  "as_of_date": "2026-11-16"
+}

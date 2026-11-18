@@ -1,0 +1,57 @@
+{
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "run_id": "t26--react--r2",
+  "task_id": "t26",
+  "task_type": "tool",
+  "trace_id": "67b2d63c-c209-412d-b5fb-0a95278d0753",
+  "first_model_span_id": "651e38fa-bb04-4971-8d4f-4da622b29bdc",
+  "first_tool_span_id": "b6c7191c-e45c-441c-8633-b182d8dd538e",
+  "second_tool_span_id": "8f3dfd15-63f3-4bc3-8d3a-4a0793e6d738",
+  "expected_first_call": {
+    "name": "check_program",
+    "arguments": {
+      "profile_version": 1,
+      "program_id": "uci-mcs-irvine"
+    }
+  },
+  "actual_first_call": {
+    "name": "get_program",
+    "arguments": {
+      "program_id": "uci-mcs-irvine"
+    }
+  },
+  "later_call": {
+    "name": "check_program",
+    "arguments": {
+      "program_id": "uci-mcs-irvine",
+      "profile_version": 1
+    }
+  },
+  "tool_failures": 0,
+  "first_tool_check": false,
+  "final_answer_validated": true,
+  "english_check": {
+    "rule_id": "english",
+    "status": "fail",
+    "reason_code": "ENGLISH_SUBSCORE_BELOW_MINIMUM",
+    "explanation": "A required English subscore is below the hard minimum.",
+    "source_ids": [
+      "uci-mcs-irvine--uci_policy--7e045ec04a27"
+    ],
+    "warnings": []
+  },
+  "repeat_vector": [
+    true,
+    false,
+    true
+  ],
+  "candidate_model_calls": 3,
+  "candidate_tool_calls": 2,
+  "candidate_record_sha256": "71a8f8cc4654c0cb557e5da9a0cf438dcb790b1734440ae37d622151ccca5d1e",
+  "grade_record_sha256": "37b9a982a83a41dbbeb5deaa24537e2b5e32a9899c100d6ca49381bd871eae97",
+  "failure_class": "model_action_order",
+  "fix_applied_to_frozen_experiment": false,
+  "candidate_path": "docs/verification/h5/formal/entries/t26--react--r2/candidate.json",
+  "grade_path": "docs/verification/h5/formal/entries/t26--react--r2/grade.json"
+}
