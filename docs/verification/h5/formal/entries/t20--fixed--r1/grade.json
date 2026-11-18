@@ -1,0 +1,29 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t20--fixed--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "grade",
+  "saved_at": "2026-11-17T23:54:14.025275+00:00",
+  "payload_sha256": "31f2a983073f2785f3b89fe880b973c5fb02f4ea85c364bf5d5d50b1927ca5dc",
+  "payload": {
+    "schema_version": "h3-v1",
+    "grade_id": "47301cd7-7961-4d93-ac9c-f0adb78bee0a",
+    "task_id": "t20",
+    "candidate_trace_id": "75eee1a4-25d1-4979-b6fd-63b9755a00a0",
+    "candidate_record_sha256": "ab98d71b6d9fde0db155aeff298c842138cfbbb06ba02b80e8e6f28ed0edd9f1",
+    "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
+    "status": "failed",
+    "passed": false,
+    "code_checks": [
+      {
+        "criterion_id": "execution_completed",
+        "passed": false,
+        "reason": "Candidate execution did not complete."
+      }
+    ],
+    "criteria": [],
+    "judge_record": null,
+    "error": null
+  }
+}

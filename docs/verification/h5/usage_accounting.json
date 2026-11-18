@@ -1,0 +1,59 @@
+{
+  "scope": "H5 only, including all failed/development/recalibration attempts; earlier H2/H3 costs excluded",
+  "stages": [
+    {
+      "stage": "pilot-01",
+      "candidate_requests": 7,
+      "judge_requests": 3,
+      "candidate_usd": "0.01435350",
+      "judge_usd": "0.01675425",
+      "total_usd": "0.03110775"
+    },
+    {
+      "stage": "pilot-02",
+      "candidate_requests": 67,
+      "judge_requests": 26,
+      "candidate_usd": "0.12954570",
+      "judge_usd": "0.15001575",
+      "total_usd": "0.27956145"
+    },
+    {
+      "stage": "pilot-03",
+      "candidate_requests": 69,
+      "judge_requests": 28,
+      "candidate_usd": "0.08432115",
+      "judge_usd": "0.17300775",
+      "total_usd": "0.25732890"
+    },
+    {
+      "stage": "grader-v2-calibration",
+      "candidate_requests": 0,
+      "judge_requests": 8,
+      "candidate_usd": "0",
+      "judge_usd": "0.04196100",
+      "total_usd": "0.04196100"
+    },
+    {
+      "stage": "grader-v3-calibration",
+      "candidate_requests": 0,
+      "judge_requests": 8,
+      "candidate_usd": "0",
+      "judge_usd": "0.04364850",
+      "total_usd": "0.04364850"
+    },
+    {
+      "stage": "formal-01",
+      "candidate_requests": 409,
+      "judge_requests": 160,
+      "candidate_usd": "0.86272200",
+      "judge_usd": "1.06597755",
+      "total_usd": "1.92869955"
+    }
+  ],
+  "candidate_requests": 552,
+  "judge_requests": 233,
+  "estimated_total_usd": "2.58230715",
+  "estimated_formal_usd": "1.92869955",
+  "pricing_as_of": "2026-11-15",
+  "not_an_invoice": true
+}

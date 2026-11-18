@@ -33,7 +33,7 @@ Required submission artifacts:
 | H5: real pilot and formal runs | Validate a small development pilot, freeze versions, then run the complete comparison. | 50 baseline and 150 Agent executions have distinct IDs and saved actual usage/outcomes; pilot and formal results remain separate. |
 | H6: failure analysis and submission | Explain an actual failed step and package the tasks, script, table and report. | The failure paragraph links to the trace; all reported values can be recomputed; the submission reproduces from documented commands. |
 
-H0-H4 are complete. H1 data, H2 candidates, H3 grading and the H4 runner have their respective guides under `homework/` and actual records in `docs/verification/H1.md` through `H4.md`. H4's evaluation and summary commands are implemented; H5-H6 remain planned. Each checkpoint finishes with its actual validation record before moving on.
+H0-H5 are complete, with respective guides under `homework/` and actual records in `docs/verification/H1.md` through `H5.md`. H5 collected all 200 real prescribed executions after a separate development pilot and source freeze. H6 failure analysis and submission packaging remain. Each checkpoint finishes with its actual verification record.
 
 ## H1 - Task set and experiment contract
 
@@ -128,4 +128,4 @@ Page 57 asks students to read OWASP Top 10 for LLM Applications (2025), bring th
 
 ## Status
 
-H0-H4 are complete. Frozen H1 tasks, H2 candidate code and the calibrated H3 grader remain unchanged. H4 adds an immutable 50-baseline/150-Agent schedule, execution/grading persistence, conservative crash recovery, resume and offline metrics/CSV/Markdown reports. All 224 regression tests passed, including 27 H4 checks. The H4 verifier used zero model/judge requests and exercised explicitly labelled offline fixtures; no formal score exists. H5 real pilot/formal execution and H6 failure analysis/submission remain pending. Main and the public app remain unchanged.
+H0-H5 are complete. H5 development fixed internal source-ID resolution, literal profile-span quote wrappers and judge quote generation, with every earlier actual result retained. The final candidate and span-selection grader were frozen before the formal run. All 244 regression tests passed. Formal results contain 200 candidate/grade pairs: baseline 39/50, designated Agent repeat 1 at 47/50; pass@3 49/50, pass^3 38/50 and eleven flip IDs. Formal estimated cost is USD 1.92869955; all H5 activity including failed development/recalibration is USD 2.58230715. No post-freeze candidate/grader/runner source change or result substitution occurred. The small authored corpus, same-family judge and five human labels limit generalization. H6 remains; main and the public app are unchanged.

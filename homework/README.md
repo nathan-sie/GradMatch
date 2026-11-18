@@ -1,8 +1,8 @@
 # Homework evaluation: frozen data, candidates, graders and runner
 
-H1 data freeze: 2026-11-16. Latest checkpoint: H4, 2026-11-17 (America/Los_Angeles). Branch: `homework/eval-harness-50`.
+H1 data freeze: 2026-11-16. Latest checkpoint: H5, 2026-11-17 (America/Los_Angeles). Branch: `homework/eval-harness-50`.
 
-H1 provides frozen data and validation. H2 provides the snapshot Agent, fixed RAG baseline and traces; see [H2](H2_RUNNER.md). H3 adds independent [grading and calibration](H3_GRADING.md). H4 connects them with [scheduling, persistence/resume and metrics](H4_HARNESS.md), verified offline. There are no formal model benchmark results. Main and the deployed app retain their accepted checkpoint.
+H1 provides frozen data; H2 the snapshot candidates; H3 independent [grading](H3_GRADING.md); and H4 the [runner/metrics](H4_HARNESS.md). H5 has completed the actual [50-task formal comparison](H5_REAL_RUN.md): baseline 78%, designated Agent repeat 1 at 94%, pass@3 98% and pass^3 76%. See the H5 guide for the small-corpus/judge limitations and complete actual records. Main and the deployed app retain their accepted checkpoint.
 
 ## Validate without model calls
 
@@ -63,4 +63,4 @@ The assessment date is 2026-11-16; data mode is snapshot. Candidate model: `gpt-
 
 One baseline repeat and three total Agent repeats schedule 200 candidate task executions. Candidate turns count all candidate model calls; latency includes candidate tools/waits but excludes grading; tokens sum input and output without double-counting cached input. The p95 convention is nearest-rank. The designated first Agent repeat supplies the side-by-side accuracy/efficiency row; all three repeats supply pass@3, pass^3 and flip IDs. Missing token usage stays unknown; failures/timeouts stay in task denominators. See the exact formulas in `experiment.json` and the six-part plan.
 
-H1-H4 are complete; H5-H6 remain future checkpoints. Offline fixtures, development smoke checks and tiny calibration samples are not formal Agent success rates or completion of the full M4 live-tool milestone.
+H1-H5 are complete; H6 failure analysis and submission packaging remain. Formal scores are distinct from offline fixtures and development/calibration samples. This homework snapshot comparison does not complete the full M4 live-tool or final-project safety/broader-task milestones.

@@ -1,0 +1,850 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t23--react--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:54:56.296939+00:00",
+  "payload_sha256": "4cf7dad44b6bd7e9ba8a95bbb4a94a27afb6f061c9b5a7863fb4e8d18b327b25",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t23",
+    "strategy": "react",
+    "trace_id": "89efc9ad-3174-4abb-9892-ae0b67a37ca0",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+      "citations": [
+        {
+          "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+          "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+          "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+          "applicable_intake": null,
+          "quote": "2026-2027 Tuition Rate $1,130 USD per credit",
+          "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "Retrieve the saved official tuition evidence with source ID uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32. Return its source URL, rate year and supported per-credit fact, using the evidence record itself.",
+        "assistant": {
+          "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+          "citations": [
+            {
+              "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+              "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+              "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+              "applicable_intake": null,
+              "quote": "2026-2027 Tuition Rate $1,130 USD per credit",
+              "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 2843.0,
+    "usage": [
+      {
+        "call_id": "6c6ac644-f404-4f86-a585-67d72d4f9133",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2538,
+        "output_tokens": 43,
+        "cached_input_tokens": 2432,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0004554",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_09a8320277ee6d82016afce94e8eb487d0a03c26cd34866b02"
+      },
+      {
+        "call_id": "b5f5eb93-29af-45fe-806f-70255fef40ad",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 3259,
+        "output_tokens": 174,
+        "cached_input_tokens": 3072,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00115365",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0ac2cd784fe98853016afce94f8dfc87d09c4a62da7cd6aba0"
+      }
+    ],
+    "estimated_cost_usd": "0.00160905",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "89efc9ad-3174-4abb-9892-ae0b67a37ca0",
+      "spans": [
+        {
+          "span_id": "b37ee715-bc1b-48d2-8224-c9fa0b75d20d",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:54:53.449130+00:00",
+          "finished_at": "2026-11-17T23:54:56.296939+00:00",
+          "duration_ms": 2843.0,
+          "inputs": {
+            "task_id": "t23",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "t23",
+              "question": "Retrieve the saved official tuition evidence with source ID uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32. Return its source URL, rate year and supported per-credit fact, using the evidence record itself.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "uw-ece-msece-pmp-seattle"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+              "citations": [
+                {
+                  "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+                  "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+                  "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+                  "applicable_intake": null,
+                  "quote": "2026-2027 Tuition Rate $1,130 USD per credit",
+                  "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "8952a5bc-8e41-40d1-8f65-b575a5c39b26",
+          "parent_id": "b37ee715-bc1b-48d2-8224-c9fa0b75d20d",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:54:53.449130+00:00",
+          "finished_at": "2026-11-17T23:54:56.296939+00:00",
+          "duration_ms": 2843.0,
+          "inputs": {
+            "message": "Retrieve the saved official tuition evidence with source ID uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32. Return its source URL, rate year and supported per-credit fact, using the evidence record itself."
+          },
+          "outputs": {
+            "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+            "citations": [
+              {
+                "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+                "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+                "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+                "applicable_intake": null,
+                "quote": "2026-2027 Tuition Rate $1,130 USD per credit",
+                "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "e2fb46c1-2a9c-44af-b53d-396db49b5c88",
+          "parent_id": "8952a5bc-8e41-40d1-8f65-b575a5c39b26",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:54:53.450214+00:00",
+          "finished_at": "2026-11-17T23:54:54.464004+00:00",
+          "duration_ms": 1015.0,
+          "inputs": {
+            "payload": {
+              "question": "Retrieve the saved official tuition evidence with source ID uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32. Return its source URL, rate year and supported per-credit fact, using the evidence record itself.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uw-ece-msece-pmp-seattle"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_707524fdb30e41f59fcf43f10c150362",
+                "name": "get_evidence",
+                "arguments": "{\"source_id\":\"uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "6c6ac644-f404-4f86-a585-67d72d4f9133",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2538,
+            "output_tokens": 43,
+            "cached_input_tokens": 2432,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.0004554",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_09a8320277ee6d82016afce94e8eb487d0a03c26cd34866b02"
+          }
+        },
+        {
+          "span_id": "1284cf19-3ba1-437c-8d3c-82ef2f367d73",
+          "parent_id": "e2fb46c1-2a9c-44af-b53d-396db49b5c88",
+          "kind": "tool",
+          "name": "get_evidence",
+          "started_at": "2026-11-17T23:54:54.464004+00:00",
+          "finished_at": "2026-11-17T23:54:54.465003+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "source": {
+              "source_id": "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+              "program_id": "uw-ece-msece-pmp-seattle",
+              "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+              "title": "Program Costs and Financial Support  |  UW Department of Electrical & Computer Engineering",
+              "source_type": "official_tuition",
+              "retrieved_at": "2026-11-13T04:46:15.168630Z",
+              "applicable_intake": null,
+              "effective_period": "2026-2027",
+              "verification_status": "verified",
+              "field_groups": [
+                "tuition"
+              ],
+              "verified_values": {
+                "tuition": {
+                  "tuition.currency": "USD",
+                  "tuition.basis": "per_credit",
+                  "tuition.unit_rate_lower": "1130",
+                  "tuition.unit_rate_upper": null,
+                  "tuition.rate_year": "2026-2027"
+                }
+              },
+              "source_excerpt": "2026-2027 Tuition Rate $1,130 USD per credit",
+              "fact_summary": "The 2026–2027 rate is USD 1,130 per credit for residents and nonresidents. Rates may change; scholarships are not deducted and future rates are not guaranteed.",
+              "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate",
+              "snapshot_path": "data/snapshots/uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32.json",
+              "content_hash": "b9160d7764895219fdd16eebfeed414302b5ada6b380338fdc92a54c456661f2",
+              "raw_response_sha256": "fa85439cc41ec804cb1460fb07107a1c6e7fcf26427573d9fa9247fb4c35f8c9"
+            },
+            "snapshot": {
+              "url": "https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/",
+              "retrieved_at": "2026-11-13T04:46:15.168630+00:00",
+              "source_excerpt": "2026-2027 Tuition Rate $1,130 USD per credit",
+              "fact_summary": "The 2026–2027 rate is USD 1,130 per credit for residents and nonresidents. Rates may change; scholarships are not deducted and future rates are not guaranteed.",
+              "locator": "Program Costs and Financial Support: 2026-2027 Tuition Rate",
+              "verified_values": {
+                "tuition": {
+                  "tuition.currency": "USD",
+                  "tuition.basis": "per_credit",
+                  "tuition.unit_rate_lower": "1130",
+                  "tuition.unit_rate_upper": null,
+                  "tuition.rate_year": "2026-2027"
+                }
+              },
+              "raw_response_sha256": "fa85439cc41ec804cb1460fb07107a1c6e7fcf26427573d9fa9247fb4c35f8c9"
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "e7e00c10-7286-4d52-9ae7-433c7572c919",
+          "parent_id": "8952a5bc-8e41-40d1-8f65-b575a5c39b26",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:54:54.466247+00:00",
+          "finished_at": "2026-11-17T23:54:56.294941+00:00",
+          "duration_ms": 1828.0,
+          "inputs": {
+            "payload": {
+              "question": "Retrieve the saved official tuition evidence with source ID uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32. Return its source URL, rate year and supported per-credit fact, using the evidence record itself.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uw-ece-msece-pmp-seattle"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_707524fdb30e41f59fcf43f10c150362",
+                "name": "get_evidence",
+                "arguments": "{\"source_id\":\"uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_707524fdb30e41f59fcf43f10c150362",
+                "output": "{\"ok\": true, \"source\": {\"source_id\": \"uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32\", \"program_id\": \"uw-ece-msece-pmp-seattle\", \"url\": \"https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\", \"title\": \"Program Costs and Financial Support  |  UW Department of Electrical & Computer Engineering\", \"source_type\": \"official_tuition\", \"retrieved_at\": \"2026-11-13T04:46:15.168630Z\", \"applicable_intake\": null, \"effective_period\": \"2026-2027\", \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"verified_values\": {\"tuition\": {\"tuition.currency\": \"USD\", \"tuition.basis\": \"per_credit\", \"tuition.unit_rate_lower\": \"1130\", \"tuition.unit_rate_upper\": null, \"tuition.rate_year\": \"2026-2027\"}}, \"source_excerpt\": \"2026-2027 Tuition Rate $1,130 USD per credit\", \"fact_summary\": \"The 2026–2027 rate is USD 1,130 per credit for residents and nonresidents. Rates may change; scholarships are not deducted and future rates are not guaranteed.\", \"locator\": \"Program Costs and Financial Support: 2026-2027 Tuition Rate\", \"snapshot_path\": \"data/snapshots/uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32.json\", \"content_hash\": \"b9160d7764895219fdd16eebfeed414302b5ada6b380338fdc92a54c456661f2\", \"raw_response_sha256\": \"fa85439cc41ec804cb1460fb07107a1c6e7fcf26427573d9fa9247fb4c35f8c9\"}, \"snapshot\": {\"url\": \"https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\", \"retrieved_at\": \"2026-11-13T04:46:15.168630+00:00\", \"source_excerpt\": \"2026-2027 Tuition Rate $1,130 USD per credit\", \"fact_summary\": \"The 2026–2027 rate is USD 1,130 per credit for residents and nonresidents. Rates may change; scholarships are not deducted and future rates are not guaranteed.\", \"locator\": \"Program Costs and Financial Support: 2026-2027 Tuition Rate\", \"verified_values\": {\"tuition\": {\"tuition.currency\": \"USD\", \"tuition.basis\": \"per_credit\", \"tuition.unit_rate_lower\": \"1130\", \"tuition.unit_rate_upper\": null, \"tuition.rate_year\": \"2026-2027\"}}, \"raw_response_sha256\": \"fa85439cc41ec804cb1460fb07107a1c6e7fcf26427573d9fa9247fb4c35f8c9\"}}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+              "citations": [
+                "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "b5f5eb93-29af-45fe-806f-70255fef40ad",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 3259,
+            "output_tokens": 174,
+            "cached_input_tokens": 3072,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00115365",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0ac2cd784fe98853016afce94f8dfc87d09c4a62da7cd6aba0"
+          }
+        },
+        {
+          "span_id": "428f4e52-91e0-4a3b-9d18-d1c0a9aad349",
+          "parent_id": "e7e00c10-7286-4d52-9ae7-433c7572c919",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:54:56.294941+00:00",
+          "finished_at": "2026-11-17T23:54:56.296939+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "Saved official tuition evidence for `uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32`:\n- Source URL: https://ee.washington.edu/academics/pmp/program-costs-and-financial-support/\n- Rate year: 2026-2027\n- Supported per-credit fact: USD 1,130 per credit\n\nEvidence basis: the verified record states `tuition.basis = per_credit` and `tuition.unit_rate_lower = 1130` for the 2026–2027 tuition rate.",
+            "citations": [
+              "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

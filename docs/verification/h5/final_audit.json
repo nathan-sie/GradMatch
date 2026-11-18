@@ -1,0 +1,1108 @@
+{
+  "checkpoint": "H5",
+  "purpose": "actual_execution_audit_not_submission_failure_analysis",
+  "pilot": {
+    "experiment_id": "18c60837-af02-4dc1-b177-fa169686a8c9",
+    "plan_hash": "826da1f702f8a09d7881d31ee644933e5be7935cd326f605fa23127e2588a162",
+    "split": "development",
+    "execution_mode": "live_model",
+    "scheduled": 32,
+    "candidate_records": 32,
+    "grading_records": 32,
+    "all_scheduled_outcomes_known": true,
+    "trace_errors": [],
+    "limit_errors": [],
+    "model_version_errors": [],
+    "candidate_statuses": {
+      "completed": 32
+    },
+    "grading_statuses": {
+      "failed": 2,
+      "passed": 30
+    },
+    "failed_code_checks": {
+      "first_tool_call": 1
+    },
+    "summary": {
+      "schema_version": "h4-summary-v1",
+      "generated_at": "2026-11-18T00:06:14.982601+00:00",
+      "experiment_id": "18c60837-af02-4dc1-b177-fa169686a8c9",
+      "plan_hash": "826da1f702f8a09d7881d31ee644933e5be7935cd326f605fa23127e2588a162",
+      "split": "development",
+      "execution_mode": "live_model",
+      "result_kind": "candidate_evaluation",
+      "status": "complete",
+      "scheduled_executions": 32,
+      "terminal_records": 32,
+      "fingerprint": {
+        "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+        "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
+        "runner_hash": "0e7bf2ee122845a9f824064ecb038faac4388c5ab1cb58edb80feea4f14c53ee",
+        "h1_manifest_sha256": "50af7c2a0cec9e6addd83cc54ed2619e3b374428e9ce84e411d6e0718bc86df1",
+        "frozen_files": {
+          "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+          "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+          "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+          "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+          "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+        },
+        "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "grading_freeze_sha256": "36644f23d0f78845b54f8968999b88f784b72cfe216754900426c98df8b50c76",
+        "app_config_sha256": "880860cfa19de57f88950e906604fc69c84f6f499bc4520a66066712ca4e4917",
+        "dependency_lock_sha256": "d2986f902d2e3bedee6f490da399b7eafee459f0771703bfe9a371c224e858de",
+        "assessment_date": "2026-11-16",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "candidate_limits": {
+          "automatic_model_retries": 0,
+          "max_model_calls_per_task": 8,
+          "max_output_tokens_per_call": 1800,
+          "max_task_seconds": 120,
+          "max_tool_calls_per_task": 12,
+          "model_timeout_seconds": 45
+        },
+        "environment": {
+          "python": "3.12.14",
+          "openai": "2.54.0",
+          "pydantic": "2.14.3"
+        }
+      },
+      "comparison": [
+        {
+          "label": "Fixed baseline",
+          "scheduled": 8,
+          "candidate_records": 8,
+          "passed": 6,
+          "failed": 2,
+          "grading_errors": 0,
+          "interrupted_unknown": 0,
+          "unresolved": 0,
+          "accuracy": 0.75,
+          "accuracy_final": true,
+          "pass_fraction_of_scheduled": 0.75,
+          "provisional_fraction": false,
+          "avg_turns": 1.25,
+          "turns_known_count": 8,
+          "turns_unknown_count": 0,
+          "turns_observed_mean": 1.25,
+          "avg_latency_ms": 2939.375,
+          "latency_ms_known_count": 8,
+          "latency_ms_unknown_count": 0,
+          "latency_ms_observed_mean": 2939.375,
+          "avg_tokens": 7436.25,
+          "tokens_known_count": 8,
+          "tokens_unknown_count": 0,
+          "tokens_observed_mean": 7436.25,
+          "p95_latency_ms": 5813.0
+        },
+        {
+          "label": "Agent repeat 1",
+          "scheduled": 8,
+          "candidate_records": 8,
+          "passed": 8,
+          "failed": 0,
+          "grading_errors": 0,
+          "interrupted_unknown": 0,
+          "unresolved": 0,
+          "accuracy": 1.0,
+          "accuracy_final": true,
+          "pass_fraction_of_scheduled": 1.0,
+          "provisional_fraction": false,
+          "avg_turns": 2.375,
+          "turns_known_count": 8,
+          "turns_unknown_count": 0,
+          "turns_observed_mean": 2.375,
+          "avg_latency_ms": 3810.375,
+          "latency_ms_known_count": 8,
+          "latency_ms_unknown_count": 0,
+          "latency_ms_observed_mean": 3810.375,
+          "avg_tokens": 8191.5,
+          "tokens_known_count": 8,
+          "tokens_unknown_count": 0,
+          "tokens_observed_mean": 8191.5,
+          "p95_latency_ms": 5922.0
+        }
+      ],
+      "pooled_agent": {
+        "label": "Agent all three repeats (pooled)",
+        "scheduled": 24,
+        "candidate_records": 24,
+        "passed": 24,
+        "failed": 0,
+        "grading_errors": 0,
+        "interrupted_unknown": 0,
+        "unresolved": 0,
+        "accuracy": 1.0,
+        "accuracy_final": true,
+        "pass_fraction_of_scheduled": 1.0,
+        "provisional_fraction": false,
+        "avg_turns": 2.4583333333333335,
+        "turns_known_count": 24,
+        "turns_unknown_count": 0,
+        "turns_observed_mean": 2.4583333333333335,
+        "avg_latency_ms": 3939.4166666666665,
+        "latency_ms_known_count": 24,
+        "latency_ms_unknown_count": 0,
+        "latency_ms_observed_mean": 3939.4166666666665,
+        "avg_tokens": 8358.833333333334,
+        "tokens_known_count": 24,
+        "tokens_unknown_count": 0,
+        "tokens_observed_mean": 8358.833333333334,
+        "p95_latency_ms": 6329.0
+      },
+      "stability": {
+        "scheduled_tasks": 8,
+        "complete_vectors": 8,
+        "pass_at_3": 1.0,
+        "pass_all_3": 1.0,
+        "observed_pass_at_3_lower_bound": 1.0,
+        "flip_tasks": [],
+        "vectors": [
+          {
+            "task_id": "d01",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d02",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d03",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d04",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d05",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d06",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d07",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "d08",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          }
+        ],
+        "final": true
+      },
+      "candidate_usage": {
+        "known_actual_requests": 69,
+        "unknown_attempts": 0,
+        "known_input_tokens": 251183,
+        "known_output_tokens": 8919,
+        "unknown_usage_calls": 0,
+        "known_estimated_cost_usd": "0.08432115",
+        "estimated_cost_usd": "0.08432115",
+        "unknown_cost_calls": 0,
+        "cost_complete": true,
+        "usage_complete": true,
+        "judge_latency_ms_known_sum": null,
+        "judge_latency_unknown_records": null,
+        "judge_latency_ms_total": null
+      },
+      "judge_usage": {
+        "known_actual_requests": 28,
+        "unknown_attempts": 0,
+        "known_input_tokens": 194041,
+        "known_output_tokens": 6106,
+        "unknown_usage_calls": 0,
+        "known_estimated_cost_usd": "0.17300775",
+        "estimated_cost_usd": "0.17300775",
+        "unknown_cost_calls": 0,
+        "cost_complete": true,
+        "usage_complete": true,
+        "judge_latency_ms_known_sum": 59734.0,
+        "judge_latency_unknown_records": 0,
+        "judge_latency_ms_total": 59734.0
+      },
+      "unresolved_runs": [],
+      "metric_notes": {
+        "accuracy": "Final only after all scheduled outcomes in the row are known; provisional passed/scheduled is separately labelled.",
+        "turns": "All candidate model calls, including setup and profile interpretation.",
+        "p95": "Nearest-rank over all scheduled candidate latencies, including failed/timed-out tasks; null if any missing.",
+        "tokens": "Input plus output; cached input is a subset, not added twice; unknown is never zero-filled.",
+        "stability": "Exactly three predesignated repeats; mixed complete vectors form the flip list."
+      }
+    }
+  },
+  "formal_cost_forecast": {
+    "method": "Per-strategy/per-task-type pilot means, weighted by the 50-task formal distribution and 1+3 repeats.",
+    "cells": [
+      {
+        "strategy": "fixed",
+        "task_type": "exact",
+        "pilot_executions": 2,
+        "formal_executions": 18,
+        "candidate_mean_usd": "0.001194675",
+        "judge_mean_usd": "0.00631425",
+        "projected_usd": "0.135160650"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "rubric",
+        "pilot_executions": 4,
+        "formal_executions": 20,
+        "candidate_mean_usd": "0.0032560125",
+        "judge_mean_usd": "0.00692025",
+        "projected_usd": "0.2035252500"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "tool",
+        "pilot_executions": 1,
+        "formal_executions": 8,
+        "candidate_mean_usd": "0.0041736",
+        "judge_mean_usd": "0",
+        "projected_usd": "0.0333888"
+      },
+      {
+        "strategy": "fixed",
+        "task_type": "unanswerable",
+        "pilot_executions": 1,
+        "formal_executions": 4,
+        "candidate_mean_usd": "0.00141405",
+        "judge_mean_usd": "0.005757",
+        "projected_usd": "0.02868420"
+      },
+      {
+        "strategy": "react",
+        "task_type": "exact",
+        "pilot_executions": 6,
+        "formal_executions": 54,
+        "candidate_mean_usd": "0.0015225",
+        "judge_mean_usd": "0.005709625",
+        "projected_usd": "0.390534750"
+      },
+      {
+        "strategy": "react",
+        "task_type": "rubric",
+        "pilot_executions": 12,
+        "formal_executions": 60,
+        "candidate_mean_usd": "0.00292235",
+        "judge_mean_usd": "0.00633075",
+        "projected_usd": "0.55518600"
+      },
+      {
+        "strategy": "react",
+        "task_type": "tool",
+        "pilot_executions": 3,
+        "formal_executions": 24,
+        "candidate_mean_usd": "0.00372075",
+        "judge_mean_usd": "0",
+        "projected_usd": "0.08929800"
+      },
+      {
+        "strategy": "react",
+        "task_type": "unanswerable",
+        "pilot_executions": 3,
+        "formal_executions": 12,
+        "candidate_mean_usd": "0.00265155",
+        "judge_mean_usd": "0.00557150",
+        "projected_usd": "0.09867660"
+      }
+    ],
+    "estimated_formal_usd": "1.5344542500",
+    "two_times_planning_allowance_usd": "3.07",
+    "complete": true,
+    "limitation": "Eight selected development questions may underrepresent multi-program and long follow-up tasks. The allowance is a planning estimate, not a price guarantee or API spending limit."
+  },
+  "formal": {
+    "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+    "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+    "split": "formal",
+    "execution_mode": "live_model",
+    "scheduled": 200,
+    "candidate_records": 200,
+    "grading_records": 200,
+    "all_scheduled_outcomes_known": true,
+    "trace_errors": [],
+    "limit_errors": [],
+    "model_version_errors": [],
+    "candidate_statuses": {
+      "completed": 192,
+      "validation_failed": 8
+    },
+    "grading_statuses": {
+      "passed": 170,
+      "failed": 30
+    },
+    "failed_code_checks": {
+      "execution_completed": 8,
+      "first_tool_call": 7,
+      "profile_state": 1
+    },
+    "summary": {
+      "schema_version": "h4-summary-v1",
+      "generated_at": "2026-11-18T00:06:15.769578+00:00",
+      "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+      "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+      "split": "formal",
+      "execution_mode": "live_model",
+      "result_kind": "candidate_evaluation",
+      "status": "complete",
+      "scheduled_executions": 200,
+      "terminal_records": 200,
+      "fingerprint": {
+        "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+        "grader_hash": "326c2a8186ee7e349091e026336ba83287af74e8811c1b0fb852ce71e182f813",
+        "runner_hash": "0e7bf2ee122845a9f824064ecb038faac4388c5ab1cb58edb80feea4f14c53ee",
+        "h1_manifest_sha256": "50af7c2a0cec9e6addd83cc54ed2619e3b374428e9ce84e411d6e0718bc86df1",
+        "frozen_files": {
+          "homework/dev_references.jsonl": "431954121cda63bf415391f8cbd5e668922a0ec89ef5492ac96bea9abd61234b",
+          "homework/dev_tasks.jsonl": "d0f6b7cf9e9518b9f1d9fb892614b13633e796aa3a7fae8c462f87ec769be419",
+          "homework/references.jsonl": "e8ec2ce650e5849f55be12f0f2a458b4d81f88e9d20daf78de96be5d4300514c",
+          "homework/tasks.jsonl": "b19569c54d7f59a7b04dafce478e38cf54c52e79986b3d624165de6a4ec387d3",
+          "homework/tool_contracts.json": "503df885479db95414be5f9981a0717e7910fb76b819ee774bddec8c03635737"
+        },
+        "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "grading_freeze_sha256": "36644f23d0f78845b54f8968999b88f784b72cfe216754900426c98df8b50c76",
+        "app_config_sha256": "880860cfa19de57f88950e906604fc69c84f6f499bc4520a66066712ca4e4917",
+        "dependency_lock_sha256": "d2986f902d2e3bedee6f490da399b7eafee459f0771703bfe9a371c224e858de",
+        "assessment_date": "2026-11-16",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "candidate_limits": {
+          "automatic_model_retries": 0,
+          "max_model_calls_per_task": 8,
+          "max_output_tokens_per_call": 1800,
+          "max_task_seconds": 120,
+          "max_tool_calls_per_task": 12,
+          "model_timeout_seconds": 45
+        },
+        "environment": {
+          "python": "3.12.14",
+          "openai": "2.54.0",
+          "pydantic": "2.14.3"
+        }
+      },
+      "comparison": [
+        {
+          "label": "Fixed baseline",
+          "scheduled": 50,
+          "candidate_records": 50,
+          "passed": 39,
+          "failed": 11,
+          "grading_errors": 0,
+          "interrupted_unknown": 0,
+          "unresolved": 0,
+          "accuracy": 0.78,
+          "accuracy_final": true,
+          "pass_fraction_of_scheduled": 0.78,
+          "provisional_fraction": false,
+          "avg_turns": 1.06,
+          "turns_known_count": 50,
+          "turns_unknown_count": 0,
+          "turns_observed_mean": 1.06,
+          "avg_latency_ms": 2334.94,
+          "latency_ms_known_count": 50,
+          "latency_ms_unknown_count": 0,
+          "latency_ms_observed_mean": 2334.94,
+          "avg_tokens": 7146.02,
+          "tokens_known_count": 50,
+          "tokens_unknown_count": 0,
+          "tokens_observed_mean": 7146.02,
+          "p95_latency_ms": 4782.0
+        },
+        {
+          "label": "Agent repeat 1",
+          "scheduled": 50,
+          "candidate_records": 50,
+          "passed": 47,
+          "failed": 3,
+          "grading_errors": 0,
+          "interrupted_unknown": 0,
+          "unresolved": 0,
+          "accuracy": 0.94,
+          "accuracy_final": true,
+          "pass_fraction_of_scheduled": 0.94,
+          "provisional_fraction": false,
+          "avg_turns": 2.32,
+          "turns_known_count": 50,
+          "turns_unknown_count": 0,
+          "turns_observed_mean": 2.32,
+          "avg_latency_ms": 3695.58,
+          "latency_ms_known_count": 50,
+          "latency_ms_unknown_count": 0,
+          "latency_ms_observed_mean": 3695.58,
+          "avg_tokens": 8985.56,
+          "tokens_known_count": 50,
+          "tokens_unknown_count": 0,
+          "tokens_observed_mean": 8985.56,
+          "p95_latency_ms": 5672.0
+        }
+      ],
+      "pooled_agent": {
+        "label": "Agent all three repeats (pooled)",
+        "scheduled": 150,
+        "candidate_records": 150,
+        "passed": 131,
+        "failed": 19,
+        "grading_errors": 0,
+        "interrupted_unknown": 0,
+        "unresolved": 0,
+        "accuracy": 0.8733333333333333,
+        "accuracy_final": true,
+        "pass_fraction_of_scheduled": 0.8733333333333333,
+        "provisional_fraction": false,
+        "avg_turns": 2.3733333333333335,
+        "turns_known_count": 150,
+        "turns_unknown_count": 0,
+        "turns_observed_mean": 2.3733333333333335,
+        "avg_latency_ms": 3819.1666666666665,
+        "latency_ms_known_count": 150,
+        "latency_ms_unknown_count": 0,
+        "latency_ms_observed_mean": 3819.1666666666665,
+        "avg_tokens": 9263.866666666667,
+        "tokens_known_count": 150,
+        "tokens_unknown_count": 0,
+        "tokens_observed_mean": 9263.866666666667,
+        "p95_latency_ms": 8938.0
+      },
+      "stability": {
+        "scheduled_tasks": 50,
+        "complete_vectors": 50,
+        "pass_at_3": 0.98,
+        "pass_all_3": 0.76,
+        "observed_pass_at_3_lower_bound": 0.98,
+        "flip_tasks": [
+          {
+            "task_id": "t18",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t26",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t28",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t29",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t33",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t41",
+            "outcomes": [
+              false,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t42",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t43",
+            "outcomes": [
+              false,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t44",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t45",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t49",
+            "outcomes": [
+              true,
+              true,
+              false
+            ],
+            "complete": true
+          }
+        ],
+        "vectors": [
+          {
+            "task_id": "t01",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t02",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t03",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t04",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t05",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t06",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t07",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t08",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t09",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t10",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t11",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t12",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t13",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t14",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t15",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t16",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t17",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t18",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t19",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t20",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t21",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t22",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t23",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t24",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t25",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t26",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t27",
+            "outcomes": [
+              false,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t28",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t29",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t30",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t31",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t32",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t33",
+            "outcomes": [
+              true,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t34",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t35",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t36",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t37",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t38",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t39",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t40",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t41",
+            "outcomes": [
+              false,
+              false,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t42",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t43",
+            "outcomes": [
+              false,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t44",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t45",
+            "outcomes": [
+              true,
+              false,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t46",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t47",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t48",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t49",
+            "outcomes": [
+              true,
+              true,
+              false
+            ],
+            "complete": true
+          },
+          {
+            "task_id": "t50",
+            "outcomes": [
+              true,
+              true,
+              true
+            ],
+            "complete": true
+          }
+        ],
+        "final": true
+      },
+      "candidate_usage": {
+        "known_actual_requests": 409,
+        "unknown_attempts": 0,
+        "known_input_tokens": 1699158,
+        "known_output_tokens": 47723,
+        "unknown_usage_calls": 0,
+        "known_estimated_cost_usd": "0.86272200",
+        "estimated_cost_usd": "0.86272200",
+        "unknown_cost_calls": 0,
+        "cost_complete": true,
+        "usage_complete": true,
+        "judge_latency_ms_known_sum": null,
+        "judge_latency_unknown_records": null,
+        "judge_latency_ms_total": null
+      },
+      "judge_usage": {
+        "known_actual_requests": 160,
+        "unknown_attempts": 0,
+        "known_input_tokens": 1227393,
+        "known_output_tokens": 36984,
+        "unknown_usage_calls": 0,
+        "known_estimated_cost_usd": "1.06597755",
+        "estimated_cost_usd": "1.06597755",
+        "unknown_cost_calls": 0,
+        "cost_complete": true,
+        "usage_complete": true,
+        "judge_latency_ms_known_sum": 355423.0,
+        "judge_latency_unknown_records": 0,
+        "judge_latency_ms_total": 355423.0
+      },
+      "unresolved_runs": [],
+      "metric_notes": {
+        "accuracy": "Final only after all scheduled outcomes in the row are known; provisional passed/scheduled is separately labelled.",
+        "turns": "All candidate model calls, including setup and profile interpretation.",
+        "p95": "Nearest-rank over all scheduled candidate latencies, including failed/timed-out tasks; null if any missing.",
+        "tokens": "Input plus output; cached input is a subset, not added twice; unknown is never zero-filled.",
+        "stability": "Exactly three predesignated repeats; mixed complete vectors form the flip list."
+      }
+    }
+  }
+}

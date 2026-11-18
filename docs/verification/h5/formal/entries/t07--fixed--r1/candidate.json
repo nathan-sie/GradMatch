@@ -1,0 +1,1064 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t07--fixed--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:50:39.007375+00:00",
+  "payload_sha256": "83f78823bfaccb917721314a897e776b3af892ccc0b17cdc95c325f73a01187b",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t07",
+    "strategy": "fixed",
+    "trace_id": "cbfd4dd1-40ed-4844-9715-cb38bb59443d",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+      "citations": [
+        {
+          "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+          "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+          "retrieved_at": "2026-11-13T04:49:31.128466+00:00",
+          "applicable_intake": null,
+          "quote": "Total Hours 31",
+          "locator": "Computer Science (MR): general degree requirements"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "How many credits are required by the NC State Raleigh general non-thesis MCS catalog entry identified as MR, rather than the thesis MS or online program?",
+        "assistant": {
+          "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+          "citations": [
+            {
+              "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+              "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+              "retrieved_at": "2026-11-13T04:49:31.128466+00:00",
+              "applicable_intake": null,
+              "quote": "Total Hours 31",
+              "locator": "Computer Science (MR): general degree requirements"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 1,
+    "tool_calls": 3,
+    "actual_requests": 1,
+    "latency_ms": 1578.0,
+    "usage": [
+      {
+        "call_id": "4855d83c-9800-4c83-bb87-73d243cf84b8",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 3759,
+        "output_tokens": 82,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00318825",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0a5071cd8dd01901016afce84e94d887d088728c3b7106b3e2"
+      }
+    ],
+    "estimated_cost_usd": "0.00318825",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "cbfd4dd1-40ed-4844-9715-cb38bb59443d",
+      "spans": [
+        {
+          "span_id": "71be5b8c-8c84-40eb-8ac3-5029f9194b3d",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:50:37.430996+00:00",
+          "finished_at": "2026-11-17T23:50:39.007375+00:00",
+          "duration_ms": 1578.0,
+          "inputs": {
+            "task_id": "t07",
+            "strategy": "fixed",
+            "candidate_input": {
+              "task_id": "t07",
+              "question": "How many credits are required by the NC State Raleigh general non-thesis MCS catalog entry identified as MR, rather than the thesis MS or online program?",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "ncsu-mcs-raleigh"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+              "citations": [
+                {
+                  "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                  "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                  "retrieved_at": "2026-11-13T04:49:31.128466+00:00",
+                  "applicable_intake": null,
+                  "quote": "Total Hours 31",
+                  "locator": "Computer Science (MR): general degree requirements"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "db4cebed-cd39-45fc-930f-de50d0ee7a68",
+          "parent_id": "71be5b8c-8c84-40eb-8ac3-5029f9194b3d",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:50:37.430996+00:00",
+          "finished_at": "2026-11-17T23:50:39.007375+00:00",
+          "duration_ms": 1578.0,
+          "inputs": {
+            "message": "How many credits are required by the NC State Raleigh general non-thesis MCS catalog entry identified as MR, rather than the thesis MS or online program?"
+          },
+          "outputs": {
+            "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+            "citations": [
+              {
+                "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                "retrieved_at": "2026-11-13T04:49:31.128466+00:00",
+                "applicable_intake": null,
+                "quote": "Total Hours 31",
+                "locator": "Computer Science (MR): general degree requirements"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "61fe085d-0ed1-4737-bb43-9b222ddff628",
+          "parent_id": "db4cebed-cd39-45fc-930f-de50d0ee7a68",
+          "kind": "tool",
+          "name": "search_programs",
+          "started_at": "2026-11-17T23:50:37.431997+00:00",
+          "finished_at": "2026-11-17T23:50:37.432996+00:00",
+          "duration_ms": 16.0,
+          "inputs": {
+            "arguments": {
+              "university": null,
+              "campus": "Raleigh",
+              "discipline": null
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "programs": [
+              {
+                "program_id": "ncsu-mcs-raleigh",
+                "university": "North Carolina State University",
+                "program_name": "Master of Computer Science",
+                "degree": "MCS",
+                "campus": "Raleigh",
+                "discipline": "CS"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "e4802576-8982-421b-833c-077dd916f071",
+          "parent_id": "db4cebed-cd39-45fc-930f-de50d0ee7a68",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:50:37.432996+00:00",
+          "finished_at": "2026-11-17T23:50:37.432996+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "ncsu-mcs-raleigh"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "ncsu-mcs-raleigh",
+              "university": "North Carolina State University",
+              "school": "Department of Computer Science",
+              "program_name": "Master of Computer Science",
+              "degree": "MCS",
+              "campus": "Raleigh",
+              "track": "General non-thesis / Graduate School code MR",
+              "discipline": "CS",
+              "official_url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+              "allowed_official_hosts": [
+                "catalog.ncsu.edu"
+              ],
+              "candidate_source_id": "b-ncsu-mcs",
+              "required_credits": "31",
+              "gpa": null,
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [],
+              "prerequisites_complete": false,
+              "supported_intakes": [],
+              "closed_intakes": [],
+              "deadlines": [],
+              "deadline_schedule_complete": false,
+              "tuition": {
+                "currency": "USD",
+                "basis": "unknown",
+                "unit_rate_lower": null,
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": null,
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "The applicable international tuition basis and full-program calculation inputs have not been verified."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                ],
+                "credits": [
+                  "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                ]
+              },
+              "notes": [
+                "Uses the general non-thesis MR catalog, not the thesis MS or online program.",
+                "Only identity and 31 required credits are verified here. Eligibility, intake, and tuition evidence remain incomplete."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                "program_id": "ncsu-mcs-raleigh",
+                "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                "title": "ncsu_main",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits"
+                ],
+                "locator": "Computer Science (MR): general degree requirements",
+                "retrieved_at": "2026-11-13T04:49:31.128466Z",
+                "source_excerpt": "Total Hours 31",
+                "fact_summary": "The Graduate School's MR identifies the general non-thesis Master of Computer Science, requiring 31 credits. It is distinct from the thesis MS and online program.",
+                "content_hash": "576f98f0d079df97078e33dbb411b0483007696ecec81cd7509a0c6ebfbd6d08"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "7578e4e0-e31c-4fee-9b3a-aefd253149a9",
+          "parent_id": "db4cebed-cd39-45fc-930f-de50d0ee7a68",
+          "kind": "tool",
+          "name": "check_program",
+          "started_at": "2026-11-17T23:50:37.432996+00:00",
+          "finished_at": "2026-11-17T23:50:37.433792+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "ncsu-mcs-raleigh",
+              "profile_version": 1
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "report": {
+              "program_id": "ncsu-mcs-raleigh",
+              "profile_version": 1,
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "checks": [
+                {
+                  "rule_id": "identity",
+                  "status": "pass",
+                  "reason_code": "OFFICIAL_IDENTITY",
+                  "explanation": "Program identity is supported by the corresponding official website.",
+                  "source_ids": [
+                    "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "intake",
+                  "status": "unknown",
+                  "reason_code": "INTAKE_NOT_VERIFIED",
+                  "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gpa",
+                  "status": "unknown",
+                  "reason_code": "GPA_RULE_NOT_VERIFIED",
+                  "explanation": "No applicable GPA threshold has been verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "english",
+                  "status": "unknown",
+                  "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+                  "explanation": "The program's requirement for this English test version is not verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "prerequisites",
+                  "status": "unknown",
+                  "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                  "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "tuition",
+                  "status": "unknown",
+                  "reason_code": "MISSING_TUITION_EVIDENCE",
+                  "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "deadline",
+                  "status": "unknown",
+                  "reason_code": "DEADLINE_NOT_VERIFIED",
+                  "explanation": "No verified deadline applies to this intake and applicant category yet.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "remaining_eligibility",
+                  "status": "unknown",
+                  "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                  "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                  "source_ids": [],
+                  "warnings": []
+                }
+              ],
+              "tuition": {
+                "lower_usd": null,
+                "upper_usd": null,
+                "formula": null,
+                "rate_year": null,
+                "reason_code": "MISSING_TUITION_EVIDENCE",
+                "assumptions": [
+                  "The applicable international tuition basis and full-program calculation inputs have not been verified."
+                ],
+                "mandatory_fees_usd": null
+              },
+              "hard_checks_status": "unknown",
+              "recommendation_ready": false
+            },
+            "sources": [
+              {
+                "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                "program_id": "ncsu-mcs-raleigh",
+                "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                "title": "ncsu_main",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits"
+                ],
+                "locator": "Computer Science (MR): general degree requirements",
+                "retrieved_at": "2026-11-13T04:49:31.128466Z",
+                "source_excerpt": "Total Hours 31",
+                "fact_summary": "The Graduate School's MR identifies the general non-thesis Master of Computer Science, requiring 31 credits. It is distinct from the thesis MS and online program.",
+                "content_hash": "576f98f0d079df97078e33dbb411b0483007696ecec81cd7509a0c6ebfbd6d08"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "5abb4ff7-9dce-436e-b77a-8139f8816aeb",
+          "parent_id": "db4cebed-cd39-45fc-930f-de50d0ee7a68",
+          "kind": "model",
+          "name": "fixed",
+          "started_at": "2026-11-17T23:50:37.433792+00:00",
+          "finished_at": "2026-11-17T23:50:38.999315+00:00",
+          "duration_ms": 1562.0,
+          "inputs": {
+            "payload": {
+              "question": "How many credits are required by the NC State Raleigh general non-thesis MCS catalog entry identified as MR, rather than the thesis MS or online program?",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "ncsu-mcs-raleigh"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 9
+              },
+              "observations": [
+                {
+                  "name": "search_programs",
+                  "arguments": {
+                    "university": null,
+                    "campus": "Raleigh",
+                    "discipline": null
+                  },
+                  "observation": {
+                    "ok": true,
+                    "programs": [
+                      {
+                        "program_id": "ncsu-mcs-raleigh",
+                        "university": "North Carolina State University",
+                        "program_name": "Master of Computer Science",
+                        "degree": "MCS",
+                        "campus": "Raleigh",
+                        "discipline": "CS"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "get_program",
+                  "arguments": {
+                    "program_id": "ncsu-mcs-raleigh"
+                  },
+                  "observation": {
+                    "ok": true,
+                    "program": {
+                      "program_id": "ncsu-mcs-raleigh",
+                      "university": "North Carolina State University",
+                      "school": "Department of Computer Science",
+                      "program_name": "Master of Computer Science",
+                      "degree": "MCS",
+                      "campus": "Raleigh",
+                      "track": "General non-thesis / Graduate School code MR",
+                      "discipline": "CS",
+                      "official_url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                      "allowed_official_hosts": [
+                        "catalog.ncsu.edu"
+                      ],
+                      "candidate_source_id": "b-ncsu-mcs",
+                      "required_credits": "31",
+                      "gpa": null,
+                      "english": [],
+                      "english_not_required": false,
+                      "required_topics": [],
+                      "recommended_topics": [],
+                      "prerequisites_complete": false,
+                      "supported_intakes": [],
+                      "closed_intakes": [],
+                      "deadlines": [],
+                      "deadline_schedule_complete": false,
+                      "tuition": {
+                        "currency": "USD",
+                        "basis": "unknown",
+                        "unit_rate_lower": null,
+                        "unit_rate_upper": null,
+                        "required_units_lower": null,
+                        "required_units_upper": null,
+                        "rate_year": null,
+                        "guaranteed_for_intake": null,
+                        "mandatory_fees_usd": null,
+                        "assumptions": [
+                          "The applicable international tuition basis and full-program calculation inputs have not been verified."
+                        ],
+                        "additional_required_tuition_lower_usd": "0",
+                        "additional_required_tuition_upper_usd": "0"
+                      },
+                      "field_sources": {
+                        "identity": [
+                          "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                        ],
+                        "credits": [
+                          "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                        ]
+                      },
+                      "notes": [
+                        "Uses the general non-thesis MR catalog, not the thesis MS or online program.",
+                        "Only identity and 31 required credits are verified here. Eligibility, intake, and tuition evidence remain incomplete."
+                      ],
+                      "eligibility_review_complete": false,
+                      "goal_features": [],
+                      "admission_evidence": [],
+                      "degree_required": false,
+                      "accepted_degree_fields": [],
+                      "gre_policy": "unknown",
+                      "gre_validity_years": null,
+                      "gre_at_home_accepted": null,
+                      "application_materials": [],
+                      "catalog_version": "m35-2026-11-16"
+                    },
+                    "sources": [
+                      {
+                        "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                        "program_id": "ncsu-mcs-raleigh",
+                        "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                        "title": "ncsu_main",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity",
+                          "credits"
+                        ],
+                        "locator": "Computer Science (MR): general degree requirements",
+                        "retrieved_at": "2026-11-13T04:49:31.128466Z",
+                        "source_excerpt": "Total Hours 31",
+                        "fact_summary": "The Graduate School's MR identifies the general non-thesis Master of Computer Science, requiring 31 credits. It is distinct from the thesis MS and online program.",
+                        "content_hash": "576f98f0d079df97078e33dbb411b0483007696ecec81cd7509a0c6ebfbd6d08"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "check_program",
+                  "arguments": {
+                    "program_id": "ncsu-mcs-raleigh",
+                    "profile_version": 1
+                  },
+                  "observation": {
+                    "ok": true,
+                    "report": {
+                      "program_id": "ncsu-mcs-raleigh",
+                      "profile_version": 1,
+                      "as_of_date": "2026-11-16",
+                      "data_mode": "snapshot",
+                      "checks": [
+                        {
+                          "rule_id": "identity",
+                          "status": "pass",
+                          "reason_code": "OFFICIAL_IDENTITY",
+                          "explanation": "Program identity is supported by the corresponding official website.",
+                          "source_ids": [
+                            "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "intake",
+                          "status": "unknown",
+                          "reason_code": "INTAKE_NOT_VERIFIED",
+                          "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "gpa",
+                          "status": "unknown",
+                          "reason_code": "GPA_RULE_NOT_VERIFIED",
+                          "explanation": "No applicable GPA threshold has been verified.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "english",
+                          "status": "unknown",
+                          "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+                          "explanation": "The program's requirement for this English test version is not verified.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "prerequisites",
+                          "status": "unknown",
+                          "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                          "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "tuition",
+                          "status": "unknown",
+                          "reason_code": "MISSING_TUITION_EVIDENCE",
+                          "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "deadline",
+                          "status": "unknown",
+                          "reason_code": "DEADLINE_NOT_VERIFIED",
+                          "explanation": "No verified deadline applies to this intake and applicant category yet.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "remaining_eligibility",
+                          "status": "unknown",
+                          "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                          "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                          "source_ids": [],
+                          "warnings": []
+                        }
+                      ],
+                      "tuition": {
+                        "lower_usd": null,
+                        "upper_usd": null,
+                        "formula": null,
+                        "rate_year": null,
+                        "reason_code": "MISSING_TUITION_EVIDENCE",
+                        "assumptions": [
+                          "The applicable international tuition basis and full-program calculation inputs have not been verified."
+                        ],
+                        "mandatory_fees_usd": null
+                      },
+                      "hard_checks_status": "unknown",
+                      "recommendation_ready": false
+                    },
+                    "sources": [
+                      {
+                        "source_id": "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1",
+                        "program_id": "ncsu-mcs-raleigh",
+                        "url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+                        "title": "ncsu_main",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity",
+                          "credits"
+                        ],
+                        "locator": "Computer Science (MR): general degree requirements",
+                        "retrieved_at": "2026-11-13T04:49:31.128466Z",
+                        "source_excerpt": "Total Hours 31",
+                        "fact_summary": "The Graduate School's MR identifies the general non-thesis Master of Computer Science, requiring 31 credits. It is distinct from the thesis MS and online program.",
+                        "content_hash": "576f98f0d079df97078e33dbb411b0483007696ecec81cd7509a0c6ebfbd6d08"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+              "citations": [
+                "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "4855d83c-9800-4c83-bb87-73d243cf84b8",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 3759,
+            "output_tokens": 82,
+            "cached_input_tokens": 0,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00318825",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0a5071cd8dd01901016afce84e94d887d088728c3b7106b3e2"
+          }
+        },
+        {
+          "span_id": "cb4a84ae-2686-491b-93a6-f4bd5f7ce033",
+          "parent_id": "5abb4ff7-9dce-436e-b77a-8139f8816aeb",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:50:38.999315+00:00",
+          "finished_at": "2026-11-17T23:50:39.007375+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "The NC State Raleigh general non-thesis MCS catalog entry identified as MR requires 31 credits. It is distinct from the thesis MS and the online program.",
+            "citations": [
+              "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

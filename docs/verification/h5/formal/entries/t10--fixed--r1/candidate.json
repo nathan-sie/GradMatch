@@ -1,0 +1,1304 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t10--fixed--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:51:35.981117+00:00",
+  "payload_sha256": "03961a4399b97c723ec7550a8f27e826100f90d0eb33326cad8c4a5f9608f7d2",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t10",
+    "strategy": "fixed",
+    "trace_id": "cbe08d6c-6218-49cf-9bfa-c4c03e3a41c3",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+      "citations": [
+        {
+          "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+          "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+          "retrieved_at": "2026-11-13T04:46:16.912126+00:00",
+          "applicable_intake": null,
+          "quote": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+          "locator": "MS On Campus: degree requirements; Application information & deadlines"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "What is the credit requirement of the UMass Amherst on-campus MSCS entry in the frozen catalog?",
+        "assistant": {
+          "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+          "citations": [
+            {
+              "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+              "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+              "retrieved_at": "2026-11-13T04:46:16.912126+00:00",
+              "applicable_intake": null,
+              "quote": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+              "locator": "MS On Campus: degree requirements; Application information & deadlines"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 1,
+    "tool_calls": 3,
+    "actual_requests": 1,
+    "latency_ms": 1110.0,
+    "usage": [
+      {
+        "call_id": "6201db63-55c1-43cb-ba8c-38a5af181d84",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 5151,
+        "output_tokens": 63,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00414675",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0b64c5096bcd3c78016afce887fca087d0b57e954cbc4196b9"
+      }
+    ],
+    "estimated_cost_usd": "0.00414675",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "cbe08d6c-6218-49cf-9bfa-c4c03e3a41c3",
+      "spans": [
+        {
+          "span_id": "9497924f-eb6e-42c8-9d65-5b563d4e7da1",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:35.979315+00:00",
+          "duration_ms": 1110.0,
+          "inputs": {
+            "task_id": "t10",
+            "strategy": "fixed",
+            "candidate_input": {
+              "task_id": "t10",
+              "question": "What is the credit requirement of the UMass Amherst on-campus MSCS entry in the frozen catalog?",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "umass-mscs-amherst"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+              "citations": [
+                {
+                  "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                  "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                  "retrieved_at": "2026-11-13T04:46:16.912126+00:00",
+                  "applicable_intake": null,
+                  "quote": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                  "locator": "MS On Campus: degree requirements; Application information & deadlines"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "5dac840e-64f8-492f-97fe-245c3f0fc9aa",
+          "parent_id": "9497924f-eb6e-42c8-9d65-5b563d4e7da1",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:35.979315+00:00",
+          "duration_ms": 1110.0,
+          "inputs": {
+            "message": "What is the credit requirement of the UMass Amherst on-campus MSCS entry in the frozen catalog?"
+          },
+          "outputs": {
+            "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+            "citations": [
+              {
+                "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                "retrieved_at": "2026-11-13T04:46:16.912126+00:00",
+                "applicable_intake": null,
+                "quote": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                "locator": "MS On Campus: degree requirements; Application information & deadlines"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "02c50879-f0be-48a6-b8f6-bee00cfb5caf",
+          "parent_id": "5dac840e-64f8-492f-97fe-245c3f0fc9aa",
+          "kind": "tool",
+          "name": "search_programs",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:34.872121+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "university": null,
+              "campus": "Amherst",
+              "discipline": null
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "programs": [
+              {
+                "program_id": "umass-mscs-amherst",
+                "university": "University of Massachusetts Amherst",
+                "program_name": "Master of Science in Computer Science",
+                "degree": "MS",
+                "campus": "Amherst",
+                "discipline": "CS"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "44e02b48-514e-48af-b939-bd93f428e02a",
+          "parent_id": "5dac840e-64f8-492f-97fe-245c3f0fc9aa",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:34.872121+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "umass-mscs-amherst"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "umass-mscs-amherst",
+              "university": "University of Massachusetts Amherst",
+              "school": "Manning College of Information and Computer Sciences",
+              "program_name": "Master of Science in Computer Science",
+              "degree": "MS",
+              "campus": "Amherst",
+              "track": "On-campus",
+              "discipline": "CS",
+              "official_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+              "allowed_official_hosts": [
+                "www.cics.umass.edu"
+              ],
+              "candidate_source_id": "b-umass-mscs",
+              "required_credits": "30",
+              "gpa": null,
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [
+                "programming",
+                "data_structures",
+                "calculus",
+                "linear_algebra"
+              ],
+              "prerequisites_complete": false,
+              "supported_intakes": [
+                {
+                  "year": 2027,
+                  "term": "fall"
+                }
+              ],
+              "closed_intakes": [],
+              "deadlines": [
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2026-12-15",
+                  "label": "Fall early decision",
+                  "audience": "all"
+                },
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2027-03-15",
+                  "label": "Fall regular decision",
+                  "audience": "all"
+                }
+              ],
+              "deadline_schedule_complete": false,
+              "tuition": {
+                "currency": "USD",
+                "basis": "unknown",
+                "unit_rate_lower": null,
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": null,
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "The site lists USD 60,750 in combined out-of-state/international tuition and mandatory fees. A tuition-only amount and complete billing period are not established, so it is not used as a full-program tuition total."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "umass-mscs-amherst--umass_main--e60b9197037b"
+                ],
+                "credits": [
+                  "umass-mscs-amherst--umass_main--e60b9197037b"
+                ],
+                "intake": [
+                  "umass-mscs-amherst--umass_main--e60b9197037b"
+                ],
+                "deadline": [
+                  "umass-mscs-amherst--umass_main--e60b9197037b"
+                ],
+                "prerequisites": [
+                  "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+                ],
+                "tuition": [
+                  "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+                ]
+              },
+              "notes": [
+                "Individual coursework deficiencies may be addressed after review; they are not modeled as exception-free rejection rules."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                "title": "MS in Computer Science — On Campus : Manning College of Information & Computer Sciences : UMass Amherst",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits",
+                  "intake",
+                  "deadline"
+                ],
+                "locator": "MS On Campus: degree requirements; Application information & deadlines",
+                "retrieved_at": "2026-11-13T04:46:16.912126Z",
+                "source_excerpt": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                "fact_summary": "On-campus Amherst MSCS: 30 credits. Fall early decision: 2026-12-15; regular decision: 2027-03-15. Complete schedules for all applicant categories have not been established here.",
+                "content_hash": "5886877ed638414e08907487764d9d0546cef7740bc4d4f4c6f93e4e73941d7c"
+              },
+              {
+                "source_id": "umass-mscs-amherst--umass_admissions--ba96ff7252db",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/how-apply-ms-program-campus",
+                "title": "umass_admissions",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "prerequisites"
+                ],
+                "locator": "Undergraduate Preparation; Course Preparation",
+                "retrieved_at": "2026-11-13T04:49:32.224994Z",
+                "source_excerpt": "minor deficiencies in undergraduate preparation are acceptable, provided these deficiencies are removed during the first year in Graduate School.",
+                "fact_summary": "Preparation should cover undergraduate CS fundamentals and mathematics. The official page permits some deficiencies to be addressed in the first year, so individual review is retained rather than automatic rejection.",
+                "content_hash": "fc6d8d3100db2da60365c21934f96c927ad41db288a5869d0fd9f7ecce6fb569"
+              },
+              {
+                "source_id": "umass-mscs-amherst--umass_tuition--e47e2eabd77d",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+                "title": "Tuition and Fees : Manning College of Information & Computer Sciences : UMass Amherst",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "Total Tuition & Mandatory Fees",
+                "retrieved_at": "2026-11-13T04:46:17.232972Z",
+                "source_excerpt": "Total Tuition & Mandatory Fees In-State: $29,435 Out-of-State/International: $60,750",
+                "fact_summary": "The page lists USD 60,750 in combined international/out-of-state tuition and mandatory fees. Tuition alone and the complete billing period are not established and are not entered as a full-program tuition amount.",
+                "content_hash": "78f3d6c3c0de127da2c3023f72c8d6037a135f31076a75d35ba943cd0ef5e449"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "8b729c6f-6c33-4129-8ff9-f5547ce32904",
+          "parent_id": "5dac840e-64f8-492f-97fe-245c3f0fc9aa",
+          "kind": "tool",
+          "name": "check_program",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:34.872121+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "umass-mscs-amherst",
+              "profile_version": 1
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "report": {
+              "program_id": "umass-mscs-amherst",
+              "profile_version": 1,
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "checks": [
+                {
+                  "rule_id": "identity",
+                  "status": "pass",
+                  "reason_code": "OFFICIAL_IDENTITY",
+                  "explanation": "Program identity is supported by the corresponding official website.",
+                  "source_ids": [
+                    "umass-mscs-amherst--umass_main--e60b9197037b"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "intake",
+                  "status": "pass",
+                  "reason_code": "INTAKE_SUPPORTED",
+                  "explanation": "Official information supports this intake.",
+                  "source_ids": [
+                    "umass-mscs-amherst--umass_main--e60b9197037b"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gpa",
+                  "status": "unknown",
+                  "reason_code": "GPA_RULE_NOT_VERIFIED",
+                  "explanation": "No applicable GPA threshold has been verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "english",
+                  "status": "unknown",
+                  "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+                  "explanation": "The program's requirement for this English test version is not verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "prerequisites",
+                  "status": "unknown",
+                  "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                  "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                  "source_ids": [
+                    "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "tuition",
+                  "status": "unknown",
+                  "reason_code": "MISSING_RATE",
+                  "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                  "source_ids": [
+                    "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "deadline",
+                  "status": "pass",
+                  "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                  "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                  "source_ids": [
+                    "umass-mscs-amherst--umass_main--e60b9197037b"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "remaining_eligibility",
+                  "status": "unknown",
+                  "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                  "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                  "source_ids": [],
+                  "warnings": []
+                }
+              ],
+              "tuition": {
+                "lower_usd": null,
+                "upper_usd": null,
+                "formula": null,
+                "rate_year": null,
+                "reason_code": "MISSING_RATE",
+                "assumptions": [
+                  "The site lists USD 60,750 in combined out-of-state/international tuition and mandatory fees. A tuition-only amount and complete billing period are not established, so it is not used as a full-program tuition total."
+                ],
+                "mandatory_fees_usd": null
+              },
+              "hard_checks_status": "unknown",
+              "recommendation_ready": false
+            },
+            "sources": [
+              {
+                "source_id": "umass-mscs-amherst--umass_admissions--ba96ff7252db",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/how-apply-ms-program-campus",
+                "title": "umass_admissions",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "prerequisites"
+                ],
+                "locator": "Undergraduate Preparation; Course Preparation",
+                "retrieved_at": "2026-11-13T04:49:32.224994Z",
+                "source_excerpt": "minor deficiencies in undergraduate preparation are acceptable, provided these deficiencies are removed during the first year in Graduate School.",
+                "fact_summary": "Preparation should cover undergraduate CS fundamentals and mathematics. The official page permits some deficiencies to be addressed in the first year, so individual review is retained rather than automatic rejection.",
+                "content_hash": "fc6d8d3100db2da60365c21934f96c927ad41db288a5869d0fd9f7ecce6fb569"
+              },
+              {
+                "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                "title": "MS in Computer Science — On Campus : Manning College of Information & Computer Sciences : UMass Amherst",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits",
+                  "intake",
+                  "deadline"
+                ],
+                "locator": "MS On Campus: degree requirements; Application information & deadlines",
+                "retrieved_at": "2026-11-13T04:46:16.912126Z",
+                "source_excerpt": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                "fact_summary": "On-campus Amherst MSCS: 30 credits. Fall early decision: 2026-12-15; regular decision: 2027-03-15. Complete schedules for all applicant categories have not been established here.",
+                "content_hash": "5886877ed638414e08907487764d9d0546cef7740bc4d4f4c6f93e4e73941d7c"
+              },
+              {
+                "source_id": "umass-mscs-amherst--umass_tuition--e47e2eabd77d",
+                "program_id": "umass-mscs-amherst",
+                "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+                "title": "Tuition and Fees : Manning College of Information & Computer Sciences : UMass Amherst",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "Total Tuition & Mandatory Fees",
+                "retrieved_at": "2026-11-13T04:46:17.232972Z",
+                "source_excerpt": "Total Tuition & Mandatory Fees In-State: $29,435 Out-of-State/International: $60,750",
+                "fact_summary": "The page lists USD 60,750 in combined international/out-of-state tuition and mandatory fees. Tuition alone and the complete billing period are not established and are not entered as a full-program tuition amount.",
+                "content_hash": "78f3d6c3c0de127da2c3023f72c8d6037a135f31076a75d35ba943cd0ef5e449"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "56774231-1836-4f8b-840d-b9340342bc4f",
+          "parent_id": "5dac840e-64f8-492f-97fe-245c3f0fc9aa",
+          "kind": "model",
+          "name": "fixed",
+          "started_at": "2026-11-17T23:51:34.872121+00:00",
+          "finished_at": "2026-11-17T23:51:35.977216+00:00",
+          "duration_ms": 1094.0,
+          "inputs": {
+            "payload": {
+              "question": "What is the credit requirement of the UMass Amherst on-campus MSCS entry in the frozen catalog?",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "umass-mscs-amherst"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 9
+              },
+              "observations": [
+                {
+                  "name": "search_programs",
+                  "arguments": {
+                    "university": null,
+                    "campus": "Amherst",
+                    "discipline": null
+                  },
+                  "observation": {
+                    "ok": true,
+                    "programs": [
+                      {
+                        "program_id": "umass-mscs-amherst",
+                        "university": "University of Massachusetts Amherst",
+                        "program_name": "Master of Science in Computer Science",
+                        "degree": "MS",
+                        "campus": "Amherst",
+                        "discipline": "CS"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "get_program",
+                  "arguments": {
+                    "program_id": "umass-mscs-amherst"
+                  },
+                  "observation": {
+                    "ok": true,
+                    "program": {
+                      "program_id": "umass-mscs-amherst",
+                      "university": "University of Massachusetts Amherst",
+                      "school": "Manning College of Information and Computer Sciences",
+                      "program_name": "Master of Science in Computer Science",
+                      "degree": "MS",
+                      "campus": "Amherst",
+                      "track": "On-campus",
+                      "discipline": "CS",
+                      "official_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                      "allowed_official_hosts": [
+                        "www.cics.umass.edu"
+                      ],
+                      "candidate_source_id": "b-umass-mscs",
+                      "required_credits": "30",
+                      "gpa": null,
+                      "english": [],
+                      "english_not_required": false,
+                      "required_topics": [],
+                      "recommended_topics": [
+                        "programming",
+                        "data_structures",
+                        "calculus",
+                        "linear_algebra"
+                      ],
+                      "prerequisites_complete": false,
+                      "supported_intakes": [
+                        {
+                          "year": 2027,
+                          "term": "fall"
+                        }
+                      ],
+                      "closed_intakes": [],
+                      "deadlines": [
+                        {
+                          "intake": {
+                            "year": 2027,
+                            "term": "fall"
+                          },
+                          "date": "2026-12-15",
+                          "label": "Fall early decision",
+                          "audience": "all"
+                        },
+                        {
+                          "intake": {
+                            "year": 2027,
+                            "term": "fall"
+                          },
+                          "date": "2027-03-15",
+                          "label": "Fall regular decision",
+                          "audience": "all"
+                        }
+                      ],
+                      "deadline_schedule_complete": false,
+                      "tuition": {
+                        "currency": "USD",
+                        "basis": "unknown",
+                        "unit_rate_lower": null,
+                        "unit_rate_upper": null,
+                        "required_units_lower": null,
+                        "required_units_upper": null,
+                        "rate_year": null,
+                        "guaranteed_for_intake": null,
+                        "mandatory_fees_usd": null,
+                        "assumptions": [
+                          "The site lists USD 60,750 in combined out-of-state/international tuition and mandatory fees. A tuition-only amount and complete billing period are not established, so it is not used as a full-program tuition total."
+                        ],
+                        "additional_required_tuition_lower_usd": "0",
+                        "additional_required_tuition_upper_usd": "0"
+                      },
+                      "field_sources": {
+                        "identity": [
+                          "umass-mscs-amherst--umass_main--e60b9197037b"
+                        ],
+                        "credits": [
+                          "umass-mscs-amherst--umass_main--e60b9197037b"
+                        ],
+                        "intake": [
+                          "umass-mscs-amherst--umass_main--e60b9197037b"
+                        ],
+                        "deadline": [
+                          "umass-mscs-amherst--umass_main--e60b9197037b"
+                        ],
+                        "prerequisites": [
+                          "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+                        ],
+                        "tuition": [
+                          "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+                        ]
+                      },
+                      "notes": [
+                        "Individual coursework deficiencies may be addressed after review; they are not modeled as exception-free rejection rules."
+                      ],
+                      "eligibility_review_complete": false,
+                      "goal_features": [],
+                      "admission_evidence": [],
+                      "degree_required": false,
+                      "accepted_degree_fields": [],
+                      "gre_policy": "unknown",
+                      "gre_validity_years": null,
+                      "gre_at_home_accepted": null,
+                      "application_materials": [],
+                      "catalog_version": "m35-2026-11-16"
+                    },
+                    "sources": [
+                      {
+                        "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                        "title": "MS in Computer Science — On Campus : Manning College of Information & Computer Sciences : UMass Amherst",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity",
+                          "credits",
+                          "intake",
+                          "deadline"
+                        ],
+                        "locator": "MS On Campus: degree requirements; Application information & deadlines",
+                        "retrieved_at": "2026-11-13T04:46:16.912126Z",
+                        "source_excerpt": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                        "fact_summary": "On-campus Amherst MSCS: 30 credits. Fall early decision: 2026-12-15; regular decision: 2027-03-15. Complete schedules for all applicant categories have not been established here.",
+                        "content_hash": "5886877ed638414e08907487764d9d0546cef7740bc4d4f4c6f93e4e73941d7c"
+                      },
+                      {
+                        "source_id": "umass-mscs-amherst--umass_admissions--ba96ff7252db",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/how-apply-ms-program-campus",
+                        "title": "umass_admissions",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "prerequisites"
+                        ],
+                        "locator": "Undergraduate Preparation; Course Preparation",
+                        "retrieved_at": "2026-11-13T04:49:32.224994Z",
+                        "source_excerpt": "minor deficiencies in undergraduate preparation are acceptable, provided these deficiencies are removed during the first year in Graduate School.",
+                        "fact_summary": "Preparation should cover undergraduate CS fundamentals and mathematics. The official page permits some deficiencies to be addressed in the first year, so individual review is retained rather than automatic rejection.",
+                        "content_hash": "fc6d8d3100db2da60365c21934f96c927ad41db288a5869d0fd9f7ecce6fb569"
+                      },
+                      {
+                        "source_id": "umass-mscs-amherst--umass_tuition--e47e2eabd77d",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+                        "title": "Tuition and Fees : Manning College of Information & Computer Sciences : UMass Amherst",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "tuition"
+                        ],
+                        "locator": "Total Tuition & Mandatory Fees",
+                        "retrieved_at": "2026-11-13T04:46:17.232972Z",
+                        "source_excerpt": "Total Tuition & Mandatory Fees In-State: $29,435 Out-of-State/International: $60,750",
+                        "fact_summary": "The page lists USD 60,750 in combined international/out-of-state tuition and mandatory fees. Tuition alone and the complete billing period are not established and are not entered as a full-program tuition amount.",
+                        "content_hash": "78f3d6c3c0de127da2c3023f72c8d6037a135f31076a75d35ba943cd0ef5e449"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "check_program",
+                  "arguments": {
+                    "program_id": "umass-mscs-amherst",
+                    "profile_version": 1
+                  },
+                  "observation": {
+                    "ok": true,
+                    "report": {
+                      "program_id": "umass-mscs-amherst",
+                      "profile_version": 1,
+                      "as_of_date": "2026-11-16",
+                      "data_mode": "snapshot",
+                      "checks": [
+                        {
+                          "rule_id": "identity",
+                          "status": "pass",
+                          "reason_code": "OFFICIAL_IDENTITY",
+                          "explanation": "Program identity is supported by the corresponding official website.",
+                          "source_ids": [
+                            "umass-mscs-amherst--umass_main--e60b9197037b"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "intake",
+                          "status": "pass",
+                          "reason_code": "INTAKE_SUPPORTED",
+                          "explanation": "Official information supports this intake.",
+                          "source_ids": [
+                            "umass-mscs-amherst--umass_main--e60b9197037b"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "gpa",
+                          "status": "unknown",
+                          "reason_code": "GPA_RULE_NOT_VERIFIED",
+                          "explanation": "No applicable GPA threshold has been verified.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "english",
+                          "status": "unknown",
+                          "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+                          "explanation": "The program's requirement for this English test version is not verified.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "prerequisites",
+                          "status": "unknown",
+                          "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                          "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                          "source_ids": [
+                            "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "tuition",
+                          "status": "unknown",
+                          "reason_code": "MISSING_RATE",
+                          "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                          "source_ids": [
+                            "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "deadline",
+                          "status": "pass",
+                          "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                          "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                          "source_ids": [
+                            "umass-mscs-amherst--umass_main--e60b9197037b"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "remaining_eligibility",
+                          "status": "unknown",
+                          "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                          "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                          "source_ids": [],
+                          "warnings": []
+                        }
+                      ],
+                      "tuition": {
+                        "lower_usd": null,
+                        "upper_usd": null,
+                        "formula": null,
+                        "rate_year": null,
+                        "reason_code": "MISSING_RATE",
+                        "assumptions": [
+                          "The site lists USD 60,750 in combined out-of-state/international tuition and mandatory fees. A tuition-only amount and complete billing period are not established, so it is not used as a full-program tuition total."
+                        ],
+                        "mandatory_fees_usd": null
+                      },
+                      "hard_checks_status": "unknown",
+                      "recommendation_ready": false
+                    },
+                    "sources": [
+                      {
+                        "source_id": "umass-mscs-amherst--umass_admissions--ba96ff7252db",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/how-apply-ms-program-campus",
+                        "title": "umass_admissions",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "prerequisites"
+                        ],
+                        "locator": "Undergraduate Preparation; Course Preparation",
+                        "retrieved_at": "2026-11-13T04:49:32.224994Z",
+                        "source_excerpt": "minor deficiencies in undergraduate preparation are acceptable, provided these deficiencies are removed during the first year in Graduate School.",
+                        "fact_summary": "Preparation should cover undergraduate CS fundamentals and mathematics. The official page permits some deficiencies to be addressed in the first year, so individual review is retained rather than automatic rejection.",
+                        "content_hash": "fc6d8d3100db2da60365c21934f96c927ad41db288a5869d0fd9f7ecce6fb569"
+                      },
+                      {
+                        "source_id": "umass-mscs-amherst--umass_main--e60b9197037b",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+                        "title": "MS in Computer Science — On Campus : Manning College of Information & Computer Sciences : UMass Amherst",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity",
+                          "credits",
+                          "intake",
+                          "deadline"
+                        ],
+                        "locator": "MS On Campus: degree requirements; Application information & deadlines",
+                        "retrieved_at": "2026-11-13T04:46:16.912126Z",
+                        "source_excerpt": "Fall Enrollment (regular decision) March 15, 2027 Deadline for fall enrollment",
+                        "fact_summary": "On-campus Amherst MSCS: 30 credits. Fall early decision: 2026-12-15; regular decision: 2027-03-15. Complete schedules for all applicant categories have not been established here.",
+                        "content_hash": "5886877ed638414e08907487764d9d0546cef7740bc4d4f4c6f93e4e73941d7c"
+                      },
+                      {
+                        "source_id": "umass-mscs-amherst--umass_tuition--e47e2eabd77d",
+                        "program_id": "umass-mscs-amherst",
+                        "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+                        "title": "Tuition and Fees : Manning College of Information & Computer Sciences : UMass Amherst",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "tuition"
+                        ],
+                        "locator": "Total Tuition & Mandatory Fees",
+                        "retrieved_at": "2026-11-13T04:46:17.232972Z",
+                        "source_excerpt": "Total Tuition & Mandatory Fees In-State: $29,435 Out-of-State/International: $60,750",
+                        "fact_summary": "The page lists USD 60,750 in combined international/out-of-state tuition and mandatory fees. Tuition alone and the complete billing period are not established and are not entered as a full-program tuition amount.",
+                        "content_hash": "78f3d6c3c0de127da2c3023f72c8d6037a135f31076a75d35ba943cd0ef5e449"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+              "citations": [
+                "umass-mscs-amherst--umass_main--e60b9197037b"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "6201db63-55c1-43cb-ba8c-38a5af181d84",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 5151,
+            "output_tokens": 63,
+            "cached_input_tokens": 0,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00414675",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0b64c5096bcd3c78016afce887fca087d0b57e954cbc4196b9"
+          }
+        },
+        {
+          "span_id": "d252be88-61f8-4fcc-999b-8c1fe64c27d9",
+          "parent_id": "56774231-1836-4f8b-840d-b9340342bc4f",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:51:35.977216+00:00",
+          "finished_at": "2026-11-17T23:51:35.979315+00:00",
+          "duration_ms": 16.0,
+          "inputs": {
+            "answer": "The frozen catalog lists the UMass Amherst on-campus MSCS as requiring 30 credits.",
+            "citations": [
+              "umass-mscs-amherst--umass_main--e60b9197037b"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

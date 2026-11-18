@@ -1,0 +1,1112 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t25--react--r3",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:55:21.121968+00:00",
+  "payload_sha256": "8ad4f0542c97d2ccf618f19ff557bae20100579aededb8f95aa07b20e6e7c205",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t25",
+    "strategy": "react",
+    "trace_id": "a116d2ae-e3fa-482c-a988-f3b182e7cf63",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+      "citations": [
+        {
+          "source_id": "cmu-msaii-pittsburgh-central-m35",
+          "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+          "retrieved_at": "2026-11-16T23:35:10.480982+00:00",
+          "applicable_intake": "2027-fall",
+          "quote": "Test Scores: English Language Proficiency",
+          "locator": "SCS admissions: Test Scores / English Language Proficiency"
+        },
+        {
+          "source_id": "cmu-msaii-pittsburgh-msaii_faq-m35",
+          "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+          "retrieved_at": "2026-11-16T23:35:11.197303+00:00",
+          "applicable_intake": null,
+          "quote": "a strong background in computer science and mathematics",
+          "locator": "MSAII FAQ: admission criteria and undergraduate background"
+        },
+        {
+          "source_id": "cmu-msaii-pittsburgh-msaii_fees-m35",
+          "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+          "retrieved_at": "2026-11-16T23:35:11.320677+00:00",
+          "applicable_intake": null,
+          "quote": "Tuition and fees",
+          "locator": "MSAII admitted-student information: Tuition and fees"
+        },
+        {
+          "source_id": "cmu-msaii-pittsburgh-msaii_program-m35",
+          "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+          "retrieved_at": "2026-11-16T23:35:10.016825+00:00",
+          "applicable_intake": "2027-fall",
+          "quote": "Three letters of recommendation",
+          "locator": "MSAII current program: Admissions; Overview; Curriculum"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "Run the deterministic program checks for cmu-msaii-pittsburgh against my supplied current profile version 1 and the experiment assessment date. Do not change my background.",
+        "assistant": {
+          "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+          "citations": [
+            {
+              "source_id": "cmu-msaii-pittsburgh-central-m35",
+              "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+              "retrieved_at": "2026-11-16T23:35:10.480982+00:00",
+              "applicable_intake": "2027-fall",
+              "quote": "Test Scores: English Language Proficiency",
+              "locator": "SCS admissions: Test Scores / English Language Proficiency"
+            },
+            {
+              "source_id": "cmu-msaii-pittsburgh-msaii_faq-m35",
+              "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+              "retrieved_at": "2026-11-16T23:35:11.197303+00:00",
+              "applicable_intake": null,
+              "quote": "a strong background in computer science and mathematics",
+              "locator": "MSAII FAQ: admission criteria and undergraduate background"
+            },
+            {
+              "source_id": "cmu-msaii-pittsburgh-msaii_fees-m35",
+              "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+              "retrieved_at": "2026-11-16T23:35:11.320677+00:00",
+              "applicable_intake": null,
+              "quote": "Tuition and fees",
+              "locator": "MSAII admitted-student information: Tuition and fees"
+            },
+            {
+              "source_id": "cmu-msaii-pittsburgh-msaii_program-m35",
+              "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+              "retrieved_at": "2026-11-16T23:35:10.016825+00:00",
+              "applicable_intake": "2027-fall",
+              "quote": "Three letters of recommendation",
+              "locator": "MSAII current program: Admissions; Overview; Curriculum"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 3671.0,
+    "usage": [
+      {
+        "call_id": "80548560-e7f2-45f8-9936-6ec8c5be76e4",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2517,
+        "output_tokens": 31,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00047205",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0bcd31a645fea7ce016afce966926887d08a3d424fb06cdc96"
+      },
+      {
+        "call_id": "02f63027-1078-4aee-8dae-f3a49977bed8",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 4608,
+        "output_tokens": 276,
+        "cached_input_tokens": 4480,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.001674",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_005317fce5d79968016afce967902c87d08bae5d54ac9a7c38"
+      }
+    ],
+    "estimated_cost_usd": "0.00214605",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "a116d2ae-e3fa-482c-a988-f3b182e7cf63",
+      "spans": [
+        {
+          "span_id": "c02617be-412b-4b68-9864-2186631c74b8",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:55:17.452777+00:00",
+          "finished_at": "2026-11-17T23:55:21.121968+00:00",
+          "duration_ms": 3671.0,
+          "inputs": {
+            "task_id": "t25",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "t25",
+              "question": "Run the deterministic program checks for cmu-msaii-pittsburgh against my supplied current profile version 1 and the experiment assessment date. Do not change my background.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "cmu-msaii-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+              "citations": [
+                {
+                  "source_id": "cmu-msaii-pittsburgh-central-m35",
+                  "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+                  "retrieved_at": "2026-11-16T23:35:10.480982+00:00",
+                  "applicable_intake": "2027-fall",
+                  "quote": "Test Scores: English Language Proficiency",
+                  "locator": "SCS admissions: Test Scores / English Language Proficiency"
+                },
+                {
+                  "source_id": "cmu-msaii-pittsburgh-msaii_faq-m35",
+                  "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+                  "retrieved_at": "2026-11-16T23:35:11.197303+00:00",
+                  "applicable_intake": null,
+                  "quote": "a strong background in computer science and mathematics",
+                  "locator": "MSAII FAQ: admission criteria and undergraduate background"
+                },
+                {
+                  "source_id": "cmu-msaii-pittsburgh-msaii_fees-m35",
+                  "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+                  "retrieved_at": "2026-11-16T23:35:11.320677+00:00",
+                  "applicable_intake": null,
+                  "quote": "Tuition and fees",
+                  "locator": "MSAII admitted-student information: Tuition and fees"
+                },
+                {
+                  "source_id": "cmu-msaii-pittsburgh-msaii_program-m35",
+                  "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+                  "retrieved_at": "2026-11-16T23:35:10.016825+00:00",
+                  "applicable_intake": "2027-fall",
+                  "quote": "Three letters of recommendation",
+                  "locator": "MSAII current program: Admissions; Overview; Curriculum"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "1f67fb8c-77d9-4eaf-8c13-8c234d72a571",
+          "parent_id": "c02617be-412b-4b68-9864-2186631c74b8",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:55:17.452777+00:00",
+          "finished_at": "2026-11-17T23:55:21.121968+00:00",
+          "duration_ms": 3671.0,
+          "inputs": {
+            "message": "Run the deterministic program checks for cmu-msaii-pittsburgh against my supplied current profile version 1 and the experiment assessment date. Do not change my background."
+          },
+          "outputs": {
+            "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+            "citations": [
+              {
+                "source_id": "cmu-msaii-pittsburgh-central-m35",
+                "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+                "retrieved_at": "2026-11-16T23:35:10.480982+00:00",
+                "applicable_intake": "2027-fall",
+                "quote": "Test Scores: English Language Proficiency",
+                "locator": "SCS admissions: Test Scores / English Language Proficiency"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_faq-m35",
+                "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+                "retrieved_at": "2026-11-16T23:35:11.197303+00:00",
+                "applicable_intake": null,
+                "quote": "a strong background in computer science and mathematics",
+                "locator": "MSAII FAQ: admission criteria and undergraduate background"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_fees-m35",
+                "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+                "retrieved_at": "2026-11-16T23:35:11.320677+00:00",
+                "applicable_intake": null,
+                "quote": "Tuition and fees",
+                "locator": "MSAII admitted-student information: Tuition and fees"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_program-m35",
+                "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+                "retrieved_at": "2026-11-16T23:35:10.016825+00:00",
+                "applicable_intake": "2027-fall",
+                "quote": "Three letters of recommendation",
+                "locator": "MSAII current program: Admissions; Overview; Curriculum"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "323929b0-841f-4068-b226-985b54702778",
+          "parent_id": "1f67fb8c-77d9-4eaf-8c13-8c234d72a571",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:55:17.453778+00:00",
+          "finished_at": "2026-11-17T23:55:18.442764+00:00",
+          "duration_ms": 984.0,
+          "inputs": {
+            "payload": {
+              "question": "Run the deterministic program checks for cmu-msaii-pittsburgh against my supplied current profile version 1 and the experiment assessment date. Do not change my background.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "cmu-msaii-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_698R96C3RLBg23d0ZohprZ80",
+                "name": "check_program",
+                "arguments": "{\"program_id\":\"cmu-msaii-pittsburgh\",\"profile_version\":1}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "80548560-e7f2-45f8-9936-6ec8c5be76e4",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2517,
+            "output_tokens": 31,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00047205",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0bcd31a645fea7ce016afce966926887d08a3d424fb06cdc96"
+          }
+        },
+        {
+          "span_id": "e537ed95-30bb-426a-a932-fe19362fc959",
+          "parent_id": "323929b0-841f-4068-b226-985b54702778",
+          "kind": "tool",
+          "name": "check_program",
+          "started_at": "2026-11-17T23:55:18.442764+00:00",
+          "finished_at": "2026-11-17T23:55:18.444782+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "cmu-msaii-pittsburgh",
+              "profile_version": 1
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "report": {
+              "program_id": "cmu-msaii-pittsburgh",
+              "profile_version": 1,
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "checks": [
+                {
+                  "rule_id": "identity",
+                  "status": "pass",
+                  "reason_code": "OFFICIAL_IDENTITY",
+                  "explanation": "Program identity is supported by the corresponding official website.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "intake",
+                  "status": "pass",
+                  "reason_code": "INTAKE_SUPPORTED",
+                  "explanation": "Official information supports this intake.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gpa",
+                  "status": "pass",
+                  "reason_code": "GPA_MEETS_MINIMUM",
+                  "explanation": "The GPA meets the verified minimum. This does not establish admission competitiveness.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "english",
+                  "status": "pass",
+                  "reason_code": "ENGLISH_MEETS_MINIMUM",
+                  "explanation": "The English score meets the verified minimum. Additional conditions may still apply.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_faq-m35",
+                    "cmu-msaii-pittsburgh-central-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "prerequisites",
+                  "status": "pass",
+                  "reason_code": "COURSEWORK_SELF_REPORTED",
+                  "explanation": "Checked against the applicant's explicit self-report for each mandatory topic. This does not replace the university's equivalency assessment.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_faq-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "tuition",
+                  "status": "pass",
+                  "reason_code": "TUITION_WITHIN_PUBLISHED_RATE_BUDGET",
+                  "explanation": "The upper bound of estimated full-program tuition is within the budget.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_fees-m35"
+                  ],
+                  "warnings": [
+                    "Estimated using the stated year's published rates. Future increases are not guaranteed; living costs are excluded and mandatory fees are listed separately."
+                  ]
+                },
+                {
+                  "rule_id": "deadline",
+                  "status": "pass",
+                  "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                  "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "degree",
+                  "status": "pass",
+                  "reason_code": "DEGREE_SELF_REPORTED",
+                  "explanation": "The declared recognized degree meets the reviewed planning requirement. The university makes the final credential-equivalency decision.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_faq-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gre",
+                  "status": "pass",
+                  "reason_code": "GRE_SELF_REPORTED",
+                  "explanation": "The declared GRE report meets the reviewed presence/date/format rule; no unsupported score cutoff is imposed.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "remaining_eligibility",
+                  "status": "pass",
+                  "reason_code": "REMAINING_ELIGIBILITY_REVIEWED",
+                  "explanation": "The planning eligibility rules are covered by reviewed sources. Required application documents are listed separately; submission and admission are not asserted.",
+                  "source_ids": [
+                    "cmu-msaii-pittsburgh-msaii_program-m35"
+                  ],
+                  "warnings": []
+                }
+              ],
+              "tuition": {
+                "lower_usd": "133500",
+                "upper_usd": "137400",
+                "formula": "32400–32400 USD × 4–4 (per_term) + 3900–7800 USD required additional tuition",
+                "rate_year": "2026-2027",
+                "reason_code": "PUBLISHED_RATE_ESTIMATE",
+                "assumptions": [
+                  "Department-specific published 2026–2027 rate reused as a planning estimate for Fall 2027; future increases are unknown.",
+                  "Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.",
+                  "Four academic semesters plus the required 6–12 unit pre-arrival summer course at USD 650/unit; no internship tuition.",
+                  "No unconfirmed scholarship or assistantship is deducted."
+                ],
+                "mandatory_fees_usd": null
+              },
+              "hard_checks_status": "pass",
+              "recommendation_ready": true
+            },
+            "sources": [
+              {
+                "source_id": "cmu-msaii-pittsburgh-central-m35",
+                "program_id": "cmu-msaii-pittsburgh",
+                "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+                "title": "SCS admissions: Test Scores / English Language Proficiency",
+                "applicable_intake": "2027-fall",
+                "effective_period": "Fall 2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "english"
+                ],
+                "locator": "SCS admissions: Test Scores / English Language Proficiency",
+                "retrieved_at": "2026-11-16T23:35:10.480982Z",
+                "source_excerpt": "Test Scores: English Language Proficiency",
+                "fact_summary": "For Fall 2027, English tests before September 1, 2024 are not accepted for applicants without US degree study; qualifying US degree study permits September 1, 2021 onward. This is not an English-test waiver.",
+                "content_hash": "fa41e2a6da9c099324d5ebca1e25e3cbc26e7279926bfed01a9778eec11be3fa"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_faq-m35",
+                "program_id": "cmu-msaii-pittsburgh",
+                "url": "https://msaii.cs.cmu.edu/frequently-asked-questions",
+                "title": "MSAII FAQ: admission criteria and undergraduate background",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "english",
+                  "degree",
+                  "prerequisites"
+                ],
+                "locator": "MSAII FAQ: admission criteria and undergraduate background",
+                "retrieved_at": "2026-11-16T23:35:11.197303Z",
+                "source_excerpt": "a strong background in computer science and mathematics",
+                "fact_summary": "A bachelor-level background and strong undergraduate computer science and mathematics preparation are expected, including for non-CS majors. Published legacy TOEFL minimum 100 or IELTS 7.5; GRE is required without a score cutoff. Intake-specific validity dates come from current central admissions.",
+                "content_hash": "0c9bea0fbbd456926d58721ec03bbfed968c54f42f619c6f583ad5d53aec3a94"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_fees-m35",
+                "program_id": "cmu-msaii-pittsburgh",
+                "url": "https://msaii.cs.cmu.edu/additional-information-admitted-students",
+                "title": "MSAII admitted-student information: Tuition and fees",
+                "applicable_intake": null,
+                "effective_period": "2026-2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "MSAII admitted-student information: Tuition and fees",
+                "retrieved_at": "2026-11-16T23:35:11.320677Z",
+                "source_excerpt": "Tuition and fees",
+                "fact_summary": "Department-specific 2026–2027 tuition is USD 32,400 per academic semester. Four academic semesters plus required summer course: 6–12 units at USD 650/unit. Total tuition estimate USD 133,500–137,400.",
+                "content_hash": "136c5403f7f3c7d7611d7abcfdd1ffe7f44fcf11117d5bb1f508be38f1438966"
+              },
+              {
+                "source_id": "cmu-msaii-pittsburgh-msaii_program-m35",
+                "program_id": "cmu-msaii-pittsburgh",
+                "url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+                "title": "MSAII current program: Admissions; Overview; Curriculum",
+                "applicable_intake": "2027-fall",
+                "effective_period": "Fall 2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "gpa",
+                  "gre",
+                  "intake",
+                  "deadline",
+                  "goal_features",
+                  "remaining_eligibility"
+                ],
+                "locator": "MSAII current program: Admissions; Overview; Curriculum",
+                "retrieved_at": "2026-11-16T23:35:10.016825Z",
+                "source_excerpt": "Three letters of recommendation",
+                "fact_summary": "Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.",
+                "content_hash": "eced5b35315a0d77701be0a33fe29cf4c4254ef0b032ff1189297cbcc0c44bfa"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "e5ad2c38-de4f-46f6-9f7f-c7b443c1a1dc",
+          "parent_id": "1f67fb8c-77d9-4eaf-8c13-8c234d72a571",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:55:18.444782+00:00",
+          "finished_at": "2026-11-17T23:55:21.118362+00:00",
+          "duration_ms": 2672.0,
+          "inputs": {
+            "payload": {
+              "question": "Run the deterministic program checks for cmu-msaii-pittsburgh against my supplied current profile version 1 and the experiment assessment date. Do not change my background.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "cmu-msaii-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_698R96C3RLBg23d0ZohprZ80",
+                "name": "check_program",
+                "arguments": "{\"program_id\":\"cmu-msaii-pittsburgh\",\"profile_version\":1}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_698R96C3RLBg23d0ZohprZ80",
+                "output": "{\"ok\": true, \"report\": {\"program_id\": \"cmu-msaii-pittsburgh\", \"profile_version\": 1, \"as_of_date\": \"2026-11-16\", \"data_mode\": \"snapshot\", \"checks\": [{\"rule_id\": \"identity\", \"status\": \"pass\", \"reason_code\": \"OFFICIAL_IDENTITY\", \"explanation\": \"Program identity is supported by the corresponding official website.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}, {\"rule_id\": \"intake\", \"status\": \"pass\", \"reason_code\": \"INTAKE_SUPPORTED\", \"explanation\": \"Official information supports this intake.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}, {\"rule_id\": \"gpa\", \"status\": \"pass\", \"reason_code\": \"GPA_MEETS_MINIMUM\", \"explanation\": \"The GPA meets the verified minimum. This does not establish admission competitiveness.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}, {\"rule_id\": \"english\", \"status\": \"pass\", \"reason_code\": \"ENGLISH_MEETS_MINIMUM\", \"explanation\": \"The English score meets the verified minimum. Additional conditions may still apply.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_faq-m35\", \"cmu-msaii-pittsburgh-central-m35\"], \"warnings\": []}, {\"rule_id\": \"prerequisites\", \"status\": \"pass\", \"reason_code\": \"COURSEWORK_SELF_REPORTED\", \"explanation\": \"Checked against the applicant's explicit self-report for each mandatory topic. This does not replace the university's equivalency assessment.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_faq-m35\"], \"warnings\": []}, {\"rule_id\": \"tuition\", \"status\": \"pass\", \"reason_code\": \"TUITION_WITHIN_PUBLISHED_RATE_BUDGET\", \"explanation\": \"The upper bound of estimated full-program tuition is within the budget.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_fees-m35\"], \"warnings\": [\"Estimated using the stated year's published rates. Future increases are not guaranteed; living costs are excluded and mandatory fees are listed separately.\"]}, {\"rule_id\": \"deadline\", \"status\": \"pass\", \"reason_code\": \"FUTURE_APPLICABLE_DEADLINE\", \"explanation\": \"At least one applicable deadline is still in the future. This does not guarantee remaining places.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}, {\"rule_id\": \"degree\", \"status\": \"pass\", \"reason_code\": \"DEGREE_SELF_REPORTED\", \"explanation\": \"The declared recognized degree meets the reviewed planning requirement. The university makes the final credential-equivalency decision.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_faq-m35\"], \"warnings\": []}, {\"rule_id\": \"gre\", \"status\": \"pass\", \"reason_code\": \"GRE_SELF_REPORTED\", \"explanation\": \"The declared GRE report meets the reviewed presence/date/format rule; no unsupported score cutoff is imposed.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}, {\"rule_id\": \"remaining_eligibility\", \"status\": \"pass\", \"reason_code\": \"REMAINING_ELIGIBILITY_REVIEWED\", \"explanation\": \"The planning eligibility rules are covered by reviewed sources. Required application documents are listed separately; submission and admission are not asserted.\", \"source_ids\": [\"cmu-msaii-pittsburgh-msaii_program-m35\"], \"warnings\": []}], \"tuition\": {\"lower_usd\": \"133500\", \"upper_usd\": \"137400\", \"formula\": \"32400–32400 USD × 4–4 (per_term) + 3900–7800 USD required additional tuition\", \"rate_year\": \"2026-2027\", \"reason_code\": \"PUBLISHED_RATE_ESTIMATE\", \"assumptions\": [\"Department-specific published 2026–2027 rate reused as a planning estimate for Fall 2027; future increases are unknown.\", \"Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.\", \"Four academic semesters plus the required 6–12 unit pre-arrival summer course at USD 650/unit; no internship tuition.\", \"No unconfirmed scholarship or assistantship is deducted.\"], \"mandatory_fees_usd\": null}, \"hard_checks_status\": \"pass\", \"recommendation_ready\": true}, \"sources\": [{\"source_id\": \"cmu-msaii-pittsburgh-central-m35\", \"program_id\": \"cmu-msaii-pittsburgh\", \"url\": \"https://www.cs.cmu.edu/education/graduate-admissions\", \"title\": \"SCS admissions: Test Scores / English Language Proficiency\", \"applicable_intake\": \"2027-fall\", \"effective_period\": \"Fall 2027\", \"verification_status\": \"verified\", \"field_groups\": [\"english\"], \"locator\": \"SCS admissions: Test Scores / English Language Proficiency\", \"retrieved_at\": \"2026-11-16T23:35:10.480982Z\", \"source_excerpt\": \"Test Scores: English Language Proficiency\", \"fact_summary\": \"For Fall 2027, English tests before September 1, 2024 are not accepted for applicants without US degree study; qualifying US degree study permits September 1, 2021 onward. This is not an English-test waiver.\", \"content_hash\": \"fa41e2a6da9c099324d5ebca1e25e3cbc26e7279926bfed01a9778eec11be3fa\"}, {\"source_id\": \"cmu-msaii-pittsburgh-msaii_faq-m35\", \"program_id\": \"cmu-msaii-pittsburgh\", \"url\": \"https://msaii.cs.cmu.edu/frequently-asked-questions\", \"title\": \"MSAII FAQ: admission criteria and undergraduate background\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"english\", \"degree\", \"prerequisites\"], \"locator\": \"MSAII FAQ: admission criteria and undergraduate background\", \"retrieved_at\": \"2026-11-16T23:35:11.197303Z\", \"source_excerpt\": \"a strong background in computer science and mathematics\", \"fact_summary\": \"A bachelor-level background and strong undergraduate computer science and mathematics preparation are expected, including for non-CS majors. Published legacy TOEFL minimum 100 or IELTS 7.5; GRE is required without a score cutoff. Intake-specific validity dates come from current central admissions.\", \"content_hash\": \"0c9bea0fbbd456926d58721ec03bbfed968c54f42f619c6f583ad5d53aec3a94\"}, {\"source_id\": \"cmu-msaii-pittsburgh-msaii_fees-m35\", \"program_id\": \"cmu-msaii-pittsburgh\", \"url\": \"https://msaii.cs.cmu.edu/additional-information-admitted-students\", \"title\": \"MSAII admitted-student information: Tuition and fees\", \"applicable_intake\": null, \"effective_period\": \"2026-2027\", \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"locator\": \"MSAII admitted-student information: Tuition and fees\", \"retrieved_at\": \"2026-11-16T23:35:11.320677Z\", \"source_excerpt\": \"Tuition and fees\", \"fact_summary\": \"Department-specific 2026–2027 tuition is USD 32,400 per academic semester. Four academic semesters plus required summer course: 6–12 units at USD 650/unit. Total tuition estimate USD 133,500–137,400.\", \"content_hash\": \"136c5403f7f3c7d7611d7abcfdd1ffe7f44fcf11117d5bb1f508be38f1438966\"}, {\"source_id\": \"cmu-msaii-pittsburgh-msaii_program-m35\", \"program_id\": \"cmu-msaii-pittsburgh\", \"url\": \"https://lti.cs.cmu.edu/academics/masters-programs/msaii.html\", \"title\": \"MSAII current program: Admissions; Overview; Curriculum\", \"applicable_intake\": \"2027-fall\", \"effective_period\": \"Fall 2027\", \"verification_status\": \"verified\", \"field_groups\": [\"identity\", \"gpa\", \"gre\", \"intake\", \"deadline\", \"goal_features\", \"remaining_eligibility\"], \"locator\": \"MSAII current program: Admissions; Overview; Curriculum\", \"retrieved_at\": \"2026-11-16T23:35:10.016825Z\", \"source_excerpt\": \"Three letters of recommendation\", \"fact_summary\": \"Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.\", \"content_hash\": \"eced5b35315a0d77701be0a33fe29cf4c4254ef0b032ff1189297cbcc0c44bfa\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+              "citations": [
+                "cmu-msaii-pittsburgh-central-m35",
+                "cmu-msaii-pittsburgh-msaii_faq-m35",
+                "cmu-msaii-pittsburgh-msaii_fees-m35",
+                "cmu-msaii-pittsburgh-msaii_program-m35"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "02f63027-1078-4aee-8dae-f3a49977bed8",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 4608,
+            "output_tokens": 276,
+            "cached_input_tokens": 4480,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.001674",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_005317fce5d79968016afce967902c87d08bae5d54ac9a7c38"
+          }
+        },
+        {
+          "span_id": "e642179a-ab66-4843-99c1-dad7d172cc79",
+          "parent_id": "e5ad2c38-de4f-46f6-9f7f-c7b443c1a1dc",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:55:21.118362+00:00",
+          "finished_at": "2026-11-17T23:55:21.121968+00:00",
+          "duration_ms": 15.0,
+          "inputs": {
+            "answer": "Deterministic check for cmu-msaii-pittsburgh against profile version 1 passed all reviewed hard checks as of 2026-11-16. The program is eligible under the frozen rules, and the tuition estimate is within your published-rate budget. This is not an admission prediction.\n\nPassed checks: identity, intake, GPA, English, prerequisites, tuition, deadline, degree, GRE, and remaining eligibility.\n\nNotes:\n- English: your TOEFL 110 is accepted under the Fall 2027 rule set in the frozen sources.\n- Tuition: estimated full-program tuition is USD 133,500–137,400, excluding living costs and unverified mandatory fees.\n- Prerequisites: the check relied on your self-reported coursework and does not replace CMU’s own equivalency review.\n- Goal fit and selectivity tier were not assessed because you asked only for the deterministic program checks.",
+            "citations": [
+              "cmu-msaii-pittsburgh-central-m35",
+              "cmu-msaii-pittsburgh-msaii_faq-m35",
+              "cmu-msaii-pittsburgh-msaii_fees-m35",
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,956 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t31--react--r3",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:57:13.419431+00:00",
+  "payload_sha256": "32b094c654adb95a912abfcc0b7d0c52ea78f6bf4b57eae3a77af64a19711df2",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t31",
+    "strategy": "react",
+    "trace_id": "bdde12a8-d297-4a56-8733-5b88981fb32a",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+      "citations": [
+        {
+          "source_id": "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67",
+          "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+          "retrieved_at": "2026-11-13T04:46:15.725575+00:00",
+          "applicable_intake": null,
+          "quote": "3.2/4.0 or higher.",
+          "locator": "Who may apply?"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.1",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.1",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "My overall GPA is 3.1/4. Since UIUC Urbana MCS lists 3.2, must I be automatically rejected under a verified hard GPA minimum?",
+        "assistant": {
+          "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+          "citations": [
+            {
+              "source_id": "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67",
+              "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+              "retrieved_at": "2026-11-13T04:46:15.725575+00:00",
+              "applicable_intake": null,
+              "quote": "3.2/4.0 or higher.",
+              "locator": "Who may apply?"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 3547.0,
+    "usage": [
+      {
+        "call_id": "735155e8-146d-4476-9cff-91f76dd470fe",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2517,
+        "output_tokens": 25,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00044505",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_089c4b20c238481b016afce9d6fc5c87d084a3c11377ac5424"
+      },
+      {
+        "call_id": "7763dc98-05df-40aa-9f16-f7aab4169719",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 4054,
+        "output_tokens": 222,
+        "cached_input_tokens": 3840,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0014475",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0a2b3a9370c8277b016afce9d7bb8887d0b225b6c201ed6d5d"
+      }
+    ],
+    "estimated_cost_usd": "0.00189255",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "bdde12a8-d297-4a56-8733-5b88981fb32a",
+      "spans": [
+        {
+          "span_id": "b0da4c72-8995-41fb-8828-8bc1ecf1551f",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:57:09.870374+00:00",
+          "finished_at": "2026-11-17T23:57:13.418431+00:00",
+          "duration_ms": 3547.0,
+          "inputs": {
+            "task_id": "t31",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "t31",
+              "question": "My overall GPA is 3.1/4. Since UIUC Urbana MCS lists 3.2, must I be automatically rejected under a verified hard GPA minimum?",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.1",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "uiuc-mcs-urbana"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+              "citations": [
+                {
+                  "source_id": "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67",
+                  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+                  "retrieved_at": "2026-11-13T04:46:15.725575+00:00",
+                  "applicable_intake": null,
+                  "quote": "3.2/4.0 or higher.",
+                  "locator": "Who may apply?"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "d878388e-6dfe-4fb7-b082-1403772d3cf4",
+          "parent_id": "b0da4c72-8995-41fb-8828-8bc1ecf1551f",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:57:09.871375+00:00",
+          "finished_at": "2026-11-17T23:57:13.418431+00:00",
+          "duration_ms": 3547.0,
+          "inputs": {
+            "message": "My overall GPA is 3.1/4. Since UIUC Urbana MCS lists 3.2, must I be automatically rejected under a verified hard GPA minimum?"
+          },
+          "outputs": {
+            "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+            "citations": [
+              {
+                "source_id": "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67",
+                "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+                "retrieved_at": "2026-11-13T04:46:15.725575+00:00",
+                "applicable_intake": null,
+                "quote": "3.2/4.0 or higher.",
+                "locator": "Who may apply?"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "476de060-e92f-489b-a07d-9c6a16744714",
+          "parent_id": "d878388e-6dfe-4fb7-b082-1403772d3cf4",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:57:09.871375+00:00",
+          "finished_at": "2026-11-17T23:57:10.619890+00:00",
+          "duration_ms": 750.0,
+          "inputs": {
+            "payload": {
+              "question": "My overall GPA is 3.1/4. Since UIUC Urbana MCS lists 3.2, must I be automatically rejected under a verified hard GPA minimum?",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.1",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uiuc-mcs-urbana"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_DDzkGPegEWnBzfIglZpD85Fq",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"uiuc-mcs-urbana\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "735155e8-146d-4476-9cff-91f76dd470fe",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2517,
+            "output_tokens": 25,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00044505",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_089c4b20c238481b016afce9d6fc5c87d084a3c11377ac5424"
+          }
+        },
+        {
+          "span_id": "a7124dac-3bee-4c6e-8c58-3e2099296902",
+          "parent_id": "476de060-e92f-489b-a07d-9c6a16744714",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:57:10.619890+00:00",
+          "finished_at": "2026-11-17T23:57:10.619890+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "uiuc-mcs-urbana"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "uiuc-mcs-urbana",
+              "university": "University of Illinois Urbana-Champaign",
+              "school": "Siebel School of Computing and Data Science",
+              "program_name": "Master of Computer Science",
+              "degree": "MCS",
+              "campus": "Urbana-Champaign",
+              "track": "On-campus coursework",
+              "discipline": "CS",
+              "official_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+              "allowed_official_hosts": [
+                "siebelschool.illinois.edu"
+              ],
+              "candidate_source_id": "a-uiuc-mcs",
+              "required_credits": "32",
+              "gpa": {
+                "minimum": null,
+                "recommended": "3.2",
+                "scale": "4",
+                "accepted_scopes": [
+                  "overall"
+                ],
+                "below_minimum_review_possible": false,
+                "no_hard_minimum": false
+              },
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [
+                "object_oriented_programming",
+                "data_structures",
+                "algorithms",
+                "linear_algebra",
+                "probability_statistics"
+              ],
+              "recommended_topics": [],
+              "prerequisites_complete": true,
+              "supported_intakes": [
+                {
+                  "year": 2027,
+                  "term": "fall"
+                }
+              ],
+              "closed_intakes": [],
+              "deadlines": [],
+              "deadline_schedule_complete": false,
+              "tuition": {
+                "currency": "USD",
+                "basis": "unknown",
+                "unit_rate_lower": null,
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": null,
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "The official site directs applicants to the relevant Illinois Cost Calculator. The program becomes self-supporting in Fall 2027; a reproducible applicable rate has not been verified here."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+                ],
+                "credits": [
+                  "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+                ],
+                "intake": [
+                  "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+                ],
+                "gpa": [
+                  "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+                ],
+                "prerequisites": [
+                  "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+                ],
+                "tuition": [
+                  "uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f"
+                ]
+              },
+              "notes": [
+                "3.2/4.0 is a recommended GPA, not a verified universal hard minimum in this dataset.",
+                "Chicago, Online, and prior funding arrangements have not been used for this record."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "uiuc-mcs-urbana--uiuc_main--2f239d6fe508",
+                "program_id": "uiuc-mcs-urbana",
+                "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+                "title": "Master of Computer Science in Urbana-Champaign | Siebel School of Computing and Data Science | Illinois",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "credits",
+                  "intake"
+                ],
+                "locator": "MCS Urbana-Champaign: Fall 2027; program description",
+                "retrieved_at": "2026-11-13T04:46:15.506805Z",
+                "source_excerpt": "Fall 2027 applications are open",
+                "fact_summary": "On-campus Urbana-Champaign MCS: 32 credits, no thesis. Fall 2027 applications are open. This record does not describe Chicago or Online MCS.",
+                "content_hash": "e773bd98031aab71ab0c84fe87096ada2e4c020d23e2f3d0d62a79ea0a3cdbfd"
+              },
+              {
+                "source_id": "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67",
+                "program_id": "uiuc-mcs-urbana",
+                "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+                "title": "MCS Application Information | Siebel School of Computing and Data Science | Illinois",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "gpa",
+                  "prerequisites"
+                ],
+                "locator": "Who may apply?",
+                "retrieved_at": "2026-11-13T04:46:15.725575Z",
+                "source_excerpt": "3.2/4.0 or higher.",
+                "fact_summary": "3.2/4.0 is the recommended undergraduate GPA. Prerequisite coursework or equivalent experience covers object-oriented programming, data structures, algorithms, linear algebra, and statistics/probability.",
+                "content_hash": "1cec10aa590949d716378d186ceae75a03fccca78170ac0940b17dfdc7b43ab4"
+              },
+              {
+                "source_id": "uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f",
+                "program_id": "uiuc-mcs-urbana",
+                "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+                "title": "MCS Tuition, Fees & Financial Assistance | Siebel School of Computing and Data Science | Illinois",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "Tuition & Fees; Financial Assistance",
+                "retrieved_at": "2026-11-13T04:46:15.540044Z",
+                "source_excerpt": "the Master of Computer Science will become a self-supporting degree program",
+                "fact_summary": "The program becomes self-supporting in Fall 2027. Applicants are directed to the calculator for the matching MCS program and campus; this source does not directly establish a reproducible full-program tuition amount.",
+                "content_hash": "4fbc39a4957bffb689bc1449462efd7d63ffee14531698c3fc5e607031ea9e85"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "11247c7e-4518-4f2f-a71a-6c0ed60f1e0f",
+          "parent_id": "d878388e-6dfe-4fb7-b082-1403772d3cf4",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:57:10.620882+00:00",
+          "finished_at": "2026-11-17T23:57:13.415433+00:00",
+          "duration_ms": 2782.0,
+          "inputs": {
+            "payload": {
+              "question": "My overall GPA is 3.1/4. Since UIUC Urbana MCS lists 3.2, must I be automatically rejected under a verified hard GPA minimum?",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.1",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uiuc-mcs-urbana"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_DDzkGPegEWnBzfIglZpD85Fq",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"uiuc-mcs-urbana\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_DDzkGPegEWnBzfIglZpD85Fq",
+                "output": "{\"ok\": true, \"program\": {\"program_id\": \"uiuc-mcs-urbana\", \"university\": \"University of Illinois Urbana-Champaign\", \"school\": \"Siebel School of Computing and Data Science\", \"program_name\": \"Master of Computer Science\", \"degree\": \"MCS\", \"campus\": \"Urbana-Champaign\", \"track\": \"On-campus coursework\", \"discipline\": \"CS\", \"official_url\": \"https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science\", \"allowed_official_hosts\": [\"siebelschool.illinois.edu\"], \"candidate_source_id\": \"a-uiuc-mcs\", \"required_credits\": \"32\", \"gpa\": {\"minimum\": null, \"recommended\": \"3.2\", \"scale\": \"4\", \"accepted_scopes\": [\"overall\"], \"below_minimum_review_possible\": false, \"no_hard_minimum\": false}, \"english\": [], \"english_not_required\": false, \"required_topics\": [\"object_oriented_programming\", \"data_structures\", \"algorithms\", \"linear_algebra\", \"probability_statistics\"], \"recommended_topics\": [], \"prerequisites_complete\": true, \"supported_intakes\": [{\"year\": 2027, \"term\": \"fall\"}], \"closed_intakes\": [], \"deadlines\": [], \"deadline_schedule_complete\": false, \"tuition\": {\"currency\": \"USD\", \"basis\": \"unknown\", \"unit_rate_lower\": null, \"unit_rate_upper\": null, \"required_units_lower\": null, \"required_units_upper\": null, \"rate_year\": null, \"guaranteed_for_intake\": null, \"mandatory_fees_usd\": null, \"assumptions\": [\"The official site directs applicants to the relevant Illinois Cost Calculator. The program becomes self-supporting in Fall 2027; a reproducible applicable rate has not been verified here.\"], \"additional_required_tuition_lower_usd\": \"0\", \"additional_required_tuition_upper_usd\": \"0\"}, \"field_sources\": {\"identity\": [\"uiuc-mcs-urbana--uiuc_main--2f239d6fe508\"], \"credits\": [\"uiuc-mcs-urbana--uiuc_main--2f239d6fe508\"], \"intake\": [\"uiuc-mcs-urbana--uiuc_main--2f239d6fe508\"], \"gpa\": [\"uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67\"], \"prerequisites\": [\"uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67\"], \"tuition\": [\"uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f\"]}, \"notes\": [\"3.2/4.0 is a recommended GPA, not a verified universal hard minimum in this dataset.\", \"Chicago, Online, and prior funding arrangements have not been used for this record.\"], \"eligibility_review_complete\": false, \"goal_features\": [], \"admission_evidence\": [], \"degree_required\": false, \"accepted_degree_fields\": [], \"gre_policy\": \"unknown\", \"gre_validity_years\": null, \"gre_at_home_accepted\": null, \"application_materials\": [], \"catalog_version\": \"m35-2026-11-16\"}, \"sources\": [{\"source_id\": \"uiuc-mcs-urbana--uiuc_main--2f239d6fe508\", \"program_id\": \"uiuc-mcs-urbana\", \"url\": \"https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science\", \"title\": \"Master of Computer Science in Urbana-Champaign | Siebel School of Computing and Data Science | Illinois\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"identity\", \"credits\", \"intake\"], \"locator\": \"MCS Urbana-Champaign: Fall 2027; program description\", \"retrieved_at\": \"2026-11-13T04:46:15.506805Z\", \"source_excerpt\": \"Fall 2027 applications are open\", \"fact_summary\": \"On-campus Urbana-Champaign MCS: 32 credits, no thesis. Fall 2027 applications are open. This record does not describe Chicago or Online MCS.\", \"content_hash\": \"e773bd98031aab71ab0c84fe87096ada2e4c020d23e2f3d0d62a79ea0a3cdbfd\"}, {\"source_id\": \"uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67\", \"program_id\": \"uiuc-mcs-urbana\", \"url\": \"https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info\", \"title\": \"MCS Application Information | Siebel School of Computing and Data Science | Illinois\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"gpa\", \"prerequisites\"], \"locator\": \"Who may apply?\", \"retrieved_at\": \"2026-11-13T04:46:15.725575Z\", \"source_excerpt\": \"3.2/4.0 or higher.\", \"fact_summary\": \"3.2/4.0 is the recommended undergraduate GPA. Prerequisite coursework or equivalent experience covers object-oriented programming, data structures, algorithms, linear algebra, and statistics/probability.\", \"content_hash\": \"1cec10aa590949d716378d186ceae75a03fccca78170ac0940b17dfdc7b43ab4\"}, {\"source_id\": \"uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f\", \"program_id\": \"uiuc-mcs-urbana\", \"url\": \"https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees\", \"title\": \"MCS Tuition, Fees & Financial Assistance | Siebel School of Computing and Data Science | Illinois\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"locator\": \"Tuition & Fees; Financial Assistance\", \"retrieved_at\": \"2026-11-13T04:46:15.540044Z\", \"source_excerpt\": \"the Master of Computer Science will become a self-supporting degree program\", \"fact_summary\": \"The program becomes self-supporting in Fall 2027. Applicants are directed to the calculator for the matching MCS program and campus; this source does not directly establish a reproducible full-program tuition amount.\", \"content_hash\": \"4fbc39a4957bffb689bc1449462efd7d63ffee14531698c3fc5e607031ea9e85\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+              "citations": [
+                "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "7763dc98-05df-40aa-9f16-f7aab4169719",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 4054,
+            "output_tokens": 222,
+            "cached_input_tokens": 3840,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.0014475",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0a2b3a9370c8277b016afce9d7bb8887d0b225b6c201ed6d5d"
+          }
+        },
+        {
+          "span_id": "db93e7ec-94ab-43ab-97dd-6b35a59d8729",
+          "parent_id": "11247c7e-4518-4f2f-a71a-6c0ed60f1e0f",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:57:13.415433+00:00",
+          "finished_at": "2026-11-17T23:57:13.418431+00:00",
+          "duration_ms": 15.0,
+          "inputs": {
+            "answer": "No. In the verified program record, UIUC Urbana-Champaign MCS lists 3.2/4.0 as a recommended undergraduate GPA, not a verified hard minimum. The record also explicitly says there is no hard GPA minimum and that review below the recommendation is possible, so your 3.1/4.0 is not automatically rejected on a verified hard-minimum basis.\n\nWhat can be said from the frozen data:\n- Verified GPA policy: recommended 3.2/4.0, accepted scope overall, no hard minimum.\n- Your GPA: 3.1/4.0 overall.\n- Conclusion: below the recommendation, but not disqualified by a verified hard cutoff.\n\nI cannot say you are competitive or likely admitted from this alone, only that the catalog does not support an automatic-rejection claim.",
+            "citations": [
+              "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

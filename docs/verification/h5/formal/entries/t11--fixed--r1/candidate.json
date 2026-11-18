@@ -1,0 +1,1382 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t11--fixed--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:51:50.680562+00:00",
+  "payload_sha256": "2b6fa376b12fd18e9e49a46b992cbc12f935b876f7c63b647bafb1bde0fd78ee",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t11",
+    "strategy": "fixed",
+    "trace_id": "d3e38012-9e1a-4c7c-8c81-d1a10b9816a7",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+      "citations": [
+        {
+          "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+          "url": "https://mcs.ics.uci.edu/how-to-apply/",
+          "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+          "applicable_intake": null,
+          "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+          "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "What is the Fall 2027 application deadline for an international applicant to UCI professional MCS in Irvine? Give an unambiguous year-month-day date.",
+        "assistant": {
+          "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+          "citations": [
+            {
+              "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+              "url": "https://mcs.ics.uci.edu/how-to-apply/",
+              "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+              "applicable_intake": null,
+              "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+              "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 1,
+    "tool_calls": 3,
+    "actual_requests": 1,
+    "latency_ms": 1140.0,
+    "usage": [
+      {
+        "call_id": "2de4134d-e090-4983-a047-760d4539baf2",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 5283,
+        "output_tokens": 71,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00428175",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0c50d681026dc9f3016afce896abf887d08dc034086b56a331"
+      }
+    ],
+    "estimated_cost_usd": "0.00428175",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "d3e38012-9e1a-4c7c-8c81-d1a10b9816a7",
+      "spans": [
+        {
+          "span_id": "cb69c44f-606c-43ae-bd1b-596981276723",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:51:49.528375+00:00",
+          "finished_at": "2026-11-17T23:51:50.680562+00:00",
+          "duration_ms": 1140.0,
+          "inputs": {
+            "task_id": "t11",
+            "strategy": "fixed",
+            "candidate_input": {
+              "task_id": "t11",
+              "question": "What is the Fall 2027 application deadline for an international applicant to UCI professional MCS in Irvine? Give an unambiguous year-month-day date.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "uci-mcs-irvine"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+              "citations": [
+                {
+                  "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                  "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                  "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+                  "applicable_intake": null,
+                  "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                  "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "07be4f80-6ee7-405a-bc49-5b5852afa1f7",
+          "parent_id": "cb69c44f-606c-43ae-bd1b-596981276723",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:51:49.528375+00:00",
+          "finished_at": "2026-11-17T23:51:50.680562+00:00",
+          "duration_ms": 1140.0,
+          "inputs": {
+            "message": "What is the Fall 2027 application deadline for an international applicant to UCI professional MCS in Irvine? Give an unambiguous year-month-day date."
+          },
+          "outputs": {
+            "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+            "citations": [
+              {
+                "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+                "applicable_intake": null,
+                "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "b152cafc-508d-434f-aa00-928d14ce2f5a",
+          "parent_id": "07be4f80-6ee7-405a-bc49-5b5852afa1f7",
+          "kind": "tool",
+          "name": "search_programs",
+          "started_at": "2026-11-17T23:51:49.529377+00:00",
+          "finished_at": "2026-11-17T23:51:49.529885+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "university": null,
+              "campus": "Irvine",
+              "discipline": null
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "programs": [
+              {
+                "program_id": "uci-mcs-irvine",
+                "university": "University of California, Irvine",
+                "program_name": "Master of Computer Science",
+                "degree": "MCS",
+                "campus": "Irvine",
+                "discipline": "CS"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "94e624e4-465a-4874-a5df-a1e282ff22b9",
+          "parent_id": "07be4f80-6ee7-405a-bc49-5b5852afa1f7",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:51:49.529885+00:00",
+          "finished_at": "2026-11-17T23:51:49.529885+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "uci-mcs-irvine"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "uci-mcs-irvine",
+              "university": "University of California, Irvine",
+              "school": "Donald Bren School of Information and Computer Sciences",
+              "program_name": "Master of Computer Science",
+              "degree": "MCS",
+              "campus": "Irvine",
+              "track": "Professional capstone",
+              "discipline": "CS",
+              "official_url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+              "allowed_official_hosts": [
+                "catalogue.uci.edu",
+                "mcs.ics.uci.edu",
+                "grad.uci.edu"
+              ],
+              "candidate_source_id": "b-uci-mcs",
+              "required_credits": null,
+              "gpa": null,
+              "english": [
+                {
+                  "version": "toefl_120",
+                  "minimum_total": "80",
+                  "recommended_total": null,
+                  "minimum_subscores": {},
+                  "validity_years": 2,
+                  "valid_on_anniversary": false,
+                  "condition_below_recommended": null,
+                  "minimum_test_date": null,
+                  "us_degree_minimum_test_date": null
+                },
+                {
+                  "version": "toefl_6",
+                  "minimum_total": "4",
+                  "recommended_total": null,
+                  "minimum_subscores": {},
+                  "validity_years": 2,
+                  "valid_on_anniversary": false,
+                  "condition_below_recommended": null,
+                  "minimum_test_date": null,
+                  "us_degree_minimum_test_date": null
+                },
+                {
+                  "version": "ielts_9",
+                  "minimum_total": "7",
+                  "recommended_total": null,
+                  "minimum_subscores": {
+                    "reading": "6",
+                    "listening": "6",
+                    "speaking": "6",
+                    "writing": "6"
+                  },
+                  "validity_years": 2,
+                  "valid_on_anniversary": false,
+                  "condition_below_recommended": null,
+                  "minimum_test_date": null,
+                  "us_degree_minimum_test_date": null
+                }
+              ],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [
+                "programming",
+                "data_structures",
+                "algorithms",
+                "discrete_math",
+                "linear_algebra"
+              ],
+              "prerequisites_complete": false,
+              "supported_intakes": [
+                {
+                  "year": 2027,
+                  "term": "fall"
+                }
+              ],
+              "closed_intakes": [],
+              "deadlines": [
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2027-01-15",
+                  "label": "International applicants",
+                  "audience": "international"
+                },
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2027-02-15",
+                  "label": "Domestic applicants",
+                  "audience": "domestic"
+                }
+              ],
+              "deadline_schedule_complete": true,
+              "tuition": {
+                "currency": "USD",
+                "basis": "unknown",
+                "unit_rate_lower": null,
+                "unit_rate_upper": null,
+                "required_units_lower": null,
+                "required_units_upper": null,
+                "rate_year": null,
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "uci-mcs-irvine--uci_main--d1df788096ea"
+                ],
+                "intake": [
+                  "uci-mcs-irvine--uci_admissions--77660702e948"
+                ],
+                "deadline": [
+                  "uci-mcs-irvine--uci_admissions--77660702e948"
+                ],
+                "prerequisites": [
+                  "uci-mcs-irvine--uci_admissions--77660702e948"
+                ],
+                "english": [
+                  "uci-mcs-irvine--uci_policy--7e045ec04a27"
+                ]
+              },
+              "notes": [
+                "The listed coursework is recommended preparation and is not treated as mandatory coursework for automatic rejection.",
+                "The in-program GPA requirement is not used as an admission GPA minimum.",
+                "The GPA exception-policy page could not be retrieved during this review, so the complete hard threshold remains unverified."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [],
+              "admission_evidence": [],
+              "degree_required": false,
+              "accepted_degree_fields": [],
+              "gre_policy": "unknown",
+              "gre_validity_years": null,
+              "gre_at_home_accepted": null,
+              "application_materials": [],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                "title": "Master of Computer Science < University of California Irvine",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity"
+                ],
+                "locator": "Master of Computer Science: program description",
+                "retrieved_at": "2026-11-13T04:46:16.285944Z",
+                "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+                "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+                "content_hash": "a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                "title": "How to Apply - Master of Computer Science",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "intake",
+                  "deadline",
+                  "prerequisites"
+                ],
+                "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+                "retrieved_at": "2026-11-13T04:46:16.847571Z",
+                "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+                "content_hash": "29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                "title": "uci_policy",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "english"
+                ],
+                "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+                "retrieved_at": "2026-11-13T04:49:31.685329Z",
+                "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+                "content_hash": "4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "ebc8c9c5-d245-48b8-94ec-301abcb9c4be",
+          "parent_id": "07be4f80-6ee7-405a-bc49-5b5852afa1f7",
+          "kind": "tool",
+          "name": "check_program",
+          "started_at": "2026-11-17T23:51:49.529885+00:00",
+          "finished_at": "2026-11-17T23:51:49.529885+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "uci-mcs-irvine",
+              "profile_version": 1
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "report": {
+              "program_id": "uci-mcs-irvine",
+              "profile_version": 1,
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "checks": [
+                {
+                  "rule_id": "identity",
+                  "status": "pass",
+                  "reason_code": "OFFICIAL_IDENTITY",
+                  "explanation": "Program identity is supported by the corresponding official website.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_main--d1df788096ea"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "intake",
+                  "status": "pass",
+                  "reason_code": "INTAKE_SUPPORTED",
+                  "explanation": "Official information supports this intake.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gpa",
+                  "status": "unknown",
+                  "reason_code": "GPA_RULE_NOT_VERIFIED",
+                  "explanation": "No applicable GPA threshold has been verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "english",
+                  "status": "pass",
+                  "reason_code": "ENGLISH_MEETS_MINIMUM",
+                  "explanation": "The English score meets the verified minimum. Additional conditions may still apply.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_policy--7e045ec04a27"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "prerequisites",
+                  "status": "unknown",
+                  "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                  "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "tuition",
+                  "status": "unknown",
+                  "reason_code": "MISSING_TUITION_EVIDENCE",
+                  "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "deadline",
+                  "status": "pass",
+                  "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                  "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "remaining_eligibility",
+                  "status": "unknown",
+                  "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                  "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                  "source_ids": [],
+                  "warnings": []
+                }
+              ],
+              "tuition": {
+                "lower_usd": null,
+                "upper_usd": null,
+                "formula": null,
+                "rate_year": null,
+                "reason_code": "MISSING_TUITION_EVIDENCE",
+                "assumptions": [
+                  "The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here."
+                ],
+                "mandatory_fees_usd": null
+              },
+              "hard_checks_status": "unknown",
+              "recommendation_ready": false
+            },
+            "sources": [
+              {
+                "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                "title": "How to Apply - Master of Computer Science",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "intake",
+                  "deadline",
+                  "prerequisites"
+                ],
+                "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+                "retrieved_at": "2026-11-13T04:46:16.847571Z",
+                "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+                "content_hash": "29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                "title": "Master of Computer Science < University of California Irvine",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity"
+                ],
+                "locator": "Master of Computer Science: program description",
+                "retrieved_at": "2026-11-13T04:46:16.285944Z",
+                "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+                "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+                "content_hash": "a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                "title": "uci_policy",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "english"
+                ],
+                "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+                "retrieved_at": "2026-11-13T04:49:31.685329Z",
+                "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+                "content_hash": "4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "fixed_pipeline",
+          "cache_hit": false
+        },
+        {
+          "span_id": "998de597-5478-461f-8b2a-00a63b825915",
+          "parent_id": "07be4f80-6ee7-405a-bc49-5b5852afa1f7",
+          "kind": "model",
+          "name": "fixed",
+          "started_at": "2026-11-17T23:51:49.530894+00:00",
+          "finished_at": "2026-11-17T23:51:50.677905+00:00",
+          "duration_ms": 1140.0,
+          "inputs": {
+            "payload": {
+              "question": "What is the Fall 2027 application deadline for an international applicant to UCI professional MCS in Irvine? Give an unambiguous year-month-day date.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uci-mcs-irvine"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 9
+              },
+              "observations": [
+                {
+                  "name": "search_programs",
+                  "arguments": {
+                    "university": null,
+                    "campus": "Irvine",
+                    "discipline": null
+                  },
+                  "observation": {
+                    "ok": true,
+                    "programs": [
+                      {
+                        "program_id": "uci-mcs-irvine",
+                        "university": "University of California, Irvine",
+                        "program_name": "Master of Computer Science",
+                        "degree": "MCS",
+                        "campus": "Irvine",
+                        "discipline": "CS"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "get_program",
+                  "arguments": {
+                    "program_id": "uci-mcs-irvine"
+                  },
+                  "observation": {
+                    "ok": true,
+                    "program": {
+                      "program_id": "uci-mcs-irvine",
+                      "university": "University of California, Irvine",
+                      "school": "Donald Bren School of Information and Computer Sciences",
+                      "program_name": "Master of Computer Science",
+                      "degree": "MCS",
+                      "campus": "Irvine",
+                      "track": "Professional capstone",
+                      "discipline": "CS",
+                      "official_url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                      "allowed_official_hosts": [
+                        "catalogue.uci.edu",
+                        "mcs.ics.uci.edu",
+                        "grad.uci.edu"
+                      ],
+                      "candidate_source_id": "b-uci-mcs",
+                      "required_credits": null,
+                      "gpa": null,
+                      "english": [
+                        {
+                          "version": "toefl_120",
+                          "minimum_total": "80",
+                          "recommended_total": null,
+                          "minimum_subscores": {},
+                          "validity_years": 2,
+                          "valid_on_anniversary": false,
+                          "condition_below_recommended": null,
+                          "minimum_test_date": null,
+                          "us_degree_minimum_test_date": null
+                        },
+                        {
+                          "version": "toefl_6",
+                          "minimum_total": "4",
+                          "recommended_total": null,
+                          "minimum_subscores": {},
+                          "validity_years": 2,
+                          "valid_on_anniversary": false,
+                          "condition_below_recommended": null,
+                          "minimum_test_date": null,
+                          "us_degree_minimum_test_date": null
+                        },
+                        {
+                          "version": "ielts_9",
+                          "minimum_total": "7",
+                          "recommended_total": null,
+                          "minimum_subscores": {
+                            "reading": "6",
+                            "listening": "6",
+                            "speaking": "6",
+                            "writing": "6"
+                          },
+                          "validity_years": 2,
+                          "valid_on_anniversary": false,
+                          "condition_below_recommended": null,
+                          "minimum_test_date": null,
+                          "us_degree_minimum_test_date": null
+                        }
+                      ],
+                      "english_not_required": false,
+                      "required_topics": [],
+                      "recommended_topics": [
+                        "programming",
+                        "data_structures",
+                        "algorithms",
+                        "discrete_math",
+                        "linear_algebra"
+                      ],
+                      "prerequisites_complete": false,
+                      "supported_intakes": [
+                        {
+                          "year": 2027,
+                          "term": "fall"
+                        }
+                      ],
+                      "closed_intakes": [],
+                      "deadlines": [
+                        {
+                          "intake": {
+                            "year": 2027,
+                            "term": "fall"
+                          },
+                          "date": "2027-01-15",
+                          "label": "International applicants",
+                          "audience": "international"
+                        },
+                        {
+                          "intake": {
+                            "year": 2027,
+                            "term": "fall"
+                          },
+                          "date": "2027-02-15",
+                          "label": "Domestic applicants",
+                          "audience": "domestic"
+                        }
+                      ],
+                      "deadline_schedule_complete": true,
+                      "tuition": {
+                        "currency": "USD",
+                        "basis": "unknown",
+                        "unit_rate_lower": null,
+                        "unit_rate_upper": null,
+                        "required_units_lower": null,
+                        "required_units_upper": null,
+                        "rate_year": null,
+                        "guaranteed_for_intake": null,
+                        "mandatory_fees_usd": null,
+                        "assumptions": [
+                          "The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here."
+                        ],
+                        "additional_required_tuition_lower_usd": "0",
+                        "additional_required_tuition_upper_usd": "0"
+                      },
+                      "field_sources": {
+                        "identity": [
+                          "uci-mcs-irvine--uci_main--d1df788096ea"
+                        ],
+                        "intake": [
+                          "uci-mcs-irvine--uci_admissions--77660702e948"
+                        ],
+                        "deadline": [
+                          "uci-mcs-irvine--uci_admissions--77660702e948"
+                        ],
+                        "prerequisites": [
+                          "uci-mcs-irvine--uci_admissions--77660702e948"
+                        ],
+                        "english": [
+                          "uci-mcs-irvine--uci_policy--7e045ec04a27"
+                        ]
+                      },
+                      "notes": [
+                        "The listed coursework is recommended preparation and is not treated as mandatory coursework for automatic rejection.",
+                        "The in-program GPA requirement is not used as an admission GPA minimum.",
+                        "The GPA exception-policy page could not be retrieved during this review, so the complete hard threshold remains unverified."
+                      ],
+                      "eligibility_review_complete": false,
+                      "goal_features": [],
+                      "admission_evidence": [],
+                      "degree_required": false,
+                      "accepted_degree_fields": [],
+                      "gre_policy": "unknown",
+                      "gre_validity_years": null,
+                      "gre_at_home_accepted": null,
+                      "application_materials": [],
+                      "catalog_version": "m35-2026-11-16"
+                    },
+                    "sources": [
+                      {
+                        "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                        "title": "Master of Computer Science < University of California Irvine",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity"
+                        ],
+                        "locator": "Master of Computer Science: program description",
+                        "retrieved_at": "2026-11-13T04:46:16.285944Z",
+                        "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+                        "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+                        "content_hash": "a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70"
+                      },
+                      {
+                        "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                        "title": "How to Apply - Master of Computer Science",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "intake",
+                          "deadline",
+                          "prerequisites"
+                        ],
+                        "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+                        "retrieved_at": "2026-11-13T04:46:16.847571Z",
+                        "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                        "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+                        "content_hash": "29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555"
+                      },
+                      {
+                        "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                        "title": "uci_policy",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "english"
+                        ],
+                        "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+                        "retrieved_at": "2026-11-13T04:49:31.685329Z",
+                        "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                        "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+                        "content_hash": "4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "check_program",
+                  "arguments": {
+                    "program_id": "uci-mcs-irvine",
+                    "profile_version": 1
+                  },
+                  "observation": {
+                    "ok": true,
+                    "report": {
+                      "program_id": "uci-mcs-irvine",
+                      "profile_version": 1,
+                      "as_of_date": "2026-11-16",
+                      "data_mode": "snapshot",
+                      "checks": [
+                        {
+                          "rule_id": "identity",
+                          "status": "pass",
+                          "reason_code": "OFFICIAL_IDENTITY",
+                          "explanation": "Program identity is supported by the corresponding official website.",
+                          "source_ids": [
+                            "uci-mcs-irvine--uci_main--d1df788096ea"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "intake",
+                          "status": "pass",
+                          "reason_code": "INTAKE_SUPPORTED",
+                          "explanation": "Official information supports this intake.",
+                          "source_ids": [
+                            "uci-mcs-irvine--uci_admissions--77660702e948"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "gpa",
+                          "status": "unknown",
+                          "reason_code": "GPA_RULE_NOT_VERIFIED",
+                          "explanation": "No applicable GPA threshold has been verified.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "english",
+                          "status": "pass",
+                          "reason_code": "ENGLISH_MEETS_MINIMUM",
+                          "explanation": "The English score meets the verified minimum. Additional conditions may still apply.",
+                          "source_ids": [
+                            "uci-mcs-irvine--uci_policy--7e045ec04a27"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "prerequisites",
+                          "status": "unknown",
+                          "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                          "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                          "source_ids": [
+                            "uci-mcs-irvine--uci_admissions--77660702e948"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "tuition",
+                          "status": "unknown",
+                          "reason_code": "MISSING_TUITION_EVIDENCE",
+                          "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                          "source_ids": [],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "deadline",
+                          "status": "pass",
+                          "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                          "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                          "source_ids": [
+                            "uci-mcs-irvine--uci_admissions--77660702e948"
+                          ],
+                          "warnings": []
+                        },
+                        {
+                          "rule_id": "remaining_eligibility",
+                          "status": "unknown",
+                          "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                          "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                          "source_ids": [],
+                          "warnings": []
+                        }
+                      ],
+                      "tuition": {
+                        "lower_usd": null,
+                        "upper_usd": null,
+                        "formula": null,
+                        "rate_year": null,
+                        "reason_code": "MISSING_TUITION_EVIDENCE",
+                        "assumptions": [
+                          "The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here."
+                        ],
+                        "mandatory_fees_usd": null
+                      },
+                      "hard_checks_status": "unknown",
+                      "recommendation_ready": false
+                    },
+                    "sources": [
+                      {
+                        "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                        "title": "How to Apply - Master of Computer Science",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "intake",
+                          "deadline",
+                          "prerequisites"
+                        ],
+                        "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+                        "retrieved_at": "2026-11-13T04:46:16.847571Z",
+                        "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                        "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+                        "content_hash": "29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555"
+                      },
+                      {
+                        "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                        "title": "Master of Computer Science < University of California Irvine",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "identity"
+                        ],
+                        "locator": "Master of Computer Science: program description",
+                        "retrieved_at": "2026-11-13T04:46:16.285944Z",
+                        "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+                        "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+                        "content_hash": "a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70"
+                      },
+                      {
+                        "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                        "program_id": "uci-mcs-irvine",
+                        "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                        "title": "uci_policy",
+                        "applicable_intake": null,
+                        "effective_period": null,
+                        "verification_status": "verified",
+                        "field_groups": [
+                          "english"
+                        ],
+                        "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+                        "retrieved_at": "2026-11-13T04:49:31.685329Z",
+                        "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                        "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+                        "content_hash": "4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+              "citations": [
+                "uci-mcs-irvine--uci_admissions--77660702e948"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "2de4134d-e090-4983-a047-760d4539baf2",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 5283,
+            "output_tokens": 71,
+            "cached_input_tokens": 0,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00428175",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0c50d681026dc9f3016afce896abf887d08dc034086b56a331"
+          }
+        },
+        {
+          "span_id": "4b88fb61-25b3-4806-819c-a241cd8de64f",
+          "parent_id": "998de597-5478-461f-8b2a-00a63b825915",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:51:50.677905+00:00",
+          "finished_at": "2026-11-17T23:51:50.680562+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "The Fall 2027 application deadline for an international applicant to UCI’s professional MCS in Irvine is 2027-01-15.",
+            "citations": [
+              "uci-mcs-irvine--uci_admissions--77660702e948"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

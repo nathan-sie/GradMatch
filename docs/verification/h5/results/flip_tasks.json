@@ -1,0 +1,101 @@
+[
+  {
+    "task_id": "t18",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t26",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t28",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t29",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t33",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t41",
+    "outcomes": [
+      false,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t42",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t43",
+    "outcomes": [
+      false,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t44",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t45",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t49",
+    "outcomes": [
+      true,
+      true,
+      false
+    ],
+    "complete": true
+  }
+]

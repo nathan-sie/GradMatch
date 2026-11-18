@@ -1,0 +1,452 @@
+[
+  {
+    "task_id": "t01",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t02",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t03",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t04",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t05",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t06",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t07",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t08",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t09",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t10",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t11",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t12",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t13",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t14",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t15",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t16",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t17",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t18",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t19",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t20",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t21",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t22",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t23",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t24",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t25",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t26",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t27",
+    "outcomes": [
+      false,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t28",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t29",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t30",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t31",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t32",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t33",
+    "outcomes": [
+      true,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t34",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t35",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t36",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t37",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t38",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t39",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t40",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t41",
+    "outcomes": [
+      false,
+      false,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t42",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t43",
+    "outcomes": [
+      false,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t44",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t45",
+    "outcomes": [
+      true,
+      false,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t46",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t47",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t48",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t49",
+    "outcomes": [
+      true,
+      true,
+      false
+    ],
+    "complete": true
+  },
+  {
+    "task_id": "t50",
+    "outcomes": [
+      true,
+      true,
+      true
+    ],
+    "complete": true
+  }
+]

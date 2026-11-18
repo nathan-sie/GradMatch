@@ -1,0 +1,1048 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t26--react--r1",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:55:25.361702+00:00",
+  "payload_sha256": "d1d087a69fa42705f4e1b14cd58e57acb652846726e46d4ed2b6f34d68646847",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t26",
+    "strategy": "react",
+    "trace_id": "ef81fdd0-d343-4c61-b6d5-966b1c60acad",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+      "citations": [
+        {
+          "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+          "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+          "retrieved_at": "2026-11-13T04:49:31.685329+00:00",
+          "applicable_intake": null,
+          "quote": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+          "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements"
+        },
+        {
+          "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+          "url": "https://mcs.ics.uci.edu/how-to-apply/",
+          "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+          "applicable_intake": null,
+          "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+          "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+        },
+        {
+          "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+          "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+          "retrieved_at": "2026-11-13T04:46:16.285944+00:00",
+          "applicable_intake": null,
+          "quote": "The Master of Computer Science is a 15-month professionally-oriented program",
+          "locator": "Master of Computer Science: program description"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "ielts_9",
+        "total": "7",
+        "test_date": "2025-11-01",
+        "subscores": {
+          "listening": "6",
+          "reading": "6",
+          "speaking": "5.5",
+          "writing": "6"
+        }
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "ielts_9",
+        "total": "7",
+        "test_date": "2025-11-01",
+        "subscores": {
+          "listening": "6",
+          "reading": "6",
+          "speaking": "5.5",
+          "writing": "6"
+        }
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "Run the program checks for uci-mcs-irvine against my supplied current profile version 1. In particular inspect my declared IELTS module scores; do not replace them with the overall score.",
+        "assistant": {
+          "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+          "citations": [
+            {
+              "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+              "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+              "retrieved_at": "2026-11-13T04:49:31.685329+00:00",
+              "applicable_intake": null,
+              "quote": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+              "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements"
+            },
+            {
+              "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+              "url": "https://mcs.ics.uci.edu/how-to-apply/",
+              "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+              "applicable_intake": null,
+              "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+              "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+            },
+            {
+              "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+              "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+              "retrieved_at": "2026-11-13T04:46:16.285944+00:00",
+              "applicable_intake": null,
+              "quote": "The Master of Computer Science is a 15-month professionally-oriented program",
+              "locator": "Master of Computer Science: program description"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 4219.0,
+    "usage": [
+      {
+        "call_id": "37a188ac-c75c-400a-a716-5a2f68e06ca7",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2544,
+        "output_tokens": 28,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.002034",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0e395838d9b26097016afce96a4be487d098bcf30b6baa0cfa"
+      },
+      {
+        "call_id": "2072a2f7-7946-4e83-aacd-b9d91dfa65bd",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 4001,
+        "output_tokens": 278,
+        "cached_input_tokens": 2432,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00261015",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_04a2167c96d882b9016afce96bf1d087d08a1b89adaabdbb12"
+      }
+    ],
+    "estimated_cost_usd": "0.00464415",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "ef81fdd0-d343-4c61-b6d5-966b1c60acad",
+      "spans": [
+        {
+          "span_id": "a5478d2b-ecce-49bb-a025-b6c21d94be9e",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:55:21.144690+00:00",
+          "finished_at": "2026-11-17T23:55:25.361702+00:00",
+          "duration_ms": 4219.0,
+          "inputs": {
+            "task_id": "t26",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "t26",
+              "question": "Run the program checks for uci-mcs-irvine against my supplied current profile version 1. In particular inspect my declared IELTS module scores; do not replace them with the overall score.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "ielts_9",
+                  "total": "7",
+                  "test_date": "2025-11-01",
+                  "subscores": {
+                    "listening": "6",
+                    "reading": "6",
+                    "speaking": "5.5",
+                    "writing": "6"
+                  }
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "uci-mcs-irvine"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+              "citations": [
+                {
+                  "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                  "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                  "retrieved_at": "2026-11-13T04:49:31.685329+00:00",
+                  "applicable_intake": null,
+                  "quote": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                  "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements"
+                },
+                {
+                  "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                  "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                  "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+                  "applicable_intake": null,
+                  "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                  "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+                },
+                {
+                  "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                  "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                  "retrieved_at": "2026-11-13T04:46:16.285944+00:00",
+                  "applicable_intake": null,
+                  "quote": "The Master of Computer Science is a 15-month professionally-oriented program",
+                  "locator": "Master of Computer Science: program description"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "0490b918-7bab-474b-a12a-e72fbb74361d",
+          "parent_id": "a5478d2b-ecce-49bb-a025-b6c21d94be9e",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:55:21.144690+00:00",
+          "finished_at": "2026-11-17T23:55:25.361702+00:00",
+          "duration_ms": 4219.0,
+          "inputs": {
+            "message": "Run the program checks for uci-mcs-irvine against my supplied current profile version 1. In particular inspect my declared IELTS module scores; do not replace them with the overall score."
+          },
+          "outputs": {
+            "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+            "citations": [
+              {
+                "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                "retrieved_at": "2026-11-13T04:49:31.685329+00:00",
+                "applicable_intake": null,
+                "quote": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                "retrieved_at": "2026-11-13T04:46:16.847571+00:00",
+                "applicable_intake": null,
+                "quote": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                "locator": "Application Deadlines for Fall 2027; Recommended Preparation"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                "retrieved_at": "2026-11-13T04:46:16.285944+00:00",
+                "applicable_intake": null,
+                "quote": "The Master of Computer Science is a 15-month professionally-oriented program",
+                "locator": "Master of Computer Science: program description"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "559a57bf-4580-47c1-a1ca-193b898a7443",
+          "parent_id": "0490b918-7bab-474b-a12a-e72fbb74361d",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:55:21.145701+00:00",
+          "finished_at": "2026-11-17T23:55:22.797249+00:00",
+          "duration_ms": 1656.0,
+          "inputs": {
+            "payload": {
+              "question": "Run the program checks for uci-mcs-irvine against my supplied current profile version 1. In particular inspect my declared IELTS module scores; do not replace them with the overall score.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "ielts_9",
+                  "total": "7",
+                  "test_date": "2025-11-01",
+                  "subscores": {
+                    "listening": "6",
+                    "reading": "6",
+                    "speaking": "5.5",
+                    "writing": "6"
+                  }
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uci-mcs-irvine"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_e4c20d20a622435fab8434519cebf0cb",
+                "name": "check_program",
+                "arguments": "{\"program_id\":\"uci-mcs-irvine\",\"profile_version\":1}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "37a188ac-c75c-400a-a716-5a2f68e06ca7",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2544,
+            "output_tokens": 28,
+            "cached_input_tokens": 0,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.002034",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0e395838d9b26097016afce96a4be487d098bcf30b6baa0cfa"
+          }
+        },
+        {
+          "span_id": "1c115505-c2f8-4550-98a2-e700cfba69b4",
+          "parent_id": "559a57bf-4580-47c1-a1ca-193b898a7443",
+          "kind": "tool",
+          "name": "check_program",
+          "started_at": "2026-11-17T23:55:22.797249+00:00",
+          "finished_at": "2026-11-17T23:55:22.798247+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "uci-mcs-irvine",
+              "profile_version": 1
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "report": {
+              "program_id": "uci-mcs-irvine",
+              "profile_version": 1,
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "checks": [
+                {
+                  "rule_id": "identity",
+                  "status": "pass",
+                  "reason_code": "OFFICIAL_IDENTITY",
+                  "explanation": "Program identity is supported by the corresponding official website.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_main--d1df788096ea"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "intake",
+                  "status": "pass",
+                  "reason_code": "INTAKE_SUPPORTED",
+                  "explanation": "Official information supports this intake.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "gpa",
+                  "status": "unknown",
+                  "reason_code": "GPA_RULE_NOT_VERIFIED",
+                  "explanation": "No applicable GPA threshold has been verified.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "english",
+                  "status": "fail",
+                  "reason_code": "ENGLISH_SUBSCORE_BELOW_MINIMUM",
+                  "explanation": "A required English subscore is below the hard minimum.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_policy--7e045ec04a27"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "prerequisites",
+                  "status": "unknown",
+                  "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+                  "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "tuition",
+                  "status": "unknown",
+                  "reason_code": "MISSING_TUITION_EVIDENCE",
+                  "explanation": "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.",
+                  "source_ids": [],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "deadline",
+                  "status": "pass",
+                  "reason_code": "FUTURE_APPLICABLE_DEADLINE",
+                  "explanation": "At least one applicable deadline is still in the future. This does not guarantee remaining places.",
+                  "source_ids": [
+                    "uci-mcs-irvine--uci_admissions--77660702e948"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "rule_id": "remaining_eligibility",
+                  "status": "unknown",
+                  "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+                  "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+                  "source_ids": [],
+                  "warnings": []
+                }
+              ],
+              "tuition": {
+                "lower_usd": null,
+                "upper_usd": null,
+                "formula": null,
+                "rate_year": null,
+                "reason_code": "MISSING_TUITION_EVIDENCE",
+                "assumptions": [
+                  "The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here."
+                ],
+                "mandatory_fees_usd": null
+              },
+              "hard_checks_status": "fail",
+              "recommendation_ready": false
+            },
+            "sources": [
+              {
+                "source_id": "uci-mcs-irvine--uci_admissions--77660702e948",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://mcs.ics.uci.edu/how-to-apply/",
+                "title": "How to Apply - Master of Computer Science",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "intake",
+                  "deadline",
+                  "prerequisites"
+                ],
+                "locator": "Application Deadlines for Fall 2027; Recommended Preparation",
+                "retrieved_at": "2026-11-13T04:46:16.847571Z",
+                "source_excerpt": "Application Deadlines for Fall 2027 January 15, 2027 for international students.",
+                "fact_summary": "Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.",
+                "content_hash": "29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_main--d1df788096ea",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+                "title": "Master of Computer Science < University of California Irvine",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity"
+                ],
+                "locator": "Master of Computer Science: program description",
+                "retrieved_at": "2026-11-13T04:46:16.285944Z",
+                "source_excerpt": "The Master of Computer Science is a 15-month professionally-oriented program",
+                "fact_summary": "Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.",
+                "content_hash": "a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70"
+              },
+              {
+                "source_id": "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                "program_id": "uci-mcs-irvine",
+                "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+                "title": "uci_policy",
+                "applicable_intake": null,
+                "effective_period": null,
+                "verification_status": "verified",
+                "field_groups": [
+                  "english"
+                ],
+                "locator": "English Proficiency Requirements; TOEFL and IELTS Score Requirements",
+                "retrieved_at": "2026-11-13T04:49:31.685329Z",
+                "source_excerpt": "An overall minimum score of 7 for admission, with no less than 6 on any individual module.",
+                "fact_summary": "TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.",
+                "content_hash": "4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "0ec85b47-4be2-4efe-ade8-4e74831e5182",
+          "parent_id": "0490b918-7bab-474b-a12a-e72fbb74361d",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:55:22.799247+00:00",
+          "finished_at": "2026-11-17T23:55:25.358132+00:00",
+          "duration_ms": 2563.0,
+          "inputs": {
+            "payload": {
+              "question": "Run the program checks for uci-mcs-irvine against my supplied current profile version 1. In particular inspect my declared IELTS module scores; do not replace them with the overall score.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "ielts_9",
+                  "total": "7",
+                  "test_date": "2025-11-01",
+                  "subscores": {
+                    "listening": "6",
+                    "reading": "6",
+                    "speaking": "5.5",
+                    "writing": "6"
+                  }
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "uci-mcs-irvine"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_e4c20d20a622435fab8434519cebf0cb",
+                "name": "check_program",
+                "arguments": "{\"program_id\":\"uci-mcs-irvine\",\"profile_version\":1}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_e4c20d20a622435fab8434519cebf0cb",
+                "output": "{\"ok\": true, \"report\": {\"program_id\": \"uci-mcs-irvine\", \"profile_version\": 1, \"as_of_date\": \"2026-11-16\", \"data_mode\": \"snapshot\", \"checks\": [{\"rule_id\": \"identity\", \"status\": \"pass\", \"reason_code\": \"OFFICIAL_IDENTITY\", \"explanation\": \"Program identity is supported by the corresponding official website.\", \"source_ids\": [\"uci-mcs-irvine--uci_main--d1df788096ea\"], \"warnings\": []}, {\"rule_id\": \"intake\", \"status\": \"pass\", \"reason_code\": \"INTAKE_SUPPORTED\", \"explanation\": \"Official information supports this intake.\", \"source_ids\": [\"uci-mcs-irvine--uci_admissions--77660702e948\"], \"warnings\": []}, {\"rule_id\": \"gpa\", \"status\": \"unknown\", \"reason_code\": \"GPA_RULE_NOT_VERIFIED\", \"explanation\": \"No applicable GPA threshold has been verified.\", \"source_ids\": [], \"warnings\": []}, {\"rule_id\": \"english\", \"status\": \"fail\", \"reason_code\": \"ENGLISH_SUBSCORE_BELOW_MINIMUM\", \"explanation\": \"A required English subscore is below the hard minimum.\", \"source_ids\": [\"uci-mcs-irvine--uci_policy--7e045ec04a27\"], \"warnings\": []}, {\"rule_id\": \"prerequisites\", \"status\": \"unknown\", \"reason_code\": \"PREREQUISITES_REQUIRE_REVIEW\", \"explanation\": \"Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.\", \"source_ids\": [\"uci-mcs-irvine--uci_admissions--77660702e948\"], \"warnings\": []}, {\"rule_id\": \"tuition\", \"status\": \"unknown\", \"reason_code\": \"MISSING_TUITION_EVIDENCE\", \"explanation\": \"A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.\", \"source_ids\": [], \"warnings\": []}, {\"rule_id\": \"deadline\", \"status\": \"pass\", \"reason_code\": \"FUTURE_APPLICABLE_DEADLINE\", \"explanation\": \"At least one applicable deadline is still in the future. This does not guarantee remaining places.\", \"source_ids\": [\"uci-mcs-irvine--uci_admissions--77660702e948\"], \"warnings\": []}, {\"rule_id\": \"remaining_eligibility\", \"status\": \"unknown\", \"reason_code\": \"M1_PARTIAL_RULE_COVERAGE\", \"explanation\": \"Degree equivalency, complete application materials, and other program conditions still require review.\", \"source_ids\": [], \"warnings\": []}], \"tuition\": {\"lower_usd\": null, \"upper_usd\": null, \"formula\": null, \"rate_year\": null, \"reason_code\": \"MISSING_TUITION_EVIDENCE\", \"assumptions\": [\"The fee link points to the Registrar's professional-program schedule. The tuition/fee breakdown and required billing periods have not been verified here.\"], \"mandatory_fees_usd\": null}, \"hard_checks_status\": \"fail\", \"recommendation_ready\": false}, \"sources\": [{\"source_id\": \"uci-mcs-irvine--uci_admissions--77660702e948\", \"program_id\": \"uci-mcs-irvine\", \"url\": \"https://mcs.ics.uci.edu/how-to-apply/\", \"title\": \"How to Apply - Master of Computer Science\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"intake\", \"deadline\", \"prerequisites\"], \"locator\": \"Application Deadlines for Fall 2027; Recommended Preparation\", \"retrieved_at\": \"2026-11-13T04:46:16.847571Z\", \"source_excerpt\": \"Application Deadlines for Fall 2027 January 15, 2027 for international students.\", \"fact_summary\": \"Fall 2027 is open. International applicants: January 15; domestic applicants: February 15. Coursework and work experience appear under Recommended Preparation and are not treated as exception-free hard requirements.\", \"content_hash\": \"29957ae793a74dcc991fe8e61c5c18e12df45c3d3b1a92491735aef733d4a555\"}, {\"source_id\": \"uci-mcs-irvine--uci_main--d1df788096ea\", \"program_id\": \"uci-mcs-irvine\", \"url\": \"https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/\", \"title\": \"Master of Computer Science < University of California Irvine\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"identity\"], \"locator\": \"Master of Computer Science: program description\", \"retrieved_at\": \"2026-11-13T04:46:16.285944Z\", \"source_excerpt\": \"The Master of Computer Science is a 15-month professionally-oriented program\", \"fact_summary\": \"Irvine professional MCS: capstone-based, approximately 15 months. The catalog's in-program GPA requirement is not used as an admission minimum.\", \"content_hash\": \"a770c55d32323571e7329c6bd813555e82c5831726af821f70ed70fb5a073c70\"}, {\"source_id\": \"uci-mcs-irvine--uci_policy--7e045ec04a27\", \"program_id\": \"uci-mcs-irvine\", \"url\": \"https://grad.uci.edu/admissions/applying-to-uci/\", \"title\": \"uci_policy\", \"applicable_intake\": null, \"effective_period\": null, \"verification_status\": \"verified\", \"field_groups\": [\"english\"], \"locator\": \"English Proficiency Requirements; TOEFL and IELTS Score Requirements\", \"retrieved_at\": \"2026-11-13T04:49:31.685329Z\", \"source_excerpt\": \"An overall minimum score of 7 for admission, with no less than 6 on any individual module.\", \"fact_summary\": \"TOEFL minimums: legacy 80, new scale 4. IELTS Academic: overall 7 and each module at least 6. Scores two years old or older are not accepted, so the test date is required.\", \"content_hash\": \"4e604135a483230e74dc1b007d19f3b23357efa7a01a8da9ba47c0a9622416c9\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+              "citations": [
+                "uci-mcs-irvine--uci_policy--7e045ec04a27",
+                "uci-mcs-irvine--uci_admissions--77660702e948",
+                "uci-mcs-irvine--uci_main--d1df788096ea"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "2072a2f7-7946-4e83-aacd-b9d91dfa65bd",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 4001,
+            "output_tokens": 278,
+            "cached_input_tokens": 2432,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00261015",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_04a2167c96d882b9016afce96bf1d087d08a1b89adaabdbb12"
+          }
+        },
+        {
+          "span_id": "e38d216b-e450-4b26-a315-afd0b4fa958d",
+          "parent_id": "0ec85b47-4be2-4efe-ade8-4e74831e5182",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:55:25.358132+00:00",
+          "finished_at": "2026-11-17T23:55:25.361702+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "Checked `uci-mcs-irvine` against profile version 1.\n\nResult: the program is not recommendation-ready because the English requirement fails on the declared IELTS module scores.\n\nWhat I inspected:\n- IELTS overall: 7\n- IELTS modules: listening 6, reading 6, speaking 5.5, writing 6\n- Requirement: overall 7 and no less than 6 in any individual module\n\nSo the speaking score of 5.5 is below the hard minimum. I did not replace the module scores with the overall score.\n\nOther checked items:\n- Identity: pass\n- Intake: pass for Fall 2027\n- GPA: unknown, no verified admission threshold\n- Prerequisites: unknown, manual review needed\n- Tuition: unknown, no reproducible full-program tuition basis verified\n- Deadline: pass\n- Remaining eligibility: unknown\n\nBecause the English hard check fails, I cannot make a formal recommendation for this program.",
+            "citations": [
+              "uci-mcs-irvine--uci_policy--7e045ec04a27",
+              "uci-mcs-irvine--uci_admissions--77660702e948",
+              "uci-mcs-irvine--uci_main--d1df788096ea"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}

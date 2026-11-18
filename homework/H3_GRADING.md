@@ -1,6 +1,6 @@
 # H3 independent graders
 
-The evaluator grades a saved H2 result without rerunning the candidate. Answer keys, criteria and human labels never enter candidate inputs. Full scheduling and aggregate metrics remain H4 work.
+The evaluator grades a saved H2 result without rerunning the candidate. Answer keys, criteria and human labels never enter candidate inputs. H4 provides scheduling and aggregation; H5 records the actual frozen comparison.
 
 Current revision: H5 uses grader v3. The original H3 checkpoint and its actual decisions remain historical records in `docs/verification/H3.md`. v3 keeps the semantic criteria but replaces model-written evidence quotes with selections from exact candidate-only spans; v1/v2 development failures are retained separately.
 

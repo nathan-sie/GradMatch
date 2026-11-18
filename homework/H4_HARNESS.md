@@ -1,6 +1,6 @@
 # H4 evaluation runner and offline summaries
 
-The runner connects the H2 candidate systems to H3 grading, preserving every scheduled execution and both usage streams. H4 acceptance uses offline fixtures only. Real development/formal execution remains H5.
+The runner connects H2 candidates to H3 grading, preserving every scheduled execution and both usage streams. H4 acceptance used offline fixtures. The actual H5 pilot/formal comparison is documented in `H5_REAL_RUN.md` and `docs/verification/H5.md`.
 
 ## Prepare a no-cost formal schedule
 

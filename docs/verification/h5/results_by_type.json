@@ -1,0 +1,86 @@
+[
+  {
+    "group": "Fixed baseline",
+    "task_type": "exact",
+    "passed": 18,
+    "total": 18,
+    "accuracy": 1.0
+  },
+  {
+    "group": "Fixed baseline",
+    "task_type": "tool",
+    "passed": 1,
+    "total": 8,
+    "accuracy": 0.125
+  },
+  {
+    "group": "Fixed baseline",
+    "task_type": "rubric",
+    "passed": 16,
+    "total": 20,
+    "accuracy": 0.8
+  },
+  {
+    "group": "Fixed baseline",
+    "task_type": "unanswerable",
+    "passed": 4,
+    "total": 4,
+    "accuracy": 1.0
+  },
+  {
+    "group": "Agent repeat 1",
+    "task_type": "exact",
+    "passed": 18,
+    "total": 18,
+    "accuracy": 1.0
+  },
+  {
+    "group": "Agent repeat 1",
+    "task_type": "tool",
+    "passed": 8,
+    "total": 8,
+    "accuracy": 1.0
+  },
+  {
+    "group": "Agent repeat 1",
+    "task_type": "rubric",
+    "passed": 17,
+    "total": 20,
+    "accuracy": 0.85
+  },
+  {
+    "group": "Agent repeat 1",
+    "task_type": "unanswerable",
+    "passed": 4,
+    "total": 4,
+    "accuracy": 1.0
+  },
+  {
+    "group": "Agent pooled",
+    "task_type": "exact",
+    "passed": 53,
+    "total": 54,
+    "accuracy": 0.9814814814814815
+  },
+  {
+    "group": "Agent pooled",
+    "task_type": "tool",
+    "passed": 23,
+    "total": 24,
+    "accuracy": 0.9583333333333334
+  },
+  {
+    "group": "Agent pooled",
+    "task_type": "rubric",
+    "passed": 44,
+    "total": 60,
+    "accuracy": 0.7333333333333333
+  },
+  {
+    "group": "Agent pooled",
+    "task_type": "unanswerable",
+    "passed": 11,
+    "total": 12,
+    "accuracy": 0.9166666666666666
+  }
+]

@@ -1,0 +1,1042 @@
+{
+  "schema_version": "h4-record-v1",
+  "experiment_id": "bf76953d-36e5-46e9-a73b-34df32e0e697",
+  "run_id": "t04--react--r2",
+  "plan_hash": "3a52722d47761df09501895e68dbdf2965f20d48deec19d91d1ecf8dad1c9412",
+  "kind": "candidate",
+  "saved_at": "2026-11-17T23:49:16.223149+00:00",
+  "payload_sha256": "cda4f8221be6ba718216a6f87848ae2824f060b39235790d12265b24107bf793",
+  "payload": {
+    "schema_version": "h2-v1",
+    "task_id": "t04",
+    "strategy": "react",
+    "trace_id": "a30090ad-e48c-4f35-a29c-3e0e9c73a861",
+    "status": "completed",
+    "error": null,
+    "answer": {
+      "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+      "citations": [
+        {
+          "source_id": "cmu-mcds-pittsburgh-mcds_fees-m35",
+          "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+          "retrieved_at": "2026-11-16T23:35:09.808380+00:00",
+          "applicable_intake": null,
+          "quote": "Tuition",
+          "locator": "MCDS additional information PDF, page 2: Tuition"
+        }
+      ],
+      "recommendations": [],
+      "needs_clarification": false
+    },
+    "profile_before": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "profile_after": {
+      "profile_version": 1,
+      "gpa": {
+        "value": "3.5",
+        "scale": "4",
+        "scope": "overall"
+      },
+      "institution": "Fictional Example University",
+      "institution_country": "US",
+      "major": "Computer Science",
+      "coursework": {
+        "algorithms": true,
+        "calculus": true,
+        "data_structures": true,
+        "differential_equations": true,
+        "linear_algebra": true,
+        "object_oriented_programming": true,
+        "probability_statistics": true,
+        "programming": true,
+        "undergraduate_cs": true,
+        "undergraduate_math": true
+      },
+      "research": [
+        "One synthetic research project"
+      ],
+      "work_experience": [
+        "One synthetic software internship"
+      ],
+      "english": {
+        "version": "toefl_120",
+        "total": "110",
+        "test_date": "2025-11-01",
+        "subscores": {}
+      },
+      "english_status": "known",
+      "goal": "employment",
+      "tuition_budget_usd": "140000",
+      "budget_basis": "published_rate_estimate",
+      "intake": {
+        "year": 2027,
+        "term": "fall"
+      },
+      "applicant_category": "international",
+      "study_mode": "full_time",
+      "degree": {
+        "completion": "completed",
+        "recognition": "recognized_bachelors_or_equivalent",
+        "field": "CS",
+        "country": "US"
+      },
+      "gre": {
+        "verbal": 160,
+        "quantitative": 165,
+        "writing": "4",
+        "test_date": "2025-06-01",
+        "format": "in_person"
+      }
+    },
+    "conversation": [
+      {
+        "user": "What is the published-rate tuition estimate for CMU MCDS standard 16-month timing, without selecting optional pre-arrival courses? State the number of billed academic semesters.",
+        "assistant": {
+          "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+          "citations": [
+            {
+              "source_id": "cmu-mcds-pittsburgh-mcds_fees-m35",
+              "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+              "retrieved_at": "2026-11-16T23:35:09.808380+00:00",
+              "applicable_intake": null,
+              "quote": "Tuition",
+              "locator": "MCDS additional information PDF, page 2: Tuition"
+            }
+          ],
+          "recommendations": [],
+          "needs_clarification": false
+        },
+        "profile_version": 1
+      }
+    ],
+    "execution_mode": "live_model",
+    "model_calls": 2,
+    "tool_calls": 1,
+    "actual_requests": 2,
+    "latency_ms": 2344.0,
+    "usage": [
+      {
+        "call_id": "23dc338c-ef02-452b-9694-25a8e499b797",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2518,
+        "output_tokens": 26,
+        "cached_input_tokens": 2304,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0004503",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_0b694bed34dbe665016afce7faf71487d0a74462efb62ca9cc"
+      },
+      {
+        "call_id": "fd177d3f-1540-4a8f-9fa4-091fc055abea",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 4741,
+        "output_tokens": 119,
+        "cached_input_tokens": 4608,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00098085",
+        "cost_status": "estimated_from_published_prices",
+        "actual_request": true,
+        "status": "completed",
+        "response_id": "resp_01f300d4be407aee016afce7fbbc9087d0a30aa2dc79a999a3"
+      }
+    ],
+    "estimated_cost_usd": "0.00143115",
+    "usage_complete": true,
+    "configuration": {
+      "assessment_date": "2026-11-16",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "candidate_code_hash": "2db8bdf4adbef127bb2a3a5e6f1843c726c038501f0afaf44b16bf135fc42244",
+      "limits": {
+        "automatic_model_retries": 0,
+        "max_model_calls_per_task": 8,
+        "max_output_tokens_per_call": 1800,
+        "max_task_seconds": 120,
+        "max_tool_calls_per_task": 12,
+        "model_timeout_seconds": 45
+      }
+    },
+    "trace": {
+      "trace_id": "a30090ad-e48c-4f35-a29c-3e0e9c73a861",
+      "spans": [
+        {
+          "span_id": "f340c121-373f-4b15-8105-6af825b95720",
+          "parent_id": null,
+          "kind": "task",
+          "name": "candidate_task",
+          "started_at": "2026-11-17T23:49:13.882098+00:00",
+          "finished_at": "2026-11-17T23:49:16.223149+00:00",
+          "duration_ms": 2344.0,
+          "inputs": {
+            "task_id": "t04",
+            "strategy": "react",
+            "candidate_input": {
+              "task_id": "t04",
+              "question": "What is the published-rate tuition estimate for CMU MCDS standard 16-month timing, without selecting optional pre-arrival courses? State the number of billed academic semesters.",
+              "profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "setup_messages": [],
+              "program_ids": [
+                "cmu-mcds-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16"
+            }
+          },
+          "outputs": {
+            "status": "completed",
+            "answer": {
+              "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+              "citations": [
+                {
+                  "source_id": "cmu-mcds-pittsburgh-mcds_fees-m35",
+                  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+                  "retrieved_at": "2026-11-16T23:35:09.808380+00:00",
+                  "applicable_intake": null,
+                  "quote": "Tuition",
+                  "locator": "MCDS additional information PDF, page 2: Tuition"
+                }
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "6ae8bdca-6305-4b98-8139-e27ea9b1734e",
+          "parent_id": "f340c121-373f-4b15-8105-6af825b95720",
+          "kind": "turn",
+          "name": "user_turn_1",
+          "started_at": "2026-11-17T23:49:13.882098+00:00",
+          "finished_at": "2026-11-17T23:49:16.223149+00:00",
+          "duration_ms": 2344.0,
+          "inputs": {
+            "message": "What is the published-rate tuition estimate for CMU MCDS standard 16-month timing, without selecting optional pre-arrival courses? State the number of billed academic semesters."
+          },
+          "outputs": {
+            "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+            "citations": [
+              {
+                "source_id": "cmu-mcds-pittsburgh-mcds_fees-m35",
+                "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+                "retrieved_at": "2026-11-16T23:35:09.808380+00:00",
+                "applicable_intake": null,
+                "quote": "Tuition",
+                "locator": "MCDS additional information PDF, page 2: Tuition"
+              }
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": null
+        },
+        {
+          "span_id": "0d949cb5-f889-4402-a55c-6457ed570310",
+          "parent_id": "6ae8bdca-6305-4b98-8139-e27ea9b1734e",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:49:13.884106+00:00",
+          "finished_at": "2026-11-17T23:49:14.607144+00:00",
+          "duration_ms": 735.0,
+          "inputs": {
+            "payload": {
+              "question": "What is the published-rate tuition estimate for CMU MCDS standard 16-month timing, without selecting optional pre-arrival courses? State the number of billed academic semesters.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "cmu-mcds-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 8,
+                "tool_calls": 12
+              }
+            },
+            "tool_history": []
+          },
+          "outputs": {
+            "calls": [
+              {
+                "type": "function_call",
+                "call_id": "call_0KtFVIrQQqA7ilbCt4zUsQdx",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"cmu-mcds-pittsburgh\"}"
+              }
+            ],
+            "answer": null
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "23dc338c-ef02-452b-9694-25a8e499b797",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 2518,
+            "output_tokens": 26,
+            "cached_input_tokens": 2304,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.0004503",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_0b694bed34dbe665016afce7faf71487d0a74462efb62ca9cc"
+          }
+        },
+        {
+          "span_id": "e39188ba-187a-4499-a585-ed88004d601a",
+          "parent_id": "0d949cb5-f889-4402-a55c-6457ed570310",
+          "kind": "tool",
+          "name": "get_program",
+          "started_at": "2026-11-17T23:49:14.607144+00:00",
+          "finished_at": "2026-11-17T23:49:14.607144+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "arguments": {
+              "program_id": "cmu-mcds-pittsburgh"
+            },
+            "profile_version": 1
+          },
+          "outputs": {
+            "ok": true,
+            "program": {
+              "program_id": "cmu-mcds-pittsburgh",
+              "university": "Carnegie Mellon University",
+              "school": "School of Computer Science / Language Technologies Institute",
+              "program_name": "Master of Computational Data Science",
+              "degree": "MCDS",
+              "campus": "Pittsburgh",
+              "track": "Standard timing (16 months)",
+              "discipline": "CS",
+              "official_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+              "allowed_official_hosts": [
+                "www.lti.cs.cmu.edu",
+                "lti.cs.cmu.edu",
+                "msaii.cs.cmu.edu",
+                "www.cs.cmu.edu"
+              ],
+              "candidate_source_id": "official-cmu-program-comparison",
+              "required_credits": null,
+              "gpa": {
+                "minimum": "3",
+                "recommended": null,
+                "scale": "4",
+                "accepted_scopes": [
+                  "overall"
+                ],
+                "below_minimum_review_possible": false,
+                "no_hard_minimum": false
+              },
+              "english": [],
+              "english_not_required": false,
+              "required_topics": [],
+              "recommended_topics": [],
+              "prerequisites_complete": false,
+              "supported_intakes": [
+                {
+                  "year": 2027,
+                  "term": "fall"
+                }
+              ],
+              "closed_intakes": [],
+              "deadlines": [
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2026-11-18",
+                  "label": "Early (3 p.m. EST)",
+                  "audience": "all"
+                },
+                {
+                  "intake": {
+                    "year": 2027,
+                    "term": "fall"
+                  },
+                  "date": "2026-12-09",
+                  "label": "Final (3 p.m. EST)",
+                  "audience": "all"
+                }
+              ],
+              "deadline_schedule_complete": true,
+              "tuition": {
+                "currency": "USD",
+                "basis": "per_term",
+                "unit_rate_lower": "32400",
+                "unit_rate_upper": null,
+                "required_units_lower": "3",
+                "required_units_upper": null,
+                "rate_year": "2026-2027",
+                "guaranteed_for_intake": null,
+                "mandatory_fees_usd": null,
+                "assumptions": [
+                  "Department-specific published 2026–2027 rate reused as a planning estimate for Fall 2027; future increases are unknown.",
+                  "Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.",
+                  "Three academic semesters in the 16-month track; optional pre-arrival courses are not selected and would cost extra.",
+                  "No unconfirmed scholarship or assistantship is deducted."
+                ],
+                "additional_required_tuition_lower_usd": "0",
+                "additional_required_tuition_upper_usd": "0"
+              },
+              "field_sources": {
+                "identity": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "gpa": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "gre": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "intake": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "deadline": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "goal_features": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "remaining_eligibility": [
+                  "cmu-mcds-pittsburgh-mcds_program-m35"
+                ],
+                "tuition": [
+                  "cmu-mcds-pittsburgh-mcds_fees-m35"
+                ],
+                "admission_evidence": [
+                  "cmu-mcds-pittsburgh-stats_data-m35",
+                  "cmu-mcds-pittsburgh-stats-m35"
+                ]
+              },
+              "notes": [
+                "Current program page establishes English testing but no minimum score or complete entry-coursework rule was verified. Older MCDS URLs now redirect to missing pages. Remains pending; the Reach cohort label alone cannot authorize a recommendation."
+              ],
+              "eligibility_review_complete": false,
+              "goal_features": [
+                {
+                  "feature_id": "cmu-mcds-pittsburgh-industry",
+                  "goal": "employment",
+                  "statement": "Industry internship and a practical capstone support preparation for applied technical work.",
+                  "source_ids": [
+                    "cmu-mcds-pittsburgh-mcds_program-m35"
+                  ]
+                }
+              ],
+              "admission_evidence": [
+                {
+                  "evidence_id": "cmu-mcds-pittsburgh-2025-cohort",
+                  "kind": "program_selectivity",
+                  "source_ids": [
+                    "cmu-mcds-pittsburgh-stats_data-m35",
+                    "cmu-mcds-pittsburgh-stats-m35"
+                  ],
+                  "cycle_year": 2025,
+                  "independence_key": "cmu-mcds-pittsburgh-official-2025",
+                  "gpa": null,
+                  "major": null,
+                  "experience_dimensions": [],
+                  "permitted_tiers": [
+                    "Reach"
+                  ],
+                  "statement": "Official 2025 cohort: 145 admission offers from 481 applications. Aggregate selectivity is not an individual admission probability.",
+                  "reviewed": true,
+                  "applications": 481,
+                  "offers": 145
+                }
+              ],
+              "degree_required": true,
+              "accepted_degree_fields": [],
+              "gre_policy": "required",
+              "gre_validity_years": 5,
+              "gre_at_home_accepted": true,
+              "application_materials": [
+                "Online application and fee or approved waiver",
+                "Transcripts from every attended university",
+                "Current resume / CV",
+                "Statement of purpose",
+                "Three recommendation letters",
+                "Official GRE and applicable English reports",
+                "Optional 1–3 minute video (strongly suggested)"
+              ],
+              "catalog_version": "m35-2026-11-16"
+            },
+            "sources": [
+              {
+                "source_id": "cmu-mcds-pittsburgh-mcds_program-m35",
+                "program_id": "cmu-mcds-pittsburgh",
+                "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+                "title": "MCDS current program: Admissions; Overview; Curriculum",
+                "applicable_intake": "2027-fall",
+                "effective_period": "Fall 2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "identity",
+                  "gpa",
+                  "gre",
+                  "intake",
+                  "deadline",
+                  "goal_features",
+                  "remaining_eligibility"
+                ],
+                "locator": "MCDS current program: Admissions; Overview; Curriculum",
+                "retrieved_at": "2026-11-16T23:35:10.030490Z",
+                "source_excerpt": "Three letters of recommendation",
+                "fact_summary": "Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.",
+                "content_hash": "7dbb4ed2a8c0e95aa666c23de71234c41930bbca8f6121f92de1f9edf2712c5d"
+              },
+              {
+                "source_id": "cmu-mcds-pittsburgh-mcds_fees-m35",
+                "program_id": "cmu-mcds-pittsburgh",
+                "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+                "title": "MCDS additional information PDF, page 2: Tuition",
+                "applicable_intake": null,
+                "effective_period": "2026-2027",
+                "verification_status": "verified",
+                "field_groups": [
+                  "tuition"
+                ],
+                "locator": "MCDS additional information PDF, page 2: Tuition",
+                "retrieved_at": "2026-11-16T23:35:09.808380Z",
+                "source_excerpt": "Tuition",
+                "fact_summary": "Department-specific 2026–2027 tuition is USD 32,400 per academic semester. Standard timing has three academic semesters; optional pre-arrival courses are excluded.",
+                "content_hash": "a3d0f8b7fea54b8ed2e46dd38f68db14a684074a30bfce899ad5da945a98f980"
+              },
+              {
+                "source_id": "cmu-mcds-pittsburgh-stats_data-m35",
+                "program_id": "cmu-mcds-pittsburgh",
+                "url": "https://www.cs.cmu.edu/rs-datasources/data-source/scs-masters-programs-anyyear",
+                "title": "Official SCS comparison JSON: MCDS row, apps/admitted; comparison page: Admissions 2025",
+                "applicable_intake": null,
+                "effective_period": "2025",
+                "verification_status": "verified",
+                "field_groups": [
+                  "admission_evidence"
+                ],
+                "locator": "Official SCS comparison JSON: MCDS row, apps/admitted; comparison page: Admissions 2025",
+                "retrieved_at": "2026-11-16T23:35:12.160918Z",
+                "source_excerpt": "",
+                "fact_summary": "MCDS 2025 cohort: 481 applications and 145 offers. Year is identified by the comparison-page column group; exact counts come from its official JSON datasource. Cohort statistics do not describe an individual applicant probability.",
+                "content_hash": "11768b90299d0711f16d4d48cfb79b94541871624b4c279147630a130bbbfeff"
+              },
+              {
+                "source_id": "cmu-mcds-pittsburgh-stats-m35",
+                "program_id": "cmu-mcds-pittsburgh",
+                "url": "https://www.cs.cmu.edu/education/masters/programs-comparison",
+                "title": "SCS program comparison: 2025 table headings and Admissions notes",
+                "applicable_intake": null,
+                "effective_period": "2025",
+                "verification_status": "verified",
+                "field_groups": [
+                  "admission_evidence"
+                ],
+                "locator": "SCS program comparison: 2025 table headings and Admissions notes",
+                "retrieved_at": "2026-11-16T23:35:10.740579Z",
+                "source_excerpt": "",
+                "fact_summary": "The comparison table labels applications and admitted counts as 2025. Selectivity means offers divided by applications; program requirements influence the applicant pool.",
+                "content_hash": "d60b0678963bd0604ff62e124fad130ab79b85ad37f146259eaebc052aec0388"
+              }
+            ]
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "cache_hit": false
+        },
+        {
+          "span_id": "daac1141-0033-4988-875b-21ce22130bed",
+          "parent_id": "6ae8bdca-6305-4b98-8139-e27ea9b1734e",
+          "kind": "model",
+          "name": "react",
+          "started_at": "2026-11-17T23:49:14.607144+00:00",
+          "finished_at": "2026-11-17T23:49:16.223149+00:00",
+          "duration_ms": 1609.0,
+          "inputs": {
+            "payload": {
+              "question": "What is the published-rate tuition estimate for CMU MCDS standard 16-month timing, without selecting optional pre-arrival courses? State the number of billed academic semesters.",
+              "current_profile": {
+                "profile_version": 1,
+                "gpa": {
+                  "value": "3.5",
+                  "scale": "4",
+                  "scope": "overall"
+                },
+                "institution": "Fictional Example University",
+                "institution_country": "US",
+                "major": "Computer Science",
+                "coursework": {
+                  "algorithms": true,
+                  "calculus": true,
+                  "data_structures": true,
+                  "differential_equations": true,
+                  "linear_algebra": true,
+                  "object_oriented_programming": true,
+                  "probability_statistics": true,
+                  "programming": true,
+                  "undergraduate_cs": true,
+                  "undergraduate_math": true
+                },
+                "research": [
+                  "One synthetic research project"
+                ],
+                "work_experience": [
+                  "One synthetic software internship"
+                ],
+                "english": {
+                  "version": "toefl_120",
+                  "total": "110",
+                  "test_date": "2025-11-01",
+                  "subscores": {}
+                },
+                "english_status": "known",
+                "goal": "employment",
+                "tuition_budget_usd": "140000",
+                "budget_basis": "published_rate_estimate",
+                "intake": {
+                  "year": 2027,
+                  "term": "fall"
+                },
+                "applicant_category": "international",
+                "study_mode": "full_time",
+                "degree": {
+                  "completion": "completed",
+                  "recognition": "recognized_bachelors_or_equivalent",
+                  "field": "CS",
+                  "country": "US"
+                },
+                "gre": {
+                  "verbal": 160,
+                  "quantitative": 165,
+                  "writing": "4",
+                  "test_date": "2025-06-01",
+                  "format": "in_person"
+                }
+              },
+              "declared_program_scope": [
+                "cmu-mcds-pittsburgh"
+              ],
+              "as_of_date": "2026-11-16",
+              "data_mode": "snapshot",
+              "conversation": [],
+              "catalog_index": [
+                {
+                  "program_id": "cmu-mcds-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Computational Data Science",
+                  "degree": "MCDS",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "cmu-msaii-pittsburgh",
+                  "university": "Carnegie Mellon University",
+                  "program_name": "Master of Science in Artificial Intelligence and Innovation",
+                  "degree": "MSAII",
+                  "campus": "Pittsburgh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "ncsu-mcs-raleigh",
+                  "university": "North Carolina State University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Raleigh",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "neu-mscs-boston",
+                  "university": "Northeastern University",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Boston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "rice-mcs-houston",
+                  "university": "Rice University",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Houston",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uci-mcs-irvine",
+                  "university": "University of California, Irvine",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Irvine",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uiuc-mcs-urbana",
+                  "university": "University of Illinois Urbana-Champaign",
+                  "program_name": "Master of Computer Science",
+                  "degree": "MCS",
+                  "campus": "Urbana-Champaign",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "umass-mscs-amherst",
+                  "university": "University of Massachusetts Amherst",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Amherst",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "usc-mscs-general-los-angeles",
+                  "university": "University of Southern California",
+                  "program_name": "Master of Science in Computer Science",
+                  "degree": "MS",
+                  "campus": "Los Angeles",
+                  "discipline": "CS"
+                },
+                {
+                  "program_id": "uw-ece-msece-pmp-seattle",
+                  "university": "University of Washington",
+                  "program_name": "Electrical and Computer Engineering Professional Master’s Program",
+                  "degree": "MSECE",
+                  "campus": "Seattle",
+                  "discipline": "ECE"
+                }
+              ],
+              "tier_rubric": "# Conservative admission-tier rubric (conservative-v1.1)\n\nEvery applicable hard check must pass or be explicitly not applicable before a formal recommendation. Unknown is not a pass. Separate eligibility, tuition budget, goal fit and admission risk.\n\nFor reviewed, program-specific cohort counts from the latest three admission cycles:\n\n- Lottery: offers / applications <= 15%.\n- Reach: offers / applications > 15% and <= 35%.\n- Above 35%: aggregate counts alone do not establish a tier.\n\nThese are explicit engineering thresholds for cohort-selectivity planning labels, not university classifications, calibrated predictions, or an applicant's personal admission probability. Cite the counts, cycle and source; mention that applicant pools and future admissions can differ. Use `comparison_dimensions=[\"selectivity\"]` for this route. Satisfying minimum conditions does not imply competitiveness. Do not call a cohort-based recommendation personalized odds.\n\nTarget requires at least two independent, recent, traceable admitted cases from the same degree/track, with comparable original GPA scale/scope and relevant academic/experience background. Safer requires the same evidence and a supported explanation of relatively lower risk. Safer never means guaranteed. Aggregated rates cannot substitute for these cases. Duplicate copies count once; no automatic GPA conversion or inferred experience is allowed. Semantic comparisons need human review.\n\nGoal-fit claims need bound official curriculum, internship, capstone or thesis evidence. Never infer placement from school reputation. Recommend the few fully supported candidates even when other tiers are empty. Keep other non-failing candidates pending. At most five recommendations per tier; explain shortages below three. Do not guarantee admission, scholarships, employment or visas.\n",
+              "remaining_limits": {
+                "model_calls": 7,
+                "tool_calls": 11
+              }
+            },
+            "tool_history": [
+              {
+                "type": "function_call",
+                "call_id": "call_0KtFVIrQQqA7ilbCt4zUsQdx",
+                "name": "get_program",
+                "arguments": "{\"program_id\":\"cmu-mcds-pittsburgh\"}"
+              },
+              {
+                "type": "function_call_output",
+                "call_id": "call_0KtFVIrQQqA7ilbCt4zUsQdx",
+                "output": "{\"ok\": true, \"program\": {\"program_id\": \"cmu-mcds-pittsburgh\", \"university\": \"Carnegie Mellon University\", \"school\": \"School of Computer Science / Language Technologies Institute\", \"program_name\": \"Master of Computational Data Science\", \"degree\": \"MCDS\", \"campus\": \"Pittsburgh\", \"track\": \"Standard timing (16 months)\", \"discipline\": \"CS\", \"official_url\": \"https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html\", \"allowed_official_hosts\": [\"www.lti.cs.cmu.edu\", \"lti.cs.cmu.edu\", \"msaii.cs.cmu.edu\", \"www.cs.cmu.edu\"], \"candidate_source_id\": \"official-cmu-program-comparison\", \"required_credits\": null, \"gpa\": {\"minimum\": \"3\", \"recommended\": null, \"scale\": \"4\", \"accepted_scopes\": [\"overall\"], \"below_minimum_review_possible\": false, \"no_hard_minimum\": false}, \"english\": [], \"english_not_required\": false, \"required_topics\": [], \"recommended_topics\": [], \"prerequisites_complete\": false, \"supported_intakes\": [{\"year\": 2027, \"term\": \"fall\"}], \"closed_intakes\": [], \"deadlines\": [{\"intake\": {\"year\": 2027, \"term\": \"fall\"}, \"date\": \"2026-11-18\", \"label\": \"Early (3 p.m. EST)\", \"audience\": \"all\"}, {\"intake\": {\"year\": 2027, \"term\": \"fall\"}, \"date\": \"2026-12-09\", \"label\": \"Final (3 p.m. EST)\", \"audience\": \"all\"}], \"deadline_schedule_complete\": true, \"tuition\": {\"currency\": \"USD\", \"basis\": \"per_term\", \"unit_rate_lower\": \"32400\", \"unit_rate_upper\": null, \"required_units_lower\": \"3\", \"required_units_upper\": null, \"rate_year\": \"2026-2027\", \"guaranteed_for_intake\": null, \"mandatory_fees_usd\": null, \"assumptions\": [\"Department-specific published 2026–2027 rate reused as a planning estimate for Fall 2027; future increases are unknown.\", \"Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.\", \"Three academic semesters in the 16-month track; optional pre-arrival courses are not selected and would cost extra.\", \"No unconfirmed scholarship or assistantship is deducted.\"], \"additional_required_tuition_lower_usd\": \"0\", \"additional_required_tuition_upper_usd\": \"0\"}, \"field_sources\": {\"identity\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"gpa\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"gre\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"intake\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"deadline\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"goal_features\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"remaining_eligibility\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"], \"tuition\": [\"cmu-mcds-pittsburgh-mcds_fees-m35\"], \"admission_evidence\": [\"cmu-mcds-pittsburgh-stats_data-m35\", \"cmu-mcds-pittsburgh-stats-m35\"]}, \"notes\": [\"Current program page establishes English testing but no minimum score or complete entry-coursework rule was verified. Older MCDS URLs now redirect to missing pages. Remains pending; the Reach cohort label alone cannot authorize a recommendation.\"], \"eligibility_review_complete\": false, \"goal_features\": [{\"feature_id\": \"cmu-mcds-pittsburgh-industry\", \"goal\": \"employment\", \"statement\": \"Industry internship and a practical capstone support preparation for applied technical work.\", \"source_ids\": [\"cmu-mcds-pittsburgh-mcds_program-m35\"]}], \"admission_evidence\": [{\"evidence_id\": \"cmu-mcds-pittsburgh-2025-cohort\", \"kind\": \"program_selectivity\", \"source_ids\": [\"cmu-mcds-pittsburgh-stats_data-m35\", \"cmu-mcds-pittsburgh-stats-m35\"], \"cycle_year\": 2025, \"independence_key\": \"cmu-mcds-pittsburgh-official-2025\", \"gpa\": null, \"major\": null, \"experience_dimensions\": [], \"permitted_tiers\": [\"Reach\"], \"statement\": \"Official 2025 cohort: 145 admission offers from 481 applications. Aggregate selectivity is not an individual admission probability.\", \"reviewed\": true, \"applications\": 481, \"offers\": 145}], \"degree_required\": true, \"accepted_degree_fields\": [], \"gre_policy\": \"required\", \"gre_validity_years\": 5, \"gre_at_home_accepted\": true, \"application_materials\": [\"Online application and fee or approved waiver\", \"Transcripts from every attended university\", \"Current resume / CV\", \"Statement of purpose\", \"Three recommendation letters\", \"Official GRE and applicable English reports\", \"Optional 1–3 minute video (strongly suggested)\"], \"catalog_version\": \"m35-2026-11-16\"}, \"sources\": [{\"source_id\": \"cmu-mcds-pittsburgh-mcds_program-m35\", \"program_id\": \"cmu-mcds-pittsburgh\", \"url\": \"https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html\", \"title\": \"MCDS current program: Admissions; Overview; Curriculum\", \"applicable_intake\": \"2027-fall\", \"effective_period\": \"Fall 2027\", \"verification_status\": \"verified\", \"field_groups\": [\"identity\", \"gpa\", \"gre\", \"intake\", \"deadline\", \"goal_features\", \"remaining_eligibility\"], \"locator\": \"MCDS current program: Admissions; Overview; Curriculum\", \"retrieved_at\": \"2026-11-16T23:35:10.030490Z\", \"source_excerpt\": \"Three letters of recommendation\", \"fact_summary\": \"Fall 2027 application rules: GPA 3.0, GRE, transcripts, CV, SOP and three letters. Program curriculum includes an internship and capstone. Video requirements differ by program.\", \"content_hash\": \"7dbb4ed2a8c0e95aa666c23de71234c41930bbca8f6121f92de1f9edf2712c5d\"}, {\"source_id\": \"cmu-mcds-pittsburgh-mcds_fees-m35\", \"program_id\": \"cmu-mcds-pittsburgh\", \"url\": \"https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf\", \"title\": \"MCDS additional information PDF, page 2: Tuition\", \"applicable_intake\": null, \"effective_period\": \"2026-2027\", \"verification_status\": \"verified\", \"field_groups\": [\"tuition\"], \"locator\": \"MCDS additional information PDF, page 2: Tuition\", \"retrieved_at\": \"2026-11-16T23:35:09.808380Z\", \"source_excerpt\": \"Tuition\", \"fact_summary\": \"Department-specific 2026–2027 tuition is USD 32,400 per academic semester. Standard timing has three academic semesters; optional pre-arrival courses are excluded.\", \"content_hash\": \"a3d0f8b7fea54b8ed2e46dd38f68db14a684074a30bfce899ad5da945a98f980\"}, {\"source_id\": \"cmu-mcds-pittsburgh-stats_data-m35\", \"program_id\": \"cmu-mcds-pittsburgh\", \"url\": \"https://www.cs.cmu.edu/rs-datasources/data-source/scs-masters-programs-anyyear\", \"title\": \"Official SCS comparison JSON: MCDS row, apps/admitted; comparison page: Admissions 2025\", \"applicable_intake\": null, \"effective_period\": \"2025\", \"verification_status\": \"verified\", \"field_groups\": [\"admission_evidence\"], \"locator\": \"Official SCS comparison JSON: MCDS row, apps/admitted; comparison page: Admissions 2025\", \"retrieved_at\": \"2026-11-16T23:35:12.160918Z\", \"source_excerpt\": \"\", \"fact_summary\": \"MCDS 2025 cohort: 481 applications and 145 offers. Year is identified by the comparison-page column group; exact counts come from its official JSON datasource. Cohort statistics do not describe an individual applicant probability.\", \"content_hash\": \"11768b90299d0711f16d4d48cfb79b94541871624b4c279147630a130bbbfeff\"}, {\"source_id\": \"cmu-mcds-pittsburgh-stats-m35\", \"program_id\": \"cmu-mcds-pittsburgh\", \"url\": \"https://www.cs.cmu.edu/education/masters/programs-comparison\", \"title\": \"SCS program comparison: 2025 table headings and Admissions notes\", \"applicable_intake\": null, \"effective_period\": \"2025\", \"verification_status\": \"verified\", \"field_groups\": [\"admission_evidence\"], \"locator\": \"SCS program comparison: 2025 table headings and Admissions notes\", \"retrieved_at\": \"2026-11-16T23:35:10.740579Z\", \"source_excerpt\": \"\", \"fact_summary\": \"The comparison table labels applications and admitted counts as 2025. Selectivity means offers divided by applications; program requirements influence the applicant pool.\", \"content_hash\": \"d60b0678963bd0604ff62e124fad130ab79b85ad37f146259eaebc052aec0388\"}]}"
+              }
+            ]
+          },
+          "outputs": {
+            "calls": [],
+            "answer": {
+              "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+              "citations": [
+                "cmu-mcds-pittsburgh-mcds_fees-m35"
+              ],
+              "recommendations": [],
+              "needs_clarification": false
+            }
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "model",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "usage": {
+            "call_id": "fd177d3f-1540-4a8f-9fa4-091fc055abea",
+            "provider": "openai",
+            "model": "gpt-5.4-mini-2026-03-17",
+            "input_tokens": 4741,
+            "output_tokens": 119,
+            "cached_input_tokens": 4608,
+            "reasoning_tokens": 0,
+            "estimated_cost_usd": "0.00098085",
+            "cost_status": "estimated_from_published_prices",
+            "actual_request": true,
+            "status": "completed",
+            "response_id": "resp_01f300d4be407aee016afce7fbbc9087d0a30aa2dc79a999a3"
+          }
+        },
+        {
+          "span_id": "102a312a-ed29-41f0-854a-57cc92c04a38",
+          "parent_id": "daac1141-0033-4988-875b-21ce22130bed",
+          "kind": "validation",
+          "name": "validate_answer",
+          "started_at": "2026-11-17T23:49:16.223149+00:00",
+          "finished_at": "2026-11-17T23:49:16.223149+00:00",
+          "duration_ms": 0.0,
+          "inputs": {
+            "answer": "For CMU MCDS (Pittsburgh), the published-rate tuition estimate for the standard 16-month timing, without optional pre-arrival courses, is USD 32,400 per academic semester × 3 billed academic semesters = USD 97,200 total published-rate tuition estimate. Living costs, mandatory non-tuition fees, and future tuition increases are excluded from this estimate.",
+            "citations": [
+              "cmu-mcds-pittsburgh-mcds_fees-m35"
+            ],
+            "recommendations": [],
+            "needs_clarification": false
+          },
+          "outputs": {
+            "accepted": true,
+            "errors": []
+          },
+          "status": "completed",
+          "error": null,
+          "selected_by": "shared_validator"
+        }
+      ]
+    }
+  }
+}
