@@ -2,7 +2,7 @@
 
 Branch: `homework/eval-harness-50`  
 Base: `main` at `6ae734828c160b6f1fee5d3088b1b52b5f0b3ba9`  
-Assignment deadline shown in the supplied slides: November 17, 2026, 11:59 p.m.
+Latest assignment deadline supplied by the user: Friday, November 20, 2026, 11:59 p.m. Pacific Time. This supersedes the earlier slide deadline; the recorded November 17 execution date is unchanged. One submission per two-person team must include both members' full names and UW NetIDs.
 
 Source reviewed: `Week 6 Evaluation _ Observability.pdf` (57 pages), especially pages 54-57. Page numbers in this plan are one-based PDF pages. Pages 55-56 define the submitted homework; pages 19, 22-23, 30-32, 35-36 and 46-51 explain evaluation and observability practices. The attached lecture is a requirements reference, not authorization to execute every exercise or perform paid evaluation.
 

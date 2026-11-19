@@ -2,6 +2,8 @@
 
 **50-task course homework | November 17, 2026 | Frozen snapshot evaluation**
 
+**Submission due: Friday, November 20, 2026, 11:59 PM Pacific Time.** Both team members' full names and UW NetIDs must be entered in the accompanying `TEAM.md` before submission. Those fields are intentionally editable and blank pending team confirmation. One team submission is sufficient.
+
 ## System and evaluation design
 
 GradMatch answers graduate-program eligibility, cost and planning questions using reviewed official snapshots. The non-agentic baseline executes fixed search, scoped record retrieval and deterministic checks, then one answer call per user turn. The Agent chooses its next native tool call or final answer from observations. Both use the same ten-program catalog, model, constraint rules, tier rubric and per-task ceilings.
@@ -18,6 +20,8 @@ Candidates never receive expected answers, expected calls, grading rubrics, task
 | Agent repeat 1 | 94% | 47/50 | 2.32 | 3.696 | 5.672 | 8,985.56 |
 
 Turns count all candidate model calls, including setup and profile interpretation. Candidate latency includes tools/waits and failed executions, excludes grading, and uses nearest-rank p95. Tokens sum input plus output without adding cached input twice. Every scheduled task remains in its denominator.
+
+The root `submission_results.csv` consolidates these columns and the two repeated-Agent measures in one results table. Baseline pass@3/pass^3 are N/A because only one baseline run per task was required.
 
 | Repeated-run measure | Observed |
 | --- | ---: |

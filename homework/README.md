@@ -6,6 +6,8 @@ H1 provides frozen data; H2 the snapshot candidates; H3 independent [grading](H3
 
 H6 provides the [English report](FINAL_REPORT.md), [actual failure analysis](FAILURE_ANALYSIS.md), [submission instructions](SUBMISSION_README.md) and [verification record](../docs/verification/H6.md). The standalone ZIP includes the report PDF, root `tasks.jsonl` and `eval.py`, results and all actual evidence. No Canvas upload is implied.
 
+Final instruction review (November 18): the deadline is Friday, November 20, 2026, at 11:59 PM Pacific Time. The five evaluation requirements pass; both members' names and UW NetIDs must still be completed in [TEAM.md](TEAM.md) before submission. See the [checklist](SUBMISSION_CHECKLIST.md).
+
 ## Validate without model calls
 
 From the repository root:

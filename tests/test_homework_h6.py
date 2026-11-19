@@ -1,4 +1,6 @@
 """Submission integrity and factual failure attribution; no model requests."""
+import csv
+import io
 import json
 import zipfile
 import pytest
@@ -62,6 +64,10 @@ def test_package_contains_frozen_tasks_and_all_actual_records(payloads):
     assert payloads['tasks.jsonl']==(PROJECT_ROOT/'homework/tasks.jsonl').read_bytes()
     assert 'docs/verification/h6/verification.json' not in payloads
     assert payloads['report.pdf'].startswith(b'%PDF-')
+    rows=list(csv.DictReader(io.StringIO(payloads['submission_results.csv'].decode())))
+    assert [row['accuracy'] for row in rows]==['0.78','0.94']
+    assert rows[0]['pass@3']=='N/A' and rows[1]['pass@3']=='0.98' and rows[1]['pass^3']=='0.76'
+    assert b'________________________' in payloads['TEAM.md']
 
 
 def test_manifest_detects_modified_raw_evidence(payloads):

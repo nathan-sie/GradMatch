@@ -1,7 +1,9 @@
 """H6 submission inventory, byte integrity and selected formal-failure evidence."""
 from collections import Counter
 from datetime import date
+import csv
 import hashlib
+import io
 import json
 from pathlib import Path,PurePosixPath
 import re
@@ -20,10 +22,28 @@ EXTENSIONS={'.py','.json','.jsonl','.md','.csv','.sql','.toml','.lock'}
 FOLDERS=['gradmatch','scripts','tests','config','data/catalog','data/snapshots','docs/verification','homework']
 ROOT_FILES=['app.py','pyproject.toml','uv.lock','.python-version','.gitignore','.gitattributes','.env.example',
     '.streamlit/config.toml','data/schema.sql','AGENTS.md','docs/HOMEWORK_EVAL_PLAN.md']
-EXTERNAL_RECEIPTS={'docs/verification/h6/verification.json'}
+EXTERNAL_RECEIPTS={'docs/verification/h6/verification.json',
+    'docs/verification/h6/final_requirements_verification.json'}
 
 
 def sha(payload):return hashlib.sha256(payload).hexdigest()
+
+
+def submission_results(summary):
+    """Presentation-only table; repeated-Agent measures use all three prescribed trials."""
+    stream=io.StringIO(newline='')
+    fields=['system','accuracy','passed','scheduled','average_turns','average_latency_seconds',
+        'p95_latency_seconds','average_tokens','pass@3','pass^3']
+    writer=csv.DictWriter(stream,fieldnames=fields,lineterminator='\n');writer.writeheader()
+    for row in summary['comparison']:
+        agent=row['label']=='Agent repeat 1'
+        writer.writerow(dict(system=row['label'],accuracy=row['accuracy'],passed=row['passed'],
+            scheduled=row['scheduled'],average_turns=row['avg_turns'],
+            average_latency_seconds=f"{row['avg_latency_ms']/1000:.5f}",p95_latency_seconds=f"{row['p95_latency_ms']/1000:.3f}",
+            average_tokens=row['avg_tokens'],
+            **{'pass@3':summary['stability']['pass_at_3'] if agent else 'N/A',
+               'pass^3':summary['stability']['pass_all_3'] if agent else 'N/A'}))
+    return stream.getvalue().encode('utf-8')
 
 
 def safe_relative(name):
@@ -134,10 +154,15 @@ def package_payloads(root=PROJECT_ROOT):
         # Root copies have the same prose, with repository-relative links adjusted one level.
         payloads[name]=(root/source).read_text(encoding='utf-8').replace('](../','](').encode()
     payloads['README.md']=(root/'homework/SUBMISSION_README.md').read_bytes()
+    team_path=root/'TEAM.md' if (root/'TEAM.md').exists() else root/'homework/TEAM.md'
+    payloads['TEAM.md']=team_path.read_bytes()
+    payloads['SUBMISSION_CHECKLIST.md']=(root/'homework/SUBMISSION_CHECKLIST.md').read_bytes()
+    payloads['submission_results.csv']=submission_results(json.loads(payloads['results.json']))
     payloads['eval.py']=b'"""Run the frozen candidate/baseline evaluation CLI; defaults to no-cost planning."""\nfrom scripts.homework.evaluate import main\n\nif __name__ == "__main__":\n    raise SystemExit(main())\n'
     scan_payloads(payloads,known_key=load_settings(root).api_key.encode())
     required={'tasks.jsonl','eval.py','report.pdf','report.md','failure_analysis.md','results.csv','flip_tasks.json',
-        'homework/references.jsonl','homework/formal_freeze.json','docs/verification/h6/failure_case.json'}
+        'homework/references.jsonl','homework/formal_freeze.json','docs/verification/h6/failure_case.json',
+        'submission_results.csv','TEAM.md','SUBMISSION_CHECKLIST.md'}
     if not required<=set(payloads):raise ValueError('Submission checklist is incomplete.')
     manifest={'schema_version':'h6-submission-v1','package':PACKAGE_NAME,'manifest_scope':'Every member except this manifest itself.',
         'files':[{'path':name,'sha256':sha(data),'bytes':len(data)} for name,data in sorted(payloads.items())]}
@@ -164,8 +189,10 @@ def verify_payloads(payloads):
     if summary['terminal_records']!=200 or summary['status']!='complete':raise ValueError('Expected the complete actual comparison.')
     if [row['passed'] for row in summary['comparison']]!=[39,47]:raise ValueError('Results no longer match the frozen run.')
     if summary['stability']['pass_at_3']!=0.98 or summary['stability']['pass_all_3']!=0.76:raise ValueError('Stability results changed.')
+    if payloads['submission_results.csv']!=submission_results(summary):raise ValueError('Consolidated metrics differ from the frozen summary.')
     raw_count=sum(name.startswith('docs/verification/h5/formal/entries/') and name.endswith('/candidate.json') for name in payloads)
     if raw_count!=200:raise ValueError('The complete actual candidate evidence is required.')
     return {'status':'passed','members':len(payloads),'formal_tasks':50,'formal_executions':200,
         'raw_candidate_records':raw_count,
+        'team_information':'pending' if b'________________________' in payloads['TEAM.md'] else 'provided; verify both names and NetIDs before submission',
         'secrets':'no credentials or runtime database','results':'frozen values verified'}

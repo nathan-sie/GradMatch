@@ -2,19 +2,22 @@
 
 Start with **report.pdf** (three-page English report) or **report.md**. The package contains the required task file, evaluation entry point, results table with repeated-run measures, and one actual Agent failure analysis with its full trace.
 
+**Due Friday, November 20, 2026, at 11:59 PM Pacific Time. One submission per two-person team.** Complete both full names and UW NetIDs in root `TEAM.md` before submission; these fields are intentionally blank for team review. See `SUBMISSION_CHECKLIST.md` for the final requirement-by-requirement audit.
+
 ## Required deliverables
 
 | Item | Location |
 | --- | --- |
 | 50 tasks with known answers/rubrics | `tasks.jsonl`; identical canonical copy at `homework/tasks.jsonl` |
 | One evaluation script for both systems | `eval.py`, delegating to `scripts/homework/evaluate.py` |
-| Side-by-side accuracy, turns, avg/p95 latency, tokens | `results.csv`, `results.md`, `results.json` |
+| Consolidated side-by-side metrics including pass@3 and pass^3 | `submission_results.csv`; full original values in `results.csv`, `results.md`, `results.json` |
 | pass@3, pass^3, flip IDs/vectors | Report, `flip_tasks.json`, `repeat_vectors.json` |
 | One actual failed step and cause | `failure_analysis.md` and report |
 | Full failure trace and grade | `docs/verification/h5/formal/entries/t26--react--r2/` |
 | All 200 formal candidate/grade pairs | `docs/verification/h5/formal/entries/` |
 | Frozen references, model/data/code locks | `homework/references.jsonl`, `homework/formal_freeze.json` |
 | Byte-integrity inventory | `submission_manifest.json` |
+| Both members' names and UW NetIDs | Complete `TEAM.md` before submitting |
 
 No API key, local SQLite database, virtual environment or lecture PDF is included. Applicant profiles are fictional. Root convenience copies do not change the canonical frozen files used by the runner.
 

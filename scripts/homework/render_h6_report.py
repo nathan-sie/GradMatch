@@ -45,24 +45,27 @@ def render(root,output):
     add('GRADMATCH  /  COURSE HOMEWORK','SmallNote')
     add('Evaluation Harness','Hero')
     add('50 frozen tasks. One baseline and three Agent executions per task.\\nActual results collected November 17, 2026.'.replace('\\n',' '),'Deck')
+    add('Due Friday, November 20, 2026, 11:59 PM Pacific Time. One submission per two-person team.','SmallNote')
+    add('Team identification: complete both names and UW NetIDs in the accompanying editable TEAM.md before submission.','SmallNote')
     add('The baseline follows fixed search, record retrieval and checks before one answer call per user turn. The Agent selects native tool calls from observations. Both use the same ten-program snapshot, model, rules and resource ceilings.')
     heading('1  Results on the prescribed 50 tasks')
-    rows=[['System','Accuracy','Passes','Avg calls','Mean (s)','p95 (s)','Avg tokens']]
+    rows=[['System','Accuracy','Passes','Avg turns','Avg lat. (s)','p95 (s)','Avg tokens']]
     for item in summary['comparison']:
         rows.append(['Baseline' if item['label']=='Fixed baseline' else 'Agent: repeat 1',
             f"{item['accuracy']:.0%}",f"{item['passed']}/50",f"{item['avg_turns']:.2f}",
             f"{item['avg_latency_ms']/1000:.3f}",f"{item['p95_latency_ms']/1000:.3f}",f"{item['avg_tokens']:,.2f}"])
-    table(rows,[97,60,48,60,69,66,100])
+    table(rows,[97,60,48,60,69,66,100],compact=True)
     add('Repeat 1 was designated before execution. Calls include setup and interpretation; latency includes candidate tools/waits and failed executions, excludes judging, and uses nearest-rank p95. Tokens are input plus output; cached input is not added again.','SmallNote')
     heading('2  Repeated-run reliability')
     table([['Measure','Observed'],['pass@3: at least one pass','49/50 = 98%'],
         ['pass^3: all three pass','38/50 = 76%'],['Tasks with mixed outcomes','11/50'],
-        ['Agent pooled, separately labelled','131/150 = 87.33%']],[310,190])
+        ['Agent pooled, separately labelled','131/150 = 87.33%']],[310,190],compact=True)
     add('Flip IDs: t18, t26, t28, t29, t33, t41, t42, t43, t44, t45, t49. Task t27 failed all three draws. These are observed vectors, not the cube of an aggregate accuracy.','SmallNote')
     heading('3  Where the difference comes from')
     table([['Task type','Baseline','Agent repeat 1'],['Exact','18/18','18/18'],
-        ['First-tool-call','1/8','8/8'],['Rubric','16/20','17/20'],['Unanswerable','4/4','4/4']],[250,125,125])
+        ['First-tool-call','1/8','8/8'],['Rubric','16/20','17/20'],['Unanswerable','4/4','4/4']],[250,125,125],compact=True)
     add('Seven of the eight additional primary passes are first-tool cases. Exact and unanswerable primary results are equal; rubric performance differs by one task. The Agent uses more calls, time and tokens. This small authored set does not establish a general 16-point admission-advising gain.','SmallNote')
+    add('submission_results.csv combines the comparison and pass@3/pass^3 in one table. Baseline repeat measures are N/A; the Agent measures use all three repeats.','SmallNote')
     story.append(PageBreak())
     add('One Traced Agent Failure','Hero')
     add('t26 / Agent repeat 2 / procedural first-call failure','Deck')
@@ -109,7 +112,7 @@ def render(root,output):
         canvas.saveState()
         canvas.setStrokeColor(line);canvas.setLineWidth(.6);canvas.line(46,45,566,45)
         canvas.setFillColor(muted);canvas.setFont('Helvetica',7.5)
-        canvas.drawString(46,31,'GradMatch | Frozen 50-task evaluation | 17 Nov 2026')
+        canvas.drawString(46,31,'GradMatch | Frozen 50-task evaluation | Submission review: 18 Nov 2026')
         canvas.drawRightString(566,31,f'{doc.page} / 3')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(output),pagesize=(612,792),leftMargin=46,rightMargin=46,topMargin=40,bottomMargin=58,
