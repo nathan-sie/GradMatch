@@ -380,5 +380,6 @@
       "fresh_session": true
     }
   ],
-  "clean_host_notice": "Three scenarios passed on the prior intake-comparison fix; the final shared status-correction code additionally passed the current 178-check suite."
+  "clean_host_notice": "All three scenarios passed on final M5.2 code e5f2a47 with no model requests.",
+  "code_commit": "e5f2a47fa76ea1810527b637b5f2b537c9f32019"
 }

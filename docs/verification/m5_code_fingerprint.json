@@ -1,0 +1,66 @@
+{
+  "code_commit": "e5f2a47fa76ea1810527b637b5f2b537c9f32019",
+  "normalization": "CRLF converted to LF before SHA-256",
+  "files": [
+    {
+      "path": "app.py",
+      "sha256": "84227318ad7882791ffb62f5ecf35838fe10fdee12053f324d7cc14b93430d4e"
+    },
+    {
+      "path": "config/agent.json",
+      "sha256": "49bb6418aac0ad83e394b195fc1619d97752e45ba1f3cf92b3eb5b8898040747"
+    },
+    {
+      "path": "gradmatch/agent.py",
+      "sha256": "cd105257fac973a66f6a1c491794bc50ceaedd19a6d2000f06a3e1f6c8815585"
+    },
+    {
+      "path": "gradmatch/planning.py",
+      "sha256": "0ff322794112c0db8d3680b76ba78f0b1b92d26beabb2102abd1fe0044b646c6"
+    },
+    {
+      "path": "gradmatch/constraints.py",
+      "sha256": "99d6418fbd4e6e99a4e51476546cc2e95c7aecfa3357b47aae0ac82b10b2b52a"
+    },
+    {
+      "path": "gradmatch/session.py",
+      "sha256": "90d11cf308eb9ae9b1a4bdb4bbccc2a22a4534935535e5891167398947bc0c30"
+    },
+    {
+      "path": "gradmatch/validation.py",
+      "sha256": "21377eef82e29c6a216e995fcb19c7d4f2cb9e11a05a48c51d998f5cd00e9256"
+    },
+    {
+      "path": "gradmatch/providers.py",
+      "sha256": "cfb641e2a47800a710e3bab5249083e05c1fadbaeb6e75abfebd6c1dc17f44d4"
+    },
+    {
+      "path": "gradmatch/service.py",
+      "sha256": "1dccc3a287995fb484f19682f6b8f5143792cd86653403bf1249dea7394cd5eb"
+    },
+    {
+      "path": "gradmatch/ui_m2.py",
+      "sha256": "7ffe5afaabe6c1a38a4dc2e6efcbd0ff2c2201a8d6014bc19bf8344e91dee71c"
+    },
+    {
+      "path": "scripts/run_task.py",
+      "sha256": "26f11273755fa7258654d06c5aaa323f808a51dee23da131bc0a8389b73c1b0c"
+    },
+    {
+      "path": "scripts/verify_m5.py",
+      "sha256": "906c558b681a7ff36a180b0df82ec0008f1fa4613c153e48c7962bf08564ede0"
+    },
+    {
+      "path": "scripts/m5_fixtures.py",
+      "sha256": "c813ae580f8e71e15814ed8e5a030245fd19c44c49e1f2881eb3baf3d5c99358"
+    },
+    {
+      "path": "tests/test_m5.py",
+      "sha256": "1d334ebe9b4db38fc7533063e22c28431f72c198936a652d33aa07911d5830a0"
+    },
+    {
+      "path": "tests/fixtures/m5_status_correction.json",
+      "sha256": "467a4e88f54fbfe16a1fc7c02252d47b7d72a8e676e4c56d4de0e9cb7daf4c50"
+    }
+  ]
+}
