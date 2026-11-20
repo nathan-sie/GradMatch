@@ -132,7 +132,7 @@ def test_followup_uses_current_profile_and_previous_ids_without_extra_changes(in
     run(session, provider=stub)
     run(session, provider=stub, request_id="budget", message="Change my tuition budget to 50000")
     before = session.profile.model_copy(deep=True)
-    result = run(session, provider=stub, request_id="explain", message="Which remaining candidates fit employment goals? Do not change my profile.")
+    result = run(session, provider=stub, request_id="explain", message="Which remaining candidates fit employment goals?")
     assert session.profile == before and result["model_calls"] == 2
     assert result["changes_from_previous"]["removed"] == []
     assert result["changes_from_previous"]["previous_profile_version"] == before.profile_version

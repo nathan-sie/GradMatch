@@ -72,12 +72,15 @@ def evidence_ids(program: ProgramRecord, group: str, sources: dict[str, SourceRe
 
 
 def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
-                      sources: dict[str, SourceRecord], *, as_of: date) -> ConstraintReport:
+                      sources: dict[str, SourceRecord], *, as_of: date, data_mode="snapshot") -> ConstraintReport:
     checks = []
 
     def add(group, status, code, explanation, warnings=None):
+        source_ids=evidence_ids(program,group,sources,profile)
+        if group=='tuition' and program.tuition.basis=='per_credit':
+            source_ids=list(dict.fromkeys(source_ids+evidence_ids(program,'credits',sources,profile)))
         checks.append(ConstraintCheck(rule_id=group, status=status, reason_code=code,
-            explanation=explanation, source_ids=evidence_ids(program, group, sources, profile),
+            explanation=explanation, source_ids=source_ids,
             warnings=warnings or []))
 
     def supported(group):
@@ -253,5 +256,5 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
               else CheckStatus.UNKNOWN if any(check.status == CheckStatus.UNKNOWN for check in checks)
               else CheckStatus.PASS)
     return ConstraintReport(program_id=program.program_id, profile_version=profile.profile_version,
-        as_of_date=as_of, checks=checks, tuition=estimate, hard_checks_status=status,
+        as_of_date=as_of, data_mode=data_mode, checks=checks, tuition=estimate, hard_checks_status=status,
         recommendation_ready=status == CheckStatus.PASS)

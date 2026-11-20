@@ -1,0 +1,52 @@
+{
+  "milestone": "M4",
+  "verified_at": "2026-11-20T00:50:02.834942+00:00",
+  "automated_acceptance": "passed",
+  "user_page_acceptance": "pending",
+  "tests_passed": 144,
+  "m4_tests_passed": 36,
+  "live_task_status": "insufficient_evidence",
+  "live_task_validation_errors": [],
+  "fresh_live_requests": 6,
+  "official_html_and_pdf": "passed",
+  "budget_and_resume_regressions": "passed",
+  "profile_preserved": true,
+  "catalog_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+  "sqlite_unchanged": true,
+  "homework_branch_unchanged": "c17372e2ba480d804821eac872d2ed3c8f4ac816",
+  "estimated_total_m4_usd": "0.03635850",
+  "actual_distinct_model_requests": 16,
+  "clean_host": {
+    "status": "passed",
+    "checks": [
+      {
+        "step": "cold_start",
+        "status": "passed",
+        "programs": 10,
+        "sources": 30,
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "model_calls": 0,
+        "fresh_session": true
+      },
+      {
+        "step": "process_restart",
+        "status": "passed",
+        "programs": 10,
+        "sources": 30,
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "model_calls": 0,
+        "fresh_session": true
+      },
+      {
+        "step": "cache_loss_rebuild",
+        "status": "passed",
+        "programs": 10,
+        "sources": 30,
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "model_calls": 0,
+        "fresh_session": true
+      }
+    ],
+    "model_requests": 0
+  }
+}

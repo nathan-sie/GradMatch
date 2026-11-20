@@ -1,0 +1,11 @@
+{
+  "version": "m4-2026-11-19",
+  "max_tools": 20,
+  "max_models": 16,
+  "max_pages": 16,
+  "max_turns": 6,
+  "turn_seconds": 120,
+  "task_seconds": 300,
+  "page_seconds": 15,
+  "fixed_live_pages": 4
+}

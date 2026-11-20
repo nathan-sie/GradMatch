@@ -9,6 +9,8 @@ dependencies = [
     "python-dotenv>=1,<2",
     "pydantic>=2.12,<3",
     "streamlit>=1.50,<2",
+    "langgraph>=1,<2",
+    "pypdf>=6,<8",
 ]
 
 [dependency-groups]

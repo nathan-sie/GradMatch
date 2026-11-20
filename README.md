@@ -2,9 +2,9 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M3.5 recommendation pilot**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 official sources. M3's hosted model interaction, session isolation, reboot recovery and another-device access passed. The pilot adds explicit degree / GRE inputs and evidence-backed planning tiers. The separate 83-record CS Grad tracker database remains unverified. Adaptive agents and formal benchmarks are future milestones.
+Current stage: **M4 ReAct and official-page tools**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 reviewed official sources. M4 adds adaptive action selection, registered official HTML/PDF reads, session evidence overlays, pause/resume and cumulative task budgets. The separate 83-record CS Grad tracker database remains unverified. Planning and final-project benchmarks are later milestones.
 
-M3.5 passed 107 checks, clean-host recovery and actual local/hosted model generation plus budget updates. User acceptance remains pending. See [the M3.5 checkpoint and acceptance steps](docs/verification/M35.md).
+M4 passed 144 regression checks, clean-host recovery and a six-request real-model live-evidence task; earlier failures and costs are retained. User page acceptance remains pending. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
 
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
@@ -20,11 +20,11 @@ The project uses an isolated Python 3.12 environment. If `.venv` is already prep
 
 ```powershell
 .\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m35_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m35
+.\.venv\Scripts\python.exe -m scripts.verify_m4
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
-Open `http://127.0.0.1:8501`. Click **Load tiering example (USD 140,000)**, enable the per-session paid-call checkbox, then **Generate / rerun**. Expect MSAII in Lottery with source-linked eligibility, costs and limitations. Send **Change my tuition budget to 100000**; MSAII should be excluded by budget while other background stays intact. MCDS remains pending; Target/Safer have no qualifying comparable cases yet. The original **Load synthetic example** and **Data and rule checks (M1)** remain available. Press `Ctrl+C` to stop the local server.
+Open `http://127.0.0.1:8501`. Select **ReAct agent** and **Reviewed snapshots**, then load **Load tiering example (USD 140,000)**. After enabling the per-session paid-call checkbox, generate and inspect tool activity. The verified MSAII path can support Lottery; MCDS and unsupported tiers remain pending. Send **Change my tuition budget to 100000**: budget checks must update while other background and cumulative task counters remain. **Live official pages** explicitly allows bounded reads of registered official URLs and may retain older snapshots for other facts. Press `Ctrl+C` to stop the local server.
 
 ## OpenAI model configuration
 
@@ -33,7 +33,7 @@ Copy `.env.example` to `.env` only if it does not exist. Fill `OPENAI_API_KEY` l
 Run explicit real-model acceptance after configuring the key:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.verify_m35 --live-model
+.\.venv\Scripts\python.exe -m scripts.verify_m4 --live-model --max-live-model-calls 8
 ```
 
 `verify_m35 --live-model` permits at most two paid requests using only the fictional tiering applicant and records actual call/token/latency/cost data. Ordinary `verify_m35` runs regression without paid calls. Offline stubs do not count as live results. Earlier M2/M3 records are historical checkpoints and are not overwritten by this verifier.
@@ -84,4 +84,4 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 - [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
-M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. The page requires its per-session paid-call checkbox. M4 and later agents/formal evaluation have not started.
+M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated acceptance passed on 2026-11-19; user page confirmation remains pending. The page still requires its per-session paid-call checkbox. M5 planning and final-project evaluation have not started. The separate 50-task homework stays on its own branch.

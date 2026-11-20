@@ -65,9 +65,9 @@ def tier_errors(item, profile, program, sources, as_of):
     return errors
 
 
-def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrieved, sources, *, as_of: date):
+def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrieved, sources, *, as_of: date, data_mode="snapshot"):
     by_id = {program.program_id: program for program in retrieved}
-    reports = {p.program_id: check_constraints(profile, p, sources, as_of=as_of) for p in retrieved}
+    reports = {p.program_id: check_constraints(profile, p, sources, as_of=as_of,data_mode=data_mode) for p in retrieved}
     errors, accepted, observations = [], [], []
     counts = Counter()
     seen = set()
@@ -139,7 +139,7 @@ def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrie
     if draft and draft.status != status:
         errors.append({"code": "MODEL_STATUS_CORRECTED", "proposed": draft.status, "verified": status})
     return {"status": status, "profile_version": profile.profile_version, "as_of_date": str(as_of),
-        "data_mode": "snapshot", "data_hash": data_hash(all_programs, sources),
+        "data_mode": data_mode, "data_hash": data_hash(all_programs, sources),
         "recommendations": accepted, "pending_verification": pending, "excluded": excluded,
         "observations": observations, "validation_errors": errors,
         "tier_shortfalls": [{"tier": tier, "count": counts[tier], "shortfall_to_three": max(0, 3 - counts[tier]),

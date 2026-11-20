@@ -1,0 +1,312 @@
+{
+  "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+  "events": [
+    {
+      "event_id": "70575a61-f095-47ab-b03f-7acba567c994",
+      "timestamp": "2026-11-20T00:43:23.811589+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "run_started",
+      "payload": {
+        "run_id": "2ad9fb9b-8620-4db4-bbec-bd79942a39cd",
+        "request_id": "033303da-65a9-4e07-b127-c6d5c3cf91fd",
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+        "strategy": "react",
+        "data_mode": "live"
+      }
+    },
+    {
+      "event_id": "1566e2bb-4ffa-4443-8c71-4a59625396c2",
+      "timestamp": "2026-11-20T00:43:27.126379+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "output_normalized",
+      "payload": {
+        "purpose": "act",
+        "reason": "identical_json_objects",
+        "copies": 2
+      }
+    },
+    {
+      "event_id": "4b54ff19-7a07-455a-a24a-966f6a9cb603",
+      "timestamp": "2026-11-20T00:43:27.126379+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "agent_action",
+      "payload": {
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+        "action": {
+          "tool": "search_programs",
+          "arguments_json": "{\"program_ids\":[\"uw-ece-msece-pmp-seattle\"],\"discipline\":\"ECE\",\"target_fields\":[\"credits\"],\"limit\":1}",
+          "summary": "Searching the specified UW ECE program to confirm its registered official degree requirements source for required credits."
+        },
+        "model_call_id": "44ff27d3-b68a-40ed-beaa-90e2a180460d"
+      }
+    },
+    {
+      "event_id": "834c79cf-2bb7-432d-b115-ea9020209ff8",
+      "timestamp": "2026-11-20T00:43:27.126379+00:00",
+      "event_type": "tool_result",
+      "payload": {
+        "tool": "search_programs",
+        "arguments": {
+          "program_ids": [
+            "uw-ece-msece-pmp-seattle"
+          ],
+          "discipline": "ECE",
+          "target_fields": [
+            "credits"
+          ],
+          "limit": 1
+        },
+        "profile_version": 1,
+        "evidence_version": 0,
+        "ok": true,
+        "error": null,
+        "warnings": [],
+        "evidence_ids": [],
+        "usage": {
+          "tool_calls": 1,
+          "model_calls": 0,
+          "page_requests": 0,
+          "search_queries": 0,
+          "latency_ms": 0.0,
+          "model_call_ids": [],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": "0"
+        }
+      }
+    },
+    {
+      "event_id": "d94f3e62-0abf-4f00-9878-d08268f67a05",
+      "timestamp": "2026-11-20T00:43:29.514961+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "output_normalized",
+      "payload": {
+        "purpose": "act",
+        "reason": "identical_json_objects",
+        "copies": 2
+      }
+    },
+    {
+      "event_id": "f5e0373c-3b6f-4efd-8afc-5ae8e86c94f0",
+      "timestamp": "2026-11-20T00:43:29.514961+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "agent_action",
+      "payload": {
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+        "action": {
+          "tool": "fetch_official_page",
+          "arguments_json": "{\"program_id\":\"uw-ece-msece-pmp-seattle\",\"source_id\":\"uw-ece-msece-pmp-seattle--uw_requirements--1875142f35e5\",\"target_fields\":[\"credits\"]}",
+          "summary": "Fetch the registered official requirements page for the UW ECE PMP Seattle program to verify required credits."
+        },
+        "model_call_id": "3d855517-71f6-4ee0-bfe0-14d151151538"
+      }
+    },
+    {
+      "event_id": "840014f2-aacf-4af1-a25c-68261183f41a",
+      "timestamp": "2026-11-20T00:43:32.786423+00:00",
+      "event_type": "tool_result",
+      "payload": {
+        "tool": "fetch_official_page",
+        "arguments": {
+          "program_id": "uw-ece-msece-pmp-seattle",
+          "source_id": "uw-ece-msece-pmp-seattle--uw_requirements--1875142f35e5",
+          "target_fields": [
+            "credits"
+          ]
+        },
+        "profile_version": 1,
+        "evidence_version": 1,
+        "ok": true,
+        "error": null,
+        "warnings": [],
+        "evidence_ids": [
+          "live-7a25f682532d6861dd9e485d"
+        ],
+        "usage": {
+          "tool_calls": 1,
+          "model_calls": 1,
+          "page_requests": 1,
+          "search_queries": 0,
+          "latency_ms": 3266.0,
+          "model_call_ids": [
+            "58784e9e-099f-4958-a160-a86170f09856"
+          ],
+          "input_tokens": 856,
+          "output_tokens": 78,
+          "estimated_cost_usd": "0.000993"
+        }
+      }
+    },
+    {
+      "event_id": "5c5ce1d7-4589-456e-ab99-19cf994988eb",
+      "timestamp": "2026-11-20T00:43:34.317977+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "output_normalized",
+      "payload": {
+        "purpose": "act",
+        "reason": "identical_json_objects",
+        "copies": 2
+      }
+    },
+    {
+      "event_id": "3f1e63c1-6d5c-4e29-8443-416ad5e574bd",
+      "timestamp": "2026-11-20T00:43:34.317977+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "agent_action",
+      "payload": {
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+        "action": {
+          "tool": "check_constraints",
+          "arguments_json": "{\"program_ids\":[\"uw-ece-msece-pmp-seattle\"],\"profile_version\":1,\"evidence_version\":1}",
+          "summary": "Check eligibility constraints for the UW ECE MSECE PMP Seattle program using the current profile and verified evidence version."
+        },
+        "model_call_id": "dc355188-390e-4b0d-84df-bfcfc2305102"
+      }
+    },
+    {
+      "event_id": "02edab15-d112-4cd3-b36b-19fa6f57ff9a",
+      "timestamp": "2026-11-20T00:43:34.327161+00:00",
+      "event_type": "tool_result",
+      "payload": {
+        "tool": "check_constraints",
+        "arguments": {
+          "program_ids": [
+            "uw-ece-msece-pmp-seattle"
+          ],
+          "profile_version": 1,
+          "evidence_version": 1
+        },
+        "profile_version": 1,
+        "evidence_version": 1,
+        "ok": true,
+        "error": null,
+        "warnings": [],
+        "evidence_ids": [],
+        "usage": {
+          "tool_calls": 1,
+          "model_calls": 0,
+          "page_requests": 0,
+          "search_queries": 0,
+          "latency_ms": 0.0,
+          "model_call_ids": [],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": "0"
+        }
+      }
+    },
+    {
+      "event_id": "ffe4cee9-4ac3-43e5-b13b-7b115cb73d81",
+      "timestamp": "2026-11-20T00:43:35.872590+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "output_normalized",
+      "payload": {
+        "purpose": "act",
+        "reason": "identical_json_objects",
+        "copies": 2
+      }
+    },
+    {
+      "event_id": "8588073e-b3d5-4841-b2c6-d1becaab58c8",
+      "timestamp": "2026-11-20T00:43:35.872590+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "agent_action",
+      "payload": {
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+        "action": {
+          "tool": "rank_programs",
+          "arguments_json": "{\"program_ids\":[\"uw-ece-msece-pmp-seattle\"],\"profile_version\":1,\"evidence_version\":1}",
+          "summary": "Ranking the validated UW ECE MSECE PMP Seattle program against the current profile and evidence."
+        },
+        "model_call_id": "f2a75cdb-b9c0-42b9-a541-35d6af28b43a"
+      }
+    },
+    {
+      "event_id": "89284ef4-0eb5-4f5d-a68b-55983d687935",
+      "timestamp": "2026-11-20T00:43:37.344876+00:00",
+      "event_type": "tool_result",
+      "payload": {
+        "tool": "rank_programs",
+        "arguments": {
+          "program_ids": [
+            "uw-ece-msece-pmp-seattle"
+          ],
+          "profile_version": 1,
+          "evidence_version": 1
+        },
+        "profile_version": 1,
+        "evidence_version": 1,
+        "ok": true,
+        "error": null,
+        "warnings": [],
+        "evidence_ids": [],
+        "usage": {
+          "tool_calls": 1,
+          "model_calls": 1,
+          "page_requests": 0,
+          "search_queries": 0,
+          "latency_ms": 1469.0,
+          "model_call_ids": [
+            "aff5df9b-e55f-4583-8b7f-4b3497a7e8d7"
+          ],
+          "input_tokens": 6376,
+          "output_tokens": 71,
+          "estimated_cost_usd": "0.0051015"
+        }
+      }
+    },
+    {
+      "event_id": "410682d4-4885-40f6-a813-31199629c067",
+      "timestamp": "2026-11-20T00:43:37.348522+00:00",
+      "event_type": "tool_result",
+      "payload": {
+        "tool": "validate_shortlist",
+        "arguments": {},
+        "profile_version": 1,
+        "evidence_version": 1,
+        "ok": true,
+        "error": null,
+        "warnings": [],
+        "evidence_ids": [],
+        "usage": {
+          "tool_calls": 1,
+          "model_calls": 0,
+          "page_requests": 0,
+          "search_queries": 0,
+          "latency_ms": 0.0,
+          "model_call_ids": [],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_cost_usd": "0"
+        }
+      }
+    },
+    {
+      "event_id": "3caf59bc-36fa-4869-b708-8884cf6b3490",
+      "timestamp": "2026-11-20T00:43:37.360774+00:00",
+      "session_id": "8403c52a-7fe6-4399-992f-2519efe0ac71",
+      "profile_version": 1,
+      "event_type": "output_finalized",
+      "payload": {
+        "run_id": "2ad9fb9b-8620-4db4-bbec-bd79942a39cd",
+        "status": "insufficient_evidence",
+        "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f"
+      }
+    }
+  ],
+  "original_session_sha256": "c7eb26a6afcd82da20cf83e4e4e7020c8496bb3cab4e67e7022d2d29859ffdb7",
+  "model_requests": 6,
+  "tool_calls": 5,
+  "network_pages": 1,
+  "final_status": "insufficient_evidence",
+  "validation_errors": []
+}

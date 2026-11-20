@@ -28,7 +28,11 @@ def render_m2(database):
         st.session_state["m2_session"] = Session()
     session = st.session_state["m2_session"]
     st.subheader("Applicant profile and recommendations")
-    st.caption("Fixed baseline · official snapshots · no live website retrieval · no adaptive agent yet")
+    strategy_label=st.selectbox('Execution method',['ReAct agent','Fixed baseline'],key='m4_strategy',disabled=session.active)
+    mode_label=st.selectbox('Evidence mode',['Reviewed snapshots','Live official pages'],key='m4_mode',disabled=session.active)
+    strategy='react' if strategy_label=='ReAct agent' else 'fixed'
+    data_mode='snapshot' if mode_label=='Reviewed snapshots' else 'live'
+    st.caption('ReAct chooses its next tool from observations. Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
     st.info("Pilot tiering uses reviewed official cohort statistics. Lottery / Reach are planning labels, not personal admission probabilities. Target / Safer require comparable cases and may remain empty. Other programs may still need verification.")
     st.caption("When you enable model calls, your profile and submitted messages are sent to OpenAI. Use synthetic information for milestone testing. Session history lasts only for this browser connection and is not stored in the public catalog.")
     left, right = st.columns(2)
@@ -52,7 +56,7 @@ def render_m2(database):
             st.code("# In the local .env file\nOPENAI_API_KEY=<your key, kept locally>\nMODEL_ENABLED=true", language="text")
         allow_model = st.checkbox("Allow paid model calls for this session", value=False,
             key="m2_allow_model", disabled=not settings.ready)
-        st.caption("Only Save profile and generate, Generate / rerun, and chat submission can start requests. Maximum two model calls per turn and twenty per session; automatic retries are disabled.")
+        st.caption("Only profile submission, Generate / rerun, and chat submission start requests. ReAct: up to 16 model calls and 20 tools per task, retained across follow-ups; all modes share the 20-model-call session limit. Model retries are disabled.")
         st.write(f"Model requests in this session: {len(session.usage)}")
         if session.usage:
             show_table([{"Purpose": u["purpose"], "Status": u["status"], "Input tokens": u["input_tokens"],
@@ -75,7 +79,8 @@ def render_m2(database):
     def run(**kwargs):
         with st.spinner("Checking the current profile and evidence..."):
             response = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
-                settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(), **kwargs)
+                settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(),
+                strategy=strategy,data_mode=data_mode,**kwargs)
         st.session_state["m2_last_response"] = response
         st.rerun()
     if form:
@@ -87,6 +92,13 @@ def render_m2(database):
             st.error("A GPA, test score, budget or date is invalid for the selected format. Correct the form and submit again.")
     if st.button("Generate / rerun", key="m2_generate", disabled=session.active):
         run()
+    if session.agent_task:
+        task=session.agent_task
+        st.caption(f"Current task: {task.tools}/{task.limits['max_tools']} tools · {task.models}/{task.limits['max_models']} model calls · {task.pages}/{task.limits['max_pages']} page requests · {task.turns}/{task.limits['max_turns']} user turns")
+        if task.waiting:st.info('This task is paused for your input. Update the profile form or answer below; completed actions and budgets are retained.')
+        if st.button('Start new task (keep profile)',key='m4_new_task',disabled=session.active):
+            session.agent_task=None
+            st.info('The next submission starts a fresh task. Your profile and the session model limit are retained.')
     with st.expander("Current structured profile", expanded=False):
         st.json(session.profile.model_dump(mode="json"))
     st.subheader("Conversation")
@@ -101,13 +113,19 @@ def render_m2(database):
         st.warning(latest.get("message", "More information is needed."))
     result = session.current_result
     if result and result["profile_version"] == session.profile.profile_version:
-        render_result(result, programs, sources)
+        evidence_sources=session.agent_task.sources if session.agent_task and result.get('task_id')==session.agent_task.task_id else sources
+        st.caption(f"Result method: {result['strategy']} · Evidence: {result['data_mode']} · Live receipt date: {result.get('live_verified_at') or 'No live field verification recorded'}")
+        if result.get('evidence_notice'):st.caption(result['evidence_notice'])
+        render_result(result, programs, evidence_sources)
     elif session.previous_result:
         st.info("Previous checks belong to an older profile and are no longer current. Submit the updated profile to recompute them.")
     if latest:
         with st.expander("Last request details", expanded=False):
             st.write(f"Status: {latest['status']} · Model: {latest['model_status']} · Model calls: {latest['model_calls']} · Service time: {latest['service_latency_ms']:,.0f} ms")
             st.json({key: latest.get(key) for key in ["request_id", "run_id", "profile_version", "validation_errors", "model_config"]})
+            if latest.get('task_usage'):
+                st.write('Tool activity and cumulative task usage')
+                st.json(latest['task_usage'])
     st.download_button("Download current session JSON", json.dumps(export_session(session), ensure_ascii=False, indent=2),
         file_name="gradmatch_m2_session.json", mime="application/json", key="m2_export")
     st.caption("The download contains the profile and messages you entered. Keep it private if you used personal information.")

@@ -51,6 +51,7 @@ class Session:
     pending_questions: list[dict] = field(default_factory=list)
     usage: list[dict] = field(default_factory=list)
     active: bool = False
+    agent_task: object | None = field(default=None, repr=False)
 
     def event(self, kind: str, **payload):
         self.events.append({"event_id": str(uuid4()), "timestamp": datetime.now(timezone.utc).isoformat(),

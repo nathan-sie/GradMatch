@@ -1,0 +1,114 @@
+{
+  "files": [
+    {
+      "path": "app.py",
+      "sha256": "9237b0177a996c3029121135b8cf2ce8d1aae6a02e0254f6c1a473a42f04a542"
+    },
+    {
+      "path": "config/agent.json",
+      "sha256": "76b14decc552339d4d031e06072d14fc52735fd31bef68c6097732da282a95b4"
+    },
+    {
+      "path": "config/app.json",
+      "sha256": "880860cfa19de57f88950e906604fc69c84f6f499bc4520a66066712ca4e4917"
+    },
+    {
+      "path": "config/ranking_rubric.md",
+      "sha256": "b27a76c711b2e131741f0de8eaf49fec4cbaa6a611b60628856b4908f37887a3"
+    },
+    {
+      "path": "gradmatch/__init__.py",
+      "sha256": "f4d017d6187c49123712783785299186c1a3cb12a81c4f714aece1a8343baae7"
+    },
+    {
+      "path": "gradmatch/agent.py",
+      "sha256": "85782110068c5ac4efe0ac4a750dc7b86a9d3d8851342ae0116c752b0d307eed"
+    },
+    {
+      "path": "gradmatch/agent_models.py",
+      "sha256": "8f1b94500d4453823bd951c5bc07302fdeb5f6f0032f891672bb625bc5cd868e"
+    },
+    {
+      "path": "gradmatch/bootstrap.py",
+      "sha256": "6ff5d91a33dfb008cafda7de43d2bcd9f6fc90e42759622c44a3a68a799be2ad"
+    },
+    {
+      "path": "gradmatch/catalog.py",
+      "sha256": "7cef4f2ed8558b9024fc4de2a26e17b15e9264a51be538840834d3f4312a7a9b"
+    },
+    {
+      "path": "gradmatch/config.py",
+      "sha256": "797a8b8bbfba93b4009f0b14fa0eb06a32f8f04c1fc55e12f4d36a2ca1ec90f6"
+    },
+    {
+      "path": "gradmatch/constraints.py",
+      "sha256": "3e19ef9f6d7a573fa46ac3a0a614b20e2a86cbb45bad8cfcec1da62261ade29b"
+    },
+    {
+      "path": "gradmatch/pdf_reader.py",
+      "sha256": "c521f7fefddfd1fc98087907faff0696f8a2d35574c16a57814ba19ab85dc80d"
+    },
+    {
+      "path": "gradmatch/providers.py",
+      "sha256": "9ffc9e3f408b4276b05197bcb149aea0d1e72bad5e4794edfc758bcd689a12c6"
+    },
+    {
+      "path": "gradmatch/ranking.py",
+      "sha256": "f94a139a0cb380ca27e4cee48d5254ae1a42776aaff82328d6e81cb48f44e6e8"
+    },
+    {
+      "path": "gradmatch/schemas.py",
+      "sha256": "bf2099ad126287bc7b0ecbc05cb055859b8a0ef6a1dbca3c403ba658385cd6dc"
+    },
+    {
+      "path": "gradmatch/service.py",
+      "sha256": "cd9c58cb0e76724229753fc61bc0d708f02b1f845ecca9ec9db802b9ad83e978"
+    },
+    {
+      "path": "gradmatch/session.py",
+      "sha256": "f5b6faf207ea059ff0ab762b2e9706decece54a0f1003953b1feb78a3d061d93"
+    },
+    {
+      "path": "gradmatch/storage.py",
+      "sha256": "1af06dbf563c3d8b0c3f3037abd38d1a885fe46580ee0cf679e1b556566a9661"
+    },
+    {
+      "path": "gradmatch/tiers.py",
+      "sha256": "6ce16d8a46c0c55ba360bd108ba0eee15c8b183ea98095dc9c918b21442f319f"
+    },
+    {
+      "path": "gradmatch/ui_m1.py",
+      "sha256": "c4ed8898959727249692027ede8b3e1ccb298f1d97724458db8f5cb05511d0c7"
+    },
+    {
+      "path": "gradmatch/ui_m2.py",
+      "sha256": "fe174ba4c9ee869d84eec6533e67b25ad8c4c6f2825baaec016ee30007736d8f"
+    },
+    {
+      "path": "gradmatch/validation.py",
+      "sha256": "9b62df6bfc893a4f4da9234f743fb8298eb165ebe42dd18eb8e6791163c2c111"
+    },
+    {
+      "path": "gradmatch/web_reader.py",
+      "sha256": "99c899c196084921a3d9247fb0f116a99a4c232acb7e9ebc71b2c0456c3b5478"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "c6156fa767f96ddccb05612dd9c809c773372a14f288718a7d3a810995fc0cf9"
+    },
+    {
+      "path": "scripts/run_task.py",
+      "sha256": "4f05752f81a9d5ba7e4f1a32b034ff4780731a53aaaea24a5529f76b67dbe712"
+    },
+    {
+      "path": "scripts/verify_m4.py",
+      "sha256": "ad05f8234a8fcc8fd6765726b4af68ec89ad6b4e894fc660a0f652ff115e298d"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "de8b955e76c76369752b8f13a1757c7c9e3e94618347f54981677de82c0c7b06"
+    }
+  ],
+  "combined_sha256": "8aaaa927aa3b73062ae0c7af2bfb2eeabfac781dbbd72313ca7fee409e1476ea",
+  "text_line_endings": "LF per repository attributes; source logic unchanged by newline normalization."
+}

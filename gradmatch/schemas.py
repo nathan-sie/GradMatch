@@ -281,7 +281,7 @@ class ConstraintReport(Record):
     program_id: str
     profile_version: int
     as_of_date: date
-    data_mode: Literal["snapshot"] = "snapshot"
+    data_mode: Literal["snapshot", "live"] = "snapshot"
     checks: list[ConstraintCheck]
     tuition: TuitionEstimate
     hard_checks_status: CheckStatus

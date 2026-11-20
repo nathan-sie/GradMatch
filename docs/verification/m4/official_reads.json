@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://www.ece.uw.edu/academics/pmp/requirements/",
+    "retrieved_at": "2026-11-20T00:43:22.475916+00:00",
+    "content_type": "text/html",
+    "raw_sha256": "2be97b9c70eda0b12e76256dc6c7be919a1885a7de6fcb76bd32e06ecc887b1b",
+    "text_sha256": "f5c7454ce93b25096cabd68641e7b1f3bf21a4497755d4eeaa6089a9d61a626d",
+    "page_requests": 1,
+    "extracted_characters": 1380
+  },
+  {
+    "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds-additional-information-7.pdf",
+    "retrieved_at": "2026-11-20T00:43:23.808641+00:00",
+    "content_type": "application/pdf",
+    "raw_sha256": "069ae415d76be2b7afc06767627304c0ce3dd5ed4bd5147340d0b8705a2cadbb",
+    "text_sha256": "0ce983093caf16afb61cb91a801a50de3904c0381f69bc42cad271794886bd49",
+    "page_requests": 1,
+    "extracted_characters": 9032
+  }
+]

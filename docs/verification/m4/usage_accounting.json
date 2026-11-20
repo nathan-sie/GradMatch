@@ -1,0 +1,411 @@
+{
+  "actual_distinct_model_requests": 16,
+  "input_tokens": 37090,
+  "output_tokens": 1898,
+  "estimated_usd": "0.03635850",
+  "pricing_basis": "config/app.json dated 2026-11-15; estimates from actual response token usage, not invoices",
+  "development_and_failures": {
+    "requests": 10,
+    "estimated_usd": "0.01963500"
+  },
+  "approved_extra_allowance": 8,
+  "fresh_acceptance_requests": 6,
+  "unused_extra_allowance": 2,
+  "receipts": [
+    {
+      "first_seen_attempt": "live-01",
+      "usage": {
+        "call_id": "0976ab32-3f81-43f5-a3eb-91bf8c67cfbf",
+        "purpose": "interpret",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1954,
+        "output_tokens": 47,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.001677",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2984.0,
+        "response_id": "resp_002caed3f3e5060d016aff70f117b487d09181dbe30f88a7ba"
+      }
+    },
+    {
+      "first_seen_attempt": "live-02",
+      "usage": {
+        "call_id": "e459f600-e85b-4207-8d30-207bea7f471c",
+        "purpose": "interpret",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1954,
+        "output_tokens": 40,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0016455",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2036297.0,
+        "response_id": "resp_01139e08f33336e1016aff7158f20c87d09a8554177a428e42"
+      }
+    },
+    {
+      "first_seen_attempt": "live-03",
+      "usage": {
+        "call_id": "aa0fb0c1-5cf1-430b-85f6-2653871dfe33",
+        "purpose": "interpret",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1954,
+        "output_tokens": 50,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0016905",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2703.0,
+        "response_id": "resp_0b95c279fbd71707016aff79ecee4087d0a1552bdaae0c9b32"
+      }
+    },
+    {
+      "first_seen_attempt": "live-04",
+      "usage": {
+        "call_id": "aa673d6c-0112-4c98-be10-bc2890b961b6",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1594,
+        "output_tokens": 82,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0015645",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2266.0,
+        "response_id": "resp_0b94bea1a8246d89016aff7a47979c87d0b51537bfd696c215"
+      }
+    },
+    {
+      "first_seen_attempt": "live-04",
+      "usage": {
+        "call_id": "d2596b96-9071-4107-b654-cc8ee4aa80cf",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2070,
+        "output_tokens": 181,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.002367",
+        "cost_status": "estimated_from_published_prices",
+        "status": "error",
+        "duration_ms": 2500.0,
+        "response_id": "resp_048a7eff75a0e837016aff7a49696487d083af6343f30fe794"
+      }
+    },
+    {
+      "first_seen_attempt": "live-05-recovered",
+      "usage": {
+        "call_id": "9ab0e645-0683-4213-bfc4-9c29e5dc42da",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2135,
+        "output_tokens": 195,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00247875",
+        "cost_status": "estimated_from_published_prices",
+        "status": "error",
+        "duration_ms": 3313.0,
+        "response_id": "resp_0711e2fa7bb7490c016aff7b10bd5887d09387ad8280be048e",
+        "output_validation_errors": [
+          {
+            "location": [],
+            "type": "json_invalid"
+          }
+        ]
+      }
+    },
+    {
+      "first_seen_attempt": "live-06-normalized",
+      "usage": {
+        "call_id": "b0dbcf16-84d1-4ead-aaa4-374c39b8538d",
+        "purpose": "extract",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 808,
+        "output_tokens": 78,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.000957",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2125.0,
+        "response_id": "resp_06dc5508fd6404d4016aff7b8194d887d0852573c7d062448e"
+      }
+    },
+    {
+      "first_seen_attempt": "live-06-normalized",
+      "usage": {
+        "call_id": "8fe08859-320f-4939-9faf-a51811e5d6b5",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2808,
+        "output_tokens": 201,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0030105",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2031.0,
+        "response_id": "resp_01e1e76a880bce1b016aff7b83500c87d0919d866dd52e0695",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-06-normalized",
+      "usage": {
+        "call_id": "063a12a9-c593-46cf-897d-7851e5ce46b2",
+        "purpose": "extract",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1324,
+        "output_tokens": 94,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.001416",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 1407.0,
+        "response_id": "resp_05c3f06b5fd2fe9e016aff7b85b1e087d0b8d745917108fd3d"
+      }
+    },
+    {
+      "first_seen_attempt": "live-06-normalized",
+      "usage": {
+        "call_id": "7867667e-a269-4934-bbe4-bddc415520f2",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2985,
+        "output_tokens": 131,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00282825",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 1718.0,
+        "response_id": "resp_027a9fd65a08169a016aff7b87074887d0981db270511fced0",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "44ff27d3-b68a-40ed-beaa-90e2a180460d",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 1614,
+        "output_tokens": 163,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.001944",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 3312.0,
+        "response_id": "resp_0037e48b525f3cb3016aff97af6ddc87d088ac6b6c2e46f946",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "3d855517-71f6-4ee0-bfe0-14d151151538",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2115,
+        "output_tokens": 189,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00243675",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2391.0,
+        "response_id": "resp_08fb34e218e2bdd1016aff97b1fa1887d09655a6757cb0840d",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "58784e9e-099f-4958-a160-a86170f09856",
+        "purpose": "extract",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 856,
+        "output_tokens": 78,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.000993",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 2782.0,
+        "response_id": "resp_0512baf0371007d4016aff97b5573887d09d67d95b86c43d53"
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "dc355188-390e-4b0d-84df-bfcfc2305102",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 2778,
+        "output_tokens": 155,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.002781",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 1516.0,
+        "response_id": "resp_06837f2f03d3d8c3016aff97b746b087d08dcba58d478efa55",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "f2a75cdb-b9c0-42b9-a541-35d6af28b43a",
+        "purpose": "act",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 3765,
+        "output_tokens": 143,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.00346725",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 1546.0,
+        "response_id": "resp_0d065d56ffe32f90016aff97b8c92c87d09e285ddecd8bde40",
+        "identical_output_copies": 2
+      }
+    },
+    {
+      "first_seen_attempt": "live-07-scoped",
+      "usage": {
+        "call_id": "aff5df9b-e55f-4583-8b7f-4b3497a7e8d7",
+        "purpose": "rank",
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 6376,
+        "output_tokens": 71,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_cost_usd": "0.0051015",
+        "cost_status": "estimated_from_published_prices",
+        "status": "completed",
+        "duration_ms": 1469.0,
+        "response_id": "resp_0222cf481dd22398016aff97ba6d0087d08363d4f3ea7a3148"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": "live-01",
+      "task_id": "d94c22e2-3882-4b89-9f15-93470b1bbdd1",
+      "new_paid_requests": 1,
+      "cumulative_task_requests": 1,
+      "final_status": "An action or profile input was invalid. No unvalidated result was displayed.",
+      "stop_reason": null,
+      "model_receipts": [
+        "resp_002caed3f3e5060d016aff70f117b487d09181dbe30f88a7ba"
+      ],
+      "actual_session_sha256": "e540e0e3f12061044fec66db6c644505b8ecf7404d97db7c2f1fbec96c8c511d"
+    },
+    {
+      "attempt": "live-02",
+      "task_id": "9f6f75d0-ad06-4268-9723-0429fcbcf8d8",
+      "new_paid_requests": 1,
+      "cumulative_task_requests": 1,
+      "final_status": "The cumulative task budget was reached. Review the partial validated result or start a new task explicitly.",
+      "stop_reason": "SERVICE_TIME_LIMIT",
+      "model_receipts": [
+        "resp_01139e08f33336e1016aff7158f20c87d09a8554177a428e42"
+      ],
+      "actual_session_sha256": "c03c99cc9a085fff72389fc5e15543343d6cc9817cd26487d0f9e9b1af9caa7e"
+    },
+    {
+      "attempt": "live-03",
+      "task_id": "d372dde6-e6e7-4190-b18d-ecdc1125fc06",
+      "new_paid_requests": 1,
+      "cumulative_task_requests": 1,
+      "final_status": "An action or profile input was invalid. No unvalidated result was displayed.",
+      "stop_reason": null,
+      "model_receipts": [
+        "resp_0b95c279fbd71707016aff79ecee4087d0a1552bdaae0c9b32"
+      ],
+      "actual_session_sha256": "e571110618383769dfadda3f1afce77e6a985dfbed965e8573e4ca249080dbff"
+    },
+    {
+      "attempt": "live-04",
+      "task_id": "8d56614b-7065-4022-82bc-8b97def7e55a",
+      "new_paid_requests": 2,
+      "cumulative_task_requests": 2,
+      "final_status": "The model request or structured output was invalid. No unvalidated draft was displayed.",
+      "stop_reason": null,
+      "model_receipts": [
+        "resp_0b94bea1a8246d89016aff7a47979c87d0b51537bfd696c215",
+        "resp_048a7eff75a0e837016aff7a49696487d083af6343f30fe794"
+      ],
+      "actual_session_sha256": "aea312e27587e5a1dfe7e6369abb2f0cdeac126aea71d50254f113b3c13d9233"
+    },
+    {
+      "attempt": "live-05-recovered",
+      "task_id": "8d56614b-7065-4022-82bc-8b97def7e55a",
+      "new_paid_requests": 1,
+      "cumulative_task_requests": 3,
+      "final_status": "The model structured output was rejected. No unvalidated draft was displayed.",
+      "stop_reason": null,
+      "model_receipts": [
+        "resp_0711e2fa7bb7490c016aff7b10bd5887d09387ad8280be048e"
+      ],
+      "actual_session_sha256": "097bcb54595e7995f049f276a01952e6cc302b708e4b0bc920705e90eec4606c"
+    },
+    {
+      "attempt": "live-06-normalized",
+      "task_id": "8d56614b-7065-4022-82bc-8b97def7e55a",
+      "new_paid_requests": 4,
+      "cumulative_task_requests": 7,
+      "final_status": "The cumulative task budget was reached. Review the partial validated result or start a new task explicitly.",
+      "stop_reason": "MODEL_CALL_LIMIT",
+      "model_receipts": [
+        "resp_06dc5508fd6404d4016aff7b8194d887d0852573c7d062448e",
+        "resp_01e1e76a880bce1b016aff7b83500c87d0919d866dd52e0695",
+        "resp_05c3f06b5fd2fe9e016aff7b85b1e087d0b8d745917108fd3d",
+        "resp_027a9fd65a08169a016aff7b87074887d0981db270511fced0"
+      ],
+      "actual_session_sha256": "c5bdb303f510eb994dbc799831c5c67f5aaf118b32e0a333516331020cf8d3a3"
+    },
+    {
+      "attempt": "live-07-scoped",
+      "task_id": "ddee39aa-0965-43bf-ac96-fc640007525f",
+      "new_paid_requests": 6,
+      "cumulative_task_requests": 6,
+      "final_status": "Profile v1: 0 formal recommendations, 1 pending candidates, 0 excluded. Evidence is insufficient for a complete tiered shortlist. Pending candidates are not formal recommendations.",
+      "stop_reason": "finished",
+      "model_receipts": [
+        "resp_0037e48b525f3cb3016aff97af6ddc87d088ac6b6c2e46f946",
+        "resp_08fb34e218e2bdd1016aff97b1fa1887d09655a6757cb0840d",
+        "resp_0512baf0371007d4016aff97b5573887d09d67d95b86c43d53",
+        "resp_06837f2f03d3d8c3016aff97b746b087d08dcba58d478efa55",
+        "resp_0d065d56ffe32f90016aff97b8c92c87d09e285ddecd8bde40",
+        "resp_0222cf481dd22398016aff97ba6d0087d08363d4f3ea7a3148"
+      ],
+      "actual_session_sha256": "c7eb26a6afcd82da20cf83e4e4e7020c8496bb3cab4e67e7022d2d29859ffdb7"
+    }
+  ]
+}

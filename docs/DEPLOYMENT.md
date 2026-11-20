@@ -1,5 +1,7 @@
 # Streamlit Community Cloud deployment
 
+M4 implementation update (2026-11-19): main now includes the ReAct/fixed selector, snapshot/live selector and connection-local official-evidence overlays. The catalog remains 10 programs / 30 reviewed snapshots. LangGraph checkpoints and applicant data remain in each connection; durable restart recovery of private data is not promised. Paid requests still require session consent. See docs/verification/M4.md for current acceptance. The original M3 deployment steps below are historical; expect release M4-2026-11-19 after the M4 deployment update.
+
 Release: M3-2026-11-15. Repository: **nathan-sie/GradMatch**. Branch: **main**. Entrypoint: **app.py**. Python: **3.12**.
 
 ## Data and sessions

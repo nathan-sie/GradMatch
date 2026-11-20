@@ -2,6 +2,7 @@
 
 from datetime import date
 import json
+import re
 from time import monotonic
 from uuid import uuid4
 
@@ -10,13 +11,76 @@ from pydantic import ValidationError
 from gradmatch.constraints import check_constraints
 from gradmatch.providers import ModelUnavailable, OpenAIProvider
 from gradmatch.ranking import RankingDraft, retrieve
-from gradmatch.session import LEAF_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
+from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
 
 
+def prepare_input(session, *, changes, unknown_fields, message, provider, settings):
+    """Shared explicit input boundary; tools never call this function."""
+    references = []
+    input_intent = None
+    if changes is not None:
+        session.update(changes, unknown_fields=unknown_fields)
+    if message is not None:
+        if not message.strip() or len(message) > settings.limits["max_message_characters"]:
+            raise ValueError("Enter a message between 1 and 4,000 characters.")
+        session.messages.append({"role": "user", "content": message})
+        patch = quick_patch(message)
+        # Explicit read-only requests need no paid mutation interpreter in any strategy.
+        marker=r"\b(?:do not|don't) (?:change|modify|update) my profile\b"
+        remainder=re.sub(marker,'',message.lower())
+        if re.search(marker,message.lower()) and not re.search(r'\b(change|set|update|increase|decrease|lower|raise|switch|replace)\b',remainder):
+            prior=session.current_result or session.previous_result or {}
+            known=prior.get('recommendations',[])+prior.get('pending_verification',[])
+            patch=ProfilePatch(intent='explain_previous',operations=[],ambiguous_fields=[],
+                referenced_program_ids=[p['program_id'] for p in known if p['program_id'] in message])
+        if patch is None and message.lower().strip() not in {"generate", "generate recommendations", "rerun checks"}:
+            if not settings.ready and isinstance(provider, OpenAIProvider):
+                raise ModelUnavailable("Free-text interpretation needs the configured model. You can still edit the profile form or use 'Change my tuition budget to 50000'.")
+            prior = session.current_result or session.previous_result or {}
+            known = prior.get("recommendations", []) + prior.get("pending_verification", [])
+            patch = provider.generate(ProfilePatch, "interpret", {"message": message,
+                "profile": session.profile.model_dump(mode="json"), "pending_questions": session.pending_questions,
+                "previous_programs": [{"program_id": p["program_id"], "identity": p["identity"]} for p in known],
+                "allowed_leaf_fields": sorted(LEAF_FIELDS)}, session)
+            allowed_references = {p["program_id"] for p in known}
+            if not set(patch.referenced_program_ids) <= allowed_references:
+                raise ValueError("That program reference is not in the previous result. Please use its exact program name.")
+            if not patch.operations and patch.intent in {"update_profile", "answer_question"}:
+                if not patch.ambiguous_fields and explanation_only(message):
+                    patch.intent = "explain_previous"
+                else:
+                    raise ValueError("No unambiguous supported change was found. Please use the profile form.")
+        if patch is not None:
+            if not patch.operations and patch.intent=='explain_previous':
+                invalid=[f for f in patch.ambiguous_fields if f not in ROOT_FIELDS|LEAF_FIELDS]
+                if invalid:
+                    session.event('catalog_ambiguity_deferred',fields=invalid)
+                    patch.ambiguous_fields=[f for f in patch.ambiguous_fields if f in ROOT_FIELDS|LEAF_FIELDS]
+            input_intent = patch.intent
+            # Budget scope was established by the explicitly labelled form. Never reinterpret a total/living-cost budget.
+            lower = message.lower()
+            if any(op.field == "tuition_budget_usd" for op in patch.operations) and any(
+                    word in lower for word in ["living", "total budget", "cny", "rmb", "eur", "人民币", "生活费", "总预算"]):
+                raise ValueError("Please state a tuition-only budget in USD, excluding living costs. No budget change was applied.")
+            apply_patch(session, patch, message)
+            references = patch.referenced_program_ids
+    return references, input_intent
+
+
 def start_task(session: Session, *, request_id: str, programs, sources, settings, as_of: date,
-               changes=None, unknown_fields=None, message=None, provider=None):
+               changes=None, unknown_fields=None, message=None, provider=None,
+               strategy=None, data_mode="snapshot", new_task=False, fetcher=None):
+    legacy=strategy is None and data_mode=='snapshot'
+    strategy=strategy or 'fixed'
+    if strategy not in {"fixed", "react"} or data_mode not in {"snapshot", "live"}:
+        raise ValueError("Unsupported execution strategy or data mode.")
+    if not legacy:
+        from gradmatch.agent import run_task
+        return run_task(session, request_id=request_id, programs=programs, sources=sources, settings=settings,
+            as_of=as_of, changes=changes, unknown_fields=unknown_fields, message=message, provider=provider,
+            strategy=strategy, data_mode=data_mode, new_task=new_task, fetcher=fetcher)
     if request_id in session.receipts:
         return session.receipts[request_id]
     if session.active:
@@ -30,39 +94,8 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
     session.event("run_started", run_id=run_id, request_id=request_id, strategy="fixed")
     result = None
     try:
-        if changes is not None:
-            session.update(changes, unknown_fields=unknown_fields)
-        if message is not None:
-            if not message.strip() or len(message) > settings.limits["max_message_characters"]:
-                raise ValueError("Enter a message between 1 and 4,000 characters.")
-            session.messages.append({"role": "user", "content": message})
-            patch = quick_patch(message)
-            if patch is None and message.lower().strip() not in {"generate", "generate recommendations", "rerun checks"}:
-                if not settings.ready and isinstance(provider, OpenAIProvider):
-                    raise ModelUnavailable("Free-text interpretation needs the configured model. You can still edit the profile form or use 'Change my tuition budget to 50000'.")
-                prior = session.current_result or session.previous_result or {}
-                known = prior.get("recommendations", []) + prior.get("pending_verification", [])
-                patch = provider.generate(ProfilePatch, "interpret", {"message": message,
-                    "profile": session.profile.model_dump(mode="json"), "pending_questions": session.pending_questions,
-                    "previous_programs": [{"program_id": p["program_id"], "identity": p["identity"]} for p in known],
-                    "allowed_leaf_fields": sorted(LEAF_FIELDS)}, session)
-                allowed_references = {p["program_id"] for p in known}
-                if not set(patch.referenced_program_ids) <= allowed_references:
-                    raise ValueError("That program reference is not in the previous result. Please use its exact program name.")
-                if not patch.operations and patch.intent in {"update_profile", "answer_question"}:
-                    if not patch.ambiguous_fields and explanation_only(message):
-                        patch.intent = "explain_previous"
-                    else:
-                        raise ValueError("No unambiguous supported change was found. Please use the profile form.")
-            if patch is not None:
-                input_intent = patch.intent
-                # Budget scope was established by the explicitly labelled form. Never reinterpret a total/living-cost budget.
-                lower = message.lower()
-                if any(op.field == "tuition_budget_usd" for op in patch.operations) and any(
-                        word in lower for word in ["living", "total budget", "cny", "rmb", "eur", "人民币", "生活费", "总预算"]):
-                    raise ValueError("Please state a tuition-only budget in USD, excluding living costs. No budget change was applied.")
-                apply_patch(session, patch, message)
-                references = patch.referenced_program_ids
+        references, input_intent = prepare_input(session, changes=changes, unknown_fields=unknown_fields,
+            message=message, provider=provider, settings=settings)
         needed = questions(session.profile, programs, as_of=as_of, unknown_fields=session.unknown_fields)
         session.pending_questions = needed
         if needed:
@@ -150,7 +183,7 @@ def response_text(result):
     if result["status"] == "needs_input":
         return result.get("message", "More information is needed.") + "\n\n" + "\n".join(
             "- " + q["text"] for q in result.get("pending_questions", []))
-    if result["status"] in {"error", "busy"}:
+    if result["status"] in {"error", "busy", "budget_exhausted", "stopped"}:
         return result.get("message", "The request did not complete.")
     counts = len(result.get("recommendations", [])), len(result.get("pending_verification", [])), len(result.get("excluded", []))
     conclusion = {"infeasible": "Every program in the current catalog has at least one verified hard failure under your conditions.",
@@ -165,4 +198,5 @@ def export_session(session: Session):
     return {"session_id": session.session_id, "profile": session.profile.model_dump(mode="json"),
         "declared_unknown_fields": sorted(session.unknown_fields), "messages": session.messages,
         "events": session.events, "usage": session.usage, "result": session.current_result,
+        "agent_task": session.agent_task.summary() if session.agent_task else None,
         "notice": "Includes the profile and conversation you supplied. Model keys and raw provider errors are never exported."}

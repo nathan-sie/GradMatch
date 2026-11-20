@@ -1,0 +1,57 @@
+{
+  "source_records": [
+    {
+      "source_id": "live-7a25f682532d6861dd9e485d",
+      "program_id": "uw-ece-msece-pmp-seattle",
+      "url": "https://www.ece.uw.edu/academics/pmp/requirements/",
+      "title": "Degree Requirements  |  UW Department of Electrical & Computer Engineering",
+      "source_type": "official_program",
+      "retrieved_at": "2026-11-20T00:43:30.003619Z",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "field_groups": [
+        "credits"
+      ],
+      "verified_values": {
+        "credits": {
+          "required_credits": "45"
+        }
+      },
+      "source_excerpt": "The Professional Master\u2019s Program requires 45 credits to graduate, comprised of both coursework credits and colloquium seminar credits.",
+      "fact_summary": "Model-extracted official passage; typed bindings and exact quote validated. Semantic scope still needs review.",
+      "locator": "Exact passage in bounded live document text",
+      "snapshot_path": "session://live-7a25f682532d6861dd9e485d",
+      "content_hash": "f5c7454ce93b25096cabd68641e7b1f3bf21a4497755d4eeaa6089a9d61a626d",
+      "raw_response_sha256": "2be97b9c70eda0b12e76256dc6c7be919a1885a7de6fcb76bd32e06ecc887b1b"
+    }
+  ],
+  "profile_preserved": true,
+  "tuition_before": {
+    "lower_usd": null,
+    "upper_usd": null,
+    "formula": null,
+    "rate_year": null,
+    "reason_code": "MISSING_TUITION_EVIDENCE",
+    "assumptions": [
+      "Estimated from 45 credits at the published 2026\u20132027 rate. Excludes future increases, AEP, living costs, and separately charged fees."
+    ],
+    "mandatory_fees_usd": null
+  },
+  "tuition_after": {
+    "lower_usd": "50850",
+    "upper_usd": "50850",
+    "formula": "1130\u20131130 USD \u00d7 45\u201345 (per_credit)",
+    "rate_year": "2026-2027",
+    "reason_code": "PUBLISHED_RATE_ESTIMATE",
+    "assumptions": [
+      "Estimated from 45 credits at the published 2026\u20132027 rate. Excludes future increases, AEP, living costs, and separately charged fees."
+    ],
+    "mandatory_fees_usd": null
+  },
+  "tuition_source_ids": [
+    "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32",
+    "live-7a25f682532d6861dd9e485d"
+  ],
+  "rate_scope": "Existing reviewed 2026-2027 rate snapshot, not a live rate refresh or final-price guarantee."
+}
