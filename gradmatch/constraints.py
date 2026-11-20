@@ -93,9 +93,9 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("intake", "unknown", "MISSING_INTAKE", "Specify the intake year and term.")
     elif not supported("intake"):
         add("intake", "unknown", "INTAKE_NOT_VERIFIED", "This intake is not verified. Prior-year information is not automatically carried forward.")
-    elif profile.intake in program.closed_intakes:
+    elif profile.intake.key in {i.key for i in program.closed_intakes}:
         add("intake", "fail", "INTAKE_CLOSED", "Official evidence indicates that this intake is closed.")
-    elif profile.intake in program.supported_intakes:
+    elif profile.intake.key in {i.key for i in program.supported_intakes}:
         add("intake", "pass", "INTAKE_SUPPORTED", "Official information supports this intake.")
     else:
         add("intake", "unknown", "INTAKE_MISMATCH", "The available evidence does not establish the applicant's selected intake.")
@@ -204,7 +204,7 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
                 or (audience == "international_full_time" and profile.applicant_category == "international" and profile.study_mode == "full_time")
                 or (audience == "part_time" and profile.study_mode == "part_time"))
 
-    rounds = [round_ for round_ in program.deadlines if round_.intake == profile.intake and round_applies(round_)]
+    rounds = [round_ for round_ in program.deadlines if profile.intake is not None and round_.intake.key == profile.intake.key and round_applies(round_)]
     if not supported("deadline") or not rounds:
         add("deadline", "unknown", "DEADLINE_NOT_VERIFIED", "No verified deadline applies to this intake and applicant category yet.")
     elif any(round_.date > as_of for round_ in rounds):

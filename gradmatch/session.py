@@ -64,7 +64,9 @@ class Session:
         data = self.profile.model_dump(mode="json")
         data.update(deepcopy(changes))
         candidate = ApplicantProfile.model_validate(data)
-        changed = [key for key in changes if getattr(candidate, key) != getattr(self.profile, key)]
+        candidate_values = candidate.model_dump(mode="json")
+        current_values = self.profile.model_dump(mode="json")
+        changed = [key for key in changes if candidate_values[key] != current_values[key]]
         new_unknown = set(unknown_fields) if unknown_fields is not None else self.unknown_fields - set(changes)
         if changed or new_unknown != self.unknown_fields:
             candidate.profile_version = self.profile.profile_version + 1
@@ -110,7 +112,7 @@ def questions(profile: ApplicantProfile, programs, *, as_of: date, unknown_field
         ask("degree", "What is your degree completion and recognized-bachelor/equivalency status? Please use the degree section of the form.")
     if any(p.gre_policy == "required" for p in candidates) and (profile.gre is None or profile.gre.test_date is None):
         ask("gre", "A candidate requires GRE scores. Provide the report and test date, or explicitly mark them unknown.")
-    relevant = [p for p in programs if p.english and any(d.intake == profile.intake for d in p.deadlines)]
+    relevant = [p for p in programs if p.english and any(profile.intake is not None and d.intake.key == profile.intake.key for d in p.deadlines)]
     if relevant and profile.english_status == "unknown":
         ask("english", "Which English test/version, score, and test date do you have? If unavailable, select Unknown or Not taken yet explicitly.")
     if profile.english:

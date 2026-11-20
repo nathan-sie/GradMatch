@@ -478,3 +478,26 @@ def test_disabled_model_never_claims_a_plan_or_model_backed_reuse():
     result = run(Session(profile=tiering_profile()), None)
     assert result["model_calls"] == 0 and result["model_status"] == "not_configured"
     assert result["task_usage"]["plan"] is None
+
+
+def test_reloaded_equivalent_intake_compares_by_value_and_does_not_revise_profile():
+    from gradmatch.constraints import check_constraints
+    from gradmatch.schemas import Intake
+    from gradmatch.session import questions
+
+    class ReloadedIntake(Intake):
+        pass
+
+    profile = tiering_profile()
+    profile.intake = ReloadedIntake(year=2027, term="fall")
+    programs, sources = load_seed()
+    program = next(p for p in programs if p.program_id == "cmu-msaii-pittsburgh")
+    assert profile.intake != program.supported_intakes[0]
+    report = check_constraints(profile, program, sources, as_of=AS_OF)
+    assert next(c for c in report.checks if c.rule_id == "intake").status == "pass"
+    assert next(c for c in report.checks if c.rule_id == "deadline").status == "pass"
+    assert report.recommendation_ready and not questions(profile, programs, as_of=AS_OF)
+    session = Session(profile=profile)
+    version = profile.profile_version
+    assert session.update({"intake": {"year": 2027, "term": "fall"}}) == []
+    assert session.profile.profile_version == version

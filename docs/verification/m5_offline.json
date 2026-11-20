@@ -1,6 +1,6 @@
 {
   "milestone": "M5",
-  "verified_at": "2026-11-20T03:25:00.792311+00:00",
+  "verified_at": "2026-11-20T03:31:56.012024+00:00",
   "offline": "passed",
   "actual_cloud": "not_run",
   "milestone_complete": false,
@@ -353,8 +353,8 @@
     ],
     "notice": "Tests shared entry, caps and validator only. No accuracy, latency, token or cost comparison is claimed."
   },
-  "offline_test_count": 174,
-  "code_base_commit": "28d0c60ec13ac837eb6b81e00b0bf91f28cb2f85",
+  "offline_test_count": 175,
+  "code_base_commit": "35ac913",
   "clean_host": [
     {
       "status": "passed",
