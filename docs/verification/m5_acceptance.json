@@ -1,0 +1,35 @@
+{
+  "milestone": "M5",
+  "automated_acceptance": "passed",
+  "user_page_acceptance": "pending",
+  "code_commit": "af9139cce10cadf700a48a8561264f036af8de4c",
+  "offline_checks": 181,
+  "m5_checks": 35,
+  "clean_host_scenarios": [
+    "passed",
+    "passed",
+    "passed"
+  ],
+  "actual_cloud": "passed",
+  "initial_recommendation": "cmu-msaii-pittsburgh / Lottery",
+  "budget_revision": "PROFILE_UPDATED",
+  "budget_exclusion": "cmu-msaii-pittsburgh / TUITION_EXCEEDS_BUDGET",
+  "new_model_requests_for_accepted_flow": 4,
+  "unchanged_reuse_new_model_requests": 0,
+  "paid_disabled_reuse_new_model_requests": 0,
+  "usage_including_failed_runs": {
+    "unique_actual_requests": 12,
+    "including_preserved_failed_requests": 8,
+    "estimated_cost_usd": "0.16432995",
+    "notice": "Eight earlier requests plus four accepted-run requests. The initial two-request trace is a subset of the accepted four and is not added again."
+  },
+  "database_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816",
+  "evidence": {
+    "offline": "m5_offline.json",
+    "cloud": "m5_cloud_accepted.json",
+    "failed_cloud": "m5_cloud_capped.json",
+    "code": "m5_code_fingerprint.json"
+  },
+  "notice": "Milestone functionality acceptance, not a final-project benchmark. Stop for user page acceptance before M6."
+}

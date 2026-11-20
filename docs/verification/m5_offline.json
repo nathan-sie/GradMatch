@@ -1,8 +1,8 @@
 {
   "milestone": "M5",
-  "verified_at": "2026-11-20T03:41:15.313494+00:00",
+  "verified_at": "2026-11-20T03:54:49.906955+00:00",
   "offline": "passed",
-  "actual_cloud": "Eight requests retained; repaired code awaits a fresh hosted acceptance.",
+  "actual_cloud": "not_run",
   "milestone_complete": false,
   "fixture_pilot": {
     "kind": "OFFLINE_FIXTURES_NOT_A_BENCHMARK",
@@ -353,10 +353,9 @@
     ],
     "notice": "Tests shared entry, caps and validator only. No accuracy, latency, token or cost comparison is claimed."
   },
-  "offline_test_count": 178,
-  "code_base_commit": "fa54ccf",
-  "public_sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
-  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816",
+  "offline_test_count": 181,
+  "code_commit": "af9139cce10cadf700a48a8561264f036af8de4c",
+  "report_scope": "Offline suite and fixture pilot only; real hosted acceptance is recorded separately in m5_cloud_accepted.json.",
   "clean_host": [
     {
       "status": "passed",
@@ -380,6 +379,6 @@
       "fresh_session": true
     }
   ],
-  "clean_host_notice": "All three scenarios passed on final M5.2 code e5f2a47 with no model requests.",
-  "code_commit": "e5f2a47fa76ea1810527b637b5f2b537c9f32019"
+  "public_sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816"
 }

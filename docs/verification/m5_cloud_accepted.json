@@ -1,0 +1,230 @@
+{
+  "status": "passed",
+  "checks": {
+    "plan_strategy": true,
+    "real_metered_requests": true,
+    "within_eight_requests": true,
+    "request_count_matches": true,
+    "initial_and_revised_plan": true,
+    "steps_completed": true,
+    "within_replan_cap": true,
+    "validated_result": true,
+    "budget_exclusion": true
+  },
+  "export_sha256": "daf36a4d917c93eab3cb8062a92ea5bb4b4585ecd2a50100a7814270949c1216",
+  "task_id": "a1686cbe-f66e-4ba7-bbe9-2ca3c559add7",
+  "model_requests": 4,
+  "usage": [
+    {
+      "call_id": "98f2cb14-baeb-473e-8e60-b36eebff17f2",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 3764,
+      "output_tokens": 260,
+      "cached_input_tokens": 3584,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0015738",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 3224.75,
+      "response_id": "resp_018e4b9e2dc87a54016affc31a144087d0884185dfc73eb577"
+    },
+    {
+      "call_id": "a1d734c5-f3b5-48c1-8556-9274bab26cbb",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 32961,
+      "output_tokens": 245,
+      "cached_input_tokens": 8960,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.01977525",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2417.38,
+      "response_id": "resp_05b88d5bd61bd4c9016affc31d255087d0b924b975a2db069c"
+    },
+    {
+      "call_id": "017652cb-eec3-4341-a6e0-41d12cfdb184",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 7908,
+      "output_tokens": 362,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.00756",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2890.91,
+      "response_id": "resp_0e52a10927fa943f016affc348765487d087fb627a9a5701de"
+    },
+    {
+      "call_id": "b7988fdf-9cd6-4bbb-a173-bec708336105",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 31484,
+      "output_tokens": 109,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0241035",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 1774.2,
+      "response_id": "resp_0dd07c8cc31c0eed016affc34b018087d0badcad2e1210bc90"
+    }
+  ],
+  "tool_calls": 7,
+  "page_requests": 0,
+  "final_profile_version": 3,
+  "final_status": "insufficient_evidence",
+  "plans": [
+    {
+      "revision": 0,
+      "reason_code": "INITIAL_PLAN",
+      "profile_version": 2,
+      "evidence_version": 0,
+      "status": "superseded",
+      "steps": [
+        {
+          "step_id": "s1",
+          "tool": "search_programs",
+          "status": "done",
+          "done_criteria": [
+            "candidates_available"
+          ],
+          "result_refs": [
+            0
+          ]
+        },
+        {
+          "step_id": "s2",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            1
+          ]
+        },
+        {
+          "step_id": "s3",
+          "tool": "rank_programs",
+          "status": "done",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": [
+            2
+          ]
+        },
+        {
+          "step_id": "s4",
+          "tool": "validate_shortlist",
+          "status": "done",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "revision": 1,
+      "reason_code": "PROFILE_UPDATED",
+      "profile_version": 3,
+      "evidence_version": 0,
+      "status": "completed",
+      "steps": [
+        {
+          "step_id": "s1",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            4
+          ]
+        },
+        {
+          "step_id": "s2",
+          "tool": "rank_programs",
+          "status": "done",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": [
+            5
+          ]
+        },
+        {
+          "step_id": "s3",
+          "tool": "validate_shortlist",
+          "status": "done",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": [
+            6
+          ]
+        }
+      ]
+    }
+  ],
+  "notice": "Sanitized proof from the exported hosted session; no key, messages or full applicant profile included.",
+  "code_commit": "af9139cce10cadf700a48a8561264f036af8de4c",
+  "release": "M5.3-2026-11-19",
+  "initial_acceptance": {
+    "export_sha256": "50d9d2475b70eb6cd5bc5211096c7007560860ff5a354724978cdc9058bc2a7e",
+    "model_requests": 2,
+    "formal_program_ids": [
+      "cmu-msaii-pittsburgh"
+    ],
+    "tier": "Lottery",
+    "replans": 0,
+    "status": "insufficient_evidence"
+  },
+  "budget_acceptance": {
+    "export_sha256": "f0dc07fafc1a361fc3aed6fa934b545d1dc962fe11fd37f8dc3383c918962a76",
+    "new_model_requests": 2,
+    "profile_version": 3,
+    "tuition_budget_usd": "100000",
+    "removed_program_id": "cmu-msaii-pittsburgh",
+    "reason": "TUITION_EXCEEDS_BUDGET",
+    "replans": 1
+  },
+  "unchanged_reuse": {
+    "new_model_requests": 0,
+    "new_tool_calls": 0,
+    "new_replans": 0,
+    "model_status": "reused_validated",
+    "profile_unchanged": true
+  },
+  "estimated_cost_usd": "0.05301255",
+  "input_tokens": 76117,
+  "output_tokens": 976,
+  "check_scope": "Milestone functionality only; not a final-project benchmark or quality comparison.",
+  "all_m5_development_usage": {
+    "unique_actual_requests": 12,
+    "including_preserved_failed_requests": 8,
+    "estimated_cost_usd": "0.16432995",
+    "notice": "Eight earlier requests plus four accepted-run requests. The initial two-request trace is a subset of the accepted four and is not added again."
+  },
+  "paid_run_code_commit": "e5f2a47fa76ea1810527b637b5f2b537c9f32019",
+  "free_mode_reuse": {
+    "status": "passed",
+    "new_model_requests": 0,
+    "new_tool_calls": 0,
+    "new_replans": 0,
+    "model_calls_enabled": false,
+    "profile_unchanged": true,
+    "model_status": "reused_validated"
+  },
+  "provenance_notice": "The initial/budget/paid-enabled reuse sequence ran on M5.2; a free-mode labelling guard then passed 181 checks and the actual final zero-call reuse ran on M5.3. No new model requests were made after those four accepted-run requests."
+}
