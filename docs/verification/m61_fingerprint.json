@@ -1,0 +1,30 @@
+{
+  "base_commit": "771edbb6041a8b418d0657b2388a310460bc8420",
+  "notice": "Exact new implementation/input files are hashed below. The Git commit containing this file records the implementation. CRLF is normalized to LF.",
+  "files": [
+    {
+      "path": "gradmatch/catalog_audit.py",
+      "sha256": "39e06b1b5848540b7e25435c648f1e8e76d163c6f423a83571e3695d7ebc2f4d"
+    },
+    {
+      "path": "scripts/audit_catalog.py",
+      "sha256": "4180b8f281ca453d60baea278f4cde76064c4129762e20139a89b1a001a01ef7"
+    },
+    {
+      "path": "scripts/verify_m61.py",
+      "sha256": "f1fed28512a0c0651f4dff6ba67fb4b70c19f6cebb154248a04d81cea93742aa"
+    },
+    {
+      "path": "tests/test_m61.py",
+      "sha256": "383f6936579c97e46b2e666ff84f1eb6835e27402b773d3ef02510eab65246cc"
+    },
+    {
+      "path": "data/review/m61_candidate_index.json",
+      "sha256": "6bc5a34c38be959213aeb17811e3831b1296124772a833f351a2e0ec79f0c2cb"
+    },
+    {
+      "path": "data/review/m61_review_plan.json",
+      "sha256": "b88410581b0448b010a537ca232c0c430b17fb72c3041b1c2ae53765e9ef21e9"
+    }
+  ]
+}

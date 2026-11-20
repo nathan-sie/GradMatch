@@ -1,0 +1,36 @@
+{
+  "milestone": "M6.1a",
+  "scope": "Audit and first research batch; full M6 is incomplete",
+  "tests": "passed",
+  "status": "passed",
+  "paid_model_requests": 0,
+  "network_requests_in_audit": 0,
+  "checks": {
+    "unique_programs": true,
+    "source_totals_reconcile": true,
+    "candidate_counts_reconcile": true,
+    "no_candidate_promoted": true,
+    "no_model_or_network": true,
+    "databases_unchanged": true,
+    "no_benchmark_score_claimed": true
+  },
+  "database_sha256": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "full_m6_complete": false,
+  "expanded_catalog_gate_met": false,
+  "programs": 10,
+  "official_sources": 30,
+  "candidate_rows": 83,
+  "seed_data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+  "offline_test_count": 204,
+  "new_m61_tests": 23,
+  "manual_official_page_reviews": 10,
+  "report_scope": "M6.1a audit checkpoint only; no new program imported and full M6 remains incomplete.",
+  "review_inputs": {
+    "candidate_index_sha256": "6bc5a34c38be959213aeb17811e3831b1296124772a833f351a2e0ec79f0c2cb",
+    "review_plan_sha256": "b88410581b0448b010a537ca232c0c430b17fb72c3041b1c2ae53765e9ef21e9"
+  },
+  "audit_output_reproduced_after_format_cleanup": true
+}

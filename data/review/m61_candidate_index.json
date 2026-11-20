@@ -1,0 +1,1270 @@
+{
+  "schema_version": "m61-candidate-index-v1",
+  "provider": "csgrad_tracker",
+  "source_commit": "a60f321365c0f00594e4d593de6f0383428bd59d",
+  "source_sha256": "793b4685a323229b99ec39783ca0bb388c2870551e9ee05b6b66b357a31d4ffb",
+  "source_url": "https://raw.githubusercontent.com/csms-apply/csgrad/a60f321365c0f00594e4d593de6f0383428bd59d/src/lib/tracker/school-list.json",
+  "upstream_generated": "2026-10-25",
+  "intake": "Fall 2027",
+  "expected_rows": 83,
+  "attribution": {
+    "creator": "CS Grad contributors",
+    "project_url": "https://csgrad.com/",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notice_basis": "Project homepage license badge checked 2026-11-19. This reduced candidate index is distributed with the same attribution/noncommercial/share-alike notice.",
+    "changes": "Only public identity leads and review flags retained. Source tiers, language/deadline claims, fees and datapoints are excluded."
+  },
+  "rows": [
+    {
+      "source_id": "sss-mit-cse",
+      "display_name": "cse@mit",
+      "school_name": "Massachusetts Institute of Technology",
+      "reported_program_name": "Master of Science in Computational Science and Engineering (CSE SM)",
+      "program_url": "https://cse.mit.edu/programs-admissions/cse-sm/",
+      "source_reports_halted": 1,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing",
+        "source_reports_halted"
+      ]
+    },
+    {
+      "source_id": "sss-mit-eecs",
+      "display_name": "eecs@mit",
+      "school_name": "Massachusetts Institute of Technology",
+      "reported_program_name": "MIT EECS Graduate Program (Doctor of Philosophy (PhD) / Doctor of Science (ScD) in Electrical Engineering and Computer Science; SM earned en route)",
+      "program_url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing",
+        "source_mentions_doctoral_admission"
+      ]
+    },
+    {
+      "source_id": "sss-princeton-msecs",
+      "display_name": "mscs@princeton",
+      "school_name": "Princeton University",
+      "reported_program_name": "Master of Science in Engineering (M.S.E.) in Computer Science",
+      "program_url": "https://www.cs.princeton.edu/grad/masters-degree-requirements",
+      "source_reports_halted": 1,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing",
+        "source_reports_halted"
+      ]
+    },
+    {
+      "source_id": "sss-stanford-mscs",
+      "display_name": "mscs@stanford",
+      "school_name": "Stanford University",
+      "reported_program_name": "Master of Science in Computer Science (MS in Computer Science)",
+      "program_url": "https://www.cs.stanford.edu/admissions/masters-admissions",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-harvard-cse",
+      "display_name": "cse@harvard",
+      "school_name": "Harvard University",
+      "reported_program_name": "Master's in Computational Science and Engineering (CSE): Master of Science (SM) / Master of Engineering (ME)",
+      "program_url": "https://seas.harvard.edu/masters-computational-science-and-engineering",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-harvard-ds",
+      "display_name": "ds@harvard",
+      "school_name": "Harvard University",
+      "reported_program_name": "Master of Science (SM) in Data Science",
+      "program_url": "https://seas.harvard.edu/masters-data-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-harvard-hds",
+      "display_name": "hds@harvard",
+      "school_name": "Harvard University - Harvard T.H. Chan School of Public Health",
+      "reported_program_name": "Master of Science in Health Data Science (SM-80)",
+      "program_url": "https://hsph.harvard.edu/program/sm-health-data-science/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-stanford-stat-ds",
+      "display_name": "stats ds@stanford",
+      "school_name": "Stanford University",
+      "reported_program_name": "Master of Science in Statistics – Data Science subplan (Statistics MS, Departmental Specialization: Data Science)",
+      "program_url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-stanford-symbolic-system",
+      "display_name": "symsys@stanford",
+      "school_name": "Stanford University",
+      "reported_program_name": "M.S. in Symbolic Systems",
+      "program_url": "https://symsys.stanford.edu/graduates/masters-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-yale-mscs-2year",
+      "display_name": "mscs 2yr@yale",
+      "school_name": "Yale University",
+      "reported_program_name": "Master of Science (M.S.) in Computer Science – Two-Year MS Degree (Terminal Master's Degree Program, thesis option)",
+      "program_url": "https://engineering.yale.edu/academic-study/departments/computer-science/graduate-study/master-science-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-caltech-msee",
+      "display_name": "msee@caltech",
+      "school_name": "California Institute of Technology (Caltech)",
+      "reported_program_name": "Master of Science (M.S.) in Electrical Engineering (MSEE, terminal M.S.-only admission)",
+      "program_url": "https://www.ee.caltech.edu/academics/grad",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-cmu-mscs",
+      "display_name": "mscs@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Computer Science (MSCS)",
+      "program_url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-stanford-icme",
+      "display_name": "icme@stanford",
+      "school_name": "Stanford University",
+      "reported_program_name": "Master of Science in Computational and Mathematical Engineering (CME-MS; tracks: General, Data Science, Imaging Science, Mathematical & Computational Finance)",
+      "program_url": "https://icme.stanford.edu/academics-admission/icme-master-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-stanford-msee",
+      "display_name": "msee@stanford",
+      "school_name": "Stanford University",
+      "reported_program_name": "Master of Science (MS) in Electrical Engineering",
+      "program_url": "https://ee.stanford.edu/admissions/ms",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "ss-uiuc-mscs",
+      "display_name": "mscs@uiuc",
+      "school_name": "University of Illinois Urbana-Champaign",
+      "reported_program_name": "Master of Science (M.S.) in Computer Science (thesis, research-oriented)",
+      "program_url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-miis",
+      "display_name": "miis@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Intelligent Information Systems (MIIS)",
+      "program_url": "https://lti.cmu.edu/academics/masters-programs/miis.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-msaii",
+      "display_name": "msaii@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Artificial Intelligence and Innovation (MSAII)",
+      "program_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-mscv",
+      "display_name": "mscv@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Computer Vision (MSCV)",
+      "program_url": "https://www.ri.cmu.edu/education/academic-programs/master-of-science-computer-vision/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-msml",
+      "display_name": "msml@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master's in Machine Learning (M.S. in Machine Learning, primary 16-month program)",
+      "program_url": "https://ml.cmu.edu/academics/primary-ms-machine-learning-masters",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-msr",
+      "display_name": "msr@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Robotics (MSR)",
+      "program_url": "https://www.ri.cmu.edu/education/academic-programs/master-of-science-robotics/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cornell-cs-meng",
+      "display_name": "cs meng@cornell",
+      "school_name": "Cornell University",
+      "reported_program_name": "Master of Engineering (M.Eng.) in Computer Science (Ithaca campus)",
+      "program_url": "https://www.cs.cornell.edu/masters-engineering-computer-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-ucb-eecs-meng",
+      "display_name": "eecs meng@berkeley",
+      "school_name": "University of California, Berkeley",
+      "reported_program_name": "Master of Engineering (M.Eng.) in Electrical Engineering and Computer Sciences",
+      "program_url": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-ut-mscs",
+      "display_name": "mscs@uta",
+      "school_name": "The University of Texas at Austin",
+      "reported_program_name": "Master of Science in Computer Science (On-Campus MSCS; Thesis or Coursework Option)",
+      "program_url": "https://www.cs.utexas.edu/graduate/research-degrees#masters",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-mcds",
+      "display_name": "mcds@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Computational Data Science (MCDS)",
+      "program_url": "https://lti.cmu.edu/academics/masters-programs/mcds.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-cmu-msin",
+      "display_name": "msin@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Information Networking (MSIN)",
+      "program_url": "https://www.cmu.edu/ini/academics/msin/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "s-gatech-mscs",
+      "display_name": "mscs@gatech",
+      "school_name": "Georgia Institute of Technology",
+      "reported_program_name": "Master of Science in Computer Science (M.S. CS), On Campus",
+      "program_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-duke-mscs",
+      "display_name": "mscs@duke",
+      "school_name": "Duke University",
+      "reported_program_name": "Master of Science in Computer Science (MSCS)",
+      "program_url": "https://cs.duke.edu/graduate/ms",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-gatech-cse",
+      "display_name": "cse@gatech",
+      "school_name": "Georgia Institute of Technology",
+      "reported_program_name": "Master of Science in Computational Science and Engineering (MS CSE), Home Unit: School of Computational Science and Engineering (College of Computing)",
+      "program_url": "https://cse.gatech.edu/ms-computational-science-and-engineering",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-ucla-meng",
+      "display_name": "meng@ucla",
+      "school_name": "University of California, Los Angeles (UCLA)",
+      "reported_program_name": "Master of Engineering (MEng), major \"Engineering - Master of Engineering\" (major code 00F2; Areas of Study incl. Artificial Intelligence, Data Science, IoT Systems, etc.)",
+      "program_url": "https://www.meng.ucla.edu/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-ucla-mscs",
+      "display_name": "mscs@ucla",
+      "school_name": "University of California, Los Angeles (UCLA)",
+      "reported_program_name": "M.S. in Computer Science (Computer Science MS)",
+      "program_url": "https://www.cs.ucla.edu/graduate-admissions/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-upenn-cis",
+      "display_name": "cis@upenn",
+      "school_name": "University of Pennsylvania",
+      "reported_program_name": "Master of Science in Engineering (MSE) in Computer and Information Science (CIS/MSE)",
+      "program_url": "https://www.cis.upenn.edu/mse-in-cis/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-upenn-ds",
+      "display_name": "ds@upenn",
+      "school_name": "University of Pennsylvania",
+      "reported_program_name": "Master of Science in Engineering (MSE) in Data Science & Artificial Intelligence (DSAI) (formerly MSE in Data Science, DATS)",
+      "program_url": "https://dsai.engineering.upenn.edu/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-upenn-msr",
+      "display_name": "msr@upenn",
+      "school_name": "University of Pennsylvania",
+      "reported_program_name": "Robotics, MSE (Master of Science in Engineering in Robotics, ROBO)",
+      "program_url": "https://www.grasp.upenn.edu/academics/masters-degree-program/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-wisc-cs-pmp",
+      "display_name": "cs pmp@wisc",
+      "school_name": "University of Wisconsin–Madison",
+      "reported_program_name": "Computer Sciences: Professional Program, MS (Professional Master's Program, PMP)",
+      "program_url": "https://www.cs.wisc.edu/grad/programs/pmp/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-ucsd-cs75",
+      "display_name": "cs75@ucsd",
+      "school_name": "University of California, San Diego",
+      "reported_program_name": "M.S. in Computer Science (major code CS75, program code CSE-MS-001), Department of Computer Science and Engineering; Plan I Thesis or Plan II Comprehensive Exam",
+      "program_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-plus-ut-ece",
+      "display_name": "ece(ses)@uta",
+      "school_name": "The University of Texas at Austin",
+      "reported_program_name": "Master of Science in Engineering (MSE), Electrical and Computer Engineering – Software Engineering and Systems (SES) Track",
+      "program_url": "https://www.ece.utexas.edu/academics/graduate/tracks/software",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-cmu-ece",
+      "display_name": "ece@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Electrical and Computer Engineering (MS in ECE, Standard Program, Pittsburgh)",
+      "program_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-cmu-msmite",
+      "display_name": "msmite@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Mobile and IoT Engineering (MSMITE)",
+      "program_url": "https://www.cmu.edu/ini/academics/bicoastal/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-umd-mscs",
+      "display_name": "mscs@umd",
+      "school_name": "University of Maryland, College Park",
+      "reported_program_name": "Master of Science (M.S.) in Computer Science (program code CSMS)",
+      "program_url": "https://www.cs.umd.edu/grad/ms-catalog",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-umich-mscs",
+      "display_name": "mscs/mscse@umich",
+      "school_name": "University of Michigan, Ann Arbor",
+      "reported_program_name": "Master of Science (M.S.) / Master of Science in Engineering (M.S.E.) in Computer Science and Engineering",
+      "program_url": "https://cse.engin.umich.edu/academics/graduate/graduate-programs/masters-in-cse/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-upenn-mcit",
+      "display_name": "mcit@upenn",
+      "school_name": "University of Pennsylvania",
+      "reported_program_name": "Master of Computer and Information Technology (MCIT), on-campus",
+      "program_url": "https://www.cis.upenn.edu/mcit/",
+      "source_reports_halted": 1,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing",
+        "source_reports_halted"
+      ]
+    },
+    {
+      "source_id": "a-yale-mscs",
+      "display_name": "mscs 1yr@yale",
+      "school_name": "Yale University (Graduate School of Arts and Sciences)",
+      "reported_program_name": "Master of Science (MS) in Computer Science (One-Year MS Degree)",
+      "program_url": "https://engineering.yale.edu/academic-study/departments/computer-science/graduate-study/master-science-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-cmu-mits",
+      "display_name": "mits@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Information Technology Strategy (MITS)",
+      "program_url": "https://www.cmu.edu/cmist/academics/graduate-programs/mits/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-columbia-mscs",
+      "display_name": "mscs@columbia",
+      "school_name": "Columbia University, The Fu Foundation School of Engineering and Applied Science (Columbia Engineering / SEAS)",
+      "reported_program_name": "Master of Science in Computer Science (MS in Computer Science, CS MS)",
+      "program_url": "https://www.cs.columbia.edu/education/ms/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-uiuc-mcs",
+      "display_name": "mcs@uiuc",
+      "school_name": "University of Illinois Urbana-Champaign",
+      "reported_program_name": "Master of Computer Science (MCS) in Urbana-Champaign",
+      "program_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-uw-ee-pmp",
+      "display_name": "ee pmp@uw",
+      "school_name": "University of Washington (Seattle)",
+      "reported_program_name": "Master of Science in Electrical and Computer Engineering (MSECE), Professional Master's Program (PMP) – Seattle (formerly MSEE PMP)",
+      "program_url": "https://www.ece.uw.edu/academics/pmp/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-cmu-msess",
+      "display_name": "mse-ss@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Software Engineering - Scalable Systems (MSE-SS)",
+      "program_url": "https://mse.s3d.cmu.edu/applicants/faq.html",
+      "source_reports_halted": 1,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing",
+        "source_reports_halted"
+      ]
+    },
+    {
+      "source_id": "a-minus-columbia-ds",
+      "display_name": "ds@columbia",
+      "school_name": "Columbia University",
+      "reported_program_name": "Master of Science in Data Science (MS in Data Science)",
+      "program_url": "https://datascience.columbia.edu/education/ms-data-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-columbia-ce",
+      "display_name": "msce@columbia",
+      "school_name": "Columbia University, The Fu Foundation School of Engineering and Applied Science (Columbia Engineering)",
+      "reported_program_name": "Master of Science (MS) in Computer Engineering",
+      "program_url": "https://compeng.columbia.edu/compeng-graduate",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-gatech-ece",
+      "display_name": "ece@gatech",
+      "school_name": "Georgia Institute of Technology",
+      "reported_program_name": "Master of Science in Electrical and Computer Engineering (M.S.E.C.E.), Atlanta campus",
+      "program_url": "https://ece.gatech.edu/graduate/masters-degrees",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-nyu-ds",
+      "display_name": "ds@nyu",
+      "school_name": "New York University",
+      "reported_program_name": "Master of Science in Data Science (M.S. in Data Science)",
+      "program_url": "https://cds.nyu.edu/masters-in-data-science-overview/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-ucsb-mscs",
+      "display_name": "mscs@ucsb",
+      "school_name": "University of California, Santa Barbara",
+      "reported_program_name": "MS - Computer Science (Master of Science in Computer Science)",
+      "program_url": "https://cs.ucsb.edu/education/graduate/masters-degree",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-ucsd-ec79",
+      "display_name": "ec79@ucsd",
+      "school_name": "University of California San Diego",
+      "reported_program_name": "M.S. in Electrical and Computer Engineering, Computer Engineering (EC79)",
+      "program_url": "https://ece.ucsd.edu/faculty-research/ece-research-areas/computer-engineering-impacted",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-brown-scmcs",
+      "display_name": "scmcs@brown",
+      "school_name": "Brown University",
+      "reported_program_name": "Master of Science in Computer Science (Sc.M.)",
+      "program_url": "https://graduateprograms.brown.edu/graduate-program/computer-science-scm",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-cmu-sesv",
+      "display_name": "se-sv@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Science in Software Engineering (MS in SE), Silicon Valley campus",
+      "program_url": "https://www.ece.cmu.edu/academics/ms-se/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-duke-ece",
+      "display_name": "ece@duke",
+      "school_name": "Duke University",
+      "reported_program_name": "Master of Science in Electrical and Computer Engineering (M.S. in ECE)",
+      "program_url": "https://ece.duke.edu/academics/masters/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-jhu-msecs",
+      "display_name": "msecs@jhu",
+      "school_name": "Johns Hopkins University",
+      "reported_program_name": "Master of Science in Engineering (MSE) in Computer Science",
+      "program_url": "https://www.cs.jhu.edu/academic-programs/graduate-studies/masters-computer-science/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "a-minus-uchicago-mpcs",
+      "display_name": "mpcs@uchicago",
+      "school_name": "University of Chicago",
+      "reported_program_name": "Masters Program in Computer Science (MPCS) — Master of Science in Computer Science (9-Course / 12-Course, Full-Time)",
+      "program_url": "https://masters.cs.uchicago.edu/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-columbia-ee",
+      "display_name": "msee@columbia",
+      "school_name": "Columbia University, The Fu Foundation School of Engineering and Applied Science (Columbia Engineering)",
+      "reported_program_name": "Master of Science in Electrical Engineering (MS EE)",
+      "program_url": "https://www.ee.columbia.edu/about-ms-ee-program",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-cornell-mps-is",
+      "display_name": "mps-is@cornell",
+      "school_name": "Cornell University",
+      "reported_program_name": "Master of Professional Studies (MPS) in Information Science",
+      "program_url": "https://infosci.cornell.edu/master-professional-studies-information-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-nwu-mscs",
+      "display_name": "mscs@nwu",
+      "school_name": "Northwestern University",
+      "reported_program_name": "Master of Science in Computer Science (MS in Computer Science)",
+      "program_url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-nyu-tandon",
+      "display_name": "tandon mscs@nyu",
+      "school_name": "New York University, Tandon School of Engineering",
+      "reported_program_name": "Computer Science, M.S.",
+      "program_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-rics-mcs",
+      "display_name": "mcs@rice",
+      "school_name": "Rice University",
+      "reported_program_name": "Master of Computer Science (MCS), On-Campus",
+      "program_url": "https://csweb.rice.edu/academics/graduate-programs/master-computer-science",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-uwt-mscs",
+      "display_name": "mscs@uwt",
+      "school_name": "University of Washington Tacoma",
+      "reported_program_name": "Master of Science in Computer Science & Systems (MSCSS)",
+      "program_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-upenn-ee",
+      "display_name": "ee@upenn",
+      "school_name": "University of Pennsylvania",
+      "reported_program_name": "Master of Science in Engineering (MSE) in Electrical Engineering",
+      "program_url": "https://www.ese.upenn.edu/academics/masters/electrical-engineering-program/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-cmu-mism",
+      "display_name": "mism@cmu",
+      "school_name": "Carnegie Mellon University",
+      "reported_program_name": "Master of Information Systems Management (MISM)",
+      "program_url": "https://www.heinz.cmu.edu/programs/information-systems-management-master",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-cornell-tech-cm",
+      "display_name": "cm@cornell tech",
+      "school_name": "Cornell University - Cornell Tech (Jacobs Technion-Cornell Institute)",
+      "reported_program_name": "Jacobs Technion-Cornell Dual Master of Science Degrees with a Concentration in Connective Media (MS in Information Systems, Cornell + MS in Applied Information Science, Technion)",
+      "program_url": "https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-connective-media/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-tamu-cse",
+      "display_name": "cse@tamu",
+      "school_name": "Texas A&M University (College Station)",
+      "reported_program_name": "Master of Computer Science (MCS)",
+      "program_url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/mcs.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-plus-uci-mswe",
+      "display_name": "mswe@uci",
+      "school_name": "University of California, Irvine",
+      "reported_program_name": "Master of Software Engineering (MSWE)",
+      "program_url": "https://mswe.ics.uci.edu/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-emory-mscs",
+      "display_name": "mscs@emory",
+      "school_name": "Emory University",
+      "reported_program_name": "Master of Science in Computer Science (CS MS)",
+      "program_url": "https://computerscience.emory.edu/graduate-ms/index.html",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-ncsu-mcs",
+      "display_name": "mcs@ncsu",
+      "school_name": "North Carolina State University (NC State)",
+      "reported_program_name": "Master of Computer Science (MCS, non-thesis; Graduate School program code MR)",
+      "program_url": "https://csc.ncsu.edu/academics/graduate/masters/master-of-computer-science/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-neu-cs-align",
+      "display_name": "cs align@neu",
+      "school_name": "Northeastern University",
+      "reported_program_name": "Align MS in Computer Science (Master of Science in Computer Science – Align)",
+      "program_url": "https://www.khoury.northeastern.edu/programs/align-masters-of-science-in-computer-science/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-neu-mscs",
+      "display_name": "mscs@neu",
+      "school_name": "Northeastern University",
+      "reported_program_name": "Master of Science in Computer Science (MS in Computer Science)",
+      "program_url": "https://www.khoury.northeastern.edu/programs/computer-science-ms/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-uci-mcs",
+      "display_name": "mcs@uci",
+      "school_name": "University of California, Irvine",
+      "reported_program_name": "Master of Computer Science (MCS)",
+      "program_url": "https://mcs.ics.uci.edu/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-uiuc-ece-meng",
+      "display_name": "ece meng@uiuc",
+      "school_name": "University of Illinois Urbana-Champaign",
+      "reported_program_name": "Master of Engineering (M.Eng.) in Electrical & Computer Engineering (On-Campus)",
+      "program_url": "https://ece.illinois.edu/academics/grad/meng-campus",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-umass-mscs",
+      "display_name": "mscs@umass",
+      "school_name": "University of Massachusetts Amherst",
+      "reported_program_name": "Master of Science in Computer Science (On Campus)",
+      "program_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-usc-cs28",
+      "display_name": "cs28@usc",
+      "school_name": "University of Southern California",
+      "reported_program_name": "Master of Science in Computer Science (General)",
+      "program_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-utah-state-university-mscs",
+      "display_name": "mscs@usu",
+      "school_name": "Utah State University",
+      "reported_program_name": "Computer Science MS (Master of Science in Computer Science, Plan A Thesis / Plan B Report)",
+      "program_url": "https://engineering.usu.edu/soc/students/graduate/ms-plan-a",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-minus-neu-is",
+      "display_name": "is@neu",
+      "school_name": "Northeastern University",
+      "reported_program_name": "Master of Science in Information Systems (MSIS), Boston",
+      "program_url": "https://graduate.northeastern.edu/programs/msis-information-systems/master-of-science-in-information-systems-boston/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-minus-neu-ses",
+      "display_name": "ses@neu",
+      "school_name": "Northeastern University",
+      "reported_program_name": "Master of Science in Software Engineering Systems (MS SES, formerly Computer Systems Engineering)",
+      "program_url": "https://seis.northeastern.edu/academics/ms-swes/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-minus-scu-mscse",
+      "display_name": "mscse@scu",
+      "school_name": "Santa Clara University",
+      "reported_program_name": "Master of Science in Computer Science and Engineering (MSCSE)",
+      "program_url": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/ms-in-computer-science-and-engineering/",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "b-minus-uiuc-msim",
+      "display_name": "msim@uiuc",
+      "school_name": "University of Illinois Urbana-Champaign",
+      "reported_program_name": "Master of Science in Information Management (MSIM)",
+      "program_url": "https://ischool.illinois.edu/academics/graduate/ms-information-management",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    },
+    {
+      "source_id": "c-plus-umn-mscs",
+      "display_name": "mscs@umn",
+      "school_name": "University of Minnesota, Twin Cities",
+      "reported_program_name": "M.S. in Computer Science (Plan A / Plan B / Plan C)",
+      "program_url": "https://cse.umn.edu/cs/ms-overview",
+      "source_reports_halted": 0,
+      "verification_status": "community_unverified",
+      "recommendation_eligible": 0,
+      "review_flags": [
+        "identity_and_scope_unverified",
+        "official_facts_unverified",
+        "tuition_missing"
+      ]
+    }
+  ]
+}

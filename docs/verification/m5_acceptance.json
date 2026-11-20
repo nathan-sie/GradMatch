@@ -1,7 +1,7 @@
 {
   "milestone": "M5",
   "automated_acceptance": "passed",
-  "user_page_acceptance": "pending",
+  "user_page_acceptance": "passed",
   "code_commit": "af9139cce10cadf700a48a8561264f036af8de4c",
   "offline_checks": 181,
   "m5_checks": 35,
@@ -31,5 +31,7 @@
     "failed_cloud": "m5_cloud_capped.json",
     "code": "m5_code_fingerprint.json"
   },
-  "notice": "Milestone functionality acceptance, not a final-project benchmark. Stop for user page acceptance before M6."
+  "notice": "Milestone functionality acceptance, not a final-project benchmark. User page acceptance is recorded; M6.1a data auditing has started.",
+  "user_page_acceptance_on": "2026-11-19",
+  "user_page_acceptance_basis": "User-provided plan trace showed initial execution, profile updates and validation-failure recovery, with final steps done; user then authorized M6. Full private profile and user-test usage were not supplied or published."
 }

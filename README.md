@@ -2,9 +2,11 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M5 Plan-and-replan**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Fixed, ReAct and Plan-and-replan share the same catalog, tools, ranking rubric, validator and resource caps. M5 adds executable 3–6-step plans, observation-triggered revisions (at most three), visible history and reuse of unchanged validated results. The reviewed catalog remains 10 programs / 30 official sources. Final-project benchmarking is a later milestone.
+Current stage: **M6.1a data audit and expansion screening**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The reviewed runtime catalog remains **10 programs / 30 sources**. The offline audit checks usable evidence, reproducible tuition, applicant comparison gaps and tier support. It reconciles 83 candidate leads and records ten official-page research leads without promoting them into recommendations. The 40–60 program data target and formal-project evaluation remain later gates.
 
-M5.3 passed 181 checks, three clean-host scenarios and the actual hosted generation/budget-update/reuse flow. The accepted flow used four model requests; earlier failures remain recorded. User page acceptance is pending before M6. See [M5 checkpoint](docs/verification/M5.md) and [M5 scope and acceptance steps](docs/M5_SCOPE.md). M4 passed clean-host recovery and a six-request real-model live-evidence task; the user's supplied session confirmed the budget-update page check. A follow-up guard patch passed 146 regression checks and prevents stale context from skipping current ranking. Earlier failures and costs are retained. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
+M6.1a passed **204 checks**. Read the [coverage report](docs/verification/M61_catalog_audit.md), [checkpoint](docs/verification/M61.md) and [next data gates](docs/M6_DATA_REVIEW.md). No model API request or SQLite write was made for this audit.
+
+M5.3 passed 181 checks, three clean-host scenarios and the actual hosted generation/budget-update/reuse flow. The accepted flow used four model requests; earlier failures remain recorded. User page acceptance passed on 2026-11-19. See [M5 checkpoint](docs/verification/M5.md) and [M5 scope and acceptance steps](docs/M5_SCOPE.md). M4 passed clean-host recovery and a six-request real-model live-evidence task; the user's supplied session confirmed the budget-update page check. A follow-up guard patch passed 146 regression checks and prevents stale context from skipping current ranking. Earlier failures and costs are retained. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
 
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
@@ -20,7 +22,7 @@ The project uses an isolated Python 3.12 environment. If `.venv` is already prep
 
 ```powershell
 .\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m35_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m5
+.\.venv\Scripts\python.exe -m scripts.verify_m61
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
@@ -84,4 +86,4 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 - [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
-M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 automated and hosted acceptance passed on 2026-11-19; user page acceptance is pending before M6. Final-project evaluation has not started. The separate 50-task homework stays on its own branch.
+M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 automated, hosted and user page acceptance passed on 2026-11-19. M6.1a passed 204 checks; full dataset expansion and final-project evaluation remain incomplete. See [M6.1a checkpoint](docs/verification/M61.md) and [coverage report](docs/verification/M61_catalog_audit.md). The separate 50-task homework stays on its own branch.
