@@ -48,5 +48,7 @@
       }
     ],
     "model_requests": 0
-  }
+  },
+  "cloud_ui": "passed: actual M4 release, selectors, example and zero-model request observed",
+  "hosted_model_test": "not_run; local real-model live task passed separately"
 }

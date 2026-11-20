@@ -70,7 +70,7 @@
     },
     {
       "path": "gradmatch/storage.py",
-      "sha256": "1af06dbf563c3d8b0c3f3037abd38d1a885fe46580ee0cf679e1b556566a9661"
+      "sha256": "53476d092cb7bbbbc6dbdb3c4ce7af5f77c01530e848b98d6b9a875ba71d3453"
     },
     {
       "path": "gradmatch/tiers.py",
@@ -78,7 +78,7 @@
     },
     {
       "path": "gradmatch/ui_m1.py",
-      "sha256": "c4ed8898959727249692027ede8b3e1ccb298f1d97724458db8f5cb05511d0c7"
+      "sha256": "976340ab155a1772ff01ca111f64f5f390f7f41f26a632e0e15dd546b62640e8"
     },
     {
       "path": "gradmatch/ui_m2.py",
@@ -109,6 +109,6 @@
       "sha256": "de8b955e76c76369752b8f13a1757c7c9e3e94618347f54981677de82c0c7b06"
     }
   ],
-  "combined_sha256": "8aaaa927aa3b73062ae0c7af2bfb2eeabfac781dbbd72313ca7fee409e1476ea",
-  "text_line_endings": "LF per repository attributes; source logic unchanged by newline normalization."
+  "combined_sha256": "9abffe194701b89828bdd5ace652a8fc9aa1f3d2c97fcb324c18ee8cdb4833de",
+  "text_line_endings": "Canonical LF text per Git attributes; hashes match published Git blobs. Newline normalization does not change Python source semantics."
 }
