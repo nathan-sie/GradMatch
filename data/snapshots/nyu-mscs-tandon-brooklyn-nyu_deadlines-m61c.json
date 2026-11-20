@@ -1,0 +1,12 @@
+{
+  "url": "https://engineering.nyu.edu/admissions/graduate/apply/application-deadlines",
+  "retrieved_at": "2026-11-20T22:29:55.638612+00:00",
+  "raw_response_sha256": "5a905a6fad892743318ed2830714f70bdb3dc8853c11089d69e59469a95b046a",
+  "verified_values": {
+    "intake_policy": {
+      "notes.4": "The current deadline table excludes Computer Science MS from spring admissions. It gives recurring on-campus fall priority/final dates separately from online deadlines, but no explicit Fall 2027 cycle. No year-specific intake or deadline is invented."
+    }
+  },
+  "source_excerpt": "Computer Science MS",
+  "fact_summary": "The MSCS spring exclusion and on-campus/online distinction are retained as a standing policy observation, without manufacturing an exact-year deadline."
+}

@@ -1,0 +1,36 @@
+{
+  "url": "https://www.cs.wisc.edu/grad/programs/pmp/",
+  "retrieved_at": "2026-11-20T22:29:56.122698+00:00",
+  "raw_response_sha256": "cd0a76656c36419c0f97afb45cbcc7c24cd867581c1809d1c39dc6929f6c380e",
+  "verified_values": {
+    "identity": {
+      "university": "University of Wisconsin-Madison",
+      "school": "College of Computing & Artificial Intelligence / Department of Computer Sciences",
+      "program_name": "Master of Science in Computer Sciences",
+      "degree": "MS",
+      "campus": "Madison",
+      "track": "Professional Program named option, on-campus",
+      "official_url": "https://www.cs.wisc.edu/grad/programs/pmp/"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "wisc-ms-cs-professional-madison-professional",
+          "goal": "employment",
+          "statement": "Professional computing coursework supports career development. The department states that it stopped approving Computer Sciences CPT as of 2026-08-24; internships or work authorization are not guaranteed.",
+          "source_ids": [
+            "wisc-ms-cs-professional-madison-wisc_main-m61c"
+          ]
+        }
+      ]
+    },
+    "internship_policy": {
+      "notes.1": "The department states that it stopped approving Computer Sciences CPT on 2026-08-24. Internship encouragement and catalog cooperative-education credits do not establish present CPT approval or guaranteed work authorization."
+    }
+  },
+  "source_excerpt": "As of August 24, 2026,",
+  "fact_summary": "The professional CS program requires 30 credits and supports career development. The department explicitly states that Computer Sciences CPT approvals stopped; older internship examples must not be read as current approval."
+}

@@ -29,6 +29,14 @@ The initial ten-lead queue supplied the first two scoped records, Illinois ECE M
 
 Exit gate: versioned official captures and field bindings validate, tuition units and time periods reconcile, unknowns remain explicit, the proposed seed survives database round-trip and all three strategies use the same data. Do not count research leads as added programs. Original snapshots and earlier verification artifacts remain preserved.
 
+## M6.1c — second official data batch
+
+The second batch uses `m61c_seed.json`: 16 programs / 62 source records, with all previous 43 source objects preserved. Texas A&M MCS, NYU Tandon MSCS, Wisconsin professional CS MS and Cornell Ithaca CS MEng are now scoped official records with partial qualification rules. Two complete, explicitly qualified cost calculations raise computable estimates from five to seven. Cornell uses a published budget-plan rate, not a guaranteed final bill. The original five pricing gaps and MCDS's incomplete qualification remain open.
+
+Source review records program-specific English scales, undergraduate-versus-continuation GPA, ordinary-versus-special admission routes, and Wisconsin's current CPT limitation. Where the current schema cannot represent an enrollment-time English validity rule or full degree/equivalency alternatives, the hard check stays unknown. Yearless dates are not silently converted into dated Fall 2027 announcements. Complete admitted-case/tier support remains a separate gate.
+
+The remaining initial queue is Duke ECE MS, CMU Pittsburgh ECE MS, Georgia Tech on-campus MSCS and UCSD CS MS. Continue reviewing these four exact tracks and repair the existing gaps before broader expansion. The shared data audit and all three strategies use the same active seed. The separate 50-task homework and its original frozen code/data remain unchanged. See [source decisions](M61C_SOURCES.md) and [checkpoint](verification/M61C.md).
+
 ## Later M6 gates
 
 Continue in reviewable data batches toward 40–60 distinct scoped programs. Then prepare 210 different main tasks, at least 50 safety prompts, isolated references, family-separated pilot tasks and the shared evaluation runner. Run a small real pilot to estimate calls/tokens/cost before freezing final parameters. Formal scores remain unmeasured until M7 real runs.

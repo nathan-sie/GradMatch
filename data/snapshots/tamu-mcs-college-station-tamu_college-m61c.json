@@ -1,0 +1,20 @@
+{
+  "url": "https://engineering.tamu.edu/admissions-and-aid/graduate-admissions/index.html",
+  "retrieved_at": "2026-11-20T22:29:54.983640+00:00",
+  "raw_response_sha256": "4e02579260cce8456e7f4486a45feda56759bc78879dfffd2e5b0030de8ba4b5",
+  "verified_values": {
+    "remaining_eligibility": {
+      "eligibility_review_complete": false,
+      "application_materials": [
+        "EngineeringCAS application",
+        "Statement of purpose",
+        "Transcripts",
+        "Three recommendation/evaluation letters",
+        "Applicable English proficiency evidence",
+        "Application fee"
+      ]
+    }
+  },
+  "source_excerpt": "Three (3)",
+  "fact_summary": "The general EngineeringCAS checklist supplies application materials, not a complete MCS eligibility decision. Quick Admit is a separate route."
+}

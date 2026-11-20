@@ -1,0 +1,29 @@
+{
+  "url": "https://policy.wisc.edu/library/UW-1241",
+  "retrieved_at": "2026-11-20T22:32:03.288867+00:00",
+  "raw_response_sha256": "ba12369f590474af050e29887c0daef9a22f35be311bd7a46edec3b722755b9f",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "last_60_semester"
+        ],
+        "below_minimum_review_possible": true,
+        "no_hard_minimum": false
+      }
+    },
+    "english_policy": {
+      "notes.2": "A qualifying master GPA is an alternative to the undergraduate last-60-credit GPA requirement. That alternative is not captured by the bachelor-only profile; below-threshold applicants require manual review rather than automatic rejection.",
+      "notes.3": "English tests must be recent relative to anticipated enrollment, with waiver and conditional-score pathways. The current assessment-date checker cannot represent that entire policy, so English eligibility remains unknown."
+    }
+  },
+  "source_excerpt": "last 60 credit hours",
+  "fact_summary": "UW-1241 requires a recognized bachelor qualification and specifies an undergraduate last-60-credit GPA or a qualifying master GPA. English score age is anchored to enrollment, with alternatives requiring manual review."
+}

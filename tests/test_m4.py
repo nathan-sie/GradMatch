@@ -278,13 +278,12 @@ def test_budget_followup_requires_current_ranking_even_after_premature_finish(
     from test_m35 import draft as supported_draft
 
     programs, _ = load_seed()
-    ids = [p.program_id for p in programs if p.discipline == "CS"]
 
     def action(name):
         return lambda payload: (
             name,
             {
-                "program_ids": ids,
+                "program_ids": payload["retrieved_program_ids"],
                 "profile_version": payload["profile"]["profile_version"],
                 "evidence_version": payload["evidence_version"],
             },

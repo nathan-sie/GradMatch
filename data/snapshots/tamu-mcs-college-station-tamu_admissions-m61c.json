@@ -1,0 +1,12 @@
+{
+  "url": "https://engineering.tamu.edu/cse/admissions-and-aid/graduate-admissions/index.html",
+  "retrieved_at": "2026-11-20T22:29:55.294849+00:00",
+  "raw_response_sha256": "93bfa3cc85f7290eb0bd130783b59443523ba8193b5ab4fced0b8d02ef0e0c5b",
+  "verified_values": {
+    "intake_policy": {
+      "notes.2": "The department lists recurring January 15 fall and September 1 spring deadlines for in-person masters, distinct from online and Quick Admit schedules. The captured page does not identify a Fall 2027 cycle; no exact-year deadline or supported intake is inferred."
+    }
+  },
+  "source_excerpt": "In-person Master's degrees (thesis and non-thesis)",
+  "fact_summary": "Yearless in-person and online deadline policies are recorded without converting them into verified Fall 2027 dates."
+}

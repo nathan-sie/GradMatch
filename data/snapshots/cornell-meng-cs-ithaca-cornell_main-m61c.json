@@ -1,0 +1,42 @@
+{
+  "url": "https://www.cs.cornell.edu/masters-engineering-computer-science",
+  "retrieved_at": "2026-11-20T22:29:57.450045+00:00",
+  "raw_response_sha256": "29af7acd237b4a4bc8bb9abd7d7a586d6e3074464c0718a964dfa61876b8d6a5",
+  "verified_values": {
+    "identity": {
+      "university": "Cornell University",
+      "school": "Cornell Bowers / Computer Science",
+      "program_name": "Master of Engineering in Computer Science",
+      "degree": "MEng",
+      "campus": "Ithaca",
+      "track": "On-campus two-semester",
+      "official_url": "https://www.cs.cornell.edu/masters-engineering-computer-science"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "cornell-meng-cs-ithaca-professional",
+          "goal": "employment",
+          "statement": "An intensive Ithaca professional computing degree and a substantial applied project support technical career preparation, without guaranteeing employment.",
+          "source_ids": [
+            "cornell-meng-cs-ithaca-cornell_main-m61c"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "Accepting applications for fall 2027 start",
+  "fact_summary": "The Ithaca CS MEng explicitly advertises Fall 2027, 30 credits and applied project work. It is separate from Cornell Tech."
+}

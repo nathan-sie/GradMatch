@@ -1,0 +1,30 @@
+{
+  "url": "https://www.duffield.cornell.edu/meng/paying-for-your-meng-degree/",
+  "retrieved_at": "2026-11-20T22:29:57.656771+00:00",
+  "raw_response_sha256": "33b38e4c77865a72e206a055178da733489b2685a2ed20cdbef928851efa167f",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "per_year",
+        "unit_rate_lower": "73946",
+        "unit_rate_upper": null,
+        "required_units_lower": "1",
+        "required_units_upper": null,
+        "rate_year": "2026-2027",
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "The current Ithaca CS MEng admits to a two-semester program, counted as one academic year of tuition.",
+          "The published FY27 university budget appendix lists the 2026-27 Masters Tier 1 annual rate as USD 73,946 and includes MEng in that tier; the engineering funding page independently confirms the tier.",
+          "This is a budget-plan-based published estimate, not a guaranteed Bursar bill or Fall 2027 rate. The direct Bursar page returned HTTP 403 during capture.",
+          "Living expenses, insurance, mandatory non-tuition charges and unverified extra preparation are excluded. No unconfirmed aid is deducted."
+        ],
+        "additional_required_tuition_lower_usd": "0",
+        "additional_required_tuition_upper_usd": "0"
+      }
+    }
+  },
+  "source_excerpt": "M.Eng. degrees are considered Tier 1.",
+  "fact_summary": "The engineering funding page assigns on-campus MEng to tuition Tier 1; no merit award or assistantship remission is assumed."
+}

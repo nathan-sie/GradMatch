@@ -1,0 +1,33 @@
+{
+  "url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/mcs.html",
+  "retrieved_at": "2026-11-20T22:29:56.793234+00:00",
+  "raw_response_sha256": "cf9576bed57b4daf17cf11b94eecb7f380e26b22a4612773739972f797d4e493",
+  "verified_values": {
+    "identity": {
+      "university": "Texas A&M University",
+      "school": "College of Engineering / Department of Computer Science and Engineering",
+      "program_name": "Master of Computer Science",
+      "degree": "MCS",
+      "campus": "College Station",
+      "track": "On-campus non-thesis professional",
+      "official_url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/mcs.html"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "tamu-mcs-college-station-professional",
+          "goal": "employment",
+          "statement": "A professional non-thesis computing degree develops advanced technical preparation; no internship or employment outcome is guaranteed.",
+          "source_ids": [
+            "tamu-mcs-college-station-tamu_main-m61c"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "Master of Computer Science",
+  "fact_summary": "The College Station professional, non-thesis MCS requires at least 30 credit hours; it is not the thesis MSCS or an online degree."
+}

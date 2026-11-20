@@ -1,0 +1,51 @@
+{
+  "milestone": "M6.1c",
+  "catalog_version": "m61c-2026-11-20",
+  "reviewed_on": "2026-11-20",
+  "prior_seed": "data/catalog/m61b_seed.json",
+  "seed": "data/catalog/m61c_seed.json",
+  "review_plan": "data/review/m61c_review_plan.json",
+  "new_programs": [
+    "cornell-meng-cs-ithaca",
+    "nyu-mscs-tandon-brooklyn",
+    "tamu-mcs-college-station",
+    "wisc-ms-cs-professional-madison"
+  ],
+  "new_source_ids": [
+    "tamu-mcs-college-station-tamu_main-m61c",
+    "tamu-mcs-college-station-tamu_admissions-m61c",
+    "tamu-mcs-college-station-tamu_faq-m61c",
+    "tamu-mcs-college-station-tamu_college-m61c",
+    "nyu-mscs-tandon-brooklyn-nyu_main-m61c",
+    "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c",
+    "nyu-mscs-tandon-brooklyn-nyu_deadlines-m61c",
+    "nyu-mscs-tandon-brooklyn-nyu_tuition_pdf-m61c",
+    "wisc-ms-cs-professional-madison-wisc_main-m61c",
+    "wisc-ms-cs-professional-madison-wisc_guide-m61c",
+    "wisc-ms-cs-professional-madison-wisc_policy-m61c",
+    "wisc-ms-cs-professional-madison-wisc_admissions-m61c",
+    "wisc-ms-cs-professional-madison-wisc_funding-m61c",
+    "wisc-ms-cs-professional-madison-wisc_bursar-m61c",
+    "cornell-meng-cs-ithaca-cornell_main-m61c",
+    "cornell-meng-cs-ithaca-cornell_apply-m61c",
+    "cornell-meng-cs-ithaca-cornell_planning-m61c",
+    "cornell-meng-cs-ithaca-cornell_funding-m61c",
+    "cornell-meng-cs-ithaca-cornell_budget-m61c"
+  ],
+  "expected_programs": 16,
+  "expected_sources": 62,
+  "new_computable_tuition": {
+    "nyu-mscs-tandon-brooklyn": "78780",
+    "cornell-meng-cs-ithaca": "73946"
+  },
+  "unresolved": [
+    "TAMU/NYU/Wisconsin dated intake confirmation",
+    "Wisconsin program-specific fee-separated tuition",
+    "Complete English/qualification alternatives and GPA scopes",
+    "Program-specific admitted-case/tier evidence",
+    "Earlier five incomplete pricing bases and MCDS eligibility"
+  ],
+  "prior_source_objects_preserved": true,
+  "formal_benchmark_run": false,
+  "paid_model_requests": 0
+}

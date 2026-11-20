@@ -1,0 +1,33 @@
+{
+  "url": "https://guide.wisc.edu/graduate/computer-sciences/computer-sciences-ms/computer-sciences-professional-program-ms/",
+  "retrieved_at": "2026-11-20T22:29:57.123618+00:00",
+  "raw_response_sha256": "a8f434550852288f6d34aae80bdcb84fbe012cf0ba9f2de37af6a9637297f458",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "prerequisites": {
+      "required_topics": [
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "calculus"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": false
+    },
+    "remaining_eligibility": {
+      "eligibility_review_complete": false,
+      "application_materials": [
+        "Graduate application",
+        "Transcripts",
+        "Three recommendation letters",
+        "Resume / CV",
+        "Personal statement",
+        "Applicable English proficiency evidence"
+      ]
+    }
+  },
+  "source_excerpt": "Not Required.",
+  "fact_summary": "The current Professional Program guide identifies GRE as not required, three recommendation letters and specific preparation. Its curricular GPA is not substituted for the separate admission GPA rule."
+}

@@ -16,7 +16,7 @@ from gradmatch.storage import PROJECT_ROOT
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LEGACY_REVIEW = PROJECT_ROOT / "data/review/m61_review_plan.json"
-REVIEW = PROJECT_ROOT / "data/review/m61b_review_plan.json"
+REVIEW = PROJECT_ROOT / "data/review/m61c_review_plan.json"
 
 
 def sha256(path):

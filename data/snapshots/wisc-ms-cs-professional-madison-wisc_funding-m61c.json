@@ -1,0 +1,28 @@
+{
+  "url": "https://www.cs.wisc.edu/grad/programs/funding/",
+  "retrieved_at": "2026-11-20T22:29:57.031393+00:00",
+  "raw_response_sha256": "2f92a2727a353621a603de9e8d3230d1bdb8068c3ad7289886c7207d268fbeb6",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "unknown",
+        "unit_rate_lower": null,
+        "unit_rate_upper": null,
+        "required_units_lower": null,
+        "required_units_upper": null,
+        "rate_year": null,
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "PMP is self-funded and does not carry assistantship tuition remission.",
+          "A program-specific international rate and fee-separated term schedule were not extracted from the Bursar workbook. No generic graduate total is substituted."
+        ],
+        "additional_required_tuition_lower_usd": "0",
+        "additional_required_tuition_upper_usd": "0"
+      }
+    }
+  },
+  "source_excerpt": "PMP is a self-funded program.",
+  "fact_summary": "PMP tuition is self-funded without assistantship remission. Program-specific tuition must be reviewed before a full-program price can be calculated."
+}

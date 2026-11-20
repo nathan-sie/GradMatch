@@ -1,0 +1,70 @@
+{
+  "milestone": "M6.1c",
+  "status": "passed",
+  "tests": "246 passed in 15.86s",
+  "programs": 16,
+  "sources": 62,
+  "data_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+  "catalog_database": "D:\\UW\\EEP500d\\GradMatch\\work\\m61c\\bb273e78-3ae7-4b5b-9266-e21395de2755\\catalog.db",
+  "provenance": {
+    "new_sources_checked": 19,
+    "raw_responses_rehashed": 19,
+    "optional_raw_not_supplied": [],
+    "historical_source_objects_preserved": 43,
+    "preparation_http_requests": 23,
+    "failed_captures_not_imported": 2,
+    "new_computable_tuition": {
+      "nyu-mscs-tandon-brooklyn": "78780",
+      "cornell-meng-cs-ithaca": "73946"
+    }
+  },
+  "database_sha256": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "old_databases_unchanged": true,
+  "page_metrics": [
+    "16",
+    "62"
+  ],
+  "shared_strategies": {
+    "fixed": {
+      "catalog_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+      "programs": 16,
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "catalog_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+      "programs": 16,
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "catalog_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+      "programs": 16,
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "external_network_requests_in_verifier": 0,
+  "loopback_connections_for_page_test": 2,
+  "paid_model_requests": 0,
+  "computable_tuition_estimates": 7,
+  "reference_formal_evidence_ready": 1,
+  "formal_benchmark_run": false,
+  "full_m6_complete": false,
+  "remaining_expansion_queue": 4,
+  "input_code_sha256": {
+    "gradmatch/catalog.py": "a4e091f8c8cc63025e1bce182f0afcb79e187e0ec249a3d8af07eed3c0584ea8",
+    "gradmatch/bootstrap.py": "151f24a321928dd412e00ed27973d9447c421f56c8d26a8d7858eba171c995a1",
+    "gradmatch/constraints.py": "74796087f92a9710f89f1e918e3a3b85d03fbe86a36a6c39aa1a86815460e719",
+    "gradmatch/catalog_audit.py": "2732047a09a91b56ef2daf64d3987bd44fe0c0fde828df867ef7776e8026d176",
+    "data/catalog/m61c_seed.json": "4c8e293b19241b8aaba67fe978ad2eb46a98021dedd1c0ce2a74bd917f9a8dcf",
+    "data/review/m61c_review_plan.json": "77e8b6612667e22a1319695e2525e356342b75b92efa386a27a5d19bc7fcd405",
+    "data/review/m61c_field_reviews.json": "44baf87a7c0f368d8fa3768c51728944391a27e5ad280cff62f3c4768618e19c",
+    "data/review/m61c_capture_receipts.json": "90d168789a4108290bcef3a0a41722bb5a123fbc57a6a8b98585a02324ac08c2",
+    "scripts/verify_m61c.py": "b1415e95f89bba060e14a6d204bc24b0036a30a84c1b42ce98686694202c4f23",
+    "tests/test_m61c.py": "d5790af4abec7fcff870ac84626fab35179fc039752b388db4aa37cb38c5a801"
+  }
+}

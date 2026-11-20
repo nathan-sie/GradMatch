@@ -1,0 +1,194 @@
+{
+  "schema_version": "m61c-review-plan-v1",
+  "reviewed_on": "2026-11-20",
+  "target_intake": "2027-fall",
+  "target_catalog_min": 40,
+  "target_catalog_max": 60,
+  "catalog_links": [
+    {
+      "candidate_source_id": "a-uw-ee-pmp",
+      "program_id": "uw-ece-msece-pmp-seattle",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "a-uiuc-mcs",
+      "program_id": "uiuc-mcs-urbana",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-plus-rics-mcs",
+      "program_id": "rice-mcs-houston",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-uci-mcs",
+      "program_id": "uci-mcs-irvine",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-ncsu-mcs",
+      "program_id": "ncsu-mcs-raleigh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-umass-mscs",
+      "program_id": "umass-mscs-amherst",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-usc-cs28",
+      "program_id": "usc-mscs-general-los-angeles",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-neu-mscs",
+      "program_id": "neu-mscs-boston",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "s-cmu-mcds",
+      "program_id": "cmu-mcds-pittsburgh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "s-cmu-msaii",
+      "program_id": "cmu-msaii-pittsburgh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-uiuc-ece-meng",
+      "program_id": "uiuc-meng-ece-urbana",
+      "basis": "Officially captured degree/campus identity and field-bound partial rules; eligibility, tuition and tiers remain explicitly incomplete."
+    },
+    {
+      "candidate_source_id": "b-plus-uwt-mscs",
+      "program_id": "uw-mscss-tacoma",
+      "basis": "Officially captured degree/campus identity and field-bound partial rules; eligibility, tuition and tiers remain explicitly incomplete."
+    },
+    {
+      "candidate_source_id": "b-plus-tamu-cse",
+      "program_id": "tamu-mcs-college-station",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "b-plus-nyu-tandon",
+      "program_id": "nyu-mscs-tandon-brooklyn",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "a-plus-wisc-cs-pmp",
+      "program_id": "wisc-ms-cs-professional-madison",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "s-cornell-cs-meng",
+      "program_id": "cornell-meng-cs-ithaca",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    }
+  ],
+  "first_expansion_batch": [
+    {
+      "priority": 5,
+      "candidate_source_id": "a-minus-duke-ece",
+      "proposed_program_id": "duke-ms-ece-durham",
+      "discipline": "ECE",
+      "university": "Duke University",
+      "proposed_degree_track": "MS Electrical and Computer Engineering",
+      "proposed_campus": "Durham",
+      "identity_screening": "official_program_page_reviewed",
+      "scope_status": "needs_track_or_campus_resolution",
+      "official_url": "https://ece.duke.edu/academics/masters/",
+      "reviewed_on": "2026-11-19",
+      "capture_method": "web_tool_manual_review",
+      "evidence_excerpt": "M.S. (research/industry focused)",
+      "scope_notes": "Landing page covers both MS and MEng. Review the MS-specific requirements, campus and billing before import.",
+      "next_required_reviews": [
+        "exact_degree_campus_track",
+        "target_intake_and_applicant_category",
+        "eligibility_including_degree_and_GRE",
+        "full_program_tuition_basis",
+        "official_goal_fit",
+        "permitted_admission_evidence"
+      ],
+      "promotion_status": "not_imported"
+    },
+    {
+      "priority": 6,
+      "candidate_source_id": "a-cmu-ece",
+      "proposed_program_id": "cmu-ms-ece-pittsburgh",
+      "discipline": "ECE",
+      "university": "Carnegie Mellon University",
+      "proposed_degree_track": "MS Electrical and Computer Engineering",
+      "proposed_campus": "Pittsburgh",
+      "identity_screening": "official_program_page_reviewed",
+      "scope_status": "needs_track_or_campus_resolution",
+      "official_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+      "reviewed_on": "2026-11-19",
+      "capture_method": "web_tool_manual_review",
+      "evidence_excerpt": "MS in ECE",
+      "scope_notes": "Page covers Pittsburgh and Silicon Valley. Pittsburgh handbook and track-specific scope must be checked before importing tuition.",
+      "next_required_reviews": [
+        "exact_degree_campus_track",
+        "target_intake_and_applicant_category",
+        "eligibility_including_degree_and_GRE",
+        "full_program_tuition_basis",
+        "official_goal_fit",
+        "permitted_admission_evidence"
+      ],
+      "promotion_status": "not_imported"
+    },
+    {
+      "priority": 7,
+      "candidate_source_id": "s-gatech-mscs",
+      "proposed_program_id": "gatech-mscs-atlanta",
+      "discipline": "CS",
+      "university": "Georgia Institute of Technology",
+      "proposed_degree_track": "MS Computer Science, on-campus",
+      "proposed_campus": "Atlanta",
+      "identity_screening": "official_program_page_reviewed",
+      "scope_status": "identity_lead_confirmed",
+      "official_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "reviewed_on": "2026-11-19",
+      "capture_method": "web_tool_manual_review",
+      "evidence_excerpt": "Master of Science in Computer Science",
+      "scope_notes": "Separate from OMSCS; confirm international full-time on-campus intake, options and billing.",
+      "next_required_reviews": [
+        "exact_degree_campus_track",
+        "target_intake_and_applicant_category",
+        "eligibility_including_degree_and_GRE",
+        "full_program_tuition_basis",
+        "official_goal_fit",
+        "permitted_admission_evidence"
+      ],
+      "promotion_status": "not_imported"
+    },
+    {
+      "priority": 8,
+      "candidate_source_id": "a-plus-ucsd-cs75",
+      "proposed_program_id": "ucsd-ms-cs-la-jolla",
+      "discipline": "CS",
+      "university": "University of California San Diego",
+      "proposed_degree_track": "MS Computer Science major",
+      "proposed_campus": "La Jolla",
+      "identity_screening": "official_program_page_reviewed",
+      "scope_status": "needs_track_or_campus_resolution",
+      "official_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+      "reviewed_on": "2026-11-19",
+      "capture_method": "web_tool_manual_review",
+      "evidence_excerpt": "Master of Science Programs in Computer Science and Engineering",
+      "scope_notes": "Page covers CS and CE majors and three plans. Confirm the CS major/pathway before importing numerical rules.",
+      "next_required_reviews": [
+        "exact_degree_campus_track",
+        "target_intake_and_applicant_category",
+        "eligibility_including_degree_and_GRE",
+        "full_program_tuition_basis",
+        "official_goal_fit",
+        "permitted_admission_evidence"
+      ],
+      "promotion_status": "not_imported"
+    }
+  ],
+  "notice": "The remaining queue is research-only. Linked official records have independently captured fields and explicit gaps; all community candidate rows remain unverified and non-recommendable.",
+  "milestone": "M6.1c",
+  "scope": "Second official data batch; full eligibility/tuition/tier coverage and final benchmark remain incomplete"
+}

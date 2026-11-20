@@ -1,0 +1,30 @@
+{
+  "url": "https://www.nyu.edu/content/dam/nyu/bursar/documents/2026-2027%20Tuition%20and%20Fees.pdf",
+  "retrieved_at": "2026-11-20T22:29:56.058709+00:00",
+  "raw_response_sha256": "76894bf2284bd56f8a98da214b78400d235bb1e16a298d22d308ec5cba0932c4",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "per_credit",
+        "unit_rate_lower": "2626",
+        "unit_rate_upper": null,
+        "required_units_lower": "30",
+        "required_units_upper": null,
+        "rate_year": "2026-2027",
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "Published 2026-27 Tandon graduate General tuition, USD 2,626 per credit, multiplied by 30 required credits.",
+          "Fall 2027 intake and final rates are not guaranteed; future increases are unknown.",
+          "The per-credit general graduate row is distinct from undergraduate flat rates and older Financial Engineering cohort rates.",
+          "Living expenses, insurance, mandatory non-tuition charges and any additional prerequisite coursework are excluded. No unconfirmed aid is deducted."
+        ],
+        "additional_required_tuition_lower_usd": "0",
+        "additional_required_tuition_upper_usd": "0"
+      }
+    }
+  },
+  "source_excerpt": "Graduate Tandon School of Engineering General Fall 2026",
+  "fact_summary": "The graduate General rows give USD 2,626 per credit in Fall 2026, Spring 2027 and Summer 2027. Thirty verified MSCS credits give USD 78,780 at those rates, before other charges; future prices are not guaranteed."
+}

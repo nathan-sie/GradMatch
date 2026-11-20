@@ -13,7 +13,8 @@ from scripts.build_catalog import build_empty_catalog
 
 M1_SEED = PROJECT_ROOT / "data" / "catalog" / "m1_seed.json"
 M35_SEED = PROJECT_ROOT / "data" / "catalog" / "m35_seed.json"
-DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61b_seed.json"
+M61B_SEED = PROJECT_ROOT / "data" / "catalog" / "m61b_seed.json"
+DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61c_seed.json"
 
 
 def load_seed(path: Path = DEFAULT_SEED) -> tuple[list[ProgramRecord], dict[str, SourceRecord]]:

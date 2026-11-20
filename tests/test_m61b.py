@@ -7,7 +7,7 @@ import json
 import pytest
 
 from gradmatch.bootstrap import bootstrap_public_catalog, resolve_app_database
-from gradmatch.catalog import DEFAULT_SEED, M35_SEED, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import DEFAULT_SEED, M35_SEED, M61B_SEED, import_catalog, load_seed, read_catalog
 from gradmatch.catalog_audit import audit_catalog
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
@@ -24,24 +24,24 @@ AS_OF = date(2026, 11, 20)
 
 
 def checked(pid, profile=None):
-    programs, sources = load_seed()
+    programs, sources = load_seed(M61B_SEED)
     p = next(p for p in programs if p.program_id == pid)
     report = check_constraints(profile or tiering_profile(), p, sources, as_of=AS_OF)
     return p, report, {c.rule_id: c for c in report.checks}
 
 
 def test_batch_roundtrip_preserves_field_bindings_and_old_sources(tmp_path):
-    programs, sources = load_seed()
+    programs, sources = load_seed(M61B_SEED)
     old_programs, old_sources = load_seed(M35_SEED)
     assert len(programs) == 12 and len(sources) == 43
     assert set(old_sources) < set(sources)
     assert all(sources[sid] == source for sid, source in old_sources.items())
     assert {p.program_id for p in old_programs} < {p.program_id for p in programs}
     database = tmp_path / 'catalog.db'
-    import_catalog(DEFAULT_SEED, database)
+    import_catalog(M61B_SEED, database)
     restored, restored_sources = read_catalog(database)
     assert data_hash(restored, restored_sources) == data_hash(programs, sources)
-    import_catalog(DEFAULT_SEED, database)
+    import_catalog(M61B_SEED, database)
     repeated, repeated_sources = read_catalog(database)
     assert len(repeated) == 12 and len(repeated_sources) == 43
     assert data_hash(repeated, repeated_sources) == data_hash(programs, sources)
@@ -106,7 +106,7 @@ def test_stale_local_database_uses_new_cache_without_modifying_old_file(tmp_path
     monkeypatch.delenv('GRADMATCH_DB_PATH', raising=False)
     monkeypatch.setenv('GRADMATCH_PUBLIC_CACHE_DIR', str(tmp_path / 'cache'))
     current = resolve_app_database()
-    assert current != legacy and len(read_catalog(current)[0]) == 12
+    assert current != legacy and len(read_catalog(current)[0]) == len(load_seed(DEFAULT_SEED)[0])
     assert hashlib.sha256(legacy.read_bytes()).hexdigest() == before
     # Explicit database selections retain their original, user-chosen semantics.
     monkeypatch.setenv('GRADMATCH_DB_PATH', str(legacy))
@@ -115,7 +115,7 @@ def test_stale_local_database_uses_new_cache_without_modifying_old_file(tmp_path
 
 @pytest.mark.parametrize('strategy', ['fixed','react','plan'])
 def test_all_strategies_use_the_same_expanded_catalog_with_offline_fixtures(strategy):
-    programs, sources = load_seed()
+    programs, sources = load_seed(M61B_SEED)
     session = Session(profile=tiering_profile())
     result = start_task(session, request_id='m61b-' + strategy,
         programs=programs, sources=sources, settings=replace(load_settings(),enabled=False,api_key=''),
@@ -128,7 +128,7 @@ def test_all_strategies_use_the_same_expanded_catalog_with_offline_fixtures(stra
 
 def test_capture_failures_are_not_imported_as_verified_sources():
     receipts = json.loads((PROJECT_ROOT/'data/review/m61b_capture_receipts.json').read_text(encoding='utf-8'))
-    _, sources = load_seed()
+    _, sources = load_seed(M61B_SEED)
     failures = {r['raw_response_sha256'] for r in receipts['captures'] if r['status'] != 'captured'}
     assert len(failures) == 2
     assert not any(s.raw_response_sha256 in failures for s in sources.values())

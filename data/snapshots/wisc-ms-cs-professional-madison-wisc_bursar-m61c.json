@@ -1,0 +1,12 @@
+{
+  "url": "https://bursar.wisc.edu/tuition-and-fees",
+  "retrieved_at": "2026-11-20T22:29:56.671750+00:00",
+  "raw_response_sha256": "be077ca03ccacb7fb502028d669f62d05b3e6f74ab63c38e6af6ab9d2a293616",
+  "verified_values": {
+    "tuition_review": {
+      "notes.5": "The Bursar workbook includes segregated fees and varies by program, enrollment and residency. No fee-inclusive workbook figure is silently treated as tuition-only cost."
+    }
+  },
+  "source_excerpt": "Tuition rates include",
+  "fact_summary": "The Bursar describes program/residency/enrollment-dependent charges and fee-inclusive workbook rates; no applicable complete tuition schedule was extracted."
+}

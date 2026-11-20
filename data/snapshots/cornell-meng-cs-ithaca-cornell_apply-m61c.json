@@ -1,0 +1,43 @@
+{
+  "url": "https://www.cs.cornell.edu/master-engineering-computer-science/apply",
+  "retrieved_at": "2026-11-20T22:29:57.705094+00:00",
+  "raw_response_sha256": "7c17bda90d7747b69d30fe58f4e95189129f27c45277b45cb4ca7c12359160fb",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "prerequisites": {
+      "required_topics": [
+        "object_oriented_programming",
+        "data_structures",
+        "computer_organization",
+        "discrete_math",
+        "calculus",
+        "linear_algebra"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": false
+    },
+    "remaining_eligibility": {
+      "eligibility_review_complete": false,
+      "application_materials": [
+        "Graduate School online application",
+        "Degree and transcripts",
+        "Statement of purpose",
+        "Personal statement",
+        "Recommendation letters as required in the application",
+        "Applicable TOEFL/IELTS reports",
+        "Application fee"
+      ]
+    },
+    "english_policy": {
+      "notes.2": "The apply page states IELTS 7.0 and new-scale TOEFL section minima. The complete age/waiver rule was not captured, so English eligibility is not automatically passed."
+    }
+  },
+  "source_excerpt": "GRE Scores",
+  "fact_summary": "The two-semester CS MEng has optional/no-impact GRE, technical preparation and degree requirements. Partial English thresholds, transcript equivalency and age/waiver conditions are not treated as a complete eligibility rule."
+}

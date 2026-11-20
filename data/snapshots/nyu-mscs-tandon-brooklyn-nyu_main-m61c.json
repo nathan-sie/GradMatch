@@ -1,0 +1,45 @@
+{
+  "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+  "retrieved_at": "2026-11-20T22:29:55.342909+00:00",
+  "raw_response_sha256": "c7bd507994dbf6a58640ee1de90d52f11a41891eb0ddf74c6d8c705ac80542e0",
+  "verified_values": {
+    "identity": {
+      "university": "New York University",
+      "school": "Tandon School of Engineering / Computer Science and Engineering",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "Brooklyn",
+      "track": "On-campus",
+      "official_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "prerequisites": {
+      "required_topics": [
+        "science",
+        "calculus",
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "computer_architecture"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": false
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "nyu-mscs-tandon-brooklyn-professional",
+          "goal": "employment",
+          "statement": "Flexible advanced computing coursework and a capstone support preparation for applied computing careers; no placement outcome is promised.",
+          "source_ids": [
+            "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "Total Credits",
+  "fact_summary": "The Brooklyn on-campus MSCS requires 30 credits, including a capstone. Entry preparation includes science, calculus, programming and computer fundamentals; duration/equivalency remain manual."
+}

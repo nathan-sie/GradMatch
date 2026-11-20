@@ -13,7 +13,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import resolve_app_database
-from gradmatch.catalog import DEFAULT_SEED, M35_SEED, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import DEFAULT_SEED, M35_SEED, M61B_SEED, import_catalog, load_seed, read_catalog
 from gradmatch.catalog_audit import markdown_report
 from gradmatch.config import load_settings
 from gradmatch.providers import OpenAIProvider
@@ -99,10 +99,10 @@ def main():
           patch.object(socket,'create_connection',deny_network),
           patch.object(socket.socket,'connect',local_page_connect),
           patch.object(OpenAIProvider,'generate',deny_model)):
-        programs,sources=load_seed()
+        programs,sources=load_seed(M61B_SEED)
         provenance=verify_receipts(programs,sources)
         database=directory/'catalog.db'
-        import_catalog(DEFAULT_SEED,database)
+        import_catalog(M61B_SEED,database)
         restored,restored_sources=read_catalog(database)
         digest=data_hash(programs,sources)
         assert data_hash(restored,restored_sources)==digest
@@ -130,8 +130,9 @@ def main():
         with patch.dict(os.environ,{'GRADMATCH_PUBLIC_CACHE_DIR':str(directory/'public-cache')}):
             if not os.environ.get('GRADMATCH_DB_PATH'):
                 active=resolve_app_database()
-                assert data_hash(*read_catalog(active))==digest
-        audit=build_report(as_of=date(2026,11,20))
+                assert data_hash(*read_catalog(active))==data_hash(*load_seed(DEFAULT_SEED))
+        audit=build_report(as_of=date(2026,11,20),seed=M61B_SEED,
+            review_path=PROJECT_ROOT/'data/review/m61b_review_plan.json')
         assert audit['catalog']['summary']['programs']==12
         assert audit['candidates']['summary']['total']==83
         assert audit['candidates']['summary']['screening_counts']['already_linked_identity']==12

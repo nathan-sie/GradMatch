@@ -1,0 +1,19 @@
+{
+  "url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/faq.html",
+  "retrieved_at": "2026-11-20T22:29:55.279609+00:00",
+  "raw_response_sha256": "b556fed5c6a613ef38a23eee5ec004c16d86059c1e09341f5baba37c34d08545",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "gpa_policy": {
+      "notes.3": "The CSE FAQ sets no specified departmental GPA/GRE cutoff and calls GRE optional. The separate Quick Admit GPA threshold is not imposed on ordinary international applicants. A complete university-wide GPA/equivalency review is still pending; no hard GPA rule is invented."
+    }
+  },
+  "source_excerpt": "The GRE is optional for all applicants.",
+  "fact_summary": "The departmental FAQ distinguishes optional GRE and qualitative competitiveness from a mandatory numeric cutoff, and directs bachelor-equivalency decisions to Admissions."
+}

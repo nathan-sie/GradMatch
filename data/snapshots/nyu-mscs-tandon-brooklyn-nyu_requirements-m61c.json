@@ -1,0 +1,86 @@
+{
+  "url": "https://engineering.nyu.edu/admissions/graduate/apply/admissions-requirements",
+  "retrieved_at": "2026-11-20T22:29:55.670395+00:00",
+  "raw_response_sha256": "b29c6b18ea5f08df4ccd1e3600ba9873f863ab89e81aba11c23d8399bc067238",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "90",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "125",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "remaining_eligibility": {
+      "eligibility_review_complete": false,
+      "application_materials": [
+        "Online application",
+        "Transcripts and proof of degree",
+        "Resume / CV",
+        "Two personal essay responses",
+        "Applicable English proficiency evidence",
+        "Application fee"
+      ]
+    }
+  },
+  "source_excerpt": "Minimum Overall Language Scores:",
+  "fact_summary": "General Tandon requirements provide separate English test scales and a two-year application-time validity rule. GRE and MS recommendation letters are optional; degree equivalency, GPA scope and waiver paths are not fully automated."
+}

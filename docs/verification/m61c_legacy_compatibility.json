@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "selected_historical_seed": "data/catalog/m61b_seed.json",
+  "programs": 12,
+  "sources": 43,
+  "data_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+  "old_databases_unchanged": true,
+  "paid_model_requests": 0,
+  "external_network_requests": 0,
+  "tests": "not_repeated; current full 246-test suite is recorded separately"
+}

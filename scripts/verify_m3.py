@@ -39,7 +39,8 @@ def release_files():
         if (len(key) >= 10 and key in payload) or re.search(rb"sk-(?:proj-)?[A-Za-z0-9_-]{32,}", payload):
             raise ValueError(f"A possible API secret was detected in {name}. No secret value has been printed.")
         manifest.append({"path": name, "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload)})
-    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/catalog/m35_seed.json", "data/catalog/m61b_seed.json", "data/schema.sql", "gradmatch/bootstrap.py"}
+    from gradmatch.catalog import DEFAULT_SEED
+    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/catalog/m35_seed.json", DEFAULT_SEED.relative_to(PROJECT_ROOT).as_posix(), "data/schema.sql", "gradmatch/bootstrap.py"}
     if not required <= set(names):
         raise ValueError("The release is missing a required application/data/dependency file.")
     return manifest

@@ -1,0 +1,12 @@
+{
+  "url": "https://www.cs.wisc.edu/grad/programs/admissions/",
+  "retrieved_at": "2026-11-20T22:29:57.045400+00:00",
+  "raw_response_sha256": "e2766784ac839d0cee6eec3e3de45a2efadc391944d7007f871b486fbf969b23",
+  "verified_values": {
+    "intake_policy": {
+      "notes.4": "Only the ordinary fall-admission policy is observed; spring is restricted to pre-admitted POP students. No dated Fall 2027 intake or deadline is inferred from yearless tables or an older internal-transfer example."
+    }
+  },
+  "source_excerpt": "Professional CS MS FAQs",
+  "fact_summary": "The ordinary PMP fall route is distinct from POP-only spring and internal transfer examples. A recurring February deadline is not an explicit 2027 cycle announcement."
+}
