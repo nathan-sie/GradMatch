@@ -1,0 +1,383 @@
+{
+  "milestone": "M5",
+  "verified_at": "2026-11-20T03:25:00.792311+00:00",
+  "offline": "passed",
+  "actual_cloud": "not_run",
+  "milestone_complete": false,
+  "fixture_pilot": {
+    "kind": "OFFLINE_FIXTURES_NOT_A_BENCHMARK",
+    "status": "passed",
+    "rows": [
+      {
+        "strategy": "fixed",
+        "fictional_budget_usd": "140000",
+        "status": "insufficient_evidence",
+        "recommendations": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 1,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "react",
+        "fictional_budget_usd": "140000",
+        "status": "insufficient_evidence",
+        "recommendations": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 4,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "plan",
+        "fictional_budget_usd": "140000",
+        "status": "insufficient_evidence",
+        "recommendations": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 2,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "fixed",
+        "fictional_budget_usd": "100000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 1,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "react",
+        "fictional_budget_usd": "100000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 4,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "plan",
+        "fictional_budget_usd": "100000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "cmu-mcds-pittsburgh",
+          "ncsu-mcs-raleigh",
+          "neu-mscs-boston",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "excluded": [
+          "cmu-msaii-pittsburgh"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 2,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "fixed",
+        "fictional_budget_usd": "30000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "ncsu-mcs-raleigh",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst"
+        ],
+        "excluded": [
+          "cmu-mcds-pittsburgh",
+          "cmu-msaii-pittsburgh",
+          "neu-mscs-boston",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 1,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "react",
+        "fictional_budget_usd": "30000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "ncsu-mcs-raleigh",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst"
+        ],
+        "excluded": [
+          "cmu-mcds-pittsburgh",
+          "cmu-msaii-pittsburgh",
+          "neu-mscs-boston",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 4,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      },
+      {
+        "strategy": "plan",
+        "fictional_budget_usd": "30000",
+        "status": "insufficient_evidence",
+        "recommendations": [],
+        "pending": [
+          "ncsu-mcs-raleigh",
+          "rice-mcs-houston",
+          "uci-mcs-irvine",
+          "uiuc-mcs-urbana",
+          "umass-mscs-amherst"
+        ],
+        "excluded": [
+          "cmu-mcds-pittsburgh",
+          "cmu-msaii-pittsburgh",
+          "neu-mscs-boston",
+          "usc-mscs-general-los-angeles",
+          "uw-ece-msece-pmp-seattle"
+        ],
+        "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+        "shared_limits": {
+          "version": "m5-2026-11-19",
+          "max_tools": 20,
+          "max_models": 16,
+          "max_pages": 16,
+          "max_turns": 6,
+          "turn_seconds": 120,
+          "task_seconds": 300,
+          "page_seconds": 15,
+          "fixed_live_pages": 4,
+          "max_replans": 3
+        },
+        "fixture_model_calls": 2,
+        "fixture_tool_calls": 4,
+        "actual_model_requests": 0,
+        "tokens": null,
+        "cost_usd": null
+      }
+    ],
+    "notice": "Tests shared entry, caps and validator only. No accuracy, latency, token or cost comparison is claimed."
+  },
+  "offline_test_count": 174,
+  "code_base_commit": "28d0c60ec13ac837eb6b81e00b0bf91f28cb2f85",
+  "clean_host": [
+    {
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "model_calls": 0,
+      "fresh_session": true
+    }
+  ],
+  "public_sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816"
+}

@@ -23,7 +23,7 @@ except (CatalogNotReadyError, OSError, ValueError) as error:
 left, right = st.columns(2)
 left.metric("Programs in catalog", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M4-2026-11-19 · Read-only public catalog · Profile and chat memory are private to this browser session")
+st.caption("Release M5-2026-11-19 · Read-only public catalog · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")

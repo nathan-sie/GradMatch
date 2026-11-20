@@ -28,11 +28,11 @@ def render_m2(database):
         st.session_state["m2_session"] = Session()
     session = st.session_state["m2_session"]
     st.subheader("Applicant profile and recommendations")
-    strategy_label=st.selectbox('Execution method',['ReAct agent','Fixed baseline'],key='m4_strategy',disabled=session.active)
+    strategy_label=st.selectbox('Execution method',['ReAct agent','Plan-and-replan agent','Fixed baseline'],key='m4_strategy',disabled=session.active)
     mode_label=st.selectbox('Evidence mode',['Reviewed snapshots','Live official pages'],key='m4_mode',disabled=session.active)
-    strategy='react' if strategy_label=='ReAct agent' else 'fixed'
+    strategy={'ReAct agent':'react','Plan-and-replan agent':'plan','Fixed baseline':'fixed'}[strategy_label]
     data_mode='snapshot' if mode_label=='Reviewed snapshots' else 'live'
-    st.caption('ReAct chooses its next tool from observations. Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
+    st.caption('ReAct chooses its next tool from observations. Plan-and-replan creates 3-6 steps and revises them after conditions change or execution fails (at most 3 revisions). Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
     st.info("Pilot tiering uses reviewed official cohort statistics. Lottery / Reach are planning labels, not personal admission probabilities. Target / Safer require comparable cases and may remain empty. Other programs may still need verification.")
     st.caption("When you enable model calls, your profile and submitted messages are sent to OpenAI. Use synthetic information for milestone testing. Session history lasts only for this browser connection and is not stored in the public catalog.")
     left, right = st.columns(2)
@@ -56,7 +56,7 @@ def render_m2(database):
             st.code("# In the local .env file\nOPENAI_API_KEY=<your key, kept locally>\nMODEL_ENABLED=true", language="text")
         allow_model = st.checkbox("Allow paid model calls for this session", value=False,
             key="m2_allow_model", disabled=not settings.ready)
-        st.caption("Only profile submission, Generate / rerun, and chat submission start requests. ReAct: up to 16 model calls and 20 tools per task, retained across follow-ups; all modes share the 20-model-call session limit. Model retries are disabled.")
+        st.caption("Only profile submission, Generate / rerun, and chat submission start requests. Each method: up to 16 model calls and 20 tools per task, retained across follow-ups; all modes share the 20-model-call session limit. Model retries are disabled.")
         st.write(f"Model requests in this session: {len(session.usage)}")
         if session.usage:
             show_table([{"Purpose": u["purpose"], "Status": u["status"], "Input tokens": u["input_tokens"],
@@ -99,6 +99,19 @@ def render_m2(database):
         if st.button('Start new task (keep profile)',key='m4_new_task',disabled=session.active):
             session.agent_task=None
             st.info('The next submission starts a fresh task. Your profile and the session model limit are retained.')
+    if session.agent_task and session.agent_task.plan_state:
+        plan = session.agent_task.plan_state.public()
+        st.subheader("Execution plan")
+        st.caption(f"Replans: {plan['replans']}/{session.agent_task.limits['max_replans']}")
+        if plan['revisions']:
+            revision = plan['revisions'][-1]
+            st.write(revision['summary'])
+            st.caption(f"Revision {revision['revision']} · {revision['reason_code']} · {revision['status']} · Profile v{revision['profile_version']} · Evidence v{revision['evidence_version']}")
+            show_table([{"Step": s['step_id'], "Action": s['tool'], "Status": s['status'],
+                "Depends on": ', '.join(s['depends_on']), "Complete when": ', '.join(s['done_criteria'])}
+                for s in revision['steps']])
+        with st.expander("Plan revisions and reasons", expanded=False):
+            st.json(plan)
     with st.expander("Current structured profile", expanded=False):
         st.json(session.profile.model_dump(mode="json"))
     st.subheader("Conversation")

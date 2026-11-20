@@ -66,6 +66,7 @@ class Task:
     profile_version: int = 0
     queued_action: object = None
     graph: object = None
+    plan_state: object = None
 
     def summary(self):
         return dict(
@@ -84,6 +85,7 @@ class Task:
             stop_reason=self.stopped,
             live_receipts=self.live_receipts,
             tool_log=self.observations,
+            plan=self.plan_state.public() if self.plan_state is not None else None,
         )
 
 
@@ -188,6 +190,9 @@ class Execution:
                     t.evidence_version,
                     self.session.profile.profile_version,
                     t.turns if name == "rank_programs" else None,
+                    t.plan_state.replans
+                    if name == "rank_programs" and t.plan_state is not None
+                    else None,
                 ]
             )
             if key in t.attempts and name not in {
@@ -716,6 +721,62 @@ class Execution:
         )
         return t.validated, [], []
 
+    def decision_context(self):
+        t = self.task
+        version = self.session.profile.profile_version
+        observations = [
+            o
+            for o in t.observations
+            if o["tool"] in {"search_programs", "fetch_official_page"}
+            or (
+                o["profile_version"] == version
+                and o["evidence_version"] == t.evidence_version
+            )
+        ]
+        messages = [
+            m
+            for m in self.session.messages
+            if m["role"] != "assistant" or m.get("profile_version") == version
+        ]
+        prior = self.session.current_result or self.session.previous_result or {}
+        return dict(
+            profile=self.session.profile.model_dump(mode="json"),
+            declared_unknown_fields=sorted(self.session.unknown_fields),
+            messages=messages[-4:],
+            previous_programs=[
+                {"program_id": p["program_id"], "identity": p["identity"]}
+                for p in prior.get("recommendations", [])
+                + prior.get("pending_verification", [])
+            ],
+            catalog_index=[
+                {
+                    "program_id": p.program_id,
+                    "identity": {
+                        "university": p.university,
+                        "program_name": p.program_name,
+                        "degree": p.degree,
+                        "campus": p.campus,
+                    },
+                    "sources": [
+                        {"source_id": s.source_id, "field_groups": s.field_groups}
+                        for s in t.sources.values()
+                        if s.program_id == p.program_id
+                    ],
+                }
+                for p in t.programs
+            ],
+            retrieved_program_ids=t.retrieved,
+            data_mode=t.mode,
+            evidence_version=t.evidence_version,
+            task={"tool_calls": t.tools, "model_calls": t.models, "limits": t.limits},
+            tools={
+                name: model.model_json_schema() for name, model in TOOL_ARGS.items()
+            },
+            ask_user_schema=AskArgs.model_json_schema(),
+            current_state=self.current_state(),
+            observations=observations[-6:],
+        )
+
     def choose(self, state):
         t = self.task
         if t.stopped:
@@ -773,48 +834,12 @@ class Execution:
             return {"route": "end"}
         if t.strategy == "fixed":
             return self.fixed_choice()
-        tools = {name: model.model_json_schema() for name, model in TOOL_ARGS.items()}
+        if t.strategy == "plan":
+            from gradmatch.planning import Planner
+
+            return Planner(self).choose()
         version = self.session.profile.profile_version
-        observations = [
-            o
-            for o in t.observations
-            if o["tool"] in {"search_programs", "fetch_official_page"}
-            or (
-                o["profile_version"] == version
-                and o["evidence_version"] == t.evidence_version
-            )
-        ]
-        messages = [
-            m
-            for m in self.session.messages
-            if m["role"] != "assistant" or m.get("profile_version") == version
-        ]
-        prior = self.session.current_result or self.session.previous_result or {}
-        value = self.generate(
-            Action,
-            "act",
-            {
-                "profile": self.session.profile.model_dump(mode="json"),
-                "messages": messages[-4:],
-                "previous_programs": [
-                    {"program_id": p["program_id"], "identity": p["identity"]}
-                    for p in prior.get("recommendations", [])
-                    + prior.get("pending_verification", [])
-                ],
-                "data_mode": t.mode,
-                "evidence_version": t.evidence_version,
-                "task": {
-                    "tool_calls": t.tools,
-                    "model_calls": t.models,
-                    "limits": t.limits,
-                },
-                "tools": tools,
-                "ask_user_schema": AskArgs.model_json_schema(),
-                "current_state": self.current_state(),
-                "observations": observations[-6:],
-            },
-            self.session,
-        )
+        value = self.generate(Action, "act", self.decision_context(), self.session)
         self.session.event(
             "agent_action",
             task_id=t.task_id,
@@ -935,16 +960,25 @@ class Execution:
     def tool_node(self, state):
         action = state["action"]
         result = self.dispatch(action["tool"], action["arguments"])
+        validation = None
         if action["tool"] == "rank_programs" and result["ok"]:
-            result = self.dispatch("validate_shortlist", {})
-            if not result["data"]["validation_errors"]:
+            validation = self.dispatch("validate_shortlist", {})
+            if (
+                not validation["data"]["validation_errors"]
+                and self.task.strategy != "plan"
+            ):
                 self.task.stopped = "finished"
         if (
             action["tool"] == "validate_shortlist"
             and result["ok"]
             and not result["data"]["validation_errors"]
+            and self.task.strategy != "plan"
         ):
             self.task.stopped = "finished"
+        if self.task.strategy == "plan" and self.task.plan_state is not None:
+            from gradmatch.planning import Planner
+
+            Planner(self).observe(result, validation)
         return {"route": "step"}
 
     def build_graph(self):
@@ -1025,12 +1059,13 @@ def run_task(
             raise BudgetLimit(task.stopped)
         task.turns += 1
         task.stopped = None
-        if not was_waiting:
+        if not was_waiting and strategy != "plan":
             task.checked_version = None
             task.reports = {}
             task.draft = None
             task.validated = None
-        prepare_input(
+        event_start = len(session.events)
+        _, driver.input_intent = prepare_input(
             session,
             changes=changes,
             unknown_fields=unknown_fields,
@@ -1038,6 +1073,14 @@ def run_task(
             provider=driver,
             settings=settings,
         )
+        driver.request_message = message
+        driver.supplied_fields = set(changes or {})
+        for event in session.events[event_start:]:
+            if event.get("event_type") == "profile_patch":
+                driver.supplied_fields.update(
+                    name.split(".")[0]
+                    for name in event["payload"].get("changed_fields", [])
+                )
         driver.invalidate()
         output = task.graph.invoke(
             Command(resume={"profile_version": session.profile.profile_version})
@@ -1065,6 +1108,10 @@ def run_task(
             result = deepcopy(task.validated)
     except BudgetLimit as error:
         task.stopped = str(error)
+        if strategy == "plan":
+            from gradmatch.planning import Planner
+
+            Planner(driver).stop(task.stopped)
         task.waiting = False
         # Final validation uses the reserved pure-code slot and cannot start a paid request.
         if task.tools < task.limits["max_tools"]:
@@ -1094,6 +1141,10 @@ def run_task(
             message="The cumulative task budget was reached. Review the partial validated result or start a new task explicitly.",
         )
     except ModelUnavailable as error:
+        if strategy == "plan":
+            from gradmatch.planning import Planner
+
+            Planner(driver).stop("MODEL_UNAVAILABLE")
         result = {"status": "error", "message": str(error)}
     except (ValueError, ValidationError, TypeError, KeyError) as error:
         session.event(
@@ -1132,6 +1183,22 @@ def run_task(
         model_config=settings.public(),
         task_usage=task.summary(),
     )
+    if (
+        strategy == "plan"
+        and task.stopped == "finished"
+        and not result["model_calls"]
+        and task.plan_state is not None
+        and task.plan_state.revisions
+        and task.plan_state.revisions[-1]["status"] == "completed"
+    ):
+        result["model_status"] = (
+            "test_stub" if provider is not None else "reused_validated"
+        )
+        result["message"] = (
+            "The current plan and validated result were reused. No new model request was made."
+        )
+    if result["status"] == "error" and result["usage"]:
+        result["model_status"] = "error"
     if provider is None and not settings.ready:
         result["message"] = (
             "Deterministic checks only. Adaptive decisions and live extraction have not run; enable model calls to use them."

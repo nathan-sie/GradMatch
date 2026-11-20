@@ -74,7 +74,7 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
                strategy=None, data_mode="snapshot", new_task=False, fetcher=None):
     legacy=strategy is None and data_mode=='snapshot'
     strategy=strategy or 'fixed'
-    if strategy not in {"fixed", "react"} or data_mode not in {"snapshot", "live"}:
+    if strategy not in {"fixed", "react", "plan"} or data_mode not in {"snapshot", "live"}:
         raise ValueError("Unsupported execution strategy or data mode.")
     if not legacy:
         from gradmatch.agent import run_task

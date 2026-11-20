@@ -24,7 +24,7 @@ def main():
     parser.add_argument("--message")
     parser.add_argument("--followup", action="append", default=[], help="Additional message in the same session.")
     parser.add_argument("--live-model", action="store_true", help="Allow bounded, paid API requests.")
-    parser.add_argument('--strategy',choices=['fixed','react'],default='fixed')
+    parser.add_argument('--strategy',choices=['fixed','react','plan'],default='fixed')
     parser.add_argument('--data-mode',choices=['snapshot','live'],default='snapshot')
     parser.add_argument("--as-of", type=date.fromisoformat, default=datetime.now(ZoneInfo('America/Los_Angeles')).date())
     parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "work" / "m2_task.json")

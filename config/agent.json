@@ -1,5 +1,5 @@
 {
-  "version": "m4-2026-11-19",
+  "version": "m5-2026-11-19",
   "max_tools": 20,
   "max_models": 16,
   "max_pages": 16,
@@ -7,5 +7,6 @@
   "turn_seconds": 120,
   "task_seconds": 300,
   "page_seconds": 15,
-  "fixed_live_pages": 4
+  "fixed_live_pages": 4,
+  "max_replans": 3
 }
