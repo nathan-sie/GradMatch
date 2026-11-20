@@ -1,0 +1,83 @@
+"""Search and compare all pinned program leads without making model requests."""
+
+import json
+
+import streamlit as st
+
+from gradmatch.directory import UNKNOWN, comparison_rows, filter_records, tuition_label
+
+
+def render_directory(document):
+    records = document["records"]
+    by_id = {r["source_id"]: r for r in records}
+    st.subheader("Program directory")
+    st.write("Explore all programs from the imported tracker. Official snapshots fill reviewed fields; other information remains marked as Needs verification.")
+    columns = st.columns(3)
+    columns[0].metric("Programs to explore", document["total"])
+    columns[1].metric("With official snapshots", document["official_records"])
+    columns[2].metric("Awaiting official review", document["total"] - document["official_records"])
+    st.caption(f"Community snapshot: {document['upstream_generated']} · Reported intake: {document['source_intake']}. Field coverage is checked against {document['coverage_intake']}; this does not confirm every program's intake or current availability.")
+    st.info("Directory entries are leads for exploration. Admission tiers and applicant eligibility require the applicant workflow and supporting evidence. An unknown requirement does not mean it is waived.")
+    query = st.text_input("Search programs", placeholder="University, program, campus or keyword", key="directory_query")
+    left, right = st.columns(2)
+    university = left.selectbox("University", ["All universities"] + sorted({r["university"] for r in records}), key="directory_university")
+    review = right.selectbox("Review status", ["All programs", "Official snapshots available", "Needs official review", "Source-reported halt"], key="directory_review")
+    visible = filter_records(records, query, review, university)
+    st.caption(f"Showing {len(visible)} of {len(records)} programs")
+    if visible:
+        st.dataframe([{
+            "University": r["university"], "Program": r["program_name"], "Campus": r["campus"],
+            "Review status": r["review_status"], "Tuition estimate": tuition_label(r),
+            "Availability note": "Source reports a halt; verify officially" if r["source_reports_halted"] else "Current availability needs verification",
+            "Program page": r["program_url"],
+        } for r in visible], hide_index=True, width="stretch", height=420,
+            column_config={"Program page": st.column_config.LinkColumn("Program page", display_text="Open page")})
+    else:
+        st.info("No directory entries match these filters. Try a broader search.")
+
+    def label(sid):
+        row = by_id[sid]
+        return f"{row['university']} — {row['program_name']}"
+
+    st.subheader("Compare programs")
+    st.caption("Select up to four programs. Choices remain available when search filters change.")
+    selected = st.multiselect("Programs to compare", list(by_id), format_func=label, max_selections=4, key="directory_compare")
+    if selected:
+        compared = [by_id[sid] for sid in selected]
+        st.dataframe(comparison_rows(compared), hide_index=True, width="stretch")
+        st.caption("Tuition estimates use the stated rate year and assumptions. They exclude living costs and unverified charges; future bills may differ.")
+        st.download_button("Download comparison JSON", json.dumps({
+            **{k: v for k, v in document.items() if k != "records"},
+            "records": compared, "export_scope": "Selected directory entries; not recommendations",
+        }, ensure_ascii=False, indent=2), "gradmatch_program_comparison.json", "application/json", key="directory_download")
+
+    st.subheader("Program details")
+    options = [r["source_id"] for r in visible]
+    if options:
+        # A prior detail selection may disappear after filtering.
+        if st.session_state.get("directory_detail") not in options:
+            st.session_state.pop("directory_detail", None)
+        sid = st.selectbox("Explore a program", options, format_func=label, key="directory_detail")
+        row = by_id[sid]
+        st.write(row["program_name"])
+        st.link_button("Open program page", row["program_url"])
+        st.caption("Community-reported URL; official identity and scope need review." if not row["linked_program_id"]
+                   else f"Officially scoped record: {row['degree']} · {row['campus']} · {row['track']}")
+        if row["source_reports_halted"]:
+            st.warning("The imported community source reports a halt. This is unverified; confirm the current admission status on the program's website.")
+        st.write("Estimated full-program tuition:", tuition_label(row))
+        st.write("Fields with usable reviewed evidence:", ", ".join(row["verified_fields"]) or "None yet")
+        st.write("Needs verification:", ", ".join(row["missing_fields"]) or "Applicant-specific checks still required")
+        for note in row["notes"] + row["tuition_assumptions"]:
+            st.caption(note)
+        for source in row["official_sources"]:
+            with st.expander("Official evidence · " + source["locator"]):
+                st.link_button("Open source", source["url"], key="directory_source_" + source["source_id"])
+                st.caption(f"Retrieved: {source['retrieved_at']} · Period: {source['effective_period'] or 'See field notes'}")
+                st.write(source["fact_summary"])
+                st.code(source["source_excerpt"], language=None)
+        if not row["official_sources"]:
+            st.caption("No reviewed official evidence is available for this entry yet. GPA, English requirements, tuition, deadlines and admission tiers remain unverified.")
+
+    attribution = document["attribution"]
+    st.caption(f"Directory identities: [{attribution['creator']}]({attribution['project_url']}) · [{attribution['license']}]({attribution['license_url']}). Reduced community data joined to separately reviewed official records. Community rankings, fees and admissions datapoints are not used.")

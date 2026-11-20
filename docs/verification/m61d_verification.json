@@ -1,0 +1,27 @@
+{
+  "milestone": "M6.1d",
+  "status": "passed",
+  "verified_at": "2026-11-20T23:18:48.897854+00:00",
+  "directory_programs": 83,
+  "linked_official_records": 16,
+  "awaiting_official_review": 67,
+  "official_sources": 62,
+  "computable_tuition_estimates": 7,
+  "preserved_halt_flags": 4,
+  "directory_database": "D:\\UW\\EEP500d\\GradMatch\\work\\m61d\\a1a2cd38-a27e-440c-9a3c-1c17eb51e2c5\\public\\directory\\c92cfbf379341ea36d781542cdc1033549307f3d4d87423842a889841a79c9bc.db",
+  "directory_sha256": "ed3a6a4dfd564e5827afa141aa25b3a28cd0338e906fc3fcbb9712f64fff11ea",
+  "official_data_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+  "databases_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "databases_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "rebuild_after_cache_loss": "passed",
+  "external_requests": 0,
+  "paid_model_requests": 0,
+  "recommendation_data_unchanged": true,
+  "formal_benchmark_run": false
+}

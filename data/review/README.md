@@ -1,6 +1,6 @@
 # M6.1 research inputs
 
-These files are audit/research inputs. The runtime catalog remains `data/catalog/m35_seed.json`; nothing in this directory creates a formal program, source binding or recommendation.
+These files supply audit/research inputs and, from M6.1d, the public exploration directory. The official recommendation seed is `data/catalog/m61c_seed.json`. Directory identities can be browsed without creating a formal program, source binding or recommendation. See `docs/DIRECTORY_PLAN.md`.
 
 - `m61_candidate_index.json`: reduced identity leads from the already imported 83-row CS Grad tracker snapshot. Original public labels are preserved, including upstream encoding artifacts. It retains the pinned commit, upstream SHA-256, date, intake, halt flags and review flags. Source tiers, application fees, test-score/deadline claims and admissions datapoints are excluded.
 - `m61_review_plan.json`: explicit links from ten leads to the existing reviewed catalog, followed by ten independently researched expansion leads. Existing `candidate_source_id` provenance is not overwritten; in particular, the two CMU records keep their official-comparison provenance. Proposed IDs are research identifiers until degree/campus/track scope is resolved.

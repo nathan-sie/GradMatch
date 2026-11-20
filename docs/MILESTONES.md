@@ -201,6 +201,8 @@ ReAct 可通过同一应用服务运行并有可审查的工具日志；安全/�
 
 ## 当前检查点
 
+2026-11-20 M6.1d direction: expose all 83 imported leads for browsing/search/comparison, then deepen official-field coverage for 20–30 priority programs in batches of 10–15. This user-approved sequence supersedes the earlier 40–60 reviewed-program expansion target. The separate 210-task/50-safety evaluation gates remain. See `docs/DIRECTORY_PLAN.md`.
+
 2026-11-15: M0 and M2 are user-accepted. M1's reviewed catalog and deterministic rules remain in use: 8 programs, 20 official sources, 3 computable tuition estimates and explicitly incomplete eligibility/goal/tier evidence. M2 real-model acceptance and the budget/follow-up workflow passed; its six-request development log is preserved separately.
 
 M3 is complete: https://gradmatch-nathan-sie.streamlit.app/ . All 84 regression checks, anonymous access, real hosted model generation/update/follow-up, independent connection isolation, actual reboot recovery and the user another-device check passed. Cloud model acceptance used four requests, 43,501 input / 946 output tokens and an estimated USD 0.03688275. Cloud Secrets were entered by the user and are not in GitHub or exported artifacts. See `docs/verification/M3.md`.

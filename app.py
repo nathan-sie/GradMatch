@@ -5,6 +5,7 @@ import sys
 import streamlit as st
 
 from gradmatch.bootstrap import resolve_app_database
+from gradmatch.directory import bootstrap_directory, read_directory
 from gradmatch.storage import CatalogNotReadyError, inspect_catalog
 
 
@@ -21,17 +22,31 @@ except (CatalogNotReadyError, OSError, ValueError) as error:
     st.stop()
 
 left, right = st.columns(2)
-left.metric("Programs in catalog", summary.program_count)
+left.metric("Official program records", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M5.3-2026-11-19 · Read-only public catalog · Profile and chat memory are private to this browser session")
+st.caption("Release M6.1d-2026-11-20 · Read-only public data · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")
 else:
-    page = st.radio("Workspace", ["Applicant workflow (M2)", "Data and rule checks (M1)"], key="workspace_page", horizontal=True)
+    try:
+        directory = read_directory(bootstrap_directory(database))
+    except (OSError, ValueError) as error:
+        directory = None
+        st.warning("The program directory is unavailable. Reviewed applicant workflows remain available.")
+    if directory:
+        st.caption(f"Explore {directory['total']} programs in Program directory; {directory['official_records']} have official snapshots and other fields may still need verification.")
+        def open_directory():
+            st.session_state["workspace_page"] = "Program directory"
+        st.button(f"Browse all {directory['total']} programs", key="open_directory", on_click=open_directory)
+    page = st.radio("Workspace", ["Applicant workflow (M2)", "Program directory", "Data and rule checks (M1)"], key="workspace_page", horizontal=True)
     if page == "Applicant workflow (M2)":
         from gradmatch.ui_m2 import render_m2
         render_m2(database)
+    elif page == "Program directory":
+        if directory:
+            from gradmatch.ui_directory import render_directory
+            render_directory(directory)
     else:
         from gradmatch.ui_m1 import render_m1
         render_m1(database)

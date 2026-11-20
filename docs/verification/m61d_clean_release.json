@@ -1,0 +1,29 @@
+[
+  {
+    "step": "cold_start",
+    "status": "passed",
+    "programs": 16,
+    "sources": 62,
+    "data_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+    "model_calls": 0,
+    "fresh_session": true
+  },
+  {
+    "step": "process_restart",
+    "status": "passed",
+    "programs": 16,
+    "sources": 62,
+    "data_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+    "model_calls": 0,
+    "fresh_session": true
+  },
+  {
+    "step": "cache_loss_rebuild",
+    "status": "passed",
+    "programs": 16,
+    "sources": 62,
+    "data_hash": "a043d828236100e1185073d8b6c90251517e9f698b2f50c84f8f5cf2fde2f147",
+    "model_calls": 0,
+    "fresh_session": true
+  }
+]
