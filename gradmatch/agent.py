@@ -151,7 +151,17 @@ class Execution:
 
     def invalidate(self):
         t = self.task
-        if t.profile_version != self.session.profile.profile_version:
+        date_changed = t.validated is not None and t.validated.get("as_of_date") != str(
+            self.as_of
+        )
+        evidence_changed = (
+            t.checked_version is not None and t.checked_version[1] != t.evidence_version
+        )
+        if (
+            t.profile_version != self.session.profile.profile_version
+            or date_changed
+            or evidence_changed
+        ):
             t.profile_version = self.session.profile.profile_version
             t.reports = {}
             t.checked_version = None
@@ -1041,6 +1051,7 @@ def run_task(
         )
         session.agent_task = task
     driver = Execution(task, session, settings, as_of, provider, fetcher)
+    tool_start = task.tools
     task.driver = driver
     if task.graph is None:
         task.graph = driver.build_graph()
@@ -1192,6 +1203,11 @@ def run_task(
         and task.plan_state is not None
         and task.plan_state.revisions
         and task.plan_state.revisions[-1]["status"] == "completed"
+        and task.tools == tool_start
+        and task.plan_state.revisions[-1]["profile_version"]
+        == session.profile.profile_version
+        and task.plan_state.revisions[-1]["evidence_version"] == task.evidence_version
+        and task.plan_state.revisions[-1]["as_of_date"] == str(as_of)
     ):
         result["model_status"] = (
             "test_stub" if provider is not None else "reused_validated"
@@ -1201,7 +1217,11 @@ def run_task(
         )
     if result["status"] == "error" and result["usage"]:
         result["model_status"] = "error"
-    if provider is None and not settings.ready:
+    if (
+        provider is None
+        and not settings.ready
+        and result["model_status"] != "reused_validated"
+    ):
         result["message"] = (
             "Deterministic checks only. Adaptive decisions and live extraction have not run; enable model calls to use them."
         )

@@ -542,3 +542,37 @@ def test_recorded_status_correction_finishes_without_paid_repair(strategy):
         assert (
             result["task_usage"]["plan"]["replans"] == 0 and result["model_calls"] == 2
         )
+
+
+def test_turning_paid_calls_off_keeps_unchanged_reuse_description_accurate():
+    session = Session(profile=tiering_profile())
+    first = run(session, FixtureProvider())
+    result = run(session, None)
+    assert result["model_calls"] == 0 and result["model_status"] == "reused_validated"
+    assert (
+        "No new model request" in result["message"]
+        and "have not run" not in result["message"]
+    )
+    assert result["task_usage"]["tool_calls"] == first["task_usage"]["tool_calls"]
+
+
+@pytest.mark.parametrize("change", ["profile", "date"])
+def test_disabled_followup_changes_recompute_rules_without_claiming_old_plan_reuse(
+    change,
+):
+    session = Session(profile=tiering_profile())
+    first = run(session, FixtureProvider())
+    kwargs = (
+        {"changes": {"tuition_budget_usd": "100000"}}
+        if change == "profile"
+        else {"as_of": AS_OF + timedelta(days=1)}
+    )
+    result = run(session, None, **kwargs)
+    assert result["model_calls"] == 0 and result["model_status"] == "not_configured"
+    assert result["task_usage"]["tool_calls"] > first["task_usage"]["tool_calls"]
+    assert result["as_of_date"] == str(kwargs.get("as_of", AS_OF))
+    assert result["profile_version"] == session.profile.profile_version
+    if change == "profile":
+        assert any(
+            p["program_id"] == "cmu-msaii-pittsburgh" for p in result["excluded"]
+        )
