@@ -15,7 +15,8 @@ from gradmatch.schemas import Intake
 from gradmatch.storage import PROJECT_ROOT
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
-REVIEW = PROJECT_ROOT / "data/review/m61_review_plan.json"
+LEGACY_REVIEW = PROJECT_ROOT / "data/review/m61_review_plan.json"
+REVIEW = PROJECT_ROOT / "data/review/m61b_review_plan.json"
 
 
 def sha256(path):
@@ -105,8 +106,8 @@ def build_report(
             status="passed", source_sha256=index["source_sha256"], rows=len(prepared)
         )
     return dict(
-        milestone="M6.1a",
-        scope="Existing-data audit and first-batch research queue",
+        milestone=review.get("milestone", "M6.1a"),
+        scope=review.get("scope", "Existing-data audit and first-batch research queue"),
         catalog=catalog,
         candidates=candidates,
         target_catalog_min=review["target_catalog_min"],

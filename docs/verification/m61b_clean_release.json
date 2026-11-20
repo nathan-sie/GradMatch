@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "check": "clean_publishable_file_set",
+  "verifier_sha256": "5cefaa93abe9a61d003ba1fc37faa6eb376cf5696161d551e3567379e7920a75",
+  "scenarios": [
+    {
+      "step": "cold_start",
+      "status": "passed",
+      "programs": 12,
+      "sources": 43,
+      "data_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "process_restart",
+      "status": "passed",
+      "programs": 12,
+      "sources": 43,
+      "data_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "cache_loss_rebuild",
+      "status": "passed",
+      "programs": 12,
+      "sources": 43,
+      "data_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "model_calls": 0,
+      "fresh_session": true
+    }
+  ],
+  "paid_model_calls": 0
+}

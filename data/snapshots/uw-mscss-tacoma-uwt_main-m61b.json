@@ -1,0 +1,91 @@
+{
+  "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+  "retrieved_at": "2026-11-20T21:44:52.093904+00:00",
+  "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+  "verified_values": {
+    "identity": {
+      "university": "University of Washington Tacoma",
+      "school": "School of Engineering and Technology",
+      "program_name": "Master of Science in Computer Science and Systems",
+      "degree": "MS",
+      "campus": "Tacoma",
+      "track": "Thesis, project or electives-only; pathway not selected",
+      "official_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss"
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-07-31",
+          "label": "Final deadline; space available after priority review",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": false
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": true,
+        "no_hard_minimum": false
+      }
+    },
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "prerequisites": {
+      "required_topics": [
+        "object_oriented_programming",
+        "discrete_math",
+        "data_structures",
+        "algorithms",
+        "software_engineering",
+        "computer_organization",
+        "computer_architecture",
+        "calculus",
+        "science"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": false
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uwt-mscss-applied",
+          "goal": "mixed",
+          "statement": "Thesis and applied-project options support research or applied technical work; pathway choice affects credits and cost.",
+          "source_ids": [
+            "uw-mscss-tacoma-uwt_main-m61b"
+          ]
+        }
+      ]
+    },
+    "review_notes": {
+      "notes.1": "Degree pathways require 40-45 quarter credits; no single credit count or tuition plan is selected. Do not convert quarter credits to semester credits.",
+      "notes.2": "Prerequisite deficiencies and below-3.0 GPA receive individual review; the preparatory topic list must not cause an exception-free automatic rejection. Coursework review is incomplete."
+    }
+  },
+  "source_excerpt": "Autumn 2027 applications are now OPEN!",
+  "fact_summary": "Tacoma offers multiple 40-45 quarter-credit pathways. The page establishes Fall 2027, a July 31 final deadline subject to space, bachelor preparation and optional GRE. Deficiencies require individual review; a specific credit/tuition path is not selected."
+}

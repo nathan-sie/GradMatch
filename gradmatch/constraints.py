@@ -109,6 +109,8 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("gpa", "unknown", "GPA_RULE_NOT_VERIFIED", "No applicable GPA threshold has been verified.")
     elif requirement.minimum is None:
         add("gpa", "unknown", "RECOMMENDATION_NOT_HARD_MINIMUM", "The published GPA is a recommendation. It does not establish that all GPA eligibility requirements are met.")
+    elif not requirement.accepted_scopes:
+        add("gpa", "unknown", "GPA_SCOPE_NOT_VERIFIED", "The official GPA calculation scope has not been verified. An unspecified scope cannot establish eligibility.")
     elif profile.gpa.scale != requirement.scale:
         add("gpa", "unknown", "GPA_SCALE_MISMATCH", "The GPA scales cannot be compared directly. No automatic conversion is performed.")
     elif profile.gpa.scope not in requirement.accepted_scopes:

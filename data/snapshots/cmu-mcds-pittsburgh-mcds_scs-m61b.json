@@ -1,0 +1,12 @@
+{
+  "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+  "retrieved_at": "2026-11-20T21:44:49.729182+00:00",
+  "raw_response_sha256": "9aed8e3b55faf641df4a62097482bd570aabd030d27e37d7a4f7407a00434b43",
+  "verified_values": {
+    "english_policy": {
+      "notes.3": "For MCDS, current SCS instructions do not permit the five-year U.S.-degree exception: scores before 2024-09-01 are excluded. The older MCDS apply URL returned HTTP 404 after redirection during this review; search-cached thresholds were not imported."
+    }
+  },
+  "source_excerpt": "If you are applying to MCDS and MHCI",
+  "fact_summary": "Current SCS instructions explicitly restrict the extended English-score exception for MCDS. Failed legacy pages and cached threshold snippets do not establish current minima."
+}

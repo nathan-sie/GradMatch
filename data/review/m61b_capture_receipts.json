@@ -1,0 +1,229 @@
+{
+  "preparation_only": true,
+  "paid_model_requests": 0,
+  "http_requests": 19,
+  "captures": [
+    {
+      "key": "mcds_program",
+      "requested_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "status": "captured",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:50.244304+00:00",
+      "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+      "bytes": 275529,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "mcds_scs",
+      "requested_url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "status": "captured",
+      "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:49.729182+00:00",
+      "raw_response_sha256": "9aed8e3b55faf641df4a62097482bd570aabd030d27e37d7a4f7407a00434b43",
+      "bytes": 54553,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "mcds_handbook",
+      "requested_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+      "status": "captured",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:50.464497+00:00",
+      "raw_response_sha256": "57da9b3f5e58bd12cc4ff4969354397f79e0478016ee1ccdb63ac90e636ee9f9",
+      "bytes": 578863,
+      "content_type": "application/pdf"
+    },
+    {
+      "key": "mcds_legacy",
+      "requested_url": "https://mcds.cs.cmu.edu/apply-mcds-program",
+      "status": "failed",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlapply-mcds-program",
+      "http_status": 404,
+      "redirects": [
+        {
+          "url": "https://mcds.cs.cmu.edu/apply-mcds-program",
+          "status": 302,
+          "location": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlapply-mcds-program"
+        }
+      ],
+      "retrieved_at": "2026-11-20T21:44:50.190782+00:00",
+      "raw_response_sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "bytes": 196,
+      "content_type": "text/html; charset=iso-8859-1"
+    },
+    {
+      "key": "ncsu_tuition",
+      "requested_url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+      "status": "captured",
+      "url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:50.661458+00:00",
+      "raw_response_sha256": "6ff646dd3800fd458f96fd0169e5a101d9b2ff791e42aa95294121a19c9e2657",
+      "bytes": 238681,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "rice_tuition",
+      "requested_url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "status": "captured",
+      "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:50.456153+00:00",
+      "raw_response_sha256": "dc931e70ea1ff85f27a6206c7bab2da1fc38f0ee71d0c64ab49c83adf73b2849",
+      "bytes": 51163,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "rice_plan",
+      "requested_url": "https://ga.rice.edu/programs-study/departments-programs/engineering/computer-science/computer-science-mcs/",
+      "status": "captured",
+      "url": "https://ga.rice.edu/programs-study/departments-programs/engineering/computer-science/computer-science-mcs/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:50.653078+00:00",
+      "raw_response_sha256": "110c7b9b68f018bc33eb2d57a6da67ccc8800989300f00876e5eb32e9c45aa97",
+      "bytes": 69330,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_cost",
+      "requested_url": "https://mcs.ics.uci.edu/cost-financial-aid/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/cost-financial-aid/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.244393+00:00",
+      "raw_response_sha256": "12240c3b02e9df6e682ee168a2042d4821b4db135b5d8b33866a562283866905",
+      "bytes": 48250,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_fees",
+      "requested_url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+      "status": "captured",
+      "url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.346008+00:00",
+      "raw_response_sha256": "27dcd549f58fb4f68fa684a67b6fdf57c33db0247216affe028e44bcc4b1fa46",
+      "bytes": 242457,
+      "content_type": "application/pdf"
+    },
+    {
+      "key": "umass_tuition",
+      "requested_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+      "status": "captured",
+      "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.433811+00:00",
+      "raw_response_sha256": "c2260f2345b78c5345e320fb06f2a2202404452210c7b943df2eb4b6ddebed20",
+      "bytes": 46810,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "umass_bursar",
+      "requested_url": "https://www.umass.edu/bursar/tuition/graduate-tuition",
+      "status": "captured",
+      "url": "https://www.umass.edu/bursar/tuition/graduate-tuition",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.996769+00:00",
+      "raw_response_sha256": "bcb9517b2b27ac3848c8e7eb7581b010953541f96c11e7eae9ebe55c8997a2a9",
+      "bytes": 57380,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "uiuc_mcs_tuition",
+      "requested_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+      "status": "captured",
+      "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.976623+00:00",
+      "raw_response_sha256": "8ead505c833d9bc6d6ece975e4ed383b720b0ef52b26d06dc7d4818032c268aa",
+      "bytes": 60839,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uiuc_calc",
+      "requested_url": "https://cost.illinois.edu/",
+      "status": "captured",
+      "url": "https://cost.illinois.edu/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:52.117556+00:00",
+      "raw_response_sha256": "8701dc0e9df62b74e3917a61e92b8b2d7dd9f539d360291fb90aa4dbd6e468ce",
+      "bytes": 26626,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "uiuc_meng_main",
+      "requested_url": "https://ece.illinois.edu/academics/grad/meng-campus",
+      "status": "captured",
+      "url": "https://ece.illinois.edu/academics/grad/meng-campus",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:51.819439+00:00",
+      "raw_response_sha256": "7a98a456b879e326ec2de5c616f4ca4feff66ea2dcb9a0790712d9d13d03e6ea",
+      "bytes": 54675,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uiuc_meng_admissions",
+      "requested_url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "status": "captured",
+      "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:52.167125+00:00",
+      "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+      "bytes": 62587,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uiuc_meng_catalog",
+      "requested_url": "https://catalog.illinois.edu/graduate/engineering/electrical-computer-engineering-meng/",
+      "status": "failed",
+      "url": "https://catalog.illinois.edu/graduate/engineering/electrical-computer-engineering-meng/",
+      "http_status": 202,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:52.263440+00:00",
+      "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uwt_main",
+      "requested_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "status": "captured",
+      "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:52.093904+00:00",
+      "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+      "bytes": 94989,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uw_english",
+      "requested_url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+      "status": "captured",
+      "url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-20T21:44:52.217173+00:00",
+      "raw_response_sha256": "24e66be1bd01f3dea15f776a3c82f5737c4c86e726ebac713e667181c8a3d57c",
+      "bytes": 81834,
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+  "retrieved_at": "2026-11-20T21:44:52.217173+00:00",
+  "raw_response_sha256": "24e66be1bd01f3dea15f776a3c82f5737c4c86e726ebac713e667181c8a3d57c",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": "7",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Additional UW English requirements apply below the recommended score.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    }
+  },
+  "source_excerpt": "Academic IELTS",
+  "fact_summary": "UW policy gives IELTS 6.5 minimum, 7.0 recommended and a two-year validity period. Below-recommended scores carry additional requirements; university policy also describes other evidence paths not automated in this record."
+}

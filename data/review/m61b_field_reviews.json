@@ -1,0 +1,93 @@
+{
+  "milestone": "M6.1b",
+  "catalog_version": "m61b-2026-11-20",
+  "reviewed_on": "2026-11-20",
+  "new_programs": [
+    "uiuc-meng-ece-urbana",
+    "uw-mscss-tacoma"
+  ],
+  "new_source_ids": [
+    "cmu-mcds-pittsburgh-mcds_handbook-m61b",
+    "cmu-mcds-pittsburgh-mcds_program-m61b",
+    "cmu-mcds-pittsburgh-mcds_scs-m61b",
+    "ncsu-mcs-raleigh-ncsu_tuition-m61b",
+    "rice-mcs-houston-rice_tuition-m61b",
+    "uci-mcs-irvine-uci_fees-m61b",
+    "umass-mscs-amherst-umass_tuition-m61b",
+    "uiuc-mcs-urbana-uiuc_mcs_tuition-m61b",
+    "rice-mcs-houston-rice_plan-m61b",
+    "uiuc-meng-ece-urbana-uiuc_meng_main-m61b",
+    "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b",
+    "uw-mscss-tacoma-uwt_main-m61b",
+    "uw-mscss-tacoma-uw_english-m61b"
+  ],
+  "pricing_reviews": [
+    {
+      "program_id": "ncsu-mcs-raleigh",
+      "reviewed": true,
+      "full_program_tuition_verified": false,
+      "decision": "retain_unknown",
+      "reason_code": "NONLINEAR_TERM_SCHEDULE_NOT_VERIFIED",
+      "source_ids": [
+        "ncsu-mcs-raleigh-ncsu_tuition-m61b"
+      ],
+      "explanation": "The 2026-27 nonresident MCS table separates base tuition, a tuition increment and non-tuition fees, and caps tuition at the 9+ credit row. A verified term-by-term 31-credit billing plan is missing; multiplying one flat credit price or a generic annual total is not a verified full-program quote."
+    },
+    {
+      "program_id": "rice-mcs-houston",
+      "reviewed": true,
+      "full_program_tuition_verified": false,
+      "decision": "retain_unknown",
+      "reason_code": "REQUIRED_BILLING_TERMS_NOT_VERIFIED",
+      "source_ids": [
+        "rice-mcs-houston-rice_tuition-m61b"
+      ],
+      "explanation": "The applicable 2026-27 professional engineering rate is USD 30,720 per semester, separate from fees and online-MCS pricing. A normal three-semester duration does not prove an invariant required billing schedule for every full-time student; full-program tuition remains unknown."
+    },
+    {
+      "program_id": "uci-mcs-irvine",
+      "reviewed": true,
+      "full_program_tuition_verified": false,
+      "decision": "retain_unknown",
+      "reason_code": "ENTRY_COHORT_AND_TUITION_COMPONENT_NOT_VERIFIED",
+      "source_ids": [
+        "uci-mcs-irvine-uci_fees-m61b"
+      ],
+      "explanation": "Registrar PDF page 1 lists a USD 63,500 program fee for the Fall 2026 cohort, paid over five quarters, with campus fees/insurance separately listed and later totals TBD. The Fall 2027 row is that cohort's continuation, not a quote for new Fall 2027 entrants. Do not use an annual subtotal or silently equate mixed program charges to tuition-only cost."
+    },
+    {
+      "program_id": "umass-mscs-amherst",
+      "reviewed": true,
+      "full_program_tuition_verified": false,
+      "decision": "retain_unknown",
+      "reason_code": "COMBINED_FEES_AND_BILLING_PERIOD_UNRESOLVED",
+      "source_ids": [
+        "umass-mscs-amherst-umass_tuition-m61b"
+      ],
+      "explanation": "The CICS page combines USD 60,750 out-of-state/international tuition and mandatory fees, without a clearly applicable billing period. Its fee components and the separate Bursar enrollment tiers do not establish a reproducible tuition-only total for 30 required credits."
+    },
+    {
+      "program_id": "uiuc-mcs-urbana",
+      "reviewed": true,
+      "full_program_tuition_verified": false,
+      "decision": "retain_unknown",
+      "reason_code": "FALL_2027_PROGRAM_RATE_NOT_PUBLISHED_IN_CAPTURE",
+      "source_ids": [
+        "uiuc-mcs-urbana-uiuc_mcs_tuition-m61b"
+      ],
+      "explanation": "The program directs applicants to its exact Illinois calculator selection and changes new MCS entrants to self-supporting status in Fall 2027. The captured calculator offers start terms only through Summer 2027; no applicable Fall 2027 entrant rate was returned. Do not substitute Chicago, online or pre-change funding/rates."
+    }
+  ],
+  "mcds": {
+    "degree_policy_reviewed": true,
+    "complete_eligibility": false,
+    "unresolved": [
+      "Numerical English threshold",
+      "Complete admission prerequisite review",
+      "Remaining eligibility"
+    ]
+  },
+  "old_snapshots_preserved": true,
+  "formal_benchmark_run": false,
+  "paid_model_requests": 0
+}

@@ -1,0 +1,12 @@
+{
+  "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+  "retrieved_at": "2026-11-20T21:44:50.456153+00:00",
+  "raw_response_sha256": "dc931e70ea1ff85f27a6206c7bab2da1fc38f0ee71d0c64ab49c83adf73b2849",
+  "verified_values": {
+    "tuition_review": {
+      "notes.1": "The applicable 2026-27 professional engineering rate is USD 30,720 per semester, separate from fees and online-MCS pricing. A normal three-semester duration does not prove an invariant required billing schedule for every full-time student; full-program tuition remains unknown."
+    }
+  },
+  "source_excerpt": "PM Engineering Tuition",
+  "fact_summary": "The applicable 2026-27 professional engineering rate is USD 30,720 per semester, separate from fees and online-MCS pricing. A normal three-semester duration does not prove an invariant required billing schedule for every full-time student; full-program tuition remains unknown."
+}

@@ -9,7 +9,7 @@ from uuid import uuid4
 import pytest
 
 from gradmatch.agent import Execution, Task
-from gradmatch.catalog import load_seed
+from gradmatch.catalog import DEFAULT_SEED, M35_SEED, load_seed
 from gradmatch.config import load_settings
 from gradmatch.constraints import evidence_ids
 from gradmatch.planning import PlanDraft, Planner
@@ -23,7 +23,7 @@ UW = "uw-ece-msece-pmp-seattle"
 
 
 def run(session, provider, **kwargs):
-    programs, sources = load_seed()
+    programs, sources = load_seed(kwargs.pop("seed", DEFAULT_SEED))
     return start_task(
         session,
         request_id=kwargs.pop("request_id", str(uuid4())),
@@ -526,7 +526,8 @@ def test_recorded_status_correction_finishes_without_paid_repair(strategy):
     profile.tuition_budget_usd = "139000"
     session = Session(profile=profile)
     provider = ReplayProvider()
-    result = run(session, provider, strategy=strategy)
+    # This recorded draft is bound to the immutable M3.5 catalog hash.
+    result = run(session, provider, strategy=strategy, seed=M35_SEED)
     assert result["status"] == "insufficient_evidence" and result["validation_passed"]
     assert not blocking_validation_errors(result)
     assert [w["code"] for w in result["validation_warnings"]] == [

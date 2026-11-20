@@ -39,7 +39,7 @@ def release_files():
         if (len(key) >= 10 and key in payload) or re.search(rb"sk-(?:proj-)?[A-Za-z0-9_-]{32,}", payload):
             raise ValueError(f"A possible API secret was detected in {name}. No secret value has been printed.")
         manifest.append({"path": name, "sha256": hashlib.sha256(payload).hexdigest(), "bytes": len(payload)})
-    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/catalog/m35_seed.json", "data/schema.sql", "gradmatch/bootstrap.py"}
+    required = {"app.py", "uv.lock", "pyproject.toml", ".python-version", ".streamlit/config.toml", "data/catalog/m1_seed.json", "data/catalog/m35_seed.json", "data/catalog/m61b_seed.json", "data/schema.sql", "gradmatch/bootstrap.py"}
     if not required <= set(names):
         raise ValueError("The release is missing a required application/data/dependency file.")
     return manifest
@@ -51,7 +51,7 @@ from pathlib import Path
 logging.getLogger("streamlit").setLevel(logging.ERROR)
 from streamlit.testing.v1 import AppTest
 from gradmatch.bootstrap import resolve_app_database
-from gradmatch.catalog import read_catalog
+from gradmatch.catalog import load_seed, read_catalog
 from gradmatch.config import load_settings
 from gradmatch.storage import PROJECT_ROOT, DEFAULT_DATABASE, inspect_catalog
 from gradmatch.validation import data_hash
@@ -62,7 +62,8 @@ assert not (PROJECT_ROOT / ".streamlit/secrets.toml").exists()
 assert not load_settings().ready
 app=AppTest.from_file(str(PROJECT_ROOT/"app.py"),default_timeout=20).run()
 assert not app.exception
-assert [m.value for m in app.metric] == ["10","30"]
+expected_programs, expected_sources = load_seed()
+assert [m.value for m in app.metric] == [str(len(expected_programs)),str(len(expected_sources))]
 assert app.session_state["m2_session"].profile.tuition_budget_usd is None
 assert not app.session_state["m2_session"].messages
 app.button(key="m2_load_example").click().run()
@@ -71,7 +72,8 @@ app.chat_input(key="m2_chat").set_value("Change my tuition budget to 50000").run
 assert not app.exception
 session=app.session_state["m2_session"]
 assert session.profile.tuition_budget_usd == 50000 and not session.usage
-assert len(session.current_result["pending_verification"]) == 5
+assert session.current_result["profile_version"] == session.profile.profile_version
+assert not session.current_result.get("recommendations")
 database=resolve_app_database()
 programs,sources=read_catalog(database)
 print("M3_PROBE="+json.dumps({"status":"passed","programs":len(programs),"sources":len(sources),"data_hash":data_hash(programs,sources),"database":str(database),"model_calls":0,"fresh_session":True}))

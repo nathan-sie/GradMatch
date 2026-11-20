@@ -1,0 +1,12 @@
+{
+  "url": "https://ga.rice.edu/programs-study/departments-programs/engineering/computer-science/computer-science-mcs/",
+  "retrieved_at": "2026-11-20T21:44:50.653078+00:00",
+  "raw_response_sha256": "110c7b9b68f018bc33eb2d57a6da67ccc8800989300f00876e5eb32e9c45aa97",
+  "verified_values": {
+    "tuition_review": {
+      "notes.2": "The current Rice General Announcements calls three semesters normal and requires 30 credits. Normal duration is not modeled as a mandatory fixed full-program billing count."
+    }
+  },
+  "source_excerpt": "normally requires three semesters of study",
+  "fact_summary": "The degree requirements confirm the credit total and describe normal, rather than mandatory, duration."
+}

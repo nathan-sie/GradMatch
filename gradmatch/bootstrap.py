@@ -47,6 +47,11 @@ def resolve_app_database() -> Path:
         return path
     if DEFAULT_DATABASE.exists():
         inspect_catalog(DEFAULT_DATABASE)
-        return DEFAULT_DATABASE
+        # A valid older developer database must not hide a newer bundled seed.
+        # Preserve that file and rebuild the content-addressed public cache.
+        expected, expected_sources = load_seed(DEFAULT_SEED)
+        current, current_sources = read_catalog(DEFAULT_DATABASE)
+        if data_hash(current, current_sources) == data_hash(expected, expected_sources):
+            return DEFAULT_DATABASE
     cache = os.environ.get("GRADMATCH_PUBLIC_CACHE_DIR")
     return bootstrap_public_catalog(Path(cache) if cache else None)

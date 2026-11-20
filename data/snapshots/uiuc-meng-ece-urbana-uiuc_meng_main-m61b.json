@@ -1,0 +1,33 @@
+{
+  "url": "https://ece.illinois.edu/academics/grad/meng-campus",
+  "retrieved_at": "2026-11-20T21:44:51.819439+00:00",
+  "raw_response_sha256": "7a98a456b879e326ec2de5c616f4ca4feff66ea2dcb9a0790712d9d13d03e6ea",
+  "verified_values": {
+    "identity": {
+      "university": "University of Illinois Urbana-Champaign",
+      "school": "The Grainger College of Engineering / Electrical and Computer Engineering",
+      "program_name": "Master of Engineering in Electrical and Computer Engineering",
+      "degree": "MEng",
+      "campus": "Urbana-Champaign",
+      "track": "On-campus non-thesis",
+      "official_url": "https://ece.illinois.edu/academics/grad/meng-campus"
+    },
+    "credits": {
+      "required_credits": "32"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uiuc-ece-meng-professional",
+          "goal": "employment",
+          "statement": "A professionally oriented engineering degree with applied project work prepares students for technical industry roles.",
+          "source_ids": [
+            "uiuc-meng-ece-urbana-uiuc_meng_main-m61b"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "32 credit hours",
+  "fact_summary": "The on-campus ECE MEng requires 32 credits and supports professional engineering goals through applied project work."
+}

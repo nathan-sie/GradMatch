@@ -1,0 +1,12 @@
+{
+  "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/ms-campus-tuition-and-fees",
+  "retrieved_at": "2026-11-20T21:44:51.433811+00:00",
+  "raw_response_sha256": "c2260f2345b78c5345e320fb06f2a2202404452210c7b943df2eb4b6ddebed20",
+  "verified_values": {
+    "tuition_review": {
+      "notes.1": "The CICS page combines USD 60,750 out-of-state/international tuition and mandatory fees, without a clearly applicable billing period. Its fee components and the separate Bursar enrollment tiers do not establish a reproducible tuition-only total for 30 required credits."
+    }
+  },
+  "source_excerpt": "Total Tuition & Mandatory Fees",
+  "fact_summary": "The CICS page combines USD 60,750 out-of-state/international tuition and mandatory fees, without a clearly applicable billing period. Its fee components and the separate Bursar enrollment tiers do not establish a reproducible tuition-only total for 30 required credits."
+}

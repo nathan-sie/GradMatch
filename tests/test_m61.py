@@ -7,10 +7,10 @@ from datetime import date
 
 import pytest
 
-from gradmatch.catalog import load_seed
+from gradmatch.catalog import M35_SEED, load_seed
 from gradmatch.catalog_audit import audit_catalog, screen_candidates
 from gradmatch.schemas import GPARequirement, Intake
-from scripts.audit_catalog import INDEX, REVIEW, build_report
+from scripts.audit_catalog import INDEX, LEGACY_REVIEW as REVIEW, build_report
 
 AS_OF = date(2026, 11, 19)
 INTAKE = Intake(year=2027, term="fall")
@@ -18,7 +18,7 @@ INTAKE = Intake(year=2027, term="fall")
 
 def audited(programs=None, sources=None):
     if programs is None:
-        programs, sources = load_seed()
+        programs, sources = load_seed(M35_SEED)
     return audit_catalog(programs, sources, as_of=AS_OF, intake=INTAKE)
 
 
@@ -75,7 +75,7 @@ def test_recommended_gpa_is_not_counted_as_a_verified_hard_rule():
 
 
 def test_explicit_verified_no_minimum_policy_is_a_usable_rule():
-    programs, sources = load_seed()
+    programs, sources = load_seed(M35_SEED)
     p = next(p for p in programs if p.program_id == "uiuc-mcs-urbana")
     p.gpa = GPARequirement(no_hard_minimum=True)
     for sid in p.field_sources["gpa"]:
@@ -86,7 +86,7 @@ def test_explicit_verified_no_minimum_policy_is_a_usable_rule():
 
 
 def test_raw_calculable_tuition_is_not_verified_when_credit_evidence_breaks():
-    programs, sources = load_seed()
+    programs, sources = load_seed(M35_SEED)
     p = next(p for p in programs if p.program_id == "uw-ece-msece-pmp-seattle")
     p.required_credits = 47
     result = row(audited(programs, sources), p.program_id)
@@ -100,7 +100,7 @@ def test_raw_calculable_tuition_is_not_verified_when_credit_evidence_breaks():
     "failure", ["missing", "conflict", "wrong_program", "wrong_intake"]
 )
 def test_present_source_ids_do_not_count_as_usable_when_evidence_is_invalid(failure):
-    programs, sources = load_seed()
+    programs, sources = load_seed(M35_SEED)
     p = next(p for p in programs if p.program_id == "uw-ece-msece-pmp-seattle")
     sid = p.field_sources["gpa"][0]
     if failure == "missing":
@@ -118,7 +118,7 @@ def test_present_source_ids_do_not_count_as_usable_when_evidence_is_invalid(fail
 
 @pytest.mark.parametrize("year", [2000, 2027])
 def test_old_or_future_cohort_is_not_current_tier_evidence(year):
-    programs, sources = load_seed()
+    programs, sources = load_seed(M35_SEED)
     p = next(p for p in programs if p.program_id == "cmu-msaii-pittsburgh")
     p.admission_evidence[0].cycle_year = year
     for sid in p.field_sources["admission_evidence"]:
@@ -136,7 +136,7 @@ def test_old_or_future_cohort_is_not_current_tier_evidence(year):
 
 
 def test_snapshot_audit_is_order_invariant_and_does_not_mutate_inputs():
-    programs, sources = load_seed()
+    programs, sources = load_seed(M35_SEED)
     before = [p.model_dump(mode="json") for p in programs]
     first = audited(programs, sources)
     second = audited(list(reversed(programs)), dict(reversed(list(sources.items()))))
@@ -147,7 +147,7 @@ def inputs():
     return (
         json.loads(INDEX.read_text(encoding="utf-8")),
         json.loads(REVIEW.read_text(encoding="utf-8")),
-        load_seed()[0],
+        load_seed(M35_SEED)[0],
     )
 
 
@@ -229,7 +229,7 @@ def test_audit_never_needs_network_or_model(monkeypatch):
     monkeypatch.setattr(socket, "getaddrinfo", forbidden)
     monkeypatch.setattr(socket, "create_connection", forbidden)
     monkeypatch.setattr(OpenAIProvider, "generate", forbidden)
-    report = build_report(as_of=AS_OF)
+    report = build_report(as_of=AS_OF, seed=M35_SEED, review_path=REVIEW)
     assert report["paid_model_requests"] == 0 and not report["datapoints_accessed"]
     assert (
         not report["expanded_catalog_gate_met"] and not report["formal_benchmark_run"]

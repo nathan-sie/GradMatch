@@ -1,0 +1,12 @@
+{
+  "url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+  "retrieved_at": "2026-11-20T21:44:50.661458+00:00",
+  "raw_response_sha256": "6ff646dd3800fd458f96fd0169e5a101d9b2ff791e42aa95294121a19c9e2657",
+  "verified_values": {
+    "tuition_review": {
+      "notes.2": "The 2026-27 nonresident MCS table separates base tuition, a tuition increment and non-tuition fees, and caps tuition at the 9+ credit row. A verified term-by-term 31-credit billing plan is missing; multiplying one flat credit price or a generic annual total is not a verified full-program quote."
+    }
+  },
+  "source_excerpt": "Master of Computer Science and MS in Computer Science",
+  "fact_summary": "The 2026-27 nonresident MCS table separates base tuition, a tuition increment and non-tuition fees, and caps tuition at the 9+ credit row. A verified term-by-term 31-credit billing plan is missing; multiplying one flat credit price or a generic annual total is not a verified full-program quote."
+}

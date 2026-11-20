@@ -1,0 +1,70 @@
+{
+  "milestone": "M6.1b",
+  "status": "passed",
+  "checkpoint": "First official batch; complete eligibility/pricing repair and full M6 remain incomplete",
+  "tests": "passed",
+  "programs": 12,
+  "sources": 43,
+  "data_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+  "catalog_database": "D:\\UW\\EEP500d\\GradMatch\\work\\m61b\\a2a3f3ff-4307-4093-b4d9-a0487dc897f6\\catalog.db",
+  "provenance": {
+    "new_sources_checked": 13,
+    "raw_responses_rehashed": 13,
+    "optional_raw_not_supplied": [],
+    "historical_source_objects_preserved": 30,
+    "preparation_http_requests": 19,
+    "failed_captures_not_imported": 2,
+    "pricing_reviewed": 5,
+    "pricing_newly_computable": 0
+  },
+  "old_databases_unchanged": true,
+  "database_sha256": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "page_metrics": [
+    "12",
+    "43"
+  ],
+  "shared_strategies": {
+    "fixed": {
+      "catalog_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "programs": 12,
+      "status": "insufficient_evidence",
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "catalog_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "programs": 12,
+      "status": "insufficient_evidence",
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "catalog_hash": "d85429b820da7557a17f9ee36e43af53fb569f050a062e1c4048d5e161b834a4",
+      "programs": 12,
+      "status": "insufficient_evidence",
+      "validation_passed": true,
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "external_network_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "loopback_connections_for_page_test": 2,
+  "formal_benchmark_run": false,
+  "full_m6_complete": false,
+  "remaining_task_set": "210 main tasks and 50 safety prompts, shared runner and a real pilot are later gates",
+  "input_code_sha256": {
+    "gradmatch/catalog.py": "47dce66b01cbaa2e02bb15100b6a6ea71ff3a5eacc11143e5628c4e3286e6afb",
+    "gradmatch/bootstrap.py": "151f24a321928dd412e00ed27973d9447c421f56c8d26a8d7858eba171c995a1",
+    "gradmatch/constraints.py": "74796087f92a9710f89f1e918e3a3b85d03fbe86a36a6c39aa1a86815460e719",
+    "gradmatch/catalog_audit.py": "2732047a09a91b56ef2daf64d3987bd44fe0c0fde828df867ef7776e8026d176",
+    "data/catalog/m61b_seed.json": "845f54befb1ca5f48d824d2c19fc7dede972291ad86b12217ec2210fc7efe540",
+    "data/review/m61b_review_plan.json": "00e6e8af3889555acc2e5c7aa2d12e90877efb7eb7422a98bbd692810a00f07d",
+    "data/review/m61b_field_reviews.json": "bb1b41dd36280d2c4d5e499a755ef1297913e412fee08c09f73f9e078f4d48f8",
+    "data/review/m61b_capture_receipts.json": "a8d6e4497d3725080b4075c52bfe5ed3ab1103bc3821a1ec039b30ced790077d",
+    "scripts/verify_m61b.py": "285750620eea70c531675062670b97fca33636244e1ff5e27dac3f3ea1ad9d42",
+    "tests/test_m61b.py": "cf272c93bd4cea6cca10f3f0ba5e2f869a09fc7391aa98e30b825477fd958933"
+  }
+}

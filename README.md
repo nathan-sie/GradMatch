@@ -2,9 +2,9 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M6.1a data audit and expansion screening**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The reviewed runtime catalog remains **10 programs / 30 sources**. The offline audit checks usable evidence, reproducible tuition, applicant comparison gaps and tier support. It reconciles 83 candidate leads and records ten official-page research leads without promoting them into recommendations. The 40–60 program data target and formal-project evaluation remain later gates.
+Current stage: **M6.1b first official data batch**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The versioned runtime catalog contains **12 programs / 43 sources**, adding the Illinois on-campus ECE MEng and UW Tacoma MSCSS with exact campus/degree identities and explicitly partial rules. All 83 community candidates remain unverified leads; 12 identities link to official records and eight remain in the first research queue. The 40–60 program data target and formal-project evaluation remain later gates.
 
-M6.1a passed **204 checks**. Read the [coverage report](docs/verification/M61_catalog_audit.md), [checkpoint](docs/verification/M61.md) and [next data gates](docs/M6_DATA_REVIEW.md). No model API request or SQLite write was made for this audit.
+Read the [M6.1b checkpoint](docs/verification/M61B.md), [current coverage](docs/verification/M61B_catalog_audit.md), [source review](docs/M61B_SOURCES.md) and [next data gates](docs/M6_DATA_REVIEW.md). The first batch adds 13 dated source captures, reviews all five incomplete pricing bases and supports MCDS's bachelor-level entry policy. Its numerical English minimum, complete preparation and remaining eligibility stay unresolved. Computable tuition remains five programs; the fixed fictional profile still has one formally supported recommendation. No new program is automatically assigned a planning tier. The earlier [M6.1a checkpoint](docs/verification/M61.md) preserves its historical 10-program/30-source audit.
 
 M5.3 passed 181 checks, three clean-host scenarios and the actual hosted generation/budget-update/reuse flow. The accepted flow used four model requests; earlier failures remain recorded. User page acceptance passed on 2026-11-19. See [M5 checkpoint](docs/verification/M5.md) and [M5 scope and acceptance steps](docs/M5_SCOPE.md). M4 passed clean-host recovery and a six-request real-model live-evidence task; the user's supplied session confirmed the budget-update page check. A follow-up guard patch passed 146 regression checks and prevents stale context from skipping current ranking. Earlier failures and costs are retained. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
 
@@ -21,8 +21,8 @@ Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/Gr
 The project uses an isolated Python 3.12 environment. If `.venv` is already prepared, run these commands from the repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m35_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m61
+.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61b_seed.json
+.\.venv\Scripts\python.exe -m scripts.verify_m61b
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
@@ -70,7 +70,7 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 ## Data and secrets
 
 - `data/schema.sql` is versioned; the generated `data/gradmatch.db` is rebuildable and ignored.
-- `data/catalog/m35_seed.json` is the current seed. `m1_seed.json` preserves the historical eight-program baseline. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`.
+- `data/catalog/m61b_seed.json` is the current seed. `m35_seed.json` and `m1_seed.json` preserve earlier catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
 - Applicant profiles and sessions are not written into the public catalog.
 - `.venv`, `.tools`, temporary records, `.env`, and `.streamlit/secrets.toml` are ignored.
 - A real OpenAI key is needed for explicit M2 live checks. Never commit secrets.
@@ -86,4 +86,4 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 - [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
-M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 automated, hosted and user page acceptance passed on 2026-11-19. M6.1a passed 204 checks; full dataset expansion and final-project evaluation remain incomplete. See [M6.1a checkpoint](docs/verification/M61.md) and [coverage report](docs/verification/M61_catalog_audit.md). The separate 50-task homework stays on its own branch.
+M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 automated, hosted and user page acceptance passed on 2026-11-19. M6.1a's historical audit is retained; M6.1b adds the first official data batch. Full dataset expansion and final-project evaluation remain incomplete. See [M6.1b checkpoint](docs/verification/M61B.md). The separate 50-task homework stays on its own branch.

@@ -18,6 +18,10 @@ TOPICS = {
     "algorithms": "Algorithms", "probability_statistics": "Probability and statistics", "discrete_math": "Discrete mathematics",
     "undergraduate_cs": "Strong undergraduate computer science preparation",
     "undergraduate_math": "Strong undergraduate mathematics / statistics preparation",
+    "software_engineering": "Software engineering / program management",
+    "computer_organization": "Computer organization",
+    "computer_architecture": "Computer architecture",
+    "science": "University-level science",
 }
 STATUS = {"pass": "Meets checked requirement", "fail": "Does not meet requirement", "unknown": "Needs verification", "not_applicable": "Not applicable"}
 RULE_NAMES = {"identity": "Program identity", "intake": "Intake", "gpa": "GPA",

@@ -263,7 +263,7 @@ def test_fixed_retrieval_is_stable_and_budget_change_rechecks_entire_known_set()
     programs, sources = load_seed()
     applicant = synthetic_profile()
     assert retrieve(applicant, programs, 10) == retrieve(applicant, list(reversed(programs)), 10)
-    assert len(retrieve(applicant, programs, 10)) == len(programs)
+    assert len(retrieve(applicant, programs, 10)) == min(10, len(programs))
     assert data_hash(programs, sources) == data_hash(list(reversed(programs)), dict(reversed(list(sources.items()))))
 
 

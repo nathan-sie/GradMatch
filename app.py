@@ -17,7 +17,7 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/m35_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/m61b_seed.json", language="bash")
     st.stop()
 
 left, right = st.columns(2)

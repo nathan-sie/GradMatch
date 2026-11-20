@@ -1,0 +1,12 @@
+{
+  "url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+  "retrieved_at": "2026-11-20T21:44:51.346008+00:00",
+  "raw_response_sha256": "27dcd549f58fb4f68fa684a67b6fdf57c33db0247216affe028e44bcc4b1fa46",
+  "verified_values": {
+    "tuition_review": {
+      "notes.3": "Registrar PDF page 1 lists a USD 63,500 program fee for the Fall 2026 cohort, paid over five quarters, with campus fees/insurance separately listed and later totals TBD. The Fall 2027 row is that cohort's continuation, not a quote for new Fall 2027 entrants. Do not use an annual subtotal or silently equate mixed program charges to tuition-only cost."
+    }
+  },
+  "source_excerpt": "Cohort entering Fall 2026",
+  "fact_summary": "Registrar PDF page 1 lists a USD 63,500 program fee for the Fall 2026 cohort, paid over five quarters, with campus fees/insurance separately listed and later totals TBD. The Fall 2027 row is that cohort's continuation, not a quote for new Fall 2027 entrants. Do not use an annual subtotal or silently equate mixed program charges to tuition-only cost."
+}

@@ -1,0 +1,12 @@
+{
+  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+  "retrieved_at": "2026-11-20T21:44:50.244304+00:00",
+  "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+  "verified_values": {
+    "english_policy": {
+      "notes.2": "The current MCDS page requires recent TOEFL, IELTS or Duolingo evidence for applicable non-native speakers, with no study-based waiver. It does not publish a current numerical hard minimum. English thresholds remain unknown; typical admitted-score ranges are not minima."
+    }
+  },
+  "source_excerpt": "Proof of English Language Proficiency",
+  "fact_summary": "The Fall 2027 program page requires English evidence and points to SCS policy; the currently retrievable page does not establish a numerical minimum."
+}

@@ -25,7 +25,7 @@ Product language: English for the current application and every future user-faci
 | M3.5 Recommendation pilot | Degree / GRE inputs, sourced tier explanation, full tuition and application checklist | Fictional profile: USD 140,000 → 100,000, preserved background, unsupported evidence blocked | Official sources; bounded real model checks | 107 checks, real local model and hosted loop passed; user acceptance pending |
 | M4 ReAct 与实时工具 | 自适应工具调用、官方 HTML/PDF、暂停恢复与预算限制 | 缺证据会补查、失败能停止、真实官网核验 | 模型/搜索服务；计量真实费用 | Automated and user budget-update acceptance passed 2026-11-19; follow-up guard passed 146 offline checks |
 | M5 显式规划 Agent | Plan-and-replan、计划版本与重规划日志 | 同一任务在工具失败/条件变化后调整计划 | 沿用同一模型、证据和预算 | Automated acceptance passed 2026-11-19: 181 checks, hosted generation/budget update and zero-call reuse; user page accepted 2026-11-19 |
-| M6 数据集与评测工具 | 40–60 个项目、210 主任务、50 安全提示、可复现 runner | 数据一致性、参考答案隔离、断点继续、少量真实试运行 | 小规模 API 试运行 | M6.1a audit passed: 204 checks, existing-data coverage and first 10 research leads; full M6 data/evaluation gates remain incomplete |
+| M6 数据集与评测工具 | 40–60 个项目、210 主任务、50 安全提示、可复现 runner | 数据一致性、参考答案隔离、断点继续、少量真实试运行 | 小规模 API 试运行 | M6.1b first batch: 12 programs / 43 sources; partial rules and five unresolved pricing bases documented; full M6 remains incomplete |
 | M7 完整评测与发布验收 | 三组正式成绩、人工审计、云端最终验证、复现说明 | 630 次主任务 + 150 次安全运行，失败保留并汇总 | 正式运行 API 费用，按 pilot 估算 | 待开始 |
 
 M3 提前部署，用于尽早发现云端限制；最终应用可用性在 M7 再验收。M6 的合成测试夹具和 mock 只用于检查 runner，不能计作 M7 的真实模型成绩。

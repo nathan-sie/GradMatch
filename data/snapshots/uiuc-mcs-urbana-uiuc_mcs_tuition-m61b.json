@@ -1,0 +1,12 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+  "retrieved_at": "2026-11-20T21:44:51.976623+00:00",
+  "raw_response_sha256": "8ead505c833d9bc6d6ece975e4ed383b720b0ef52b26d06dc7d4818032c268aa",
+  "verified_values": {
+    "tuition_review": {
+      "notes.2": "The program directs applicants to its exact Illinois calculator selection and changes new MCS entrants to self-supporting status in Fall 2027. The captured calculator offers start terms only through Summer 2027; no applicable Fall 2027 entrant rate was returned. Do not substitute Chicago, online or pre-change funding/rates."
+    }
+  },
+  "source_excerpt": "self-supporting degree program",
+  "fact_summary": "The program directs applicants to its exact Illinois calculator selection and changes new MCS entrants to self-supporting status in Fall 2027. The captured calculator offers start terms only through Summer 2027; no applicable Fall 2027 entrant rate was returned. Do not substitute Chicago, online or pre-change funding/rates."
+}

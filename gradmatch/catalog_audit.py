@@ -48,7 +48,7 @@ def program_audit(program, sources, profile, as_of):
         i.key for i in program.supported_intakes + program.closed_intakes
     }
     usable["gpa"] &= program.gpa is not None and (
-        program.gpa.no_hard_minimum or program.gpa.minimum is not None
+        program.gpa.no_hard_minimum or (program.gpa.minimum is not None and bool(program.gpa.accepted_scopes))
     )
     usable["english"] &= program.english_not_required or bool(program.english)
     usable["prerequisites"] &= program.prerequisites_complete

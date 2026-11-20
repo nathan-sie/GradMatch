@@ -11,9 +11,10 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.catalog_audit import markdown_report
+from gradmatch.catalog import M35_SEED
 from gradmatch.providers import OpenAIProvider
 from gradmatch.storage import DEFAULT_DATABASE, PROJECT_ROOT
-from scripts.audit_catalog import build_report, sha256
+from scripts.audit_catalog import LEGACY_REVIEW, build_report, sha256
 
 
 def main():
@@ -68,6 +69,8 @@ def main():
         patch.object(OpenAIProvider, "generate", forbidden),
     ):
         audit = build_report(
+            seed=M35_SEED,
+            review_path=LEGACY_REVIEW,
             as_of=date(2026, 11, 19),
             candidate_database=candidate_db if candidate_db.exists() else None,
             original_tracker=tracker if tracker.exists() else None,

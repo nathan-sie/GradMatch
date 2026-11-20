@@ -1,0 +1,52 @@
+{
+  "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+  "retrieved_at": "2026-11-20T21:44:52.167125+00:00",
+  "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-05-01",
+          "label": "On-campus Fall 2027 application deadline",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "review_notes": {
+      "notes.1": "The captured admissions page gives GPA 3.0/4 without the calculation scope. The catalog endpoint returned HTTP 202 without content. Do not equate overall GPA to last-two-years GPA; scope and complete background equivalency remain unknown."
+    }
+  },
+  "source_excerpt": "GRE scores are not required, but preferred.",
+  "fact_summary": "The captured on-campus instructions give May 1, 2027, GPA 3.0/4 and bachelor-level ECE/related preparation. No GPA calculation scope is supplied. GRE is preferred but optional. English thresholds, equivalency and tuition still need review."
+}

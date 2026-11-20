@@ -1,0 +1,25 @@
+{
+  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+  "retrieved_at": "2026-11-20T21:44:50.464497+00:00",
+  "raw_response_sha256": "57da9b3f5e58bd12cc4ff4969354397f79e0478016ee1ccdb63ac90e636ee9f9",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "prerequisites": {
+      "recommended_topics": [
+        "programming",
+        "mathematics",
+        "logical_reasoning"
+      ],
+      "required_topics": [],
+      "prerequisites_complete": false
+    },
+    "review_notes": {
+      "notes.1": "The currently linked AY26-27 handbook describes bachelor-degree entry, with no required CS major, and expects mathematical/programming aptitude. It is not a complete list of exception-free admission coursework; Fall 2027 policy changes remain possible."
+    }
+  },
+  "source_excerpt": "An undergraduate degree in Computer Science is not required.",
+  "fact_summary": "The current linked handbook supports bachelor-level entry without a CS-only major requirement. Programming and mathematics describe preparation, not an invented mandatory course checklist."
+}
