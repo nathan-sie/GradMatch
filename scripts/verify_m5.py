@@ -18,6 +18,7 @@ from gradmatch.config import load_settings
 from gradmatch.service import start_task
 from gradmatch.session import Session, tiering_profile
 from gradmatch.storage import PROJECT_ROOT
+from gradmatch.validation import blocking_validation_errors
 from scripts.m5_fixtures import AS_OF, FixtureProvider
 
 
@@ -102,7 +103,8 @@ def inspect_actual_session(path):
         "within_replan_cap": 0 < plan.get("replans", 0) <= 3,
         "validated_result": result.get("status")
         in {"completed", "insufficient_evidence", "infeasible"}
-        and result.get("validation_errors") == [],
+        and result.get("validation_errors") is not None
+        and not blocking_validation_errors(result),
         "budget_exclusion": any(
             p["program_id"] == "cmu-msaii-pittsburgh"
             and "TUITION_EXCEEDS_BUDGET" in p.get("reason_codes", [])

@@ -501,3 +501,44 @@ def test_reloaded_equivalent_intake_compares_by_value_and_does_not_revise_profil
     version = profile.profile_version
     assert session.update({"intake": {"year": 2027, "term": "fall"}}) == []
     assert session.profile.profile_version == version
+
+
+@pytest.mark.parametrize("strategy", ["fixed", "react", "plan"])
+def test_recorded_status_correction_finishes_without_paid_repair(strategy):
+    from gradmatch.ranking import RankingDraft
+    from gradmatch.validation import blocking_validation_errors
+
+    recorded = json.loads(
+        (PROJECT_ROOT / "tests/fixtures/m5_status_correction.json").read_text(
+            encoding="utf-8"
+        )
+    )["draft"]
+
+    class ReplayProvider(FixtureProvider):
+        def generate(self, kind, purpose, payload, session):
+            result = super().generate(kind, purpose, payload, session)
+            return (
+                RankingDraft.model_validate(recorded) if purpose == "rank" else result
+            )
+
+    profile = tiering_profile()
+    profile.profile_version = 3
+    profile.tuition_budget_usd = "139000"
+    session = Session(profile=profile)
+    provider = ReplayProvider()
+    result = run(session, provider, strategy=strategy)
+    assert result["status"] == "insufficient_evidence" and result["validation_passed"]
+    assert not blocking_validation_errors(result)
+    assert [w["code"] for w in result["validation_warnings"]] == [
+        "MODEL_STATUS_CORRECTED"
+    ]
+    assert result["validation_warnings"] == result["validation_errors"]
+    assert [r["program_id"] for r in result["recommendations"]] == [
+        "cmu-msaii-pittsburgh"
+    ]
+    assert session.agent_task.stopped == "finished"
+    assert sum(purpose == "rank" for purpose, _ in provider.calls) == 1
+    if strategy == "plan":
+        assert (
+            result["task_usage"]["plan"]["replans"] == 0 and result["model_calls"] == 2
+        )

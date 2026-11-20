@@ -1,0 +1,319 @@
+{
+  "status": "failed",
+  "checks": {
+    "plan_strategy": true,
+    "real_metered_requests": true,
+    "within_eight_requests": true,
+    "request_count_matches": true,
+    "initial_and_revised_plan": true,
+    "steps_completed": false,
+    "within_replan_cap": true,
+    "validated_result": false,
+    "budget_exclusion": false
+  },
+  "export_sha256": "254c895da42aa73adac59ab908151f4b26313f5dbecb1e264e504e7569ff1cc7",
+  "task_id": "41ba6da7-7c8c-434b-a7fb-b5019fbe646a",
+  "model_requests": 8,
+  "usage": [
+    {
+      "call_id": "2e1bb9e8-e849-406a-9b4f-0aa31b453d4e",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 3764,
+      "output_tokens": 268,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.004029",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 3913.92,
+      "response_id": "resp_0efd139bbd8908e4016affbe69f1a087d0aab12aff18cd14cd"
+    },
+    {
+      "call_id": "dca65372-f7e2-40fd-955a-7515a4e9da74",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 32886,
+      "output_tokens": 293,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.025983",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 3293.73,
+      "response_id": "resp_07f0dc0311284d65016affbe6d3ee487d0ac97f33cb567c247"
+    },
+    {
+      "call_id": "dbf9d27d-23b6-4e5d-b337-2f5be32c7345",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 25192,
+      "output_tokens": 378,
+      "cached_input_tokens": 2688,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0187806",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 4598.82,
+      "response_id": "resp_0fb5a80ee02d0619016affbe70ae9487d0a7c35fa52ca12616"
+    },
+    {
+      "call_id": "08797e21-f36f-44fd-9bd0-0b7c6e196b05",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 32886,
+      "output_tokens": 303,
+      "cached_input_tokens": 32768,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0039096",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2264.03,
+      "response_id": "resp_09a7be8683fa0be8016affbe74811c87d0bb8e1c00d58558ad"
+    },
+    {
+      "call_id": "44efbc47-aa9e-4380-8170-9e3083174b76",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 8540,
+      "output_tokens": 373,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0080835",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2846.46,
+      "response_id": "resp_0713319723dd72a7016affbfcaca7087d0b090369b8ff811ec"
+    },
+    {
+      "call_id": "59c05e97-9c57-43bf-995c-f90e68a24ca7",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 32969,
+      "output_tokens": 264,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.02591475",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 1915.9,
+      "response_id": "resp_0b58c0b2abd5d5ac016affbfcd86ec87d0b6525328a1e48b9a"
+    },
+    {
+      "call_id": "7c66e5cf-2c2c-46a7-a695-cee62049f01e",
+      "purpose": "plan",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 27834,
+      "output_tokens": 380,
+      "cached_input_tokens": 2688,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.0207711",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2703.7,
+      "response_id": "resp_06631eb67686fc56016affbfcf7d2887d080e4c4b8ec8276e2"
+    },
+    {
+      "call_id": "09115bd0-28cb-4cf5-93c1-bc7039d069fa",
+      "purpose": "rank",
+      "provider": "openai",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "input_tokens": 32969,
+      "output_tokens": 275,
+      "cached_input_tokens": 32768,
+      "reasoning_tokens": 0,
+      "estimated_cost_usd": "0.00384585",
+      "cost_status": "estimated_from_published_prices",
+      "status": "completed",
+      "duration_ms": 2276.97,
+      "response_id": "resp_0a40fcc93df40dc9016affbfd2346887d09fed5ead5e74c61d"
+    }
+  ],
+  "tool_calls": 14,
+  "page_requests": 0,
+  "final_profile_version": 3,
+  "final_status": "budget_exhausted",
+  "plans": [
+    {
+      "revision": 0,
+      "reason_code": "INITIAL_PLAN",
+      "profile_version": 2,
+      "evidence_version": 0,
+      "status": "superseded",
+      "steps": [
+        {
+          "step_id": "step_1_search",
+          "tool": "search_programs",
+          "status": "done",
+          "done_criteria": [
+            "candidates_available"
+          ],
+          "result_refs": [
+            0
+          ]
+        },
+        {
+          "step_id": "step_2_check",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            1
+          ]
+        },
+        {
+          "step_id": "step_3_rank",
+          "tool": "rank_programs",
+          "status": "failed",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": []
+        },
+        {
+          "step_id": "step_4_validate",
+          "tool": "validate_shortlist",
+          "status": "skipped",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": []
+        }
+      ]
+    },
+    {
+      "revision": 1,
+      "reason_code": "VALIDATION_FAILED",
+      "profile_version": 2,
+      "evidence_version": 0,
+      "status": "superseded",
+      "steps": [
+        {
+          "step_id": "step_1_check_recompute",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            4
+          ]
+        },
+        {
+          "step_id": "step_2_rank_recompute",
+          "tool": "rank_programs",
+          "status": "done",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": [
+            5
+          ]
+        },
+        {
+          "step_id": "step_3_validate_recompute",
+          "tool": "validate_shortlist",
+          "status": "done",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "revision": 2,
+      "reason_code": "PROFILE_UPDATED",
+      "profile_version": 3,
+      "evidence_version": 0,
+      "status": "superseded",
+      "steps": [
+        {
+          "step_id": "step_1_check_recompute",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            7
+          ]
+        },
+        {
+          "step_id": "step_2_rank_recompute",
+          "tool": "rank_programs",
+          "status": "failed",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": []
+        },
+        {
+          "step_id": "step_3_validate_recompute",
+          "tool": "validate_shortlist",
+          "status": "skipped",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": []
+        }
+      ]
+    },
+    {
+      "revision": 3,
+      "reason_code": "VALIDATION_FAILED",
+      "profile_version": 3,
+      "evidence_version": 0,
+      "status": "stopped",
+      "steps": [
+        {
+          "step_id": "step_1_check_recompute",
+          "tool": "check_constraints",
+          "status": "done",
+          "done_criteria": [
+            "constraints_current"
+          ],
+          "result_refs": [
+            10
+          ]
+        },
+        {
+          "step_id": "step_2_rank_recompute",
+          "tool": "rank_programs",
+          "status": "failed",
+          "done_criteria": [
+            "ranking_current"
+          ],
+          "result_refs": []
+        },
+        {
+          "step_id": "step_3_validate_recompute",
+          "tool": "validate_shortlist",
+          "status": "blocked",
+          "done_criteria": [
+            "validation_current"
+          ],
+          "result_refs": []
+        }
+      ]
+    }
+  ],
+  "notice": "Sanitized proof from the exported hosted session; no key, messages or full applicant profile included.",
+  "stage": "pre_status_correction_fix",
+  "code_commit": "fa54ccf",
+  "milestone_complete": false,
+  "failure_analysis": "A correct code-owned completed-to-insufficient_evidence status correction was treated as a blocking error, causing paid replanning until REPLAN_LIMIT. Substantive eligibility, tier, version and citation errors remain blocking; the shared engine now records this status correction as a nonblocking finding.",
+  "estimated_cost_usd": "0.11131740",
+  "usage_notice": "These eight unique requests include the first four recorded in m5_cloud_initial.json. Do not add the two file totals."
+}

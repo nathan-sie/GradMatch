@@ -10,6 +10,16 @@ from gradmatch.ranking import TIERS, RankingDraft
 from gradmatch.tiers import RUBRIC_VERSION, planning_reason, selectivity_tier
 
 
+def blocking_validation_errors(result):
+    """Code-owned status normalization needs no new model decision.
+
+    Keep the legacy findings list intact for audits. Every factual, scope,
+    version, eligibility, tier or citation rejection remains blocking.
+    """
+    return [e for e in result.get('validation_errors', [])
+            if e.get('code') != 'MODEL_STATUS_CORRECTED']
+
+
 def data_hash(programs, sources):
     value = {"programs": [p.model_dump(mode="json") for p in sorted(programs, key=lambda p: p.program_id)],
         "sources": [s.model_dump(mode="json") for s in sorted(sources.values(), key=lambda s: s.source_id)]}
@@ -142,6 +152,8 @@ def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrie
         "data_mode": data_mode, "data_hash": data_hash(all_programs, sources),
         "recommendations": accepted, "pending_verification": pending, "excluded": excluded,
         "observations": observations, "validation_errors": errors,
+        "validation_warnings": [e for e in errors if e.get('code') == 'MODEL_STATUS_CORRECTED'],
+        "validation_passed": not blocking_validation_errors({'validation_errors': errors}),
         "tier_shortfalls": [{"tier": tier, "count": counts[tier], "shortfall_to_three": max(0, 3 - counts[tier]),
             "reason": "Insufficient verified eligibility, goal-fit, admission-tier evidence, or validated model ranking."}
             for tier in TIERS if counts[tier] < 3],

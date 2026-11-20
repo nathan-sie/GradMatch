@@ -1,8 +1,8 @@
 {
   "milestone": "M5",
-  "verified_at": "2026-11-20T03:31:56.012024+00:00",
+  "verified_at": "2026-11-20T03:41:15.313494+00:00",
   "offline": "passed",
-  "actual_cloud": "not_run",
+  "actual_cloud": "Eight requests retained; repaired code awaits a fresh hosted acceptance.",
   "milestone_complete": false,
   "fixture_pilot": {
     "kind": "OFFLINE_FIXTURES_NOT_A_BENCHMARK",
@@ -353,8 +353,10 @@
     ],
     "notice": "Tests shared entry, caps and validator only. No accuracy, latency, token or cost comparison is claimed."
   },
-  "offline_test_count": 175,
-  "code_base_commit": "35ac913",
+  "offline_test_count": 178,
+  "code_base_commit": "fa54ccf",
+  "public_sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816",
   "clean_host": [
     {
       "status": "passed",
@@ -378,6 +380,5 @@
       "fresh_session": true
     }
   ],
-  "public_sqlite_sha256": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
-  "homework_branch_commit": "c17372e2ba480d804821eac872d2ed3c8f4ac816"
+  "clean_host_notice": "Three scenarios passed on the prior intake-comparison fix; the final shared status-correction code additionally passed the current 178-check suite."
 }

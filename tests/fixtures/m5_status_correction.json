@@ -1,0 +1,40 @@
+{
+  "notice": "Recorded fictional cloud ranking, request 8; replay is not a new model run.",
+  "draft": {
+    "profile_version": 3,
+    "status": "completed",
+    "recommendations": [
+      {
+        "program_id": "cmu-msaii-pittsburgh",
+        "tier": "Lottery",
+        "goal_feature_ids": [
+          "cmu-msaii-pittsburgh-industry"
+        ],
+        "tier_evidence_ids": [
+          "cmu-msaii-pittsburgh-2025-cohort"
+        ],
+        "comparison_dimensions": [
+          "selectivity"
+        ],
+        "lower_risk_rationale": null,
+        "limitations": [
+          "Review is based on official 2025 cohort selectivity: 58 offers from 526 applications (~11.0%), which falls in the Lottery planning band under the conservative rubric. This is a cohort label, not a personal admission probability.",
+          "The applicant meets the reviewed program minimums for GPA, English, prerequisites, degree, GRE, deadline, tuition budget, and remaining eligibility; admission is still not guaranteed.",
+          "Goal fit is supported by the program's internship and capstone structure, but employment outcomes are not guaranteed."
+        ]
+      }
+    ],
+    "pending_order": [
+      "cmu-mcds-pittsburgh",
+      "ncsu-mcs-raleigh",
+      "neu-mscs-boston",
+      "rice-mcs-houston",
+      "uci-mcs-irvine",
+      "uiuc-mcs-urbana",
+      "umass-mscs-amherst",
+      "usc-mscs-general-los-angeles",
+      "uw-ece-msece-pmp-seattle"
+    ],
+    "observations": []
+  }
+}

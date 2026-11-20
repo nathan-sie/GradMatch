@@ -11,6 +11,7 @@ from gradmatch.agent_models import Group
 from gradmatch.constraints import evidence_ids
 from gradmatch.schemas import Record
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS
+from gradmatch.validation import blocking_validation_errors
 
 Criterion = Literal[
     "candidates_available",
@@ -332,10 +333,10 @@ class Planner:
                 step["tool"] == "validate_shortlist"
                 and self.e.current_state()["validation_current"]
             ):
-                if self.t.validated["validation_errors"]:
+                if blocking_validation_errors(self.t.validated):
                     self.trigger(
                         "VALIDATION_FAILED",
-                        errors=self.t.validated["validation_errors"],
+                        errors=blocking_validation_errors(self.t.validated),
                     )
                     return {"route": "step"}
                 refs = [
@@ -451,10 +452,10 @@ class Planner:
                 failure = "MISSING_EVIDENCE"
                 detail = {"missing": missing}
         if validation and (
-            not validation["ok"] or validation["data"]["validation_errors"]
+            not validation["ok"] or blocking_validation_errors(validation["data"])
         ):
             failure = "VALIDATION_FAILED"
-            detail = {"errors": validation["data"].get("validation_errors", [])}
+            detail = {"errors": blocking_validation_errors(validation["data"])}
         criterion = {
             "check_constraints": "checks_current",
             "rank_programs": "ranking_current",

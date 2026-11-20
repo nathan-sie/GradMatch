@@ -8,7 +8,7 @@ Each step has `step_id`, `tool`, `program_ids`, `target_fields`, `source_id`, `d
 
 Empty scope on checks/ranking means the current retrieved candidates. Registered source IDs identify official pages, with one owning program and requested field groups. Only live mode permits fetching. A live check with explicit `target_fields` requests those critical source facts; an ordinary snapshot gap or an applicant GPA scope mismatch is retained as unknown, without automatic source repair.
 
-Ranking uses the shared automatic validator. The plan's validation step refers to that actual validation observation rather than repeating the tool. A task finishes only after all steps are done and validation matches the current profile/evidence. A completed unchanged plan can be reused without another model request. The response explicitly labels reuse.
+Ranking uses the shared automatic validator. The plan's validation step refers to that actual validation observation rather than repeating the tool. A task finishes only after all steps are done and validation matches the current profile/evidence. The shared validator owns the overall result status. Its `MODEL_STATUS_CORRECTED` finding is retained in the legacy audit list and `validation_warnings`, but does not require another paid decision; `validation_passed` requires that every substantive error is absent. Eligibility, tier, version and citation errors remain blocking for every strategy. A completed unchanged plan can be reused without another model request. The response explicitly labels reuse.
 
 ## Revision triggers and limits
 
@@ -33,7 +33,7 @@ For actual hosted acceptance, select **Plan-and-replan agent**, **Reviewed snaps
 .\.venv\Scripts\python.exe -m scripts.verify_m5 --session 'C:\path\to\downloaded-session.json'
 ```
 
-The optional session inspection checks actual provider response IDs, usage totals, current completed steps, a profile-triggered revision and budget exclusion. Its saved proof omits messages and the full applicant profile. It does not call a model.
+The optional session inspection checks actual provider response IDs, usage totals, current completed steps without substantive errors, a profile-triggered revision and budget exclusion. Its saved proof omits messages and the full applicant profile. It does not call a model.
 
 ## Boundaries
 

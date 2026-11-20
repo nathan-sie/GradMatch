@@ -23,6 +23,7 @@ from gradmatch.schemas import ProgramRecord, SourceRecord
 from gradmatch.session import ROOT_FIELDS, LEAF_FIELDS, questions
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
+from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
 
 
@@ -202,7 +203,7 @@ class Execution:
                 repair = (
                     name == "rank_programs"
                     and t.validated is not None
-                    and t.validated["validation_errors"]
+                    and blocking_validation_errors(t.validated)
                     and t.attempt_counts.get(key, 1) < 2
                 )
                 if not repair:
@@ -682,7 +683,8 @@ class Execution:
             "checked_program_ids": sorted(t.reports),
             "ranking_current": ranking_current,
             "validation_current": validation_current,
-            "finish_allowed": validation_current,
+            "finish_allowed": validation_current
+            and not blocking_validation_errors(t.validated),
         }
 
     def tool_validate_shortlist(self, args, *, allow_unranked=False):
@@ -964,14 +966,14 @@ class Execution:
         if action["tool"] == "rank_programs" and result["ok"]:
             validation = self.dispatch("validate_shortlist", {})
             if (
-                not validation["data"]["validation_errors"]
+                not blocking_validation_errors(validation["data"])
                 and self.task.strategy != "plan"
             ):
                 self.task.stopped = "finished"
         if (
             action["tool"] == "validate_shortlist"
             and result["ok"]
-            and not result["data"]["validation_errors"]
+            and not blocking_validation_errors(result["data"])
             and self.task.strategy != "plan"
         ):
             self.task.stopped = "finished"
