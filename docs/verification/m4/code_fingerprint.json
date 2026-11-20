@@ -110,5 +110,6 @@
     }
   ],
   "combined_sha256": "9abffe194701b89828bdd5ace652a8fc9aa1f3d2c97fcb324c18ee8cdb4833de",
-  "text_line_endings": "Canonical LF text per Git attributes; hashes match published Git blobs. Newline normalization does not change Python source semantics."
+  "text_line_endings": "Canonical LF text per Git attributes; hashes match published Git blobs. Newline normalization does not change Python source semantics.",
+  "scope": "Original M4 live-source acceptance at application commit 429d042; subsequent guard patch is recorded separately in budget_followup_guard.json."
 }

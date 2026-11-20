@@ -1,0 +1,55 @@
+{
+  "review_date": "2026-11-19",
+  "base_commit": "9cfd2ac336077536895ffc0b82fe9bad4ffee0eb",
+  "verification_scope": "Offline regression of a user-observed premature finish after budget update; no paid model rerun.",
+  "offline_tests_passed": 146,
+  "m4_tests_passed": 38,
+  "new_model_requests": 0,
+  "regression_budgets_usd": {
+    "139000": "MSAII retained",
+    "100000": "MSAII excluded with TUITION_EXCEEDS_BUDGET"
+  },
+  "files": [
+    {
+      "path": "gradmatch/agent.py",
+      "sha256": "5054c7e5a1f1ea214bf795f53167b17ad8aeeede6fe74a772d757d7d20aee5c0"
+    },
+    {
+      "path": "gradmatch/providers.py",
+      "sha256": "a5f51ef42e8fa74a1d3b5d0a0901057a00163d229442d1b46ddc6896f968fad1"
+    },
+    {
+      "path": "tests/test_m4.py",
+      "sha256": "79ddba33194a65ae256479592331d84709c44d57c7b8504733ea7be6ebb47063"
+    }
+  ],
+  "clean_host_checks": [
+    {
+      "step": "cold_start",
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "process_restart",
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "cache_loss_rebuild",
+      "status": "passed",
+      "programs": 10,
+      "sources": 30,
+      "data_hash": "7d9cad506f56167c91480536f11c1813770cb5b44718f89e85f8f2e70f9d3592",
+      "model_calls": 0,
+      "fresh_session": true
+    }
+  ]
+}

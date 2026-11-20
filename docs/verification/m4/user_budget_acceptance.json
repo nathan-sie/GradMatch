@@ -1,0 +1,35 @@
+{
+  "review_date": "2026-11-19",
+  "source": "User-supplied session export; full profile/conversation not copied to the repository.",
+  "source_sha256": "553e9b528868f9c07c4f641a9dc218d6d451b245b8b994663009e021637dc444",
+  "strategy": "react",
+  "data_mode": "snapshot",
+  "profile_versions": [
+    2,
+    3
+  ],
+  "initial_formal_recommendations": [
+    "cmu-msaii-pittsburgh"
+  ],
+  "initial_msaii_tuition_upper_usd": "137400",
+  "final_budget_usd": "100000",
+  "final_formal_recommendations": [],
+  "removed_program": "cmu-msaii-pittsburgh",
+  "removal_reason_code": "TUITION_EXCEEDS_BUDGET",
+  "only_updated_profile_field": "tuition_budget_usd",
+  "remaining_background_matches_synthetic_example": true,
+  "same_task_across_turns": true,
+  "cumulative_user_turns": 2,
+  "cumulative_model_requests": 5,
+  "initial_model_requests": 4,
+  "budget_followup_model_requests": 1,
+  "recorded_estimated_cost_usd": "0.05333025",
+  "validation_errors": [],
+  "snapshot_page_requests": 0,
+  "observed_followup_action": "finish",
+  "observed_followup_tool": "validate_shortlist",
+  "budget_filter_acceptance": "passed",
+  "followup_orchestration_issue": "Premature finish skipped a fresh ranking; final deterministic validation correctly excluded the over-budget program.",
+  "guard_fix": "Current checks, ranking and validation required before finish; stale decision context removed; offline regressions cover both 139000 retain and 100000 exclude.",
+  "new_agent_model_requests_for_this_review": 0
+}

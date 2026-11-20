@@ -49,6 +49,7 @@ class Task:
     turns: int = 0
     service_seconds: float = 0
     retrieved: list = field(default_factory=list)
+    has_searched: bool = False
     reports: dict = field(default_factory=dict)
     checked_version: tuple | None = None
     draft: object = None
@@ -296,6 +297,7 @@ class Execution:
             if (not args.program_ids or p.program_id in args.program_ids)
             and (not args.discipline or p.discipline == args.discipline)
         ][: args.limit]
+        t.has_searched = True
         t.retrieved = list(dict.fromkeys(t.retrieved + [p.program_id for p in found]))
         return (
             {
@@ -654,8 +656,38 @@ class Execution:
             [],
         )
 
-    def tool_validate_shortlist(self, args):
+    def current_state(self):
         t = self.task
+        version = self.session.profile.profile_version
+        checks_current = t.checked_version == (version, t.evidence_version)
+        ranking_current = bool(
+            t.draft is not None
+            and t.draft.profile_version == version
+            and checks_current
+        )
+        empty_search = t.has_searched and not t.retrieved
+        validation_current = bool(
+            t.validated is not None
+            and t.validated.get("profile_version") == version
+            and t.validated.get("evidence_version") == t.evidence_version
+            and (ranking_current or empty_search)
+        )
+        return {
+            "checks_current": checks_current,
+            "checked_program_ids": sorted(t.reports),
+            "ranking_current": ranking_current,
+            "validation_current": validation_current,
+            "finish_allowed": validation_current,
+        }
+
+    def tool_validate_shortlist(self, args, *, allow_unranked=False):
+        t = self.task
+        deterministic_only = self.provider is None and not self.settings.ready
+        empty_search = t.has_searched and not t.retrieved
+        if t.draft is None and not (
+            allow_unranked or deterministic_only or empty_search
+        ):
+            raise ValueError("NO_DRAFT")
         selected = [p for p in t.programs if p.program_id in t.retrieved]
         t.validated = validate_shortlist(
             t.draft,
@@ -742,12 +774,33 @@ class Execution:
         if t.strategy == "fixed":
             return self.fixed_choice()
         tools = {name: model.model_json_schema() for name, model in TOOL_ARGS.items()}
+        version = self.session.profile.profile_version
+        observations = [
+            o
+            for o in t.observations
+            if o["tool"] in {"search_programs", "fetch_official_page"}
+            or (
+                o["profile_version"] == version
+                and o["evidence_version"] == t.evidence_version
+            )
+        ]
+        messages = [
+            m
+            for m in self.session.messages
+            if m["role"] != "assistant" or m.get("profile_version") == version
+        ]
+        prior = self.session.current_result or self.session.previous_result or {}
         value = self.generate(
             Action,
             "act",
             {
                 "profile": self.session.profile.model_dump(mode="json"),
-                "messages": self.session.messages[-4:],
+                "messages": messages[-4:],
+                "previous_programs": [
+                    {"program_id": p["program_id"], "identity": p["identity"]}
+                    for p in prior.get("recommendations", [])
+                    + prior.get("pending_verification", [])
+                ],
                 "data_mode": t.mode,
                 "evidence_version": t.evidence_version,
                 "task": {
@@ -757,7 +810,8 @@ class Execution:
                 },
                 "tools": tools,
                 "ask_user_schema": AskArgs.model_json_schema(),
-                "observations": t.observations[-6:],
+                "current_state": self.current_state(),
+                "observations": observations[-6:],
             },
             self.session,
         )
@@ -784,8 +838,37 @@ class Execution:
             self.session.pending_questions = question
             return {"route": "ask", "question": question}
         if value.tool == "finish":
-            if t.validated is None:
+            if t.validated is None and (
+                t.draft is not None or (t.has_searched and not t.retrieved)
+            ):
                 self.dispatch("validate_shortlist", {})
+            if not self.current_state()["finish_allowed"]:
+                rejection = {
+                    "tool": "finish",
+                    "arguments": args,
+                    "profile_version": version,
+                    "evidence_version": t.evidence_version,
+                    "result": {
+                        "ok": False,
+                        "data": {},
+                        "evidence_ids": [],
+                        "warnings": [],
+                        "error": {
+                            "code": "CURRENT_VALIDATION_REQUIRED",
+                            "message": "The current profile/evidence needs new checks, ranking and validation before finish. Historical recommendations cannot complete this turn.",
+                            "retryable": False,
+                        },
+                        "usage": {
+                            "tool_calls": 0,
+                            "model_calls": 0,
+                            "page_requests": 0,
+                            "search_queries": 0,
+                        },
+                    },
+                }
+                t.observations.append(rejection)
+                self.session.event("action_rejected", task_id=t.task_id, **rejection)
+                return {"route": "step"}
             t.stopped = "finished"
             return {"route": "end"}
         return {"route": "tool", "action": {"tool": value.tool, "arguments": args}}
@@ -874,7 +957,7 @@ class Execution:
         graph.add_conditional_edges(
             "step",
             lambda state: state["route"],
-            {"ask": "ask", "tool": "tool", "end": END},
+            {"ask": "ask", "tool": "tool", "step": "step", "end": END},
         )
         graph.add_edge("tool", "step")
         graph.add_edge("ask", "step")
@@ -986,7 +1069,7 @@ def run_task(
         # Final validation uses the reserved pure-code slot and cannot start a paid request.
         if task.tools < task.limits["max_tools"]:
             task.tools += 1
-            driver.tool_validate_shortlist(None)
+            driver.tool_validate_shortlist(None, allow_unranked=True)
             event = dict(
                 tool="validate_shortlist",
                 arguments={},

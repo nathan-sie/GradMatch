@@ -157,7 +157,17 @@ def test_adaptive_graph_pauses_resumes_without_repaying_completed_nodes():
 
 
 def test_missing_profile_interrupt_has_no_paid_or_network_effects():
-    stub = Stub([("finish", {})])
+    stub = Stub(
+        [
+            (
+                "ask_user",
+                {
+                    "requested_fields": ["goal"],
+                    "question": "Please confirm your current goal.",
+                },
+            )
+        ]
+    )
     session = Session()
     first = run(session, stub)
     assert first["status"] == "needs_input" and not stub.calls
@@ -170,17 +180,24 @@ def test_missing_profile_interrupt_has_no_paid_or_network_effects():
 def test_explicit_read_only_query_never_calls_mutation_interpreter():
     session = Session(profile=tiering_profile())
     before = session.profile.model_dump()
-    stub = Stub([("finish", {})])
+    stub = Stub(
+        [
+            (
+                "ask_user",
+                {
+                    "requested_fields": ["goal"],
+                    "question": "Please confirm your current goal.",
+                },
+            )
+        ]
+    )
     result = run(
         session,
         stub,
         message="Verify the required credits and tuition. Do not change my profile.",
     )
     assert [purpose for purpose, _ in stub.calls] == ["act"]
-    assert (
-        session.profile.model_dump() == before
-        and result["status"] == "insufficient_evidence"
-    )
+    assert session.profile.model_dump() == before and result["status"] == "needs_input"
 
 
 def test_catalog_ambiguity_is_not_a_profile_update_or_blocked_applicant_answer():
@@ -250,6 +267,119 @@ def test_model_limit_retains_denominator_and_reserved_pure_validation():
     assert not result["recommendations"]
     replay = run(session, stub)
     assert replay["status"] == "budget_exhausted" and len(stub.calls) == 1
+
+
+@pytest.mark.parametrize(
+    "budget,expected", [("139000", "keep"), ("100000", "remove")]
+)
+def test_budget_followup_requires_current_ranking_even_after_premature_finish(
+    budget, expected
+):
+    from test_m35 import draft as supported_draft
+
+    programs, _ = load_seed()
+    ids = [p.program_id for p in programs if p.discipline == "CS"]
+
+    def action(name):
+        return lambda payload: (
+            name,
+            {
+                "program_ids": ids,
+                "profile_version": payload["profile"]["profile_version"],
+                "evidence_version": payload["evidence_version"],
+            },
+        )
+
+    class RankedStub(Stub):
+        def generate(self, kind, purpose, payload, session):
+            value = super().generate(kind, purpose, payload, session)
+            if (
+                purpose == "rank"
+                and "cmu-msaii-pittsburgh"
+                in payload["allowed_recommendation_program_ids"]
+            ):
+                return supported_draft(session.profile, programs)
+            return value
+
+    stub = RankedStub(
+        [
+            ("search_programs", {"discipline": "CS"}),
+            action("check_constraints"),
+            action("rank_programs"),
+            ("finish", {}),
+            ("validate_shortlist", {}),
+            action("check_constraints"),
+            action("rank_programs"),
+        ]
+    )
+    session = Session(profile=tiering_profile())
+    first = run(session, stub)
+    assert [p["program_id"] for p in first["recommendations"]] == [
+        "cmu-msaii-pittsburgh"
+    ]
+    assert first["validation_errors"] == []
+    before = session.profile.model_dump(mode="json")
+    calls = len(stub.calls)
+    second = run(session, stub, message="Change my tuition budget to " + budget)
+    assert second["task_id"] == first["task_id"] and second["validation_errors"] == []
+    assert session.profile.profile_version == before["profile_version"] + 1
+    assert {
+        k: v
+        for k, v in session.profile.model_dump(mode="json").items()
+        if k not in {"profile_version", "tuition_budget_usd"}
+    } == {
+        k: v
+        for k, v in before.items()
+        if k not in {"profile_version", "tuition_budget_usd"}
+    }
+    followup = stub.calls[calls][1]
+    assert (
+        not followup["current_state"]["finish_allowed"]
+        and not followup["current_state"]["ranking_current"]
+    )
+    assert all(
+        m["role"] != "assistant"
+        or m["profile_version"] == session.profile.profile_version
+        for m in followup["messages"]
+    )
+    assert all(
+        o["tool"] in {"search_programs", "fetch_official_page"}
+        or o["profile_version"] == session.profile.profile_version
+        for o in followup["observations"]
+    )
+    current = [
+        o
+        for o in second["task_usage"]["tool_log"]
+        if o["profile_version"] == session.profile.profile_version
+    ]
+    assert any(
+        o["tool"] == "finish"
+        and o["result"]["error"]["code"] == "CURRENT_VALIDATION_REQUIRED"
+        for o in current
+    )
+    assert any(
+        o["tool"] == "validate_shortlist"
+        and not o["result"]["ok"]
+        and o["result"]["error"]["code"] == "NO_DRAFT"
+        for o in current
+    )
+    assert [o["tool"] for o in current][-3:] == [
+        "check_constraints",
+        "rank_programs",
+        "validate_shortlist",
+    ]
+    assert [p["program_id"] for p in second["recommendations"]] == (
+        ["cmu-msaii-pittsburgh"] if expected == "keep" else []
+    )
+    assert (
+        second["task_usage"]["turns"] == 2
+        and second["task_usage"]["model_calls"] > first["model_calls"]
+    )
+    if expected == "remove":
+        item = next(
+            x for x in second["excluded"] if x["program_id"] == "cmu-msaii-pittsburgh"
+        )
+        assert "TUITION_EXCEEDS_BUDGET" in item["reason_codes"]
 
 
 def test_invalid_and_stale_tool_args_cannot_rank_or_modify_profile():

@@ -4,7 +4,7 @@ An evidence-grounded U.S. CS/ECE master's program matching course project.
 
 Current stage: **M4 ReAct and official-page tools**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The current catalog contains 10 programs and 30 reviewed official sources. M4 adds adaptive action selection, registered official HTML/PDF reads, session evidence overlays, pause/resume and cumulative task budgets. The separate 83-record CS Grad tracker database remains unverified. Planning and final-project benchmarks are later milestones.
 
-M4 passed 144 regression checks, clean-host recovery and a six-request real-model live-evidence task; earlier failures and costs are retained. User page acceptance remains pending. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
+M4 passed clean-host recovery and a six-request real-model live-evidence task; the user's supplied session confirmed the budget-update page check. A follow-up guard patch passed 146 regression checks and prevents stale context from skipping current ranking. Earlier failures and costs are retained. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
 
 Follow the [milestones](docs/MILESTONES.md) and [program design](docs/PROGRAM_DESIGN.md). The original proposal is retained in `Project_Proposal.md`. **The application and all future user-facing features use English**, including generated explanations and exported assessments; see `AGENTS.md`.
 
@@ -84,4 +84,4 @@ Five programs have computable published-rate tuition: the original UW ECE PMP, U
 - [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
 
-M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated acceptance passed on 2026-11-19; user page confirmation remains pending. The page still requires its per-session paid-call checkbox. M5 planning and final-project evaluation have not started. The separate 50-task homework stays on its own branch.
+M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 planning and final-project evaluation have not started. The separate 50-task homework stays on its own branch.
