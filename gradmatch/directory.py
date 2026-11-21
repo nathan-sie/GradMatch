@@ -13,6 +13,7 @@ from urllib.parse import urlsplit
 
 from gradmatch.catalog import read_catalog
 from gradmatch.catalog_audit import program_audit
+from gradmatch.community import load_community, reported_language_label, reported_rounds_label, application_fee_label
 from gradmatch.constraints import evidence_ids
 from gradmatch.session import tiering_profile
 from gradmatch.tiers import reviewed_cohort_context
@@ -21,7 +22,7 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LINKS = PROJECT_ROOT / "data/review/m61j_review_plan.json"
-DIRECTORY_VERSION = "M6.1j"
+DIRECTORY_VERSION = "M6.2"
 REVIEW_DATE = date(2026, 11, 21)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -91,6 +92,8 @@ def build_directory(programs, sources, index=None, links=None):
     """Keep all upstream identities; only explicit reviewed links supply official facts."""
     index = index if index is not None else json.loads(INDEX.read_text(encoding="utf-8"))
     links = links if links is not None else json.loads(LINKS.read_text(encoding="utf-8"))
+    community = load_community(index)
+    community_by_id = {r['source_id']: r for r in community['rows']}
     candidates = index["rows"]
     ids = [row["source_id"] for row in candidates]
     if len(ids) != index["expected_rows"] or len(set(ids)) != len(ids):
@@ -118,6 +121,7 @@ def build_directory(programs, sources, index=None, links=None):
             program_url=_safe_url(candidate["program_url"]),
             campus=UNKNOWN, track=UNKNOWN, discipline=UNKNOWN, degree=UNKNOWN,
             linked_program_id=None, review_status="Needs official review",
+            community_facts=community_by_id[candidate['source_id']],
             source_reports_halted=bool(candidate["source_reports_halted"]),
             review_flags=list(candidate["review_flags"]),
             eligibility_review=UNKNOWN, tuition_upper_usd=None, tuition_lower_usd=None, tuition_formula=None,
@@ -159,9 +163,11 @@ def build_directory(programs, sources, index=None, links=None):
     records.sort(key=lambda r: (r["university"].casefold(), r["program_name"].casefold(), r["source_id"]))
     return dict(
         version=DIRECTORY_VERSION, source_commit=index["source_commit"],
+        source_url=community['source_url'], source_sha256=community['source_sha256'],
+        community_records=len(community_by_id),
         upstream_generated=index["upstream_generated"], source_intake=index["intake"],
         official_review_date=REVIEW_DATE.isoformat(),
-        coverage_intake=profile.intake.key, attribution=index["attribution"],
+        coverage_intake=profile.intake.key, attribution=community["attribution"],
         records=records, total=len(records),
         official_records=sum(r["linked_program_id"] is not None for r in records),
         notice="Directory entries are exploration leads, not applicant recommendations. Unknown fields remain unverified.",
@@ -257,6 +263,11 @@ def comparison_rows(records):
         "Planning tier": lambda r: r["planning_tier"],
         "Source-reported halt": lambda r: "Reported; official confirmation needed" if r["source_reports_halted"] else "No halt flag in source; availability not verified",
         "Needs verification": lambda r: ", ".join(r["missing_fields"]) or "Applicant-specific checks still required",
+        "Reported English (community)": lambda r: reported_language_label(r['community_facts']),
+        "Reported GRE (community)": lambda r: r['community_facts']['reported_gre'].replace('_', ' '),
+        "Listed rounds (community)": lambda r: reported_rounds_label(r['community_facts']),
+        "Application fee (community)": lambda r: application_fee_label(r['community_facts']),
+        "Application URL (community)": lambda r: r['community_facts']['application_url'],
         "Program URL": lambda r: r["program_url"],
     }
     return [{"Field": label, **{labels[r["source_id"]]: value(r) for r in records}}

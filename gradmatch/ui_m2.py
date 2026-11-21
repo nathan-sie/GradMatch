@@ -17,7 +17,7 @@ from gradmatch.session import Session, synthetic_profile, tiering_profile
 from gradmatch.ui_m1 import RULE_NAMES, STATUS, TOPICS, show_table
 
 
-def render_m2(database):
+def render_m2(database, *, directory=None):
     programs, sources = read_catalog(database)
     try:
         settings = load_settings()
@@ -46,7 +46,7 @@ def render_m2(database):
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
         for key in list(st.session_state):
-            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response"}:
+            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration"}:
                 del st.session_state[key]
         st.rerun()
     with st.expander("Model setup and usage", expanded=not settings.ready):
@@ -73,7 +73,7 @@ def render_m2(database):
     gpa_summary = (f"{session.profile.gpa.value} / {session.profile.gpa.scale} ({session.profile.gpa.scope.replace('_', ' ')})"
         if session.profile.gpa else "Unknown")
     st.caption(f"GPA: {gpa_summary} · Major: {session.profile.major or 'Unknown'}")
-    st.caption("Review or edit your GPA, degree, tests, coursework and experience below, then select Save profile and generate.")
+    st.caption("Review your information below. Save profile and preview all programs is free; Save profile and generate starts the reviewed agent workflow when model calls are enabled.")
     with st.expander("Applicant information", expanded=True):
         form = profile_form(session.profile)
     def run(**kwargs):
@@ -85,9 +85,14 @@ def render_m2(database):
         st.rerun()
     if form:
         try:
-            changes, unknown = form
+            changes, unknown, action = form
             ApplicantProfile.model_validate(changes)
-            run(changes=changes, unknown_fields=unknown)
+            if action == 'explore':
+                session.update(changes, unknown_fields=unknown)
+                st.session_state['m6_show_exploration'] = True
+                st.rerun()
+            else:
+                run(changes=changes, unknown_fields=unknown)
         except ValidationError:
             st.error("A GPA, test score, budget or date is invalid for the selected format. Correct the form and submit again.")
     if st.button("Generate / rerun", key="m2_generate", disabled=session.active):
@@ -132,6 +137,9 @@ def render_m2(database):
         render_result(result, programs, evidence_sources)
     elif session.previous_result:
         st.info("Previous checks belong to an older profile and are no longer current. Submit the updated profile to recompute them.")
+    if directory:
+        from gradmatch.ui_directory import render_exploration
+        render_exploration(directory, session.profile, programs, sources)
     if latest:
         with st.expander("Last request details", expanded=False):
             st.write(f"Status: {latest['status']} · Model: {latest['model_status']} · Model calls: {latest['model_calls']} · Service time: {latest['service_latency_ms']:,.0f} ms")
@@ -276,8 +284,9 @@ def profile_form(profile):
             known = st.checkbox(label + " is known", value=getattr(profile, field) is not None, key=key(field + "_known"))
             text = st.text_area(label + " (one item per line; blank with Known checked means none)", value="\n".join(getattr(profile, field) or []), key=key(field))
             experiences[field] = [line.strip() for line in text.splitlines() if line.strip()] if known else None
+        explore = st.form_submit_button('Save profile and preview all programs', key='m6_save_exploration')
         submitted = st.form_submit_button("Save profile and generate", key="m2_save_profile")
-    if not submitted:
+    if not (submitted or explore):
         return None
     if set(courses) & set(absent):
         st.error("A course cannot be both completed and explicitly missing.")
@@ -299,7 +308,7 @@ def profile_form(profile):
     if degree_values["completion"] == "unknown" or degree_values["recognition"] == "unknown": unknown.add("degree")
     if not has_gre or not gre_values["test_date"]: unknown.add("gre")
     unknown |= {"english.subscores." + name for name in ["reading", "listening", "speaking", "writing"] if name not in subscores}
-    return changes, unknown
+    return changes, unknown, 'explore' if explore else 'generate'
 
 
 def render_result(result, programs, sources):

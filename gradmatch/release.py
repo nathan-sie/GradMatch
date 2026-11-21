@@ -8,9 +8,9 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-RELEASE_REFRESH_VERSION = 4
+RELEASE_REFRESH_VERSION = 5
 _MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
-            "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.directory", "gradmatch.ui_directory",
+            "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.community", "gradmatch.directory", "gradmatch.ui_directory",
             "gradmatch.ui_m1", "gradmatch.ui_m2")
 _LOCK = Lock()
 _signature = None

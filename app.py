@@ -5,7 +5,7 @@ import sys
 import streamlit as st
 
 import gradmatch.release as release
-if getattr(release,'RELEASE_REFRESH_VERSION',0)<4:
+if getattr(release,'RELEASE_REFRESH_VERSION',0)<5:
     from importlib import reload
     reload(release)
 release.refresh_catalog_modules()
@@ -31,7 +31,7 @@ except (CatalogNotReadyError, OSError, ValueError) as error:
 left, right = st.columns(2)
 left.metric("Official program records", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M6.1j-2026-11-21 · Read-only public data · Profile and chat memory are private to this browser session")
+st.caption("Release M6.2-2026-11-21 · 83 programs with preliminary application details · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")
@@ -49,7 +49,7 @@ else:
     page = st.radio("Workspace", ["Applicant workflow (M2)", "Program directory", "Data and rule checks (M1)"], key="workspace_page", horizontal=True)
     if page == "Applicant workflow (M2)":
         from gradmatch.ui_m2 import render_m2
-        render_m2(database)
+        render_m2(database, directory=directory)
     elif page == "Program directory":
         if directory:
             from gradmatch.ui_directory import render_directory

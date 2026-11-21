@@ -1,5 +1,7 @@
 # M6.1 research inputs
 
+M6.2 adds `data/community/csgrad_tracker_v1.json`, a separate, reduced snapshot of reported language, GRE, application rounds, fees and portals for all 83 identities. The original identity index remains unchanged. `python -m scripts.build_community --input work/csgrad-school-list.json` verifies the pinned full-file hash before rebuilding this snapshot. Clean hosts use the bundled result without the ignored raw file. Community fields are stored in the rebuildable directory SQLite and shown as preliminary; they are not imported as verified university facts. See `docs/verification/M62.md`.
+
 These files supply audit/research inputs and, from M6.1d, the public exploration directory. `data/catalog/active.json` selects `m61j_seed.json`: 20 identities / 145 sources. The M6.1j manifest reviews MCDS and NYU Tandon CS with seven new sources, preserving all 138 earlier source objects, tuition policies and the exact 20-to-83 mapping. Nine scripted capture attempts include two obsolete MCDS URLs returning 404. English and GPA-scope gaps remain explicit; cached or typical scores do not establish a minimum. See `docs/M61J_SOURCES.md`.
 
 The preceding M6.1i manifest records seven reviewed programs and 13 new sources while preserving all 125 previous source objects. Four conservative tuition ceilings have source-bound rates, scope, units and unknown minima. Admission research exclusions and all 28 scripted capture receipts remain explicit, including the incorrect FAQ 404 and initial calculator 302 responses. See `docs/M61I_SOURCES.md`.

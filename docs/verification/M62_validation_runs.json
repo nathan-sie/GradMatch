@@ -1,0 +1,41 @@
+{
+  "milestone": "M6.2",
+  "status": "passed",
+  "runs": [
+    {
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "Existing directory and M6.1j checks",
+      "seconds": 14.287,
+      "passed": 32,
+      "failed_checks": []
+    },
+    {
+      "tests": 12,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "Initial new community checks",
+      "seconds": 3.98,
+      "passed": 11,
+      "failed_checks": [
+        "test_actual_form_saves_latest_profile_and_previews_83_without_a_model"
+      ]
+    },
+    {
+      "tests": 396,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "Final full regression",
+      "seconds": 127.102,
+      "passed": 396,
+      "failed_checks": []
+    }
+  ],
+  "initial_fixture_resolution": "Batch the two widget edits and the form-submit action before running AppTest; rerunning unsubmitted form fields separately discards their pending edits. No production assertion was weakened.",
+  "paid_model_requests": 0,
+  "benchmark_scores": "not_measured"
+}

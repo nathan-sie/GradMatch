@@ -1,0 +1,35 @@
+{
+  "milestone": "M6.2",
+  "status": "passed",
+  "coverage": {
+    "maintained_programs": 83,
+    "with_language_fields": 83,
+    "known_gre_markers": 82,
+    "with_listed_rounds": 80,
+    "with_application_fee": 82,
+    "with_application_portal": 83
+  },
+  "official_programs": 20,
+  "official_sources": 145,
+  "official_data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+  "source_sha256": "793b4685a323229b99ec39783ca0bb388c2870551e9ee05b6b66b357a31d4ffb",
+  "source_url": "https://raw.githubusercontent.com/csms-apply/csgrad/a60f321365c0f00594e4d593de6f0383428bd59d/src/lib/tracker/school-list.json",
+  "snapshot_date": "2026-10-25",
+  "source_intake": "Fall 2027",
+  "reference_exploration_statuses": {
+    "Availability / degree-route review": 5,
+    "Explore": 78
+  },
+  "original_databases_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "original_databases_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "cache_loss_rebuild": "passed",
+  "paid_model_requests": 0,
+  "external_requests": 0,
+  "benchmark_scores": "not_measured"
+}

@@ -1,0 +1,4550 @@
+{
+  "schema_version": "community-tracker-v1",
+  "source_url": "https://raw.githubusercontent.com/csms-apply/csgrad/a60f321365c0f00594e4d593de6f0383428bd59d/src/lib/tracker/school-list.json",
+  "source_commit": "a60f321365c0f00594e4d593de6f0383428bd59d",
+  "source_sha256": "793b4685a323229b99ec39783ca0bb388c2870551e9ee05b6b66b357a31d4ffb",
+  "upstream_generated": "2026-10-25",
+  "intake": "Fall 2027",
+  "attribution": {
+    "creator": "CS Grad contributors",
+    "project_url": "https://csgrad.com/",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "notice_basis": "Project homepage license badge checked 2026-11-19. This reduced candidate index is distributed with the same attribution/noncommercial/share-alike notice.",
+    "changes": "Identity leads plus reported language, GRE, application rounds, application fees and public application URLs. English score notation and round labels normalized; no admission datapoints or source ranking labels included."
+  },
+  "rows": [
+    {
+      "source_id": "sss-mit-cse",
+      "program_url": "https://cse.mit.edu/programs-admissions/cse-sm/",
+      "application_url": "https://apply.mit.edu/apply/",
+      "reported_gre": "unknown",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 135",
+          "original_value": "135",
+          "reported_total": "135",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "sss-mit-eecs",
+      "program_url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/",
+      "application_url": "https://apply.mit.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 130",
+          "original_value": "130",
+          "reported_total": "130",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (application materials)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "sss-princeton-msecs",
+      "program_url": "https://www.cs.princeton.edu/grad/masters-degree-requirements",
+      "application_url": "https://graduate-apply.princeton.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 28",
+          "original_value": "口语 28",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 6",
+          "original_value": "口语 6",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 8",
+          "original_value": "口语 8",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "sss-stanford-mscs",
+      "program_url": "https://www.cs.stanford.edu/admissions/masters-admissions",
+      "application_url": "https://applygrad.stanford.edu/portal/grad-app",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-08",
+          "label": "Only deadline (full-time MS and part-time HCP)"
+        }
+      ],
+      "application_fee": 125,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-harvard-cse",
+      "program_url": "https://seas.harvard.edu/masters-computational-science-and-engineering",
+      "application_url": "https://apply.gsas.harvard.edu/portal/apply_degree",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 95(speaking 23)",
+          "original_value": "95(口语 23)",
+          "reported_total": "95",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5(speaking 4.5)",
+          "original_value": "5(口语 4.5)",
+          "reported_total": "5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking 6.5)",
+          "original_value": "7(口语 6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (same for SM and ME)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-harvard-ds",
+      "program_url": "https://seas.harvard.edu/masters-data-science",
+      "application_url": "https://apply.gsas.harvard.edu/portal/apply_degree",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 95(speaking 23)",
+          "original_value": "95(口语 23)",
+          "reported_total": "95",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5(speaking 4.5)",
+          "original_value": "5(口语 4.5)",
+          "reported_total": "5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking 6.5)",
+          "original_value": "7(口语 6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-harvard-hds",
+      "program_url": "https://hsph.harvard.edu/program/sm-health-data-science/",
+      "application_url": "https://sophas.liaisoncas.com/applicant-ux/#/login",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100(25)",
+          "original_value": "100(25)",
+          "reported_total": "100",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: each subscore 5.5",
+          "original_value": "每项 5.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7.5",
+          "original_value": "7.5",
+          "reported_total": "7.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 140",
+          "original_value": "140",
+          "reported_total": "140",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (Regular)"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-stanford-stat-ds",
+      "program_url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum",
+      "application_url": "https://applygrad.stanford.edu/portal/grad-app",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-07",
+          "label": "Only deadline (regular round)"
+        }
+      ],
+      "application_fee": 125,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-stanford-symbolic-system",
+      "program_url": "https://symsys.stanford.edu/graduates/masters-program",
+      "application_url": "https://applygrad.stanford.edu/portal/grad-app",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "External applicant regular deadline"
+        }
+      ],
+      "application_fee": 125,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-yale-mscs-2year",
+      "program_url": "https://engineering.yale.edu/academic-study/departments/computer-science/graduate-study/master-science-program",
+      "application_url": "https://apply.grad.yale.edu/apply/",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100(speaking 26)",
+          "original_value": "100(口语 26)",
+          "reported_total": null,
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 5.5",
+          "original_value": "口语 5.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 8",
+          "original_value": "口语 8",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-02",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-caltech-msee",
+      "program_url": "https://www.ee.caltech.edu/academics/grad",
+      "application_url": "https://apply.graduate.caltech.edu/apply",
+      "reported_gre": "recommended",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "Only deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-cmu-mscs",
+      "program_url": "https://csd.cmu.edu/academics/masters/ms-in-computer-science",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "recommended",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-stanford-icme",
+      "program_url": "https://icme.stanford.edu/academics-admission/icme-master-science",
+      "application_url": "https://applygrad.stanford.edu/portal/grad-app",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-29",
+          "label": "MS external applicant deadline (only round)"
+        }
+      ],
+      "application_fee": 125,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-stanford-msee",
+      "program_url": "https://ee.stanford.edu/admissions/ms",
+      "application_url": "https://applygrad.stanford.edu/portal/grad-app",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (regular application)"
+        }
+      ],
+      "application_fee": 125,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "ss-uiuc-mscs",
+      "program_url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "application_url": "https://choose.illinois.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.0",
+          "original_value": "4.0",
+          "reported_total": "4.0",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-miis",
+      "program_url": "https://lti.cmu.edu/academics/masters-programs/miis.html",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-msaii",
+      "program_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-mscv",
+      "program_url": "https://www.ri.cmu.edu/education/academic-programs/master-of-science-computer-vision/",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early (reduced app fee deadline)"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-msml",
+      "program_url": "https://ml.cmu.edu/academics/primary-ms-machine-learning-masters",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early deadline (reduced app fee $80)"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-msr",
+      "program_url": "https://www.ri.cmu.edu/education/academic-programs/master-of-science-robotics/",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early (app fee discount deadline)"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cornell-cs-meng",
+      "program_url": "https://www.cs.cornell.edu/masters-engineering-computer-science",
+      "application_url": "https://www.applyweb.com/forms/CORNELLG",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking23 reading/listening22 writing24",
+          "original_value": "口语23 阅读/听力22 写作24",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking5.5 reading4.5 listening/writing5",
+          "original_value": "口语5.5 阅读4.5 听力/写作5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-01",
+          "label": "Fall entry deadline (only round)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-ucb-eecs-meng",
+      "program_url": "https://eecs.berkeley.edu/academics/graduate/industry-programs/meng/",
+      "application_url": "https://gradapp.berkeley.edu/apply",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5(speaking/writing 4.5)",
+          "original_value": "5(口语/写作 4.5)",
+          "reported_total": "5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking/writing 6.5)",
+          "original_value": "7(口语/写作 6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-06",
+          "label": "Only deadline"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-ut-mscs",
+      "program_url": "https://www.cs.utexas.edu/graduate/research-degrees#masters",
+      "application_url": "https://students.gradschool.utexas.edu/portal/app",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "Application deadline (only round)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-mcds",
+      "program_url": "https://lti.cmu.edu/academics/masters-programs/mcds.html",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-18",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2026-12-09",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-cmu-msin",
+      "program_url": "https://www.cmu.edu/ini/academics/msin/index.html",
+      "application_url": "https://gradadmissions.engineering.cmu.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: each subscore 25",
+          "original_value": "各项 25",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 120",
+          "original_value": "120",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-01-29",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "s-gatech-mscs",
+      "program_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "application_url": "https://gradapp.gatech.edu/portal/program-info?cmd=view-program&program=86097380-be9a-4631-6407-50f3d959f466",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100(19)",
+          "original_value": "100(19)",
+          "reported_total": "100",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5(speaking3.5 other subscores4)",
+          "original_value": "5(口语3.5 其余4)",
+          "reported_total": "5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7.5(writing5.5 other subscores6.5)",
+          "original_value": "7.5(写作5.5 其余6.5)",
+          "reported_total": "7.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-01",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-duke-mscs",
+      "program_url": "https://cs.duke.edu/graduate/ms",
+      "application_url": "https://applygp.duke.edu/apply/?sr=cd5b48c5-8fea-4f8c-ac78-43b6cc816e3b",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 90",
+          "original_value": "90",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 125",
+          "original_value": "125",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-01",
+          "label": "Deadline (only round)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-gatech-cse",
+      "program_url": "https://cse.gatech.edu/ms-computational-science-and-engineering",
+      "application_url": "https://gradapp.gatech.edu/portal/program-info?cmd=view-program&program=91447fa2-ef89-be14-32fe-3d26a683b0c9",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90(19)",
+          "original_value": "90(19)",
+          "reported_total": "90",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(speaking3.5 other subscores4)",
+          "original_value": "4.5(口语3.5 其余4)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(writing5.5 other subscores6.5)",
+          "original_value": "7(写作5.5 其余6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-01",
+          "label": "Only deadline (School of CSE home unit)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-ucla-meng",
+      "program_url": "https://www.meng.ucla.edu/",
+      "application_url": "https://apply.grad.ucla.edu/portal/landing",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 87",
+          "original_value": "87",
+          "reported_total": "87",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-ucla-mscs",
+      "program_url": "https://www.cs.ucla.edu/graduate-admissions/",
+      "application_url": "https://apply.grad.ucla.edu/portal/landing",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 87",
+          "original_value": "87",
+          "reported_total": "87",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-upenn-cis",
+      "program_url": "https://www.cis.upenn.edu/mse-in-cis/",
+      "application_url": "https://gradadmissions.engineering.upenn.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-01",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Regular application deadline"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-upenn-ds",
+      "program_url": "https://dsai.engineering.upenn.edu/",
+      "application_url": "https://gradadmissions.engineering.upenn.edu/apply/?sr=a5b4dff1-0bba-4e4a-a70b-8b80c7c5cd15",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-01",
+          "label": "Early deadline"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Regular deadline"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-upenn-msr",
+      "program_url": "https://www.grasp.upenn.edu/academics/masters-degree-program/",
+      "application_url": "https://gradadmissions.engineering.upenn.edu/apply/?sr=a5b4dff1-0bba-4e4a-a70b-8b80c7c5cd15",
+      "reported_gre": "recommended",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-01",
+          "label": "Early Admission"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Regular Admission"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-wisc-cs-pmp",
+      "program_url": "https://www.cs.wisc.edu/grad/programs/pmp/",
+      "application_url": "https://gradapply.wisc.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 92",
+          "original_value": "92",
+          "reported_total": "92",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 125",
+          "original_value": "125",
+          "reported_total": "125",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-15",
+          "label": "Fall only deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-ucsd-cs75",
+      "program_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+      "application_url": "https://connect.grad.ucsd.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 85",
+          "original_value": "85",
+          "reported_total": "85",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 120",
+          "original_value": "120",
+          "reported_total": "120",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-16",
+          "label": "Only deadline (Fall 2027)"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-plus-ut-ece",
+      "program_url": "https://www.ece.utexas.edu/academics/graduate/tracks/software",
+      "application_url": "https://students.gradschool.utexas.edu/portal/app",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (Summer/Fall entry)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-cmu-ece",
+      "program_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+      "application_url": "https://gradadmissions.engineering.cmu.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 86(speaking20 other subscores22)",
+          "original_value": "86(口语20 其余22)",
+          "reported_total": "86",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(listening5 speaking4 other subscores4.5)",
+          "original_value": "4.5(听力5 口语4 其余4.5)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking/writing6 other subscores6.5)",
+          "original_value": "7(口语/写作6 其余6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115(literacy105 comprehension115 production90 conversation95)",
+          "original_value": "115(读写105 理解115 产出90 会话95)",
+          "reported_total": "115",
+          "conditions_pending": true
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "MS early review deadline"
+        },
+        {
+          "date": "2027-01-15",
+          "label": "MS final submission deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-cmu-msmite",
+      "program_url": "https://www.cmu.edu/ini/academics/bicoastal/index.html",
+      "application_url": "https://gradadmissions.engineering.cmu.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: each subscore 25",
+          "original_value": "各项 25",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 120",
+          "original_value": "120",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-01-29",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-umd-mscs",
+      "program_url": "https://www.cs.umd.edu/grad/ms-catalog",
+      "application_url": "https://terpengage.umd.edu/community/CustomLoginPage",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 96(reading26 speaking22 other subscores24)",
+          "original_value": "96(阅读26 口语22 其余24)",
+          "reported_total": "96",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5(speaking4.5 other subscores5)",
+          "original_value": "5(口语4.5 其余5)",
+          "reported_total": "5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking6.5 other subscores7)",
+          "original_value": "7(口语6.5 其余7)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-04",
+          "label": "Only deadline (same for international and US applicants)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-umich-mscs",
+      "program_url": "https://cse.engin.umich.edu/academics/graduate/graduate-programs/masters-in-cse/",
+      "application_url": "https://www.applyweb.com/cgi-bin/app?s=umgrad",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 84",
+          "original_value": "84",
+          "reported_total": "84",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Only deadline (master's MS/MSE)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-upenn-mcit",
+      "program_url": "https://www.cis.upenn.edu/mcit/",
+      "application_url": "https://www.cis.upenn.edu/mcit/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-yale-mscs",
+      "program_url": "https://engineering.yale.edu/academic-study/departments/computer-science/graduate-study/master-science-program",
+      "application_url": "https://apply.grad.yale.edu/apply",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-02",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-cmu-mits",
+      "program_url": "https://www.cmu.edu/cmist/academics/graduate-programs/mits/index.html",
+      "application_url": "https://apply-dc-mcs.mcs.cmu.edu/portal/dc-apply",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100(25)",
+          "original_value": "100(25)",
+          "reported_total": "100",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7.5",
+          "original_value": "7.5",
+          "reported_total": "7.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 125",
+          "original_value": "125",
+          "reported_total": "125",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Only deadline (annual)"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-columbia-mscs",
+      "program_url": "https://www.cs.columbia.edu/education/ms/",
+      "application_url": "https://apply.engineering.columbia.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 101",
+          "original_value": "101",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Priority deadline (Round 1)"
+        },
+        {
+          "date": "2027-02-15",
+          "label": "Regular / Final deadline (Round 2)"
+        }
+      ],
+      "application_fee": 85,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-uiuc-mcs",
+      "program_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+      "application_url": "https://choose.illinois.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-05-01",
+          "label": "Fall only deadline"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-uw-ee-pmp",
+      "program_url": "https://www.ece.uw.edu/academics/pmp/",
+      "application_url": "https://apply.grad.uw.edu/portal/gr_app",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-05",
+          "label": "Cycle 1 (priority round)"
+        },
+        {
+          "date": "2027-03-05",
+          "label": "Cycle 2"
+        },
+        {
+          "date": "2027-05-14",
+          "label": "Cycle 3"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-cmu-msess",
+      "program_url": "https://mse.s3d.cmu.edu/applicants/faq.html",
+      "application_url": "https://admissions.scs.cmu.edu/portal/apply_gr",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "typical_range",
+          "summary": "Typical score: 105",
+          "original_value": "105",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "typical_range",
+          "summary": "Typical score: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "typical_range",
+          "summary": "Typical score: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-09",
+          "label": "Only deadline for successor programs MSE / MSE - Applied Study (MSE-SS itself no longer admitting)"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-columbia-ds",
+      "program_url": "https://datascience.columbia.edu/education/ms-data-science",
+      "application_url": "https://apply.engineering.columbia.edu/apply/?sr=3930ed75-7a3d-4001-9d69-47520ce1e1c2",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-02-15",
+          "label": "Regular / Final Deadline"
+        }
+      ],
+      "application_fee": 85,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-columbia-ce",
+      "program_url": "https://compeng.columbia.edu/compeng-graduate",
+      "application_url": "https://apply.engineering.columbia.edu/apply/?sr=3930ed75-7a3d-4001-9d69-47520ce1e1c2",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-15",
+          "label": "Regular Deadline (no priority round for CE)"
+        }
+      ],
+      "application_fee": 85,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-gatech-ece",
+      "program_url": "https://ece.gatech.edu/graduate/masters-degrees",
+      "application_url": "https://gradapp.gatech.edu/portal/program-info?cmd=view-program&program=b9c471fc-5084-0e9d-491a-07ba52522650",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90(19)",
+          "original_value": "90(19)",
+          "reported_total": "90",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(4,speaking 3.5)",
+          "original_value": "4.5(4,口语 3.5)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(6.5,writing 5.5)",
+          "original_value": "7(6.5,写作 5.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-16",
+          "label": "Only deadline (Atlanta campus, Fall entry)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-nyu-ds",
+      "program_url": "https://cds.nyu.edu/masters-in-data-science-overview/",
+      "application_url": "https://apply.gsas.nyu.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7",
+          "original_value": "7",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 130",
+          "original_value": "130",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-12",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 130,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-ucsb-mscs",
+      "program_url": "https://cs.ucsb.edu/education/graduate/masters-degree",
+      "application_url": "https://engage.graddiv.ucsb.edu/apply",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 130",
+          "original_value": "130",
+          "reported_total": "130",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-16",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-ucsd-ec79",
+      "program_url": "https://ece.ucsd.edu/faculty-research/ece-research-areas/computer-engineering-impacted",
+      "application_url": "https://connect.grad.ucsd.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 85",
+          "original_value": "85",
+          "reported_total": "85",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 120",
+          "original_value": "120",
+          "reported_total": "120",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-06",
+          "label": "Only deadline for M.S."
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-brown-scmcs",
+      "program_url": "https://graduateprograms.brown.edu/graduate-program/computer-science-scm",
+      "application_url": "https://apply.professional.brown.edu/portal/app-management",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 105",
+          "original_value": "105",
+          "reported_total": "105",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 8",
+          "original_value": "8",
+          "reported_total": "8",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "International deadline (fall entry)"
+        }
+      ],
+      "application_fee": null,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-cmu-sesv",
+      "program_url": "https://www.ece.cmu.edu/academics/ms-se/index.html",
+      "application_url": "https://gradadmissions.engineering.cmu.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 86(speaking20 other subscores22)",
+          "original_value": "86(口语20 其余22)",
+          "reported_total": "86",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(speaking4 listening5 other subscores4.5)",
+          "original_value": "4.5(口语4 听力5 其余4.5)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking/writing6 other subscores6.5)",
+          "original_value": "7(口语/写作6 其余6.5)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115(subscores 90-115)",
+          "original_value": "115(小分 90-115)",
+          "reported_total": "115",
+          "conditions_pending": true
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "MS early review deadline"
+        },
+        {
+          "date": "2027-01-15",
+          "label": "MS final submission deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-duke-ece",
+      "program_url": "https://ece.duke.edu/academics/masters/",
+      "application_url": "https://applygp.duke.edu/apply/?sr=cd5b48c5-8fea-4f8c-ac78-43b6cc816e3b",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 125",
+          "original_value": "125",
+          "reported_total": "125",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-16",
+          "label": "Priority deadline (guaranteed review)"
+        },
+        {
+          "date": "2027-02-25",
+          "label": "Final deadline (space permitting)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-jhu-msecs",
+      "program_url": "https://www.cs.jhu.edu/academic-programs/graduate-studies/masters-computer-science/",
+      "application_url": "https://applygrad.jhu.edu/apply/?sr=36f7b1b7-2b3b-4371-81c3-260ab0fcc589",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 135",
+          "original_value": "135",
+          "reported_total": "135",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-15",
+          "label": "Fall only deadline"
+        }
+      ],
+      "application_fee": 0,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "a-minus-uchicago-mpcs",
+      "program_url": "https://masters.cs.uchicago.edu/",
+      "application_url": "https://advscholars.uchicago.edu/portal/masters_app",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 5",
+          "original_value": "5",
+          "reported_total": "5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-02",
+          "label": "Round 1"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Round 2"
+        },
+        {
+          "date": "2027-05-03",
+          "label": "Round 3"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-columbia-ee",
+      "program_url": "https://www.ee.columbia.edu/about-ms-ee-program",
+      "application_url": "https://apply.engineering.columbia.edu/apply/?sr=3930ed75-7a3d-4001-9d69-47520ce1e1c2",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-02-15",
+          "label": "Regular deadline"
+        }
+      ],
+      "application_fee": 85,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-cornell-mps-is",
+      "program_url": "https://infosci.cornell.edu/master-professional-studies-information-science",
+      "application_url": "https://www.applyweb.com/forms/CORNELLG",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking24 reading/writing20 listening15",
+          "original_value": "口语24 阅读/写作20 听力15",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking4.5 reading/writing4 listening3.5",
+          "original_value": "口语4.5 阅读/写作4 听力3.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(speaking 8)",
+          "original_value": "7(口语 8)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Only deadline (Fall entry)"
+        }
+      ],
+      "application_fee": 105,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-nwu-mscs",
+      "program_url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/",
+      "application_url": "https://www.applyweb.com/nugrad/index.ftl",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-30",
+          "label": "Round 1"
+        },
+        {
+          "date": "2026-12-31",
+          "label": "Round 2"
+        },
+        {
+          "date": "2027-02-28",
+          "label": "Round 3"
+        },
+        {
+          "date": "2027-06-15",
+          "label": "Final round"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-nyu-tandon",
+      "program_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "application_url": "https://apply.engineering.nyu.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 125",
+          "original_value": "125",
+          "reported_total": "125",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Priority deadline (priority consideration)"
+        },
+        {
+          "date": "2027-02-15",
+          "label": "Regular deadline (General consideration)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-rics-mcs",
+      "program_url": "https://csweb.rice.edu/academics/graduate-programs/master-computer-science",
+      "application_url": "https://gradapply.rice.edu/",
+      "reported_gre": "recommended",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 90",
+          "original_value": "90",
+          "reported_total": "90",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-02-10",
+          "label": "Early (scholarship consideration)"
+        },
+        {
+          "date": "2027-05-01",
+          "label": "International deadline"
+        }
+      ],
+      "application_fee": 85,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-uwt-mscs",
+      "program_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "application_url": "https://apply.grad.uw.edu/portal/gr_app",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-07-31",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-upenn-ee",
+      "program_url": "https://www.ese.upenn.edu/academics/masters/electrical-engineering-program/",
+      "application_url": "https://gradadmissions.engineering.upenn.edu/apply/?sr=a5b4dff1-0bba-4e4a-a70b-8b80c7c5cd15",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 100",
+          "original_value": "100",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 5",
+          "original_value": "5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 7.5",
+          "original_value": "7.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "recommended",
+          "summary": "Recommended: 135",
+          "original_value": "135",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-01",
+          "label": "Early deadline (early round)"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Regular deadline (regular round)"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-cmu-mism",
+      "program_url": "https://www.heinz.cmu.edu/programs/information-systems-management-master",
+      "application_url": "https://apply.heinz.cmu.edu/apply/",
+      "reported_gre": "waived_for_some",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "subscores_only",
+          "summary": "Subscores only: speaking 20 other subscores 22",
+          "original_value": "口语 20 其余 22",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "subscores_only",
+          "summary": "Subscores only: reading/writing 4.5 listening 5 speaking 4",
+          "original_value": "阅读/写作 4.5 听力 5 口语 4",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5(speaking 6)",
+          "original_value": "6.5(口语 6)",
+          "reported_total": "6.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 120(additional subscores)",
+          "original_value": "120(另有小分)",
+          "reported_total": "120",
+          "conditions_pending": true
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-01",
+          "label": "Round 1"
+        },
+        {
+          "date": "2027-01-10",
+          "label": "Round 2"
+        },
+        {
+          "date": "2027-02-01",
+          "label": "Round 3 (last date for full competitive scholarship/fellowship consideration)"
+        }
+      ],
+      "application_fee": 0,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-cornell-tech-cm",
+      "program_url": "https://tech.cornell.edu/programs/masters-programs/jacobs-technion-cornell-dual-ms-connective-media/",
+      "application_url": "https://gradprofessional.cornell.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 100",
+          "original_value": "100",
+          "reported_total": "100",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-05",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-02-02",
+          "label": "Round 2 deadline"
+        },
+        {
+          "date": "2027-04-01",
+          "label": "Rolling deadline"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-tamu-cse",
+      "program_url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/mcs.html",
+      "application_url": "https://engineeringcas.liaisoncas.org/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(4)",
+          "original_value": "4.5(4)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6",
+          "original_value": "6",
+          "reported_total": "6",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Fall only deadline (on-campus MS, thesis and non-thesis)"
+        }
+      ],
+      "application_fee": 148,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-plus-uci-mswe",
+      "program_url": "https://mswe.ics.uci.edu/",
+      "application_url": "https://apply.grad.uci.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(6)",
+          "original_value": "7(6)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "International deadline"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-emory-mscs",
+      "program_url": "https://computerscience.emory.edu/graduate-ms/index.html",
+      "application_url": "https://laneyconnect.emory.edu/apply/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 85",
+          "original_value": "85",
+          "reported_total": "85",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7",
+          "original_value": "7",
+          "reported_total": "7",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 120",
+          "original_value": "120",
+          "reported_total": "120",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-04-15",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 75,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-ncsu-mcs",
+      "program_url": "https://csc.ncsu.edu/academics/graduate/masters/master-of-computer-science/",
+      "application_url": "https://applygrad.ncsu.edu/apply/",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80(18)",
+          "original_value": "80(18)",
+          "reported_total": "80",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4(4)",
+          "original_value": "4(4)",
+          "reported_total": "4",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5(6.5)",
+          "original_value": "6.5(6.5)",
+          "reported_total": "6.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 110(110)",
+          "original_value": "110(110)",
+          "reported_total": "110",
+          "conditions_pending": true
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "International applicant deadline (fall, only round)"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-neu-cs-align",
+      "program_url": "https://www.khoury.northeastern.edu/programs/align-masters-of-science-in-computer-science/",
+      "application_url": "https://enroll.northeastern.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 90",
+          "original_value": "90",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 4.5",
+          "original_value": "4.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 6.5",
+          "original_value": "6.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-15",
+          "label": "International (outside US/Canada when applying) deadline"
+        }
+      ],
+      "application_fee": 0,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-neu-mscs",
+      "program_url": "https://www.khoury.northeastern.edu/programs/computer-science-ms/",
+      "application_url": "https://enroll.northeastern.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "recommended",
+          "summary": "Recommended: 90",
+          "original_value": "90",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "recommended",
+          "summary": "Recommended: 4.5",
+          "original_value": "4.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "recommended",
+          "summary": "Recommended: 6.5",
+          "original_value": "6.5",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-15",
+          "label": "International (applying from abroad) deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-uci-mcs",
+      "program_url": "https://mcs.ics.uci.edu/",
+      "application_url": "https://apply.grad.uci.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 7(6)",
+          "original_value": "7(6)",
+          "reported_total": "7",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-15",
+          "label": "International deadline"
+        }
+      ],
+      "application_fee": 155,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-uiuc-ece-meng",
+      "program_url": "https://ece.illinois.edu/academics/grad/meng-campus",
+      "application_url": "https://choose.illinois.edu/apply/",
+      "reported_gre": "recommended",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 96",
+          "original_value": "96",
+          "reported_total": "96",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5(6.0)",
+          "original_value": "6.5(6.0)",
+          "reported_total": "6.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_stated",
+          "summary": "Not stated: —",
+          "original_value": "—",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-05-01",
+          "label": "Deadline (dept Information and Deadlines page, conflicts with admissions page)"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-umass-mscs",
+      "program_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+      "application_url": "https://applygrad.umass.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4",
+          "original_value": "4",
+          "reported_total": "4",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "Early Decision"
+        },
+        {
+          "date": "2027-03-15",
+          "label": "Regular Decision"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-usc-cs28",
+      "program_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science/",
+      "application_url": "https://usc.liaisoncas.com/applicant-ux/#/login",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "none",
+          "summary": "No requirement reported: None reported",
+          "original_value": "无",
+          "reported_total": null,
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "not_accepted",
+          "summary": "Not accepted: Not accepted",
+          "original_value": "不接受",
+          "reported_total": null,
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-12-15",
+          "label": "Scholarship consideration deadline"
+        },
+        {
+          "date": "2027-01-15",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 120,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-utah-state-university-mscs",
+      "program_url": "https://engineering.usu.edu/soc/students/graduate/ms-plan-a",
+      "application_url": "https://apply.usu.edu/",
+      "reported_gre": "not_required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.0",
+          "original_value": "4.0",
+          "reported_total": "4.0",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5(5.0)",
+          "original_value": "6.5(5.0)",
+          "reported_total": "6.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 105",
+          "original_value": "105",
+          "reported_total": "105",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-01",
+          "label": "Fall deadline (single round)"
+        }
+      ],
+      "application_fee": 55,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-minus-neu-is",
+      "program_url": "https://graduate.northeastern.edu/programs/msis-information-systems/master-of-science-in-information-systems-boston/",
+      "application_url": "https://enroll.northeastern.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.0",
+          "original_value": "4.0",
+          "reported_total": "4.0",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 105",
+          "original_value": "105",
+          "reported_total": "105",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-15",
+          "label": "International final deadline (outside US)"
+        }
+      ],
+      "application_fee": 0,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-minus-neu-ses",
+      "program_url": "https://seis.northeastern.edu/academics/ms-swes/",
+      "application_url": "https://enroll.northeastern.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.0",
+          "original_value": "4.0",
+          "reported_total": "4.0",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 105",
+          "original_value": "105",
+          "reported_total": "105",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-15",
+          "label": "Final deadline (intl, outside US)"
+        }
+      ],
+      "application_fee": 0,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-minus-scu-mscse",
+      "program_url": "https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/graduate/ms-in-computer-science-and-engineering/",
+      "application_url": "https://slate.scu.edu/apply/",
+      "reported_gre": "required",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 80",
+          "original_value": "80",
+          "reported_total": "80",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5",
+          "original_value": "4.5",
+          "reported_total": "4.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 110",
+          "original_value": "110",
+          "reported_total": "110",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-06-01",
+          "label": "International applicant deadline"
+        }
+      ],
+      "application_fee": 100,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "b-minus-uiuc-msim",
+      "program_url": "https://ischool.illinois.edu/academics/graduate/ms-information-management",
+      "application_url": "https://choose.illinois.edu/apply/",
+      "reported_gre": "optional",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79",
+          "original_value": "79",
+          "reported_total": "79",
+          "conditions_pending": false
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.0",
+          "original_value": "4.0",
+          "reported_total": "4.0",
+          "conditions_pending": false
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5",
+          "original_value": "6.5",
+          "reported_total": "6.5",
+          "conditions_pending": false
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 115",
+          "original_value": "115",
+          "reported_total": "115",
+          "conditions_pending": false
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2026-11-17",
+          "label": "Early Action"
+        },
+        {
+          "date": "2027-01-29",
+          "label": "Regular Decision"
+        }
+      ],
+      "application_fee": 90,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    },
+    {
+      "source_id": "c-plus-umn-mscs",
+      "program_url": "https://cse.umn.edu/cs/ms-overview",
+      "application_url": "https://choose.umn.edu/apply/",
+      "reported_gre": "not_accepted",
+      "language": [
+        {
+          "test": "toefl_120",
+          "test_label": "TOEFL /120",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 79(writing 21 reading 19)",
+          "original_value": "79(写作 21 阅读 19)",
+          "reported_total": "79",
+          "conditions_pending": true
+        },
+        {
+          "test": "toefl_6",
+          "test_label": "TOEFL /6",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 4.5(writing/reading 4.5)",
+          "original_value": "4.5(写作/阅读 4.5)",
+          "reported_total": "4.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "ielts_9",
+          "test_label": "IELTS",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 6.5(writing/reading 6.5)",
+          "original_value": "6.5(写作/阅读 6.5)",
+          "reported_total": "6.5",
+          "conditions_pending": true
+        },
+        {
+          "test": "det_160",
+          "test_label": "DET",
+          "kind": "hard_min",
+          "summary": "Reported minimum: 120(writing/reading 120)",
+          "original_value": "120(写作/阅读 120)",
+          "reported_total": "120",
+          "conditions_pending": true
+        }
+      ],
+      "rounds": [
+        {
+          "date": "2027-01-05",
+          "label": "Priority deadline"
+        },
+        {
+          "date": "2027-03-01",
+          "label": "Final deadline"
+        }
+      ],
+      "application_fee": 95,
+      "fee_currency": null,
+      "verification_status": "community_unverified"
+    }
+  ]
+}
