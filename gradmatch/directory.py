@@ -15,12 +15,13 @@ from gradmatch.catalog import read_catalog
 from gradmatch.catalog_audit import program_audit
 from gradmatch.constraints import evidence_ids
 from gradmatch.session import tiering_profile
+from gradmatch.tiers import reviewed_cohort_context
 from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
-LINKS = PROJECT_ROOT / "data/review/m61i_review_plan.json"
-DIRECTORY_VERSION = "M6.1i"
+LINKS = PROJECT_ROOT / "data/review/m61j_review_plan.json"
+DIRECTORY_VERSION = "M6.1j"
 REVIEW_DATE = date(2026, 11, 21)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -121,7 +122,7 @@ def build_directory(programs, sources, index=None, links=None):
             review_flags=list(candidate["review_flags"]),
             eligibility_review=UNKNOWN, tuition_upper_usd=None, tuition_lower_usd=None, tuition_formula=None,
             tuition_rate_year=None, tuition_assumptions=[], required_credits=None,
-            official_source_count=0, official_sources=[], notes=[], field_coverage={},
+            official_source_count=0, official_sources=[], cohort_context=[], notes=[], field_coverage={},
             verified_fields=[], missing_fields=[label for key,label in FIELD_LABELS.items() if key != 'english_minimum'],
             requirements={label: UNKNOWN for label in FIELD_LABELS.values()},
             planning_tier="Requires applicant-specific evidence", recommendation_eligible=False,
@@ -146,6 +147,7 @@ def build_directory(programs, sources, index=None, links=None):
                 tuition_lower_usd=audit["tuition"]["lower_usd"],
                 tuition_formula=audit["tuition"]["formula"], tuition_rate_year=audit["tuition"]["rate_year"],
                 tuition_assumptions=list(program.tuition.assumptions),
+                cohort_context=reviewed_cohort_context(program, sources, profile, REVIEW_DATE),
                 required_credits=str(program.required_credits) if fields["credits"]["rule_usable"] else None,
                 official_source_count=len(official_sources), official_sources=official_sources,
                 notes=list(program.notes), field_coverage=fields,

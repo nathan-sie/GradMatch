@@ -7,7 +7,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61H_SEED, load_seed
+from gradmatch.catalog import M61H_SEED, M61I_SEED, load_seed as current_load_seed
 from gradmatch.catalog_audit import audit_catalog
 from gradmatch.constraints import check_constraints, estimate_tuition
 from gradmatch.directory import build_directory, tuition_label
@@ -21,6 +21,10 @@ CEILINGS={
     'cmu-ms-ece-pittsburgh':'92265',
     'ncsu-mcs-raleigh':'67983',
 }
+
+def load_seed(path=M61I_SEED):
+    """Keep the pricing checkpoint pinned to its reviewed dataset."""
+    return current_load_seed(path)
 
 def assess(pid,profile=None,p=None,sources=None):
     if sources is None:

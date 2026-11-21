@@ -1,0 +1,125 @@
+{
+  "request_attempts": 9,
+  "captures": [
+    {
+      "key": "mcds_program",
+      "requested_url": "https://lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "status": "captured",
+      "url": "https://lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:39:56.541695+00:00",
+      "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+      "bytes": 275529,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "scs_admissions",
+      "requested_url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "status": "captured",
+      "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:39:55.862790+00:00",
+      "raw_response_sha256": "99e48cc7b0efc073507e58c82b07ba603eefad2b030c14862caba2eb2d922589",
+      "bytes": 54553,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "mcds_legacy_node",
+      "requested_url": "https://mcds.cs.cmu.edu/node/222215358",
+      "status": "failed",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlnode/222215358",
+      "http_status": 404,
+      "redirects": [
+        {
+          "url": "https://mcds.cs.cmu.edu/node/222215358",
+          "status": 302,
+          "location": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlnode/222215358"
+        }
+      ],
+      "retrieved_at": "2026-11-21T21:39:56.529310+00:00",
+      "raw_response_sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "bytes": 196,
+      "content_type": "text/html; charset=iso-8859-1"
+    },
+    {
+      "key": "mcds_legacy_apply",
+      "requested_url": "https://mcds.cs.cmu.edu/apply-mcds-program",
+      "status": "failed",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlapply-mcds-program",
+      "http_status": 404,
+      "redirects": [
+        {
+          "url": "https://mcds.cs.cmu.edu/apply-mcds-program",
+          "status": 302,
+          "location": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.htmlapply-mcds-program"
+        }
+      ],
+      "retrieved_at": "2026-11-21T21:39:56.535611+00:00",
+      "raw_response_sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "bytes": 196,
+      "content_type": "text/html; charset=iso-8859-1"
+    },
+    {
+      "key": "mcds_handbook",
+      "requested_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+      "status": "captured",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:39:57.391363+00:00",
+      "raw_response_sha256": "57da9b3f5e58bd12cc4ff4969354397f79e0478016ee1ccdb63ac90e636ee9f9",
+      "bytes": 578863,
+      "content_type": "application/pdf"
+    },
+    {
+      "key": "nyu_program",
+      "requested_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "status": "captured",
+      "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:45:14.303025+00:00",
+      "raw_response_sha256": "a93adb63d89daaa0206cf453f1ed1bd58be5ce732362ef3c5e4512a61b52c3e6",
+      "bytes": 140634,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "nyu_requirements",
+      "requested_url": "https://engineering.nyu.edu/admissions/graduate/apply/admissions-requirements",
+      "status": "captured",
+      "url": "https://engineering.nyu.edu/admissions/graduate/apply/admissions-requirements",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:45:14.355748+00:00",
+      "raw_response_sha256": "b29c6b18ea5f08df4ccd1e3600ba9873f863ab89e81aba11c23d8399bc067238",
+      "bytes": 102275,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "nyu_deadlines",
+      "requested_url": "https://engineering.nyu.edu/admissions/graduate/apply/application-deadlines",
+      "status": "captured",
+      "url": "https://engineering.nyu.edu/admissions/graduate/apply/application-deadlines",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:45:14.355748+00:00",
+      "raw_response_sha256": "5a905a6fad892743318ed2830714f70bdb3dc8853c11089d69e59469a95b046a",
+      "bytes": 76900,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "nyu_cycle",
+      "requested_url": "https://apply.engineering.nyu.edu/apply/",
+      "status": "captured",
+      "url": "https://apply.engineering.nyu.edu/apply/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T21:45:14.268393+00:00",
+      "raw_response_sha256": "5ec8db086b0de73358f5e92067720dccad309ac5d83b5fa018af2996dbef69ed",
+      "bytes": 23082,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}

@@ -2,7 +2,9 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M6.1i pricing ceilings and planning reviews**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Twenty exact identities link to **138 official source records**; 63 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) targets 20–25 official records, then 10–15 records with usable screening evidence. Final-project evaluation remains incomplete.
+Current stage: **M6.1j priority eligibility and cohort context**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Twenty exact identities link to **145 official source records**; 63 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) targets 20–25 official records, then 10–15 records with usable screening evidence. Final-project evaluation remains incomplete.
+
+M6.1j adds seven sources for MCDS and NYU Tandon CS. For the fixed fictional profile, MCDS retains only its English hard-check gap and NYU retains only its GPA-scope gap; neither becomes a formal recommendation. The directory exposes source-bound program-cohort context with an explicit distinction from personal admission probability. Preparation coverage reaches ten, reviewed remaining checklists seven, and dated intake/deadline coverage 14/12. All **384 regression checks** pass after the documented fixes, with no paid model calls. See [source decisions](docs/M61J_SOURCES.md) and [verification](docs/verification/M61J.md).
 
 M6.1i reviews seven programs and adds four **conservative tuition ceilings**, alongside the existing eight two-sided estimates and one minimum-only bound. A covered ceiling can pass a published-rate budget; a lower budget remains unknown because the actual bill can be lower. The directory labels ceilings explicitly. Dated intake/deadline coverage rises to 13/11, preparation to nine, degree to 16 and remaining-checklist reviews to five. Reference hard-check readiness stays two and formal tier support stays one. All 360 unique regression checks have passing outcomes across the full run and targeted rerun; the earlier count assertion and timeout are retained in [run accounting](docs/verification/M61I_validation_runs.json). See [source decisions](docs/M61I_SOURCES.md) and [verification](docs/verification/M61I.md).
 
@@ -33,8 +35,8 @@ Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/Gr
 The project uses an isolated Python 3.12 environment. If `.venv` is already prepared, run these commands from the repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61e_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m61e
+.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61j_seed.json
+.\.venv\Scripts\python.exe -m scripts.verify_m61j
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
@@ -82,7 +84,7 @@ The seven computable cost estimates include the earlier UW ECE PMP, USC MSCS, No
 ## Data and secrets
 
 - `data/schema.sql` is versioned; the generated `data/gradmatch.db` is rebuildable and ignored.
-- `data/catalog/active.json` selects `m61e_seed.json` at call time, including after data updates. `m61c_seed.json`, `m61b_seed.json`, `m35_seed.json` and `m1_seed.json` preserve earlier catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
+- `data/catalog/active.json` selects `m61j_seed.json` at call time, including after data updates. Earlier versioned seeds preserve historical catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
 - Applicant profiles and sessions are not written into the public catalog.
 - `.venv`, `.tools`, temporary records, `.env`, and `.streamlit/secrets.toml` are ignored.
 - A real OpenAI key is needed for explicit M2 live checks. Never commit secrets.

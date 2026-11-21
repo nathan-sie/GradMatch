@@ -84,11 +84,15 @@ def evidence_ids(program: ProgramRecord, group: str, sources: dict[str, SourceRe
 def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
                       sources: dict[str, SourceRecord], *, as_of: date, data_mode="snapshot") -> ConstraintReport:
     checks = []
+    policy_only_english = (not program.english and not program.english_not_required
+        and not program.field_sources.get('english') and not program.field_sources.get('english_minimum'))
 
     def add(group, status, code, explanation, warnings=None):
         source_ids=evidence_ids(program,group,sources,profile)
         if group == 'english' and not source_ids:
             source_ids = evidence_ids(program, 'english_minimum', sources, profile)
+        if group == 'english' and not source_ids and status == 'unknown' and policy_only_english:
+            source_ids = evidence_ids(program, 'english_policy', sources, profile)
         if group=='tuition' and estimate.reason_code=='MINIMUM_ONLY_TUITION_BOUND':
             source_ids=evidence_ids(program,'tuition_minimum',sources,profile)
         if group=='tuition' and estimate.reason_code=='MAXIMUM_ONLY_TUITION_BOUND':
@@ -146,7 +150,10 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
     elif score is None:
         add("english", "unknown", "MISSING_ENGLISH", "No verifiable English score is available. Passing scores or exemptions are not assumed.")
     elif english_rule is None or not (supported("english") or supported("english_minimum")):
-        add("english", "unknown", "ENGLISH_RULE_NOT_VERIFIED", "The program's requirement for this English test version is not verified.")
+        explanation = "The program's requirement for this English test version is not verified."
+        if policy_only_english and supported('english_policy'):
+            explanation += " The cited policy review does not establish an applicable numerical threshold or complete conditions. Historical or typical admitted scores are not assumed to be current minimums."
+        add("english", "unknown", "ENGLISH_RULE_NOT_VERIFIED", explanation)
     elif score.test_date and ((score.version == "toefl_120" and score.test_date >= date(2026, 1, 21))
                               or (score.version == "toefl_6" and score.test_date < date(2026, 1, 21))):
         add("english", "unknown", "TOEFL_VERSION_DATE_MISMATCH", "The test date and selected TOEFL version do not match. Verify the score basis; no conversion is performed.")

@@ -1,0 +1,113 @@
+{
+  "schema_version": "m61j-review-plan-v1",
+  "reviewed_on": "2026-11-21",
+  "target_intake": "2027-fall",
+  "target_catalog_min": 20,
+  "target_catalog_max": 25,
+  "catalog_links": [
+    {
+      "candidate_source_id": "a-uw-ee-pmp",
+      "program_id": "uw-ece-msece-pmp-seattle",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "a-uiuc-mcs",
+      "program_id": "uiuc-mcs-urbana",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-plus-rics-mcs",
+      "program_id": "rice-mcs-houston",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-uci-mcs",
+      "program_id": "uci-mcs-irvine",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-ncsu-mcs",
+      "program_id": "ncsu-mcs-raleigh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-umass-mscs",
+      "program_id": "umass-mscs-amherst",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-usc-cs28",
+      "program_id": "usc-mscs-general-los-angeles",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-neu-mscs",
+      "program_id": "neu-mscs-boston",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "s-cmu-mcds",
+      "program_id": "cmu-mcds-pittsburgh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "s-cmu-msaii",
+      "program_id": "cmu-msaii-pittsburgh",
+      "basis": "Exact degree/campus identity already reviewed in the existing catalog; original candidate provenance is preserved."
+    },
+    {
+      "candidate_source_id": "b-uiuc-ece-meng",
+      "program_id": "uiuc-meng-ece-urbana",
+      "basis": "Officially captured degree/campus identity and field-bound partial rules; eligibility, tuition and tiers remain explicitly incomplete."
+    },
+    {
+      "candidate_source_id": "b-plus-uwt-mscs",
+      "program_id": "uw-mscss-tacoma",
+      "basis": "Officially captured degree/campus identity and field-bound partial rules; eligibility, tuition and tiers remain explicitly incomplete."
+    },
+    {
+      "candidate_source_id": "b-plus-tamu-cse",
+      "program_id": "tamu-mcs-college-station",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "b-plus-nyu-tandon",
+      "program_id": "nyu-mscs-tandon-brooklyn",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "a-plus-wisc-cs-pmp",
+      "program_id": "wisc-ms-cs-professional-madison",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "s-cornell-cs-meng",
+      "program_id": "cornell-meng-cs-ithaca",
+      "basis": "Officially captured scoped identity and partial field-bound rules; no community candidate promoted into recommendation eligibility."
+    },
+    {
+      "candidate_source_id": "a-minus-duke-ece",
+      "program_id": "duke-ms-ece-durham",
+      "basis": "Officially captured exact degree, campus and track; partial qualification and tuition remain explicit."
+    },
+    {
+      "candidate_source_id": "a-cmu-ece",
+      "program_id": "cmu-ms-ece-pittsburgh",
+      "basis": "Officially captured exact degree, campus and track; partial qualification and tuition remain explicit."
+    },
+    {
+      "candidate_source_id": "s-gatech-mscs",
+      "program_id": "gatech-mscs-atlanta",
+      "basis": "Officially captured exact degree, campus and track; partial qualification and tuition remain explicit."
+    },
+    {
+      "candidate_source_id": "a-plus-ucsd-cs75",
+      "program_id": "ucsd-ms-cs-la-jolla",
+      "basis": "Officially captured exact degree, campus and track; partial qualification and tuition remain explicit."
+    }
+  ],
+  "first_expansion_batch": [],
+  "notice": "The remaining queue is research-only. Linked official records have independently captured fields and explicit gaps; all community candidate rows remain unverified and non-recommendable.",
+  "milestone": "M6.1j",
+  "scope": "Priority eligibility reviews and cited program-cohort context; unresolved score policies remain unknown"
+}

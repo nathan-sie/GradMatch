@@ -1,0 +1,106 @@
+{
+  "milestone": "M6.1j",
+  "prior_seed": "data/catalog/m61i_seed.json",
+  "seed": "data/catalog/m61j_seed.json",
+  "programs_enriched": {
+    "cmu-mcds-pittsburgh": [
+      {
+        "source_id": "cmu-mcds-pittsburgh-mcds_handbook-m61j",
+        "groups": [
+          "prerequisites",
+          "prerequisite_background_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "cmu-mcds-pittsburgh-mcds_program-m61j",
+        "groups": [
+          "remaining_eligibility",
+          "english_policy",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "cmu-mcds-pittsburgh-scs_admissions-m61j",
+        "groups": [
+          "remaining_eligibility",
+          "english_policy",
+          "directory_policies"
+        ]
+      }
+    ],
+    "nyu-mscs-tandon-brooklyn": [
+      {
+        "source_id": "nyu-mscs-tandon-brooklyn-nyu_program-m61j",
+        "groups": [
+          "remaining_eligibility",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "nyu-mscs-tandon-brooklyn-nyu_requirements-m61j",
+        "groups": [
+          "remaining_eligibility",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "nyu-mscs-tandon-brooklyn-nyu_deadlines-m61j",
+        "groups": [
+          "intake",
+          "deadline",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "nyu-mscs-tandon-brooklyn-nyu_cycle-m61j",
+        "groups": [
+          "intake",
+          "deadline"
+        ]
+      }
+    ]
+  },
+  "new_source_ids": [
+    "cmu-mcds-pittsburgh-mcds_handbook-m61j",
+    "cmu-mcds-pittsburgh-mcds_program-m61j",
+    "cmu-mcds-pittsburgh-scs_admissions-m61j",
+    "nyu-mscs-tandon-brooklyn-nyu_program-m61j",
+    "nyu-mscs-tandon-brooklyn-nyu_requirements-m61j",
+    "nyu-mscs-tandon-brooklyn-nyu_deadlines-m61j",
+    "nyu-mscs-tandon-brooklyn-nyu_cycle-m61j"
+  ],
+  "superseded_field_bindings": {
+    "cmu-mcds-pittsburgh": {
+      "prerequisites": [
+        "cmu-mcds-pittsburgh-mcds_handbook-m61b"
+      ],
+      "remaining_eligibility": [
+        "cmu-mcds-pittsburgh-mcds_program-m35"
+      ],
+      "english_policy": [
+        "cmu-mcds-pittsburgh-mcds_program-m61b",
+        "cmu-mcds-pittsburgh-mcds_scs-m61b"
+      ]
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "remaining_eligibility": [
+        "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+      ]
+    }
+  },
+  "expected_programs": 20,
+  "expected_sources": 145,
+  "prior_sources_preserved": 138,
+  "unresolved_rules": {
+    "cmu-mcds-pittsburgh": [
+      "Current numerical English minimum and exact applicable validity window"
+    ],
+    "nyu-mscs-tandon-brooklyn": [
+      "GPA calculation scope",
+      "Admissible admission-tier evidence"
+    ]
+  },
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

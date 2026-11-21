@@ -16,7 +16,7 @@ from gradmatch.storage import PROJECT_ROOT
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LEGACY_REVIEW = PROJECT_ROOT / "data/review/m61_review_plan.json"
-REVIEW = PROJECT_ROOT / "data/review/m61i_review_plan.json"
+REVIEW = PROJECT_ROOT / "data/review/m61j_review_plan.json"
 
 
 def sha256(path):
@@ -75,6 +75,7 @@ def build_report(
 ):
     if review_path is None:
         historical_reviews = {
+            'm61i_seed.json': 'm61i_review_plan.json',
             'm61h_seed.json': 'm61h_review_plan.json',
             'm61c_seed.json': 'm61c_review_plan.json',
             'm61e_seed.json': 'm61c_review_plan.json',

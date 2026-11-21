@@ -68,6 +68,16 @@ def render_directory(document):
         st.write("Estimated full-program tuition:", tuition_label(row))
         st.write("Fields usable for automatic checks:", ", ".join(row["verified_fields"]) or "None yet")
         st.write("Needs verification:", ", ".join(row["missing_fields"]) or "Applicant-specific checks still required")
+        if row.get('cohort_context'):
+            st.markdown('**Program-level admission context**')
+            st.caption('These reviewed cohort statistics are not your admission probability. They do not establish applicant eligibility, goal fit or a formal recommendation.')
+            source_map = {source['source_id']: source for source in row['official_sources']}
+            for cohort in row['cohort_context']:
+                st.write(f"{cohort['cycle_year']} cohort: {cohort['offers']} admission offers from {cohort['applications']} applications.")
+                if cohort['cohort_planning_label']:
+                    st.caption(f"Cohort-only planning label: {cohort['cohort_planning_label']}. Applicant checks and complete recommendation evidence are still required.")
+                for sid in cohort['source_ids']:
+                    st.markdown(f"[Cohort source]({source_map[sid]['url']})")
         details = [{"Field": label, "Reviewed policy": value} for label, value in row["requirements"].items() if value != UNKNOWN]
         if details:
             st.markdown("**Reviewed policy details**")

@@ -1,0 +1,46 @@
+{
+  "url": "https://apply.engineering.nyu.edu/apply/",
+  "retrieved_at": "2026-11-21T21:45:14.268393+00:00",
+  "raw_response_sha256": "5ec8db086b0de73358f5e92067720dccad309ac5d83b5fa018af2996dbef69ed",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": [
+        {
+          "year": 2027,
+          "term": "spring"
+        }
+      ]
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-01",
+          "label": "Fall 2027 MS priority consideration",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-15",
+          "label": "Fall 2027 on-campus MS final application/materials deadline",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    }
+  },
+  "source_excerpt": "The 2027 application to all graduate programs",
+  "fact_summary": "The public graduate portal identifies the open 2027 application cycle and directly links the current deadline table. The cycle and table are jointly reviewed for the on-campus CS MS Fall and Spring rules; no account was created or used."
+}

@@ -1,0 +1,179 @@
+{
+  "milestone": "M6.1j",
+  "status": "passed",
+  "programs": 20,
+  "sources": 145,
+  "directory_programs": 83,
+  "programs_enriched": 2,
+  "new_sources": 7,
+  "prior_sources_preserved": 138,
+  "optional_raw_responses_rehashed": 7,
+  "scripted_capture_attempts": 9,
+  "used_capture_keys": [
+    "mcds_handbook",
+    "mcds_program",
+    "nyu_cycle",
+    "nyu_deadlines",
+    "nyu_program",
+    "nyu_requirements",
+    "scs_admissions"
+  ],
+  "excluded_captures": [
+    {
+      "key": "mcds_legacy_node",
+      "status": "failed",
+      "http_status": 404
+    },
+    {
+      "key": "mcds_legacy_apply",
+      "status": "failed",
+      "http_status": 404
+    }
+  ],
+  "remaining_reference_gaps": {
+    "cmu-mcds-pittsburgh": {
+      "unknown_checks": [
+        {
+          "rule_id": "english",
+          "status": "unknown",
+          "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+          "explanation": "The program's requirement for this English test version is not verified. The cited policy review does not establish an applicable numerical threshold or complete conditions. Historical or typical admitted scores are not assumed to be current minimums.",
+          "source_ids": [
+            "cmu-mcds-pittsburgh-mcds_program-m61j",
+            "cmu-mcds-pittsburgh-scs_admissions-m61j"
+          ],
+          "warnings": []
+        }
+      ],
+      "hard_checks_status": "unknown",
+      "recommendation_ready": false
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "unknown_checks": [
+        {
+          "rule_id": "gpa",
+          "status": "unknown",
+          "reason_code": "GPA_SCOPE_NOT_VERIFIED",
+          "explanation": "The official GPA calculation scope has not been verified. An unspecified scope cannot establish eligibility.",
+          "source_ids": [
+            "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+          ],
+          "warnings": []
+        }
+      ],
+      "hard_checks_status": "unknown",
+      "recommendation_ready": false
+    }
+  },
+  "cohort_context_programs": [
+    "cmu-mcds-pittsburgh",
+    "cmu-msaii-pittsburgh"
+  ],
+  "summary": {
+    "programs": 20,
+    "sources": 145,
+    "disciplines": {
+      "CS": 16,
+      "ECE": 4
+    },
+    "computable_verified_tuition": 12,
+    "minimum_only_tuition": 1,
+    "maximum_only_tuition": 4,
+    "two_sided_tuition_estimates": 8,
+    "full_eligibility_reviews": 7,
+    "reference_hard_checks_ready": 2,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 20,
+        "usable": 20
+      },
+      "intake": {
+        "bound": 14,
+        "usable": 14
+      },
+      "gpa": {
+        "bound": 14,
+        "usable": 8
+      },
+      "english": {
+        "bound": 8,
+        "usable": 8
+      },
+      "english_minimum": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 11,
+        "usable": 10
+      },
+      "degree": {
+        "bound": 16,
+        "usable": 16
+      },
+      "gre": {
+        "bound": 19,
+        "usable": 19
+      },
+      "credits": {
+        "bound": 16,
+        "usable": 16
+      },
+      "tuition": {
+        "bound": 15,
+        "usable": 12
+      },
+      "deadline": {
+        "bound": 12,
+        "usable": 12
+      },
+      "remaining_eligibility": {
+        "bound": 10,
+        "usable": 7
+      },
+      "goal_features": {
+        "bound": 13,
+        "usable": 13
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "shared_strategies": {
+    "fixed": {
+      "data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+  "database_hashes_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "database_hashes_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "external_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

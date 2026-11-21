@@ -1,0 +1,27 @@
+{
+  "url": "https://lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+  "retrieved_at": "2026-11-21T21:39:56.541695+00:00",
+  "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+  "verified_values": {
+    "remaining_eligibility": {
+      "application_materials.0": "Online application and applicable fee or approved waiver",
+      "application_materials.1": "Transcripts from every attended university",
+      "application_materials.2": "Current resume / CV",
+      "application_materials.3": "Statement of purpose",
+      "application_materials.4": "Three electronic recommendation letters",
+      "application_materials.6": "Official GRE and applicable English test reports",
+      "application_materials.7": "Official award letter for any outside funding, if applicable",
+      "application_materials.8": "Optional one-to-three-minute video; strongly suggested, not mandatory",
+      "eligibility_review_complete": true
+    },
+    "english_policy": {
+      "notes.10": "English policy: The current exact-program page requires a recent TOEFL, IELTS or DET for applicable non-native F-1/J-1 applicants and does not provide a study-based waiver. A current numerical minimum has not been verified; typical admitted-score ranges are not hard cutoffs."
+    },
+    "directory_policies": {
+      "notes.9": "Other eligibility: Reviewed Standard-track planning checklist: application/fee, transcripts from every university, CV, purpose statement, three electronic letters, required GRE and applicable English reports. At least two letters should come from faculty or recent employers. Outside funding needs an official award letter if applicable; the video is optional. Submission and admission are not asserted.",
+      "notes.10": "English policy: The current exact-program page requires a recent TOEFL, IELTS or DET for applicable non-native F-1/J-1 applicants and does not provide a study-based waiver. A current numerical minimum has not been verified; typical admitted-score ranges are not hard cutoffs."
+    }
+  },
+  "source_excerpt": "Any outside funding you are receiving",
+  "fact_summary": "The exact Fall 2027 program page supplies the ordinary application checklist and conditional outside-funding award letter. It requires recent English testing without a study-based waiver, but does not publish a numerical minimum. Cached legacy thresholds are not imported."
+}

@@ -1,0 +1,49 @@
+{
+  "url": "https://engineering.nyu.edu/admissions/graduate/apply/application-deadlines",
+  "retrieved_at": "2026-11-21T21:45:14.355748+00:00",
+  "raw_response_sha256": "5a905a6fad892743318ed2830714f70bdb3dc8853c11089d69e59469a95b046a",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": [
+        {
+          "year": 2027,
+          "term": "spring"
+        }
+      ]
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-01",
+          "label": "Fall 2027 MS priority consideration",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-15",
+          "label": "Fall 2027 on-campus MS final application/materials deadline",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "directory_policies": {
+      "notes.8": "Deadlines: The open 2027 application portal links the current graduate deadlines table. Together they establish Fall 2027 MS priority December 1, 2026 and final February 15, 2027; the online July deadline is excluded. CS MS is explicitly listed among programs without Spring admission. No 2028 dates are inferred."
+    }
+  },
+  "source_excerpt": "Computer Science MS",
+  "fact_summary": "The current linked MS deadline table lists December 1 priority and February 15 final, and explicitly excludes Computer Science MS from Spring admission. The dated 2027 portal supplies the cycle anchor; the yearless table alone is not carried to later years."
+}

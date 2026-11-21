@@ -1,0 +1,17 @@
+{
+  "url": "https://engineering.nyu.edu/admissions/graduate/apply/admissions-requirements",
+  "retrieved_at": "2026-11-21T21:45:14.355748+00:00",
+  "raw_response_sha256": "b29c6b18ea5f08df4ccd1e3600ba9873f863ab89e81aba11c23d8399bc067238",
+  "verified_values": {
+    "remaining_eligibility": {
+      "application_materials.0": "Online application and applicable fee or approved waiver",
+      "application_materials.3": "Two personal essay responses",
+      "application_materials.6": "Any additional essays or materials specifically requested"
+    },
+    "directory_policies": {
+      "notes.7": "GPA policy: The general admission page states 3.0/4, but does not explicitly settle the calculation scope used by this checker. The program graduate/core GPA for graduation is not substituted for an admission GPA rule; the existing scope remains pending."
+    }
+  },
+  "source_excerpt": "A response to both prompts is required.",
+  "fact_summary": "The general application instructions require two essay responses and an applicable fee, and allow additional requested materials. Its 3.0/4 admission minimum does not explicitly resolve the GPA scope; that comparison remains unknown."
+}

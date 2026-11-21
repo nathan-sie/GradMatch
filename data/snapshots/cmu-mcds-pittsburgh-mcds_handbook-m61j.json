@@ -1,0 +1,30 @@
+{
+  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/files/mcds-ay26-27-masters-student-handbook.pdf",
+  "retrieved_at": "2026-11-21T21:39:57.391363+00:00",
+  "raw_response_sha256": "57da9b3f5e58bd12cc4ff4969354397f79e0478016ee1ccdb63ac90e636ee9f9",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [],
+      "recommended_topics": [
+        "programming",
+        "mathematics",
+        "logical_reasoning"
+      ],
+      "prerequisites_complete": true
+    },
+    "prerequisite_background_review": {
+      "required_topics": [],
+      "recommended_topics": [
+        "programming",
+        "mathematics",
+        "logical_reasoning"
+      ],
+      "prerequisites_complete": true
+    },
+    "directory_policies": {
+      "notes.8": "Preparation: The linked AY26-27 handbook expects analytic ability and mathematical, programming and reasoning aptitude, but does not require a CS major or list universal entry-course cutoffs. The declared CS/ECE Standard-track path has no additional universal course check. Other backgrounds remain for individual preparation and possible extended-track review."
+    }
+  },
+  "source_excerpt": "Computer Science is not required.",
+  "fact_summary": "The current linked handbook establishes bachelor-level entry without a compulsory CS major. Aptitude is evaluated individually; named courses in the graduate curriculum are not universal admission prerequisites. Other backgrounds can require an additional semester."
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+  "retrieved_at": "2026-11-21T21:39:55.862790+00:00",
+  "raw_response_sha256": "99e48cc7b0efc073507e58c82b07ba603eefad2b030c14862caba2eb2d922589",
+  "verified_values": {
+    "remaining_eligibility": {
+      "application_materials.5": "Recommendation guidance: at least two letters should be from faculty or recent employers"
+    },
+    "english_policy": {
+      "notes.11": "English review action: Confirm the applicable current minimum for the selected English test and the exact Fall 2027 test-date window with the program. The SCS page prints September 1, 2024 alongside a two-year rule and excludes MCDS from the US-study five-year exception; these do not establish a complete current English pass. The obsolete minimum-score URLs returned 404 in this review."
+    },
+    "directory_policies": {
+      "notes.11": "English review action: Confirm the applicable current minimum for the selected English test and the exact Fall 2027 test-date window with the program. The SCS page prints September 1, 2024 alongside a two-year rule and excludes MCDS from the US-study five-year exception; these do not establish a complete current English pass. The obsolete minimum-score URLs returned 404 in this review."
+    }
+  },
+  "source_excerpt": "At least two letters should be",
+  "fact_summary": "The SCS instructions specify the recommendation-letter source guidance and exempt MCDS from the longer expired-score pathway. Its printed cutoff and two-year wording remain unresolved for this cycle; no current English minimum or waiver is inferred."
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+  "retrieved_at": "2026-11-21T21:45:14.303025+00:00",
+  "raw_response_sha256": "a93adb63d89daaa0206cf453f1ed1bd58be5ce732362ef3c5e4512a61b52c3e6",
+  "verified_values": {
+    "remaining_eligibility": {
+      "application_materials.1": "Transcripts from all institutions and degree-conferral evidence",
+      "application_materials.2": "Current resume / CV",
+      "application_materials.4": "Applicable official English test reports",
+      "application_materials.5": "Recommendation letters are optional for Computer Science MS",
+      "eligibility_review_complete": true
+    },
+    "directory_policies": {
+      "notes.6": "Other eligibility: Reviewed CS MS planning checklist: online application, applicable fee, all transcripts/degree evidence, CV, two essay responses and applicable English reports. Recommendation letters are optional for this program; additional materials may be requested. Submitted documents and credential equivalency remain university decisions."
+    }
+  },
+  "source_excerpt": "Letters of recommendation (optional)",
+  "fact_summary": "The exact on-campus CS MS admission list includes transcripts, CV, essays and applicable English reports, with recommendation letters optional. This is separate from graduation GPA requirements and does not establish an admission probability."
+}

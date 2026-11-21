@@ -11,7 +11,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61H_SEED, load_seed, read_catalog
+from gradmatch.catalog import M61H_SEED, M61I_SEED, import_catalog, load_seed, read_catalog
 from gradmatch.catalog_audit import markdown_report
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
@@ -41,7 +41,7 @@ def main():
     def deny(*args,**kwargs):raise AssertionError('No external or paid request in snapshot verification')
     with (patch.object(socket,'getaddrinfo',deny),patch.object(socket,'create_connection',deny),
           patch.object(socket.socket,'connect',deny),patch.object(OpenAIProvider,'generate',deny)):
-        programs,sources=load_seed();_,prior=load_seed(M61H_SEED)
+        programs,sources=load_seed(M61I_SEED);_,prior=load_seed(M61H_SEED)
         review=json.loads((PROJECT_ROOT/'data/review/m61i_field_reviews.json').read_text(encoding='utf-8'))
         receipts=json.loads((PROJECT_ROOT/'data/review/m61i_capture_receipts.json').read_text(encoding='utf-8'))
         assert len(programs)==20 and len(sources)==138 and len(review['programs_enriched'])==7
@@ -55,7 +55,8 @@ def main():
             for extension in ['.html','.pdf']:
                 raw=PROJECT_ROOT/'work/m61i_research'/(receipt['key']+extension)
                 if raw.exists():assert sha256(raw)==source.raw_response_sha256;checked+=1;break
-        database=bootstrap_public_catalog(output/'public')
+        database=output/'public'/'gradmatch.db'
+        import_catalog(M61I_SEED,database)
         assert data_hash(*read_catalog(database))==data_hash(programs,sources)
         directory=read_directory(bootstrap_directory(database,output/'public'))
         assert directory['total']==83 and directory['official_records']==20
@@ -74,7 +75,7 @@ def main():
                 assert result.status==('pass' if budget==Decimal(amount) else 'unknown')
                 outcomes.append(dict(budget_usd=str(budget),status=result.status,reason_code=result.reason_code))
             price_checks[pid]=dict(published_rate_ceiling_usd=amount,boundary_checks=outcomes)
-        audit=build_report(as_of=date(2026,11,21));summary=audit['catalog']['summary']
+        audit=build_report(seed=M61I_SEED,as_of=date(2026,11,21));summary=audit['catalog']['summary']
         assert summary['computable_verified_tuition']==12
         assert summary['two_sided_tuition_estimates']==8 and summary['maximum_only_tuition']==4
         assert summary['minimum_only_tuition']==1 and summary['full_eligibility_reviews']==5

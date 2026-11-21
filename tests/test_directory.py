@@ -41,13 +41,13 @@ def test_all_83_leads_are_explorable_without_promoting_community_claims():
     assert mit["eligibility_review"] == "Needs verification"
 
 
-def test_only_exact_reviewed_links_enrich_a_lead_and_unknown_intake_stays_unknown():
+def test_only_exact_reviewed_links_enrich_a_lead_and_unknown_gpa_stays_unknown():
     programs, sources = load_seed()
     rows = build_directory(programs, sources)["records"]
     nyu = next(r for r in rows if r["source_id"] == "b-plus-nyu-tandon")
     assert nyu["linked_program_id"] == "nyu-mscs-tandon-brooklyn"
     assert nyu["campus"] == "Brooklyn" and nyu["tuition_upper_usd"] == "78780"
-    assert "Intake" in nyu["missing_fields"]
+    assert "Intake" in nyu["verified_fields"]
     assert "GPA policy" in nyu["missing_fields"]
     # Another NYU program must not inherit Tandon tuition or scope.
     other_nyu = [r for r in rows if "New York University" in r["university"] and not r["linked_program_id"]]
