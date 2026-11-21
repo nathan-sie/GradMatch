@@ -11,25 +11,25 @@ For the fixed fictional profile, **1** program has eligibility, goal and tier ev
 
 | Program / campus | Verified tuition upper USD | Reference hard checks | Tier evidence for reference profile | Catalog reviews still needed |
 | --- | ---: | --- | --- | --- |
-| Carnegie Mellon University — MCDS, Pittsburgh | 97200 | unknown | Reach | english, english_minimum, prerequisites, remaining_eligibility |
+| Carnegie Mellon University — MCDS, Pittsburgh | 97200 | unknown | Reach | english, prerequisites, remaining_eligibility |
 | Carnegie Mellon University — MS, Pittsburgh | Unknown | unknown | None | intake, english, prerequisites, degree, tuition, deadline, remaining_eligibility, admission_evidence |
-| Carnegie Mellon University — MSAII, Pittsburgh | 137400 | pass | Lottery | english_minimum |
+| Carnegie Mellon University — MSAII, Pittsburgh | 137400 | pass | Lottery | No required gap for this profile |
 | Cornell University — MEng, Ithaca | 73946 | unknown | None | gpa, english, prerequisites, deadline, remaining_eligibility, admission_evidence |
-| Duke University — MS, Durham | Unknown | unknown | None | english, english_minimum, prerequisites, degree, tuition, remaining_eligibility, admission_evidence |
+| Duke University — MS, Durham | Unknown | unknown | None | english, prerequisites, degree, tuition, remaining_eligibility, admission_evidence |
 | Georgia Institute of Technology — MS, Atlanta | Unknown | unknown | None | intake, gpa, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence |
-| North Carolina State University — MCS, Raleigh | Unknown | unknown | None | intake, gpa, english, english_minimum, prerequisites, degree, gre, tuition, deadline, remaining_eligibility, goal_features, admission_evidence |
-| Northeastern University — MS, Boston | 61504 | unknown | None | intake, gpa, english, english_minimum, prerequisites, degree, deadline, remaining_eligibility, goal_features, admission_evidence |
-| New York University — MS, Brooklyn | 78780 | unknown | None | intake, gpa, english_minimum, prerequisites, deadline, remaining_eligibility, admission_evidence |
-| Rice University — MCS, Houston | Unknown | unknown | None | gpa, english, english_minimum, prerequisites, degree, tuition, remaining_eligibility, goal_features, admission_evidence |
-| Texas A&M University — MCS, College Station | Unknown | unknown | None | intake, gpa, english, english_minimum, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence |
-| University of California, Irvine — MCS, Irvine | 63500 | unknown | None | english_minimum, prerequisites, remaining_eligibility, goal_features, admission_evidence |
+| North Carolina State University — MCS, Raleigh | Unknown | unknown | None | intake, gpa, english, prerequisites, degree, gre, tuition, deadline, remaining_eligibility, goal_features, admission_evidence |
+| Northeastern University — MS, Boston | 61504 | unknown | None | intake, gpa, english, prerequisites, degree, deadline, remaining_eligibility, goal_features, admission_evidence |
+| New York University — MS, Brooklyn | 78780 | unknown | None | intake, gpa, prerequisites, deadline, remaining_eligibility, admission_evidence |
+| Rice University — MCS, Houston | Unknown | unknown | None | gpa, english, prerequisites, degree, tuition, remaining_eligibility, goal_features, admission_evidence |
+| Texas A&M University — MCS, College Station | Unknown | unknown | None | intake, gpa, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence |
+| University of California, Irvine — MCS, Irvine | 63500 | unknown | None | prerequisites, remaining_eligibility, goal_features, admission_evidence |
 | University of California San Diego — MS, La Jolla | Unknown | unknown | None | gpa, english, prerequisites, tuition, remaining_eligibility, admission_evidence |
 | University of Illinois Urbana-Champaign — MCS, Urbana-Champaign | Unknown | unknown | None | gpa, english, tuition, deadline, remaining_eligibility, goal_features, admission_evidence |
 | University of Illinois Urbana-Champaign — MEng, Urbana-Champaign | Unknown | unknown | None | gpa, english, prerequisites, tuition, remaining_eligibility, admission_evidence |
 | University of Massachusetts Amherst — MS, Amherst | Unknown | unknown | None | gpa, english, prerequisites, tuition, remaining_eligibility, goal_features, admission_evidence |
-| University of Southern California — MS, Los Angeles | 87744 | unknown | None | intake, gpa, english, english_minimum, prerequisites, deadline, remaining_eligibility, goal_features, admission_evidence |
-| University of Washington — MSECE, Seattle | 50850 | unknown | None | english_minimum, goal_features, admission_evidence |
-| University of Washington Tacoma — MS, Tacoma | Unknown | unknown | None | english_minimum, prerequisites, tuition, remaining_eligibility, admission_evidence |
+| University of Southern California — MS, Los Angeles | 87744 | unknown | None | intake, gpa, english, prerequisites, deadline, remaining_eligibility, goal_features, admission_evidence |
+| University of Washington — MSECE, Seattle | 50850 | unknown | None | goal_features, admission_evidence |
+| University of Washington Tacoma — MS, Tacoma | Unknown | unknown | None | prerequisites, tuition, remaining_eligibility, admission_evidence |
 | University of Wisconsin-Madison — MS, Madison | Unknown | unknown | None | intake, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence |
 
 ## Bound evidence versus usable rules
@@ -55,26 +55,25 @@ A bound tuition page with no rate is not computable tuition. A recommended GPA i
 
 ## Repair existing records first
 
-- Priority 1: `cmu-mcds-pittsburgh` — english, english_minimum, prerequisites, remaining_eligibility.
+- Priority 1: `cmu-mcds-pittsburgh` — english, prerequisites, remaining_eligibility.
 - Priority 2: `cmu-ms-ece-pittsburgh` — intake, english, prerequisites, degree, tuition, deadline, remaining_eligibility, admission_evidence.
-- Priority 2: `duke-ms-ece-durham` — english, english_minimum, prerequisites, degree, tuition, remaining_eligibility, admission_evidence.
+- Priority 2: `duke-ms-ece-durham` — english, prerequisites, degree, tuition, remaining_eligibility, admission_evidence.
 - Priority 2: `gatech-mscs-atlanta` — intake, gpa, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence.
-- Priority 2: `ncsu-mcs-raleigh` — intake, gpa, english, english_minimum, prerequisites, degree, gre, tuition, deadline, remaining_eligibility, goal_features, admission_evidence.
-- Priority 2: `rice-mcs-houston` — gpa, english, english_minimum, prerequisites, degree, tuition, remaining_eligibility, goal_features, admission_evidence.
-- Priority 2: `tamu-mcs-college-station` — intake, gpa, english, english_minimum, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence.
+- Priority 2: `ncsu-mcs-raleigh` — intake, gpa, english, prerequisites, degree, gre, tuition, deadline, remaining_eligibility, goal_features, admission_evidence.
+- Priority 2: `rice-mcs-houston` — gpa, english, prerequisites, degree, tuition, remaining_eligibility, goal_features, admission_evidence.
+- Priority 2: `tamu-mcs-college-station` — intake, gpa, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence.
 - Priority 2: `ucsd-ms-cs-la-jolla` — gpa, english, prerequisites, tuition, remaining_eligibility, admission_evidence.
 - Priority 2: `uiuc-mcs-urbana` — gpa, english, tuition, deadline, remaining_eligibility, goal_features, admission_evidence.
 - Priority 2: `uiuc-meng-ece-urbana` — gpa, english, prerequisites, tuition, remaining_eligibility, admission_evidence.
 - Priority 2: `umass-mscs-amherst` — gpa, english, prerequisites, tuition, remaining_eligibility, goal_features, admission_evidence.
-- Priority 2: `uw-mscss-tacoma` — english_minimum, prerequisites, tuition, remaining_eligibility, admission_evidence.
+- Priority 2: `uw-mscss-tacoma` — prerequisites, tuition, remaining_eligibility, admission_evidence.
 - Priority 2: `wisc-ms-cs-professional-madison` — intake, english, prerequisites, tuition, deadline, remaining_eligibility, admission_evidence.
-- Priority 3: `cmu-msaii-pittsburgh` — english_minimum.
 - Priority 3: `cornell-meng-cs-ithaca` — gpa, english, prerequisites, deadline, remaining_eligibility, admission_evidence.
-- Priority 3: `neu-mscs-boston` — intake, gpa, english, english_minimum, prerequisites, degree, deadline, remaining_eligibility, goal_features, admission_evidence.
-- Priority 3: `nyu-mscs-tandon-brooklyn` — intake, gpa, english_minimum, prerequisites, deadline, remaining_eligibility, admission_evidence.
-- Priority 3: `uci-mcs-irvine` — english_minimum, prerequisites, remaining_eligibility, goal_features, admission_evidence.
-- Priority 3: `usc-mscs-general-los-angeles` — intake, gpa, english, english_minimum, prerequisites, deadline, remaining_eligibility, goal_features, admission_evidence.
-- Priority 3: `uw-ece-msece-pmp-seattle` — english_minimum, goal_features, admission_evidence.
+- Priority 3: `neu-mscs-boston` — intake, gpa, english, prerequisites, degree, deadline, remaining_eligibility, goal_features, admission_evidence.
+- Priority 3: `nyu-mscs-tandon-brooklyn` — intake, gpa, prerequisites, deadline, remaining_eligibility, admission_evidence.
+- Priority 3: `uci-mcs-irvine` — prerequisites, remaining_eligibility, goal_features, admission_evidence.
+- Priority 3: `usc-mscs-general-los-angeles` — intake, gpa, english, prerequisites, deadline, remaining_eligibility, goal_features, admission_evidence.
+- Priority 3: `uw-ece-msece-pmp-seattle` — goal_features, admission_evidence.
 
 ## Applicant comparison issues
 
@@ -97,7 +96,7 @@ Target expanded catalog: 20–25 programs. Current audited count remains 20; the
 
 ## Provenance and reproducibility
 
-Catalog semantic SHA-256: `17e9e4e388cfe917e58bd50c3e5851fd8729b69e02241c7458b12d564ed49e05`.
+Catalog semantic SHA-256: `76eb7fb4d0b4eabf4c52228cf5e0dc22aa3dfe1f2aad444f3afa22466edbdec0`.
 Candidate upstream SHA-256: `793b4685a323229b99ec39783ca0bb388c2870551e9ee05b6b66b357a31d4ffb`.
 Candidate index attribution: [CS Grad contributors](https://csgrad.com/), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See `data/review/README.md` for scope and changes.
 

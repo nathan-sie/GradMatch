@@ -119,6 +119,8 @@ def test_directory_exposes_partial_english_and_keeps_unverified_costs_unknown():
     assert sum(r['field_coverage']['english_minimum']['rule_usable'] for r in rows.values())==8
     assert sum(r['field_coverage']['english']['rule_usable'] for r in rows.values())==5
     assert rows['rice-mcs-houston']['tuition_upper_usd'] is None
+    assert all('English score floor only' not in row['missing_fields'] for row in document['records'])
+    assert 'The GPA exception-policy page could not be retrieved' not in ' '.join(rows['uci-mcs-irvine']['notes'])
     assert '30,720' in rows['rice-mcs-houston']['requirements']['Cost context']
     assert 'generally' in rows['duke-ms-ece-durham']['requirements']['English policy'].lower()
     comparison=comparison_rows([rows['gatech-mscs-atlanta'],rows['uci-mcs-irvine']])

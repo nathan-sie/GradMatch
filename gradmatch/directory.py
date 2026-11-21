@@ -122,7 +122,7 @@ def build_directory(programs, sources, index=None, links=None):
             eligibility_review=UNKNOWN, tuition_upper_usd=None, tuition_lower_usd=None, tuition_formula=None,
             tuition_rate_year=None, tuition_assumptions=[], required_credits=None,
             official_source_count=0, official_sources=[], notes=[], field_coverage={},
-            verified_fields=[], missing_fields=list(FIELD_LABELS.values()),
+            verified_fields=[], missing_fields=[label for key,label in FIELD_LABELS.items() if key != 'english_minimum'],
             requirements={label: UNKNOWN for label in FIELD_LABELS.values()},
             planning_tier="Requires applicant-specific evidence", recommendation_eligible=False,
         )
@@ -147,7 +147,7 @@ def build_directory(programs, sources, index=None, links=None):
                 notes=list(program.notes), field_coverage=fields,
                 requirements=requirement_summaries(program, sources, fields, profile),
                 verified_fields=[label for key, label in FIELD_LABELS.items() if fields[key]["rule_usable"]],
-                missing_fields=[label for key, label in FIELD_LABELS.items() if not fields[key]["rule_usable"]],
+                missing_fields=[label for key, label in FIELD_LABELS.items() if key != 'english_minimum' and not fields[key]["rule_usable"]],
             )
         records.append(row)
     records.sort(key=lambda r: (r["university"].casefold(), r["program_name"].casefold(), r["source_id"]))

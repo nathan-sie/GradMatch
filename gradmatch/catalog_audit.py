@@ -94,7 +94,7 @@ def program_audit(program, sources, profile, as_of):
         )
         if evidence and not tier_errors(item, profile, program, sources, as_of):
             potential.append(tier)
-    gaps = [g for g in GROUPS if not usable[g]]
+    gaps = [g for g in GROUPS if g != 'english_minimum' and not usable[g]]
     required_gaps = [
         g for g in gaps if g != "credits" or program.tuition.basis == "per_credit"
     ]

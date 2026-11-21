@@ -5,7 +5,7 @@
     "schema_version": "m61-catalog-audit-v1",
     "as_of_date": "2026-11-20",
     "target_intake": "2027-fall",
-    "data_hash": "17e9e4e388cfe917e58bd50c3e5851fd8729b69e02241c7458b12d564ed49e05",
+    "data_hash": "76eb7fb4d0b4eabf4c52228cf5e0dc22aa3dfe1f2aad444f3afa22466edbdec0",
     "data_mode": "snapshot",
     "model_requests": 0,
     "network_requests": 0,
@@ -22,16 +22,16 @@
         "institution_country": null,
         "major": "Computer Science",
         "coursework": {
-          "programming": true,
           "calculus": true,
-          "differential_equations": true,
-          "object_oriented_programming": true,
-          "linear_algebra": true,
           "probability_statistics": true,
           "undergraduate_cs": true,
-          "undergraduate_math": true,
+          "programming": true,
+          "object_oriented_programming": true,
           "algorithms": true,
-          "data_structures": true
+          "data_structures": true,
+          "undergraduate_math": true,
+          "differential_equations": true,
+          "linear_algebra": true
         },
         "research": [
           "One synthetic research project"
@@ -259,14 +259,12 @@
         },
         "catalog_gaps": [
           "english",
-          "english_minimum",
           "prerequisites",
           "credits",
           "remaining_eligibility"
         ],
         "next_required_reviews": [
           "english",
-          "english_minimum",
           "prerequisites",
           "remaining_eligibility"
         ],
@@ -628,12 +626,9 @@
           }
         },
         "catalog_gaps": [
-          "english_minimum",
           "credits"
         ],
-        "next_required_reviews": [
-          "english_minimum"
-        ],
+        "next_required_reviews": [],
         "reference_profile_comparison_issues": [],
         "reference_hard_status": "pass",
         "reference_unknown_checks": [],
@@ -662,7 +657,7 @@
         "tuition_basis": "per_term",
         "deadline_schedule_complete": true,
         "gpa_recommendation_only": false,
-        "repair_priority": 3
+        "repair_priority": null
       },
       {
         "program_id": "cornell-meng-cs-ithaca",
@@ -959,7 +954,6 @@
         },
         "catalog_gaps": [
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -968,7 +962,6 @@
         ],
         "next_required_reviews": [
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -1332,7 +1325,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "gre",
@@ -1346,7 +1338,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "gre",
@@ -1533,7 +1524,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "deadline",
@@ -1545,7 +1535,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "deadline",
@@ -1734,7 +1723,6 @@
         "catalog_gaps": [
           "intake",
           "gpa",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -1743,7 +1731,6 @@
         "next_required_reviews": [
           "intake",
           "gpa",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -1924,7 +1911,6 @@
         "catalog_gaps": [
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -1935,7 +1921,6 @@
         "next_required_reviews": [
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -2113,7 +2098,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "tuition",
           "deadline",
@@ -2124,7 +2108,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "tuition",
           "deadline",
@@ -2315,7 +2298,6 @@
           }
         },
         "catalog_gaps": [
-          "english_minimum",
           "prerequisites",
           "credits",
           "remaining_eligibility",
@@ -2323,7 +2305,6 @@
           "admission_evidence"
         ],
         "next_required_reviews": [
-          "english_minimum",
           "prerequisites",
           "remaining_eligibility",
           "goal_features",
@@ -3225,7 +3206,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -3236,7 +3216,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -3424,12 +3403,10 @@
           }
         },
         "catalog_gaps": [
-          "english_minimum",
           "goal_features",
           "admission_evidence"
         ],
         "next_required_reviews": [
-          "english_minimum",
           "goal_features",
           "admission_evidence"
         ],
@@ -3582,7 +3559,6 @@
           }
         },
         "catalog_gaps": [
-          "english_minimum",
           "prerequisites",
           "credits",
           "tuition",
@@ -3590,7 +3566,6 @@
           "admission_evidence"
         ],
         "next_required_reviews": [
-          "english_minimum",
           "prerequisites",
           "tuition",
           "remaining_eligibility",
@@ -3888,7 +3863,6 @@
         "priority": 1,
         "fields": [
           "english",
-          "english_minimum",
           "prerequisites",
           "remaining_eligibility"
         ]
@@ -3912,7 +3886,6 @@
         "priority": 2,
         "fields": [
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -3941,7 +3914,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "gre",
@@ -3958,7 +3930,6 @@
         "fields": [
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "tuition",
@@ -3974,7 +3945,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "tuition",
           "deadline",
@@ -4036,7 +4006,6 @@
         "program_id": "uw-mscss-tacoma",
         "priority": 2,
         "fields": [
-          "english_minimum",
           "prerequisites",
           "tuition",
           "remaining_eligibility",
@@ -4054,13 +4023,6 @@
           "deadline",
           "remaining_eligibility",
           "admission_evidence"
-        ]
-      },
-      {
-        "program_id": "cmu-msaii-pittsburgh",
-        "priority": 3,
-        "fields": [
-          "english_minimum"
         ]
       },
       {
@@ -4082,7 +4044,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "degree",
           "deadline",
@@ -4097,7 +4058,6 @@
         "fields": [
           "intake",
           "gpa",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -4108,7 +4068,6 @@
         "program_id": "uci-mcs-irvine",
         "priority": 3,
         "fields": [
-          "english_minimum",
           "prerequisites",
           "remaining_eligibility",
           "goal_features",
@@ -4122,7 +4081,6 @@
           "intake",
           "gpa",
           "english",
-          "english_minimum",
           "prerequisites",
           "deadline",
           "remaining_eligibility",
@@ -4134,7 +4092,6 @@
         "program_id": "uw-ece-msece-pmp-seattle",
         "priority": 3,
         "fields": [
-          "english_minimum",
           "goal_features",
           "admission_evidence"
         ]
@@ -5176,7 +5133,7 @@
   "target_catalog_min": 20,
   "target_catalog_max": 25,
   "inputs_sha256": {
-    "seed": "334f1a91f86b624ae51f9568edcc47bac1d851f87a14f0efb19cd3932a4cbe10",
+    "seed": "4832c0276ee9ad62fb0723c9bfa52bb7ee3a7fc29a9566a2a9eac45403251f4b",
     "candidate_index": "6bc5a34c38be959213aeb17811e3831b1296124772a833f351a2e0ec79f0c2cb",
     "review_plan": "8127970d9174a990b7c5f549778001faca64a940b319a992c06a212e3bfb3a1c"
   },
