@@ -1,6 +1,8 @@
 # M6 data work and verification gates
 
-**Current direction (2026-11-20):** all 83 leads are exposed through a searchable SQLite exploration directory. M6.1f reaches 20 official records / 94 sources; the suggested final scope is 20–25 records with a subsequent quality target of 10–15 useful screening records. The historical 40–60 reviewed-program expansion sequence below is superseded by the coverage-first plan. Directory coverage does not satisfy official evidence or recommendation readiness gates. See [the revised plan](DIRECTORY_PLAN.md).
+**Current direction (2026-11-20):** all 83 leads are exposed through a searchable SQLite exploration directory. M6.1g has 20 official records / 112 sources; the suggested final scope is 20–25 records with a subsequent quality target of 10–15 useful screening records. The historical 40–60 reviewed-program expansion sequence below is superseded by the coverage-first plan. Directory coverage does not satisfy official evidence or recommendation readiness gates. See [the revised plan](DIRECTORY_PLAN.md).
+
+M6.1g repairs fields across 12 existing programs. Full tuition estimates increase to eight; eight programs separately gain source-bound English score floors. GPA policies usable for checks increase to eight, degree to 15 and GRE to 19. A score floor cannot establish complete English eligibility. Complete reviewed planning eligibility remains two and fixed-profile formal evidence readiness remains one. See [source decisions](M61G_SOURCES.md) and [verification](verification/M61G.md).
 
 M6.1f adds four scoped programs and repairs UW ECE PMP's remaining planning checklist and UCI's GPA rule. Computable full tuition remains seven; Duke has a separate published-rate minimum with no upper bound. Complete reviewed planning eligibility increases from one to two; fixed-profile formal evidence readiness remains one. See [source decisions](M61F_SOURCES.md) and [verification](verification/M61F.md).
 

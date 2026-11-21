@@ -1,0 +1,13 @@
+{
+  "url": "https://csweb.rice.edu/academics/graduate-programs/master-computer-science",
+  "retrieved_at": "2026-11-21T00:53:10.757998+00:00",
+  "raw_response_sha256": "a62dbe312c6a4d3888e4efcd8fe927cc94c2f48d334d6aec875f5cce6277de3f",
+  "verified_values": {
+    "directory_policies": {
+      "notes.7": "Program goals: On-campus technical career preparation includes specialization, workplace communications and an internship; no placement outcome is guaranteed.",
+      "notes.8": "Preparation: The page requests transcripts, a 3.0+ GPA, CV, statement and three letters. Calculation scope and complete admission preparation still require review."
+    }
+  },
+  "source_excerpt": "typically takes three semesters to complete",
+  "fact_summary": "The on-campus non-thesis MCS describes a typical three-semester pathway; typical duration is not a guaranteed maximum or a per-credit billing rule."
+}

@@ -1,0 +1,329 @@
+{
+  "captures": [
+    {
+      "key": "uci_cost",
+      "requested_url": "https://mcs.ics.uci.edu/cost-financial-aid/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/cost-financial-aid/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:10.825885+00:00",
+      "raw_response_sha256": "77c526582a41fee5434841b9b38f1dd7d8e1227df1c58366b80125c670213f73",
+      "bytes": 48250,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_fees",
+      "requested_url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+      "status": "captured",
+      "url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:10.930509+00:00",
+      "raw_response_sha256": "27dcd549f58fb4f68fa684a67b6fdf57c33db0247216affe028e44bcc4b1fa46",
+      "bytes": 242457,
+      "content_type": "application/pdf"
+    },
+    {
+      "key": "rice_rates",
+      "requested_url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "status": "failed",
+      "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "http_status": 406,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:10.587276+00:00",
+      "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "content_type": ""
+    },
+    {
+      "key": "rice_program",
+      "requested_url": "https://csweb.rice.edu/academics/graduate-programs/person-master-computer-science",
+      "status": "captured",
+      "url": "https://csweb.rice.edu/academics/graduate-programs/master-computer-science",
+      "http_status": 200,
+      "redirects": [
+        {
+          "url": "https://csweb.rice.edu/academics/graduate-programs/person-master-computer-science",
+          "status": 301,
+          "location": "https://csweb.rice.edu/academics/graduate-programs/master-computer-science"
+        }
+      ],
+      "retrieved_at": "2026-11-21T00:53:10.757998+00:00",
+      "raw_response_sha256": "a62dbe312c6a4d3888e4efcd8fe927cc94c2f48d334d6aec875f5cce6277de3f",
+      "bytes": 98633,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "mcds_program",
+      "requested_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "status": "captured",
+      "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.716468+00:00",
+      "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+      "bytes": 275529,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "scs_admissions",
+      "requested_url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "status": "captured",
+      "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:10.881704+00:00",
+      "raw_response_sha256": "c558ca8d26d35213b9a5c096bfc00ce41d310085632ae182ce80a67a016af265",
+      "bytes": 54553,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_faq",
+      "requested_url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.179213+00:00",
+      "raw_response_sha256": "54519ac99d3686967807370610b814c9f74924242292aefd6401b2dd6336db7a",
+      "bytes": 64792,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_apply",
+      "requested_url": "https://www.ece.cmu.edu/admissions/graduate-application.html",
+      "status": "failed",
+      "url": "https://www.ece.cmu.edu/admissions/graduate-application.html",
+      "http_status": 404,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.281857+00:00",
+      "raw_response_sha256": "5545a683ff9b3c892ceb1a0a3c0d7c0a17da045659812a6ac0031dbb7e6f7c2d",
+      "bytes": 41156,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "duke_program",
+      "requested_url": "https://gradschool.duke.edu/academics/programs-degrees/electrical-and-computer-engineering-ms/",
+      "status": "captured",
+      "url": "https://gradschool.duke.edu/academics/programs-degrees/electrical-and-computer-engineering-ms/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.492448+00:00",
+      "raw_response_sha256": "6580924446a40097d0d714fc363abe2443f664def1d80e25dd8646915f19339d",
+      "bytes": 405641,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "duke_faq",
+      "requested_url": "https://gradschool.duke.edu/admissions/admissions-faqs/",
+      "status": "captured",
+      "url": "https://gradschool.duke.edu/admissions/admissions-faqs/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.627084+00:00",
+      "raw_response_sha256": "ff8a06bc2e7cb5b17fc968e4dd0e86de1a738b442b8846a7c47d81c455e0356e",
+      "bytes": 450034,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "duke_english",
+      "requested_url": "https://gradschool.duke.edu/admissions/application-instructions/english-language-proficiency-test-scores/",
+      "status": "captured",
+      "url": "https://gradschool.duke.edu/admissions/application-instructions/english-language-proficiency-test-scores/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.793505+00:00",
+      "raw_response_sha256": "f7e454d39e577aad7d31bbb3599b96d469da5c25bcb7bea2c217a9116e071d89",
+      "bytes": 406104,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "wisc_requirements",
+      "requested_url": "https://info.grad.wisc.edu/requirements-for-admission/",
+      "status": "captured",
+      "url": "https://info.grad.wisc.edu/requirements-for-admission/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.831606+00:00",
+      "raw_response_sha256": "5416f9edf13929d80ab64b994f05dc2097f144fc72917918396271b01af26dc1",
+      "bytes": 61813,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "cornell_english",
+      "requested_url": "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/",
+      "status": "captured",
+      "url": "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.597527+00:00",
+      "raw_response_sha256": "91df666b7d8eaeec6be735be0bbf3caec5a0ac4bceead76c6033efc17b58ed07",
+      "bytes": 155680,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "gatech_english",
+      "requested_url": "https://grad.gatech.edu/english-proficiency",
+      "status": "captured",
+      "url": "https://grad.gatech.edu/english-proficiency",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:12.081677+00:00",
+      "raw_response_sha256": "294a269a403dab7a0deabdda2994dc8457c91ba1b143a52bdc511d4e4d6fb525",
+      "bytes": 73089,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ucsd_english",
+      "requested_url": "https://www.grad.ucsd.edu/admissions/requirements/international-students/english-proficiency.html",
+      "status": "captured",
+      "url": "https://www.grad.ucsd.edu/admissions/requirements/international-students/english-proficiency.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.778598+00:00",
+      "raw_response_sha256": "7343d40d6d69677ee0c3aebe4dd532669cca0867291975a43ace75b03c34c081",
+      "bytes": 66445,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ucsd_admissions",
+      "requested_url": "https://cse.ucsd.edu/graduate/admissions",
+      "status": "captured",
+      "url": "https://cse.ucsd.edu/graduate/admissions",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:11.912593+00:00",
+      "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+      "bytes": 53375,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_requirements",
+      "requested_url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+      "status": "captured",
+      "url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:12.239183+00:00",
+      "raw_response_sha256": "125a92fb86cb4b8137cef2d9bb1c9902eb1ca4894cabcd0ccf94245a7f35cfb3",
+      "bytes": 74039,
+      "content_type": "text/html"
+    },
+    {
+      "key": "umass_requirements",
+      "requested_url": "https://www.umass.edu/graduate/apply/requirements",
+      "status": "failed",
+      "url": "https://www.umass.edu/graduate/apply/requirements",
+      "http_status": 404,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:12.506622+00:00",
+      "raw_response_sha256": "c67caddfa1c3e69bc6ff99a9c8a95a3171661785ee1f4b3bacb57855abab02b0",
+      "bytes": 34392,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "neu_requirements",
+      "requested_url": "https://coe.northeastern.edu/academics-experiential-learning/graduate-school-of-engineering/graduate-admissions/",
+      "status": "captured",
+      "url": "https://coe.northeastern.edu/academics-experiential-learning/graduate-school-of-engineering/graduate-admissions/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:53:13.389374+00:00",
+      "raw_response_sha256": "80d4f12a434124053dd0ba90b877e52edb3a615d9377c4039875b3a3e67d250b",
+      "bytes": 80268,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "rice_ga_rates",
+      "requested_url": "https://ga.rice.edu/graduate-students/student-services-organizations/tuition-fees-expenses/",
+      "status": "captured",
+      "url": "https://ga.rice.edu/graduate-students/student-services-organizations/tuition-fees-expenses/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:56:11.506294+00:00",
+      "raw_response_sha256": "f817655c3a00356e2fefa3e11671732af68241e4d126a8015349acdb1c313202",
+      "bytes": 69153,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "umass_international",
+      "requested_url": "https://www.umass.edu/graduate/apply/international-applicants",
+      "status": "captured",
+      "url": "https://www.umass.edu/graduate/apply/international-applicants",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:56:11.198014+00:00",
+      "raw_response_sha256": "b0f56be393cee6821d6c5a88e9e7503b7c8581fb212eb52ee4052bfe20960369",
+      "bytes": 46889,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "cmu_ece_admissions",
+      "requested_url": "https://www.ece.cmu.edu/admissions/",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/admissions/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:56:11.599665+00:00",
+      "raw_response_sha256": "a6de87a047a299f6c7a3ba36f6b14b12eb177ac44ecf1d25b2c86e7513bd86f4",
+      "bytes": 53961,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_faq",
+      "requested_url": "https://mcs.ics.uci.edu/frequently-asked-questions/",
+      "status": "failed",
+      "url": "https://mcs.ics.uci.edu/frequently-asked-questions/",
+      "http_status": 404,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:56:11.726963+00:00",
+      "raw_response_sha256": "788722747e436451b78401d913a14b0f81ccb0559576cd5427173fe4179a0dd3",
+      "bytes": 43549,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_english",
+      "requested_url": "https://grad.illinois.edu/admissions/instructions/04c",
+      "status": "captured",
+      "url": "https://grad.illinois.edu/admissions/international-applicants",
+      "http_status": 200,
+      "redirects": [
+        {
+          "url": "https://grad.illinois.edu/admissions/instructions/04c",
+          "status": 301,
+          "location": "https://grad.illinois.edu/admissions/international-applicants"
+        }
+      ],
+      "retrieved_at": "2026-11-21T00:56:11.637806+00:00",
+      "raw_response_sha256": "94fafa8dbf4a955a2955ddedfc9a9c45ed09e9a3fcc599416a834dc7b965771a",
+      "bytes": 81199,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_faq_canonical",
+      "requested_url": "https://mcs.ics.uci.edu/faq/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/faq/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:57:16.289007+00:00",
+      "raw_response_sha256": "695ea8ca64793d74d3c90836e9b3606e40cde46fd2c21dd4cc103f3cb497129f",
+      "bytes": 59770,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "gatech_admissions",
+      "requested_url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+      "status": "captured",
+      "url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:57:16.252016+00:00",
+      "raw_response_sha256": "2fbc770e43a1966229b3241765f4915bb02967f7fd51c05c0d2f455929edf686",
+      "bytes": 66224,
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "request_attempts": 26
+}

@@ -1,0 +1,61 @@
+{
+  "url": "https://grad.illinois.edu/admissions/international-applicants",
+  "retrieved_at": "2026-11-21T00:56:11.637806+00:00",
+  "raw_response_sha256": "94fafa8dbf4a955a2955ddedfc9a9c45ed09e9a3fcc599416a834dc7b965771a",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "79",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "115",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.8": "English policy: University limited/full status: TOEFL 79/103 or 4/5, IELTS 6.5/7.5, DET 115/135. Lower scores do not establish full status. Scores must be within two years of enrollment; department rules and exemptions still need verification."
+    }
+  },
+  "source_excerpt": "Limited Status Admission Minimum",
+  "fact_summary": "University limited-status English floors do not imply full-status or program approval. Enrollment-anchored validity and additional language conditions remain open."
+}

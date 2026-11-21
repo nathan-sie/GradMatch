@@ -1,0 +1,16 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/admissions",
+  "retrieved_at": "2026-11-21T00:53:11.912593+00:00",
+  "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "directory_policies": {
+      "notes.5": "Degree background: Recognized bachelor or equivalent required. CS, CE, EE or mathematics is preferred; other disciplines require suitable background and university review."
+    }
+  },
+  "source_excerpt": "Applicants must hold a bachelor's degree",
+  "fact_summary": "The CSE admission page requires a recognized bachelor or equivalent, accepts related and alternative backgrounds conditionally, and points to Graduate Education English requirements."
+}

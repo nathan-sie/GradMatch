@@ -1,0 +1,60 @@
+{
+  "url": "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/",
+  "retrieved_at": "2026-11-21T00:53:11.597527+00:00",
+  "raw_response_sha256": "91df666b7d8eaeec6be735be0bbf3caec5a0ac4bceead76c6033efc17b58ed07",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "0",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "20",
+            "listening": "15",
+            "speaking": "22",
+            "writing": "20"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "0",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "4",
+            "listening": "3.5",
+            "speaking": "4",
+            "writing": "4"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.5": "English policy: Professional MEng: IELTS 7 overall; TOEFL legacy R20/L15/S22/W20 or new R4/L3.5/S4/W4. No TOEFL overall cutoff is published here. Scores must remain valid through the program deadline; field rules, exemptions and future terms need review."
+    }
+  },
+  "source_excerpt": "Professional Master’s Degree Applicants",
+  "fact_summary": "Professional MEng English thresholds differ from research-degree TA tiers. Scores must be valid at the application deadline; the listed interim scale is not carried into 2028."
+}

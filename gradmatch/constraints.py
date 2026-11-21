@@ -77,6 +77,8 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
 
     def add(group, status, code, explanation, warnings=None):
         source_ids=evidence_ids(program,group,sources,profile)
+        if group == 'english' and not source_ids:
+            source_ids = evidence_ids(program, 'english_minimum', sources, profile)
         if group=='tuition' and estimate.reason_code=='MINIMUM_ONLY_TUITION_BOUND':
             source_ids=evidence_ids(program,'tuition_minimum',sources,profile)
         if group=='tuition' and program.tuition.basis=='per_credit':
@@ -131,7 +133,7 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("english", "not_applicable", "ENGLISH_NOT_REQUIRED", "The applicable official rule explicitly does not require an English test.")
     elif score is None:
         add("english", "unknown", "MISSING_ENGLISH", "No verifiable English score is available. Passing scores or exemptions are not assumed.")
-    elif english_rule is None or not supported("english"):
+    elif english_rule is None or not (supported("english") or supported("english_minimum")):
         add("english", "unknown", "ENGLISH_RULE_NOT_VERIFIED", "The program's requirement for this English test version is not verified.")
     elif score.test_date and ((score.version == "toefl_120" and score.test_date >= date(2026, 1, 21))
                               or (score.version == "toefl_6" and score.test_date < date(2026, 1, 21))):
@@ -143,6 +145,8 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("english", "fail", "ENGLISH_SUBSCORE_BELOW_MINIMUM", "A required English subscore is below the hard minimum.")
     elif any(key not in score.subscores for key in english_rule.minimum_subscores):
         add("english", "unknown", "MISSING_ENGLISH_SUBSCORES", "Required English subscores are missing.")
+    elif not supported("english"):
+        add("english", "unknown", "ENGLISH_MINIMUM_ONLY", "The stated score floor is met, but test validity, program conditions or exemption rules still need review. A score floor alone does not establish English eligibility.")
     elif english_rule.validity_years is not None and score.test_date is None:
         add("english", "unknown", "MISSING_ENGLISH_TEST_DATE", "The test date is missing, so score validity cannot be determined.")
     elif score.test_date and score.test_date > as_of:

@@ -1,0 +1,61 @@
+{
+  "url": "https://info.grad.wisc.edu/requirements-for-admission/",
+  "retrieved_at": "2026-11-21T00:53:11.831606+00:00",
+  "raw_response_sha256": "5416f9edf13929d80ab64b994f05dc2097f144fc72917918396271b01af26dc1",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "115",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.6": "English policy: Standard TOEFL 92/120 or 5/6, IELTS 7, DET 125. Lower in-person ranges (TOEFL 80–91 or 4.5, IELTS 6.5, DET 115–124) need program approval and ESLAT. Scores must be less than two years old at enrollment; no score-only automatic pass is issued."
+    }
+  },
+  "source_excerpt": "Scores are valid if they are less than",
+  "fact_summary": "Standard scores differ from the lower in-person conditional-admission range. The lower range is a floor for possible review, not a passing English result."
+}

@@ -1,0 +1,61 @@
+{
+  "url": "https://www.grad.ucsd.edu/admissions/requirements/international-students/english-proficiency.html",
+  "retrieved_at": "2026-11-21T00:53:11.778598+00:00",
+  "raw_response_sha256": "7343d40d6d69677ee0c3aebe4dd532669cca0867291975a43ace75b03c34c081",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "85",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "120",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.6": "English policy: University score floors: TOEFL 85/120 or 4.5/6, IELTS 7, DET 120. Departmental requirements, two-year report validity, marginal-score conditions and exemption eligibility remain to be checked."
+    }
+  },
+  "source_excerpt": "minimum TOEFL score required for consideration",
+  "fact_summary": "University English floors are not a complete program policy; entrance validity, marginal-score conditions, possible higher departmental requirements and degree exemptions still need review."
+}

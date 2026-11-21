@@ -16,7 +16,8 @@ M35_SEED = PROJECT_ROOT / "data" / "catalog" / "m35_seed.json"
 M61B_SEED = PROJECT_ROOT / "data" / "catalog" / "m61b_seed.json"
 M61C_SEED = PROJECT_ROOT / "data" / "catalog" / "m61c_seed.json"
 M61E_SEED = PROJECT_ROOT / "data" / "catalog" / "m61e_seed.json"
-DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61f_seed.json"
+M61F_SEED = PROJECT_ROOT / "data" / "catalog" / "m61f_seed.json"
+DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61g_seed.json"
 ACTIVE_SEED = PROJECT_ROOT / "data" / "catalog" / "active.json"
 
 

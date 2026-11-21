@@ -1,0 +1,66 @@
+{
+  "url": "https://www.umass.edu/graduate/apply/international-applicants",
+  "retrieved_at": "2026-11-21T00:56:11.198014+00:00",
+  "raw_response_sha256": "b0f56be393cee6821d6c5a88e9e7503b7c8581fb212eb52ee4052bfe20960369",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "115",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "directory_policies": {
+      "notes.6": "Degree background: A recognized US bachelor or qualifying international equivalent is required. Three-year credentials and supplemental study need the stated credential evaluation; equivalency is not inferred from country alone.",
+      "notes.7": "English policy: University floors: TOEFL 80/120 or 4/6, IELTS 6.5, DET 115. Higher program requirements, two-year validity at entrance and exemption conditions remain under review."
+    }
+  },
+  "source_excerpt": "Prerequisite Degrees",
+  "fact_summary": "The Graduate School requires a recognized bachelor-equivalent credential and university English floors; program scores, entrance validity and individual exemptions need further review."
+}

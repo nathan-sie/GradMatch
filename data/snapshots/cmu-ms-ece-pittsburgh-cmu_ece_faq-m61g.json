@@ -1,0 +1,98 @@
+{
+  "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+  "retrieved_at": "2026-11-21T00:53:11.179213+00:00",
+  "raw_response_sha256": "54519ac99d3686967807370610b814c9f74924242292aefd6401b2dd6336db7a",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "86",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "22",
+            "listening": "22",
+            "speaking": "20",
+            "writing": "22"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4.5",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "4.5",
+            "listening": "5",
+            "speaking": "4",
+            "writing": "4.5"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "6.5",
+            "listening": "6.5",
+            "speaking": "6",
+            "writing": "6"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "115",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "literacy": "105",
+            "comprehension": "115",
+            "production": "90",
+            "conversation": "95"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": true
+      }
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.5": "GPA policy: No hard GPA cutoff; holistic review does not establish admission competitiveness.",
+      "notes.6": "English policy: Score floors only: TOEFL 86/120 or 4.5/6, IELTS 7 and DET 115 with required subscores. Test validity, single-report rules and exemption status still need review. DET uses literacy, comprehension, production and conversation subscores.",
+      "notes.7": "GRE policy: Optional for Spring 2027 and Fall 2027; a later cycle needs fresh evidence."
+    }
+  },
+  "source_excerpt": "There are no \"cut-offs\"",
+  "fact_summary": "The ECE FAQ establishes no hard GPA cutoff, optional Fall 2027 GRE and test-specific English floors including subscores. English validity and any waiver remain manual checks."
+}

@@ -1,0 +1,183 @@
+{
+  "milestone": "M6.1g",
+  "prior_seed": "data/catalog/m61f_seed.json",
+  "seed": "data/catalog/m61g_seed.json",
+  "programs_enriched": {
+    "uci-mcs-irvine": [
+      {
+        "source_id": "uci-mcs-irvine-uci_fees-m61g",
+        "groups": [
+          "tuition",
+          "directory_policies"
+        ]
+      }
+    ],
+    "rice-mcs-houston": [
+      {
+        "source_id": "rice-mcs-houston-rice_ga_rates-m61g",
+        "groups": [
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "rice-mcs-houston-rice_program-m61g",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ],
+    "cmu-ms-ece-pittsburgh": [
+      {
+        "source_id": "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g",
+        "groups": [
+          "english_minimum",
+          "gpa",
+          "gre",
+          "directory_policies"
+        ]
+      }
+    ],
+    "duke-ms-ece-durham": [
+      {
+        "source_id": "duke-ms-ece-durham-duke_program-m61g",
+        "groups": [
+          "intake",
+          "gre",
+          "deadline",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "duke-ms-ece-durham-duke_faq-m61g",
+        "groups": [
+          "gpa",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "duke-ms-ece-durham-duke_english-m61g",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ],
+    "ucsd-ms-cs-la-jolla": [
+      {
+        "source_id": "ucsd-ms-cs-la-jolla-ucsd_admissions-m61g",
+        "groups": [
+          "degree",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "ucsd-ms-cs-la-jolla-ucsd_english-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "gatech-mscs-atlanta": [
+      {
+        "source_id": "gatech-mscs-atlanta-gatech_admissions-m61g",
+        "groups": [
+          "english_minimum"
+        ]
+      },
+      {
+        "source_id": "gatech-mscs-atlanta-gatech_english-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "cornell-meng-cs-ithaca": [
+      {
+        "source_id": "cornell-meng-cs-ithaca-cornell_english-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "wisc-ms-cs-professional-madison": [
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_requirements-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "umass-mscs-amherst": [
+      {
+        "source_id": "umass-mscs-amherst-umass_international-m61g",
+        "groups": [
+          "english_minimum",
+          "degree",
+          "directory_policies"
+        ]
+      }
+    ],
+    "uiuc-mcs-urbana": [
+      {
+        "source_id": "uiuc-mcs-urbana-uiuc_english-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "uiuc-meng-ece-urbana": [
+      {
+        "source_id": "uiuc-meng-ece-urbana-uiuc_english-m61g",
+        "groups": [
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "cmu-mcds-pittsburgh": [
+      {
+        "source_id": "cmu-mcds-pittsburgh-mcds_program-m61g",
+        "groups": [
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "cmu-mcds-pittsburgh-scs_admissions-m61g",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ]
+  },
+  "new_source_ids": [
+    "uci-mcs-irvine-uci_fees-m61g",
+    "rice-mcs-houston-rice_ga_rates-m61g",
+    "rice-mcs-houston-rice_program-m61g",
+    "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g",
+    "duke-ms-ece-durham-duke_program-m61g",
+    "duke-ms-ece-durham-duke_faq-m61g",
+    "duke-ms-ece-durham-duke_english-m61g",
+    "ucsd-ms-cs-la-jolla-ucsd_admissions-m61g",
+    "ucsd-ms-cs-la-jolla-ucsd_english-m61g",
+    "gatech-mscs-atlanta-gatech_admissions-m61g",
+    "gatech-mscs-atlanta-gatech_english-m61g",
+    "cornell-meng-cs-ithaca-cornell_english-m61g",
+    "wisc-ms-cs-professional-madison-wisc_requirements-m61g",
+    "umass-mscs-amherst-umass_international-m61g",
+    "uiuc-mcs-urbana-uiuc_english-m61g",
+    "uiuc-meng-ece-urbana-uiuc_english-m61g",
+    "cmu-mcds-pittsburgh-mcds_program-m61g",
+    "cmu-mcds-pittsburgh-scs_admissions-m61g"
+  ],
+  "expected_programs": 20,
+  "expected_sources": 112,
+  "prior_sources_preserved": 94,
+  "english_score_floor_programs": 8,
+  "full_tuition_estimates": 8,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

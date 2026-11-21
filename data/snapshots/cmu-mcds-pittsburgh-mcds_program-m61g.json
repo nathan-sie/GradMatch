@@ -1,0 +1,12 @@
+{
+  "url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+  "retrieved_at": "2026-11-21T00:53:11.716468+00:00",
+  "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+  "verified_values": {
+    "directory_policies": {
+      "notes.6": "English policy: A recent English exam is required for non-native speakers on the stated visa route, including US-educated applicants. The page does not turn successful-applicant ranges into hard minimums; exact current cutoff reconciliation remains open."
+    }
+  },
+  "source_excerpt": "taken within the last two years",
+  "fact_summary": "The current MCDS page requires recent English test evidence even for US-educated applicants; it does not set a hard score floor from successful-applicant statistics."
+}

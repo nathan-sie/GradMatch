@@ -1,0 +1,62 @@
+{
+  "url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+  "retrieved_at": "2026-11-21T00:57:16.252016+00:00",
+  "raw_response_sha256": "2fbc770e43a1966229b3241765f4915bb02967f7fd51c05c0d2f455929edf686",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "100",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "19",
+            "listening": "19",
+            "speaking": "19",
+            "writing": "19"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "5",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "4",
+            "listening": "4",
+            "speaking": "3.5",
+            "writing": "4"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7.5",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "6.5",
+            "listening": "6.5",
+            "speaking": "6.5",
+            "writing": "5.5"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    }
+  },
+  "source_excerpt": "Our department requires a 100 minimum score",
+  "fact_summary": "The on-campus MSCS department requires higher overall English scores than the university baseline; the combined policy uses the stricter overall and institutional section floors."
+}

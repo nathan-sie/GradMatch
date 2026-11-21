@@ -29,7 +29,7 @@ def test_all_83_leads_are_explorable_without_promoting_community_claims():
     assert document["total"] == len({r["source_id"] for r in records}) == 83
     assert document["official_records"] == len(programs)
     assert sum(r["source_reports_halted"] for r in records) == 4
-    assert sum(r["tuition_upper_usd"] is not None for r in records) == 7
+    assert sum(r["tuition_upper_usd"] is not None for r in records) == 8
     assert all(not r["recommendation_eligible"] for r in records)
     assert data_hash(programs, sources) == before
     assert {r["source_id"] for r in records} == {r["source_id"] for r in json.loads(INDEX.read_text(encoding="utf-8"))["rows"]}

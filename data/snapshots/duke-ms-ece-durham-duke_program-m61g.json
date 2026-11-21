@@ -1,0 +1,47 @@
+{
+  "url": "https://gradschool.duke.edu/academics/programs-degrees/electrical-and-computer-engineering-ms/",
+  "retrieved_at": "2026-11-21T00:53:11.492448+00:00",
+  "raw_response_sha256": "6580924446a40097d0d714fc363abe2443f664def1d80e25dd8646915f19339d",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-01-16",
+          "label": "Guaranteed application review; later applications are space-available",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-25",
+          "label": "End of space-available application review",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "directory_policies": {
+      "notes.5": "Deadlines: Fall 2027: January 16 guarantees review; applications after that date are space-available through February 25. Submission does not guarantee places or admission."
+    }
+  },
+  "source_excerpt": "January 16, 2027",
+  "fact_summary": "The exact MS page distinguishes guaranteed January review from later space-available review through February 25, 2027 and makes GRE optional."
+}

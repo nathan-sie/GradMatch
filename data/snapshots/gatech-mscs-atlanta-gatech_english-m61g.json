@@ -1,0 +1,65 @@
+{
+  "url": "https://grad.gatech.edu/english-proficiency",
+  "retrieved_at": "2026-11-21T00:53:12.081677+00:00",
+  "raw_response_sha256": "294a269a403dab7a0deabdda2994dc8457c91ba1b143a52bdc511d4e4d6fb525",
+  "verified_values": {
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "100",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "19",
+            "listening": "19",
+            "speaking": "19",
+            "writing": "19"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "5",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "4",
+            "listening": "4",
+            "speaking": "3.5",
+            "writing": "4"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7.5",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "6.5",
+            "listening": "6.5",
+            "speaking": "6.5",
+            "writing": "5.5"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.6": "English policy: On-campus MSCS score floors: TOEFL 100/120 or 5/6, IELTS 7.5, plus section minima. Scores normally must remain valid at enrollment; specified expired-score exceptions and degree-based proof need manual review. Citizenship alone no longer establishes proficiency for Fall 2027."
+    }
+  },
+  "source_excerpt": "Must not expire before starting the term",
+  "fact_summary": "The Fall 2027 institutional policy adds section floors and enrollment validity, with expired-score exceptions and degree-based proof requiring individual review."
+}

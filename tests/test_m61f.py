@@ -7,12 +7,16 @@ import json
 
 import pytest
 
-from gradmatch.catalog import M61E_SEED, load_seed
+from gradmatch.catalog import M61E_SEED, M61F_SEED, load_seed as current_load_seed
 from gradmatch.constraints import check_constraints
 from gradmatch.directory import build_directory, comparison_rows, tuition_label
 from gradmatch.schemas import GPA
 from gradmatch.session import Session, tiering_profile
 from gradmatch.storage import PROJECT_ROOT
+
+
+def load_seed(path=M61F_SEED):
+    return current_load_seed(path)
 
 
 def assess(pid, profile=None, programs=None, sources=None):

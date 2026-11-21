@@ -1,0 +1,12 @@
+{
+  "url": "https://www.cs.cmu.edu/education/graduate-admissions",
+  "retrieved_at": "2026-11-21T00:53:10.881704+00:00",
+  "raw_response_sha256": "c558ca8d26d35213b9a5c096bfc00ce41d310085632ae182ce80a67a016af265",
+  "verified_values": {
+    "directory_policies": {
+      "notes.7": "English validity: The SCS page prints September 1, 2024 while the program requires tests within the last two years. These are not silently reconciled for a Fall 2027 application; current-cycle confirmation is still required."
+    }
+  },
+  "source_excerpt": "Scores taken before September 1, 2024",
+  "fact_summary": "The SCS page lists a specific older cutoff and separate successful-applicant ranges. Its cutoff must be reconciled with the MCDS rolling two-year requirement before automatic validity decisions."
+}

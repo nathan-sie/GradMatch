@@ -1,0 +1,12 @@
+{
+  "url": "https://ga.rice.edu/graduate-students/student-services-organizations/tuition-fees-expenses/",
+  "retrieved_at": "2026-11-21T00:56:11.506294+00:00",
+  "raw_response_sha256": "f817655c3a00356e2fefa3e11671732af68241e4d126a8015349acdb1c313202",
+  "verified_values": {
+    "directory_policies": {
+      "notes.6": "Cost context: 2026-27 professional-engineering tuition: USD 30,720 per full-time semester, or USD 2,560 per credit for approved part-time enrollment. The online MCS USD 1,700 rate does not apply. A program-specific complete billing schedule and upper bound remain unverified."
+    }
+  },
+  "source_excerpt": "Professional Master's in Engineering",
+  "fact_summary": "The 2026-27 professional-engineering table separates full-time semester tuition from approved part-time credit pricing; online MCS is a separate row."
+}

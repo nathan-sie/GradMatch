@@ -20,7 +20,7 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LINKS = PROJECT_ROOT / "data/review/m61f_review_plan.json"
-DIRECTORY_VERSION = "M6.1f"
+DIRECTORY_VERSION = "M6.1g"
 REVIEW_DATE = date(2026, 11, 20)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -29,6 +29,7 @@ FIELD_LABELS = {
     "intake": "Intake", "gpa": "GPA policy", "english": "English policy",
     "prerequisites": "Prerequisites", "degree": "Degree background", "gre": "GRE policy",
     "credits": "Credits", "tuition": "Tuition", "deadline": "Deadlines",
+    "english_minimum": "English score floor only",
     "remaining_eligibility": "Other eligibility", "goal_features": "Program goals",
     "admission_evidence": "Admission evidence",
 }
@@ -48,7 +49,7 @@ def requirement_summaries(program, sources, fields, profile):
             result["GPA policy"] += "; scope: " + (", ".join(scopes.get(s, s) for s in gpa.accepted_scopes) or "needs verification")
             if gpa.below_minimum_review_possible:
                 result["GPA policy"] += "; below-minimum exceptions require review"
-    if fields["english"]["evidence_bound"]:
+    if fields["english"]["evidence_bound"] or fields["english_minimum"]["evidence_bound"]:
         names = {"toefl_120": "TOEFL /120", "toefl_6": "TOEFL /6", "ielts_9": "IELTS", "det_160": "DET"}
         if program.english_not_required:
             result["English policy"] = "Not required under the reviewed policy"
@@ -58,6 +59,8 @@ def requirement_summaries(program, sources, fields, profile):
                 + (f", recommended {r.recommended_total}" if r.recommended_total is not None else "")
                 + (", subscores: " + ", ".join(f"{k} {v}" for k, v in r.minimum_subscores.items()) if r.minimum_subscores else "")
                 for r in program.english) + ". Test age, conditions and waivers must also be checked."
+            if fields["english_minimum"]["evidence_bound"] and not fields["english"]["evidence_bound"]:
+                result["English score floor only"] = "Below-floor scores can be flagged; meeting a floor does not establish English eligibility."
     if fields["degree"]["evidence_bound"] and program.degree_required:
         result["Degree background"] = "Recognized bachelor degree or equivalent; university confirms equivalency"
     if fields["gre"]["evidence_bound"] and program.gre_policy != "unknown":
@@ -231,6 +234,7 @@ def comparison_rows(records):
             if r["requirements"].get("Credit unit") else "")) if r["required_credits"] else UNKNOWN,
         "GPA policy": lambda r: r["requirements"]["GPA policy"],
         "English policy": lambda r: r["requirements"]["English policy"],
+        "English score floor only": lambda r: r["requirements"].get("English score floor only", UNKNOWN),
         "Degree background": lambda r: r["requirements"]["Degree background"],
         "GRE policy": lambda r: r["requirements"]["GRE policy"],
         "Preparation": lambda r: r["requirements"].get("Preparation", UNKNOWN),

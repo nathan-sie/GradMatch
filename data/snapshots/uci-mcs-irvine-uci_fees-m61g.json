@@ -1,0 +1,33 @@
+{
+  "url": "https://www.reg.uci.edu/fees/2026-2027/compsci.pdf",
+  "retrieved_at": "2026-11-21T00:53:10.930509+00:00",
+  "raw_response_sha256": "27dcd549f58fb4f68fa684a67b6fdf57c33db0247216affe028e44bcc4b1fa46",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "full_program",
+        "unit_rate_lower": "63500",
+        "unit_rate_upper": null,
+        "required_units_lower": null,
+        "required_units_upper": null,
+        "rate_year": "2026-2027",
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "The registrar lists a USD 63,500 program fee for the cohort entering Fall 2026 across five quarters, including Fall 2027.",
+          "This is the tuition-like instructional program fee only. Separately itemized service, campus, insurance and other fees are excluded; some later-quarter fees are TBD.",
+          "The Fall 2026 cohort schedule is used as a published-rate planning reference, not the fee schedule for a new Fall 2027 cohort or a guaranteed final bill.",
+          "The annual USD 50,800 program fee covers four quarters, not the full five-quarter degree. No unconfirmed aid is deducted."
+        ],
+        "additional_required_tuition_lower_usd": "0",
+        "additional_required_tuition_upper_usd": "0"
+      }
+    },
+    "directory_policies": {
+      "notes.9": "Cost context: Instructional program fee USD 63,500 for the Fall 2026 entering cohort; annual USD 50,800 is incomplete. New Fall 2027 cohort pricing and ancillary fee totals remain unverified."
+    }
+  },
+  "source_excerpt": "Program Fee: $63,500.00",
+  "fact_summary": "Page 1 identifies the Fall 2026 cohort and five-quarter instructional program fee separately from ancillary fees; annual charges are not the degree total."
+}

@@ -1,0 +1,24 @@
+{
+  "url": "https://gradschool.duke.edu/admissions/admissions-faqs/",
+  "retrieved_at": "2026-11-21T00:53:11.627084+00:00",
+  "raw_response_sha256": "ff8a06bc2e7cb5b17fc968e4dd0e86de1a738b442b8846a7c47d81c455e0356e",
+  "verified_values": {
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": true
+      }
+    },
+    "directory_policies": {
+      "notes.6": "GPA policy: No specific Graduate School minimum GPA; the MS program still requires reporting undergraduate GPA on its requested scale. No automatic conversion or competitiveness claim is made."
+    }
+  },
+  "source_excerpt": "There is no specific minimum GRE or GPA",
+  "fact_summary": "The Graduate School FAQ sets no specific minimum GPA; the undergraduate GPA report is still required and admission remains holistic."
+}

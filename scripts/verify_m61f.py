@@ -12,7 +12,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61E_SEED, load_seed, read_catalog
+from gradmatch.catalog import M61E_SEED, M61F_SEED, import_catalog, load_seed as current_load_seed, read_catalog
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
 from gradmatch.directory import bootstrap_directory, read_directory
@@ -27,6 +27,10 @@ from scripts.m5_fixtures import FixtureProvider
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def load_seed(path=M61F_SEED):
+    return current_load_seed(path)
 
 
 def main():
@@ -57,13 +61,14 @@ def main():
             if raw.exists():
                 assert sha256(raw)==source.raw_response_sha256
                 checked+=1
-        database=bootstrap_public_catalog(output/'public')
+        database=output/'catalog.db'
+        import_catalog(M61F_SEED,database)
         assert data_hash(*read_catalog(database))==data_hash(programs,sources)
         directory=read_directory(bootstrap_directory(database,output/'public'))
         assert directory['total']==83 and directory['official_records']==20
         assert all(not r['recommendation_eligible'] for r in directory['records'])
         old=build_report(seed=M61E_SEED,as_of=date(2026,11,20))['catalog']['summary']
-        audit=build_report(as_of=date(2026,11,20))
+        audit=build_report(seed=M61F_SEED,as_of=date(2026,11,20))
         new=audit['catalog']['summary']
         assert new['computable_verified_tuition']==7 and new['minimum_only_tuition']==1
         assert old['full_eligibility_reviews']==1 and new['full_eligibility_reviews']==2

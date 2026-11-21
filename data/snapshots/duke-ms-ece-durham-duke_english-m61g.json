@@ -1,0 +1,12 @@
+{
+  "url": "https://gradschool.duke.edu/admissions/application-instructions/english-language-proficiency-test-scores/",
+  "retrieved_at": "2026-11-21T00:53:11.793505+00:00",
+  "raw_response_sha256": "f7e454d39e577aad7d31bbb3599b96d469da5c25bcb7bea2c217a9116e071d89",
+  "verified_values": {
+    "directory_policies": {
+      "notes.7": "English policy: Generally sought: TOEFL 90/120 or 5/6, IELTS 7, DET 125 with subscores. Fall 2027 application-year cutoff is August 1, 2024; reporting validity and waiver review also apply. These sought scores are not enforced as hard rejection thresholds."
+    }
+  },
+  "source_excerpt": "generally seeks scores no less than",
+  "fact_summary": "Duke describes generally sought scores and an August application-year cutoff, rather than unconditional numerical admission cutoffs."
+}
