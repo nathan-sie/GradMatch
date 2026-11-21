@@ -1,0 +1,21 @@
+{
+  "url": "https://secfac.wisc.edu/academic-calendar/",
+  "retrieved_at": "2026-11-21T08:22:19.893632+00:00",
+  "raw_response_sha256": "5f5202db0355f8ae667cd6a3080dc4113ed79791f1064fa13a99a03d05b164c6",
+  "verified_values": {
+    "english": {
+      "english.0.minimum_test_date": "2025-09-03",
+      "english.1.minimum_test_date": "2025-09-03",
+      "english.2.minimum_test_date": "2025-09-03",
+      "english.3.minimum_test_date": "2025-09-03"
+    },
+    "english_term_validity": {
+      "english.0.minimum_test_date": "2025-09-03",
+      "english.1.minimum_test_date": "2025-09-03",
+      "english.2.minimum_test_date": "2025-09-03",
+      "english.3.minimum_test_date": "2025-09-03"
+    }
+  },
+  "source_excerpt": "Sept 2, 2027",
+  "fact_summary": "The published Fall 2027 instruction date is September 2. Together with the strict two-year policy this yields September 3, 2025 as the planning test-date cutoff; published calendar dates can change."
+}

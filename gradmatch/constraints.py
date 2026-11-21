@@ -171,16 +171,28 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
                 add("english", "fail", "ENGLISH_EXPIRED", "The English score has expired as of the application assessment date.")
             else:
                 warnings = []
+                conditional_review = (english_rule.recommended_total is not None
+                    and score.total < english_rule.recommended_total and supported('english_conditional_review'))
                 if english_rule.recommended_total is not None and score.total < english_rule.recommended_total:
                     warnings.append(english_rule.condition_below_recommended or "Below the officially recommended score.")
-                add("english", "pass", "ENGLISH_MEETS_MINIMUM", "The English score meets the verified minimum. Additional conditions may still apply.", warnings)
+                if supported('english_term_validity'):
+                    warnings.append('The score-date cutoff uses the published Fall 2027 instruction calendar; calendar changes require a fresh review. No exemption is assumed.')
+                if conditional_review:
+                    add('english', 'unknown', 'ENGLISH_CONDITIONAL_REVIEW', 'The score is in a conditional or limited-status range. Program approval and language conditions still need review.', warnings)
+                else:
+                    add("english", "pass", "ENGLISH_MEETS_MINIMUM", "The English score meets the verified minimum. Additional conditions may still apply.", warnings)
 
     if not supported("prerequisites") or not program.prerequisites_complete:
         add("prerequisites", "unknown", "PREREQUISITES_REQUIRE_REVIEW", "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.")
+    elif supported('prerequisite_background_review') and (profile.degree is None or profile.degree.field not in {'CS', 'ECE'}):
+        add('prerequisites', 'unknown', 'BACKGROUND_EQUIVALENCY_REQUIRES_REVIEW', 'The program considers other backgrounds individually. Computer science preparation and relevant experience need university review; recommended courses are not automatic rejection rules.')
     elif not program.required_topics:
         add("prerequisites", "not_applicable", "NO_REQUIRED_TOPICS", "The verified rule specifies no mandatory coursework topics.")
     elif any(profile.coursework.get(topic) is False for topic in program.required_topics):
-        add("prerequisites", "fail", "MISSING_REQUIRED_COURSEWORK", "The applicant explicitly lacks at least one mandatory coursework topic or skill.")
+        if supported('prerequisite_review'):
+            add('prerequisites', 'unknown', 'COURSEWORK_DEFICIENCY_REQUIRES_REVIEW', 'The declared preparation has a gap. The program reviews alternative preparation or deficiencies individually; admission or an equivalency waiver is not assumed.')
+        else:
+            add("prerequisites", "fail", "MISSING_REQUIRED_COURSEWORK", "The applicant explicitly lacks at least one mandatory coursework topic or skill.")
     elif any(profile.coursework.get(topic) is not True for topic in program.required_topics):
         add("prerequisites", "unknown", "COURSEWORK_NOT_PROVIDED", "Required coursework or skills have not been fully specified.")
     else:

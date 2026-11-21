@@ -1,0 +1,32 @@
+{
+  "url": "https://guide.wisc.edu/graduate/computer-sciences/computer-sciences-ms/computer-sciences-professional-program-ms/",
+  "retrieved_at": "2026-11-21T08:22:17.893867+00:00",
+  "raw_response_sha256": "a8f434550852288f6d34aae80bdcb84fbe012cf0ba9f2de37af6a9637297f458",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "college_mathematics_year"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "prerequisite_review": {
+      "required_topics": [
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "college_mathematics_year"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "directory_policies": {
+      "notes.7": "Preparation: Declare programming, data structures, computer organization and at least one year of college mathematics at calculus level or above. A single calculus-course checkbox does not establish the year requirement. Deficiencies require individual review."
+    }
+  },
+  "source_excerpt": "a year of college-level mathematics",
+  "fact_summary": "The professional CS route specifies programming, data structures, machine organization and a year of mathematics at calculus level or above; generic single-course calculus is not that duration claim."
+}

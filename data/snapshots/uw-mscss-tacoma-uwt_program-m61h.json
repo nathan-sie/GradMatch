@@ -1,0 +1,54 @@
+{
+  "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+  "retrieved_at": "2026-11-21T08:22:18.412281+00:00",
+  "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [
+        "object_oriented_programming",
+        "discrete_math",
+        "data_structures",
+        "algorithms",
+        "software_engineering",
+        "computer_organization",
+        "computer_architecture",
+        "calculus",
+        "science"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "prerequisite_review": {
+      "required_topics": [
+        "object_oriented_programming",
+        "discrete_math",
+        "data_structures",
+        "algorithms",
+        "software_engineering",
+        "computer_organization",
+        "computer_architecture",
+        "calculus",
+        "science"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "remaining_eligibility": {
+      "eligibility_review_complete": true,
+      "application_materials": [
+        "UW Graduate School application and applicable fee or waiver",
+        "Personal statement",
+        "Resume",
+        "Two recommendation letters",
+        "Transcripts from each postsecondary institution and bachelor-equivalent evidence",
+        "Applicable official English proficiency evidence"
+      ]
+    },
+    "directory_policies": {
+      "notes.7": "Preparation: All listed preparatory topics must be explicitly reported. Missing courses remain for individual review and may lead to denial; a GRE score is not an automatic waiver.",
+      "notes.8": "Other eligibility: Reviewed checklist includes personal statement, resume, two letters, all transcripts, degree evidence and applicable official ELP evidence. Documents are not asserted to have been submitted."
+    }
+  },
+  "source_excerpt": "missing one or more prerequisites may be denied",
+  "fact_summary": "The complete preparation list includes software engineering, organization, architecture, calculus and science. Missing preparation can require individual review; optional GRE does not automatically cure a gap."
+}

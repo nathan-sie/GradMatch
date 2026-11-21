@@ -1,0 +1,34 @@
+{
+  "url": "https://mcs.ics.uci.edu/faq/",
+  "retrieved_at": "2026-11-21T08:22:17.053010+00:00",
+  "raw_response_sha256": "131f56ac1558ed830b200ba796131fe02f640f469054b4fd71bd31203d43bf56",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [],
+      "recommended_topics": [
+        "programming",
+        "data_structures",
+        "algorithms",
+        "discrete_math",
+        "linear_algebra"
+      ],
+      "prerequisites_complete": true
+    },
+    "prerequisite_background_review": {
+      "required_topics": [],
+      "recommended_topics": [
+        "programming",
+        "data_structures",
+        "algorithms",
+        "discrete_math",
+        "linear_algebra"
+      ],
+      "prerequisites_complete": true
+    },
+    "directory_policies": {
+      "notes.10": "Preparation: Listed courses and experience are recommended. The declared CS/ECE background path has no extra universal hard course cutoff; other degree fields require individual preparation and experience review."
+    }
+  },
+  "source_excerpt": "It is highly recommended",
+  "fact_summary": "Preparation is recommended rather than a universal course rejection rule. Applicants from other backgrounds need sufficient CS preparation and related professional experience reviewed individually."
+}

@@ -1,0 +1,21 @@
+{
+  "url": "https://www.registrar.illinois.edu/fall-2027-academic-calendar/",
+  "retrieved_at": "2026-11-21T08:22:19.970569+00:00",
+  "raw_response_sha256": "e4cbad866cd200cf036735c6d294fc639737fd56ccca8044018fa00fddbcb027",
+  "verified_values": {
+    "english": {
+      "english.0.minimum_test_date": "2025-08-23",
+      "english.1.minimum_test_date": "2025-08-23",
+      "english.2.minimum_test_date": "2025-08-23",
+      "english.3.minimum_test_date": "2025-08-23"
+    },
+    "english_term_validity": {
+      "english.0.minimum_test_date": "2025-08-23",
+      "english.1.minimum_test_date": "2025-08-23",
+      "english.2.minimum_test_date": "2025-08-23",
+      "english.3.minimum_test_date": "2025-08-23"
+    }
+  },
+  "source_excerpt": "First day of instruction for Fall",
+  "fact_summary": "The tentative Fall 2027 calendar begins instruction on August 23. This supplies a year-specific planning cutoff rather than treating assessment-day validity as enrollment validity."
+}

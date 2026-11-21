@@ -1,0 +1,191 @@
+{
+  "captures": [
+    {
+      "key": "uci_apply",
+      "requested_url": "https://mcs.ics.uci.edu/prospective-students/admissions-requirement/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/",
+      "http_status": 200,
+      "redirects": [
+        {
+          "url": "https://mcs.ics.uci.edu/prospective-students/admissions-requirement/",
+          "status": 301,
+          "location": "https://mcs.ics.uci.edu/"
+        }
+      ],
+      "retrieved_at": "2026-11-21T08:22:17.920105+00:00",
+      "raw_response_sha256": "09ad8992bc14c6e3600f509b9aec8883e9e4e683fb859e91b297e45b37806e60",
+      "bytes": 66001,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_faq",
+      "requested_url": "https://mcs.ics.uci.edu/faq/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/faq/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:17.053010+00:00",
+      "raw_response_sha256": "131f56ac1558ed830b200ba796131fe02f640f469054b4fd71bd31203d43bf56",
+      "bytes": 59770,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cornell_apply",
+      "requested_url": "https://www.cs.cornell.edu/master-engineering-computer-science/apply",
+      "status": "captured",
+      "url": "https://www.cs.cornell.edu/master-engineering-computer-science/apply",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:17.201310+00:00",
+      "raw_response_sha256": "62a904865a9efffb7e6f62092abee59fcb9019a56d5f252f7e61264beea36b42",
+      "bytes": 99874,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cornell_english",
+      "requested_url": "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/",
+      "status": "failed",
+      "url": "https://gradschool.cornell.edu/admissions/application-steps/required-tests/english-language-proficiency-requirement-2/",
+      "http_status": 403,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:15.350648+00:00",
+      "raw_response_sha256": "bedd423d2fa6a16d6ba2e1a2b03c4b15364dff1e6faae39748f3e89ebf040e4e",
+      "bytes": 5919,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "nyu_program",
+      "requested_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "status": "captured",
+      "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:15.956723+00:00",
+      "raw_response_sha256": "c7bd507994dbf6a58640ee1de90d52f11a41891eb0ddf74c6d8c705ac80542e0",
+      "bytes": 140634,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uwt_program",
+      "requested_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "status": "captured",
+      "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:18.412281+00:00",
+      "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+      "bytes": 94989,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "wisc_guide",
+      "requested_url": "https://guide.wisc.edu/graduate/computer-sciences/computer-sciences-ms/computer-sciences-professional-program-ms/",
+      "status": "captured",
+      "url": "https://guide.wisc.edu/graduate/computer-sciences/computer-sciences-ms/computer-sciences-professional-program-ms/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:17.893867+00:00",
+      "raw_response_sha256": "a8f434550852288f6d34aae80bdcb84fbe012cf0ba9f2de37af6a9637297f458",
+      "bytes": 106061,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "wisc_requirements",
+      "requested_url": "https://info.grad.wisc.edu/requirements-for-admission/",
+      "status": "captured",
+      "url": "https://info.grad.wisc.edu/requirements-for-admission/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:20.924778+00:00",
+      "raw_response_sha256": "5416f9edf13929d80ab64b994f05dc2097f144fc72917918396271b01af26dc1",
+      "bytes": 61813,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "wisc_calendar",
+      "requested_url": "https://secfac.wisc.edu/academic-calendar/",
+      "status": "captured",
+      "url": "https://secfac.wisc.edu/academic-calendar/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:19.893632+00:00",
+      "raw_response_sha256": "5f5202db0355f8ae667cd6a3080dc4113ed79791f1064fa13a99a03d05b164c6",
+      "bytes": 295125,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_english",
+      "requested_url": "https://grad.illinois.edu/admissions/international-applicants",
+      "status": "captured",
+      "url": "https://grad.illinois.edu/admissions/international-applicants",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:20.026338+00:00",
+      "raw_response_sha256": "94fafa8dbf4a955a2955ddedfc9a9c45ed09e9a3fcc599416a834dc7b965771a",
+      "bytes": 81199,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_calendar",
+      "requested_url": "https://www.registrar.illinois.edu/fall-2027-academic-calendar/",
+      "status": "captured",
+      "url": "https://www.registrar.illinois.edu/fall-2027-academic-calendar/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:19.970569+00:00",
+      "raw_response_sha256": "e4cbad866cd200cf036735c6d294fc639737fd56ccca8044018fa00fddbcb027",
+      "bytes": 90854,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_mcs",
+      "requested_url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+      "status": "captured",
+      "url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:20.559114+00:00",
+      "raw_response_sha256": "125a92fb86cb4b8137cef2d9bb1c9902eb1ca4894cabcd0ccf94245a7f35cfb3",
+      "bytes": 74039,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uiuc_meng",
+      "requested_url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "status": "captured",
+      "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:22:21.424208+00:00",
+      "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+      "bytes": 62587,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uci_apply_canonical",
+      "requested_url": "https://mcs.ics.uci.edu/how-to-apply/",
+      "status": "captured",
+      "url": "https://mcs.ics.uci.edu/how-to-apply/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:25:14.744060+00:00",
+      "raw_response_sha256": "987dd3ded1f6aea645234919ae649e71b22d802675c87dd4e74abc2539624004",
+      "bytes": 48753,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uw_english",
+      "requested_url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+      "status": "captured",
+      "url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T08:29:35.421794+00:00",
+      "raw_response_sha256": "24e66be1bd01f3dea15f776a3c82f5737c4c86e726ebac713e667181c8a3d57c",
+      "bytes": 81834,
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "request_attempts": 15
+}

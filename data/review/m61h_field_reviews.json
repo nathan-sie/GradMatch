@@ -1,0 +1,190 @@
+{
+  "milestone": "M6.1h",
+  "prior_seed": "data/catalog/m61g_seed.json",
+  "seed": "data/catalog/m61h_seed.json",
+  "programs_enriched": {
+    "uci-mcs-irvine": [
+      {
+        "source_id": "uci-mcs-irvine-uci_faq-m61h",
+        "groups": [
+          "prerequisites",
+          "prerequisite_background_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "uci-mcs-irvine-uci_apply_canonical-m61h",
+        "groups": [
+          "remaining_eligibility",
+          "goal_features",
+          "directory_policies"
+        ]
+      }
+    ],
+    "uw-mscss-tacoma": [
+      {
+        "source_id": "uw-mscss-tacoma-uwt_program-m61h",
+        "groups": [
+          "prerequisites",
+          "prerequisite_review",
+          "remaining_eligibility",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "uw-mscss-tacoma-uw_english-m61h",
+        "groups": [
+          "english",
+          "english_conditional_review",
+          "directory_policies"
+        ]
+      }
+    ],
+    "nyu-mscs-tandon-brooklyn": [
+      {
+        "source_id": "nyu-mscs-tandon-brooklyn-nyu_program-m61h",
+        "groups": [
+          "prerequisites",
+          "prerequisite_review",
+          "directory_policies"
+        ]
+      }
+    ],
+    "cornell-meng-cs-ithaca": [
+      {
+        "source_id": "cornell-meng-cs-ithaca-cornell_apply-m61h",
+        "groups": [
+          "prerequisites",
+          "prerequisite_review",
+          "english_minimum",
+          "directory_policies"
+        ]
+      }
+    ],
+    "wisc-ms-cs-professional-madison": [
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_guide-m61h",
+        "groups": [
+          "prerequisites",
+          "prerequisite_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_requirements-m61h",
+        "groups": [
+          "english",
+          "english_conditional_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_calendar-m61h",
+        "groups": [
+          "english",
+          "english_term_validity"
+        ]
+      }
+    ],
+    "uiuc-mcs-urbana": [
+      {
+        "source_id": "uiuc-mcs-urbana-uiuc_english-m61h",
+        "groups": [
+          "english",
+          "english_conditional_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "uiuc-mcs-urbana-uiuc_calendar-m61h",
+        "groups": [
+          "english",
+          "english_term_validity"
+        ]
+      }
+    ],
+    "uiuc-meng-ece-urbana": [
+      {
+        "source_id": "uiuc-meng-ece-urbana-uiuc_english-m61h",
+        "groups": [
+          "english",
+          "english_conditional_review",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "uiuc-meng-ece-urbana-uiuc_calendar-m61h",
+        "groups": [
+          "english",
+          "english_term_validity"
+        ]
+      }
+    ]
+  },
+  "superseded_field_bindings": {
+    "uci-mcs-irvine": {
+      "prerequisites": [
+        "uci-mcs-irvine--uci_admissions--77660702e948"
+      ]
+    },
+    "uw-mscss-tacoma": {
+      "prerequisites": [
+        "uw-mscss-tacoma-uwt_main-m61b"
+      ],
+      "english": [
+        "uw-mscss-tacoma-uw_english-m61b"
+      ]
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "prerequisites": [
+        "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+      ]
+    },
+    "cornell-meng-cs-ithaca": {
+      "prerequisites": [
+        "cornell-meng-cs-ithaca-cornell_apply-m61c"
+      ],
+      "english_minimum": [
+        "cornell-meng-cs-ithaca-cornell_english-m61g"
+      ]
+    },
+    "wisc-ms-cs-professional-madison": {
+      "prerequisites": [
+        "wisc-ms-cs-professional-madison-wisc_guide-m61c"
+      ],
+      "english_minimum": [
+        "wisc-ms-cs-professional-madison-wisc_requirements-m61g"
+      ]
+    },
+    "uiuc-mcs-urbana": {
+      "english_minimum": [
+        "uiuc-mcs-urbana-uiuc_english-m61g"
+      ]
+    },
+    "uiuc-meng-ece-urbana": {
+      "english_minimum": [
+        "uiuc-meng-ece-urbana-uiuc_english-m61g"
+      ]
+    }
+  },
+  "new_source_ids": [
+    "uci-mcs-irvine-uci_faq-m61h",
+    "uci-mcs-irvine-uci_apply_canonical-m61h",
+    "uw-mscss-tacoma-uwt_program-m61h",
+    "uw-mscss-tacoma-uw_english-m61h",
+    "nyu-mscs-tandon-brooklyn-nyu_program-m61h",
+    "cornell-meng-cs-ithaca-cornell_apply-m61h",
+    "wisc-ms-cs-professional-madison-wisc_guide-m61h",
+    "wisc-ms-cs-professional-madison-wisc_requirements-m61h",
+    "wisc-ms-cs-professional-madison-wisc_calendar-m61h",
+    "uiuc-mcs-urbana-uiuc_english-m61h",
+    "uiuc-mcs-urbana-uiuc_calendar-m61h",
+    "uiuc-meng-ece-urbana-uiuc_english-m61h",
+    "uiuc-meng-ece-urbana-uiuc_calendar-m61h"
+  ],
+  "expected_programs": 20,
+  "expected_sources": 125,
+  "prior_sources_preserved": 112,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

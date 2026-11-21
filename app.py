@@ -5,7 +5,7 @@ import sys
 import streamlit as st
 
 import gradmatch.release as release
-if getattr(release,'RELEASE_REFRESH_VERSION',0)<2:
+if getattr(release,'RELEASE_REFRESH_VERSION',0)<3:
     from importlib import reload
     reload(release)
 release.refresh_catalog_modules()
@@ -25,13 +25,13 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/m61g_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/m61h_seed.json", language="bash")
     st.stop()
 
 left, right = st.columns(2)
 left.metric("Official program records", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M6.1g-2026-11-20 · Read-only public data · Profile and chat memory are private to this browser session")
+st.caption("Release M6.1h-2026-11-21 · Read-only public data · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")

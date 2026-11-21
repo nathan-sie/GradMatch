@@ -9,20 +9,9 @@ from pydantic import ValidationError
 from gradmatch.catalog import coverage_rows, read_catalog
 from gradmatch.constraints import check_constraints, estimate_tuition
 from gradmatch.schemas import ApplicantProfile
+from gradmatch.coursework import TOPICS
 
 
-TOPICS = {
-    "calculus": "Calculus", "differential_equations": "Differential equations",
-    "linear_algebra": "Linear algebra", "programming": "Programming",
-    "object_oriented_programming": "Object-oriented programming", "data_structures": "Data structures",
-    "algorithms": "Algorithms", "probability_statistics": "Probability and statistics", "discrete_math": "Discrete mathematics",
-    "undergraduate_cs": "Strong undergraduate computer science preparation",
-    "undergraduate_math": "Strong undergraduate mathematics / statistics preparation",
-    "software_engineering": "Software engineering / program management",
-    "computer_organization": "Computer organization",
-    "computer_architecture": "Computer architecture",
-    "science": "University-level science",
-}
 STATUS = {"pass": "Meets checked requirement", "fail": "Does not meet requirement", "unknown": "Needs verification", "not_applicable": "Not applicable"}
 RULE_NAMES = {"identity": "Program identity", "intake": "Intake", "gpa": "GPA",
     "english": "English proficiency", "prerequisites": "Prerequisite coursework", "tuition": "Tuition budget",

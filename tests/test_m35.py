@@ -4,7 +4,7 @@ from decimal import Decimal
 import json
 import pytest
 from streamlit.testing.v1 import AppTest
-from gradmatch.catalog import load_seed, import_catalog, M1_SEED
+from gradmatch.catalog import load_seed as current_load_seed, import_catalog, M1_SEED, M35_SEED
 from gradmatch.constraints import check_constraints, evidence_ids
 from gradmatch.schemas import AdmissionEvidence, ApplicantProfile
 from gradmatch.session import Session, tiering_profile
@@ -17,6 +17,9 @@ from gradmatch.storage import PROJECT_ROOT
 from dataclasses import replace
 
 AS_OF=date(2026,11,16)
+
+def load_seed(path=M35_SEED):
+    return current_load_seed(path)
 
 def draft(profile, programs):
     return RankingDraft(profile_version=profile.profile_version,status="insufficient_evidence",recommendations=[{

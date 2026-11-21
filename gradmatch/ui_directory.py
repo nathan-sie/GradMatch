@@ -73,12 +73,18 @@ def render_directory(document):
             st.markdown("**Reviewed policy details**")
             st.caption("Policy details may require manual review even when the published values are known. They do not establish applicant eligibility.")
             st.dataframe(details, hide_index=True, width="stretch")
-        for note in row["notes"] + row["tuition_assumptions"]:
+        with st.expander('Snapshot notes and review history'):
+            st.caption('Earlier review limitations may be retained here. Current policy summaries and checks use the active evidence bindings.')
+            for note in row['notes']:
+                st.caption(note)
+        for note in row["tuition_assumptions"]:
             st.caption(note)
         for source in row["official_sources"]:
             with st.expander("Official evidence · " + source["locator"]):
                 st.link_button("Open source", source["url"], key="directory_source_" + source["source_id"])
                 st.caption(f"Retrieved: {source['retrieved_at']} · Period: {source['effective_period'] or 'See field notes'}")
+                if source.get('historical_field_groups'):
+                    st.caption('Superseded fields: ' + ', '.join(source['historical_field_groups']) + '. These earlier bindings do not drive current checks.')
                 st.write(source["fact_summary"])
                 st.code(source["source_excerpt"], language=None)
         if not row["official_sources"]:

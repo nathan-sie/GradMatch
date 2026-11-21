@@ -1,0 +1,36 @@
+{
+  "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+  "retrieved_at": "2026-11-21T08:22:15.956723+00:00",
+  "raw_response_sha256": "c7bd507994dbf6a58640ee1de90d52f11a41891eb0ddf74c6d8c705ac80542e0",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [
+        "university_science_year",
+        "calculus",
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "computer_architecture"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "prerequisite_review": {
+      "required_topics": [
+        "university_science_year",
+        "calculus",
+        "programming",
+        "data_structures",
+        "computer_organization",
+        "computer_architecture"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "directory_policies": {
+      "notes.5": "Preparation: Requires a year of university science, mathematics through calculus, programming, data structures, computer organization and architecture. A generic science course does not prove a full year. Alternative preparation and the Bridge route require individual review; Bridge completion does not guarantee admission."
+    }
+  },
+  "source_excerpt": "At least 1 year of university-level science",
+  "fact_summary": "The exact Tandon CS requirements include a full science year, calculus, programming, data structures, organization and architecture. Individual backgrounds and Bridge completion are not automatic admission guarantees."
+}

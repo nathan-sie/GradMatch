@@ -1,0 +1,277 @@
+{
+  "milestone": "M6.1h",
+  "status": "passed",
+  "programs": 20,
+  "sources": 125,
+  "directory_programs": 83,
+  "programs_enriched": 7,
+  "new_sources": 13,
+  "prior_sources_preserved": 112,
+  "optional_raw_responses_rehashed": 13,
+  "superseded_field_bindings": {
+    "uci-mcs-irvine": {
+      "prerequisites": [
+        "uci-mcs-irvine--uci_admissions--77660702e948"
+      ]
+    },
+    "uw-mscss-tacoma": {
+      "prerequisites": [
+        "uw-mscss-tacoma-uwt_main-m61b"
+      ],
+      "english": [
+        "uw-mscss-tacoma-uw_english-m61b"
+      ]
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "prerequisites": [
+        "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+      ]
+    },
+    "cornell-meng-cs-ithaca": {
+      "prerequisites": [
+        "cornell-meng-cs-ithaca-cornell_apply-m61c"
+      ],
+      "english_minimum": [
+        "cornell-meng-cs-ithaca-cornell_english-m61g"
+      ]
+    },
+    "wisc-ms-cs-professional-madison": {
+      "prerequisites": [
+        "wisc-ms-cs-professional-madison-wisc_guide-m61c"
+      ],
+      "english_minimum": [
+        "wisc-ms-cs-professional-madison-wisc_requirements-m61g"
+      ]
+    },
+    "uiuc-mcs-urbana": {
+      "english_minimum": [
+        "uiuc-mcs-urbana-uiuc_english-m61g"
+      ]
+    },
+    "uiuc-meng-ece-urbana": {
+      "english_minimum": [
+        "uiuc-meng-ece-urbana-uiuc_english-m61g"
+      ]
+    }
+  },
+  "request_attempts_in_preparation": 15,
+  "used_capture_keys": [
+    "cornell_apply",
+    "nyu_program",
+    "uci_apply_canonical",
+    "uci_faq",
+    "uiuc_calendar",
+    "uiuc_english",
+    "uw_english",
+    "uwt_program",
+    "wisc_calendar",
+    "wisc_guide",
+    "wisc_requirements"
+  ],
+  "unused_captures": [
+    {
+      "key": "uci_apply",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "cornell_english",
+      "status": "failed",
+      "http_status": 403
+    },
+    {
+      "key": "uiuc_mcs",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_meng",
+      "status": "captured",
+      "http_status": 200
+    }
+  ],
+  "before": {
+    "programs": 20,
+    "sources": 112,
+    "disciplines": {
+      "CS": 16,
+      "ECE": 4
+    },
+    "computable_verified_tuition": 8,
+    "minimum_only_tuition": 1,
+    "full_eligibility_reviews": 2,
+    "reference_hard_checks_ready": 1,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 20,
+        "usable": 20
+      },
+      "intake": {
+        "bound": 12,
+        "usable": 12
+      },
+      "gpa": {
+        "bound": 14,
+        "usable": 8
+      },
+      "english": {
+        "bound": 5,
+        "usable": 5
+      },
+      "english_minimum": {
+        "bound": 8,
+        "usable": 8
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 3
+      },
+      "degree": {
+        "bound": 15,
+        "usable": 15
+      },
+      "gre": {
+        "bound": 19,
+        "usable": 19
+      },
+      "credits": {
+        "bound": 16,
+        "usable": 16
+      },
+      "tuition": {
+        "bound": 12,
+        "usable": 8
+      },
+      "deadline": {
+        "bound": 10,
+        "usable": 10
+      },
+      "remaining_eligibility": {
+        "bound": 7,
+        "usable": 2
+      },
+      "goal_features": {
+        "bound": 12,
+        "usable": 12
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "after": {
+    "programs": 20,
+    "sources": 125,
+    "disciplines": {
+      "CS": 16,
+      "ECE": 4
+    },
+    "computable_verified_tuition": 8,
+    "minimum_only_tuition": 1,
+    "full_eligibility_reviews": 4,
+    "reference_hard_checks_ready": 2,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 20,
+        "usable": 20
+      },
+      "intake": {
+        "bound": 12,
+        "usable": 12
+      },
+      "gpa": {
+        "bound": 14,
+        "usable": 8
+      },
+      "english": {
+        "bound": 8,
+        "usable": 8
+      },
+      "english_minimum": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 8
+      },
+      "degree": {
+        "bound": 15,
+        "usable": 15
+      },
+      "gre": {
+        "bound": 19,
+        "usable": 19
+      },
+      "credits": {
+        "bound": 16,
+        "usable": 16
+      },
+      "tuition": {
+        "bound": 12,
+        "usable": 8
+      },
+      "deadline": {
+        "bound": 10,
+        "usable": 10
+      },
+      "remaining_eligibility": {
+        "bound": 9,
+        "usable": 4
+      },
+      "goal_features": {
+        "bound": 13,
+        "usable": 13
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "shared_strategies": {
+    "fixed": {
+      "data_hash": "eb80fd3e7ed9668010e1716251a5caa2f2edffb52f23d883aa7058f8574cfa7c",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "data_hash": "eb80fd3e7ed9668010e1716251a5caa2f2edffb52f23d883aa7058f8574cfa7c",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "data_hash": "eb80fd3e7ed9668010e1716251a5caa2f2edffb52f23d883aa7058f8574cfa7c",
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "data_hash": "eb80fd3e7ed9668010e1716251a5caa2f2edffb52f23d883aa7058f8574cfa7c",
+  "database_hashes_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "database_hashes_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "external_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

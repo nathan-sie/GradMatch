@@ -1,0 +1,35 @@
+{
+  "url": "https://mcs.ics.uci.edu/how-to-apply/",
+  "retrieved_at": "2026-11-21T08:25:14.744060+00:00",
+  "raw_response_sha256": "987dd3ded1f6aea645234919ae649e71b22d802675c87dd4e74abc2539624004",
+  "verified_values": {
+    "remaining_eligibility": {
+      "eligibility_review_complete": true,
+      "application_materials": [
+        "Graduate application and applicable fee or approved waiver",
+        "Transcripts from all postsecondary institutions",
+        "Statement of purpose",
+        "Personal history statement",
+        "Three recommendation letters",
+        "Applicable official TOEFL/IELTS evidence"
+      ]
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uci-mcs-irvine-professional-preparation",
+          "goal": "employment",
+          "statement": "Applied computing preparation supports technical industry careers without promising placement.",
+          "source_ids": [
+            "uci-mcs-irvine-uci_apply_canonical-m61h"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.11": "Other eligibility: Reviewed planning checklist: application/fee, all transcripts, statement of purpose, personal history statement, three letters and applicable official English reports. GRE is optional. Actual submission and university equivalency decisions remain outside the check."
+    }
+  },
+  "source_excerpt": "Applicants must provide the following",
+  "fact_summary": "The current application page lists the complete materials checklist, optional GRE and professional preparation goals. Checklist review does not assert document submission or admission."
+}

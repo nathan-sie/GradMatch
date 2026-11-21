@@ -1,0 +1,73 @@
+{
+  "url": "https://www.cs.cornell.edu/master-engineering-computer-science/apply",
+  "retrieved_at": "2026-11-21T08:22:17.201310+00:00",
+  "raw_response_sha256": "62a904865a9efffb7e6f62092abee59fcb9019a56d5f252f7e61264beea36b42",
+  "verified_values": {
+    "prerequisites": {
+      "required_topics": [
+        "object_oriented_programming",
+        "data_structures",
+        "computer_organization",
+        "discrete_math",
+        "calculus",
+        "linear_algebra",
+        "advanced_data_structures",
+        "documented_cs_preparation"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "prerequisite_review": {
+      "required_topics": [
+        "object_oriented_programming",
+        "data_structures",
+        "computer_organization",
+        "discrete_math",
+        "calculus",
+        "linear_algebra",
+        "advanced_data_structures",
+        "documented_cs_preparation"
+      ],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "english_minimum": {
+      "english": [
+        {
+          "version": "toefl_6",
+          "minimum_total": "0",
+          "recommended_total": null,
+          "minimum_subscores": {
+            "reading": "4",
+            "listening": "3.5",
+            "speaking": "5.5",
+            "writing": "4"
+          },
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "7",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": null,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "directory_policies": {
+      "notes.6": "Preparation: Advanced data structures and documented CS preparation must be declared explicitly. Functional programming is not treated as mandatory. MOOC completion alone does not establish prerequisite equivalency; the university reviews comparable preparation.",
+      "notes.7": "English policy: CS MEng requires new TOEFL W4/L3.5/R4/S5.5; the department speaking threshold overrides the lower general table. IELTS 7 is accepted. Legacy TOEFL department thresholds, application-deadline validity and exact-cycle confirmation remain under review; meeting a score floor is not a full English pass. The 2.7 GPA stated for Cornell Early Admit is not applied to outside applicants."
+    }
+  },
+  "source_excerpt": "advanced knowledge of data structures is",
+  "fact_summary": "CS MEng explicitly needs advanced data structures and documented preparation; functional-programming knowledge is not essential. Its department-specific new TOEFL speaking floor is 5.5, higher than the general professional-master table."
+}

@@ -19,9 +19,9 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
-LINKS = PROJECT_ROOT / "data/review/m61f_review_plan.json"
-DIRECTORY_VERSION = "M6.1g"
-REVIEW_DATE = date(2026, 11, 20)
+LINKS = PROJECT_ROOT / "data/review/m61h_review_plan.json"
+DIRECTORY_VERSION = "M6.1h"
+REVIEW_DATE = date(2026, 11, 21)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
 
@@ -131,6 +131,10 @@ def build_directory(programs, sources, index=None, links=None):
             fields = audit["field_coverage"]
             official_sources = [s.model_dump(mode="json") for s in sources.values()
                                 if s.program_id == program.program_id and s.verification_status == "verified"]
+            for source in official_sources:
+                sid = source['source_id']
+                source['current_field_groups'] = [g for g in source['field_groups'] if sid in program.field_sources.get(g, [])]
+                source['historical_field_groups'] = [g for g in source['field_groups'] if sid in program.field_sources.get('history:' + g, [])]
             row.update(
                 university=program.university, program_name=program.program_name,
                 program_url=_safe_url(str(program.official_url)), campus=program.campus,

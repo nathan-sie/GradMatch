@@ -1,0 +1,87 @@
+{
+  "url": "https://grad.uw.edu/policies/3-2-graduate-school-english-language-proficiency-requirements/",
+  "retrieved_at": "2026-11-21T08:29:35.421794+00:00",
+  "raw_response_sha256": "24e66be1bd01f3dea15f776a3c82f5737c4c86e726ebac713e667181c8a3d57c",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": "92",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": "4.5",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": "7",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ],
+      "english_not_required": false
+    },
+    "english_conditional_review": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "80",
+          "recommended_total": "92",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4",
+          "recommended_total": "4.5",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "ielts_9",
+          "minimum_total": "6.5",
+          "recommended_total": "7",
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": "Scores below the recommended level require UW AEP coursework and additional fees; the conditions remain for review.",
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.9": "English policy: Application-date validity: TOEFL 80/120 or 4/6, IELTS 6.5 are lower qualifying levels; TOEFL 92/120 or 4.5/6, IELTS 7 clear ELP without AEP. Two-year validity applies at submission. Lower qualifying scores require AEP review and extra fees; no degree exemption or DET acceptance is inferred."
+    }
+  },
+  "source_excerpt": "valid on the date the application is submitted",
+  "fact_summary": "UW test validity is measured at application submission or a deferral petition, not future enrollment. The recommended-score threshold clears ELP without AEP conditions; lower qualifying scores need review. DET program acceptance remains unconfirmed."
+}

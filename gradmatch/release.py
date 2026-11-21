@@ -8,9 +8,10 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-RELEASE_REFRESH_VERSION = 2
-_MODULES = ("gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
-            "gradmatch.catalog_audit", "gradmatch.directory", "gradmatch.ui_directory")
+RELEASE_REFRESH_VERSION = 3
+_MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
+            "gradmatch.catalog_audit", "gradmatch.directory", "gradmatch.ui_directory",
+            "gradmatch.ui_m1", "gradmatch.ui_m2")
 _LOCK = Lock()
 _signature = None
 
@@ -36,6 +37,12 @@ def refresh_catalog_modules():
         for name in _MODULES:
             if name in sys.modules:
                 importlib.reload(sys.modules[name])
+        # Expand accepted explicit patches in place; do not recreate Session or its classes.
+        session = sys.modules.get('gradmatch.session')
+        if session is not None:
+            coursework = importlib.import_module('gradmatch.coursework')
+            session.TOPICS.update(coursework.TOPICS)
+            session.LEAF_FIELDS.update('coursework.' + key for key in coursework.TOPICS)
         # Refresh copied helper references without reloading session-bearing modules.
         constraints=sys.modules.get('gradmatch.constraints')
         if constraints is not None:

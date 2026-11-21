@@ -17,7 +17,8 @@ M61B_SEED = PROJECT_ROOT / "data" / "catalog" / "m61b_seed.json"
 M61C_SEED = PROJECT_ROOT / "data" / "catalog" / "m61c_seed.json"
 M61E_SEED = PROJECT_ROOT / "data" / "catalog" / "m61e_seed.json"
 M61F_SEED = PROJECT_ROOT / "data" / "catalog" / "m61f_seed.json"
-DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61g_seed.json"
+M61G_SEED = PROJECT_ROOT / "data" / "catalog" / "m61g_seed.json"
+DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61h_seed.json"
 ACTIVE_SEED = PROJECT_ROOT / "data" / "catalog" / "active.json"
 
 
@@ -44,6 +45,20 @@ def load_seed(path: Path | None = None) -> tuple[list[ProgramRecord], dict[str, 
         raise ValueError("Duplicate source IDs in catalog seed.")
     program_map = {program.program_id: program for program in programs}
     from gradmatch.constraints import evidence_ids
+    for program in programs:
+        for group, ids in program.field_sources.items():
+            target_group = group.removeprefix('history:')
+            if any(sid not in sources or sources[sid].program_id != program.program_id
+                   or target_group not in sources[sid].field_groups for sid in ids):
+                raise ValueError(f"Invalid field source reference: {program.program_id}/{group}")
+            if group.startswith('history:'):
+                replacements = program.field_sources.get(target_group, [])
+                if target_group == 'english_minimum' and not replacements:
+                    replacements = program.field_sources.get('english', [])  # Promotion to a complete reviewed policy.
+                if (not ids or not replacements or set(ids) & set(replacements)
+                        or target_group.startswith('history:')
+                        or any(sources[sid].verification_status != 'verified' for sid in replacements)):
+                    raise ValueError(f"Historical field requires a distinct verified replacement: {program.program_id}/{group}")
     for source in source_list:
         if source.program_id not in program_map:
             raise ValueError(f"Source points to an unknown program: {source.source_id}")
@@ -66,6 +81,8 @@ def load_seed(path: Path | None = None) -> tuple[list[ProgramRecord], dict[str, 
         profile = ApplicantProfile(intake=Intake(year=int(year), term=term))
         for group in source.field_groups:
             if source.source_id not in program.field_sources.get(group, []):
+                if source.source_id in program.field_sources.get('history:' + group, []):
+                    continue  # Immutable old snapshot; only the verified replacement can drive current checks.
                 raise ValueError(f"Unbound source field group: {source.source_id}/{group}")
             if source.verification_status == "verified" and not evidence_ids(program, group, sources, profile):
                 raise ValueError(f"Official field values do not match evidence: {source.source_id}/{group}")

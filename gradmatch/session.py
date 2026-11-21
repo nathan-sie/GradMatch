@@ -10,11 +10,10 @@ from typing import Literal
 from uuid import uuid4
 
 from gradmatch.schemas import ApplicantProfile, Record
+from gradmatch.coursework import TOPICS as COURSEWORK_TOPICS
 
 
-TOPICS = {"calculus", "differential_equations", "linear_algebra", "programming",
-          "object_oriented_programming", "data_structures", "algorithms", "probability_statistics", "discrete_math"}
-TOPICS |= {"undergraduate_cs", "undergraduate_math"}
+TOPICS = set(COURSEWORK_TOPICS)
 ROOT_FIELDS = set(ApplicantProfile.model_fields) - {"profile_version"}
 LEAF_FIELDS = {"gpa.value", "gpa.scale", "gpa.scope", "english.version", "english.total", "english.test_date",
     "english_status", "goal", "tuition_budget_usd", "budget_basis", "intake.year", "intake.term",
