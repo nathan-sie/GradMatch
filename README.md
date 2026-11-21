@@ -4,7 +4,7 @@ An evidence-grounded U.S. CS/ECE master's program matching course project.
 
 Current stage: **M6.1e first priority repair batch**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Sixteen exact identities link to **82 official source records**; 67 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) prioritizes 20–30 programs in batches of 10–15. Final-project evaluation remains incomplete.
 
-M6.1e passed **266 regression checks**. Twelve programs gain 20 official sources; usable GRE rules increase from 8 to 15 and degree rules from 8 to 12. Policy details are visible in the comparison and detail views. Computable tuition remains seven, with incomplete eligibility and tier evidence explicit. See [the batch checkpoint](docs/verification/M61E.md) and [current coverage](docs/verification/M61E_catalog_audit.md).
+M6.1e passed **267 regression checks**. Twelve programs gain 20 official sources; usable GRE rules increase from 8 to 15 and degree rules from 8 to 12. Policy details are visible in the comparison and detail views. Computable tuition remains seven, with incomplete eligibility and tier evidence explicit. See [the batch checkpoint](docs/verification/M61E.md) and [current coverage](docs/verification/M61E_catalog_audit.md).
 
 M6.1d passed **254 regression checks**, SQLite cache recovery and clean-host startup/restart/recovery. Directory browsing and comparison make no model requests. Read the [directory checkpoint](docs/verification/M61D.md). The user accepted the preceding hosted 16/62 count display.
 

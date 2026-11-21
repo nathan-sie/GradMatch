@@ -185,5 +185,10 @@
   "external_requests_in_verifier": 0,
   "paid_model_requests": 0,
   "formal_benchmark_run": false,
-  "complete_eligibility_not_claimed_for_batch": true
+  "complete_eligibility_not_claimed_for_batch": true,
+  "regression": {
+    "passed": 267,
+    "seconds": 58.22,
+    "targeted_hot_update_passed": 28
+  }
 }

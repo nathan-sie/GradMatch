@@ -116,3 +116,24 @@ def test_active_pointer_changes_are_read_without_reimporting_modules(tmp_path, m
     pointer.write_text('{"seed":"../escape.json"}',encoding='utf-8')
     with pytest.raises(ValueError,match='active catalog pointer'):
         catalog.current_seed()
+
+
+def test_hosted_cached_old_imports_refresh_without_replacing_applicant_state(tmp_path, monkeypatch):
+    import gradmatch.bootstrap as bootstrap
+    import gradmatch.release as release
+    from gradmatch.session import Session
+    session = Session(profile=tiering_profile())
+    original = session.profile.model_dump(mode='json')
+    monkeypatch.setattr(catalog,'current_seed',lambda:M61C_SEED)
+    monkeypatch.setattr(bootstrap,'current_seed',lambda:M61C_SEED)
+    assert len(read_catalog(bootstrap.bootstrap_public_catalog(tmp_path/'public'))[1]) == 62
+    monkeypatch.setattr(release,'_signature',None)
+    release.refresh_catalog_modules()
+    assert len(read_catalog(bootstrap.bootstrap_public_catalog(tmp_path/'public'))[1]) == 82
+    assert session.profile.model_dump(mode='json') == original and not session.usage
+    # Ordinary rerenders must not repeatedly reload code or discard session data.
+    def deny_reload(*args,**kwargs):
+        raise AssertionError('Unchanged release must reuse the existing modules')
+    monkeypatch.setattr(release.importlib,'reload',deny_reload)
+    release.refresh_catalog_modules()
+    assert session.profile.model_dump(mode='json') == original

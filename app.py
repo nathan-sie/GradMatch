@@ -4,6 +4,10 @@ import sys
 
 import streamlit as st
 
+from gradmatch.release import refresh_catalog_modules
+
+refresh_catalog_modules()
+
 from gradmatch.bootstrap import resolve_app_database
 from gradmatch.directory import bootstrap_directory, read_directory
 from gradmatch.storage import CatalogNotReadyError, inspect_catalog
