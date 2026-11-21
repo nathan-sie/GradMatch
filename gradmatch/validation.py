@@ -8,6 +8,7 @@ import json
 from gradmatch.constraints import check_constraints, evidence_ids
 from gradmatch.ranking import TIERS, RankingDraft
 from gradmatch.tiers import RUBRIC_VERSION, planning_reason, selectivity_tier
+BROAD_ENGINE_VERSION = 1
 
 
 def blocking_validation_errors(result):
@@ -174,9 +175,10 @@ def citation(source):
 
 def changes_from_previous(previous, current):
     def selected(result):
-        return {i["program_id"] for field in ["recommendations", "pending_verification"] for i in (result or {}).get(field, [])}
+        return {i["program_id"] for field in ["recommendations", "preliminary_recommendations", "pending_verification"] for i in (result or {}).get(field, [])}
     before, after = selected(previous), selected(current)
     excluded = {i["program_id"]: i for i in current["excluded"]}
+    excluded.update({i['program_id']:dict(reasons=[c['explanation'] for c in i['reasons']]) for i in current.get('preliminary_excluded', [])})
     return {"added": sorted(after - before), "retained": sorted(after & before),
         "removed": [{"program_id": pid, "reasons": excluded[pid]["reasons"] if pid in excluded
                      else ["The candidate is no longer in the fixed retrieval set or validated output."]}

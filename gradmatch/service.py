@@ -14,6 +14,7 @@ from gradmatch.ranking import RankingDraft, retrieve
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
+BROAD_ENGINE_VERSION = 1
 
 
 def prepare_input(session, *, changes, unknown_fields, message, provider, settings):
@@ -32,14 +33,14 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
         remainder=re.sub(marker,'',message.lower())
         if re.search(marker,message.lower()) and not re.search(r'\b(change|set|update|increase|decrease|lower|raise|switch|replace)\b',remainder):
             prior=session.current_result or session.previous_result or {}
-            known=prior.get('recommendations',[])+prior.get('pending_verification',[])
+            known=prior.get('recommendations',[])+prior.get('preliminary_recommendations',[])+prior.get('pending_verification',[])
             patch=ProfilePatch(intent='explain_previous',operations=[],ambiguous_fields=[],
                 referenced_program_ids=[p['program_id'] for p in known if p['program_id'] in message])
         if patch is None and message.lower().strip() not in {"generate", "generate recommendations", "rerun checks"}:
             if not settings.ready and isinstance(provider, OpenAIProvider):
                 raise ModelUnavailable("Free-text interpretation needs the configured model. You can still edit the profile form or use 'Change my tuition budget to 50000'.")
             prior = session.current_result or session.previous_result or {}
-            known = prior.get("recommendations", []) + prior.get("pending_verification", [])
+            known = prior.get("recommendations", []) + prior.get('preliminary_recommendations', []) + prior.get("pending_verification", [])
             patch = provider.generate(ProfilePatch, "interpret", {"message": message,
                 "profile": session.profile.model_dump(mode="json"), "pending_questions": session.pending_questions,
                 "previous_programs": [{"program_id": p["program_id"], "identity": p["identity"]} for p in known],
@@ -71,8 +72,14 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
 
 def start_task(session: Session, *, request_id: str, programs, sources, settings, as_of: date,
                changes=None, unknown_fields=None, message=None, provider=None,
-               strategy=None, data_mode="snapshot", new_task=False, fetcher=None):
-    legacy=strategy is None and data_mode=='snapshot'
+               strategy=None, data_mode="snapshot", new_task=False, fetcher=None, recommendation_scope='reviewed'):
+    if recommendation_scope not in {'reviewed', 'broad'}:
+        raise ValueError('Unsupported recommendation scope.')
+    broad_context = None
+    if recommendation_scope == 'broad':
+        from gradmatch.broad_catalog import build_broad_catalog
+        programs, broad_context = build_broad_catalog(programs, sources)
+    legacy=strategy is None and data_mode=='snapshot' and broad_context is None
     strategy=strategy or 'fixed'
     if strategy not in {"fixed", "react", "plan"} or data_mode not in {"snapshot", "live"}:
         raise ValueError("Unsupported execution strategy or data mode.")
@@ -80,7 +87,7 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
         from gradmatch.agent import run_task
         return run_task(session, request_id=request_id, programs=programs, sources=sources, settings=settings,
             as_of=as_of, changes=changes, unknown_fields=unknown_fields, message=message, provider=provider,
-            strategy=strategy, data_mode=data_mode, new_task=new_task, fetcher=fetcher)
+            strategy=strategy, data_mode=data_mode, new_task=new_task, fetcher=fetcher, broad_context=broad_context)
     if request_id in session.receipts:
         return session.receipts[request_id]
     if session.active:
@@ -185,6 +192,11 @@ def response_text(result):
             "- " + q["text"] for q in result.get("pending_questions", []))
     if result["status"] in {"error", "busy", "budget_exhausted", "stopped"}:
         return result.get("message", "The request did not complete.")
+    if result.get('recommendation_scope') == 'broad':
+        count = len(result.get('preliminary_recommendations', [])) + len(result.get('recommendations', []))
+        return (f"Profile v{result['profile_version']}: {count} recommendations selected from a {result['recommendation_catalog_count']}-program pool. "
+            "Preliminary recommendations use labelled community facts; missing eligibility, cost and admission-tier evidence remains unresolved. "
+            + (result.get('message') or ''))
     counts = len(result.get("recommendations", [])), len(result.get("pending_verification", [])), len(result.get("excluded", []))
     conclusion = {"infeasible": "Every program in the current catalog has at least one verified hard failure under your conditions.",
         "completed": "The shortlist passed the automated checks. Admission outcomes remain uncertain.",

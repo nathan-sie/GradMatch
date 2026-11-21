@@ -8,10 +8,12 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-RELEASE_REFRESH_VERSION = 5
+RELEASE_REFRESH_VERSION = 6
 _MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
-            "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.community", "gradmatch.directory", "gradmatch.ui_directory",
+            "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.community", "gradmatch.directory", "gradmatch.broad_catalog", "gradmatch.ui_directory",
             "gradmatch.ui_m1", "gradmatch.ui_m2")
+_ENGINE_MODULES = ('gradmatch.ranking', 'gradmatch.agent_models', 'gradmatch.validation',
+                   'gradmatch.service', 'gradmatch.agent', 'gradmatch.planning')
 _LOCK = Lock()
 _signature = None
 
@@ -24,6 +26,7 @@ def refresh_catalog_modules():
     """
     global _signature
     paths = [_ROOT / (name.replace(".", "/") + ".py") for name in _MODULES]
+    paths.extend(_ROOT / (name.replace('.', '/') + '.py') for name in _ENGINE_MODULES)
     paths.append(_ROOT / "data/catalog/active.json")
     digest = hashlib.sha256()
     for path in paths:
@@ -34,9 +37,18 @@ def refresh_catalog_modules():
         if signature == _signature:
             return
         importlib.invalidate_caches()
+        # Upgrade stale engine imports once; never reload Session or provider classes.
+        for name in _ENGINE_MODULES:
+            module = sys.modules.get(name)
+            if module is not None and getattr(module, 'BROAD_ENGINE_VERSION', 0) < 1:
+                importlib.reload(module)
         for name in _MODULES:
             if name in sys.modules:
                 importlib.reload(sys.modules[name])
+        provider = sys.modules.get('gradmatch.providers')
+        if provider is not None:
+            from gradmatch.broad_catalog import install_provider_instructions
+            install_provider_instructions(provider.INSTRUCTIONS)
         # Expand accepted explicit patches in place; do not recreate Session or its classes.
         session = sys.modules.get('gradmatch.session')
         if session is not None:

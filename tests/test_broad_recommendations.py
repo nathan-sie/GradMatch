@@ -1,0 +1,220 @@
+"""All 83 programs enter actual shared recommendation tools and validated output."""
+from copy import deepcopy
+from dataclasses import replace
+from datetime import date
+import json
+import subprocess
+import sys
+from uuid import uuid4
+
+import pytest
+from streamlit.testing.v1 import AppTest
+
+from gradmatch.agent import Execution, Task
+from gradmatch.broad_catalog import build_broad_catalog, screen_program, finish_broad_result
+from gradmatch.bootstrap import bootstrap_public_catalog
+from gradmatch.catalog import load_seed
+from gradmatch.config import load_settings
+from gradmatch.constraints import check_constraints
+from gradmatch.providers import OpenAIProvider
+from gradmatch.ranking import RankingDraft, PreliminaryRecommendationDraft
+from gradmatch.schemas import Intake
+from gradmatch.service import export_session, start_task
+from gradmatch.session import Session, tiering_profile
+from gradmatch.storage import PROJECT_ROOT
+from gradmatch.validation import data_hash, validate_shortlist
+from scripts.m5_fixtures import FixtureProvider
+
+AS_OF=date(2026,11,21)
+STANFORD='community-sss-stanford-mscs'
+
+
+class BroadFixture(FixtureProvider):
+    def generate(self,kind,purpose,payload,session):
+        value=super().generate(kind,purpose,payload,session)
+        if purpose=='rank' and payload.get('recommendation_scope')=='broad':
+            ids=[pid for pid in payload['allowed_preliminary_program_ids'] if pid.startswith('community-')]
+            ids.sort(key=lambda pid:(pid!=STANFORD,pid))
+            value.suggestions=[PreliminaryRecommendationDraft(program_id=pid,reason_check_ids=['english','deadline','gre']) for pid in ids[:8]]
+        return value
+
+
+def run(session=None,strategy='react',provider=None,**kwargs):
+    p,s=load_seed()
+    return start_task(session or Session(profile=tiering_profile()),request_id=str(uuid4()),programs=p,sources=s,
+        settings=replace(load_settings(),enabled=False,api_key=''),as_of=AS_OF,
+        strategy=strategy,provider=provider,recommendation_scope='broad',**kwargs)
+
+
+def screen(pid=STANFORD,profile=None,as_of=AS_OF,mutate=None):
+    p,s=load_seed();pool,context=build_broad_catalog(p,s)
+    profile=profile or tiering_profile()
+    program=next(p for p in pool if p.program_id==pid)
+    if mutate:mutate(context['entries'][pid]['facts'])
+    report=check_constraints(profile,program,s,as_of=as_of)
+    value=screen_program(profile,program,report,context,as_of=as_of)
+    return value,{c['rule_id']:c for c in value['checks']}
+
+
+def test_pool_has_83_exact_ids_without_changing_official_facts_or_registering_community_as_official():
+    p,s=load_seed();before=data_hash(p,s);pool,ctx=build_broad_catalog(p,s)
+    assert len(pool)==len({p.program_id for p in pool})==83
+    assert sum(p.program_id.startswith('community-') for p in pool)==63
+    assert {item.program_id:item for item in pool if not item.program_id.startswith('community-')}=={item.program_id:item for item in p}
+    assert len(s)==145 and data_hash(p,s)==before
+    assert all(not p.allowed_official_hosts and not p.field_sources for p in pool if p.program_id.startswith('community-'))
+    assert ctx['snapshot_date']=='2026-10-25'
+    assert len(ctx['data_hash'])==64
+
+
+@pytest.mark.parametrize('strategy',['fixed','react','plan'])
+def test_every_strategy_searches_checks_and_ranks_all_83_with_real_community_fields(strategy):
+    provider=BroadFixture();session=Session(profile=tiering_profile())
+    result=run(session,strategy,provider)
+    assert result['catalog_program_count']==83 and len(result['retrieved_program_ids'])==83
+    assert result['validation_passed'] and result['preliminary_recommendations']
+    assert len(result['community_data_hash'])==len(result['recommendation_data_hash'])==64
+    assert result['model_status']=='test_stub'
+    assert STANFORD in {r['program_id'] for r in result['preliminary_recommendations']}
+    payload=next(payload for purpose,payload in provider.calls if purpose=='rank')
+    assert payload['recommendation_catalog_count']==83
+    assert any(p['program_id']==STANFORD for p in payload['programs'])
+    report=next(r for r in payload['preliminary_reports'] if r['program_id']==STANFORD)
+    assert report['next_listed_round']['date']=='2026-12-08'
+    assert any(r['test']=='toefl_120' and '90' in r['summary'] for r in report['reported_language'])
+    assert all(r['personalized_tier'] is None for r in result['preliminary_recommendations'])
+    assert export_session(session)['result']['recommendation_scope']=='broad'
+    if strategy=='plan':assert session.agent_task.plan_state.revisions[-1]['status']=='completed'
+
+
+def test_explicit_search_finds_a_program_outside_the_old_top_ten():
+    p,s=load_seed();pool,ctx=build_broad_catalog(p,s)
+    t=Task('react','snapshot',pool,s,json.loads((PROJECT_ROOT/'config/agent.json').read_text()),broad_context=ctx)
+    driver=Execution(t,Session(profile=tiering_profile()),replace(load_settings(),enabled=False),AS_OF)
+    r=driver.dispatch('search_programs',{'program_ids':[STANFORD],'limit':1})
+    assert r['ok'] and r['data']['programs'][0]['program_id']==STANFORD
+    assert r['data']['programs'][0]['community_application_details']['reported_rounds'][0]['date']=='2026-12-08'
+
+
+def test_score_concerns_block_preliminary_recommendations_without_turning_community_into_verified_rules():
+    profile=tiering_profile();profile.english.total=80
+    r,c=screen(profile=profile)
+    assert c['english']['status']=='fail' and not r['eligible_for_preliminary']
+    profile.english.total=110
+    r,c=screen(profile=profile)
+    assert c['english']['status']=='reported_floor_met' and c['english']['basis']=='community_reported'
+    assert c['tuition']['status']=='unknown'
+
+
+def test_recommended_scores_and_other_intakes_do_not_become_hard_minimum_passes():
+    r,c=screen(mutate=lambda f:f['language'][0].update(kind='recommended',reported_total=None,summary='Recommended: 115'))
+    assert c['english']['status']=='unknown' and r['eligible_for_preliminary']
+    profile=tiering_profile();profile.intake=Intake(year=2028,term='fall')
+    _,c=screen(profile=profile)
+    assert c['english']['status']==c['deadline']['status']=='unknown'
+
+
+@pytest.mark.parametrize('as_of,status',[(date(2026,12,7),'reported_date_available'),(date(2026,12,8),'unknown'),(date(2026,12,9),'fail')])
+def test_reported_only_deadline_has_date_boundaries_and_keeps_cutoff_time_unknown(as_of,status):
+    _,checks=screen(as_of=as_of)
+    assert checks['deadline']['status']==status
+
+
+def test_past_priority_or_scholarship_round_does_not_close_admission():
+    for label in ['Priority deadline','Scholarship consideration deadline']:
+        _,checks=screen(mutate=lambda f:f.update(rounds=[{'date':'2026-11-01','label':label}]))
+        assert checks['deadline']['status']=='unknown'
+
+
+def test_applicable_official_checks_override_a_conflicting_reported_score():
+    pid='cmu-msaii-pittsburgh'
+    _,checks=screen(pid=pid,mutate=lambda f:f['language'][0].update(reported_total='120'))
+    assert checks['english']['basis']=='reviewed_official' and checks['english']['status']=='pass'
+
+
+def test_blocked_halt_and_doctoral_routes_are_not_suggested():
+    for pid in ['community-sss-mit-cse','community-sss-mit-eecs']:
+        r,c=screen(pid=pid)
+        assert not r['eligible_for_preliminary'] and c['availability']['status']=='fail'
+
+
+@pytest.mark.parametrize('attack',['invented','unretrieved','blocked','duplicate','failed_reason'])
+def test_validator_rejects_unsupported_preliminary_choices(attack):
+    p,s=load_seed();pool,ctx=build_broad_catalog(p,s);profile=tiering_profile()
+    selected=[next(p for p in pool if p.program_id==STANFORD)]
+    base=validate_shortlist(None,profile,pool,selected,s,as_of=AS_OF)
+    screens={p.program_id:screen_program(profile,p,check_constraints(profile,p,s,as_of=AS_OF),ctx,as_of=AS_OF) for p in selected}
+    pid='invented' if attack=='invented' else 'community-sss-mit-eecs' if attack=='unretrieved' else STANFORD
+    if attack=='blocked':screens[STANFORD]['eligible_for_preliminary']=False
+    if attack=='failed_reason':screens[STANFORD]['checks'][2]['status']='fail'
+    suggestion=dict(program_id=pid,reason_check_ids=['english'])
+    draft=RankingDraft(profile_version=profile.profile_version,status='insufficient_evidence',recommendations=[],pending_order=[],observations=[],suggestions=[suggestion]*(2 if attack=='duplicate' else 1))
+    result=finish_broad_result(base,draft,profile,pool,selected,ctx,screens)
+    assert not result['validation_passed']
+
+
+def test_budget_followup_rechecks_the_broad_pool_and_preserves_other_profile_fields():
+    session=Session(profile=tiering_profile());initial=run(session)
+    assert any(r['program_id']=='cmu-msaii-pittsburgh' for r in initial['preliminary_recommendations'])
+    gpa=session.profile.gpa.model_dump();second=run(session,message='Change my tuition budget to 50000')
+    assert second['catalog_program_count']==83 and second['profile_version']>initial['profile_version']
+    assert all(r['program_id']!='cmu-msaii-pittsburgh' for r in second['preliminary_recommendations'])
+    assert session.profile.gpa.model_dump()==gpa and not session.usage
+
+
+def test_reviewed_scope_remains_the_original_catalog_for_existing_benchmarks():
+    p,s=load_seed()
+    r=start_task(Session(profile=tiering_profile()),request_id=str(uuid4()),programs=p,sources=s,
+        settings=replace(load_settings(),enabled=False),as_of=AS_OF,strategy='fixed',provider=FixtureProvider())
+    assert r['catalog_program_count']==20 and 'preliminary_recommendations' not in r
+
+
+def test_hot_upgrade_keeps_session_and_provider_classes_in_an_isolated_process():
+    code="""
+from dataclasses import asdict,replace
+from datetime import date
+from gradmatch.session import Session,tiering_profile
+from gradmatch.providers import OpenAIProvider,INSTRUCTIONS
+from gradmatch.catalog import load_seed
+from gradmatch.config import load_settings
+import gradmatch.service,gradmatch.agent,gradmatch.planning,gradmatch.release as release
+session=Session(profile=tiering_profile());session.messages.append({'role':'user','content':'Preserve this fictional conversation'})
+before=asdict(session);session_kind=type(session);provider_kind=OpenAIProvider
+for name in release._ENGINE_MODULES:
+    module=__import__(name,fromlist=[''])
+    module.BROAD_ENGINE_VERSION=0
+for purpose in ['rank','act','plan']:
+    INSTRUCTIONS[purpose]=INSTRUCTIONS[purpose].split(' M6.3 BROAD CONTRACT:')[0]
+release._signature=None
+release.refresh_catalog_modules()
+from gradmatch.providers import OpenAIProvider as after_provider
+from gradmatch.service import start_task
+assert type(session) is session_kind and asdict(session)==before and after_provider is provider_kind
+assert INSTRUCTIONS['rank'].count('M6.3 BROAD CONTRACT:')==1
+p,s=load_seed()
+r=start_task(session,request_id='isolated-upgrade',programs=p,sources=s,settings=replace(load_settings(),enabled=False,api_key=''),as_of=date(2026,11,21),strategy='react',recommendation_scope='broad')
+assert r['catalog_program_count']==83 and r['preliminary_recommendations'] and not session.usage
+print('hot-upgrade passed')
+"""
+    result=subprocess.run([sys.executable,'-c',code],cwd=PROJECT_ROOT,capture_output=True,text=True,timeout=30)
+    assert result.returncode==0,result.stderr
+
+
+def test_actual_generate_uses_all_83_by_default_and_renders_unreviewed_recommendations(tmp_path,monkeypatch):
+    monkeypatch.setenv('GRADMATCH_DB_PATH',str(bootstrap_public_catalog(tmp_path/'public')))
+    monkeypatch.setenv('GRADMATCH_PUBLIC_CACHE_DIR',str(tmp_path/'public'))
+    monkeypatch.setenv('MODEL_ENABLED','false')
+    def deny(*args,**kwargs):raise AssertionError('No paid call in page verification')
+    monkeypatch.setattr(OpenAIProvider,'generate',deny)
+    app=AppTest.from_file(str(PROJECT_ROOT/'app.py'),default_timeout=30).run()
+    app.button(key='m35_load_example').click().run()
+    app.button(key='m2_generate').click().run()
+    assert not app.exception
+    r=app.session_state['m2_session'].current_result
+    assert r['recommendation_scope']=='broad' and r['catalog_program_count']==83
+    assert any(x['program_id'].startswith('community-') for x in r['preliminary_recommendations'])
+    assert any('Recommendation pool: 83 programs' in c.value for c in app.caption)
+    assert not app.session_state['m2_session'].usage
+    app.selectbox(key='m63_pool').set_value('Reviewed official records only').run()
+    app.button(key='m2_generate').click().run()
+    assert not app.exception and app.session_state['m2_session'].current_result['catalog_program_count']==20

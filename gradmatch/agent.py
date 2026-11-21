@@ -25,6 +25,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
+BROAD_ENGINE_VERSION = 1
 
 
 class BudgetLimit(ValueError):
@@ -42,6 +43,7 @@ class Task:
     programs: list
     sources: dict
     limits: dict
+    broad_context: dict | None = None
     task_id: str = field(default_factory=lambda: str(uuid4()))
     evidence_version: int = 0
     tools: int = 0
@@ -71,6 +73,9 @@ class Task:
 
     def summary(self):
         return dict(
+            recommendation_scope='broad' if getattr(self, 'broad_context', None) else 'reviewed',
+            catalog_program_count=len(self.programs),
+            community_data_hash=getattr(self,'broad_context',None).get('data_hash') if getattr(self,'broad_context',None) else None,
             task_id=self.task_id,
             strategy=self.strategy,
             data_mode=self.mode,
@@ -309,10 +314,10 @@ class Execution:
             raise ValueError("UNKNOWN_PROGRAM")
         found = [
             p
-            for p in retrieve(self.session.profile, t.programs, 10)
+            for p in retrieve(self.session.profile, t.programs, len(t.programs))
             if (not args.program_ids or p.program_id in args.program_ids)
             and (not args.discipline or p.discipline == args.discipline)
-        ][: args.limit]
+        ][: (83 if getattr(t, 'broad_context', None) and 'limit' not in args.model_fields_set else args.limit)]
         t.has_searched = True
         t.retrieved = list(dict.fromkeys(t.retrieved + [p.program_id for p in found]))
         return (
@@ -323,6 +328,7 @@ class Execution:
                         "name": p.program_name,
                         "degree": p.degree,
                         "campus": p.campus,
+                        **({'community_application_details': self.community_details(p.program_id)} if getattr(t, 'broad_context', None) else {}),
                         "sources": [
                             {
                                 "source_id": s.source_id,
@@ -345,6 +351,23 @@ class Execution:
             [],
             [],
         )
+
+    def community_details(self, pid):
+        context = self.task.broad_context
+        entry = context['entries'][pid]
+        facts = entry['facts']
+        return dict(source_status='community_unverified', source_date=context['snapshot_date'],
+            source_url=context['source_url'], source_intake=context['intake'],
+            reported_language=[{k:v for k,v in r.items() if k in {'test', 'kind', 'summary'}} for r in facts['language']],
+            reported_rounds=facts['rounds'], reported_gre=facts['reported_gre'],
+            application_url=facts['application_url'], source_reports_halted=entry['source_reports_halted'],
+            review_flags=entry['review_flags'])
+
+    def preliminary_screens(self, programs):
+        from gradmatch.broad_catalog import screen_program
+        return {p.program_id:screen_program(self.session.profile, p,
+            check_constraints(self.session.profile,p,self.task.sources,as_of=self.as_of,data_mode=self.task.mode),
+            self.task.broad_context,as_of=self.as_of) for p in programs}
 
     def tool_fetch_official_page(self, args):
         t = self.task
@@ -591,11 +614,14 @@ class Execution:
             }
         )
         t.checked_version = (args.profile_version, args.evidence_version)
+        from gradmatch.broad_catalog import compact_report, compact_screen
         return (
             {
                 "reports": [
-                    t.reports[p.program_id].model_dump(mode="json") for p in programs
-                ]
+                    compact_report(t.reports[p.program_id]) if getattr(t, 'broad_context', None)
+                    else t.reports[p.program_id].model_dump(mode="json") for p in programs
+                ],
+                **({'preliminary_reports': [compact_screen(r,self.session.profile) for r in self.preliminary_screens(programs).values()]} if getattr(t, 'broad_context', None) else {}),
             },
             [],
             [],
@@ -610,8 +636,11 @@ class Execution:
         ) or not set(args.program_ids) <= set(t.reports):
             raise ValueError("UNCHECKED_PROGRAMS")
         reports = [t.reports[p.program_id] for p in selected]
+        broad = getattr(t, 'broad_context', None)
+        preliminary = self.preliminary_screens(selected) if broad else {}
         pairs = [
             (p, r) for p, r in zip(selected, reports) if r.hard_checks_status != "fail"
+            and (not broad or preliminary[p.program_id]['eligible_for_preliminary'])
         ]
         payload = {
             "profile": self.session.profile.model_dump(mode="json"),
@@ -661,6 +690,18 @@ class Execution:
             else None,
             "referenced_program_ids": [],
         }
+        if broad:
+            from gradmatch.broad_catalog import compact_program, compact_report, compact_screen
+            used_source_ids={sid for p,r in pairs for check in r.checks for sid in check.source_ids}
+            used_source_ids.update(sid for p,r in pairs for feature in p.goal_features for sid in feature.source_ids)
+            used_source_ids.update(sid for p,r in pairs for item in p.admission_evidence for sid in item.source_ids)
+            payload.update(recommendation_scope='broad', recommendation_catalog_count=len(t.programs),
+                programs=[compact_program(p) for p,_ in pairs], reports=[compact_report(r) for _,r in pairs],
+                sources=[dict(source_id=s.source_id,program_id=s.program_id,url=str(s.url),field_groups=s.field_groups)
+                    for s in t.sources.values() if s.source_id in used_source_ids],
+                preliminary_reports=[compact_screen(preliminary[p.program_id],self.session.profile) for p,_ in pairs],
+                allowed_preliminary_program_ids=[p.program_id for p,_ in pairs],
+                community_snapshot={k:v for k,v in broad.items() if k!='entries'})
         t.draft = self.generate(RankingDraft, "rank", payload, self.session)
         t.validated = None
         return (
@@ -715,6 +756,10 @@ class Execution:
             as_of=self.as_of,
             data_mode=t.mode,
         )
+        if getattr(t, 'broad_context', None):
+            from gradmatch.broad_catalog import finish_broad_result
+            finish_broad_result(t.validated,t.draft,self.session.profile,t.programs,selected,t.broad_context,
+                self.preliminary_screens(selected),deterministic_only=deterministic_only)
         # An unvisited program is never silently presented as checked.
         t.validated.update(
             data_mode=t.mode,
@@ -729,7 +774,8 @@ class Execution:
             ),
             evidence_notice="Live mode supplements reviewed snapshots. Only sources in the live receipts were fetched for this task; other facts retain their recorded snapshot dates."
             if t.mode == "live"
-            else "Reviewed snapshots only; no official page was fetched for this task.",
+            else ('Reviewed official snapshots plus labelled CS Grad community data; no page was fetched for this task.'
+                  if getattr(t, 'broad_context', None) else "Reviewed snapshots only; no official page was fetched for this task."),
         )
         return t.validated, [], []
 
@@ -751,6 +797,9 @@ class Execution:
             if m["role"] != "assistant" or m.get("profile_version") == version
         ]
         prior = self.session.current_result or self.session.previous_result or {}
+        tools = {name:model.model_json_schema() for name,model in TOOL_ARGS.items()}
+        if getattr(t, 'broad_context', None):
+            tools['search_programs']['properties']['limit']['default'] = 83
         return dict(
             profile=self.session.profile.model_dump(mode="json"),
             declared_unknown_fields=sorted(self.session.unknown_fields),
@@ -758,6 +807,7 @@ class Execution:
             previous_programs=[
                 {"program_id": p["program_id"], "identity": p["identity"]}
                 for p in prior.get("recommendations", [])
+                + prior.get('preliminary_recommendations', [])
                 + prior.get("pending_verification", [])
             ],
             catalog_index=[
@@ -769,6 +819,7 @@ class Execution:
                         "degree": p.degree,
                         "campus": p.campus,
                     },
+                    **({'community_application_details': self.community_details(p.program_id)} if getattr(t, 'broad_context', None) else {}),
                     "sources": [
                         {"source_id": s.source_id, "field_groups": s.field_groups}
                         for s in t.sources.values()
@@ -779,11 +830,10 @@ class Execution:
             ],
             retrieved_program_ids=t.retrieved,
             data_mode=t.mode,
+            recommendation_scope='broad' if getattr(t, 'broad_context', None) else 'reviewed',
             evidence_version=t.evidence_version,
             task={"tool_calls": t.tools, "model_calls": t.models, "limits": t.limits},
-            tools={
-                name: model.model_json_schema() for name, model in TOOL_ARGS.items()
-            },
+            tools=tools,
             ask_user_schema=AskArgs.model_json_schema(),
             current_state=self.current_state(),
             observations=observations[-6:],
@@ -1026,6 +1076,7 @@ def run_task(
     data_mode,
     new_task,
     fetcher,
+    broad_context=None,
 ):
     from gradmatch.service import prepare_input, response_text
 
@@ -1041,13 +1092,16 @@ def run_task(
     usage_start = len(session.usage)
     run_id = str(uuid4())
     task = session.agent_task
-    if task is None or new_task or (task.strategy, task.mode) != (strategy, data_mode):
+    if (task is None or new_task or (task.strategy, task.mode) != (strategy, data_mode)
+            or bool(getattr(task, 'broad_context', None)) != bool(broad_context)
+            or (broad_context and getattr(task,'broad_context',{}).get('data_hash') != broad_context['data_hash'])):
         task = Task(
             strategy,
             data_mode,
             deepcopy(programs),
             deepcopy(sources),
             json.loads((PROJECT_ROOT / "config/agent.json").read_text()),
+            broad_context=deepcopy(broad_context),
         )
         session.agent_task = task
     driver = Execution(task, session, settings, as_of, provider, fetcher)

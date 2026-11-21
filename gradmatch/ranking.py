@@ -1,11 +1,13 @@
 """Shared structured ranking contract and stable fixed top-k retrieval."""
 
 from typing import Literal
+from pydantic import Field
 
 from gradmatch.schemas import Record
 
 
 Tier = Literal["Lottery", "Reach", "Target", "Safer"]
+BROAD_ENGINE_VERSION = 1
 TIERS = ["Lottery", "Reach", "Target", "Safer"]
 
 
@@ -25,12 +27,18 @@ class Observation(Record):
     source_ids: list[str]
 
 
+class PreliminaryRecommendationDraft(Record):
+    program_id: str
+    reason_check_ids: list[Literal['english', 'deadline', 'gre', 'tuition', 'reviewed_eligibility', 'application_info']] = Field(min_length=1, max_length=4)
+
+
 class RankingDraft(Record):
     profile_version: int
     status: Literal["completed", "insufficient_evidence", "infeasible"]
     recommendations: list[RecommendationDraft]
     pending_order: list[str]
     observations: list[Observation]
+    suggestions: list[PreliminaryRecommendationDraft] = Field(default_factory=list, max_length=8)
 
 
 def retrieve(profile, programs, top_k):

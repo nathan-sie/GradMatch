@@ -29,11 +29,16 @@ def render_m2(database, *, directory=None):
     session = st.session_state["m2_session"]
     st.subheader("Applicant profile and recommendations")
     strategy_label=st.selectbox('Execution method',['ReAct agent','Plan-and-replan agent','Fixed baseline'],key='m4_strategy',disabled=session.active)
-    mode_label=st.selectbox('Evidence mode',['Reviewed snapshots','Live official pages'],key='m4_mode',disabled=session.active)
+    if st.session_state.get('m4_mode')=='Reviewed snapshots':
+        st.session_state['m4_mode']='Catalog snapshots'
+    mode_label=st.selectbox('Evidence mode',['Catalog snapshots','Live official pages'],key='m4_mode',disabled=session.active)
+    pool_label=st.selectbox('Recommendation pool', ['All 83 programs (official + community data)', 'Reviewed official records only'],key='m63_pool',disabled=session.active)
+    recommendation_scope='broad' if pool_label.startswith('All 83') else 'reviewed'
     strategy={'ReAct agent':'react','Plan-and-replan agent':'plan','Fixed baseline':'fixed'}[strategy_label]
-    data_mode='snapshot' if mode_label=='Reviewed snapshots' else 'live'
+    data_mode='live' if mode_label=='Live official pages' else 'snapshot'
     st.caption('ReAct chooses its next tool from observations. Plan-and-replan creates 3-6 steps and revises them after conditions change or execution fails (at most 3 revisions). Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
     st.info("Pilot tiering uses reviewed official cohort statistics. Lottery / Reach are planning labels, not personal admission probabilities. Target / Safer require comparable cases and may remain empty. Other programs may still need verification.")
+    st.caption('The default recommendation pool includes all 83 programs. The agent may recommend unreviewed programs using labelled CS Grad language, GRE and deadline data. Missing GPA, tuition or admission cases remain explicit; personal tiers still require their separate evidence.')
     st.caption("When you enable model calls, your profile and submitted messages are sent to OpenAI. Use synthetic information for milestone testing. Session history lasts only for this browser connection and is not stored in the public catalog.")
     left, right = st.columns(2)
     if left.button("Load synthetic example", key="m2_load_example", disabled=session.active):
@@ -80,7 +85,7 @@ def render_m2(database, *, directory=None):
         with st.spinner("Checking the current profile and evidence..."):
             response = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
                 settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(),
-                strategy=strategy,data_mode=data_mode,**kwargs)
+                strategy=strategy,data_mode=data_mode,recommendation_scope=recommendation_scope,**kwargs)
         st.session_state["m2_last_response"] = response
         st.rerun()
     if form:
@@ -313,13 +318,19 @@ def profile_form(profile):
 
 def render_result(result, programs, sources):
     names = {p.program_id: f"{p.university} — {p.degree}, {p.campus}" for p in programs}
+    for field in ['recommendations', 'preliminary_recommendations', 'pending_verification', 'excluded', 'preliminary_excluded']:
+        for item in result.get(field, []):
+            identity=item.get('identity',{})
+            names.setdefault(item['program_id'], identity.get('university','') + ' — ' + identity.get('program_name',item['program_id']))
     st.subheader("Current assessment")
     st.caption(f"Profile v{result['profile_version']} · Assessed {result['as_of_date']} · Model: {result['model_status']}")
     if result["model_status"] == "not_configured": st.warning(result["message"])
     if result["status"] == "infeasible":
         st.warning("Every program in this catalog has a verified hard failure under your current conditions. This conclusion applies only to this catalog.")
-    elif result["status"] == "insufficient_evidence":
+    elif result["status"] == "insufficient_evidence" and result.get('recommendation_scope') != 'broad':
         st.warning("The evidence does not support a complete tiered shortlist. Unknown requirements are not passes, and pending candidates are not recommendations.")
+    if result.get('recommendation_scope') == 'broad':
+        render_broad_recommendations(result)
     if result["changes_from_previous"].get("previous_profile_version") is not None:
         delta = result["changes_from_previous"]
         with st.expander("Changes from the previous assessment", expanded=True):
@@ -357,7 +368,12 @@ def render_result(result, programs, sources):
         if len(items) < 3:
             st.caption("Shortfall: Target and Safer require at least two independent, recent comparable admission cases; this pilot has no qualifying cases." if tier in {"Target","Safer"} else "Shortfall: only reviewed cohort evidence supports these planning tiers; eligibility and budget must also pass.")
     st.write(f"**Pending verification ({len(result['pending_verification'])})**")
-    for item in result["pending_verification"]:
+    pending_details=result['pending_verification']
+    if result.get('recommendation_scope')=='broad':
+        show_table([{'Program':names[i['program_id']],'Missing evidence':', '.join(i['missing_fields'])} for i in pending_details])
+        pending_details=pending_details[:5]
+        st.caption('Detailed checks below show the first five pending records. The session JSON contains the complete assessed pool and all screening findings.')
+    for item in pending_details:
         with st.expander(names[item["program_id"]]):
             st.markdown(f"[Official program website]({item['identity']['official_url']})")
             st.write("Needs verification:", ", ".join(item["missing_fields"]))
@@ -377,6 +393,12 @@ def render_result(result, programs, sources):
         for item in result["excluded"]:
             st.write(names[item["program_id"]])
             for reason in item["reasons"]: st.caption(reason)
+    if result.get('preliminary_excluded'):
+        with st.expander(f"Additional screening findings ({len(result['preliminary_excluded'])})"):
+            for item in result['preliminary_excluded']:
+                st.write(names[item['program_id']])
+                for check in item['reasons']:
+                    st.caption(check['basis'] + ': ' + check['explanation'])
     if result["observations"]:
         st.write("**Evidence-backed follow-up observations**")
         for item in result["observations"]:
@@ -385,6 +407,37 @@ def render_result(result, programs, sources):
     if result["validation_errors"]:
         with st.expander("Blocked or corrected model output"):
             st.json(result["validation_errors"])
+
+
+def render_broad_recommendations(result):
+    items=result['preliminary_recommendations']
+    st.subheader('Recommended programs from the broader pool')
+    st.caption(f"Recommendation pool: {result['recommendation_catalog_count']} programs · {result['reviewed_program_count']} with additional official records · Community snapshot {result['community_snapshot']['source_date']}")
+    st.info('These recommendations can use preliminary CS Grad information. Missing GPA, costs and other requirements still need confirmation. A recommendation here does not establish complete eligibility or a personal admission tier.')
+    if result['preliminary_selection_method']=='deterministic_screening':
+        st.caption('Selection method: rule-based screening. No model ranking has run for these recommendations.')
+    if not items:
+        st.write('No preliminary program recommendation was selected in this run.')
+    for item in items:
+        identity=item['identity']; checks=item['checks']
+        st.markdown(f"[{identity['university']} — {identity['program_name']}]({identity['official_url']})")
+        st.caption('Preliminary recommendation · Personal tier: not assigned')
+        for reason in item['reasons']:
+            st.write(reason['explanation'])
+        if checks['next_listed_round']:
+            row=checks['next_listed_round']
+            st.write(f"Next listed application round: {row['date']} — {row['label']}")
+        with st.expander('Reported requirements, deadlines and source'):
+            show_table([{'Check':c['rule_id'].replace('_',' ').title(),'Status':c['status'].replace('_',' '),'Basis':c['basis'].replace('_',' '),'Details':c['explanation']} for c in checks['checks']])
+            st.write('Reported language policies:')
+            for rule in checks['reported_language']:
+                st.caption(rule['test_label'] + ' — ' + rule['summary'])
+            st.write('Listed application rounds:')
+            for row in checks['listed_rounds']:
+                st.caption(row['date'] + ' — ' + row['label'])
+            st.write('Reported application fee:',checks['application_fee'])
+            st.markdown(f"[Reported application portal]({checks['application_url']}) · [CS Grad source snapshot]({checks['source_url']})")
+            st.caption(f"Community source date: {checks['source_date']} · Intake: {checks['source_intake']} · Not independently verified")
 
 
 def show_citation(citation):

@@ -1,0 +1,232 @@
+"""An 83-program recommendation pool with explicitly preliminary CS Grad facts."""
+
+from datetime import date
+from decimal import Decimal
+import hashlib
+import json
+
+from gradmatch.community import application_fee_label
+from gradmatch.schemas import ProgramRecord
+
+
+MODEL_CONTRACTS = {
+    'rank': " M6.3 BROAD CONTRACT: When recommendation_scope=broad, the same ranking call must also select up to eight useful preliminary program recommendations in suggestions. suggestions is separate from evidence-validated tiered recommendations. Choose program_id only from allowed_preliminary_program_ids, with reason_check_ids naming existing non-failing checks in preliminary_reports: english, deadline, gre, tuition, reviewed_eligibility or application_info. Community-backed or incomplete candidates are allowed in suggestions even when recommendation_ready=false; do not assign them a tier, probability, verified eligibility or budget pass. Their explanations and source dates are rendered by code from the selected check IDs. Use the full supplied pool, not only the officially reviewed programs. Do not put community evidence into official observations or formal recommendations. Keep suggestions=[] for reviewed-only scope. All existing formal tier rules remain in force.",
+    'act': " M6.3 BROAD CONTRACT: In broad scope the catalog includes all 83 maintained programs, with community language, GRE and deadline details in catalog_index. An initial unfiltered search may use limit=83; check and rank the retrieved pool, including unreviewed programs. An exact requested program ID can be searched anywhere in this index. Missing official GPA/tuition does not prevent preliminary suggestions from labelled community facts. Do not spend the task trying to officially verify all 83 records. Use the same shared rank_programs and validate_shortlist tools.",
+    'plan': " M6.3 BROAD CONTRACT: In broad scope, an initial empty-scope search covers all 83 maintained programs. Use empty program_ids for following checks/ranking to refer to the retrieved pool. The ranking tool can propose preliminary suggestions from community facts; missing official GPA/tuition does not require fetching every program before ranking. Formal personal tiers still need their original evidence."
+}
+
+
+def install_provider_instructions(instructions):
+    """Update the existing instruction dictionary without recreating provider classes."""
+    for purpose, text in MODEL_CONTRACTS.items():
+        if 'M6.3 BROAD CONTRACT:' not in instructions.get(purpose, ''):
+            instructions[purpose] += text
+
+
+def build_broad_catalog(programs, sources):
+    from gradmatch.directory import build_directory
+
+    directory = build_directory(programs, sources)
+    by_id = {p.program_id: p for p in programs}
+    result, entries = [], {}
+    for row in directory['records']:
+        pid = row['linked_program_id'] or 'community-' + row['source_id']
+        program = by_id.get(pid)
+        if program is None:
+            title = row['program_name']
+            # This classification is a retrieval hint, not a university policy.
+            discipline = 'ECE' if any(x in title.lower() for x in ['electrical', 'computer engineering']) else 'CS'
+            program = ProgramRecord(program_id=pid, university=row['university'], school='Not independently reviewed',
+                program_name=title, degree=title, campus='Needs verification', track='Community-reported program; exact scope needs review',
+                discipline=discipline, official_url=row['program_url'], allowed_official_hosts=[],
+                candidate_source_id=row['source_id'], catalog_version='m63-community-overlay',
+                notes=['Preliminary CS Grad identity. Discipline is a title-based retrieval hint. No official policy or admission tier is established.'])
+        result.append(program)
+        entries[pid] = dict(facts=row['community_facts'], source_id=row['source_id'],
+            source_reports_halted=row['source_reports_halted'], review_flags=row['review_flags'],
+            officially_linked=bool(row['linked_program_id']))
+    context = dict(entries=entries, source_url=directory['source_url'], source_sha256=directory['source_sha256'],
+        snapshot_date=directory['upstream_generated'], intake=directory['source_intake'],
+        official_program_count=len(programs), official_source_count=len(sources))
+    context['data_hash']=hashlib.sha256(json.dumps(context,sort_keys=True).encode()).hexdigest()
+    return result, context
+
+
+def _rounds(facts, profile):
+    result = []
+    for row in facts['rounds']:
+        label = row['label'].lower()
+        if any(word in label for word in ['scholarship', 'fellowship', 'reduced app fee', 'app fee discount']):
+            continue
+        if profile.applicant_category == 'domestic' and 'international' in label:
+            continue
+        if profile.study_mode == 'part_time' and ('full-time only' in label or 'full time only' in label):
+            continue
+        result.append(row)
+    return result
+
+
+def screen_program(profile, program, report, context, *, as_of):
+    """Code-owned preliminary checks; no unofficial value establishes a verified pass."""
+    entry = context['entries'][program.program_id]
+    facts = entry['facts']
+    official = {c.rule_id: c for c in report.checks}
+    same_cycle = bool(profile.intake and f'{profile.intake.term.title()} {profile.intake.year}' == context['intake'])
+    checks = []
+
+    def add(rule, status, explanation, basis='community_reported'):
+        checks.append(dict(rule_id=rule, status=status, explanation=explanation, basis=basis))
+
+    failed_official = [c for c in report.checks if c.status == 'fail']
+    if failed_official:
+        add('reviewed_eligibility', 'fail', '; '.join(c.explanation for c in failed_official), 'reviewed_official')
+    else:
+        add('reviewed_eligibility', 'unknown', 'Official eligibility is incomplete; missing facts do not establish a pass.', 'reviewed_official')
+    if same_cycle and entry['source_reports_halted']:
+        add('availability', 'fail', 'CS Grad reports a halt for this intake; confirm current availability.')
+    elif 'source_mentions_doctoral_admission' in entry['review_flags']:
+        add('availability', 'fail', 'The reported entry describes a doctoral admission route, rather than an independently reviewed terminal master route.')
+    else:
+        add('availability', 'unknown', 'Current admission availability and exact program scope still need confirmation.')
+
+    english = official.get('english')
+    if english and english.status in {'pass', 'fail', 'not_applicable'}:
+        add('english', english.status.value, english.explanation, 'reviewed_official')
+    elif not same_cycle:
+        add('english', 'unknown', 'The tracker score policies apply only to ' + context['intake'] + '; the selected intake needs review.')
+    elif profile.english is None:
+        add('english', 'unknown', 'Provide the selected English test and original score to compare the reported policy.')
+    else:
+        score = profile.english
+        rule = next(r for r in facts['language'] if r['test'] == score.version)
+        mismatch = score.test_date and ((score.version == 'toefl_120' and score.test_date >= date(2026, 1, 21))
+            or (score.version == 'toefl_6' and score.test_date < date(2026, 1, 21)))
+        if mismatch:
+            add('english', 'unknown', 'The test version/date need correction; no score conversion is performed.')
+        elif rule['kind'] == 'not_accepted':
+            add('english', 'fail', 'CS Grad reports the selected test is not accepted; confirm alternatives.')
+        elif rule['reported_total'] is not None:
+            below = score.total < Decimal(rule['reported_total'])
+            add('english', 'fail' if below else 'reported_floor_met',
+                f"{rule['test_label']} {score.total}: " + ('below' if below else 'at/above')
+                + f" the reported overall minimum {rule['reported_total']}. Subscores, test age, waivers and other conditions remain unverified.")
+        else:
+            add('english', 'unknown', rule['test_label'] + ': ' + rule['summary'] + '; this is not a verified overall-minimum pass.')
+
+    deadline = official.get('deadline')
+    next_round = None
+    if deadline and deadline.status in {'pass', 'fail'}:
+        add('deadline', deadline.status.value, deadline.explanation, 'reviewed_official')
+    elif not same_cycle:
+        add('deadline', 'unknown', 'No tracker deadline is carried over to another intake.')
+    else:
+        rounds = _rounds(facts, profile)
+        upcoming = sorted((r for r in rounds if date.fromisoformat(r['date']) >= as_of), key=lambda r: r['date'])
+        conflict = any('conflict' in r['label'].lower() for r in rounds)
+        if upcoming:
+            next_round = upcoming[0]
+            today = date.fromisoformat(next_round['date']) == as_of
+            add('deadline', 'unknown' if today or conflict else 'reported_date_available',
+                f"Listed round: {next_round['date']} — {next_round['label']}. "
+                + ('The cutoff time/time zone or conflicting schedule needs confirmation.' if today or conflict
+                   else 'Verify audience, cutoff time and current availability before applying.'))
+        elif rounds and not conflict and any('only deadline' in r['label'].lower() or 'only round' in r['label'].lower() or 'final' in r['label'].lower() for r in rounds):
+            add('deadline', 'fail', 'All applicable listed rounds have passed, including an explicitly labelled final/only round. Verify whether the program has published an update.')
+        else:
+            add('deadline', 'unknown', 'No future applicable round is established; a past priority/scholarship date alone does not close admission.')
+
+    gre = official.get('gre')
+    if gre and gre.status in {'pass', 'fail', 'not_applicable'}:
+        add('gre', gre.status.value, gre.explanation, 'reviewed_official')
+    elif same_cycle:
+        marker = facts['reported_gre']
+        add('gre', 'reported_optional' if marker in {'optional', 'not_required', 'not_accepted'} else 'unknown',
+            'Reported GRE policy: ' + marker.replace('_', ' ') + '. ' + ('A GRE result has not been provided; confirm the requirement.' if marker == 'required' and profile.gre is None else 'Check accepted format, validity and any exceptions.'))
+    else:
+        add('gre', 'unknown', 'The selected intake has no applicable tracker GRE review.')
+    tuition = official.get('tuition')
+    add('tuition', tuition.status.value, tuition.explanation, 'reviewed_official')
+    add('application_info', 'reported_information', 'A reported application portal and dated community policy snapshot are available.')
+    return dict(program_id=program.program_id, profile_version=profile.profile_version, as_of_date=str(as_of),
+        eligible_for_preliminary=not any(c['status'] == 'fail' for c in checks), checks=checks,
+        next_listed_round=next_round, listed_rounds=facts['rounds'], application_url=facts['application_url'],
+        application_fee=application_fee_label(facts), reported_gre=facts['reported_gre'],
+        reported_language=[{k:v for k,v in r.items() if k != 'original_value'} for r in facts['language']],
+        source_url=context['source_url'], source_date=context['snapshot_date'], source_intake=context['intake'],
+        source_status='community_unverified')
+
+
+def compact_program(program):
+    if program.catalog_version=='m63-community-overlay':
+        return dict(program_id=program.program_id,university=program.university,program_name=program.program_name,
+            discipline_hint=program.discipline,data_status='community_unverified',goal_features=[],admission_evidence=[])
+    return program.model_dump(mode='json', include={'program_id', 'university', 'program_name', 'degree', 'campus',
+        'track', 'discipline', 'gpa', 'english', 'gre_policy', 'deadlines', 'tuition', 'goal_features', 'admission_evidence'})
+
+
+def compact_report(report):
+    return dict(program_id=report.program_id, profile_version=report.profile_version,
+        hard_checks_status=report.hard_checks_status.value, recommendation_ready=report.recommendation_ready,
+        unknown_checks=[c.rule_id for c in report.checks if c.status=='unknown'],
+        checks=[dict(rule_id=c.rule_id,status=c.status.value,reason_code=c.reason_code,source_ids=c.source_ids) for c in report.checks if c.status!='unknown'])
+
+
+def compact_screen(screen, profile):
+    checks=[]
+    for check in screen['checks']:
+        value={k:v for k,v in check.items() if k!='explanation'}
+        if check['status']!='unknown' or check['rule_id'] in {'english','gre'}:
+            value['explanation']=check['explanation']
+        checks.append(value)
+    return dict(program_id=screen['program_id'],eligible_for_preliminary=screen['eligible_for_preliminary'],
+        checks=checks,next_listed_round=screen['next_listed_round'],reported_gre=screen['reported_gre'],
+        reported_language=[{k:v for k,v in rule.items() if k in {'test','kind','summary','reported_total'}}
+            for rule in screen['reported_language'] if not profile.english or rule['test']==profile.english.version])
+
+
+def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False):
+    """Validate model-selected IDs and attach actual recommendations to the assessment."""
+    from gradmatch.validation import identity, blocking_validation_errors
+
+    selected = {p.program_id:p for p in retrieved}
+    formal_ids = {r['program_id'] for r in result['recommendations']}
+    allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary'] and pid not in formal_ids}
+    suggestions = list(draft.suggestions) if draft else []
+    method = 'model_selected'
+    if deterministic_only:
+        from gradmatch.ranking import PreliminaryRecommendationDraft
+        def key(pid):
+            checks = reports[pid]['checks']
+            positives = sum(c['status'] in {'pass', 'not_applicable', 'reported_floor_met', 'reported_date_available', 'reported_optional'} for c in checks)
+            return (-positives, selected[pid].university.casefold(), selected[pid].program_name.casefold())
+        suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=['english', 'deadline', 'gre']) for pid in sorted(allowed,key=key)[:8]]
+        method = 'deterministic_screening'
+    accepted, seen = [], set()
+    for item in suggestions:
+        codes = []
+        if item.program_id in seen:codes.append('DUPLICATE_PRELIMINARY_PROGRAM')
+        seen.add(item.program_id)
+        if item.program_id not in allowed:codes.append('PRELIMINARY_PROGRAM_NOT_ELIGIBLE_OR_RETRIEVED')
+        screen = reports.get(item.program_id)
+        checks = {c['rule_id']:c for c in screen['checks']} if screen else {}
+        if not item.reason_check_ids or any(k not in checks or checks[k]['status']=='fail' for k in item.reason_check_ids):
+            codes.append('UNSUPPORTED_PRELIMINARY_REASON')
+        if codes:
+            result['validation_errors'].append(dict(program_id=item.program_id,codes=codes))
+            continue
+        p = selected[item.program_id]
+        accepted.append(dict(program_id=p.program_id,identity=identity(p),recommendation_basis='preliminary_community',
+            selection_method=method, personalized_tier=None, reasons=[checks[k] for k in dict.fromkeys(item.reason_check_ids)],
+            checks=screen, limitations=['This recommendation uses preliminary information and is not a verified eligibility pass.',
+                'Missing GPA, tuition, preparation or admission-case evidence remains unresolved. No personal admission tier is assigned.']))
+    blocked = [dict(program_id=pid,identity=identity(p),reasons=[c for c in reports[pid]['checks'] if c['status']=='fail'])
+        for pid,p in selected.items() if not reports[pid]['eligible_for_preliminary']]
+    blocked_ids = {r['program_id'] for r in blocked}
+    result['pending_verification'] = [r for r in result['pending_verification'] if r['program_id'] not in blocked_ids]
+    result.update(recommendation_scope='broad', preliminary_recommendations=accepted, preliminary_excluded=blocked,
+        preliminary_selection_method=method, recommendation_catalog_count=len(programs),
+        community_snapshot=dict(source_url=context['source_url'],source_date=context['snapshot_date'],intake=context['intake'],source_sha256=context['source_sha256']),
+        community_data_hash=context['data_hash'],
+        recommendation_data_hash=hashlib.sha256(json.dumps({'programs':result['data_hash'],'community':context['data_hash']},sort_keys=True).encode()).hexdigest(),
+        reviewed_program_count=context['official_program_count'], validation_passed=not blocking_validation_errors(result))
+    return result

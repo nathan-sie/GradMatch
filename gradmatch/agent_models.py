@@ -3,6 +3,7 @@
 from typing import Literal
 from pydantic import Field
 from gradmatch.schemas import Record
+BROAD_ENGINE_VERSION = 1
 
 Group = Literal[
     "credits",
@@ -18,10 +19,10 @@ Group = Literal[
 
 
 class SearchArgs(Record):
-    program_ids: list[str] = Field(default_factory=list, max_length=10)
+    program_ids: list[str] = Field(default_factory=list, max_length=83)
     discipline: Literal["CS", "ECE"] | None = None
     target_fields: list[Group] = Field(default_factory=list)
-    limit: int = Field(default=10, ge=1, le=10)
+    limit: int = Field(default=10, ge=1, le=83)
 
 
 class FetchArgs(Record):
@@ -31,7 +32,7 @@ class FetchArgs(Record):
 
 
 class CheckArgs(Record):
-    program_ids: list[str] = Field(min_length=1, max_length=10)
+    program_ids: list[str] = Field(min_length=1, max_length=83)
     profile_version: int = Field(ge=1)
     evidence_version: int = Field(ge=0)
 
@@ -54,7 +55,7 @@ class Action(Record):
         "ask_user",
         "finish",
     ]
-    arguments_json: str = Field(max_length=3000)
+    arguments_json: str = Field(max_length=12000)
     summary: str = Field(max_length=1000)
 
 

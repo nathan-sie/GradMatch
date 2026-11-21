@@ -12,6 +12,7 @@ from gradmatch.constraints import evidence_ids
 from gradmatch.schemas import Record
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS
 from gradmatch.validation import blocking_validation_errors
+BROAD_ENGINE_VERSION = 1
 
 Criterion = Literal[
     "candidates_available",
@@ -33,7 +34,7 @@ class PlanStep(Record):
         "validate_shortlist",
         "ask_user",
     ]
-    program_ids: list[str] = Field(max_length=10)
+    program_ids: list[str] = Field(max_length=83)
     target_fields: list[Group] = Field(max_length=4)
     source_id: str | None
     depends_on: list[str] = Field(max_length=6)
@@ -257,7 +258,7 @@ class Planner:
             return {
                 "program_ids": step["program_ids"],
                 "target_fields": step["target_fields"],
-                "limit": 10,
+                "limit": 83 if getattr(self.t, 'broad_context', None) else 10,
             }
         if tool == "fetch_official_page":
             return {

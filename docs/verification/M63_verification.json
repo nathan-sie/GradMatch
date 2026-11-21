@@ -1,0 +1,96 @@
+{
+  "milestone": "M6.3",
+  "status": "passed",
+  "strategies": {
+    "fixed": {
+      "status": "passed",
+      "catalog_programs": 83,
+      "retrieved_programs": 83,
+      "preliminary_recommendations": 8,
+      "community_only_recommended_ids": [
+        "community-sss-stanford-mscs",
+        "community-a-cmu-mits",
+        "community-a-cmu-msmite",
+        "community-a-columbia-mscs",
+        "community-a-minus-brown-scmcs",
+        "community-a-minus-cmu-sesv",
+        "community-a-minus-columbia-ce",
+        "community-a-minus-columbia-ds"
+      ],
+      "stanford_next_listed_round": {
+        "date": "2026-12-08",
+        "label": "Only deadline (full-time MS and part-time HCP)"
+      },
+      "fixture_calls": 1,
+      "community_data_hash": "6d7bcc36fe3e10d2d00893bddc9d2ad51ccc7d83a8e4cf714e4b239de688d799",
+      "recommendation_data_hash": "4ea48ccfb1f7570362373f008227ffb13d2683282641ee250544afbef71492f9",
+      "raw_model_transport_requests": 0,
+      "ranking_payload_characters": 242894
+    },
+    "react": {
+      "status": "passed",
+      "catalog_programs": 83,
+      "retrieved_programs": 83,
+      "preliminary_recommendations": 8,
+      "community_only_recommended_ids": [
+        "community-sss-stanford-mscs",
+        "community-a-cmu-mits",
+        "community-a-cmu-msmite",
+        "community-a-columbia-mscs",
+        "community-a-minus-brown-scmcs",
+        "community-a-minus-cmu-sesv",
+        "community-a-minus-columbia-ce",
+        "community-a-minus-columbia-ds"
+      ],
+      "stanford_next_listed_round": {
+        "date": "2026-12-08",
+        "label": "Only deadline (full-time MS and part-time HCP)"
+      },
+      "fixture_calls": 4,
+      "community_data_hash": "6d7bcc36fe3e10d2d00893bddc9d2ad51ccc7d83a8e4cf714e4b239de688d799",
+      "recommendation_data_hash": "4ea48ccfb1f7570362373f008227ffb13d2683282641ee250544afbef71492f9",
+      "raw_model_transport_requests": 0,
+      "ranking_payload_characters": 242894
+    },
+    "plan": {
+      "status": "passed",
+      "catalog_programs": 83,
+      "retrieved_programs": 83,
+      "preliminary_recommendations": 8,
+      "community_only_recommended_ids": [
+        "community-sss-stanford-mscs",
+        "community-a-cmu-mits",
+        "community-a-cmu-msmite",
+        "community-a-columbia-mscs",
+        "community-a-minus-brown-scmcs",
+        "community-a-minus-cmu-sesv",
+        "community-a-minus-columbia-ce",
+        "community-a-minus-columbia-ds"
+      ],
+      "stanford_next_listed_round": {
+        "date": "2026-12-08",
+        "label": "Only deadline (full-time MS and part-time HCP)"
+      },
+      "fixture_calls": 2,
+      "community_data_hash": "6d7bcc36fe3e10d2d00893bddc9d2ad51ccc7d83a8e4cf714e4b239de688d799",
+      "recommendation_data_hash": "4ea48ccfb1f7570362373f008227ffb13d2683282641ee250544afbef71492f9",
+      "raw_model_transport_requests": 0,
+      "ranking_payload_characters": 242894
+    }
+  },
+  "official_programs": 20,
+  "official_sources": 145,
+  "official_data_hash": "8304cb75ddbc4c5453841745290d8b9bc32d99d52c09ea1b352ce981608b4478",
+  "databases_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "databases_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "paid_model_requests": 0,
+  "external_requests": 0,
+  "real_model_acceptance": "not_run",
+  "benchmark_scores": "not_measured"
+}

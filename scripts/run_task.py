@@ -26,6 +26,7 @@ def main():
     parser.add_argument("--live-model", action="store_true", help="Allow bounded, paid API requests.")
     parser.add_argument('--strategy',choices=['fixed','react','plan'],default='fixed')
     parser.add_argument('--data-mode',choices=['snapshot','live'],default='snapshot')
+    parser.add_argument('--recommendation-scope',choices=['reviewed','broad'],default='reviewed')
     parser.add_argument("--as-of", type=date.fromisoformat, default=datetime.now(ZoneInfo('America/Los_Angeles')).date())
     parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "work" / "m2_task.json")
     args = parser.parse_args()
@@ -40,7 +41,7 @@ def main():
     results = []
     for message in [args.message, *args.followup]:
         result = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
-            settings=config, as_of=args.as_of, message=message,strategy=args.strategy,data_mode=args.data_mode)
+            settings=config, as_of=args.as_of, message=message,strategy=args.strategy,data_mode=args.data_mode,recommendation_scope=args.recommendation_scope)
         results.append(result)
         print(f"{result['status']} | profile v{result['profile_version']} | model {result['model_status']} | calls {result['model_calls']}")
     args.output.parent.mkdir(parents=True, exist_ok=True)
