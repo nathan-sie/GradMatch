@@ -2,7 +2,9 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M6.1e first priority repair batch**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Sixteen exact identities link to **82 official source records**; 67 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) prioritizes 20–30 programs in batches of 10–15. Final-project evaluation remains incomplete.
+Current stage: **M6.1f twenty-program focus catalog**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Twenty exact identities link to **94 official source records**; 63 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) targets 20–25 official records, then 10–15 records with usable screening evidence. Final-project evaluation remains incomplete.
+
+M6.1f adds Duke ECE MS, CMU Pittsburgh ECE MS, Georgia Tech on-campus MSCS and UCSD CS MS. It completes UW ECE PMP's reviewed planning checklist and adds UCI's cumulative-undergraduate GPA minimum. Seven full tuition estimates remain; Duke separately has a published-rate **minimum of USD 104,820 with no verified upper bound**. A lower budget can be excluded, while a higher budget cannot establish affordability. See [source decisions](docs/M61F_SOURCES.md) and [the checkpoint](docs/verification/M61F.md).
 
 M6.1e passed **267 regression checks**. Twelve programs gain 20 official sources; usable GRE rules increase from 8 to 15 and degree rules from 8 to 12. Policy details are visible in the comparison and detail views. Computable tuition remains seven, with incomplete eligibility and tier evidence explicit. See [the batch checkpoint](docs/verification/M61E.md) and [current coverage](docs/verification/M61E_catalog_audit.md).
 

@@ -1,0 +1,40 @@
+{
+  "url": "https://ece.duke.edu/academics/masters/",
+  "retrieved_at": "2026-11-21T00:28:38.618550+00:00",
+  "raw_response_sha256": "5bf112e438e738c209d6dca7c3c758d6f6fcd48dfb6f6f3bc289c0d55f970866",
+  "verified_values": {
+    "identity": {
+      "university": "Duke University",
+      "school": "Pratt School of Engineering / Electrical and Computer Engineering",
+      "program_name": "Master of Science in Electrical and Computer Engineering",
+      "degree": "MS",
+      "campus": "Durham",
+      "track": "Ordinary MS; coursework, project or thesis options (not MEng or Duke 4+1)",
+      "official_url": "https://ece.duke.edu/academics/masters/"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "tuition_minimum": {
+      "tuition.required_units_lower": "3"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "duke-ms-ece-durham-training",
+          "goal": "mixed",
+          "statement": "Technical coursework and research/project options support professional or research preparation without guaranteeing placement.",
+          "source_ids": [
+            "duke-ms-ece-durham-duke_program-m61f"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.2": "Credit unit: semester credits",
+      "notes.3": "Degree scope: Ordinary research MS, not MEng or the Duke undergraduate 4+1 route."
+    }
+  },
+  "source_excerpt": "at least three full-time semesters",
+  "fact_summary": "The ordinary MS has 30 credits and at least three full-time semesters; MEng and Duke undergraduate 4+1 rules are separate."
+}

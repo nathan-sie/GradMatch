@@ -77,6 +77,8 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
 
     def add(group, status, code, explanation, warnings=None):
         source_ids=evidence_ids(program,group,sources,profile)
+        if group=='tuition' and estimate.reason_code=='MINIMUM_ONLY_TUITION_BOUND':
+            source_ids=evidence_ids(program,'tuition_minimum',sources,profile)
         if group=='tuition' and program.tuition.basis=='per_credit':
             source_ids=list(dict.fromkeys(source_ids+evidence_ids(program,'credits',sources,profile)))
         checks.append(ConstraintCheck(rule_id=group, status=status, reason_code=code,
@@ -187,10 +189,23 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
             or (program.tuition.required_units_upper is not None
                 and program.tuition.required_units_upper != program.required_credits)))):
         estimate = TuitionEstimate(reason_code="MISSING_TUITION_EVIDENCE", assumptions=list(program.tuition.assumptions))
+    floor_ids=evidence_ids(program,'tuition_minimum',sources,profile)
+    required_floor_paths={'tuition.currency','tuition.unit_rate_lower','tuition.required_units_lower','tuition.rate_year'}
+    floor_paths={path for sid in floor_ids for path in sources[sid].verified_values.get('tuition_minimum',{})}
+    policy=program.tuition
+    if (estimate.upper_usd is None and required_floor_paths <= floor_paths
+            and policy.currency=='USD' and policy.unit_rate_lower is not None
+            and policy.required_units_lower is not None and policy.rate_year):
+        estimate=TuitionEstimate(lower_usd=policy.unit_rate_lower*policy.required_units_lower,
+            upper_usd=None,formula=f"At least {policy.required_units_lower} units × {policy.unit_rate_lower} USD; no verified upper bound",
+            rate_year=policy.rate_year,reason_code='MINIMUM_ONLY_TUITION_BOUND',assumptions=list(policy.assumptions))
     if profile.tuition_budget_usd is None:
         add("tuition", "unknown", "MISSING_BUDGET", "A full-program tuition budget is missing.")
+    elif (profile.budget_basis == "published_rate_estimate" and estimate.upper_usd is None
+          and estimate.lower_usd is not None and estimate.lower_usd > profile.tuition_budget_usd):
+        add("tuition", "fail", "TUITION_MINIMUM_EXCEEDS_BUDGET", "The verified tuition minimum at the stated published rates already exceeds the budget; the final full-program amount remains unknown.")
     elif estimate.upper_usd is None:
-        add("tuition", "unknown", estimate.reason_code, "A reproducible full-program tuition basis is missing. Application fees, annual charges, or total living budgets cannot substitute for it.")
+        add("tuition", "unknown", estimate.reason_code, "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.")
     elif profile.budget_basis == "guaranteed_final" and (
             profile.intake is None or program.tuition.guaranteed_for_intake != profile.intake.key):
         add("tuition", "unknown", "FINAL_TUITION_NOT_GUARANTEED", "A published-rate estimate cannot guarantee the actual final tuition for a future intake.")

@@ -1,0 +1,17 @@
+{
+  "url": "https://graduateschool.bulletins.duke.edu/policies/financial/tuition",
+  "retrieved_at": "2026-11-21T00:28:38.918823+00:00",
+  "raw_response_sha256": "5941819607a1654ceb9ccbbb0ec4947c9854260348eec33b1eaf99b5b67920f1",
+  "verified_values": {
+    "tuition_minimum": {
+      "tuition.currency": "USD",
+      "tuition.unit_rate_lower": "34940",
+      "tuition.rate_year": "2026-2027"
+    },
+    "directory_policies": {
+      "notes.4": "Cost context: At least USD 104,820 at the 2026-27 research-master rate for the mandatory three full-time semesters. No final tuition ceiling is verified; fees, extra terms and future increases are excluded."
+    }
+  },
+  "source_excerpt": "three full-time semesters of study",
+  "fact_summary": "The 2026-27 bulletin gives USD 34,940 per fall/spring research-master semester and three required full-time semesters; continuing or summer enrollment adds tuition."
+}

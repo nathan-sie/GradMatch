@@ -1,0 +1,16 @@
+{
+  "url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+  "retrieved_at": "2026-11-21T00:28:38.833265+00:00",
+  "raw_response_sha256": "8736ab1a680b4485bb9a07700695e05d99ba1dfee6b7ca14f35cb3d0dac7f2a1",
+  "verified_values": {
+    "credits": {
+      "required_credits": "97"
+    },
+    "directory_policies": {
+      "notes.2": "Credit unit: CMU units",
+      "notes.3": "Preparation: The standard curriculum uses ECE core, engineering and technical electives; complete admission preparation is still unverified."
+    }
+  },
+  "source_excerpt": "97 units of graduate coursework",
+  "fact_summary": "The standard degree requires 97 CMU units over three semesters; the listed core and elective categories are not US semester-credit equivalents."
+}

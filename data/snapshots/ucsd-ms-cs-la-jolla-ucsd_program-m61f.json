@@ -1,0 +1,30 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+  "retrieved_at": "2026-11-21T00:28:39.007826+00:00",
+  "raw_response_sha256": "e633deb0554dbe5707b9ecb31abd721a3a88d5a5453fe72f4fde3a451fd0cb8f",
+  "verified_values": {
+    "identity": {
+      "university": "University of California San Diego",
+      "school": "Department of Computer Science and Engineering",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "La Jolla",
+      "track": "Computer Science major, Comprehensive Standard Plan (not CE or BS/MS)",
+      "official_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "ucsd-ms-cs-la-jolla-training",
+          "goal": "mixed",
+          "statement": "Breadth and depth coursework support advanced computing study and professional or research development without guaranteeing placement.",
+          "source_ids": [
+            "ucsd-ms-cs-la-jolla-ucsd_program-m61f"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "Comprehensive Standard Plan",
+  "fact_summary": "The programme explicitly offers separate CS/CE majors and multiple plans; this record selects the CS standard comprehensive option."
+}

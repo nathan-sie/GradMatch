@@ -19,8 +19,8 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
-LINKS = PROJECT_ROOT / "data/review/m61c_review_plan.json"
-DIRECTORY_VERSION = "M6.1e"
+LINKS = PROJECT_ROOT / "data/review/m61f_review_plan.json"
+DIRECTORY_VERSION = "M6.1f"
 REVIEW_DATE = date(2026, 11, 20)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -116,7 +116,7 @@ def build_directory(programs, sources, index=None, links=None):
             linked_program_id=None, review_status="Needs official review",
             source_reports_halted=bool(candidate["source_reports_halted"]),
             review_flags=list(candidate["review_flags"]),
-            eligibility_review=UNKNOWN, tuition_upper_usd=None, tuition_formula=None,
+            eligibility_review=UNKNOWN, tuition_upper_usd=None, tuition_lower_usd=None, tuition_formula=None,
             tuition_rate_year=None, tuition_assumptions=[], required_credits=None,
             official_source_count=0, official_sources=[], notes=[], field_coverage={},
             verified_fields=[], missing_fields=list(FIELD_LABELS.values()),
@@ -136,6 +136,7 @@ def build_directory(programs, sources, index=None, links=None):
                 eligibility_review="Reviewed; applicant checks still required"
                     if fields["remaining_eligibility"]["rule_usable"] else UNKNOWN,
                 tuition_upper_usd=audit["tuition"]["upper_usd"],
+                tuition_lower_usd=audit["tuition"]["lower_usd"],
                 tuition_formula=audit["tuition"]["formula"], tuition_rate_year=audit["tuition"]["rate_year"],
                 tuition_assumptions=list(program.tuition.assumptions),
                 required_credits=str(program.required_credits) if fields["credits"]["rule_usable"] else None,
@@ -216,6 +217,8 @@ def filter_records(records, query="", review="All programs", university="All uni
 
 def tuition_label(row):
     amount = row["tuition_upper_usd"]
+    if amount is None and row.get('tuition_lower_usd') is not None:
+        return f"At least USD {float(row['tuition_lower_usd']):,.0f} ({row['tuition_rate_year']}); upper bound unverified"
     return f"USD {float(amount):,.0f} ({row['tuition_rate_year']}; estimate)" if amount is not None else UNKNOWN
 
 
@@ -223,7 +226,9 @@ def comparison_rows(records):
     labels = {r["source_id"]: f"{r['university']} — {r['program_name']} [{r['source_id']}]" for r in records}
     fields = {
         "Review status": lambda r: r["review_status"], "Campus": lambda r: r["campus"],
-        "Track": lambda r: r["track"], "Credits": lambda r: r["required_credits"] or UNKNOWN,
+        "Track": lambda r: r["track"],
+        "Credits": lambda r: (str(r["required_credits"]) + (" (" + r["requirements"]["Credit unit"] + ")"
+            if r["requirements"].get("Credit unit") else "")) if r["required_credits"] else UNKNOWN,
         "GPA policy": lambda r: r["requirements"]["GPA policy"],
         "English policy": lambda r: r["requirements"]["English policy"],
         "Degree background": lambda r: r["requirements"]["Degree background"],

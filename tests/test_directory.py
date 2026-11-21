@@ -27,7 +27,7 @@ def test_all_83_leads_are_explorable_without_promoting_community_claims():
     document = build_directory(programs, sources)
     records = document["records"]
     assert document["total"] == len({r["source_id"] for r in records}) == 83
-    assert document["official_records"] == 16
+    assert document["official_records"] == len(programs)
     assert sum(r["source_reports_halted"] for r in records) == 4
     assert sum(r["tuition_upper_usd"] is not None for r in records) == 7
     assert all(not r["recommendation_eligible"] for r in records)
@@ -73,8 +73,8 @@ def test_directory_rejects_non_public_link_schemes_and_embedded_credentials(bad_
 
 def test_search_filters_and_comparison_keep_unknowns_and_source_halt_flags():
     rows = build_directory(*load_seed())["records"]
-    assert len(filter_records(rows, review="Official snapshots available")) == 16
-    assert len(filter_records(rows, review="Needs official review")) == 67
+    assert len(filter_records(rows, review="Official snapshots available")) == len(load_seed()[0])
+    assert len(filter_records(rows, review="Needs official review")) == 83 - len(load_seed()[0])
     assert len(filter_records(rows, review="Source-reported halt")) == 4
     assert len(filter_records(rows, "NYU BROOKLYN")) == 1
     assert not filter_records(rows, "this university does not exist")
@@ -99,7 +99,7 @@ def test_directory_sqlite_is_read_only_rebuildable_and_preserves_official_databa
         with pytest.raises(sqlite3.OperationalError, match="readonly"):
             connection.execute("DELETE FROM directory_records")
     path.write_bytes(b"corrupt app-managed directory cache")
-    assert read_directory(bootstrap_directory(database, tmp_path))["official_records"] == 16
+    assert read_directory(bootstrap_directory(database, tmp_path))["official_records"] == len(load_seed()[0])
     path.unlink()
     assert read_directory(bootstrap_directory(database, tmp_path))["total"] == 83
     assert hashlib.sha256(database.read_bytes()).hexdigest() == before
@@ -118,7 +118,8 @@ def test_actual_page_browses_searches_compares_and_preserves_applicant_session(t
     profile = app.session_state["m2_session"].profile.model_dump(mode="json")
     app.button(key="open_directory").click().run()
     assert not app.exception
-    assert [m.value for m in app.metric][-3:] == ["83", "16", "67"]
+    official_count = len(load_seed()[0])
+    assert [m.value for m in app.metric][-3:] == ["83", str(official_count), str(83-official_count)]
     assert len(app.dataframe[0].value) == 83
     app.multiselect(key="directory_compare").set_value(["sss-mit-eecs", "b-plus-nyu-tandon"]).run()
     assert not app.exception and len(app.dataframe) == 2

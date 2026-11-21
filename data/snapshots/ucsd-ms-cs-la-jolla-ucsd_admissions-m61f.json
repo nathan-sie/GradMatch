@@ -1,0 +1,49 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/admissions",
+  "retrieved_at": "2026-11-21T00:28:39.189351+00:00",
+  "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-16",
+          "label": "Fall 2027 application deadline; 11:59 p.m. PST",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "directory_policies": {
+      "notes.3": "Deadlines: Fall 2027 deadline: December 16, 2026 at 11:59 p.m. PST. New admission is fall only.",
+      "notes.4": "GRE policy: GRE is not required for Fall 2027; later cycles require fresh review."
+    }
+  },
+  "source_excerpt": "December 16, 2026",
+  "fact_summary": "The dated Fall 2027 admission page states its application cutoff and optional GRE. GPA calculation scope and full English/credential requirements remain unresolved."
+}

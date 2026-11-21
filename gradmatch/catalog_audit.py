@@ -189,6 +189,7 @@ def audit_catalog(programs, sources, *, as_of, intake):
             computable_verified_tuition=sum(
                 r["tuition"]["upper_usd"] is not None for r in rows
             ),
+            minimum_only_tuition=sum(r['tuition']['lower_usd'] is not None and r['tuition']['upper_usd'] is None for r in rows),
             full_eligibility_reviews=sum(
                 r["field_coverage"]["remaining_eligibility"]["rule_usable"]
                 for r in rows
@@ -338,6 +339,7 @@ def markdown_report(report):
         f"Audit date: {audit['as_of_date']} · Target intake: {audit['target_intake']} · Snapshot mode · Model/network requests: 0/0",
         "",
         f"Reviewed catalog: **{summary['programs']} programs / {summary['sources']} sources**. Verified computable tuition: **{summary['computable_verified_tuition']}**. Complete reviewed eligibility: **{summary['full_eligibility_reviews']}**.",
+        f"Verified tuition minimum only: **{summary['minimum_only_tuition']}**. These bounds may exclude insufficient published-rate budgets but never establish affordability.",
         f"For the fixed fictional profile, **{summary['reference_formal_evidence_ready']}** program has eligibility, goal and tier evidence for formal output. This is a test scenario, not a quality score.",
         "",
         "## Existing programs",
@@ -394,7 +396,7 @@ def markdown_report(report):
         )
     lines += [
         "",
-        "Program pages were checked manually for identity leads; no new numerical fact has been imported into the app. Next, capture applicable official requirements/tuition pages with response hashes and exact field bindings, resolve track/campus ambiguities, then import a separately validated seed.",
+        "Research-queue entries do not establish numerical requirements. Imported facts are restricted to the separately captured, hashed and field-bound official evidence in the selected seed. Missing eligibility and admission-tier evidence remains open.",
         "",
         f"Target expanded catalog: {report['target_catalog_min']}–{report['target_catalog_max']} programs. Current audited count remains {summary['programs']}; the full M6 data gate is **not met**.",
         "",

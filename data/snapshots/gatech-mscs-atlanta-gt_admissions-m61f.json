@@ -1,0 +1,28 @@
+{
+  "url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+  "retrieved_at": "2026-11-21T00:28:39.156621+00:00",
+  "raw_response_sha256": "2fbc770e43a1966229b3241765f4915bb02967f7fd51c05c0d2f455929edf686",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": "3",
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "directory_policies": {
+      "notes.4": "GPA policy: Desirable minimum 3.0/4; competitiveness and calculation scope require review. No universal hard cutoff is asserted.",
+      "notes.5": "English policy: The department lists legacy TOEFL 100, new TOEFL 5.0 or IELTS 7.5 with specified subscores. Test validity and exemption rules still need complete review."
+    }
+  },
+  "source_excerpt": "A GRE score is not required",
+  "fact_summary": "Current on-campus MSCS instructions make GRE optional and distinguish desired GPA from program-specific language thresholds."
+}

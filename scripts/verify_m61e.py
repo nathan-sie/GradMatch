@@ -11,7 +11,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61C_SEED, load_seed, read_catalog
+from gradmatch.catalog import M61C_SEED, M61E_SEED, import_catalog, load_seed as latest_load_seed, read_catalog
 from gradmatch.config import load_settings
 from gradmatch.directory import bootstrap_directory, read_directory
 from gradmatch.providers import OpenAIProvider
@@ -25,6 +25,10 @@ from scripts.m5_fixtures import FixtureProvider
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def load_seed(path=M61E_SEED):
+    return latest_load_seed(path)
 
 
 def main():
@@ -55,14 +59,15 @@ def main():
             if raw.exists():
                 assert sha256(raw)==s.raw_response_sha256
                 hashes_checked+=1
-        database=bootstrap_public_catalog(output/'public')
+        database=output/'catalog.db'
+        import_catalog(M61E_SEED,database)
         assert data_hash(*read_catalog(database))==data_hash(programs,sources)
         directory_path=bootstrap_directory(database,output/'public')
         directory=read_directory(directory_path)
         assert directory['total']==83 and directory['official_records']==16
         assert all(not r['recommendation_eligible'] for r in directory['records'])
         baseline=build_report(seed=M61C_SEED,as_of=date(2026,11,20))
-        updated=build_report(as_of=date(2026,11,20))
+        updated=build_report(seed=M61E_SEED,as_of=date(2026,11,20))
         old=baseline['catalog']['summary'];new=updated['catalog']['summary']
         assert old['fields']['gre']['usable']==8 and new['fields']['gre']['usable']==15
         assert old['fields']['degree']['usable']==8 and new['fields']['degree']['usable']==12

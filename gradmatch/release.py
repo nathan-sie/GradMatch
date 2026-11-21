@@ -8,7 +8,9 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-_MODULES = ("gradmatch.catalog", "gradmatch.bootstrap", "gradmatch.directory", "gradmatch.ui_directory")
+RELEASE_REFRESH_VERSION = 2
+_MODULES = ("gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
+            "gradmatch.catalog_audit", "gradmatch.directory", "gradmatch.ui_directory")
 _LOCK = Lock()
 _signature = None
 
@@ -34,4 +36,14 @@ def refresh_catalog_modules():
         for name in _MODULES:
             if name in sys.modules:
                 importlib.reload(sys.modules[name])
+        # Refresh copied helper references without reloading session-bearing modules.
+        constraints=sys.modules.get('gradmatch.constraints')
+        if constraints is not None:
+            for name,module in list(sys.modules.items()):
+                if not name.startswith('gradmatch.') or module is constraints or module is None:
+                    continue
+                for exported in ('check_constraints','evidence_ids','estimate_tuition'):
+                    previous=getattr(module,exported,None)
+                    if getattr(previous,'__module__',None)=='gradmatch.constraints':
+                        setattr(module,exported,getattr(constraints,exported))
         _signature = signature

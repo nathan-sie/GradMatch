@@ -1,0 +1,45 @@
+{
+  "milestone": "M6.1f",
+  "prior_seed": "data/catalog/m61e_seed.json",
+  "seed": "data/catalog/m61f_seed.json",
+  "new_programs": [
+    "duke-ms-ece-durham",
+    "cmu-ms-ece-pittsburgh",
+    "gatech-mscs-atlanta",
+    "ucsd-ms-cs-la-jolla"
+  ],
+  "repaired_programs": [
+    "uw-ece-msece-pmp-seattle",
+    "uci-mcs-irvine"
+  ],
+  "new_source_ids": [
+    "duke-ms-ece-durham-duke_program-m61f",
+    "duke-ms-ece-durham-duke_billing-m61f",
+    "cmu-ms-ece-pittsburgh-cmu_ece_program-m61f",
+    "cmu-ms-ece-pittsburgh-cmu_ece_standard-m61f",
+    "cmu-ms-ece-pittsburgh-cmu_ece_rates-m61f",
+    "gatech-mscs-atlanta-gt_program-m61f",
+    "gatech-mscs-atlanta-gt_admissions-m61f",
+    "ucsd-ms-cs-la-jolla-ucsd_program-m61f",
+    "ucsd-ms-cs-la-jolla-ucsd_standard-m61f",
+    "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f",
+    "uw-ece-msece-pmp-seattle-uw_requirements-m61f",
+    "uci-mcs-irvine-uci_requirements-m61f"
+  ],
+  "expected_programs": 20,
+  "expected_sources": 94,
+  "minimum_only_tuition": {
+    "duke-ms-ece-durham": "104820"
+  },
+  "prior_sources_preserved": 82,
+  "target_official_records": [
+    20,
+    25
+  ],
+  "target_effective_screening_records": [
+    10,
+    15
+  ],
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

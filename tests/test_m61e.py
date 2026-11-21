@@ -10,13 +10,17 @@ import pytest
 
 import gradmatch.catalog as catalog
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61C_SEED, load_seed, read_catalog
+from gradmatch.catalog import M61C_SEED, M61E_SEED, load_seed as latest_load_seed, read_catalog
 from gradmatch.constraints import check_constraints
 from gradmatch.directory import build_directory, comparison_rows
 from gradmatch.schemas import GPA
 from gradmatch.session import tiering_profile
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import data_hash
+
+
+def load_seed(path=M61E_SEED):
+    return latest_load_seed(path)
 
 
 def record(pid):
@@ -105,7 +109,7 @@ def test_active_pointer_changes_are_read_without_reimporting_modules(tmp_path, m
     old = tmp_path/'old.json'
     new = tmp_path/'new.json'
     old.write_bytes(M61C_SEED.read_bytes())
-    new.write_bytes(catalog.DEFAULT_SEED.read_bytes())
+    new.write_bytes(M61E_SEED.read_bytes())
     monkeypatch.setattr(catalog,'ACTIVE_SEED',pointer)
     pointer.write_text('{"seed":"old.json"}',encoding='utf-8')
     assert len(read_catalog(bootstrap_public_catalog(tmp_path/'cache'))[1]) == 62
@@ -129,7 +133,7 @@ def test_hosted_cached_old_imports_refresh_without_replacing_applicant_state(tmp
     assert len(read_catalog(bootstrap.bootstrap_public_catalog(tmp_path/'public'))[1]) == 62
     monkeypatch.setattr(release,'_signature',None)
     release.refresh_catalog_modules()
-    assert len(read_catalog(bootstrap.bootstrap_public_catalog(tmp_path/'public'))[1]) == 82
+    assert len(read_catalog(bootstrap.bootstrap_public_catalog(tmp_path/'public'))[1]) == len(latest_load_seed()[1])
     assert session.profile.model_dump(mode='json') == original and not session.usage
     # Ordinary rerenders must not repeatedly reload code or discard session data.
     def deny_reload(*args,**kwargs):

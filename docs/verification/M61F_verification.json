@@ -1,0 +1,224 @@
+{
+  "milestone": "M6.1f",
+  "status": "passed",
+  "programs": 20,
+  "sources": 94,
+  "directory_programs": 83,
+  "new_programs": [
+    "duke-ms-ece-durham",
+    "cmu-ms-ece-pittsburgh",
+    "gatech-mscs-atlanta",
+    "ucsd-ms-cs-la-jolla"
+  ],
+  "repaired_programs": [
+    "uw-ece-msece-pmp-seattle",
+    "uci-mcs-irvine"
+  ],
+  "new_sources": 12,
+  "prior_sources_preserved": 82,
+  "optional_raw_responses_rehashed": 12,
+  "request_attempts_in_preparation": 13,
+  "unused_empty_capture": "duke_rates; HTTP 200 with empty extracted body; not imported",
+  "before": {
+    "programs": 16,
+    "sources": 82,
+    "disciplines": {
+      "CS": 14,
+      "ECE": 2
+    },
+    "computable_verified_tuition": 7,
+    "minimum_only_tuition": 0,
+    "full_eligibility_reviews": 1,
+    "reference_hard_checks_ready": 1,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 16,
+        "usable": 16
+      },
+      "intake": {
+        "bound": 10,
+        "usable": 10
+      },
+      "gpa": {
+        "bound": 9,
+        "usable": 5
+      },
+      "english": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 3
+      },
+      "degree": {
+        "bound": 12,
+        "usable": 12
+      },
+      "gre": {
+        "bound": 15,
+        "usable": 15
+      },
+      "credits": {
+        "bound": 12,
+        "usable": 12
+      },
+      "tuition": {
+        "bound": 11,
+        "usable": 7
+      },
+      "deadline": {
+        "bound": 8,
+        "usable": 8
+      },
+      "remaining_eligibility": {
+        "bound": 6,
+        "usable": 1
+      },
+      "goal_features": {
+        "bound": 8,
+        "usable": 8
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "after": {
+    "programs": 20,
+    "sources": 94,
+    "disciplines": {
+      "CS": 16,
+      "ECE": 4
+    },
+    "computable_verified_tuition": 7,
+    "minimum_only_tuition": 1,
+    "full_eligibility_reviews": 2,
+    "reference_hard_checks_ready": 1,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 20,
+        "usable": 20
+      },
+      "intake": {
+        "bound": 11,
+        "usable": 11
+      },
+      "gpa": {
+        "bound": 12,
+        "usable": 6
+      },
+      "english": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 3
+      },
+      "degree": {
+        "bound": 13,
+        "usable": 13
+      },
+      "gre": {
+        "bound": 17,
+        "usable": 17
+      },
+      "credits": {
+        "bound": 16,
+        "usable": 16
+      },
+      "tuition": {
+        "bound": 11,
+        "usable": 7
+      },
+      "deadline": {
+        "bound": 9,
+        "usable": 9
+      },
+      "remaining_eligibility": {
+        "bound": 7,
+        "usable": 2
+      },
+      "goal_features": {
+        "bound": 12,
+        "usable": 12
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "minimum_only_budget_checks": [
+    {
+      "budget_usd": "100000",
+      "status": "fail",
+      "source_ids": [
+        "duke-ms-ece-durham-duke_program-m61f",
+        "duke-ms-ece-durham-duke_billing-m61f"
+      ]
+    },
+    {
+      "budget_usd": "104820",
+      "status": "unknown",
+      "source_ids": [
+        "duke-ms-ece-durham-duke_program-m61f",
+        "duke-ms-ece-durham-duke_billing-m61f"
+      ]
+    },
+    {
+      "budget_usd": "140000",
+      "status": "unknown",
+      "source_ids": [
+        "duke-ms-ece-durham-duke_program-m61f",
+        "duke-ms-ece-durham-duke_billing-m61f"
+      ]
+    }
+  ],
+  "shared_strategies": {
+    "fixed": {
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+  "database_hashes_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "database_hashes_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "external_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

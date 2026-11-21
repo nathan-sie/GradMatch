@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "step": "cold_start",
+      "status": "passed",
+      "programs": 20,
+      "sources": 94,
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "process_restart",
+      "status": "passed",
+      "programs": 20,
+      "sources": 94,
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "cache_loss_rebuild",
+      "status": "passed",
+      "programs": 20,
+      "sources": 94,
+      "data_hash": "bfd901ce8af266cb8cf06919d25901fa52b9160d75947c50d83e366b6c931e71",
+      "model_calls": 0,
+      "fresh_session": true
+    }
+  ],
+  "file_count": 258
+}

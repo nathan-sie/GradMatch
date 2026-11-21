@@ -39,9 +39,10 @@ def main():
         official_hash = sha256(official)
         database = bootstrap_directory(official, output / "public")
         document = read_directory(database)
-        assert document["total"] == 83 and document["official_records"] == 16
+        official_count = len(load_seed()[0])
+        assert document["total"] == 83 and document["official_records"] == official_count
         rows = document["records"]
-        assert len(filter_records(rows, review="Needs official review")) == 67
+        assert len(filter_records(rows, review="Needs official review")) == 83-official_count
         assert len(filter_records(rows, review="Source-reported halt")) == 4
         assert len(filter_records(rows, "nyu brooklyn")) == 1
         assert all(not r["recommendation_eligible"] for r in rows)
@@ -58,7 +59,7 @@ def main():
     assert before == after
     proof = dict(
         milestone="M6.1d", status="passed", verified_at=datetime.now(timezone.utc).isoformat(),
-        directory_programs=83, linked_official_records=16, awaiting_official_review=67,
+        directory_programs=83, linked_official_records=official_count, awaiting_official_review=83-official_count,
         official_sources=len(load_seed()[1]), computable_tuition_estimates=sum(r['tuition_upper_usd'] is not None for r in rows), preserved_halt_flags=4,
         directory_database=str(database.resolve()), directory_sha256=sha256(database),
         official_data_hash=data_hash(*load_seed()), databases_before=before, databases_after=after,
@@ -67,7 +68,7 @@ def main():
     )
     (output / "verification.json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
     (output / "comparison.json").write_text(json.dumps(comparison, indent=2) + "\n", encoding="utf-8")
-    print(f"Directory passed: 83 programs / 16 linked official records / 67 awaiting review; proof: {output}")
+    print(f"Directory passed: 83 programs / {official_count} linked official records / {83-official_count} awaiting review; proof: {output}")
     return 0
 
 

@@ -1,0 +1,161 @@
+{
+  "captures": [
+    {
+      "key": "duke_program",
+      "requested_url": "https://ece.duke.edu/academics/masters/",
+      "status": "captured",
+      "url": "https://ece.duke.edu/academics/masters/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:38.618550+00:00",
+      "raw_response_sha256": "5bf112e438e738c209d6dca7c3c758d6f6fcd48dfb6f6f3bc289c0d55f970866",
+      "bytes": 187927,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "duke_rates",
+      "requested_url": "https://gradschool.duke.edu/financial-support/tuition-fees-and-phd-stipends/",
+      "status": "captured",
+      "url": "https://gradschool.duke.edu/financial-support/tuition-fees-and-phd-stipends/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:38.444573+00:00",
+      "raw_response_sha256": "f152b360f9a2de37934d7d48e4977e1db47f9e31f463bb52f2477b4691f25556",
+      "bytes": 106,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "duke_billing",
+      "requested_url": "https://graduateschool.bulletins.duke.edu/policies/financial/tuition",
+      "status": "captured",
+      "url": "https://graduateschool.bulletins.duke.edu/policies/financial/tuition",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:38.918823+00:00",
+      "raw_response_sha256": "5941819607a1654ceb9ccbbb0ec4947c9854260348eec33b1eaf99b5b67920f1",
+      "bytes": 544209,
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "key": "cmu_ece_program",
+      "requested_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:38.760745+00:00",
+      "raw_response_sha256": "c857c61a4d152e432f4c4fd92481116250146fa4ac495245acdf9ef799ebbee2",
+      "bytes": 50099,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_standard",
+      "requested_url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:38.833265+00:00",
+      "raw_response_sha256": "8736ab1a680b4485bb9a07700695e05d99ba1dfee6b7ca14f35cb3d0dac7f2a1",
+      "bytes": 55255,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_rates",
+      "requested_url": "https://www.cmu.edu/sfs/tuition/graduate/cit.html",
+      "status": "captured",
+      "url": "https://www.cmu.edu/sfs/tuition/graduate/cit.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.030285+00:00",
+      "raw_response_sha256": "61e8627eae2707e320f9e84e240d3747772e95c955bb8eeed07da3de6ff27607",
+      "bytes": 32492,
+      "content_type": "text/html"
+    },
+    {
+      "key": "gt_program",
+      "requested_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "status": "captured",
+      "url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.132717+00:00",
+      "raw_response_sha256": "08f27ed0a645447df9a7857ec78c64c1ff4c7980dd2dc2cd12227494ab58dcc1",
+      "bytes": 67123,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "gt_admissions",
+      "requested_url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+      "status": "captured",
+      "url": "https://www.cc.gatech.edu/ms-computer-science-admission-requirements",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.156621+00:00",
+      "raw_response_sha256": "2fbc770e43a1966229b3241765f4915bb02967f7fd51c05c0d2f455929edf686",
+      "bytes": 66224,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ucsd_program",
+      "requested_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+      "status": "captured",
+      "url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.007826+00:00",
+      "raw_response_sha256": "e633deb0554dbe5707b9ecb31abd721a3a88d5a5453fe72f4fde3a451fd0cb8f",
+      "bytes": 64728,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ucsd_standard",
+      "requested_url": "https://cse.ucsd.edu/graduate/ms-plan-ii-comprehensive-exam-standard-option",
+      "status": "captured",
+      "url": "https://cse.ucsd.edu/graduate/ms-plan-ii-comprehensive-exam-standard-option",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.083289+00:00",
+      "raw_response_sha256": "f2e29706b92de31c39a60d3884459f1ecb3dec5bfd3c3b9e1bc8a726ffdef4c3",
+      "bytes": 68572,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ucsd_admissions",
+      "requested_url": "https://cse.ucsd.edu/graduate/admissions",
+      "status": "captured",
+      "url": "https://cse.ucsd.edu/graduate/admissions",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.189351+00:00",
+      "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+      "bytes": 53375,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uw_requirements",
+      "requested_url": "https://www.ece.uw.edu/academics/pmp/admissions/",
+      "status": "captured",
+      "url": "https://www.ece.uw.edu/academics/pmp/admissions/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.339895+00:00",
+      "raw_response_sha256": "80b2bafc7de8cec1916f2b2eccf70560a197b23bd60fa7147c2d16cdb1e188ce",
+      "bytes": 90566,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uci_requirements",
+      "requested_url": "https://grad.uci.edu/admissions/applying-to-uci/",
+      "status": "captured",
+      "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T00:28:39.698652+00:00",
+      "raw_response_sha256": "421a0f944fae41b37dbe5a4ecb30eba8ee8435fb016f75c0dd68337e5ffd4605",
+      "bytes": 159948,
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "request_attempts": 13
+}

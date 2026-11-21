@@ -1,0 +1,24 @@
+{
+  "url": "https://grad.uci.edu/admissions/applying-to-uci/",
+  "retrieved_at": "2026-11-21T00:28:39.698652+00:00",
+  "raw_response_sha256": "421a0f944fae41b37dbe5a4ecb30eba8ee8435fb016f75c0dd68337e5ffd4605",
+  "verified_values": {
+    "gpa": {
+      "gpa": {
+        "minimum": "3",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": false
+      }
+    },
+    "directory_policies": {
+      "notes.8": "GPA policy: University minimum cumulative undergraduate GPA 3.0/4; use the original scale and overall undergraduate scope. This is a minimum, not an admission probability."
+    }
+  },
+  "source_excerpt": "minimum cumulative undergraduate GPA of 3.0",
+  "fact_summary": "The university minimum is cumulative undergraduate GPA 3.0; programme-specific preparation and complete qualification remain separate."
+}

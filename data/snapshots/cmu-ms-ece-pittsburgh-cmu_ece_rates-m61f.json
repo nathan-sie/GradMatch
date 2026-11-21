@@ -1,0 +1,12 @@
+{
+  "url": "https://www.cmu.edu/sfs/tuition/graduate/cit.html",
+  "retrieved_at": "2026-11-21T00:28:39.030285+00:00",
+  "raw_response_sha256": "61e8627eae2707e320f9e84e240d3747772e95c955bb8eeed07da3de6ff27607",
+  "verified_values": {
+    "directory_policies": {
+      "notes.4": "Cost context: The 2026-27 engineering table lists USD 30,755 per master semester as a reference and warns that department rates can differ. An exact ECE full-program tuition upper bound remains unknown."
+    }
+  },
+  "source_excerpt": "reference only",
+  "fact_summary": "Engineering rates are expressly reference values subject to department variation; a general annual amount is not treated as a complete ECE tuition total."
+}

@@ -1,0 +1,41 @@
+{
+  "url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+  "retrieved_at": "2026-11-21T00:28:39.132717+00:00",
+  "raw_response_sha256": "08f27ed0a645447df9a7857ec78c64c1ff4c7980dd2dc2cd12227494ab58dcc1",
+  "verified_values": {
+    "identity": {
+      "university": "Georgia Institute of Technology",
+      "school": "College of Computing",
+      "program_name": "Master of Science in Computer Science",
+      "degree": "MS",
+      "campus": "Atlanta",
+      "track": "On-campus course option (not OMSCS)",
+      "official_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science"
+    },
+    "credits": {
+      "required_credits": "30"
+    },
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "gatech-mscs-atlanta-training",
+          "goal": "mixed",
+          "statement": "The terminal on-campus computing degree supports advanced professional preparation; a course option is selected without promising employment.",
+          "source_ids": [
+            "gatech-mscs-atlanta-gt_program-m61f"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.2": "Credit unit: semester credit hours",
+      "notes.3": "Deadlines: The programme gives a recurring February 1 fall deadline without a verified exact-year cycle; no dated Fall 2027 cutoff is inferred."
+    }
+  },
+  "source_excerpt": "30 hours of course work",
+  "fact_summary": "The on-campus course option requires 30 semester hours and permits related-background applicants subject to preparation review."
+}

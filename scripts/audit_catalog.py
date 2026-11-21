@@ -16,7 +16,7 @@ from gradmatch.storage import PROJECT_ROOT
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LEGACY_REVIEW = PROJECT_ROOT / "data/review/m61_review_plan.json"
-REVIEW = PROJECT_ROOT / "data/review/m61c_review_plan.json"
+REVIEW = PROJECT_ROOT / "data/review/m61f_review_plan.json"
 
 
 def sha256(path):
@@ -68,11 +68,19 @@ def build_report(
     *,
     seed=DEFAULT_SEED,
     index_path=INDEX,
-    review_path=REVIEW,
+    review_path=None,
     as_of=None,
     candidate_database=None,
     original_tracker=None,
 ):
+    if review_path is None:
+        historical_reviews = {
+            'm61c_seed.json': 'm61c_review_plan.json',
+            'm61e_seed.json': 'm61c_review_plan.json',
+            'm61b_seed.json': 'm61b_review_plan.json',
+            'm35_seed.json': 'm61_review_plan.json',
+        }
+        review_path = PROJECT_ROOT/'data/review'/historical_reviews.get(Path(seed).name, REVIEW.name)
     review = json.loads(Path(review_path).read_text(encoding="utf-8"))
     index = json.loads(Path(index_path).read_text(encoding="utf-8"))
     as_of = as_of or date.fromisoformat(review["reviewed_on"])
@@ -134,7 +142,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seed", type=Path, default=DEFAULT_SEED)
     parser.add_argument("--candidate-index", type=Path, default=INDEX)
-    parser.add_argument("--review-plan", type=Path, default=REVIEW)
+    parser.add_argument("--review-plan", type=Path)
     parser.add_argument("--as-of", type=date.fromisoformat)
     parser.add_argument("--candidate-database", type=Path)
     parser.add_argument("--original-tracker", type=Path)

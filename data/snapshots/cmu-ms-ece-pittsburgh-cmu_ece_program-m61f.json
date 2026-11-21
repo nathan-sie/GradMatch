@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+  "retrieved_at": "2026-11-21T00:28:38.760745+00:00",
+  "raw_response_sha256": "c857c61a4d152e432f4c4fd92481116250146fa4ac495245acdf9ef799ebbee2",
+  "verified_values": {
+    "identity": {
+      "university": "Carnegie Mellon University",
+      "school": "College of Engineering / Electrical and Computer Engineering",
+      "program_name": "Master of Science in Electrical and Computer Engineering",
+      "degree": "MS",
+      "campus": "Pittsburgh",
+      "track": "Standard three-semester program; not Africa, Silicon Valley or an intensive-project extension",
+      "official_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "cmu-ms-ece-pittsburgh-training",
+          "goal": "mixed",
+          "statement": "ECE fundamentals, specialization, project work and professional preparation support research and engineering careers without promising an outcome.",
+          "source_ids": [
+            "cmu-ms-ece-pittsburgh-cmu_ece_program-m61f"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "MS in ECE",
+  "fact_summary": "The ECE program provides technical, research and professional training; this record selects the Pittsburgh standard track."
+}

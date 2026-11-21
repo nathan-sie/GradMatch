@@ -1,0 +1,15 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/ms-plan-ii-comprehensive-exam-standard-option",
+  "retrieved_at": "2026-11-21T00:28:39.083289+00:00",
+  "raw_response_sha256": "f2e29706b92de31c39a60d3884459f1ecb3dec5bfd3c3b9e1bc8a726ffdef4c3",
+  "verified_values": {
+    "credits": {
+      "required_credits": "40"
+    },
+    "directory_policies": {
+      "notes.2": "Credit unit: quarter units"
+    }
+  },
+  "source_excerpt": "40 units",
+  "fact_summary": "The comprehensive standard option requires 40 quarter units; these are not semester credits."
+}
