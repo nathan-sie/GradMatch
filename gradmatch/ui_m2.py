@@ -328,7 +328,10 @@ def render_result(result, programs, sources):
             st.caption(item["identity"]["track"])
             st.write(item["planning_reason"])
             tuition = item["checks"]["tuition"]
-            st.write(f"Estimated full-program tuition: USD {tuition['lower_usd']}–{tuition['upper_usd']}")
+            if tuition['lower_usd'] is None:
+                st.write(f"Full-program tuition ceiling: USD {tuition['upper_usd']} (published-rate planning bound)")
+            else:
+                st.write(f"Estimated full-program tuition: USD {tuition['lower_usd']}–{tuition['upper_usd']}")
             st.caption(f"Published rate year: {tuition['rate_year']} · {tuition['formula']}")
             for assumption in tuition["assumptions"]: st.caption(assumption)
             for feature in item["goal_features"]: st.write(feature["statement"])
@@ -351,7 +354,8 @@ def render_result(result, programs, sources):
             st.write("Needs verification:", ", ".join(item["missing_fields"]))
             report = item["report"]
             tuition = report["tuition"]
-            st.write("Estimated full-program tuition (USD):", tuition["upper_usd"] or "Unknown")
+            label = "Full-program tuition ceiling (USD)" if tuition['upper_usd'] is not None and tuition['lower_usd'] is None else "Estimated full-program tuition (USD)"
+            st.write(label + ":", tuition["upper_usd"] or "Unknown")
             st.caption(f"Rate year: {tuition['rate_year'] or 'Unknown'} · {tuition['formula'] or 'Full-program calculation unavailable'}")
             for assumption in tuition["assumptions"]: st.caption(assumption)
             st.caption("Published-rate estimate only. Future increases and living costs are excluded; mandatory fees may be separate or unknown.")

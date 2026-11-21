@@ -1,0 +1,40 @@
+{
+  "milestone": "M6.1i",
+  "unique_checks": 360,
+  "all_unique_checks_have_passing_outcomes": true,
+  "single_uninterrupted_green_suite": false,
+  "runs": [
+    {
+      "scope": "focused pricing plus M1 and historical M6.1h",
+      "passed": 94,
+      "failed": 0,
+      "seconds": 18.04
+    },
+    {
+      "scope": "full regression before count assertion update",
+      "passed": 358,
+      "failed": 2,
+      "seconds": 2593.21,
+      "failures": [
+        {
+          "test": "tests/test_directory.py::test_all_83_leads_are_explorable_without_promoting_community_claims",
+          "reason": "Stale expectation of eight tuition upper bounds; actual twelve includes four new ceilings."
+        },
+        {
+          "test": "tests/test_m61h.py::test_actual_form_can_save_new_specific_topics_without_any_model_request",
+          "reason": "AppTest reached its unchanged 30-second timeout."
+        }
+      ]
+    },
+    {
+      "scope": "targeted rerun of the two failed checks after the count update",
+      "passed": 2,
+      "failed": 0,
+      "seconds": 2.08,
+      "timeout_increased": false,
+      "assertions_removed": false
+    }
+  ],
+  "paid_model_requests": 0,
+  "formal_benchmark": false
+}

@@ -1,0 +1,165 @@
+{
+  "milestone": "M6.1i",
+  "prior_seed": "data/catalog/m61h_seed.json",
+  "seed": "data/catalog/m61i_seed.json",
+  "programs_enriched": {
+    "wisc-ms-cs-professional-madison": [
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_rates_pdf-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper"
+        ]
+      },
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_pdc-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper",
+          "intake",
+          "deadline",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "wisc-ms-cs-professional-madison-wisc_admissions-m61i",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ],
+    "uiuc-meng-ece-urbana": [
+      {
+        "source_id": "uiuc-meng-ece-urbana-uiuc_meng_12_result-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper"
+        ]
+      },
+      {
+        "source_id": "uiuc-meng-ece-urbana-uiuc_meng-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper",
+          "directory_policies"
+        ]
+      }
+    ],
+    "cmu-ms-ece-pittsburgh": [
+      {
+        "source_id": "cmu-ms-ece-pittsburgh-cmu_rates-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper"
+        ]
+      },
+      {
+        "source_id": "cmu-ms-ece-pittsburgh-cmu_ece_standard_current-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper"
+        ]
+      },
+      {
+        "source_id": "cmu-ms-ece-pittsburgh-cmu_ece_faq_current-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper",
+          "prerequisites",
+          "remaining_eligibility",
+          "directory_policies"
+        ]
+      },
+      {
+        "source_id": "cmu-ms-ece-pittsburgh-cmu_ece_degree-m61i",
+        "groups": [
+          "degree"
+        ]
+      }
+    ],
+    "ncsu-mcs-raleigh": [
+      {
+        "source_id": "ncsu-mcs-raleigh-ncsu_rates-m61i",
+        "groups": [
+          "tuition",
+          "tuition_upper",
+          "directory_policies"
+        ]
+      }
+    ],
+    "rice-mcs-houston": [
+      {
+        "source_id": "rice-mcs-houston-rice_rates-m61i",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ],
+    "uw-mscss-tacoma": [
+      {
+        "source_id": "uw-mscss-tacoma-uwt_rates-m61i",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ],
+    "uiuc-mcs-urbana": [
+      {
+        "source_id": "uiuc-mcs-urbana-uiuc_mcs-m61i",
+        "groups": [
+          "directory_policies"
+        ]
+      }
+    ]
+  },
+  "new_source_ids": [
+    "wisc-ms-cs-professional-madison-wisc_rates_pdf-m61i",
+    "wisc-ms-cs-professional-madison-wisc_pdc-m61i",
+    "wisc-ms-cs-professional-madison-wisc_admissions-m61i",
+    "uiuc-meng-ece-urbana-uiuc_meng_12_result-m61i",
+    "uiuc-meng-ece-urbana-uiuc_meng-m61i",
+    "cmu-ms-ece-pittsburgh-cmu_rates-m61i",
+    "cmu-ms-ece-pittsburgh-cmu_ece_standard_current-m61i",
+    "cmu-ms-ece-pittsburgh-cmu_ece_faq_current-m61i",
+    "cmu-ms-ece-pittsburgh-cmu_ece_degree-m61i",
+    "ncsu-mcs-raleigh-ncsu_rates-m61i",
+    "rice-mcs-houston-rice_rates-m61i",
+    "uw-mscss-tacoma-uwt_rates-m61i",
+    "uiuc-mcs-urbana-uiuc_mcs-m61i"
+  ],
+  "superseded_field_bindings": {
+    "wisc-ms-cs-professional-madison": {
+      "tuition": [
+        "wisc-ms-cs-professional-madison-wisc_funding-m61c"
+      ]
+    }
+  },
+  "expected_programs": 20,
+  "expected_sources": 138,
+  "prior_sources_preserved": 125,
+  "tuition_ceiling_programs": [
+    "wisc-ms-cs-professional-madison",
+    "uiuc-meng-ece-urbana",
+    "cmu-ms-ece-pittsburgh",
+    "ncsu-mcs-raleigh"
+  ],
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false,
+  "admission_research_not_imported": [
+    {
+      "program": "uci-mcs-irvine",
+      "url": "https://explorer.compass.uci.edu/Inventory",
+      "reason": "Public inventory links the graduate admissions resource through institutional SSO; no degree-specific public counts were captured. Undergraduate and mixed-degree data are excluded."
+    },
+    {
+      "program": "uw-mscss-tacoma",
+      "url": "https://www.tacoma.uw.edu/sites/default/files/2025-05/css-grad-committee-meeting-february-7.pdf",
+      "reason": "Committee minutes report an in-progress application pipeline with pending and incomplete files, not a finalized admission cohort."
+    },
+    {
+      "program": "wisc-ms-cs-professional-madison",
+      "url": "https://www.cs.wisc.edu/grad/programs/admissions/",
+      "reason": "Department distinguishes PMP from the traditional pooled MS/PhD route. No finalized PMP-specific application/offer cohort was verified; general selectivity prose is not tier evidence."
+    }
+  ]
+}

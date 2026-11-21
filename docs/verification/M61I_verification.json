@@ -1,0 +1,290 @@
+{
+  "milestone": "M6.1i",
+  "status": "passed",
+  "programs": 20,
+  "sources": 138,
+  "directory_programs": 83,
+  "programs_enriched": 7,
+  "new_sources": 13,
+  "prior_sources_preserved": 125,
+  "optional_raw_responses_rehashed": 13,
+  "scripted_capture_attempts": 28,
+  "used_capture_keys": [
+    "cmu_ece_degree",
+    "cmu_ece_faq_current",
+    "cmu_ece_standard_current",
+    "cmu_rates",
+    "ncsu_rates",
+    "rice_rates",
+    "uiuc_mcs",
+    "uiuc_meng",
+    "uiuc_meng_12_result",
+    "uwt_rates",
+    "wisc_admissions",
+    "wisc_pdc",
+    "wisc_rates_pdf"
+  ],
+  "excluded_or_unused_captures": [
+    {
+      "key": "wisc_bursar",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_calc",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_rates",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_billing",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uwt_program",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "cmu_ece_faq",
+      "status": "failed",
+      "http_status": 404
+    },
+    {
+      "key": "rice_program",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_calc_js",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "wisc_workbook",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_programs",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_meng_1",
+      "status": "failed",
+      "http_status": 302
+    },
+    {
+      "key": "uiuc_meng_12",
+      "status": "failed",
+      "http_status": 302
+    },
+    {
+      "key": "uiuc_mcs_12",
+      "status": "failed",
+      "http_status": 302
+    },
+    {
+      "key": "uiuc_meng_1_result",
+      "status": "captured",
+      "http_status": 200
+    },
+    {
+      "key": "uiuc_mcs_12_result",
+      "status": "captured",
+      "http_status": 200
+    }
+  ],
+  "admission_research_not_imported": [
+    {
+      "program": "uci-mcs-irvine",
+      "url": "https://explorer.compass.uci.edu/Inventory",
+      "reason": "Public inventory links the graduate admissions resource through institutional SSO; no degree-specific public counts were captured. Undergraduate and mixed-degree data are excluded."
+    },
+    {
+      "program": "uw-mscss-tacoma",
+      "url": "https://www.tacoma.uw.edu/sites/default/files/2025-05/css-grad-committee-meeting-february-7.pdf",
+      "reason": "Committee minutes report an in-progress application pipeline with pending and incomplete files, not a finalized admission cohort."
+    },
+    {
+      "program": "wisc-ms-cs-professional-madison",
+      "url": "https://www.cs.wisc.edu/grad/programs/admissions/",
+      "reason": "Department distinguishes PMP from the traditional pooled MS/PhD route. No finalized PMP-specific application/offer cohort was verified; general selectivity prose is not tier evidence."
+    }
+  ],
+  "tuition_ceiling_checks": {
+    "wisc-ms-cs-professional-madison": {
+      "published_rate_ceiling_usd": "45102.00",
+      "boundary_checks": [
+        {
+          "budget_usd": "45102.00",
+          "status": "pass",
+          "reason_code": "TUITION_WITHIN_PUBLISHED_RATE_BUDGET"
+        },
+        {
+          "budget_usd": "45101.99",
+          "status": "unknown",
+          "reason_code": "TUITION_CEILING_ABOVE_BUDGET"
+        }
+      ]
+    },
+    "uiuc-meng-ece-urbana": {
+      "published_rate_ceiling_usd": "60666",
+      "boundary_checks": [
+        {
+          "budget_usd": "60666",
+          "status": "pass",
+          "reason_code": "TUITION_WITHIN_PUBLISHED_RATE_BUDGET"
+        },
+        {
+          "budget_usd": "60665.99",
+          "status": "unknown",
+          "reason_code": "TUITION_CEILING_ABOVE_BUDGET"
+        }
+      ]
+    },
+    "cmu-ms-ece-pittsburgh": {
+      "published_rate_ceiling_usd": "92265",
+      "boundary_checks": [
+        {
+          "budget_usd": "92265",
+          "status": "pass",
+          "reason_code": "TUITION_WITHIN_PUBLISHED_RATE_BUDGET"
+        },
+        {
+          "budget_usd": "92264.99",
+          "status": "unknown",
+          "reason_code": "TUITION_CEILING_ABOVE_BUDGET"
+        }
+      ]
+    },
+    "ncsu-mcs-raleigh": {
+      "published_rate_ceiling_usd": "67983",
+      "boundary_checks": [
+        {
+          "budget_usd": "67983",
+          "status": "pass",
+          "reason_code": "TUITION_WITHIN_PUBLISHED_RATE_BUDGET"
+        },
+        {
+          "budget_usd": "67982.99",
+          "status": "unknown",
+          "reason_code": "TUITION_CEILING_ABOVE_BUDGET"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "programs": 20,
+    "sources": 138,
+    "disciplines": {
+      "CS": 16,
+      "ECE": 4
+    },
+    "computable_verified_tuition": 12,
+    "minimum_only_tuition": 1,
+    "maximum_only_tuition": 4,
+    "two_sided_tuition_estimates": 8,
+    "full_eligibility_reviews": 5,
+    "reference_hard_checks_ready": 2,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 20,
+        "usable": 20
+      },
+      "intake": {
+        "bound": 13,
+        "usable": 13
+      },
+      "gpa": {
+        "bound": 14,
+        "usable": 8
+      },
+      "english": {
+        "bound": 8,
+        "usable": 8
+      },
+      "english_minimum": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 11,
+        "usable": 9
+      },
+      "degree": {
+        "bound": 16,
+        "usable": 16
+      },
+      "gre": {
+        "bound": 19,
+        "usable": 19
+      },
+      "credits": {
+        "bound": 16,
+        "usable": 16
+      },
+      "tuition": {
+        "bound": 15,
+        "usable": 12
+      },
+      "deadline": {
+        "bound": 11,
+        "usable": 11
+      },
+      "remaining_eligibility": {
+        "bound": 10,
+        "usable": 5
+      },
+      "goal_features": {
+        "bound": 13,
+        "usable": 13
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "shared_strategies": {
+    "fixed": {
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+  "database_hashes_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "database_hashes_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "external_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

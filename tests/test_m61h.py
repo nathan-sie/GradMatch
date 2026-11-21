@@ -8,13 +8,18 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61G_SEED, load_seed
+from gradmatch.catalog import M61G_SEED, M61H_SEED, load_seed as _load_seed
 from gradmatch.constraints import check_constraints, evidence_ids
 from gradmatch.coursework import TOPICS
 from gradmatch.directory import build_directory
 from gradmatch.schemas import EnglishScore
 from gradmatch.session import Session, ProfilePatch, apply_patch, tiering_profile
 from gradmatch.storage import PROJECT_ROOT
+
+
+def load_seed(path=M61H_SEED):
+    """Keep this historical checkpoint independent of later default catalogs."""
+    return _load_seed(path)
 
 
 def assess(pid,profile=None,programs=None,sources=None):

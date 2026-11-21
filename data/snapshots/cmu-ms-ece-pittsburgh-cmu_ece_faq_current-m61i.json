@@ -1,0 +1,46 @@
+{
+  "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+  "retrieved_at": "2026-11-21T20:31:50.128592+00:00",
+  "raw_response_sha256": "54519ac99d3686967807370610b814c9f74924242292aefd6401b2dd6336db7a",
+  "verified_values": {
+    "tuition": {
+      "tuition.assumptions": [
+        "Conservative tuition-only planning ceiling for the ordinary three-semester Standard MS ECE in Pittsburgh; the extended, intensive-project and other-campus options are outside this scope.",
+        "The ECE admissions FAQ directs Professional MS students to the College of Engineering current tuition page. That page gives a 2026-27 Masters rate of USD 30,755 per fall/spring semester, with a separate USD 855 per-unit rate.",
+        "Three full semester charges give a ceiling of USD 92,265 at that published reference rate. A permitted reduced final load may cost less; no minimum or exact bill is asserted. The university warns that departmental actual rates can vary and must be confirmed before a commitment.",
+        "Future rate increases, summer or extended study, additional courses, fees, insurance and living costs are excluded. This does not assume a scholarship or assistantship."
+      ]
+    },
+    "tuition_upper": {
+      "tuition.assumptions": [
+        "Conservative tuition-only planning ceiling for the ordinary three-semester Standard MS ECE in Pittsburgh; the extended, intensive-project and other-campus options are outside this scope.",
+        "The ECE admissions FAQ directs Professional MS students to the College of Engineering current tuition page. That page gives a 2026-27 Masters rate of USD 30,755 per fall/spring semester, with a separate USD 855 per-unit rate.",
+        "Three full semester charges give a ceiling of USD 92,265 at that published reference rate. A permitted reduced final load may cost less; no minimum or exact bill is asserted. The university warns that departmental actual rates can vary and must be confirmed before a commitment.",
+        "Future rate increases, summer or extended study, additional courses, fees, insurance and living costs are excluded. This does not assume a scholarship or assistantship."
+      ]
+    },
+    "prerequisites": {
+      "required_topics": [],
+      "recommended_topics": [],
+      "prerequisites_complete": true
+    },
+    "remaining_eligibility": {
+      "application_materials": [
+        "Online application and applicable fee or approved waiver",
+        "Statement of purpose",
+        "Current resume / CV",
+        "Three online recommendation letters",
+        "Transcripts from all institutions",
+        "Applicable official English score report; GRE optional for Fall 2027"
+      ],
+      "eligibility_review_complete": true
+    },
+    "directory_policies": {
+      "notes.8": "Cost context: Published-reference tuition ceiling USD 92,265 for the ordinary three-semester Pittsburgh Standard MS. The ECE FAQ points to the engineering tuition page; actual departmental bills and future rates still require confirmation.",
+      "notes.9": "Preparation: The department welcomes applicants without an ECE background and sets no universal course-by-course entry cutoff here. Individual readiness and prerequisite equivalency remain university decisions.",
+      "notes.10": "Other eligibility: Reviewed ordinary application checklist: application/fee, purpose statement, CV, three letters, all transcripts and applicable English reports. GRE is optional for Fall 2027. Submission, equivalency and admission are not asserted."
+    }
+  },
+  "source_excerpt": "A complete application consists of",
+  "fact_summary": "The ECE FAQ links its current tuition source, lists a complete ordinary application checklist and welcomes applicants without an ECE background. It does not impose a universal entry-course list; English score floors still lack complete validity review."
+}

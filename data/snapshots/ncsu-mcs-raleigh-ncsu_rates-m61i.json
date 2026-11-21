@@ -1,0 +1,42 @@
+{
+  "url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+  "retrieved_at": "2026-11-21T20:28:32.791103+00:00",
+  "raw_response_sha256": "404ef07443fb5b939c6117763872160913107eb89e248298db74a4f73c37f0bf",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_credit",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": "2193",
+      "tuition.rate_year": "2026-2027",
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "31",
+      "tuition.assumptions": [
+        "Conservative tuition-only ceiling for the ordinary 31-credit Raleigh on-campus MCS, using the 2026-27 nonresident MCS/MSCS table.",
+        "Each uncapped billing credit comprises USD 1,804.11 base tuition plus USD 388.89 tuition increment, or USD 2,193. The table separately lists required fees and the COE fee; those are excluded.",
+        "Both tuition components plateau at the nine-plus-credit semester row. Ignoring the plateau bounds the ordinary required-credit tuition by 31 x USD 2,193 = USD 67,983. The actual bill can be lower and needs a term-by-term schedule.",
+        "This ceiling excludes repeated or additional coursework, extra enrollment, summer rates not covered by the table, future increases, fees and living costs. The online program and generic graduate table are not substituted."
+      ]
+    },
+    "tuition_upper": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_credit",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": "2193",
+      "tuition.rate_year": "2026-2027",
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "31",
+      "tuition.assumptions": [
+        "Conservative tuition-only ceiling for the ordinary 31-credit Raleigh on-campus MCS, using the 2026-27 nonresident MCS/MSCS table.",
+        "Each uncapped billing credit comprises USD 1,804.11 base tuition plus USD 388.89 tuition increment, or USD 2,193. The table separately lists required fees and the COE fee; those are excluded.",
+        "Both tuition components plateau at the nine-plus-credit semester row. Ignoring the plateau bounds the ordinary required-credit tuition by 31 x USD 2,193 = USD 67,983. The actual bill can be lower and needs a term-by-term schedule.",
+        "This ceiling excludes repeated or additional coursework, extra enrollment, summer rates not covered by the table, future increases, fees and living costs. The online program and generic graduate table are not substituted."
+      ]
+    },
+    "directory_policies": {
+      "notes.8": "Cost context: Tuition-only ceiling USD 67,983 at 2026-27 rates: 31 required credits x (USD 1,804.11 base + USD 388.89 tuition increment). The nine-credit semester plateau can reduce the bill. Fees are excluded; lower budgets need a billing schedule."
+    }
+  },
+  "source_excerpt": "Tuition Increment",
+  "fact_summary": "The exact nonresident MCS/MSCS table separates base tuition of USD 1,804.11 and the USD 388.89 tuition increment per credit, with a nine-credit plateau. Required fees and the engineering fee are separate. The uncapped sum bounds required-credit tuition; it is not an exact program bill."
+}

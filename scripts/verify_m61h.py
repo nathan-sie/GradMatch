@@ -10,7 +10,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61G_SEED, load_seed, read_catalog
+from gradmatch.catalog import M61G_SEED, M61H_SEED, import_catalog, load_seed, read_catalog
 from gradmatch.catalog_audit import markdown_report
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
@@ -39,7 +39,7 @@ def main():
     def deny(*args,**kwargs):raise AssertionError('No external or paid requests in snapshot verification')
     with (patch.object(socket,'getaddrinfo',deny),patch.object(socket,'create_connection',deny),
           patch.object(socket.socket,'connect',deny),patch.object(OpenAIProvider,'generate',deny)):
-        programs,sources=load_seed();_,prior=load_seed(M61G_SEED)
+        programs,sources=load_seed(M61H_SEED);_,prior=load_seed(M61G_SEED)
         review=json.loads((PROJECT_ROOT/'data/review/m61h_field_reviews.json').read_text(encoding='utf-8'))
         receipts=json.loads((PROJECT_ROOT/'data/review/m61h_capture_receipts.json').read_text(encoding='utf-8'))
         assert len(programs)==20 and len(sources)==125 and len(review['programs_enriched'])==7
@@ -51,12 +51,13 @@ def main():
             assert r['status']=='captured' and r['http_status']==200;used.add(r['key'])
             raw=PROJECT_ROOT/'work/m61h_research'/(r['key']+'.html')
             if raw.exists():assert sha256(raw)==s.raw_response_sha256;checked+=1
-        database=bootstrap_public_catalog(output/'public')
+        database=output/'public'/'gradmatch.db'
+        import_catalog(M61H_SEED,database)
         assert data_hash(*read_catalog(database))==data_hash(programs,sources)
         directory=read_directory(bootstrap_directory(database,output/'public'))
         assert directory['total']==83 and directory['official_records']==20
         old=build_report(seed=M61G_SEED,as_of=date(2026,11,20))['catalog']['summary']
-        audit=build_report(as_of=date(2026,11,21));new=audit['catalog']['summary']
+        audit=build_report(seed=M61H_SEED,as_of=date(2026,11,21));new=audit['catalog']['summary']
         assert new['computable_verified_tuition']==8 and new['full_eligibility_reviews']==4
         assert new['fields']['english']['usable']==8 and new['fields']['prerequisites']['usable']==8
         assert new['reference_hard_checks_ready']==2 and new['reference_formal_evidence_ready']==1

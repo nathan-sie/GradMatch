@@ -1,0 +1,12 @@
+{
+  "url": "https://www.tacoma.uw.edu/registrar/tuition-rates",
+  "retrieved_at": "2026-11-21T20:28:31.611178+00:00",
+  "raw_response_sha256": "dc5a5e740f42dbfc4af94ec1a1cabd2edde54a95aa3469373da8f4773092490b",
+  "verified_values": {
+    "directory_policies": {
+      "notes.10": "Cost context: The 2026-27 nonresident MSCSS row is USD 13,551 per quarter at 7-18 credits and includes student fees. It is not a tuition-only full-program quote. Fee separation and a selected 40-to-45-credit pathway/billing schedule remain pending."
+    }
+  },
+  "source_excerpt": "Rates shown include student fees",
+  "fact_summary": "The exact MSCSS graduate quarterly rate table includes student fees and varies by credit load. The fee-inclusive figure is not an exact tuition-only program price, and no selected 40-to-45-credit billing pathway is established."
+}

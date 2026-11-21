@@ -1,0 +1,416 @@
+{
+  "request_attempts": 28,
+  "captures": [
+    {
+      "key": "wisc_pdc",
+      "requested_url": "https://pdc.wisc.edu/degrees/computer-sciences-professional-program-ms/",
+      "status": "captured",
+      "url": "https://pdc.wisc.edu/degrees/computer-sciences-professional-program-ms/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.420257+00:00",
+      "raw_response_sha256": "2d371dd63d6a19735b0f2aeab13a45b45d47012b232c4dda4e8b823ba5355352",
+      "bytes": 205109,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "wisc_bursar",
+      "requested_url": "https://bursar.wisc.edu/tuition-and-fees",
+      "status": "captured",
+      "url": "https://bursar.wisc.edu/tuition-and-fees",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.340465+00:00",
+      "raw_response_sha256": "e2fb8d9d18ce0306f581dca27d86e9cb8128c70d9c2e616e42c38669e0817a6e",
+      "bytes": 282349,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_calc",
+      "requested_url": "https://cost.illinois.edu/",
+      "status": "captured",
+      "url": "https://cost.illinois.edu/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.070108+00:00",
+      "raw_response_sha256": "8701dc0e9df62b74e3917a61e92b8b2d7dd9f539d360291fb90aa4dbd6e468ce",
+      "bytes": 26626,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "key": "uiuc_rates",
+      "requested_url": "https://www.registrar.illinois.edu/g-tuition-rates-2627/",
+      "status": "captured",
+      "url": "https://www.registrar.illinois.edu/g-tuition-rates-2627/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.705694+00:00",
+      "raw_response_sha256": "8f92c2b8f2d71e35be7323e7b1d79af50a0fe6e2cb3001a6cd76df202436650d",
+      "bytes": 81854,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_billing",
+      "requested_url": "https://www.registrar.illinois.edu/tuition-fees/tuition-info/",
+      "status": "captured",
+      "url": "https://www.registrar.illinois.edu/tuition-fees/tuition-info/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.690117+00:00",
+      "raw_response_sha256": "8032054c2725624fcefa7473f6a079340ae8a4e0876180538673ca704bf01663",
+      "bytes": 82170,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_mcs",
+      "requested_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+      "status": "captured",
+      "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/tuition-fees",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.642960+00:00",
+      "raw_response_sha256": "8ead505c833d9bc6d6ece975e4ed383b720b0ef52b26d06dc7d4818032c268aa",
+      "bytes": 60839,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uiuc_meng",
+      "requested_url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "status": "captured",
+      "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:32.152667+00:00",
+      "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+      "bytes": 62587,
+      "content_type": "text/html"
+    },
+    {
+      "key": "uwt_rates",
+      "requested_url": "https://www.tacoma.uw.edu/registrar/tuition-rates",
+      "status": "captured",
+      "url": "https://www.tacoma.uw.edu/registrar/tuition-rates",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.611178+00:00",
+      "raw_response_sha256": "dc5a5e740f42dbfc4af94ec1a1cabd2edde54a95aa3469373da8f4773092490b",
+      "bytes": 54866,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uwt_program",
+      "requested_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "status": "captured",
+      "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:31.865166+00:00",
+      "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+      "bytes": 94989,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_rates",
+      "requested_url": "https://www.cmu.edu/sfs/tuition/graduate/cit.html",
+      "status": "captured",
+      "url": "https://www.cmu.edu/sfs/tuition/graduate/cit.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:33.348466+00:00",
+      "raw_response_sha256": "61e8627eae2707e320f9e84e240d3747772e95c955bb8eeed07da3de6ff27607",
+      "bytes": 32492,
+      "content_type": "text/html"
+    },
+    {
+      "key": "cmu_ece_faq",
+      "requested_url": "https://www.ece.cmu.edu/admissions/faqs.html",
+      "status": "failed",
+      "url": "https://www.ece.cmu.edu/admissions/faqs.html",
+      "http_status": 404,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:32.568095+00:00",
+      "raw_response_sha256": "5545a683ff9b3c892ceb1a0a3c0d7c0a17da045659812a6ac0031dbb7e6f7c2d",
+      "bytes": 41156,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "rice_rates",
+      "requested_url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "status": "captured",
+      "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:32.009024+00:00",
+      "raw_response_sha256": "dc931e70ea1ff85f27a6206c7bab2da1fc38f0ee71d0c64ab49c83adf73b2849",
+      "bytes": 51163,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "rice_program",
+      "requested_url": "https://compsci.rice.edu/academics/graduate-programs/master-computer-science",
+      "status": "captured",
+      "url": "https://compsci.rice.edu/academics/graduate-programs/master-computer-science",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:32.807065+00:00",
+      "raw_response_sha256": "0e79a68e36e83c06a6e57a30a93208178773c748015d6762c9ea8e1dfa545465",
+      "bytes": 98565,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "ncsu_rates",
+      "requested_url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+      "status": "captured",
+      "url": "https://studentservices.ncsu.edu/finances/tuition-and-fees/tuition-and-fee-rates/graduate-students/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:28:32.791103+00:00",
+      "raw_response_sha256": "404ef07443fb5b939c6117763872160913107eb89e248298db74a4f73c37f0bf",
+      "bytes": 238681,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "uiuc_calc_js",
+      "requested_url": "https://cost.illinois.edu/js/frontEndScripts.min.js",
+      "status": "captured",
+      "url": "https://cost.illinois.edu/js/frontEndScripts.min.js",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:29:00.018817+00:00",
+      "raw_response_sha256": "00adaed6c1a2e308974b36b35ee1fe04fd8fa37703f6f1d5ab4cbee5c274051c",
+      "bytes": 326,
+      "content_type": "text/javascript"
+    },
+    {
+      "key": "wisc_workbook",
+      "requested_url": "https://viz.wisc.edu/views/TuitionandSegregatedFeeRatesforAcademicPrograms/HomePage?:embed=y&:iid=1&:isGuestRedirectFromVizportal=y",
+      "status": "captured",
+      "url": "https://viz.wisc.edu/views/TuitionandSegregatedFeeRatesforAcademicPrograms/HomePage?:embed=y&:iid=1&:isGuestRedirectFromVizportal=y",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:29:00.524769+00:00",
+      "raw_response_sha256": "2d464a62931252922b5cb1310c360b60aa2e6ea0eb34c4f8f312f5b613da23f4",
+      "bytes": 5053,
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "key": "uiuc_programs",
+      "requested_url": "https://cost.illinois.edu/Service/FindPrograms?id=G",
+      "status": "captured",
+      "url": "https://cost.illinois.edu/Service/FindPrograms?id=G",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:29:26.785283+00:00",
+      "raw_response_sha256": "5c53cb765dd1e17b222fc722ecca86ae0b618c9de58f35017c65081e8d8b9b30",
+      "bytes": 99870,
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "key": "uiuc_meng_1",
+      "requested_url": "https://cost.illinois.edu/",
+      "url": "https://cost.illinois.edu/",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "1PKS1200MENG",
+        "CreditHours": "1",
+        "CompareAll": "False"
+      },
+      "status": "failed",
+      "http_status": 302,
+      "retrieved_at": "2026-11-21T20:29:54.052869+00:00",
+      "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "content_type": ""
+    },
+    {
+      "key": "uiuc_meng_12",
+      "requested_url": "https://cost.illinois.edu/",
+      "url": "https://cost.illinois.edu/",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "1PKS1200MENG",
+        "CreditHours": "12",
+        "CompareAll": "False"
+      },
+      "status": "failed",
+      "http_status": 302,
+      "retrieved_at": "2026-11-21T20:29:53.765075+00:00",
+      "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "content_type": ""
+    },
+    {
+      "key": "uiuc_mcs_12",
+      "requested_url": "https://cost.illinois.edu/",
+      "url": "https://cost.illinois.edu/",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "10KS0112MCS",
+        "CreditHours": "12",
+        "CompareAll": "False"
+      },
+      "status": "failed",
+      "http_status": 302,
+      "retrieved_at": "2026-11-21T20:29:53.762087+00:00",
+      "raw_response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "content_type": ""
+    },
+    {
+      "key": "uiuc_meng_1_result",
+      "requested_url": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/1/120268/120268",
+      "url": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/1/120268/120268",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "1PKS1200MENG",
+        "CreditHours": "1",
+        "CompareAll": "False"
+      },
+      "status": "captured",
+      "http_status": 200,
+      "retrieved_at": "2026-11-21T20:30:17.670974+00:00",
+      "raw_response_sha256": "0336178b63d044922997b8d29436e8a257a437ffad5331ffb8fdda1d697d2bfd",
+      "bytes": 34188,
+      "content_type": "text/html; charset=utf-8",
+      "redirects": [
+        {
+          "url": "https://cost.illinois.edu/",
+          "status": 302,
+          "location": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/1/120268/120268"
+        }
+      ]
+    },
+    {
+      "key": "uiuc_meng_12_result",
+      "requested_url": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/12/120268/120268",
+      "url": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/12/120268/120268",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "1PKS1200MENG",
+        "CreditHours": "12",
+        "CompareAll": "False"
+      },
+      "status": "captured",
+      "http_status": 200,
+      "retrieved_at": "2026-11-21T20:30:17.662063+00:00",
+      "raw_response_sha256": "b93f9b15f84a06ce79ee02eb8ffa6a54c988ef6480568d3c2277bd9a3e9f5641",
+      "bytes": 35570,
+      "content_type": "text/html; charset=utf-8",
+      "redirects": [
+        {
+          "url": "https://cost.illinois.edu/",
+          "status": 302,
+          "location": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/12/120268/120268"
+        }
+      ]
+    },
+    {
+      "key": "uiuc_mcs_12_result",
+      "requested_url": "https://cost.illinois.edu/Home/Cost/I/G/10KS0112MCS/12/120268/120268",
+      "url": "https://cost.illinois.edu/Home/Cost/I/G/10KS0112MCS/12/120268/120268",
+      "request_method": "POST",
+      "request_parameters": {
+        "ResidencyCode": "I",
+        "StudentLevelCode": "G",
+        "StartTermCode": "120268",
+        "SelectedTermCode": "120268",
+        "ProgramCode": "10KS0112MCS",
+        "CreditHours": "12",
+        "CompareAll": "False"
+      },
+      "status": "captured",
+      "http_status": 200,
+      "retrieved_at": "2026-11-21T20:30:17.670974+00:00",
+      "raw_response_sha256": "8d1d418af294fc5952c3a55f7915d5caf63734e195e23f7ea737a0afab0d2fc0",
+      "bytes": 35523,
+      "content_type": "text/html; charset=utf-8",
+      "redirects": [
+        {
+          "url": "https://cost.illinois.edu/",
+          "status": 302,
+          "location": "https://cost.illinois.edu/Home/Cost/I/G/10KS0112MCS/12/120268/120268"
+        }
+      ]
+    },
+    {
+      "key": "wisc_rates_pdf",
+      "requested_url": "https://mbo.wisc.edu/wp-content/uploads/sites/917/2026/07/Student-Fee-Table-FY2026-27-Final-7-23-26.pdf",
+      "status": "captured",
+      "url": "https://mbo.wisc.edu/wp-content/uploads/sites/917/2026/07/Student-Fee-Table-FY2026-27-Final-7-23-26.pdf",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:31:50.053667+00:00",
+      "raw_response_sha256": "7845f88d9eb20299b19877a3b4cc63a2613d4dc47ef70066f4824b3d35bb2fd4",
+      "bytes": 976636,
+      "content_type": "application/pdf"
+    },
+    {
+      "key": "cmu_ece_faq_current",
+      "requested_url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/admissions/graduate-faq.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:31:50.128592+00:00",
+      "raw_response_sha256": "54519ac99d3686967807370610b814c9f74924242292aefd6401b2dd6336db7a",
+      "bytes": 64792,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "wisc_admissions",
+      "requested_url": "https://www.cs.wisc.edu/grad/programs/admissions/",
+      "status": "captured",
+      "url": "https://www.cs.wisc.edu/grad/programs/admissions/",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:31:49.655660+00:00",
+      "raw_response_sha256": "7afc5646288c33ef89a561a8b039551b89dfbb93f687fc406cf4dddf74ec1bd6",
+      "bytes": 435640,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_degree",
+      "requested_url": "https://www.ece.cmu.edu/admissions/graduate-requirements.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/admissions/graduate-requirements.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:31:49.958884+00:00",
+      "raw_response_sha256": "a2b629e4061547232bb5dc3c669719cf0a39e8713ba6e82cc02098536acc79f2",
+      "bytes": 44937,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "key": "cmu_ece_standard_current",
+      "requested_url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+      "status": "captured",
+      "url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+      "http_status": 200,
+      "redirects": [],
+      "retrieved_at": "2026-11-21T20:38:36.437152+00:00",
+      "raw_response_sha256": "8736ab1a680b4485bb9a07700695e05d99ba1dfee6b7ca14f35cb3d0dac7f2a1",
+      "bytes": 55255,
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ]
+}

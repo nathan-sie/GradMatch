@@ -19,8 +19,8 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
-LINKS = PROJECT_ROOT / "data/review/m61h_review_plan.json"
-DIRECTORY_VERSION = "M6.1h"
+LINKS = PROJECT_ROOT / "data/review/m61i_review_plan.json"
+DIRECTORY_VERSION = "M6.1i"
 REVIEW_DATE = date(2026, 11, 21)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -224,6 +224,8 @@ def filter_records(records, query="", review="All programs", university="All uni
 
 def tuition_label(row):
     amount = row["tuition_upper_usd"]
+    if amount is not None and row.get('tuition_lower_usd') is None:
+        return f"At most USD {float(amount):,.2f} ({row['tuition_rate_year']}; published-rate ceiling)"
     if amount is None and row.get('tuition_lower_usd') is not None:
         return f"At least USD {float(row['tuition_lower_usd']):,.0f} ({row['tuition_rate_year']}); upper bound unverified"
     return f"USD {float(amount):,.0f} ({row['tuition_rate_year']}; estimate)" if amount is not None else UNKNOWN

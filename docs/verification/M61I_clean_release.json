@@ -1,0 +1,35 @@
+{
+  "milestone": "M6.1i",
+  "status": "passed",
+  "scanned_file_count": 339,
+  "clean_release_checks": [
+    {
+      "step": "cold_start",
+      "status": "passed",
+      "programs": 20,
+      "sources": 138,
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "process_restart",
+      "status": "passed",
+      "programs": 20,
+      "sources": 138,
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "model_calls": 0,
+      "fresh_session": true
+    },
+    {
+      "step": "cache_loss_rebuild",
+      "status": "passed",
+      "programs": 20,
+      "sources": 138,
+      "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+      "model_calls": 0,
+      "fresh_session": true
+    }
+  ],
+  "paid_model_requests": 0
+}

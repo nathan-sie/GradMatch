@@ -16,12 +16,22 @@ def estimate_tuition(policy: TuitionPolicy) -> TuitionEstimate:
                 mandatory_fees_usd=policy.mandatory_fees_usd)
     if policy.currency != "USD":
         return TuitionEstimate(reason_code="UNSUPPORTED_CURRENCY", **base)
-    if policy.basis == "unknown" or policy.unit_rate_lower is None or policy.rate_year is None:
+    if policy.basis == "unknown" or (policy.unit_rate_lower is None and policy.unit_rate_upper is None) or policy.rate_year is None:
         return TuitionEstimate(reason_code="MISSING_RATE", **base)
     units_low = Decimal("1") if policy.basis == "full_program" else policy.required_units_lower
     units_high = Decimal("1") if policy.basis == "full_program" else (policy.required_units_upper or units_low)
-    if units_low is None or units_high is None:
+    if units_high is None or (policy.unit_rate_lower is not None and units_low is None):
         return TuitionEstimate(reason_code="MISSING_TOTAL_UNITS", **base)
+    if policy.unit_rate_lower is None:
+        return TuitionEstimate(
+            lower_usd=None,
+            upper_usd=policy.unit_rate_upper * units_high + policy.additional_required_tuition_upper_usd,
+            formula=f"At most {policy.unit_rate_upper} USD × {units_high} ({policy.basis})"
+                + (f" + at most {policy.additional_required_tuition_upper_usd} USD required additional tuition"
+                   if policy.additional_required_tuition_upper_usd else "")
+                + "; no verified minimum or exact bill",
+            reason_code="MAXIMUM_ONLY_TUITION_BOUND", **base,
+        )
     rate_high = policy.unit_rate_upper if policy.unit_rate_upper is not None else policy.unit_rate_lower
     return TuitionEstimate(
         lower_usd=policy.unit_rate_lower * units_low + policy.additional_required_tuition_lower_usd,
@@ -81,6 +91,8 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
             source_ids = evidence_ids(program, 'english_minimum', sources, profile)
         if group=='tuition' and estimate.reason_code=='MINIMUM_ONLY_TUITION_BOUND':
             source_ids=evidence_ids(program,'tuition_minimum',sources,profile)
+        if group=='tuition' and estimate.reason_code=='MAXIMUM_ONLY_TUITION_BOUND':
+            source_ids=list(dict.fromkeys(source_ids+evidence_ids(program,'tuition_upper',sources,profile)))
         if group=='tuition' and program.tuition.basis=='per_credit':
             source_ids=list(dict.fromkeys(source_ids+evidence_ids(program,'credits',sources,profile)))
         checks.append(ConstraintCheck(rule_id=group, status=status, reason_code=code,
@@ -199,9 +211,21 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
         add("prerequisites", "pass", "COURSEWORK_SELF_REPORTED", "Checked against the applicant's explicit self-report for each mandatory topic. This does not replace the university's equivalency assessment.")
 
     estimate = estimate_tuition(program.tuition)
+    ceiling_only = estimate.reason_code == 'MAXIMUM_ONLY_TUITION_BOUND'
+    ceiling_ids = evidence_ids(program, 'tuition_upper', sources, profile)
+    ceiling_paths = {path for sid in ceiling_ids for path in sources[sid].verified_values.get('tuition_upper', {})}
+    ceiling_required = {'tuition.currency', 'tuition.basis', 'tuition.unit_rate_lower', 'tuition.unit_rate_upper',
+                        'tuition.required_units_lower', 'tuition.required_units_upper', 'tuition.rate_year', 'tuition.assumptions'}
+    # A ceiling needs its own reviewed rate, scope and billing-unit evidence.
+    # Removing one dependency cannot turn a partial quote into an affordability pass.
+    if ceiling_only and not (ceiling_ids and ('tuition' in ceiling_paths or ceiling_required <= ceiling_paths)):
+        estimate = TuitionEstimate(reason_code='MISSING_TUITION_CEILING_EVIDENCE', assumptions=list(program.tuition.assumptions))
+    if ceiling_only and program.tuition.basis in {'per_term', 'per_year'} and profile.study_mode != 'full_time':
+        estimate = TuitionEstimate(reason_code='TUITION_SCHEDULE_SCOPE_UNVERIFIED', assumptions=list(program.tuition.assumptions))
     if (not supported("tuition") or (program.tuition.basis == "per_credit" and (
             not supported("credits") or program.required_credits is None
-            or program.tuition.required_units_lower != program.required_credits
+            or (not ceiling_only and program.tuition.required_units_lower != program.required_credits)
+            or (ceiling_only and program.tuition.required_units_upper != program.required_credits)
             or (program.tuition.required_units_upper is not None
                 and program.tuition.required_units_upper != program.required_credits)))):
         estimate = TuitionEstimate(reason_code="MISSING_TUITION_EVIDENCE", assumptions=list(program.tuition.assumptions))
@@ -226,9 +250,15 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
             profile.intake is None or program.tuition.guaranteed_for_intake != profile.intake.key):
         add("tuition", "unknown", "FINAL_TUITION_NOT_GUARANTEED", "A published-rate estimate cannot guarantee the actual final tuition for a future intake.")
     elif estimate.upper_usd > profile.tuition_budget_usd:
-        add("tuition", "fail", "TUITION_EXCEEDS_BUDGET", "The upper bound of estimated full-program tuition exceeds the budget. Unconfirmed scholarships have not been deducted.")
+        if estimate.reason_code == 'MAXIMUM_ONLY_TUITION_BOUND':
+            add('tuition', 'unknown', 'TUITION_CEILING_ABOVE_BUDGET',
+                'The conservative published-rate ceiling exceeds the budget. The actual schedule may cost less; a ceiling alone cannot prove the budget is insufficient.')
+        else:
+            add("tuition", "fail", "TUITION_EXCEEDS_BUDGET", "The upper bound of estimated full-program tuition exceeds the budget. Unconfirmed scholarships have not been deducted.")
     else:
         warnings = ["Estimated using the stated year's published rates. Future increases are not guaranteed; living costs are excluded and mandatory fees are listed separately."]
+        if estimate.reason_code == 'MAXIMUM_ONLY_TUITION_BOUND':
+            warnings.append('This is a conservative ceiling for the documented ordinary study scope, not an exact price. Additional study or a different billing arrangement needs a new check.')
         add("tuition", "pass", "TUITION_WITHIN_PUBLISHED_RATE_BUDGET", "The upper bound of estimated full-program tuition is within the budget.", warnings)
 
     def round_applies(round_):

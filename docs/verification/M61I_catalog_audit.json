@@ -1,0 +1,5014 @@
+{
+  "milestone": "M6.1i",
+  "scope": "Published-rate tuition ceilings and scoped planning reviews; preserve exact-price unknowns",
+  "catalog": {
+    "schema_version": "m61-catalog-audit-v1",
+    "as_of_date": "2026-11-21",
+    "target_intake": "2027-fall",
+    "data_hash": "7e16198bce060ac01eca5f1b4f42991ef41109b76f18fcb2c67975e22af37cb2",
+    "data_mode": "snapshot",
+    "model_requests": 0,
+    "network_requests": 0,
+    "reference_scenario": {
+      "name": "fictional_tiering_profile",
+      "profile": {
+        "profile_version": 1,
+        "gpa": {
+          "value": "3.5",
+          "scale": "4",
+          "scope": "overall"
+        },
+        "institution": null,
+        "institution_country": null,
+        "major": "Computer Science",
+        "coursework": {
+          "documented_cs_preparation": true,
+          "calculus": true,
+          "advanced_data_structures": true,
+          "college_mathematics_year": true,
+          "computer_organization": true,
+          "probability_statistics": true,
+          "data_structures": true,
+          "linear_algebra": true,
+          "algorithms": true,
+          "differential_equations": true,
+          "software_engineering": true,
+          "undergraduate_math": true,
+          "computer_architecture": true,
+          "science": true,
+          "undergraduate_cs": true,
+          "university_science_year": true,
+          "object_oriented_programming": true,
+          "programming": true
+        },
+        "research": [
+          "One synthetic research project"
+        ],
+        "work_experience": [
+          "One synthetic software internship"
+        ],
+        "english": {
+          "version": "toefl_120",
+          "total": "110",
+          "test_date": "2025-11-01",
+          "subscores": {}
+        },
+        "english_status": "known",
+        "goal": "employment",
+        "tuition_budget_usd": "140000",
+        "budget_basis": "published_rate_estimate",
+        "intake": {
+          "year": 2027,
+          "term": "fall"
+        },
+        "applicant_category": "international",
+        "study_mode": "full_time",
+        "degree": {
+          "completion": "completed",
+          "recognition": "recognized_bachelors_or_equivalent",
+          "field": "CS",
+          "country": "US"
+        },
+        "gre": {
+          "verbal": 160,
+          "quantitative": 165,
+          "writing": "4",
+          "test_date": "2025-06-01",
+          "format": "in_person"
+        }
+      },
+      "notice": "Fixed test profile, not a real applicant. Scenario readiness is not universal eligibility or a benchmark score."
+    },
+    "summary": {
+      "programs": 20,
+      "sources": 138,
+      "disciplines": {
+        "CS": 16,
+        "ECE": 4
+      },
+      "computable_verified_tuition": 12,
+      "minimum_only_tuition": 1,
+      "maximum_only_tuition": 4,
+      "two_sided_tuition_estimates": 8,
+      "full_eligibility_reviews": 5,
+      "reference_hard_checks_ready": 2,
+      "reference_formal_evidence_ready": 1,
+      "reviewed_recent_cohorts": 2,
+      "reviewed_recent_admitted_cases": 0,
+      "reference_tier_evidence_support": {
+        "Lottery": 1,
+        "Reach": 1,
+        "Target": 0,
+        "Safer": 0
+      },
+      "fields": {
+        "identity": {
+          "bound": 20,
+          "usable": 20
+        },
+        "intake": {
+          "bound": 13,
+          "usable": 13
+        },
+        "gpa": {
+          "bound": 14,
+          "usable": 8
+        },
+        "english": {
+          "bound": 8,
+          "usable": 8
+        },
+        "english_minimum": {
+          "bound": 5,
+          "usable": 5
+        },
+        "prerequisites": {
+          "bound": 11,
+          "usable": 9
+        },
+        "degree": {
+          "bound": 16,
+          "usable": 16
+        },
+        "gre": {
+          "bound": 19,
+          "usable": 19
+        },
+        "credits": {
+          "bound": 16,
+          "usable": 16
+        },
+        "tuition": {
+          "bound": 15,
+          "usable": 12
+        },
+        "deadline": {
+          "bound": 11,
+          "usable": 11
+        },
+        "remaining_eligibility": {
+          "bound": 10,
+          "usable": 5
+        },
+        "goal_features": {
+          "bound": 13,
+          "usable": 13
+        },
+        "admission_evidence": {
+          "bound": 2,
+          "usable": 2
+        }
+      }
+    },
+    "programs": [
+      {
+        "program_id": "cmu-mcds-pittsburgh",
+        "university": "Carnegie Mellon University",
+        "program_name": "Master of Computational Data Science",
+        "degree": "MCDS",
+        "campus": "Pittsburgh",
+        "track": "Standard timing (16 months)",
+        "discipline": "CS",
+        "official_url": "https://www.lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+        "original_candidate_source_id": "official-cmu-program-comparison",
+        "source_count": 10,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_handbook-m61b"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_handbook-m61b"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "credits": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_fees-m35"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-mcds-pittsburgh-stats_data-m35",
+              "cmu-mcds-pittsburgh-stats-m35"
+            ]
+          }
+        },
+        "catalog_gaps": [
+          "english",
+          "prerequisites",
+          "credits",
+          "remaining_eligibility"
+        ],
+        "next_required_reviews": [
+          "english",
+          "prerequisites",
+          "remaining_eligibility"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_handbook-m61b"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [
+              "cmu-mcds-pittsburgh-mcds_program-m35"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [
+          "Reach"
+        ],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 1,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "97200",
+          "upper_usd": "97200",
+          "formula": "32400\u201332400 USD \u00d7 3\u20133 (per_term)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Department-specific published 2026\u20132027 rate reused as a planning estimate for Fall 2027; future increases are unknown.",
+            "Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.",
+            "Three academic semesters in the 16-month track; optional pre-arrival courses are not selected and would cost extra.",
+            "No unconfirmed scholarship or assistantship is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_term",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 1
+      },
+      {
+        "program_id": "cmu-ms-ece-pittsburgh",
+        "university": "Carnegie Mellon University",
+        "program_name": "Master of Science in Electrical and Computer Engineering",
+        "degree": "MS",
+        "campus": "Pittsburgh",
+        "track": "Standard three-semester program; not Africa, Silicon Valley or an intensive-project extension",
+        "discipline": "ECE",
+        "official_url": "https://www.ece.cmu.edu/academics/ms-ece/index.html",
+        "original_candidate_source_id": "a-cmu-ece",
+        "source_count": 8,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_program-m61f"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g"
+            ]
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq_current-m61i"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_degree-m61i"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_standard-m61f"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_rates-m61i",
+              "cmu-ms-ece-pittsburgh-cmu_ece_standard_current-m61i",
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq_current-m61i"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq_current-m61i"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_program-m61f"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "english",
+          "deadline",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "english",
+          "deadline",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "MISSING_ENGLISH_SUBSCORES",
+            "explanation": "Required English subscores are missing.",
+            "source_ids": [
+              "cmu-ms-ece-pittsburgh-cmu_ece_faq-m61g"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": "92265",
+          "formula": "At most 30755 USD \u00d7 3 (per_term); no verified minimum or exact bill",
+          "rate_year": "2026-2027",
+          "reason_code": "MAXIMUM_ONLY_TUITION_BOUND",
+          "assumptions": [
+            "Conservative tuition-only planning ceiling for the ordinary three-semester Standard MS ECE in Pittsburgh; the extended, intensive-project and other-campus options are outside this scope.",
+            "The ECE admissions FAQ directs Professional MS students to the College of Engineering current tuition page. That page gives a 2026-27 Masters rate of USD 30,755 per fall/spring semester, with a separate USD 855 per-unit rate.",
+            "Three full semester charges give a ceiling of USD 92,265 at that published reference rate. A permitted reduced final load may cost less; no minimum or exact bill is asserted. The university warns that departmental actual rates can vary and must be confirmed before a commitment.",
+            "Future rate increases, summer or extended study, additional courses, fees, insurance and living costs are excluded. This does not assume a scholarship or assistantship."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_term",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "cmu-msaii-pittsburgh",
+        "university": "Carnegie Mellon University",
+        "program_name": "Master of Science in Artificial Intelligence and Innovation",
+        "degree": "MSAII",
+        "campus": "Pittsburgh",
+        "track": "Professional (20 months)",
+        "discipline": "CS",
+        "official_url": "https://lti.cs.cmu.edu/academics/masters-programs/msaii.html",
+        "original_candidate_source_id": "official-cmu-program-comparison",
+        "source_count": 6,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_faq-m35",
+              "cmu-msaii-pittsburgh-central-m35"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_faq-m35"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_faq-m35"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "credits": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_fees-m35"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-msaii_program-m35"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cmu-msaii-pittsburgh-stats_data-m35",
+              "cmu-msaii-pittsburgh-stats-m35"
+            ]
+          }
+        },
+        "catalog_gaps": [
+          "credits"
+        ],
+        "next_required_reviews": [],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "pass",
+        "reference_unknown_checks": [],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": true,
+        "reference_supported_tiers": [
+          "Lottery"
+        ],
+        "reference_formal_evidence_ready": true,
+        "reviewed_recent_cohorts": 1,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "133500",
+          "upper_usd": "137400",
+          "formula": "32400\u201332400 USD \u00d7 4\u20134 (per_term) + 3900\u20137800 USD required additional tuition",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Department-specific published 2026\u20132027 rate reused as a planning estimate for Fall 2027; future increases are unknown.",
+            "Living expenses, health insurance and mandatory non-tuition fees are excluded; fee total is not verified.",
+            "Four academic semesters plus the required 6\u201312 unit pre-arrival summer course at USD 650/unit; no internship tuition.",
+            "No unconfirmed scholarship or assistantship is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_term",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": null
+      },
+      {
+        "program_id": "cornell-meng-cs-ithaca",
+        "university": "Cornell University",
+        "program_name": "Master of Engineering in Computer Science",
+        "degree": "MEng",
+        "campus": "Ithaca",
+        "track": "On-campus two-semester",
+        "discipline": "CS",
+        "official_url": "https://www.cs.cornell.edu/masters-engineering-computer-science",
+        "original_candidate_source_id": "s-cornell-cs-meng",
+        "source_count": 7,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_main-m61c"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_main-m61c"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61h"
+            ]
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61h"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61c"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61c"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_main-m61c"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_planning-m61c",
+              "cornell-meng-cs-ithaca-cornell_funding-m61c",
+              "cornell-meng-cs-ithaca-cornell_budget-m61c"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61c"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_main-m61c"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "english",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "english",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "COURSEWORK_NOT_PROVIDED",
+            "explanation": "Required coursework or skills have not been fully specified.",
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61h"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61h"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "COURSEWORK_NOT_PROVIDED",
+            "explanation": "Required coursework or skills have not been fully specified.",
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61h"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [
+              "cornell-meng-cs-ithaca-cornell_apply-m61c"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "73946",
+          "upper_usd": "73946",
+          "formula": "73946\u201373946 USD \u00d7 1\u20131 (per_year)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "The current Ithaca CS MEng admits to a two-semester program, counted as one academic year of tuition.",
+            "The published FY27 university budget appendix lists the 2026-27 Masters Tier 1 annual rate as USD 73,946 and includes MEng in that tier; the engineering funding page independently confirms the tier.",
+            "This is a budget-plan-based published estimate, not a guaranteed Bursar bill or Fall 2027 rate. The direct Bursar page returned HTTP 403 during capture.",
+            "Living expenses, insurance, mandatory non-tuition charges and unverified extra preparation are excluded. No unconfirmed aid is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_year",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "duke-ms-ece-durham",
+        "university": "Duke University",
+        "program_name": "Master of Science in Electrical and Computer Engineering",
+        "degree": "MS",
+        "campus": "Durham",
+        "track": "Ordinary MS; coursework, project or thesis options (not MEng or Duke 4+1)",
+        "discipline": "ECE",
+        "official_url": "https://ece.duke.edu/academics/masters/",
+        "original_candidate_source_id": "a-minus-duke-ece",
+        "source_count": 5,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61f"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61g"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_faq-m61g"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61g"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61f"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61g"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61f"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MINIMUM_ONLY_TUITION_BOUND",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [
+              "duke-ms-ece-durham-duke_program-m61f",
+              "duke-ms-ece-durham-duke_billing-m61f"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "104820",
+          "upper_usd": null,
+          "formula": "At least 3 units \u00d7 34940 USD; no verified upper bound",
+          "rate_year": "2026-2027",
+          "reason_code": "MINIMUM_ONLY_TUITION_BOUND",
+          "assumptions": [
+            "The ordinary MS requires at least three full-time semesters; the 2026-27 research-master rate is USD 34,940 per fall/spring semester.",
+            "USD 104,820 is a published-rate tuition minimum, not a verified final total or upper bound.",
+            "Additional enrollment, summer study, future rate increases, fees and living costs may add expense. MEng rates and Duke 4+1 rules are excluded."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "gatech-mscs-atlanta",
+        "university": "Georgia Institute of Technology",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "Atlanta",
+        "track": "On-campus course option (not OMSCS)",
+        "discipline": "CS",
+        "official_url": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+        "original_candidate_source_id": "s-gatech-mscs",
+        "source_count": 4,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_program-m61f"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_admissions-m61f"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gatech_admissions-m61g",
+              "gatech-mscs-atlanta-gatech_english-m61g"
+            ]
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_program-m61f"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_admissions-m61f"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_program-m61f"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_program-m61f"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "RECOMMENDATION_NOT_HARD_MINIMUM",
+            "explanation": "The published GPA is a recommendation. It does not establish that all GPA eligibility requirements are met.",
+            "source_ids": [
+              "gatech-mscs-atlanta-gt_admissions-m61f"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "MISSING_ENGLISH_SUBSCORES",
+            "explanation": "Required English subscores are missing.",
+            "source_ids": [
+              "gatech-mscs-atlanta-gatech_admissions-m61g",
+              "gatech-mscs-atlanta-gatech_english-m61g"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_TUITION_EVIDENCE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_TUITION_EVIDENCE",
+          "assumptions": [],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": true,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "ncsu-mcs-raleigh",
+        "university": "North Carolina State University",
+        "program_name": "Master of Computer Science",
+        "degree": "MCS",
+        "campus": "Raleigh",
+        "track": "General non-thesis / Graduate School code MR",
+        "discipline": "CS",
+        "official_url": "https://catalog.ncsu.edu/graduate/engineering/computer-science/computer-science-mr/",
+        "original_candidate_source_id": "b-ncsu-mcs",
+        "source_count": 5,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gre": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ncsu-mcs-raleigh--ncsu_main--b7d07e4f49c1"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ncsu-mcs-raleigh-ncsu_rates-m61i"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "gre",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "gre",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": "67983",
+          "formula": "At most 2193 USD \u00d7 31 (per_credit); no verified minimum or exact bill",
+          "rate_year": "2026-2027",
+          "reason_code": "MAXIMUM_ONLY_TUITION_BOUND",
+          "assumptions": [
+            "Conservative tuition-only ceiling for the ordinary 31-credit Raleigh on-campus MCS, using the 2026-27 nonresident MCS/MSCS table.",
+            "Each uncapped billing credit comprises USD 1,804.11 base tuition plus USD 388.89 tuition increment, or USD 2,193. The table separately lists required fees and the COE fee; those are excluded.",
+            "Both tuition components plateau at the nine-plus-credit semester row. Ignoring the plateau bounds the ordinary required-credit tuition by 31 x USD 2,193 = USD 67,983. The actual bill can be lower and needs a term-by-term schedule.",
+            "This ceiling excludes repeated or additional coursework, extra enrollment, summer rates not covered by the table, future increases, fees and living costs. The online program and generic graduate table are not substituted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_credit",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "neu-mscs-boston",
+        "university": "Northeastern University",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "Boston",
+        "track": "Standard MSCS (not Align, not Canada)",
+        "discipline": "CS",
+        "official_url": "https://catalog.northeastern.edu/graduate/computer-information-science/computer-science/computer-science-mscs/",
+        "original_candidate_source_id": "b-neu-mscs",
+        "source_count": 3,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "neu-mscs-boston--neu_main--31dfc1f1819d"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "neu-mscs-boston-neu_apply-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "neu-mscs-boston--neu_main--31dfc1f1819d"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "neu-mscs-boston--neu_program--e841b232af72"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "61504",
+          "upper_usd": "61504",
+          "formula": "61504\u201361504 USD \u00d7 1\u20131 (full_program)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Uses the Boston official page's 2026\u20132027 Estimated Total Tuition. Excludes fees and other expenses; course rates may affect the actual total.",
+            "Canadian campuses, Align, and other degrees' rates have not been used."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "full_program",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "nyu-mscs-tandon-brooklyn",
+        "university": "New York University",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "Brooklyn",
+        "track": "On-campus",
+        "discipline": "CS",
+        "official_url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+        "original_candidate_source_id": "b-plus-nyu-tandon",
+        "source_count": 5,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_program-m61h"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_tuition_pdf-m61c"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_main-m61c"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_NOT_VERIFIED",
+            "explanation": "The official GPA calculation scope has not been verified. An unspecified scope cannot establish eligibility.",
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [
+              "nyu-mscs-tandon-brooklyn-nyu_requirements-m61c"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "78780",
+          "upper_usd": "78780",
+          "formula": "2626\u20132626 USD \u00d7 30\u201330 (per_credit)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Published 2026-27 Tandon graduate General tuition, USD 2,626 per credit, multiplied by 30 required credits.",
+            "Fall 2027 intake and final rates are not guaranteed; future increases are unknown.",
+            "The per-credit general graduate row is distinct from undergraduate flat rates and older Financial Engineering cohort rates.",
+            "Living expenses, insurance, mandatory non-tuition charges and any additional prerequisite coursework are excluded. No unconfirmed aid is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_credit",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "rice-mcs-houston",
+        "university": "Rice University",
+        "program_name": "Master of Computer Science",
+        "degree": "MCS",
+        "campus": "Houston",
+        "track": "On-campus non-thesis",
+        "discipline": "CS",
+        "official_url": "https://cs.rice.edu/academics/graduate-programs/master-computer-science",
+        "original_candidate_source_id": "b-plus-rics-mcs",
+        "source_count": 8,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "rice-mcs-houston-rice_apply-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "rice-mcs-houston--rice_tuition--3462a78195c9"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "RECOMMENDATION_NOT_HARD_MINIMUM",
+            "explanation": "The published GPA is a recommendation. It does not establish that all GPA eligibility requirements are met.",
+            "source_ids": [
+              "rice-mcs-houston--rice_main--2eed7dfef402"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_RATE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [
+              "rice-mcs-houston--rice_tuition--3462a78195c9"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_RATE",
+          "assumptions": [
+            "Professional master's tuition is listed as USD 30,720 per semester. Three semesters is a typical duration, not a verified required billing schedule, so no full-program total is calculated.",
+            "The online MCS per-credit rate has not been used."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": true,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "tamu-mcs-college-station",
+        "university": "Texas A&M University",
+        "program_name": "Master of Computer Science",
+        "degree": "MCS",
+        "campus": "College Station",
+        "track": "On-campus non-thesis professional",
+        "discipline": "CS",
+        "official_url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/mcs.html",
+        "original_candidate_source_id": "b-plus-tamu-cse",
+        "source_count": 5,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_main-m61c"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_faq-m61c"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_faq-m61c"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_main-m61c"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_college-m61c"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_main-m61c"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_TUITION_EVIDENCE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [
+              "tamu-mcs-college-station-tamu_college-m61c"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_TUITION_EVIDENCE",
+          "assumptions": [],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "uci-mcs-irvine",
+        "university": "University of California, Irvine",
+        "program_name": "Master of Computer Science",
+        "degree": "MCS",
+        "campus": "Irvine",
+        "track": "Professional capstone",
+        "discipline": "CS",
+        "official_url": "https://catalogue.uci.edu/donaldbrenschoolofinformationandcomputersciences/departmentofcomputerscience/computerscience_master/",
+        "original_candidate_source_id": "b-uci-mcs",
+        "source_count": 11,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine--uci_main--d1df788096ea"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine--uci_admissions--77660702e948"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_requirements-m61f"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine--uci_policy--7e045ec04a27"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_faq-m61h"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_home-m61e"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_faq-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_fees-m61g"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine--uci_admissions--77660702e948"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_apply_canonical-m61h"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uci-mcs-irvine-uci_apply_canonical-m61h"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "credits",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "pass",
+        "reference_unknown_checks": [],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": true,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "63500",
+          "upper_usd": "63500",
+          "formula": "63500\u201363500 USD \u00d7 1\u20131 (full_program)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "The registrar lists a USD 63,500 program fee for the cohort entering Fall 2026 across five quarters, including Fall 2027.",
+            "This is the tuition-like instructional program fee only. Separately itemized service, campus, insurance and other fees are excluded; some later-quarter fees are TBD.",
+            "The Fall 2026 cohort schedule is used as a published-rate planning reference, not the fee schedule for a new Fall 2027 cohort or a guaranteed final bill.",
+            "The annual USD 50,800 program fee covers four quarters, not the full five-quarter degree. No unconfirmed aid is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "full_program",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "ucsd-ms-cs-la-jolla",
+        "university": "University of California San Diego",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "La Jolla",
+        "track": "Computer Science major, Comprehensive Standard Plan (not CE or BS/MS)",
+        "discipline": "CS",
+        "official_url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+        "original_candidate_source_id": "a-plus-ucsd-cs75",
+        "source_count": 5,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_program-m61f"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f"
+            ]
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_english-m61g"
+            ]
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61g"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_standard-m61f"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_program-m61f"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_NOT_VERIFIED",
+            "explanation": "The official GPA calculation scope has not been verified. An unspecified scope cannot establish eligibility.",
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_admissions-m61f"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_MINIMUM_ONLY",
+            "explanation": "The stated score floor is met, but test validity, program conditions or exemption rules still need review. A score floor alone does not establish English eligibility.",
+            "source_ids": [
+              "ucsd-ms-cs-la-jolla-ucsd_english-m61g"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_TUITION_EVIDENCE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_TUITION_EVIDENCE",
+          "assumptions": [],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "uiuc-mcs-urbana",
+        "university": "University of Illinois Urbana-Champaign",
+        "program_name": "Master of Computer Science",
+        "degree": "MCS",
+        "campus": "Urbana-Champaign",
+        "track": "On-campus coursework",
+        "discipline": "CS",
+        "official_url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+        "original_candidate_source_id": "a-uiuc-mcs",
+        "source_count": 10,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana-uiuc_english-m61h",
+              "uiuc-mcs-urbana-uiuc_calendar-m61h"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana-uiuc_mcs_apply-m61e"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana-uiuc_mcs_apply-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_main--2f239d6fe508"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "RECOMMENDATION_NOT_HARD_MINIMUM",
+            "explanation": "The published GPA is a recommendation. It does not establish that all GPA eligibility requirements are met.",
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_admissions--2754d8b18b67"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_RATE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [
+              "uiuc-mcs-urbana--uiuc_tuition--85794e0b6b4f"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_RATE",
+          "assumptions": [
+            "The official site directs applicants to the relevant Illinois Cost Calculator. The program becomes self-supporting in Fall 2027; a reproducible applicable rate has not been verified here."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": true,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "uiuc-meng-ece-urbana",
+        "university": "University of Illinois Urbana-Champaign",
+        "program_name": "Master of Engineering in Electrical and Computer Engineering",
+        "degree": "MEng",
+        "campus": "Urbana-Champaign",
+        "track": "On-campus non-thesis",
+        "discipline": "ECE",
+        "official_url": "https://ece.illinois.edu/academics/grad/meng-campus",
+        "original_candidate_source_id": "b-uiuc-ece-meng",
+        "source_count": 9,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_main-m61b"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_english-m61h",
+              "uiuc-meng-ece-urbana-uiuc_calendar-m61h"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_main-m61b"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_12_result-m61i",
+              "uiuc-meng-ece-urbana-uiuc_meng-m61i"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_main-m61b"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "prerequisites",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "prerequisites",
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_NOT_VERIFIED",
+            "explanation": "The official GPA calculation scope has not been verified. An unspecified scope cannot establish eligibility.",
+            "source_ids": [
+              "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61b"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": "60666",
+          "formula": "At most 20222 USD \u00d7 3 (per_term); no verified minimum or exact bill",
+          "rate_year": "2026-2027",
+          "reason_code": "MAXIMUM_ONLY_TUITION_BOUND",
+          "assumptions": [
+            "Conservative tuition-only ceiling for the ordinary full-time on-campus ECE MEng, completed within the department stated two-to-three continuous fall/spring semesters.",
+            "The official calculator identifies international graduate ECE MEng 1PKS1200MENG, entering Fall 2026, with USD 20,222 semester tuition at 12 billing hours. This is the full Range I tuition amount, distinct from the annual total and non-tuition costs.",
+            "At most three fall/spring semesters at that maximum ordinary semester rate gives USD 60,666. Reduced terminal loads can lower the total; no minimum or exact bill is asserted.",
+            "Fall 2027 rates are not yet offered by the calculator. The 2026-27 published-rate ceiling excludes future increases, summer or extended enrollment, extra study, fees, insurance and living costs. It is not the online degree price."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_term",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "umass-mscs-amherst",
+        "university": "University of Massachusetts Amherst",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "Amherst",
+        "track": "On-campus",
+        "discipline": "CS",
+        "official_url": "https://www.cics.umass.edu/academics/ms-computer-science-campus",
+        "original_candidate_source_id": "b-umass-mscs",
+        "source_count": 8,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst--umass_main--e60b9197037b"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst--umass_main--e60b9197037b"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst-umass_international-m61g"
+            ]
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst-umass_international-m61g"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst-umass_apply-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst--umass_main--e60b9197037b"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "umass-mscs-amherst--umass_main--e60b9197037b"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_MINIMUM_ONLY",
+            "explanation": "The stated score floor is met, but test validity, program conditions or exemption rules still need review. A score floor alone does not establish English eligibility.",
+            "source_ids": [
+              "umass-mscs-amherst-umass_international-m61g"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [
+              "umass-mscs-amherst--umass_admissions--ba96ff7252db"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_RATE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [
+              "umass-mscs-amherst--umass_tuition--e47e2eabd77d"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_RATE",
+          "assumptions": [
+            "The site lists USD 60,750 in combined out-of-state/international tuition and mandatory fees. A tuition-only amount and complete billing period are not established, so it is not used as a full-program tuition total."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "usc-mscs-general-los-angeles",
+        "university": "University of Southern California",
+        "program_name": "Master of Science in Computer Science",
+        "degree": "MS",
+        "campus": "Los Angeles",
+        "track": "General coursework, non-thesis",
+        "discipline": "CS",
+        "official_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science-/",
+        "original_candidate_source_id": "b-usc-cs28",
+        "source_count": 4,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "usc-mscs-general-los-angeles--usc_main--d4433cbe187c"
+            ]
+          },
+          "intake": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "gpa": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "usc-mscs-general-los-angeles-usc_program-m61e"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "usc-mscs-general-los-angeles-usc_program-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "usc-mscs-general-los-angeles--usc_main--d4433cbe187c"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "usc-mscs-general-los-angeles--usc_tuition--41ac82b75b34"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "remaining_eligibility": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "intake",
+            "status": "unknown",
+            "reason_code": "INTAKE_NOT_VERIFIED",
+            "explanation": "This intake is not verified. Prior-year information is not automatically carried forward.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_RULE_NOT_VERIFIED",
+            "explanation": "No applicable GPA threshold has been verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "english",
+            "status": "unknown",
+            "reason_code": "ENGLISH_RULE_NOT_VERIFIED",
+            "explanation": "The program's requirement for this English test version is not verified.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "PREREQUISITES_REQUIRE_REVIEW",
+            "explanation": "Prerequisite rules are incomplete, or individual deficiencies may be reviewed. Manual verification is required.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "deadline",
+            "status": "unknown",
+            "reason_code": "DEADLINE_NOT_VERIFIED",
+            "explanation": "No verified deadline applies to this intake and applicant category yet.",
+            "source_ids": [],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "87744",
+          "upper_usd": "87744",
+          "formula": "2742\u20132742 USD \u00d7 32\u201332 (per_credit)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Estimated from the current 32-unit coursework requirement at USD 2,742 per unit for 2026\u20132027. The thesis option adds four units and is outside this track.",
+            "Excludes future increases, living costs, insurance, and mandatory fees."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_credit",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "uw-ece-msece-pmp-seattle",
+        "university": "University of Washington",
+        "program_name": "Electrical and Computer Engineering Professional Master\u2019s Program",
+        "degree": "MSECE",
+        "campus": "Seattle",
+        "track": "PMP coursework, full-time",
+        "discipline": "ECE",
+        "official_url": "https://www.ece.uw.edu/academics/pmp/",
+        "original_candidate_source_id": "a-uw-ee-pmp",
+        "source_count": 6,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_english--b5779f69fcbe"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle-uw_admissions-m61e"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle-uw_admissions-m61e"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_requirements--1875142f35e5"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_tuition--b1a7867d6d32"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle-uw_requirements-m61f"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "goal_features",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "goal_features",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_MISMATCH",
+            "explanation": "The GPA calculation scopes differ, such as overall GPA versus the last 60 semester credits.",
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_MISMATCH",
+            "explanation": "The GPA calculation scopes differ, such as overall GPA versus the last 60 semester credits.",
+            "source_ids": [
+              "uw-ece-msece-pmp-seattle--uw_admissions--225e3a982baf"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": "50850",
+          "upper_usd": "50850",
+          "formula": "1130\u20131130 USD \u00d7 45\u201345 (per_credit)",
+          "rate_year": "2026-2027",
+          "reason_code": "PUBLISHED_RATE_ESTIMATE",
+          "assumptions": [
+            "Estimated from 45 credits at the published 2026\u20132027 rate. Excludes future increases, AEP, living costs, and separately charged fees."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_credit",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      },
+      {
+        "program_id": "uw-mscss-tacoma",
+        "university": "University of Washington Tacoma",
+        "program_name": "Master of Science in Computer Science and Systems",
+        "degree": "MS",
+        "campus": "Tacoma",
+        "track": "Thesis, project or electives-only; pathway not selected",
+        "discipline": "CS",
+        "official_url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+        "original_candidate_source_id": "b-plus-uwt-mscs",
+        "source_count": 6,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uw_english-m61h"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_program-m61h"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "credits": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "tuition": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_program-m61h"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_main-m61b"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "credits",
+          "tuition",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "tuition",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "COURSEWORK_NOT_PROVIDED",
+            "explanation": "Required coursework or skills have not been fully specified.",
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_program-m61h"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "prerequisites",
+            "status": "unknown",
+            "reason_code": "COURSEWORK_NOT_PROVIDED",
+            "explanation": "Required coursework or skills have not been fully specified.",
+            "source_ids": [
+              "uw-mscss-tacoma-uwt_program-m61h"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "tuition",
+            "status": "unknown",
+            "reason_code": "MISSING_TUITION_EVIDENCE",
+            "explanation": "A verified full-program tuition upper bound is missing. A known minimum does not establish affordability; fees or living budgets cannot substitute for tuition.",
+            "source_ids": [],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": null,
+          "formula": null,
+          "rate_year": null,
+          "reason_code": "MISSING_TUITION_EVIDENCE",
+          "assumptions": [],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "unknown",
+        "deadline_schedule_complete": false,
+        "gpa_recommendation_only": false,
+        "repair_priority": 2
+      },
+      {
+        "program_id": "wisc-ms-cs-professional-madison",
+        "university": "University of Wisconsin-Madison",
+        "program_name": "Master of Science in Computer Sciences",
+        "degree": "MS",
+        "campus": "Madison",
+        "track": "Professional Program named option, on-campus",
+        "discipline": "CS",
+        "official_url": "https://www.cs.wisc.edu/grad/programs/pmp/",
+        "original_candidate_source_id": "a-plus-wisc-cs-pmp",
+        "source_count": 13,
+        "field_coverage": {
+          "identity": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_main-m61c"
+            ]
+          },
+          "intake": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_pdc-m61i"
+            ]
+          },
+          "gpa": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_policy-m61c"
+            ]
+          },
+          "english": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_requirements-m61h",
+              "wisc-ms-cs-professional-madison-wisc_calendar-m61h"
+            ]
+          },
+          "english_minimum": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          },
+          "prerequisites": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_guide-m61h"
+            ]
+          },
+          "degree": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_policy-m61c"
+            ]
+          },
+          "gre": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_guide-m61c"
+            ]
+          },
+          "credits": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_main-m61c"
+            ]
+          },
+          "tuition": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_rates_pdf-m61i",
+              "wisc-ms-cs-professional-madison-wisc_pdc-m61i"
+            ]
+          },
+          "deadline": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_pdc-m61i"
+            ]
+          },
+          "remaining_eligibility": {
+            "evidence_bound": true,
+            "rule_usable": false,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_guide-m61c"
+            ]
+          },
+          "goal_features": {
+            "evidence_bound": true,
+            "rule_usable": true,
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_main-m61c"
+            ]
+          },
+          "admission_evidence": {
+            "evidence_bound": false,
+            "rule_usable": false,
+            "source_ids": []
+          }
+        },
+        "catalog_gaps": [
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "next_required_reviews": [
+          "remaining_eligibility",
+          "admission_evidence"
+        ],
+        "reference_profile_comparison_issues": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_MISMATCH",
+            "explanation": "The GPA calculation scopes differ, such as overall GPA versus the last 60 semester credits.",
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_policy-m61c"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_hard_status": "unknown",
+        "reference_unknown_checks": [
+          {
+            "rule_id": "gpa",
+            "status": "unknown",
+            "reason_code": "GPA_SCOPE_MISMATCH",
+            "explanation": "The GPA calculation scopes differ, such as overall GPA versus the last 60 semester credits.",
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_policy-m61c"
+            ],
+            "warnings": []
+          },
+          {
+            "rule_id": "remaining_eligibility",
+            "status": "unknown",
+            "reason_code": "M1_PARTIAL_RULE_COVERAGE",
+            "explanation": "Degree equivalency, complete application materials, and other program conditions still require review.",
+            "source_ids": [
+              "wisc-ms-cs-professional-madison-wisc_guide-m61c"
+            ],
+            "warnings": []
+          }
+        ],
+        "reference_failed_checks": [],
+        "reference_hard_checks_ready": false,
+        "reference_supported_tiers": [],
+        "reference_formal_evidence_ready": false,
+        "reviewed_recent_cohorts": 0,
+        "reviewed_recent_admitted_cases": 0,
+        "tuition": {
+          "lower_usd": null,
+          "upper_usd": "45102.00",
+          "formula": "At most 1503.40 USD \u00d7 30 (per_credit); no verified minimum or exact bill",
+          "rate_year": "2026-2027",
+          "reason_code": "MAXIMUM_ONLY_TUITION_BOUND",
+          "assumptions": [
+            "A conservative ceiling for the ordinary 30-credit on-campus PMP at the 2026-27 international tuition rate; this is not a flat full-program quote.",
+            "The official fee table maps Computer Sciences MS / Professional Program to Graduate tuition. Page 6 separates USD 1,503.40 tuition per credit from segregated fees, with an eight-credit semester plateau; page 49 confirms the program mapping.",
+            "Ignoring the tuition plateau gives an upper bound of 30 x USD 1,503.40 = USD 45,102. The exact bill can be lower and needs a term-by-term schedule.",
+            "Future increases, added courses or terms, fees, insurance and living costs are excluded. PMP has no assistantship tuition remission; no unconfirmed aid is deducted."
+          ],
+          "mandatory_fees_usd": null
+        },
+        "tuition_basis": "per_credit",
+        "deadline_schedule_complete": true,
+        "gpa_recommendation_only": false,
+        "repair_priority": 3
+      }
+    ],
+    "repair_queue": [
+      {
+        "program_id": "cmu-mcds-pittsburgh",
+        "priority": 1,
+        "fields": [
+          "english",
+          "prerequisites",
+          "remaining_eligibility"
+        ]
+      },
+      {
+        "program_id": "duke-ms-ece-durham",
+        "priority": 2,
+        "fields": [
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "gatech-mscs-atlanta",
+        "priority": 2,
+        "fields": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "rice-mcs-houston",
+        "priority": 2,
+        "fields": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "tamu-mcs-college-station",
+        "priority": 2,
+        "fields": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "ucsd-ms-cs-la-jolla",
+        "priority": 2,
+        "fields": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "uiuc-mcs-urbana",
+        "priority": 2,
+        "fields": [
+          "gpa",
+          "tuition",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "umass-mscs-amherst",
+        "priority": 2,
+        "fields": [
+          "gpa",
+          "english",
+          "prerequisites",
+          "tuition",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "uw-mscss-tacoma",
+        "priority": 2,
+        "fields": [
+          "tuition",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "cmu-ms-ece-pittsburgh",
+        "priority": 3,
+        "fields": [
+          "intake",
+          "english",
+          "deadline",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "cornell-meng-cs-ithaca",
+        "priority": 3,
+        "fields": [
+          "gpa",
+          "english",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "ncsu-mcs-raleigh",
+        "priority": 3,
+        "fields": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "gre",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "neu-mscs-boston",
+        "priority": 3,
+        "fields": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "degree",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "nyu-mscs-tandon-brooklyn",
+        "priority": 3,
+        "fields": [
+          "intake",
+          "gpa",
+          "deadline",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "uci-mcs-irvine",
+        "priority": 3,
+        "fields": [
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "uiuc-meng-ece-urbana",
+        "priority": 3,
+        "fields": [
+          "gpa",
+          "prerequisites",
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "usc-mscs-general-los-angeles",
+        "priority": 3,
+        "fields": [
+          "intake",
+          "gpa",
+          "english",
+          "prerequisites",
+          "deadline",
+          "remaining_eligibility",
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "uw-ece-msece-pmp-seattle",
+        "priority": 3,
+        "fields": [
+          "goal_features",
+          "admission_evidence"
+        ]
+      },
+      {
+        "program_id": "wisc-ms-cs-professional-madison",
+        "priority": 3,
+        "fields": [
+          "remaining_eligibility",
+          "admission_evidence"
+        ]
+      }
+    ],
+    "notice": "Only existing reviewed snapshots are audited. Candidate source tiers do not authorize personalized tiers. Missing credits for term-priced degrees are recorded without treating them as per-credit pricing inputs."
+  },
+  "candidates": {
+    "source_commit": "a60f321365c0f00594e4d593de6f0383428bd59d",
+    "source_sha256": "793b4685a323229b99ec39783ca0bb388c2870551e9ee05b6b66b357a31d4ffb",
+    "source_url": "https://raw.githubusercontent.com/csms-apply/csgrad/a60f321365c0f00594e4d593de6f0383428bd59d/src/lib/tracker/school-list.json",
+    "upstream_generated": "2026-10-25",
+    "intake": "Fall 2027",
+    "attribution": {
+      "creator": "CS Grad contributors",
+      "project_url": "https://csgrad.com/",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notice_basis": "Project homepage license badge checked 2026-11-19. This reduced candidate index is distributed with the same attribution/noncommercial/share-alike notice.",
+      "changes": "Only public identity leads and review flags retained. Source tiers, language/deadline claims, fees and datapoints are excluded."
+    },
+    "summary": {
+      "total": 83,
+      "screening_counts": {
+        "already_linked_identity": 20,
+        "halt_report_needs_official_check": 4,
+        "not_selected": 59
+      },
+      "doctoral_scope_review": 1,
+      "source_reports_halted": 4,
+      "candidate_recommendation_eligible": 0
+    },
+    "inventory": [
+      {
+        "source_id": "a-cmu-ece",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "cmu-ms-ece-pittsburgh",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-cmu-mits",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-cmu-msmite",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-columbia-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-brown-scmcs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-cmu-msess",
+        "screening_status": "halt_report_needs_official_check",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing",
+          "source_reports_halted"
+        ]
+      },
+      {
+        "source_id": "a-minus-cmu-sesv",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-columbia-ce",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-columbia-ds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-duke-ece",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "duke-ms-ece-durham",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-gatech-ece",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-jhu-msecs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-nyu-ds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-uchicago-mpcs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-ucsb-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-minus-ucsd-ec79",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-duke-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-gatech-cse",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-ucla-meng",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-ucla-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-ucsd-cs75",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "ucsd-ms-cs-la-jolla",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-upenn-cis",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-upenn-ds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-upenn-msr",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-ut-ece",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-plus-wisc-cs-pmp",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "wisc-ms-cs-professional-madison",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-uiuc-mcs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "uiuc-mcs-urbana",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-umd-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-umich-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-upenn-mcit",
+        "screening_status": "halt_report_needs_official_check",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing",
+          "source_reports_halted"
+        ]
+      },
+      {
+        "source_id": "a-uw-ee-pmp",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "uw-ece-msece-pmp-seattle",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "a-yale-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-emory-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-minus-neu-is",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-minus-neu-ses",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-minus-scu-mscse",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-minus-uiuc-msim",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-ncsu-mcs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "ncsu-mcs-raleigh",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-neu-cs-align",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-neu-mscs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "neu-mscs-boston",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-cmu-mism",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-columbia-ee",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-cornell-mps-is",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-cornell-tech-cm",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-nwu-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-nyu-tandon",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "nyu-mscs-tandon-brooklyn",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-rics-mcs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "rice-mcs-houston",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-tamu-cse",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "tamu-mcs-college-station",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-uci-mswe",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-upenn-ee",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-plus-uwt-mscs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "uw-mscss-tacoma",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-uci-mcs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "uci-mcs-irvine",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-uiuc-ece-meng",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "uiuc-meng-ece-urbana",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-umass-mscs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "umass-mscs-amherst",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-usc-cs28",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "usc-mscs-general-los-angeles",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "b-utah-state-university-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "c-plus-umn-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-mcds",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "cmu-mcds-pittsburgh",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-miis",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-msaii",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "cmu-msaii-pittsburgh",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-mscv",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-msin",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-msml",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cmu-msr",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-cornell-cs-meng",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "cornell-meng-cs-ithaca",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-gatech-mscs",
+        "screening_status": "already_linked_identity",
+        "catalog_program_id": "gatech-mscs-atlanta",
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-ucb-eecs-meng",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "s-ut-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-caltech-msee",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-cmu-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-harvard-cse",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-harvard-ds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-harvard-hds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-stanford-icme",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-stanford-msee",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-stanford-stat-ds",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-stanford-symbolic-system",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-uiuc-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "ss-yale-mscs-2year",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      },
+      {
+        "source_id": "sss-mit-cse",
+        "screening_status": "halt_report_needs_official_check",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing",
+          "source_reports_halted"
+        ]
+      },
+      {
+        "source_id": "sss-mit-eecs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing",
+          "source_mentions_doctoral_admission"
+        ]
+      },
+      {
+        "source_id": "sss-princeton-msecs",
+        "screening_status": "halt_report_needs_official_check",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing",
+          "source_reports_halted"
+        ]
+      },
+      {
+        "source_id": "sss-stanford-mscs",
+        "screening_status": "not_selected",
+        "catalog_program_id": null,
+        "candidate_verification_status": "community_unverified",
+        "recommendation_eligible": false,
+        "review_flags": [
+          "identity_and_scope_unverified",
+          "official_facts_unverified",
+          "tuition_missing"
+        ]
+      }
+    ],
+    "first_expansion_batch": [],
+    "notice": "Preliminary official-page review does not import an identity or verify numerical admissions/tuition facts. No DP data is used; tracker metadata remains unverified."
+  },
+  "target_catalog_min": 20,
+  "target_catalog_max": 25,
+  "inputs_sha256": {
+    "seed": "ab9c7889bd05a339a06f9f9d77d822bbab21e431ae72ad6d9a8047d5b5354c18",
+    "candidate_index": "6bc5a34c38be959213aeb17811e3831b1296124772a833f351a2e0ec79f0c2cb",
+    "review_plan": "e01af46df283b338dd9d60085cec5bb2b2804f80e736730e40bfda4401e1536a"
+  },
+  "full_tracker_check": {
+    "status": "not_supplied",
+    "notice": "The reduced pinned index is bundled; the full upstream JSON is optional local material."
+  },
+  "candidate_store_check": {
+    "status": "not_supplied"
+  },
+  "expanded_catalog_gate_met": true,
+  "paid_model_requests": 0,
+  "datapoints_accessed": false,
+  "formal_benchmark_run": false
+}

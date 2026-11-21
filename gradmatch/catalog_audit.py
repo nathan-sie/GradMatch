@@ -191,6 +191,8 @@ def audit_catalog(programs, sources, *, as_of, intake):
                 r["tuition"]["upper_usd"] is not None for r in rows
             ),
             minimum_only_tuition=sum(r['tuition']['lower_usd'] is not None and r['tuition']['upper_usd'] is None for r in rows),
+            maximum_only_tuition=sum(r['tuition']['lower_usd'] is None and r['tuition']['upper_usd'] is not None for r in rows),
+            two_sided_tuition_estimates=sum(r['tuition']['lower_usd'] is not None and r['tuition']['upper_usd'] is not None for r in rows),
             full_eligibility_reviews=sum(
                 r["field_coverage"]["remaining_eligibility"]["rule_usable"]
                 for r in rows
@@ -340,6 +342,7 @@ def markdown_report(report):
         f"Audit date: {audit['as_of_date']} · Target intake: {audit['target_intake']} · Snapshot mode · Model/network requests: 0/0",
         "",
         f"Reviewed catalog: **{summary['programs']} programs / {summary['sources']} sources**. Verified computable tuition: **{summary['computable_verified_tuition']}**. Complete reviewed eligibility: **{summary['full_eligibility_reviews']}**.",
+        f"Of these tuition upper bounds, **{summary.get('two_sided_tuition_estimates', summary['computable_verified_tuition'])}** have two-sided estimates and **{summary.get('maximum_only_tuition', 0)}** are conservative ceilings only. A ceiling is not a quoted bill; a budget below it remains unknown rather than automatically failing.",
         f"Verified tuition minimum only: **{summary['minimum_only_tuition']}**. These bounds may exclude insufficient published-rate budgets but never establish affordability.",
         "An `english_minimum` rule supports score-floor screening only. Meeting that floor leaves English eligibility unknown until the complete applicable policy is verified.",
         f"For the fixed fictional profile, **{summary['reference_formal_evidence_ready']}** program has eligibility, goal and tier evidence for formal output. This is a test scenario, not a quality score.",

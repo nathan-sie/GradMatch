@@ -1,0 +1,17 @@
+{
+  "url": "https://www.ece.cmu.edu/academics/ms-ece/standard-program.html",
+  "retrieved_at": "2026-11-21T20:38:36.437152+00:00",
+  "raw_response_sha256": "8736ab1a680b4485bb9a07700695e05d99ba1dfee6b7ca14f35cb3d0dac7f2a1",
+  "verified_values": {
+    "tuition": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "3"
+    },
+    "tuition_upper": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "3"
+    }
+  },
+  "source_excerpt": "three-semester program comprised of 97 units",
+  "fact_summary": "The Standard MS ECE requires 97 units across three semesters. That exact ordinary track supplies the maximum term count for the published-rate ceiling; extended or intensive-project options are excluded."
+}

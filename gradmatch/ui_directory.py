@@ -56,7 +56,7 @@ def render_directory(document):
     if options:
         # A prior detail selection may disappear after filtering.
         if st.session_state.get("directory_detail") not in options:
-            st.session_state.pop("directory_detail", None)
+            st.session_state["directory_detail"] = options[0]
         sid = st.selectbox("Explore a program", options, format_func=label, key="directory_detail")
         row = by_id[sid]
         st.write(row["program_name"])

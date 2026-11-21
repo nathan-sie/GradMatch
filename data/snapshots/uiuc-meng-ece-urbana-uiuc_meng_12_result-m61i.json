@@ -1,0 +1,32 @@
+{
+  "url": "https://cost.illinois.edu/Home/Cost/I/G/1PKS1200MENG/12/120268/120268",
+  "retrieved_at": "2026-11-21T20:30:17.662063+00:00",
+  "raw_response_sha256": "b93f9b15f84a06ce79ee02eb8ffa6a54c988ef6480568d3c2277bd9a3e9f5641",
+  "verified_values": {
+    "tuition": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_term",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": "20222",
+      "tuition.rate_year": "2026-2027"
+    },
+    "tuition_upper": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_term",
+      "tuition.unit_rate_lower": null,
+      "tuition.unit_rate_upper": "20222",
+      "tuition.rate_year": "2026-2027"
+    }
+  },
+  "source_excerpt": "Total Tuition:",
+  "fact_summary": "The official calculator returns international on-campus ECE MEng 12-hour semester tuition of USD 20,222 for Fall 2026; the year view doubles it. Fees and additional expenses are separate and are not included.",
+  "calculator_parameters": {
+    "ResidencyCode": "I",
+    "StudentLevelCode": "G",
+    "StartTermCode": "120268",
+    "SelectedTermCode": "120268",
+    "ProgramCode": "1PKS1200MENG",
+    "CreditHours": "12",
+    "CompareAll": "False"
+  }
+}

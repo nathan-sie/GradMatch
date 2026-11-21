@@ -117,7 +117,7 @@ def render_m1(database):
         for program, report in zip(programs, result["reports"]):
             checks = {check["rule_id"]: check for check in report["checks"]}
             result_rows.append({"University": program.university, "Degree / campus": f"{program.degree} / {program.campus}",
-                "Estimated full-program tuition (USD)": report["tuition"]["upper_usd"] or "Needs verification",
+                "Published-rate tuition estimate / ceiling (USD)": report["tuition"]["upper_usd"] or "Needs verification",
                 **{RULE_NAMES[key]: STATUS[checks[key]["status"]] for key in ["tuition", "gpa", "english", "intake", "deadline"]}})
         show_table(result_rows)
         st.warning("These are individual checks against current evidence. Other eligibility requirements and admission risk still need review; these results are not tiered recommendations or admission guarantees.")

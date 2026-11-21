@@ -1,0 +1,13 @@
+{
+  "url": "https://www.ece.cmu.edu/admissions/graduate-requirements.html",
+  "retrieved_at": "2026-11-21T20:31:49.958884+00:00",
+  "raw_response_sha256": "a2b629e4061547232bb5dc3c669719cf0a39e8713ba6e82cc02098536acc79f2",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    }
+  },
+  "source_excerpt": "BS Degree",
+  "fact_summary": "The current department degree matrix explicitly lists a bachelor degree as Professional MS entry. It does not require the applicant to have completed a CMU integrated bachelor/master route."
+}

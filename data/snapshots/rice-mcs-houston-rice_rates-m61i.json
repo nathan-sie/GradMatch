@@ -1,0 +1,12 @@
+{
+  "url": "https://bursar.rice.edu/tuition_fee_rates/graduate-programs/engineering",
+  "retrieved_at": "2026-11-21T20:28:32.009024+00:00",
+  "raw_response_sha256": "dc931e70ea1ff85f27a6206c7bab2da1fc38f0ee71d0c64ab49c83adf73b2849",
+  "verified_values": {
+    "directory_policies": {
+      "notes.9": "Cost context: On-campus professional engineering tuition is USD 30,720 per semester; approved part-time tuition is USD 2,560 per credit, capped at that semester amount. Three semesters is typical, not a verified maximum bill. The USD 1,700 online MCS rate is excluded; total tuition stays pending."
+    }
+  },
+  "source_excerpt": "Part-time Approved Tuition",
+  "fact_summary": "The professional engineering table distinguishes full-time semester tuition from approved part-time per-credit billing, and separately itemizes fees. A typical three-semester duration is not a compulsory billing schedule or verified upper bound."
+}

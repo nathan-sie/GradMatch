@@ -1,0 +1,56 @@
+{
+  "url": "https://pdc.wisc.edu/degrees/computer-sciences-professional-program-ms/",
+  "retrieved_at": "2026-11-21T20:28:31.420257+00:00",
+  "raw_response_sha256": "2d371dd63d6a19735b0f2aeab13a45b45d47012b232c4dda4e8b823ba5355352",
+  "verified_values": {
+    "tuition": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "30",
+      "tuition.assumptions": [
+        "A conservative ceiling for the ordinary 30-credit on-campus PMP at the 2026-27 international tuition rate; this is not a flat full-program quote.",
+        "The official fee table maps Computer Sciences MS / Professional Program to Graduate tuition. Page 6 separates USD 1,503.40 tuition per credit from segregated fees, with an eight-credit semester plateau; page 49 confirms the program mapping.",
+        "Ignoring the tuition plateau gives an upper bound of 30 x USD 1,503.40 = USD 45,102. The exact bill can be lower and needs a term-by-term schedule.",
+        "Future increases, added courses or terms, fees, insurance and living costs are excluded. PMP has no assistantship tuition remission; no unconfirmed aid is deducted."
+      ]
+    },
+    "tuition_upper": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "30",
+      "tuition.assumptions": [
+        "A conservative ceiling for the ordinary 30-credit on-campus PMP at the 2026-27 international tuition rate; this is not a flat full-program quote.",
+        "The official fee table maps Computer Sciences MS / Professional Program to Graduate tuition. Page 6 separates USD 1,503.40 tuition per credit from segregated fees, with an eight-credit semester plateau; page 49 confirms the program mapping.",
+        "Ignoring the tuition plateau gives an upper bound of 30 x USD 1,503.40 = USD 45,102. The exact bill can be lower and needs a term-by-term schedule.",
+        "Future increases, added courses or terms, fees, insurance and living costs are excluded. PMP has no assistantship tuition remission; no unconfirmed aid is deducted."
+      ]
+    },
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-15",
+          "label": "Fall 2027 application deadline",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "directory_policies": {
+      "notes.9": "Cost context: Tuition-only ceiling USD 45,102 at 2026-27 rates for 30 credits. Semester plateaus can reduce the bill; extra study and fees are excluded. A lower budget needs a billing schedule, not automatic rejection.",
+      "notes.10": "Deadlines: The current exact-program PDC page confirms Fall 2027 and February 15, 2027. The older yearless department table is retained only as historical context."
+    }
+  },
+  "source_excerpt": "February 15, 2027",
+  "fact_summary": "The exact Professional Program page identifies 30 graduate credits and a dated Fall 2027 deadline. Together with the fee-table tuition column it supports a conservative pricing ceiling, not an exact bill."
+}

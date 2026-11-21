@@ -1,0 +1,32 @@
+{
+  "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+  "retrieved_at": "2026-11-21T20:28:32.152667+00:00",
+  "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+  "verified_values": {
+    "tuition": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "3",
+      "tuition.assumptions": [
+        "Conservative tuition-only ceiling for the ordinary full-time on-campus ECE MEng, completed within the department stated two-to-three continuous fall/spring semesters.",
+        "The official calculator identifies international graduate ECE MEng 1PKS1200MENG, entering Fall 2026, with USD 20,222 semester tuition at 12 billing hours. This is the full Range I tuition amount, distinct from the annual total and non-tuition costs.",
+        "At most three fall/spring semesters at that maximum ordinary semester rate gives USD 60,666. Reduced terminal loads can lower the total; no minimum or exact bill is asserted.",
+        "Fall 2027 rates are not yet offered by the calculator. The 2026-27 published-rate ceiling excludes future increases, summer or extended enrollment, extra study, fees, insurance and living costs. It is not the online degree price."
+      ]
+    },
+    "tuition_upper": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "3",
+      "tuition.assumptions": [
+        "Conservative tuition-only ceiling for the ordinary full-time on-campus ECE MEng, completed within the department stated two-to-three continuous fall/spring semesters.",
+        "The official calculator identifies international graduate ECE MEng 1PKS1200MENG, entering Fall 2026, with USD 20,222 semester tuition at 12 billing hours. This is the full Range I tuition amount, distinct from the annual total and non-tuition costs.",
+        "At most three fall/spring semesters at that maximum ordinary semester rate gives USD 60,666. Reduced terminal loads can lower the total; no minimum or exact bill is asserted.",
+        "Fall 2027 rates are not yet offered by the calculator. The 2026-27 published-rate ceiling excludes future increases, summer or extended enrollment, extra study, fees, insurance and living costs. It is not the online degree price."
+      ]
+    },
+    "directory_policies": {
+      "notes.9": "Cost context: Published-rate tuition ceiling USD 60,666 for the ordinary full-time on-campus two-to-three-semester scope. A smaller budget remains pending until the billing schedule is known. Fees and future increases are excluded."
+    }
+  },
+  "source_excerpt": "two to three continuous semesters",
+  "fact_summary": "The department expects the on-campus MEng to finish in two to three continuous fall/spring semesters and links the exact official calculator. The maximum ordinary semester rate times three is a ceiling, not a mandatory three-semester bill."
+}
