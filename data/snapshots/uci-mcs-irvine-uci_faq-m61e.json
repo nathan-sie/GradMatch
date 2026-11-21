@@ -1,0 +1,16 @@
+{
+  "url": "https://mcs.ics.uci.edu/faq/",
+  "retrieved_at": "2026-11-20T23:28:36.700538+00:00",
+  "raw_response_sha256": "cb733d4151109303a426f7dd06528c95bd9005191b9e90086f5196eacc5b12da",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.4": "GRE policy: GRE is optional; no GRE minimum is imposed.",
+      "notes.5": "Preparation: Programming, algorithms/data structures, discrete mathematics/boolean algebra/linear algebra and relevant experience are recommended. Missing recommendations are not automatic rejection rules."
+    }
+  },
+  "source_excerpt": "No. GRE is optional.",
+  "fact_summary": "The MCS FAQ confirms optional GRE and explicitly recommended preparation; holistic coursework and experience review remains pending."
+}

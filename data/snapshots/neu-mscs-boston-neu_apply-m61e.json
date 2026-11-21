@@ -1,0 +1,18 @@
+{
+  "url": "https://www.khoury.northeastern.edu/apply/masters-apply/",
+  "retrieved_at": "2026-11-20T23:28:37.463887+00:00",
+  "raw_response_sha256": "f05da36016dae430de6533cdc8f2d87767ae4e9fc1771c7afacb0f163264ea0e",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.2": "GRE policy: Khoury MS admission is GRE test-optional.",
+      "notes.3": "GPA policy: Published minimums are 3.0/4, 8.0/10 and 80/100. Calculation scope and supported scales need review; no linear GPA conversion is performed.",
+      "notes.4": "English policy: TOEFL 90 and IELTS 6.5 are recommended, not labelled hard minimums here. DET is not accepted. Four-year degree waiver paths require individual review.",
+      "notes.5": "Deadlines: Fall 2027 international deadlines differ by location: June 15 out of country and July 1 in country. The current profile does not collect that location, so a single final deadline is not assumed."
+    }
+  },
+  "source_excerpt": "Khoury College is GRE test-optional.",
+  "fact_summary": "Khoury MS admission distinguishes optional GRE, multiple GPA scales, recommended English scores and location-specific international deadlines."
+}

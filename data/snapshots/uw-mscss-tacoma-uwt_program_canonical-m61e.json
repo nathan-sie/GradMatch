@@ -1,0 +1,14 @@
+{
+  "url": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+  "retrieved_at": "2026-11-20T23:29:38.590508+00:00",
+  "raw_response_sha256": "95424a8c6f1341c34323e85a4daab541810219f4ff41532933eca4a790705782",
+  "verified_values": {
+    "directory_policies": {
+      "notes.4": "Preparation: All listed preparatory areas require demonstrated competency, including software engineering, organization/architecture, calculus and science. Course equivalency and incomplete preparation remain under review.",
+      "notes.5": "Cost context: The current page gives 40–45 quarter credits across thesis, capstone and elective pathways, and refers to graduate tuition tables. A single pathway-independent tuition estimate is not yet supported.",
+      "notes.6": "Deadlines: Autumn 2027 final deadline is July 31, subject to remaining space. International visa applicants are encouraged to apply by the priority deadline; its date remains unverified."
+    }
+  },
+  "source_excerpt": "40 - 45 quarter credits",
+  "fact_summary": "The current canonical page retains pathway-dependent credits, preparatory competency and conditional final-deadline context; no missing priority date or tuition rate is invented."
+}

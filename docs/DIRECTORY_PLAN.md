@@ -10,7 +10,7 @@ Approved direction on 2026-11-20: expose all 83 imported program leads first, th
 - A separate content-addressed SQLite directory is rebuilt on clean hosts and after cache loss. Runtime reads use read-only connections. Official recommendation records, provenance and historical source snapshots remain separate and unchanged.
 - Browsing needs no API key or model call. Directory membership supplies no admission tier or applicant eligibility decision. Doctoral-route leads and community halt reports remain visible with their original review flags.
 
-The official data remains 16 program records / 62 sources / seven computable tuition estimates. Coverage labels refer to the pinned Fall 2027 reference intake and official review date, not a fresh check of all websites. Complete admission-tier support is not promised for every directory entry.
+After M6.1e, the official data contains 16 program records / 82 sources / seven computable tuition estimates. The first 12-program repair batch adds source-bound policies and improves automatic GRE coverage to 15 programs and degree coverage to 12. Coverage labels refer to the pinned Fall 2027 reference intake and official review date, not a fresh check of all websites. Complete admission-tier support is not promised for every directory entry.
 
 ## Next review batches
 

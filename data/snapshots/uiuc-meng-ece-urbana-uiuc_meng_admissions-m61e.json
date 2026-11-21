@@ -1,0 +1,14 @@
+{
+  "url": "https://ece.illinois.edu/admissions/graduate/meng-degree",
+  "retrieved_at": "2026-11-20T23:29:38.943777+00:00",
+  "raw_response_sha256": "3af921d5af31926a3997366df509f6cd68d22eaa4e12e12fa6b14676bf311239",
+  "verified_values": {
+    "directory_policies": {
+      "notes.3": "Degree background: ECE or a related bachelor degree is expected; related-field equivalency requires university review.",
+      "notes.4": "GPA policy: Published minimum 3.0/4; its calculation scope still needs confirmation for automated comparison.",
+      "notes.5": "Deadlines: The captured on-campus page states May 1, 2027 for Fall 2027. The online August 1 deadline does not apply to this track."
+    }
+  },
+  "source_excerpt": "GRE scores are not required, but preferred.",
+  "fact_summary": "The current on-campus admission page confirms its dated deadline and distinguishes the online route; GPA scope remains unresolved."
+}

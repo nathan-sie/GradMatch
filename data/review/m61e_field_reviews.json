@@ -1,0 +1,102 @@
+{
+  "milestone": "M6.1e",
+  "reviewed_on": "2026-11-20",
+  "prior_seed": "data/catalog/m61c_seed.json",
+  "seed": "data/catalog/m61e_seed.json",
+  "programs_enriched": {
+    "uw-ece-msece-pmp-seattle": [
+      "Degree background",
+      "GRE policy",
+      "Deadlines"
+    ],
+    "uiuc-mcs-urbana": [
+      "Degree background",
+      "GPA policy",
+      "GRE policy",
+      "Funding context",
+      "English policy"
+    ],
+    "uiuc-meng-ece-urbana": [
+      "Degree background",
+      "GPA policy",
+      "Deadlines",
+      "English policy"
+    ],
+    "uci-mcs-irvine": [
+      "GRE policy",
+      "Preparation",
+      "Degree background",
+      "Cost context"
+    ],
+    "rice-mcs-houston": [
+      "GRE policy",
+      "English policy",
+      "Deadlines"
+    ],
+    "ncsu-mcs-raleigh": [
+      "GRE policy",
+      "Intake policy",
+      "Preparation",
+      "GPA policy",
+      "English policy"
+    ],
+    "umass-mscs-amherst": [
+      "GRE policy",
+      "Preparation",
+      "English policy",
+      "Cost context"
+    ],
+    "usc-mscs-general-los-angeles": [
+      "Degree background",
+      "GRE policy",
+      "Deadlines",
+      "Preparation"
+    ],
+    "neu-mscs-boston": [
+      "GRE policy",
+      "GPA policy",
+      "English policy",
+      "Deadlines"
+    ],
+    "cmu-mcds-pittsburgh": [
+      "English policy",
+      "GRE policy"
+    ],
+    "tamu-mcs-college-station": [
+      "English policy",
+      "Degree background"
+    ],
+    "uw-mscss-tacoma": [
+      "Preparation",
+      "Cost context",
+      "Deadlines"
+    ]
+  },
+  "new_source_ids": [
+    "uw-ece-msece-pmp-seattle-uw_admissions-m61e",
+    "uiuc-mcs-urbana-uiuc_mcs_apply-m61e",
+    "uiuc-meng-ece-urbana-uiuc_meng_admissions-m61e",
+    "uiuc-mcs-urbana-uiuc_english-m61e",
+    "uiuc-meng-ece-urbana-uiuc_english-m61e",
+    "uci-mcs-irvine-uci_faq-m61e",
+    "uci-mcs-irvine-uci_home-m61e",
+    "uci-mcs-irvine-uci_cost-m61e",
+    "rice-mcs-houston-rice_apply-m61e",
+    "ncsu-mcs-raleigh-ncsu_apply-m61e",
+    "ncsu-mcs-raleigh-ncsu_faq-m61e",
+    "umass-mscs-amherst-umass_apply-m61e",
+    "umass-mscs-amherst-umass_english-m61e",
+    "umass-mscs-amherst-umass_fees-m61e",
+    "usc-mscs-general-los-angeles-usc_program-m61e",
+    "usc-mscs-general-los-angeles-usc_eligibility-m61e",
+    "neu-mscs-boston-neu_apply-m61e",
+    "cmu-mcds-pittsburgh-mcds_program-m61e",
+    "tamu-mcs-college-station-tamu_faq-m61e",
+    "uw-mscss-tacoma-uwt_program_canonical-m61e"
+  ],
+  "expected_programs": 16,
+  "expected_sources": 82,
+  "prior_source_objects_preserved": true,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false
+}

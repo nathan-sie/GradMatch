@@ -1,0 +1,22 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+  "retrieved_at": "2026-11-20T23:28:36.519634+00:00",
+  "raw_response_sha256": "029d5ce70e2bec74bcda4d4522611ae9a281addac24f8f45bfa82eafe64eb182",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.3": "Degree background: A four-year bachelor degree or equivalent is expected; non-CS applicants may demonstrate the specified preparation through coursework or commensurate experience.",
+      "notes.4": "GPA policy: 3.2/4 is recommended, not a verified hard minimum. Ordinary admission is separate from the Illinois-specific guaranteed-admission route.",
+      "notes.5": "GRE policy: GRE is not required.",
+      "notes.6": "Funding context: For first enrollment from Fall 2027, MCS becomes self-supporting; waiver-generating assistantships are unavailable except statutory waivers."
+    }
+  },
+  "source_excerpt": "does not require GRE scores",
+  "fact_summary": "The shared MCS application page confirms degree preparation and optional GRE while distinguishing recommended GPA, special admission and new funding rules."
+}

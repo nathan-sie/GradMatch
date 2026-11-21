@@ -201,6 +201,8 @@ ReAct 可通过同一应用服务运行并有可审查的工具日志；安全/�
 
 ## 当前检查点
 
+2026-11-20 M6.1e: first priority repair batch enriched 12 programs with 20 new sources. Current data: 16 official program records / 82 sources; 83 searchable directory entries. Automatic GRE coverage is 15 and degree coverage is 12; seven tuition estimates and one fixed-profile formal recommendation remain. All 266 regression checks passed without paid calls. See `docs/verification/M61E.md`.
+
 2026-11-20 M6.1d direction: expose all 83 imported leads for browsing/search/comparison, then deepen official-field coverage for 20–30 priority programs in batches of 10–15. This user-approved sequence supersedes the earlier 40–60 reviewed-program expansion target. The separate 210-task/50-safety evaluation gates remain. See `docs/DIRECTORY_PLAN.md`.
 
 2026-11-15: M0 and M2 are user-accepted. M1's reviewed catalog and deterministic rules remain in use: 8 programs, 20 official sources, 3 computable tuition estimates and explicitly incomplete eligibility/goal/tier evidence. M2 real-model acceptance and the budget/follow-up workflow passed; its six-request development log is preserved separately.

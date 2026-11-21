@@ -1,0 +1,12 @@
+{
+  "url": "https://mcs.ics.uci.edu/cost-financial-aid/",
+  "retrieved_at": "2026-11-20T23:29:39.072433+00:00",
+  "raw_response_sha256": "f09ccb16ed3baa7b1a8a38b910f6934a17d1335b471fe4a4262e19cf7a704bff",
+  "verified_values": {
+    "directory_policies": {
+      "notes.7": "Cost context: The fee page points to the 2026-27 Registrar schedule and separately identifies health insurance. A fee-inclusive total is not substituted for tuition-only budgeting."
+    }
+  },
+  "source_excerpt": "2026-2027 academic year",
+  "fact_summary": "The current program cost page directs readers to the Registrar and distinguishes health insurance; no unsupported tuition formula is created."
+}

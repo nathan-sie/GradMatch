@@ -1,0 +1,13 @@
+{
+  "url": "https://lti.cs.cmu.edu/academics/masters-programs/mcds.html",
+  "retrieved_at": "2026-11-20T23:28:38.377992+00:00",
+  "raw_response_sha256": "5eda8f834ed89a03ccf010f3cb7868d0caaa17b3a816e5041fb45ded724286f8",
+  "verified_values": {
+    "directory_policies": {
+      "notes.4": "English policy: Non-native F-1/J-1 applicants must provide TOEFL, IELTS or DET taken within two years; prior English-medium education does not itself earn a waiver. Complete numerical/format rules still need review.",
+      "notes.5": "GRE policy: GRE is required and must be under five years old; the at-home test is accepted. The CMU-undergraduate exception needs manual review."
+    }
+  },
+  "source_excerpt": "The GRE At Home test is accepted",
+  "fact_summary": "The program confirms GRE format and age together with English-test and waiver policies; this does not invent a numerical language minimum."
+}

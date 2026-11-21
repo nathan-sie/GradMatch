@@ -9,7 +9,8 @@ from gradmatch.directory import bootstrap_directory, read_directory
 from gradmatch.storage import CatalogNotReadyError, inspect_catalog
 
 
-st.set_page_config(page_title="GradMatch", page_icon="🎓", layout="centered")
+st.set_page_config(page_title="GradMatch", page_icon="🎓",
+    layout="wide" if st.session_state.get("workspace_page") == "Program directory" else "centered")
 st.title("GradMatch")
 st.caption("U.S. CS / ECE master's program matching for international applicants")
 
@@ -18,13 +19,13 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/m61c_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/m61e_seed.json", language="bash")
     st.stop()
 
 left, right = st.columns(2)
 left.metric("Official program records", summary.program_count)
 right.metric("Evidence sources", summary.source_count)
-st.caption("Release M6.1d-2026-11-20 · Read-only public data · Profile and chat memory are private to this browser session")
+st.caption("Release M6.1e-2026-11-20 · Read-only public data · Profile and chat memory are private to this browser session")
 if summary.program_count == 0:
     st.info("M0 · Environment check. Recommendations and model/search API calls are not enabled yet.")
     st.write("The catalog schema is ready. Reviewed programs and official evidence will be imported in M1.")

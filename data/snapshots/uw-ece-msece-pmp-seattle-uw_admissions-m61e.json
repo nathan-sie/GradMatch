@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ece.uw.edu/academics/pmp/admissions/",
+  "retrieved_at": "2026-11-20T23:28:36.288299+00:00",
+  "raw_response_sha256": "bf7472a242ff8def2fefb6ce998d6589aca4056618972783ba320db4c98d18a1",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": [
+        "CS",
+        "ECE",
+        "STEM"
+      ]
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.2": "Degree background: An accredited bachelor degree in STEM is required. Final equivalency is determined by UW.",
+      "notes.3": "GRE policy: GRE scores are neither required nor accepted.",
+      "notes.4": "Deadlines: Autumn 2027: January 5 priority and March 5 for international full-time applicants; May 14 is restricted to part-time applicants and working professionals."
+    }
+  },
+  "source_excerpt": "GRE scores are no longer required or accepted",
+  "fact_summary": "The PMP page supports the STEM bachelor requirement and no-GRE policy; its three dated rounds have different audiences."
+}

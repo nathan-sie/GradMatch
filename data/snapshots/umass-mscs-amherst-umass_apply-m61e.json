@@ -1,0 +1,16 @@
+{
+  "url": "https://www.cics.umass.edu/academics/ms-computer-science-campus/how-apply-ms-program-campus",
+  "retrieved_at": "2026-11-20T23:28:37.173726+00:00",
+  "raw_response_sha256": "f67541bb62aa3ab756c006d40357aad186413d806bf39fc5131e0dff4f6324aa",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.2": "GRE policy: GRE is optional for the on-campus MS; omitting scores does not harm the application.",
+      "notes.3": "Preparation: The listed programming/computation and mathematics preparation admits individual deficiencies and alternative backgrounds; these remain manual rather than unconditional topic exclusions."
+    }
+  },
+  "source_excerpt": "The GRE test is optional",
+  "fact_summary": "The on-campus MS instructions confirm optional GRE and an individual review of preparatory courses and minor deficiencies."
+}

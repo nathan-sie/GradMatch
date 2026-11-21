@@ -12,7 +12,7 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from gradmatch.bootstrap import resolve_app_database
-from gradmatch.catalog import DEFAULT_SEED, M61B_SEED, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import M61C_SEED as DEFAULT_SEED, M61B_SEED, import_catalog, load_seed as latest_load_seed, read_catalog
 from gradmatch.catalog_audit import markdown_report
 from gradmatch.config import load_settings
 from gradmatch.providers import OpenAIProvider
@@ -26,6 +26,11 @@ from scripts.m5_fixtures import FixtureProvider
 MANIFEST=PROJECT_ROOT/'data/review/m61c_field_reviews.json'
 RECEIPTS=PROJECT_ROOT/'data/review/m61c_capture_receipts.json'
 REVIEW=PROJECT_ROOT/'data/review/m61c_review_plan.json'
+
+
+def load_seed(path=DEFAULT_SEED):
+    """Historical verification explicitly uses the immutable M6.1c seed."""
+    return latest_load_seed(path)
 
 
 def verify_receipts(programs,sources):
@@ -128,8 +133,8 @@ def main():
             assert not app.exception and not app.session_state['m2_session'].usage
         with patch.dict(os.environ,{'GRADMATCH_PUBLIC_CACHE_DIR':str(directory/'public-cache')}):
             if not os.environ.get('GRADMATCH_DB_PATH'):
-                assert data_hash(*read_catalog(resolve_app_database()))==digest
-        audit=build_report(as_of=date(2026,11,20))
+                assert data_hash(*read_catalog(resolve_app_database()))==data_hash(*latest_load_seed())
+        audit=build_report(seed=DEFAULT_SEED,as_of=date(2026,11,20))
         summary=audit['catalog']['summary']
         assert summary['programs']==16 and summary['sources']==62
         assert summary['computable_verified_tuition']==7

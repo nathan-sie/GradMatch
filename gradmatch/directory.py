@@ -13,13 +13,14 @@ from urllib.parse import urlsplit
 
 from gradmatch.catalog import read_catalog
 from gradmatch.catalog_audit import program_audit
+from gradmatch.constraints import evidence_ids
 from gradmatch.session import tiering_profile
 from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LINKS = PROJECT_ROOT / "data/review/m61c_review_plan.json"
-DIRECTORY_VERSION = "M6.1d"
+DIRECTORY_VERSION = "M6.1e"
 REVIEW_DATE = date(2026, 11, 20)
 UNKNOWN = "Needs verification"
 _LOCK = Lock()
@@ -31,6 +32,48 @@ FIELD_LABELS = {
     "remaining_eligibility": "Other eligibility", "goal_features": "Program goals",
     "admission_evidence": "Admission evidence",
 }
+
+
+def requirement_summaries(program, sources, fields, profile):
+    """Expose reviewed policies without promoting recommendations to hard cutoffs."""
+    result = {label: UNKNOWN for label in FIELD_LABELS.values()}
+    if fields["gpa"]["evidence_bound"] and program.gpa:
+        gpa = program.gpa
+        if gpa.no_hard_minimum:
+            result["GPA policy"] = "No hard GPA minimum in the reviewed policy"
+        elif gpa.minimum is not None or gpa.recommended is not None:
+            result["GPA policy"] = (f"Minimum {gpa.minimum}/{gpa.scale}" if gpa.minimum is not None
+                                    else f"Recommended {gpa.recommended}/{gpa.scale}; hard minimum needs verification")
+            scopes = {"overall": "overall", "last_60_semester": "last 60 semester credits", "last_90_quarter": "last 90 quarter credits"}
+            result["GPA policy"] += "; scope: " + (", ".join(scopes.get(s, s) for s in gpa.accepted_scopes) or "needs verification")
+            if gpa.below_minimum_review_possible:
+                result["GPA policy"] += "; below-minimum exceptions require review"
+    if fields["english"]["evidence_bound"]:
+        names = {"toefl_120": "TOEFL /120", "toefl_6": "TOEFL /6", "ielts_9": "IELTS", "det_160": "DET"}
+        if program.english_not_required:
+            result["English policy"] = "Not required under the reviewed policy"
+        elif program.english:
+            result["English policy"] = "; ".join(
+                f"{names[r.version]} minimum {r.minimum_total}"
+                + (f", recommended {r.recommended_total}" if r.recommended_total is not None else "")
+                + (", subscores: " + ", ".join(f"{k} {v}" for k, v in r.minimum_subscores.items()) if r.minimum_subscores else "")
+                for r in program.english) + ". Test age, conditions and waivers must also be checked."
+    if fields["degree"]["evidence_bound"] and program.degree_required:
+        result["Degree background"] = "Recognized bachelor degree or equivalent; university confirms equivalency"
+    if fields["gre"]["evidence_bound"] and program.gre_policy != "unknown":
+        result["GRE policy"] = "Not required" if program.gre_policy == "not_required" else "Required; verify date and accepted format"
+    if fields["deadline"]["evidence_bound"]:
+        deadlines = [r for r in program.deadlines if r.intake.key == profile.intake.key]
+        if deadlines:
+            result["Deadlines"] = "; ".join(f"{r.date}: {r.label} ({r.audience.replace('_', ' ')})" for r in deadlines)
+            if not program.deadline_schedule_complete:
+                result["Deadlines"] += ". Further rounds or priority dates may need verification."
+    # Notes are usable only when their exact values have current official bindings.
+    for sid in evidence_ids(program, "directory_policies", sources, profile):
+        for note in sources[sid].verified_values["directory_policies"].values():
+            label, value = note.split(": ", 1)
+            result[label] = value
+    return result
 
 
 def _safe_url(value):
@@ -77,6 +120,7 @@ def build_directory(programs, sources, index=None, links=None):
             tuition_rate_year=None, tuition_assumptions=[], required_credits=None,
             official_source_count=0, official_sources=[], notes=[], field_coverage={},
             verified_fields=[], missing_fields=list(FIELD_LABELS.values()),
+            requirements={label: UNKNOWN for label in FIELD_LABELS.values()},
             planning_tier="Requires applicant-specific evidence", recommendation_eligible=False,
         )
         if program is not None:
@@ -97,6 +141,7 @@ def build_directory(programs, sources, index=None, links=None):
                 required_credits=str(program.required_credits) if fields["credits"]["rule_usable"] else None,
                 official_source_count=len(official_sources), official_sources=official_sources,
                 notes=list(program.notes), field_coverage=fields,
+                requirements=requirement_summaries(program, sources, fields, profile),
                 verified_fields=[label for key, label in FIELD_LABELS.items() if fields[key]["rule_usable"]],
                 missing_fields=[label for key, label in FIELD_LABELS.items() if not fields[key]["rule_usable"]],
             )
@@ -179,9 +224,17 @@ def comparison_rows(records):
     fields = {
         "Review status": lambda r: r["review_status"], "Campus": lambda r: r["campus"],
         "Track": lambda r: r["track"], "Credits": lambda r: r["required_credits"] or UNKNOWN,
+        "GPA policy": lambda r: r["requirements"]["GPA policy"],
+        "English policy": lambda r: r["requirements"]["English policy"],
+        "Degree background": lambda r: r["requirements"]["Degree background"],
+        "GRE policy": lambda r: r["requirements"]["GRE policy"],
+        "Preparation": lambda r: r["requirements"].get("Preparation", UNKNOWN),
+        "Deadlines": lambda r: r["requirements"]["Deadlines"],
         "Estimated full-program tuition": tuition_label,
         "Tuition formula": lambda r: r["tuition_formula"] or UNKNOWN,
         "Tuition assumptions": lambda r: "; ".join(r["tuition_assumptions"]) or UNKNOWN,
+        "Cost context": lambda r: r["requirements"].get("Cost context", UNKNOWN),
+        "Funding context": lambda r: r["requirements"].get("Funding context", UNKNOWN),
         "Official evidence records": lambda r: r["official_source_count"],
         "Eligibility review": lambda r: r["eligibility_review"],
         "Planning tier": lambda r: r["planning_tier"],

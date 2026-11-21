@@ -2,11 +2,13 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M6.1d full exploration directory**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Sixteen exact identities link to **62 official source records**; 67 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) prioritizes 20–30 programs in batches of 10–15. Final-project evaluation remains incomplete.
+Current stage: **M6.1e first priority repair batch**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. Browse, search and compare **all 83 imported program leads** with the **Browse all 83 programs** button. Sixteen exact identities link to **82 official source records**; 67 entries await official review. Missing fields remain explicit, and directory entries do not acquire recommendation eligibility. The [revised data plan](docs/DIRECTORY_PLAN.md) prioritizes 20–30 programs in batches of 10–15. Final-project evaluation remains incomplete.
+
+M6.1e passed **266 regression checks**. Twelve programs gain 20 official sources; usable GRE rules increase from 8 to 15 and degree rules from 8 to 12. Policy details are visible in the comparison and detail views. Computable tuition remains seven, with incomplete eligibility and tier evidence explicit. See [the batch checkpoint](docs/verification/M61E.md) and [current coverage](docs/verification/M61E_catalog_audit.md).
 
 M6.1d passed **254 regression checks**, SQLite cache recovery and clean-host startup/restart/recovery. Directory browsing and comparison make no model requests. Read the [directory checkpoint](docs/verification/M61D.md). The user accepted the preceding hosted 16/62 count display.
 
-M6.1c passed **246 regression checks**. Read the [checkpoint](docs/verification/M61C.md), [current coverage](docs/verification/M61C_catalog_audit.md), [source decisions](docs/M61C_SOURCES.md) and [next data gates](docs/M6_DATA_REVIEW.md). Nineteen new source records support four scoped identities and two additional computable cost estimates: NYU uses a published per-credit rate; Cornell uses a clearly labelled university-budget-plan rate and the two-semester track. Both retain their rate year and future-bill uncertainty. There are seven computable tuition estimates and still one formally supported recommendation for the fixed fictional profile. Incomplete qualification, dates, fee bases and tier evidence remain explicit. The user-accepted [M6.1b first batch](docs/verification/M61B.md) and [M6.1a historical audit](docs/verification/M61.md) are preserved.
+M6.1c passed **246 regression checks**. Read the [checkpoint](docs/verification/M61C.md), [historical coverage](docs/verification/M61C_catalog_audit.md), [source decisions](docs/M61C_SOURCES.md) and [next data gates](docs/M6_DATA_REVIEW.md). Nineteen new source records support four scoped identities and two additional computable cost estimates: NYU uses a published per-credit rate; Cornell uses a clearly labelled university-budget-plan rate and the two-semester track. Both retain their rate year and future-bill uncertainty. There are seven computable tuition estimates and still one formally supported recommendation for the fixed fictional profile. Incomplete qualification, dates, fee bases and tier evidence remain explicit. The user-accepted [M6.1b first batch](docs/verification/M61B.md) and [M6.1a historical audit](docs/verification/M61.md) are preserved.
 
 M5.3 passed 181 checks, three clean-host scenarios and the actual hosted generation/budget-update/reuse flow. The accepted flow used four model requests; earlier failures remain recorded. User page acceptance passed on 2026-11-19. See [M5 checkpoint](docs/verification/M5.md) and [M5 scope and acceptance steps](docs/M5_SCOPE.md). M4 passed clean-host recovery and a six-request real-model live-evidence task; the user's supplied session confirmed the budget-update page check. A follow-up guard patch passed 146 regression checks and prevents stale context from skipping current ranking. Earlier failures and costs are retained. See [the M4 checkpoint](docs/verification/M4.md) and [scope/commands](docs/M4_SCOPE.md). M3.5's earlier [recommendation checkpoint](docs/verification/M35.md) remains available as historical evidence.
 
@@ -23,8 +25,8 @@ Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/Gr
 The project uses an isolated Python 3.12 environment. If `.venv` is already prepared, run these commands from the repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61c_seed.json
-.\.venv\Scripts\python.exe -m scripts.verify_m61c
+.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61e_seed.json
+.\.venv\Scripts\python.exe -m scripts.verify_m61e
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
@@ -72,7 +74,7 @@ The seven computable cost estimates include the earlier UW ECE PMP, USC MSCS, No
 ## Data and secrets
 
 - `data/schema.sql` is versioned; the generated `data/gradmatch.db` is rebuildable and ignored.
-- `data/catalog/m61c_seed.json` is the current seed. `m61b_seed.json`, `m35_seed.json` and `m1_seed.json` preserve earlier catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
+- `data/catalog/active.json` selects `m61e_seed.json` at call time, including after data updates. `m61c_seed.json`, `m61b_seed.json`, `m35_seed.json` and `m1_seed.json` preserve earlier catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
 - Applicant profiles and sessions are not written into the public catalog.
 - `.venv`, `.tools`, temporary records, `.env`, and `.streamlit/secrets.toml` are ignored.
 - A real OpenAI key is needed for explicit M2 live checks. Never commit secrets.

@@ -2,6 +2,8 @@
 
 **Current direction (2026-11-20):** M6.1d exposes all 83 leads through a searchable SQLite exploration directory and focuses subsequent official-field review on 20–30 programs, in batches of 10–15. The historical 40–60 reviewed-program expansion sequence below is superseded by this user-approved coverage-first plan. Directory coverage does not satisfy official evidence or recommendation readiness gates. See [the revised plan](DIRECTORY_PLAN.md).
 
+M6.1e completes the first 12-program repair batch: 16 official program records / 82 sources, with automatic GRE coverage 8 → 15 and degree coverage 8 → 12. Policy details are directly visible in comparisons. Computable tuition remains seven and fixed-profile formal evidence readiness remains one. Enrollment-anchored English validity, credential alternatives, fee separation and tier evidence remain open. See [source decisions](M61E_SOURCES.md) and [verification](verification/M61E.md).
+
 M5 user page acceptance is complete: the user-provided trace demonstrated initial execution, two budget-triggered revisions, citation rejection and a completed recovery plan. No full profile or extra user-test usage is published.
 
 ## M6.1a — coverage audit and expansion screening

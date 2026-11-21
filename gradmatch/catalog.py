@@ -14,10 +14,24 @@ from scripts.build_catalog import build_empty_catalog
 M1_SEED = PROJECT_ROOT / "data" / "catalog" / "m1_seed.json"
 M35_SEED = PROJECT_ROOT / "data" / "catalog" / "m35_seed.json"
 M61B_SEED = PROJECT_ROOT / "data" / "catalog" / "m61b_seed.json"
-DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61c_seed.json"
+M61C_SEED = PROJECT_ROOT / "data" / "catalog" / "m61c_seed.json"
+DEFAULT_SEED = PROJECT_ROOT / "data" / "catalog" / "m61e_seed.json"
+ACTIVE_SEED = PROJECT_ROOT / "data" / "catalog" / "active.json"
 
 
-def load_seed(path: Path = DEFAULT_SEED) -> tuple[list[ProgramRecord], dict[str, SourceRecord]]:
+def current_seed() -> Path:
+    """Resolve a stable on-disk pointer on each call, including after hot data updates."""
+    if not ACTIVE_SEED.exists():
+        return DEFAULT_SEED
+    name = json.loads(ACTIVE_SEED.read_text(encoding="utf-8"))["seed"]
+    path = (ACTIVE_SEED.parent / name).resolve()
+    if path.parent != ACTIVE_SEED.parent.resolve() or path.suffix != ".json" or path == ACTIVE_SEED.resolve():
+        raise ValueError("The active catalog pointer must name a seed in data/catalog.")
+    return path
+
+
+def load_seed(path: Path | None = None) -> tuple[list[ProgramRecord], dict[str, SourceRecord]]:
+    path = Path(path) if path is not None else current_seed()
     document = json.loads(Path(path).read_text(encoding="utf-8"))
     programs = [ProgramRecord.model_validate(row) for row in document["programs"]]
     source_list = [SourceRecord.model_validate(row) for row in document["sources"]]
@@ -64,7 +78,7 @@ def load_seed(path: Path = DEFAULT_SEED) -> tuple[list[ProgramRecord], dict[str,
     return programs, sources
 
 
-def import_catalog(seed: Path = DEFAULT_SEED, database: Path = DEFAULT_DATABASE) -> dict:
+def import_catalog(seed: Path | None = None, database: Path = DEFAULT_DATABASE) -> dict:
     programs, sources = load_seed(seed)  # Validate everything before any write.
     build_empty_catalog(database)
     with closing(sqlite3.connect(database)) as connection:

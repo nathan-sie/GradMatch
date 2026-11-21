@@ -1,0 +1,14 @@
+{
+  "url": "https://csc.ncsu.edu/academics/graduate/application-procedure/",
+  "retrieved_at": "2026-11-20T23:28:37.155892+00:00",
+  "raw_response_sha256": "7498488d919107883a76fe2343ca55510b3a5455377cca56a21ac247e2212e8f",
+  "verified_values": {
+    "directory_policies": {
+      "notes.3": "GRE policy: All international master applicants must submit GRE. A universal domestic rule has not been verified, so the shared automatic GRE field remains unknown.",
+      "notes.4": "Intake policy: International applicants are instructed to apply for fall only. The standing policy alone does not identify a dated Fall 2027 cycle.",
+      "notes.5": "Preparation: Expected preparation includes multi-semester calculus, object-oriented programming, data structures, discrete mathematics and computer organization; duration and equivalency still require review."
+    }
+  },
+  "source_excerpt": "International masters applicants must take the GRE.",
+  "fact_summary": "The department identifies MCS as its non-thesis MR route and specifies international-only GRE/fall rules and preparation; category-specific rules are not generalized to everyone."
+}

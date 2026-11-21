@@ -66,8 +66,13 @@ def render_directory(document):
         if row["source_reports_halted"]:
             st.warning("The imported community source reports a halt. This is unverified; confirm the current admission status on the program's website.")
         st.write("Estimated full-program tuition:", tuition_label(row))
-        st.write("Fields with usable reviewed evidence:", ", ".join(row["verified_fields"]) or "None yet")
+        st.write("Fields usable for automatic checks:", ", ".join(row["verified_fields"]) or "None yet")
         st.write("Needs verification:", ", ".join(row["missing_fields"]) or "Applicant-specific checks still required")
+        details = [{"Field": label, "Reviewed policy": value} for label, value in row["requirements"].items() if value != UNKNOWN]
+        if details:
+            st.markdown("**Reviewed policy details**")
+            st.caption("Policy details may require manual review even when the published values are known. They do not establish applicant eligibility.")
+            st.dataframe(details, hide_index=True, width="stretch")
         for note in row["notes"] + row["tuition_assumptions"]:
             st.caption(note)
         for source in row["official_sources"]:

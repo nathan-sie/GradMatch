@@ -1,0 +1,189 @@
+{
+  "milestone": "M6.1e",
+  "status": "passed",
+  "programs": 16,
+  "sources": 82,
+  "directory_programs": 83,
+  "programs_enriched": 12,
+  "new_sources": 20,
+  "prior_sources_preserved": 62,
+  "policy_notes_added": 43,
+  "optional_raw_responses_rehashed": 20,
+  "request_attempts_in_preparation": 24,
+  "failed_captures_not_imported": 2,
+  "before": {
+    "programs": 16,
+    "sources": 62,
+    "disciplines": {
+      "CS": 14,
+      "ECE": 2
+    },
+    "computable_verified_tuition": 7,
+    "full_eligibility_reviews": 1,
+    "reference_hard_checks_ready": 1,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 16,
+        "usable": 16
+      },
+      "intake": {
+        "bound": 10,
+        "usable": 10
+      },
+      "gpa": {
+        "bound": 9,
+        "usable": 5
+      },
+      "english": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 3
+      },
+      "degree": {
+        "bound": 8,
+        "usable": 8
+      },
+      "gre": {
+        "bound": 8,
+        "usable": 8
+      },
+      "credits": {
+        "bound": 12,
+        "usable": 12
+      },
+      "tuition": {
+        "bound": 11,
+        "usable": 7
+      },
+      "deadline": {
+        "bound": 8,
+        "usable": 8
+      },
+      "remaining_eligibility": {
+        "bound": 6,
+        "usable": 1
+      },
+      "goal_features": {
+        "bound": 8,
+        "usable": 8
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "after": {
+    "programs": 16,
+    "sources": 82,
+    "disciplines": {
+      "CS": 14,
+      "ECE": 2
+    },
+    "computable_verified_tuition": 7,
+    "full_eligibility_reviews": 1,
+    "reference_hard_checks_ready": 1,
+    "reference_formal_evidence_ready": 1,
+    "reviewed_recent_cohorts": 2,
+    "reviewed_recent_admitted_cases": 0,
+    "reference_tier_evidence_support": {
+      "Lottery": 1,
+      "Reach": 1,
+      "Target": 0,
+      "Safer": 0
+    },
+    "fields": {
+      "identity": {
+        "bound": 16,
+        "usable": 16
+      },
+      "intake": {
+        "bound": 10,
+        "usable": 10
+      },
+      "gpa": {
+        "bound": 9,
+        "usable": 5
+      },
+      "english": {
+        "bound": 5,
+        "usable": 5
+      },
+      "prerequisites": {
+        "bound": 10,
+        "usable": 3
+      },
+      "degree": {
+        "bound": 12,
+        "usable": 12
+      },
+      "gre": {
+        "bound": 15,
+        "usable": 15
+      },
+      "credits": {
+        "bound": 12,
+        "usable": 12
+      },
+      "tuition": {
+        "bound": 11,
+        "usable": 7
+      },
+      "deadline": {
+        "bound": 8,
+        "usable": 8
+      },
+      "remaining_eligibility": {
+        "bound": 6,
+        "usable": 1
+      },
+      "goal_features": {
+        "bound": 8,
+        "usable": 8
+      },
+      "admission_evidence": {
+        "bound": 2,
+        "usable": 2
+      }
+    }
+  },
+  "shared_strategies": {
+    "fixed": {
+      "data_hash": "169fdbd6a1025e00dcdea54e3d62be2ce4dbb1b9c49adb5508e207fb95097565",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "react": {
+      "data_hash": "169fdbd6a1025e00dcdea54e3d62be2ce4dbb1b9c49adb5508e207fb95097565",
+      "transport": "deterministic_fixture_not_real_model"
+    },
+    "plan": {
+      "data_hash": "169fdbd6a1025e00dcdea54e3d62be2ce4dbb1b9c49adb5508e207fb95097565",
+      "transport": "deterministic_fixture_not_real_model"
+    }
+  },
+  "data_hash": "169fdbd6a1025e00dcdea54e3d62be2ce4dbb1b9c49adb5508e207fb95097565",
+  "database_hashes_before": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "database_hashes_after": {
+    "gradmatch.db": "f602c4b4089fcfd29089353b3b811c99fb5acd41f61cfeb5822bd3da20470cea",
+    "csgrad_candidates.db": "42ae3dc60c372415e43b84277118816d42cff778694ef9b1237d60d764d35420"
+  },
+  "external_requests_in_verifier": 0,
+  "paid_model_requests": 0,
+  "formal_benchmark_run": false,
+  "complete_eligibility_not_claimed_for_batch": true
+}

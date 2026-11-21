@@ -1,0 +1,16 @@
+{
+  "url": "https://mcs.ics.uci.edu/",
+  "retrieved_at": "2026-11-20T23:28:36.881789+00:00",
+  "raw_response_sha256": "d4fec212fa6f302a717b44b12a99f30210c81fa27ce294f09bec84aadc568e74",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "directory_policies": {
+      "notes.6": "Degree background: A bachelor degree is required. The program encourages programming proficiency and professional preparation."
+    }
+  },
+  "source_excerpt": "All applicants must have a bachelor",
+  "fact_summary": "The MCS program homepage explicitly requires a bachelor degree."
+}

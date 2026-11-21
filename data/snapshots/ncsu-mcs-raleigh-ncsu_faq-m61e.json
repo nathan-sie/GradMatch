@@ -1,0 +1,13 @@
+{
+  "url": "https://csc.ncsu.edu/academics/graduate/faqs/",
+  "retrieved_at": "2026-11-20T23:28:37.309234+00:00",
+  "raw_response_sha256": "bad1774b699f5893f04c65711062ec8842d4b4c104e1575db1428f1f9214356c",
+  "verified_values": {
+    "directory_policies": {
+      "notes.6": "GPA policy: Applicants may submit their original grading scale; below-3.0 exceptions need justification. Exact GPA scope and applicable exceptions remain under review.",
+      "notes.7": "English policy: Scores expire after two years; the department tests validity at June 15 for fall and November 15 before spring. An assessment-date check cannot substitute for those anchors."
+    }
+  },
+  "source_excerpt": "English test scores expire two years",
+  "fact_summary": "The FAQ distinguishes original GPA scales, exceptional review and fixed seasonal English-expiration anchors; no automatic GPA conversion or validity pass is inferred."
+}

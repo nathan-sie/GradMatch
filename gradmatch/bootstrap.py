@@ -6,7 +6,7 @@ import sqlite3
 import tempfile
 from threading import Lock
 
-from gradmatch.catalog import DEFAULT_SEED, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import current_seed, import_catalog, load_seed, read_catalog
 from gradmatch.storage import CatalogNotReadyError, DEFAULT_DATABASE, inspect_catalog
 from gradmatch.validation import data_hash
 
@@ -15,7 +15,8 @@ _BUILD_LOCK = Lock()
 
 
 def bootstrap_public_catalog(cache_root: Path | None = None) -> Path:
-    programs, sources = load_seed(DEFAULT_SEED)  # Includes snapshot and evidence-binding validation.
+    seed = current_seed()
+    programs, sources = load_seed(seed)  # Includes snapshot and evidence-binding validation.
     digest = data_hash(programs, sources)
     cache_root = Path(cache_root or (Path(tempfile.gettempdir()) / "gradmatch-public")).resolve()
     target = cache_root / (digest + ".db")
@@ -31,7 +32,7 @@ def bootstrap_public_catalog(cache_root: Path | None = None) -> Path:
         cache_root.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="build-", dir=cache_root) as staging:
             staged = Path(staging) / "catalog.db"
-            import_catalog(DEFAULT_SEED, staged)
+            import_catalog(seed, staged)
             staged_programs, staged_sources = read_catalog(staged)
             if data_hash(staged_programs, staged_sources) != digest:
                 raise CatalogNotReadyError("The rebuilt public catalog differs from the validated source records.")
@@ -49,7 +50,7 @@ def resolve_app_database() -> Path:
         inspect_catalog(DEFAULT_DATABASE)
         # A valid older developer database must not hide a newer bundled seed.
         # Preserve that file and rebuild the content-addressed public cache.
-        expected, expected_sources = load_seed(DEFAULT_SEED)
+        expected, expected_sources = load_seed(current_seed())
         current, current_sources = read_catalog(DEFAULT_DATABASE)
         if data_hash(current, current_sources) == data_hash(expected, expected_sources):
             return DEFAULT_DATABASE

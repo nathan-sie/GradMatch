@@ -1,0 +1,21 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science-/",
+  "retrieved_at": "2026-11-20T23:28:37.130487+00:00",
+  "raw_response_sha256": "2fd3c6ceb834dc8f82ad3623492aca1fc23f991e7c38a2cee3b9f9bfc80fbc1e",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.2": "Degree background: A bachelor degree must be completed or in progress. Related-field and other-background applicants require review of the separate CS eligibility criteria.",
+      "notes.3": "GRE policy: GRE is not required for 2027 applications; this review does not establish later cycles.",
+      "notes.4": "Deadlines: The page lists recurring October 15 spring, December 15 scholarship and January 15 final fall dates without an explicit cycle in the deadline table."
+    }
+  },
+  "source_excerpt": "not required for 2027 applications.",
+  "fact_summary": "The general MSCS page confirms bachelor preparation and the 2027 no-GRE policy, while retaining undated deadline-table limitations."
+}

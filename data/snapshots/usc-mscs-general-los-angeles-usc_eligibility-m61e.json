@@ -1,0 +1,12 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/cs-eligibility/",
+  "retrieved_at": "2026-11-20T23:28:37.241507+00:00",
+  "raw_response_sha256": "5f50d9b95a1c4767f92bc16c3c3fca1d6e35bbac4b618b8f68d05751f2d8edb9",
+  "verified_values": {
+    "directory_policies": {
+      "notes.5": "Preparation: Applicants without a directly related bachelor background need at least three listed core CS areas and one listed CS-related mathematics area. Alternatives, courses in progress and holistic review require manual assessment."
+    }
+  },
+  "source_excerpt": "A minimum of three (3)",
+  "fact_summary": "The eligibility page specifies alternative course-count pathways and distinguishes the separate Scientists and Engineers degree; simple topic checkboxes do not prove this whole rule."
+}

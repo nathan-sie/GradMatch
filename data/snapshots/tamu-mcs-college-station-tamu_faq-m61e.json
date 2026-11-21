@@ -1,0 +1,13 @@
+{
+  "url": "https://engineering.tamu.edu/cse/academics/degrees/graduate/faq.html",
+  "retrieved_at": "2026-11-20T23:28:37.536356+00:00",
+  "raw_response_sha256": "b556fed5c6a613ef38a23eee5ec004c16d86059c1e09341f5baba37c34d08545",
+  "verified_values": {
+    "directory_policies": {
+      "notes.4": "English policy: TOEFL should be within two years when scores reach EngineeringCAS. The cited below-100 competitiveness comment is not a verified hard cutoff; complete university admission thresholds and alternatives remain under review.",
+      "notes.5": "Degree background: Recognized three-year-degree equivalency depends on country and credential review. Non-CS preparation may come from coursework or experience; a second related master needs justification."
+    }
+  },
+  "source_excerpt": "The GRE is optional for all applicants.",
+  "fact_summary": "The FAQ preserves receipt-time TOEFL validity, qualitative competitiveness and credential alternatives without manufacturing a universal threshold."
+}

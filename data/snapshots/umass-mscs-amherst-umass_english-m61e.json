@@ -1,0 +1,12 @@
+{
+  "url": "https://www.umass.edu/graduate/apply/international-applicants",
+  "retrieved_at": "2026-11-20T23:28:37.032865+00:00",
+  "raw_response_sha256": "b0f56be393cee6821d6c5a88e9e7503b7c8581fb212eb52ee4052bfe20960369",
+  "verified_values": {
+    "directory_policies": {
+      "notes.4": "English policy: Graduate minimums: legacy TOEFL 80, new TOEFL 4, IELTS 6.5, DET 115 and PTE 53. Scores must remain valid for entrance; program expectations, waivers and unsupported test formats need review."
+    }
+  },
+  "source_excerpt": "Scores expire after two years",
+  "fact_summary": "The graduate policy lists distinct test scales and entrance-anchored validity. It remains policy context pending complete program-specific assessment."
+}

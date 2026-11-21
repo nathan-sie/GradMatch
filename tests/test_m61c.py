@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from gradmatch.catalog import DEFAULT_SEED, M61B_SEED, import_catalog, load_seed, read_catalog
+from gradmatch.catalog import M61C_SEED as DEFAULT_SEED, M61B_SEED, import_catalog, load_seed as latest_load_seed, read_catalog
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
 from gradmatch.schemas import EnglishScore, GPA
@@ -19,6 +19,11 @@ from scripts.m5_fixtures import FixtureProvider
 from scripts.verify_m61c import verify_receipts
 
 AS_OF=date(2026,11,20)
+
+
+def load_seed(path=DEFAULT_SEED):
+    """Keep this historical batch's original facts and expected counts frozen."""
+    return latest_load_seed(path)
 NYU='nyu-mscs-tandon-brooklyn'
 CORNELL='cornell-meng-cs-ithaca'
 WISC='wisc-ms-cs-professional-madison'
@@ -140,7 +145,7 @@ def test_wisconsin_enrollment_anchored_english_policy_is_not_passed_using_assess
 
 
 def test_batch_audit_separates_more_computable_prices_from_recommendation_readiness():
-    report=build_report(as_of=AS_OF)
+    report=build_report(seed=DEFAULT_SEED,as_of=AS_OF)
     summary=report['catalog']['summary']
     assert summary['programs']==16 and summary['sources']==62
     assert summary['computable_verified_tuition']==7

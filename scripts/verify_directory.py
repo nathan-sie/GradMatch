@@ -59,7 +59,7 @@ def main():
     proof = dict(
         milestone="M6.1d", status="passed", verified_at=datetime.now(timezone.utc).isoformat(),
         directory_programs=83, linked_official_records=16, awaiting_official_review=67,
-        official_sources=62, computable_tuition_estimates=7, preserved_halt_flags=4,
+        official_sources=len(load_seed()[1]), computable_tuition_estimates=sum(r['tuition_upper_usd'] is not None for r in rows), preserved_halt_flags=4,
         directory_database=str(database.resolve()), directory_sha256=sha256(database),
         official_data_hash=data_hash(*load_seed()), databases_before=before, databases_after=after,
         rebuild_after_cache_loss="passed", external_requests=0, paid_model_requests=0,

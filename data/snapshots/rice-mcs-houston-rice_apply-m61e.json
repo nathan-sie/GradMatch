@@ -1,0 +1,17 @@
+{
+  "url": "https://compsci.rice.edu/academics/graduate-programs/admission/graduate-program-application",
+  "retrieved_at": "2026-11-20T23:28:36.903225+00:00",
+  "raw_response_sha256": "b0b43bc2331bf82b335652f70aa249f9eef38e7fed9ed9d5d306bd0ee6faceb2",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.3": "GRE policy: GRE is optional, and subject tests are not required.",
+      "notes.4": "English policy: Published CS routes include TOEFL iBT 90, IELTS 7 and DET 115, plus degree-based alternatives. Complete test-age and waiver applicability still need review before automated clearance.",
+      "notes.5": "Deadlines: Fall 2027 on-campus MCS: February 10 scholarship consideration; May 1 international deadline; July 1 domestic deadline. Online June 15 is a separate schedule."
+    }
+  },
+  "source_excerpt": "GRE subject test scores are not required.",
+  "fact_summary": "CS admissions gives optional GRE, English pathways and distinct international/domestic on-campus deadlines; the new international date is displayed as source-bound policy context."
+}
