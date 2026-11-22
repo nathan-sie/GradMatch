@@ -1,0 +1,15 @@
+{"task_id":"dev01","category":"initial","template_family":"exact-cmu-tuition","initial_profile_overrides":{"tuition_budget_usd":"137400"}}
+{"task_id":"dev02","category":"initial","template_family":"uw-tuition-with-gpa-gap","initial_profile_overrides":{"tuition_budget_usd":"50850"}}
+{"task_id":"dev03","category":"initial","template_family":"nyu-closed-spring","initial_profile_overrides":{"intake":{"year":2027,"term":"spring"}}}
+{"task_id":"dev04","category":"followup","template_family":"lower-budget-in-chat","followups":[{"message":"Change my tuition budget to 50000."}]}
+{"task_id":"dev05","category":"followup","template_family":"raise-budget-in-chat","initial_profile_overrides":{"tuition_budget_usd":"50000"},"followups":[{"message":"Change my tuition budget to 140000."}]}
+{"task_id":"dev06","category":"followup","template_family":"gpa-revision-below-minimum","followups":[{"changes":{"gpa":{"value":"2.8","scale":"4","scope":"overall"}}}]}
+{"task_id":"dev07","category":"clarification","template_family":"clarify-missing-budget","initial_profile_overrides":{"tuition_budget_usd":null},"clarification_answers":{"tuition_budget_usd":"90000"}}
+{"task_id":"dev08","category":"clarification","template_family":"clarify-missing-intake","initial_profile_overrides":{"intake":null},"clarification_answers":{"intake":{"year":2027,"term":"fall"}}}
+{"task_id":"dev09","category":"clarification","template_family":"clarify-missing-gpa","initial_profile_overrides":{"gpa":null},"clarification_answers":{"gpa":{"value":"3.25","scale":"4","scope":"overall"}}}
+{"task_id":"dev10","category":"evidence_gap","template_family":"withheld-cmu-tuition","withhold_tuition_for":"cmu-msaii-pittsburgh"}
+{"task_id":"dev11","category":"evidence_gap","template_family":"toefl-without-test-date","initial_profile_overrides":{"english":{"version":"toefl_120","total":"110"}},"clarification_answers":{"english.test_date":null}}
+{"task_id":"dev12","category":"evidence_gap","template_family":"next-cycle-evidence-mismatch","initial_profile_overrides":{"intake":{"year":2028,"term":"fall"}}}
+{"task_id":"dev13","category":"shortfall","template_family":"guaranteed-tuition-only","initial_profile_overrides":{"budget_basis":"guaranteed_final"}}
+{"task_id":"dev14","category":"shortfall","template_family":"quarter-credit-gpa-only","initial_profile_overrides":{"gpa":{"value":"3.5","scale":"4","scope":"last_90_quarter"}}}
+{"task_id":"dev15","category":"shortfall","template_family":"extremely-low-tuition-cap","initial_profile_overrides":{"tuition_budget_usd":"1000"}}

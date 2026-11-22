@@ -101,5 +101,6 @@ The seven computable cost estimates include the earlier UW ECE PMP, USC MSCS, No
 - [M3 deployment verification](docs/verification/M3.md)
 - [M3.5 recommendation verification](docs/verification/M35.md)
 - [CS Grad tracker candidate import](docs/CSGRAD_IMPORT.md)
+- [Offline evaluation and resume instructions](docs/verification/M64.md)
 
 M0 and M2 are user-accepted. M3 cloud acceptance passed on 2026-11-15, including the user's another-device check. M4 automated and budget-update user acceptance passed on 2026-11-19; the subsequent finish guard has offline regression verification without a new paid rerun. The page still requires its per-session paid-call checkbox. M5 automated, hosted and user page acceptance passed on 2026-11-19. M6.1b's public 12/43 count display is user-accepted. M6.1c passes offline verification and its public 16/62 display is user-accepted. M6.1d exposes all 83 leads; hosted count, search, halt-filter and comparison checks passed without model calls. Full dataset expansion and final-project evaluation remain incomplete. See [M6.1c checkpoint](docs/verification/M61C.md). The separate 50-task homework stays on its own branch.
