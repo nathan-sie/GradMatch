@@ -89,7 +89,7 @@ def pilot(settings, directory, *, live_model):
         "mode": "live_model" if live_model else "offline_fixture",
         "as_of": AS_OF.isoformat(),
         "checks": checks,
-        "paid_request_limit": REQUEST_LIMIT if live_model else 0,
+        "paid_request_limit": settings.limits["max_model_calls_per_session"] if live_model else 0,
         "paid_requests_attempted": len(session.usage) if live_model else 0,
         "estimated_cost_usd": str(sum(Decimal(value) for value in costs)) if live_model and costs and all(value is not None for value in costs) else None,
         "usage": session.usage,
@@ -105,6 +105,8 @@ def pilot(settings, directory, *, live_model):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--live-model", action="store_true", help="Enable up to six metered OpenAI calls.")
+    parser.add_argument("--max-live-model-calls", type=int, choices=range(1, REQUEST_LIMIT + 1),
+                        default=REQUEST_LIMIT, help="Set a lower cap for an authorized run.")
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
     settings = load_settings()
@@ -112,7 +114,8 @@ def main():
         parser.error("The local OpenAI configuration must be enabled before a live pilot.")
     directory = args.output_dir or PROJECT_ROOT / "work/m63/pilot" / str(uuid4())
     directory.mkdir(parents=True, exist_ok=False)
-    settings = replace(settings, limits={**settings.limits, "max_model_calls_per_session": REQUEST_LIMIT})
+    call_limit = args.max_live_model_calls if args.live_model else REQUEST_LIMIT
+    settings = replace(settings, limits={**settings.limits, "max_model_calls_per_session": call_limit})
     if args.live_model:
         return pilot(settings, directory, live_model=True)
     with patch.object(OpenAIProvider, "generate", side_effect=AssertionError("Offline pilot attempted a real model call")):

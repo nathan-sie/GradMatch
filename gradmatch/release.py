@@ -8,7 +8,7 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-RELEASE_REFRESH_VERSION = 6
+RELEASE_REFRESH_VERSION = 7
 _MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
             "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.community", "gradmatch.directory", "gradmatch.broad_catalog", "gradmatch.ui_directory",
             "gradmatch.ui_m1", "gradmatch.ui_m2")
@@ -40,7 +40,8 @@ def refresh_catalog_modules():
         # Upgrade stale engine imports once; never reload Session or provider classes.
         for name in _ENGINE_MODULES:
             module = sys.modules.get(name)
-            if module is not None and getattr(module, 'BROAD_ENGINE_VERSION', 0) < 1:
+            minimum_version = 2 if name == 'gradmatch.agent' else 1
+            if module is not None and getattr(module, 'BROAD_ENGINE_VERSION', 0) < minimum_version:
                 importlib.reload(module)
         for name in _MODULES:
             if name in sys.modules:

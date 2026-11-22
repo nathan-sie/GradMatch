@@ -25,7 +25,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 1
+BROAD_ENGINE_VERSION = 2
 
 
 class BudgetLimit(ValueError):
@@ -691,14 +691,13 @@ class Execution:
             "referenced_program_ids": [],
         }
         if broad:
-            from gradmatch.broad_catalog import compact_program, compact_report, compact_screen
-            used_source_ids={sid for p,r in pairs for check in r.checks for sid in check.source_ids}
-            used_source_ids.update(sid for p,r in pairs for feature in p.goal_features for sid in feature.source_ids)
-            used_source_ids.update(sid for p,r in pairs for item in p.admission_evidence for sid in item.source_ids)
+            from gradmatch.broad_catalog import compact_program, compact_screen, ranking_report
             payload.update(recommendation_scope='broad', recommendation_catalog_count=len(t.programs),
-                programs=[compact_program(p) for p,_ in pairs], reports=[compact_report(r) for _,r in pairs],
-                sources=[dict(source_id=s.source_id,program_id=s.program_id,url=str(s.url),field_groups=s.field_groups)
-                    for s in t.sources.values() if s.source_id in used_source_ids],
+                programs=[compact_program(p) for p,_ in pairs],
+                reports=[ranking_report(r) for _,r in pairs if any(c.source_ids for c in r.checks)],
+                excluded_summary=[dict(program_id=r.program_id, failed_checks=[c.rule_id for c in r.checks if c.status=='fail'])
+                    for r in reports if r.hard_checks_status=='fail'],
+                sources=[],
                 preliminary_reports=[compact_screen(preliminary[p.program_id],self.session.profile) for p,_ in pairs],
                 allowed_preliminary_program_ids=[p.program_id for p,_ in pairs],
                 community_snapshot={k:v for k,v in broad.items() if k!='entries'})
@@ -797,8 +796,15 @@ class Execution:
             if m["role"] != "assistant" or m.get("profile_version") == version
         ]
         prior = self.session.current_result or self.session.previous_result or {}
+        broad = getattr(t, 'broad_context', None)
+        previous_programs = prior.get('recommendations', []) + prior.get('preliminary_recommendations', [])
+        if broad:
+            from gradmatch.broad_catalog import summarize_action_observation
+            observations = [summarize_action_observation(o) for o in observations[-6:]]
+        else:
+            previous_programs += prior.get('pending_verification', [])
         tools = {name:model.model_json_schema() for name,model in TOOL_ARGS.items()}
-        if getattr(t, 'broad_context', None):
+        if broad:
             tools['search_programs']['properties']['limit']['default'] = 83
         return dict(
             profile=self.session.profile.model_dump(mode="json"),
@@ -806,9 +812,7 @@ class Execution:
             messages=messages[-4:],
             previous_programs=[
                 {"program_id": p["program_id"], "identity": p["identity"]}
-                for p in prior.get("recommendations", [])
-                + prior.get('preliminary_recommendations', [])
-                + prior.get("pending_verification", [])
+                for p in previous_programs
             ],
             catalog_index=[
                 {
@@ -819,11 +823,10 @@ class Execution:
                         "degree": p.degree,
                         "campus": p.campus,
                     },
-                    **({'community_application_details': self.community_details(p.program_id)} if getattr(t, 'broad_context', None) else {}),
                     "sources": [
                         {"source_id": s.source_id, "field_groups": s.field_groups}
                         for s in t.sources.values()
-                        if s.program_id == p.program_id
+                        if s.program_id == p.program_id and (not broad or t.mode == 'live')
                     ],
                 }
                 for p in t.programs

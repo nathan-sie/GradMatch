@@ -5,7 +5,7 @@ import sys
 import streamlit as st
 
 import gradmatch.release as release
-if getattr(release,'RELEASE_REFRESH_VERSION',0)<6:
+if getattr(release,'RELEASE_REFRESH_VERSION',0)<7:
     from importlib import reload
     reload(release)
 release.refresh_catalog_modules()

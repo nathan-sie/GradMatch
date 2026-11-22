@@ -10,8 +10,8 @@ from gradmatch.schemas import ProgramRecord
 
 
 MODEL_CONTRACTS = {
-    'rank': " M6.3 BROAD CONTRACT: When recommendation_scope=broad, the same ranking call must also select up to eight useful preliminary program recommendations in suggestions. suggestions is separate from evidence-validated tiered recommendations. Choose program_id only from allowed_preliminary_program_ids, with reason_check_ids naming existing non-failing checks in preliminary_reports: english, deadline, gre, tuition, reviewed_eligibility or application_info. Community-backed or incomplete candidates are allowed in suggestions even when recommendation_ready=false; do not assign them a tier, probability, verified eligibility or budget pass. Their explanations and source dates are rendered by code from the selected check IDs. Use the full supplied pool, not only the officially reviewed programs. Do not put community evidence into official observations or formal recommendations. Keep suggestions=[] for reviewed-only scope. All existing formal tier rules remain in force.",
-    'act': " M6.3 BROAD CONTRACT: In broad scope the catalog includes all 83 maintained programs, with community language, GRE and deadline details in catalog_index. An initial unfiltered search may use limit=83; check and rank the retrieved pool, including unreviewed programs. An exact requested program ID can be searched anywhere in this index. Missing official GPA/tuition does not prevent preliminary suggestions from labelled community facts. Do not spend the task trying to officially verify all 83 records. Use the same shared rank_programs and validate_shortlist tools.",
+    'rank': " M6.3 BROAD CONTRACT: When recommendation_scope=broad, the same ranking call must also select up to eight useful preliminary program recommendations in suggestions. Each program belongs in only one of recommendations or suggestions. Choose suggestion program_id only from allowed_preliminary_program_ids, with reason_check_ids naming existing non-failing checks in preliminary_reports: english, deadline, gre, tuition, reviewed_eligibility or application_info. Community-backed or incomplete candidates are allowed in suggestions even when recommendation_ready=false; do not assign them a tier, probability, verified eligibility or budget pass. Their explanations and source dates are rendered by code from the selected check IDs. Use the full supplied pool, not only the officially reviewed programs. Only source IDs in the corresponding official report check can support an official observation. Keep suggestions=[] for reviewed-only scope. All existing formal tier rules remain in force.",
+    'act': " M6.3 BROAD CONTRACT: In broad scope catalog_index contains all 83 program identities. The ranking step receives the community language, GRE and deadline facts. An initial unfiltered search may use limit=83; check and rank the retrieved pool, including unreviewed programs. An exact requested program ID can be searched anywhere in this index. Missing official GPA/tuition does not prevent preliminary suggestions from labelled community facts. Do not spend the task trying to officially verify all 83 records. Use the same shared rank_programs and validate_shortlist tools.",
     'plan': " M6.3 BROAD CONTRACT: In broad scope, an initial empty-scope search covers all 83 maintained programs. Use empty program_ids for following checks/ranking to refer to the retrieved pool. The ranking tool can propose preliminary suggestions from community facts; missing official GPA/tuition does not require fetching every program before ranking. Formal personal tiers still need their original evidence."
 }
 
@@ -19,8 +19,7 @@ MODEL_CONTRACTS = {
 def install_provider_instructions(instructions):
     """Update the existing instruction dictionary without recreating provider classes."""
     for purpose, text in MODEL_CONTRACTS.items():
-        if 'M6.3 BROAD CONTRACT:' not in instructions.get(purpose, ''):
-            instructions[purpose] += text
+        instructions[purpose] = instructions[purpose].split(' M6.3 BROAD CONTRACT:', 1)[0] + text
 
 
 def build_broad_catalog(programs, sources):
@@ -157,11 +156,10 @@ def screen_program(profile, program, report, context, *, as_of):
 
 
 def compact_program(program):
-    if program.catalog_version=='m63-community-overlay':
-        return dict(program_id=program.program_id,university=program.university,program_name=program.program_name,
-            discipline_hint=program.discipline,data_status='community_unverified',goal_features=[],admission_evidence=[])
-    return program.model_dump(mode='json', include={'program_id', 'university', 'program_name', 'degree', 'campus',
-        'track', 'discipline', 'gpa', 'english', 'gre_policy', 'deadlines', 'tuition', 'goal_features', 'admission_evidence'})
+    return program.model_dump(mode='json', include={
+        'program_id', 'university', 'program_name', 'campus', 'track', 'discipline',
+        'goal_features', 'admission_evidence',
+    })
 
 
 def compact_report(report):
@@ -171,17 +169,46 @@ def compact_report(report):
         checks=[dict(rule_id=c.rule_id,status=c.status.value,reason_code=c.reason_code,source_ids=c.source_ids) for c in report.checks if c.status!='unknown'])
 
 
+def ranking_report(report):
+    """Keep cited checks for follow-up answers and computed values for ranking."""
+    return {
+        'program_id': report.program_id,
+        'recommendation_ready': report.recommendation_ready,
+        'checks': {check.rule_id: [check.status.value, check.reason_code, *check.source_ids]
+                   for check in report.checks if check.source_ids},
+        'tuition_usd': report.tuition.model_dump(mode='json', include={'lower_usd', 'upper_usd', 'rate_year'}),
+    }
+
+
 def compact_screen(screen, profile):
-    checks=[]
-    for check in screen['checks']:
-        value={k:v for k,v in check.items() if k!='explanation'}
-        if check['status']!='unknown' or check['rule_id'] in {'english','gre'}:
-            value['explanation']=check['explanation']
-        checks.append(value)
     return dict(program_id=screen['program_id'],eligible_for_preliminary=screen['eligible_for_preliminary'],
-        checks=checks,next_listed_round=screen['next_listed_round'],reported_gre=screen['reported_gre'],
-        reported_language=[{k:v for k,v in rule.items() if k in {'test','kind','summary','reported_total'}}
+        checks={check['rule_id']: check['status'] for check in screen['checks']},
+        next_listed_round=screen['next_listed_round'], reported_gre=screen['reported_gre'],
+        reported_language=[{k:v for k,v in rule.items() if k in {'test','kind','summary'}}
             for rule in screen['reported_language'] if not profile.english or rule['test']==profile.english.version])
+
+
+def summarize_action_observation(observation):
+    """Pass recent outcomes to the next decision without duplicating the full audit log."""
+    result = observation['result']
+    data = result.get('data') or {}
+    summary = {}
+    match observation['tool']:
+        case 'search_programs':
+            summary['program_count'] = len(data.get('programs', []))
+        case 'check_constraints':
+            summary['checked_count'] = len(data.get('reports', []))
+        case 'rank_programs':
+            summary['draft_status'] = (data.get('draft') or {}).get('status')
+        case 'validate_shortlist':
+            summary['status'] = data.get('status')
+            summary['validation_errors'] = data.get('validation_errors', [])[:8]
+        case 'fetch_official_page':
+            summary = {k: data[k] for k in ('facts', 'missing_fields', 'effective_groups') if k in data}
+    item = {k: observation[k] for k in ('tool', 'profile_version', 'evidence_version')}
+    item['result'] = {k: result[k] for k in ('ok', 'error', 'warnings', 'evidence_ids') if k in result}
+    item['result']['data'] = summary
+    return item
 
 
 def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False):
@@ -190,7 +217,7 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
 
     selected = {p.program_id:p for p in retrieved}
     formal_ids = {r['program_id'] for r in result['recommendations']}
-    allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary'] and pid not in formal_ids}
+    allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary']}
     suggestions = list(draft.suggestions) if draft else []
     method = 'model_selected'
     if deterministic_only:
@@ -199,7 +226,7 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             checks = reports[pid]['checks']
             positives = sum(c['status'] in {'pass', 'not_applicable', 'reported_floor_met', 'reported_date_available', 'reported_optional'} for c in checks)
             return (-positives, selected[pid].university.casefold(), selected[pid].program_name.casefold())
-        suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=['english', 'deadline', 'gre']) for pid in sorted(allowed,key=key)[:8]]
+        suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=['english', 'deadline', 'gre']) for pid in sorted(allowed - formal_ids,key=key)[:8]]
         method = 'deterministic_screening'
     accepted, seen = [], set()
     for item in suggestions:
@@ -213,6 +240,11 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             codes.append('UNSUPPORTED_PRELIMINARY_REASON')
         if codes:
             result['validation_errors'].append(dict(program_id=item.program_id,codes=codes))
+            continue
+        if item.program_id in formal_ids:
+            result['validation_warnings'].append({
+                'program_id': item.program_id, 'code': 'PRELIMINARY_DUPLICATE_OF_FORMAL',
+            })
             continue
         p = selected[item.program_id]
         accepted.append(dict(program_id=p.program_id,identity=identity(p),recommendation_basis='preliminary_community',

@@ -162,6 +162,47 @@ def test_budget_followup_rechecks_the_broad_pool_and_preserves_other_profile_fie
     assert session.profile.gpa.model_dump()==gpa and not session.usage
 
 
+def test_plan_and_rank_inputs_stay_compact_after_full_pool_checks():
+    provider = BroadFixture()
+    session = Session(profile=tiering_profile())
+    first = run(session, strategy='plan', provider=provider)
+    second = run(session, strategy='plan', provider=provider, message='Change my tuition budget to 50000')
+    assert first['validation_passed'] and second['validation_passed']
+    assert [purpose for purpose, _ in provider.calls] == ['plan', 'rank', 'plan', 'rank']
+    for purpose, payload in provider.calls:
+        # The provider wraps the serialized applicant input in a JSON request body.
+        encoded = json.dumps(json.dumps(payload, ensure_ascii=False), ensure_ascii=False).encode('utf-8')
+        assert len(encoded) < 120_000
+        if purpose == 'plan':
+            assert len(payload['catalog_index']) == 83
+        else:
+            stanford = next(row for row in payload['preliminary_reports'] if row['program_id'] == STANFORD)
+            assert stanford['next_listed_round']['date'] == '2026-12-08'
+            assert stanford['reported_language'] and stanford['reported_gre']
+    full_log = second['task_usage']['tool_log']
+    assert any(entry['tool'] == 'check_constraints' and len(entry['result']['data']['reports']) == 83
+               for entry in full_log)
+
+
+def test_valid_formal_recommendation_takes_precedence_over_its_preliminary_duplicate():
+    class CrossListedFixture(BroadFixture):
+        def generate(self, kind, purpose, payload, session):
+            draft = super().generate(kind, purpose, payload, session)
+            if purpose == 'rank':
+                draft.suggestions = [*draft.suggestions[:2], PreliminaryRecommendationDraft(
+                    program_id=draft.recommendations[0].program_id, reason_check_ids=['english'],
+                )]
+            return draft
+
+    result = run(strategy='plan', provider=CrossListedFixture())
+    assert result['validation_passed']
+    assert [item['program_id'] for item in result['recommendations']] == ['cmu-msaii-pittsburgh']
+    assert len(result['preliminary_recommendations']) == 2
+    assert result['validation_warnings'] == [{
+        'program_id': 'cmu-msaii-pittsburgh', 'code': 'PRELIMINARY_DUPLICATE_OF_FORMAL',
+    }]
+
+
 def test_reviewed_scope_remains_the_original_catalog_for_existing_benchmarks():
     p,s=load_seed()
     r=start_task(Session(profile=tiering_profile()),request_id=str(uuid4()),programs=p,sources=s,
