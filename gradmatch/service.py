@@ -18,7 +18,7 @@ from gradmatch.session import (
 )
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 5
+BROAD_ENGINE_VERSION = 6
 _DEFAULT_HISTORY = object()
 
 
@@ -111,8 +111,13 @@ def answer_catalog_question(session, question, *, message, request_id, programs,
         return {"status": "busy", "message": "A request is already running in this session."}
 
     started, run_id = monotonic(), str(uuid4())
-    previous_id = session.messages[-1].get("catalog_program_id") if session.messages else None
     topic, name = question
+    profile_version = session.profile.profile_version
+    # A recommendation summary can follow a catalog answer without changing its subject.
+    previous = next((item for item in reversed(session.messages)
+                     if item['role'] == 'assistant' and item.get('profile_version') == profile_version
+                     and 'catalog_program_id' in item), {})
+    previous_id = previous.get('catalog_program_id')
     session.active = True
     try:
         answer, program_id, citations = catalog_answer(

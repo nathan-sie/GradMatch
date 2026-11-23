@@ -456,6 +456,13 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     app.chat_input(key="m2_chat").set_value("what's the tuition of University of Washington — MSECE, Seattle").run()
     assert not app.exception and session.current_result is shortlist
     assert any("USD 50,850" in item.value and "USD 1,130" in item.value for item in app.markdown)
+    app.chat_input(key="m2_chat").set_value(
+        "what is the tuition of New York University — Master of Science in Computer Science"
+    ).run()
+    app.chat_input(key="m2_chat").set_value("what about the deadline").run()
+    assert not app.exception and session.current_result is shortlist
+    answer = session.messages[-1]["content"]
+    assert "New York University" in answer and "2026-12-01" in answer and "2027-02-15" in answer
 
 
 def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypatch):
@@ -485,11 +492,24 @@ def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypa
     deadline = ask("What about its deadline?")
     assert deadline["program_id"] == reply["program_id"]
     assert deadline["topic"] == "deadline" and deadline["model_calls"] == 0
+    nyu = ask("what is the tuition of New York University — Master of Science in Computer Science")
+    assert nyu["program_id"] == "nyu-mscs-tandon-brooklyn" and "USD 78,780" in nyu["message"]
+    # A session may still contain the old routing's generic reply after deployment.
+    session.messages.extend([
+        {"role": "user", "content": "what about the deadline"},
+        {"role": "assistant", "content": "Recommendations selected.", "profile_version": session.profile.profile_version},
+    ])
+    for prompt in ("what about the deadline", "and the deadline?", "When’s its deadline?", "How about the deadline?"):
+        follow_up = ask(prompt)
+        assert follow_up["program_id"] == nyu["program_id"] and follow_up["model_calls"] == 0
+        assert "2026-12-01" in follow_up["message"] and "2027-02-15" in follow_up["message"]
+        assert any("application-deadlines" in row["url"] for row in follow_up["citations"])
     cmu_deadline = ask("When is the application deadline for community-ss-cmu-mscs?")
     assert "2026-12-09" in cmu_deadline["message"] and cmu_deadline["citations"]
     gre = ask("Does Carnegie Mellon University MS, Pittsburgh require the GRE?")
     assert "Which program do you mean?" in gre["message"]
     assert gre["program_id"] is None
+    assert ask("and the deadline?")["program_id"] is None
     exact = ask("Does community-ss-cmu-mscs require the GRE?")
     assert "strongly encouraged" in exact["message"] and exact["citations"]
 

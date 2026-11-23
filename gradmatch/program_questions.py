@@ -18,24 +18,18 @@ TOPICS = {
     "gre requirement": "gre",
 }
 QUESTION = re.compile(
-    r"(?:(?:what(?:['’]s| is| are)|when is|how much is)\s+)?(?:the\s+)?(?P<topic>" + "|".join(TOPICS) + r")"
+    r"(?:and\s+)?(?:(?:what(?:['’]s| is| are| about)|when(?:['’]s| is| are)|how (?:much is|about))\s+)?"
+    r"(?:(?:the program['’]s|the|its)\s+)?(?P<topic>" + "|".join(TOPICS) + r")"
     r"(?:\s+(?:for|of|at)\s+(?P<name>.+))?",
-    re.IGNORECASE,
-)
-FOLLOW_UP = re.compile(
-    r"(?:what about|what(?:['’]s| is| are))\s+(?:its|the program['’]s)\s+(?P<topic>"
-    + "|".join(TOPICS) + r")",
     re.IGNORECASE,
 )
 GRE_QUESTION = re.compile(r"does\s+(.+?)\s+require\s+(?:the\s+)?gre", re.IGNORECASE)
 
 
 def parse_catalog_question(message):
-    question = message.strip().rstrip("?.").rstrip()
+    question = " ".join(message.strip().rstrip("?.").split())
     if match := GRE_QUESTION.fullmatch(question):
         return "gre", match[1]
-    if match := FOLLOW_UP.fullmatch(question):
-        return TOPICS[match["topic"].lower()], None
     if match := QUESTION.fullmatch(question):
         return TOPICS[match["topic"].lower()], match["name"]
     return None
@@ -109,14 +103,13 @@ def deadline_answer(program, profile, sources, as_of):
     rounds = applicable_deadline_rounds(profile, program)
     if not source_ids or not rounds:
         return None, []
-    upcoming = min((row for row in rounds if row.date >= as_of), key=lambda row: row.date, default=None)
-    if upcoming:
-        detail = f"The next reviewed {profile.intake.key} application round is **{upcoming.date.isoformat()}** ({upcoming.label})."
-    else:
-        latest = max(rounds, key=lambda row: row.date)
-        detail = f"The latest reviewed {profile.intake.key} round was **{latest.date.isoformat()}** ({latest.label})."
+    listed = [f"- **{row.date.isoformat()}** — {row.label}" + (" (passed)" if row.date < as_of else "")
+              for row in sorted(rounds, key=lambda row: row.date)]
+    detail = f"The reviewed schedule for {profile.intake.term.title()} {profile.intake.year} is below.\n\n" + "\n".join(listed)
+    if any(row.date == as_of for row in rounds):
+        detail += "\n\nCheck the program page for today's cutoff time."
     if not program.deadline_schedule_complete:
-        detail += " Check the program page for current availability and any additional rounds."
+        detail += "\n\nCheck the program page for current availability and any additional rounds."
     return detail, source_ids
 
 

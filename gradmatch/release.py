@@ -8,14 +8,14 @@ from threading import Lock
 
 
 _ROOT = Path(__file__).resolve().parent.parent
-RELEASE_REFRESH_VERSION = 15
+RELEASE_REFRESH_VERSION = 16
 _MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog", "gradmatch.bootstrap",
             "gradmatch.tiers", "gradmatch.catalog_audit", "gradmatch.community", "gradmatch.directory", "gradmatch.broad_catalog", "gradmatch.ui_directory",
             "gradmatch.program_questions", "gradmatch.ui_m1", "gradmatch.ui_m2")
 _ENGINE_MODULES = ('gradmatch.ranking', 'gradmatch.agent_models', 'gradmatch.validation', 'gradmatch.admission_history',
                    'gradmatch.service', 'gradmatch.agent', 'gradmatch.planning')
 _ENGINE_VERSIONS = {'gradmatch.ranking': 2, 'gradmatch.admission_history': 4,
-                    'gradmatch.service': 5, 'gradmatch.agent': 10, 'gradmatch.planning': 3}
+                    'gradmatch.service': 6, 'gradmatch.agent': 10, 'gradmatch.planning': 3}
 _LOCK = Lock()
 _signature = None
 
