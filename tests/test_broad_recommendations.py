@@ -452,6 +452,52 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     assert all(item["program_id"] not in {"nyu-mscs-tandon-brooklyn", "usc-mscs-general-los-angeles"} for item in rows)
     assert all(item["planning_tier"]["label"] in admission_history.PLANNING_TIERS for item in rows)
 
+    shortlist = session.current_result
+    app.chat_input(key="m2_chat").set_value("what's the tuition of University of Washington — MSECE, Seattle").run()
+    assert not app.exception and session.current_result is shortlist
+    assert any("USD 50,850" in item.value and "USD 1,130" in item.value for item in app.markdown)
+
+
+def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypatch):
+    def deny_model(*args, **kwargs):
+        pytest.fail("A catalog question should use the reviewed evidence directly")
+
+    monkeypatch.setattr(OpenAIProvider, "generate", deny_model)
+    session = Session(profile=tiering_profile())
+    shortlist = run(session)
+    saved_profile = session.profile.model_dump()
+    task = session.agent_task
+    tools_before = task.tools
+    programs, sources = load_seed()
+    settings = replace(load_settings(), enabled=True, api_key="sk-test-unused-catalog-question")
+    assert settings.ready
+
+    def ask(message):
+        return start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
+            settings=settings, as_of=AS_OF, message=message, strategy="react", recommendation_scope="broad")
+
+    reply = ask("what's the tuition of University of Washington — MSECE, Seattle")
+    assert reply["program_id"] == "uw-ece-msece-pmp-seattle"
+    assert reply["model_calls"] == 0 and reply["status"] == "catalog_answer"
+    assert "USD 50,850" in reply["message"] and "45 credits" in reply["message"]
+    assert any("program-costs-and-financial-support" in row["url"] for row in reply["citations"])
+
+    deadline = ask("What about its deadline?")
+    assert deadline["program_id"] == reply["program_id"]
+    assert deadline["topic"] == "deadline" and deadline["model_calls"] == 0
+    cmu_deadline = ask("When is the application deadline for community-ss-cmu-mscs?")
+    assert "2026-12-09" in cmu_deadline["message"] and cmu_deadline["citations"]
+    gre = ask("Does Carnegie Mellon University MS, Pittsburgh require the GRE?")
+    assert "Which program do you mean?" in gre["message"]
+    assert gre["program_id"] is None
+    exact = ask("Does community-ss-cmu-mscs require the GRE?")
+    assert "strongly encouraged" in exact["message"] and exact["citations"]
+
+    unknown = ask("What's the tuition of UW-MSCSS-Tacoma?")
+    assert "unavailable in the reviewed evidence" in unknown["message"] and not unknown["citations"]
+    assert session.current_result is shortlist and session.profile.model_dump() == saved_profile
+    assert session.agent_task is task and task.tools == tools_before and not session.usage
+
 
 def test_planning_tier_requires_stronger_evidence_and_verified_checks_for_safer():
     assert admission_history.planning_tier(None, hard_checks_passed=True)["label"] == "Reach"

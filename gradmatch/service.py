@@ -18,7 +18,7 @@ from gradmatch.session import (
 )
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 4
+BROAD_ENGINE_VERSION = 5
 _DEFAULT_HISTORY = object()
 
 
@@ -101,6 +101,43 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
     return references, input_intent
 
 
+def answer_catalog_question(session, question, *, message, request_id, programs, sources,
+                            settings, as_of, strategy, broad_context):
+    from gradmatch.program_questions import catalog_answer
+
+    if request_id in session.receipts:
+        return session.receipts[request_id]
+    if session.active:
+        return {"status": "busy", "message": "A request is already running in this session."}
+
+    started, run_id = monotonic(), str(uuid4())
+    previous_id = session.messages[-1].get("catalog_program_id") if session.messages else None
+    topic, name = question
+    session.active = True
+    try:
+        answer, program_id, citations = catalog_answer(
+            topic, name, programs, sources, session.profile, as_of, broad_context, previous_id,
+        )
+        result = {
+            "status": "catalog_answer", "message": answer, "topic": topic, "program_id": program_id,
+            "citations": citations, "request_id": request_id, "run_id": run_id,
+            "strategy": strategy, "data_mode": "snapshot", "profile_version": session.profile.profile_version,
+            "usage": [], "model_calls": 0, "model_status": "catalog_lookup", "model_config": settings.public(),
+            "service_latency_ms": round((monotonic() - started) * 1000, 2),
+        }
+        session.messages.extend([
+            {"role": "user", "content": message},
+            {"role": "assistant", "content": answer, "catalog_program_id": program_id,
+             "topic": topic, "profile_version": session.profile.profile_version, "run_id": run_id},
+        ])
+        session.receipts[request_id] = result
+        session.event("catalog_answered", run_id=run_id, topic=topic, program_id=program_id,
+                      source_ids=[row["source_id"] for row in citations], model_calls=0)
+        return result
+    finally:
+        session.active = False
+
+
 def start_task(session: Session, *, request_id: str, programs, sources, settings, as_of: date,
                changes=None, unknown_fields=None, message=None, provider=None,
                strategy=None, data_mode="snapshot", new_task=False, fetcher=None, recommendation_scope='reviewed',
@@ -118,6 +155,13 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
     strategy=strategy or 'fixed'
     if strategy not in {"fixed", "react", "plan"} or data_mode not in {"snapshot", "live"}:
         raise ValueError("Unsupported execution strategy or data mode.")
+    if (message and changes is None and unknown_fields is None
+            and len(message) <= settings.limits["max_message_characters"]):
+        from gradmatch.program_questions import parse_catalog_question
+        if question := parse_catalog_question(message):
+            return answer_catalog_question(session, question, message=message, request_id=request_id,
+                programs=programs, sources=sources, settings=settings, as_of=as_of,
+                strategy=strategy, broad_context=broad_context)
     if not legacy:
         from gradmatch.agent import run_task
         return run_task(session, request_id=request_id, programs=programs, sources=sources, settings=settings,

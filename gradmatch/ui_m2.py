@@ -145,9 +145,10 @@ def render_m2(database, *, directory=None):
         previous_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
         st.info(f"Previous assessment used profile v{previous['profile_version']} with a tuition budget of "
                 f"{format_usd(previous_budget)}. Generate an assessment for the saved profile to see updated results.")
-    st.caption("Update your profile in chat with “Change my GPA to 3.8” or “Change my tuition budget to 50000.”")
+    st.caption("Ask about a program's tuition, deadline or GRE policy using its name from the shortlist. "
+               "You can also say “Change my GPA to 3.8” or “Change my tuition budget to 50000.”")
     if session.messages:
-        with st.expander("Conversation"):
+        with st.expander("Conversation", expanded=bool(latest and latest.get("status") == "catalog_answer")):
             for message in session.messages:
                 with st.chat_message(message["role"]):
                     st.write(message["content"])
