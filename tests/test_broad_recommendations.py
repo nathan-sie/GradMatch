@@ -467,6 +467,13 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     assert not app.exception and session.current_result is shortlist
     answer = session.messages[-1]["content"]
     assert "New York University" in answer and "2026-12-01" in answer and "2027-02-15" in answer
+    app.chat_input(key="m2_chat").set_value(
+        "what is the tuition of Carnegie Mellon University — MCDS, Pittsburgh"
+    ).run()
+    app.chat_input(key="m2_chat").set_value("what about the Financial Aid").run()
+    assert not app.exception and session.current_result is shortlist
+    assert "I can't verify that from the available information." in session.messages[-1]["content"]
+    assert not any("Complete the requested applicant fields" in warning.value for warning in app.warning)
 
 
 def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypatch):
@@ -528,6 +535,17 @@ def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypa
     assert "GRE is optional" in optional["message"] and optional["citations"]
     unverified = ask("Is GRE required for community-sss-mit-cse?")
     assert "does not verify this policy" in unverified["message"] and not unverified["citations"]
+
+    mcds = ask("what is the tuition of Carnegie Mellon University — MCDS, Pittsburgh")
+    pending = [{"question_id": "english", "requested_fields": ["english"], "text": "Provide TOEFL details."}]
+    session.pending_questions = pending.copy()
+    for prompt in ("what about the Financial Aid", "Does it offer assistantships?", "Financial aid", "When are decisions released?"):
+        unsupported = ask(prompt)
+        assert unsupported["status"] == "catalog_answer" and unsupported["model_calls"] == 0
+        assert unsupported["message"] == "I can't verify that from the available information."
+        assert "pending_questions" not in unsupported
+    assert session.pending_questions == pending
+    assert ask("Is GRE required?")["program_id"] == mcds["program_id"] == "cmu-mcds-pittsburgh"
 
     unknown = ask("What's the tuition of UW-MSCSS-Tacoma?")
     assert "unavailable in the reviewed evidence" in unknown["message"] and not unknown["citations"]

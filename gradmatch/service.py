@@ -18,7 +18,7 @@ from gradmatch.session import (
 )
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 6
+BROAD_ENGINE_VERSION = 7
 _DEFAULT_HISTORY = object()
 
 
@@ -103,7 +103,7 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
 
 def answer_catalog_question(session, question, *, message, request_id, programs, sources,
                             settings, as_of, strategy, broad_context):
-    from gradmatch.program_questions import catalog_answer
+    from gradmatch.program_questions import UNVERIFIED_ANSWER, catalog_answer
 
     if request_id in session.receipts:
         return session.receipts[request_id]
@@ -111,30 +111,32 @@ def answer_catalog_question(session, question, *, message, request_id, programs,
         return {"status": "busy", "message": "A request is already running in this session."}
 
     started, run_id = monotonic(), str(uuid4())
-    topic, name = question
     profile_version = session.profile.profile_version
-    # A recommendation summary can follow a catalog answer without changing its subject.
-    previous = next((item for item in reversed(session.messages)
-                     if item['role'] == 'assistant' and item.get('profile_version') == profile_version
-                     and 'catalog_program_id' in item), {})
-    previous_id = previous.get('catalog_program_id')
     session.active = True
     try:
-        answer, program_id, citations = catalog_answer(
-            topic, name, programs, sources, session.profile, as_of, broad_context, previous_id,
-        )
+        topic = program_id = None
+        answer, citations = UNVERIFIED_ANSWER, []
+        if question is not None:
+            topic, name = question
+            previous = next((item for item in reversed(session.messages)
+                             if item['role'] == 'assistant' and item.get('profile_version') == profile_version
+                             and 'catalog_program_id' in item), {})
+            answer, program_id, citations = catalog_answer(
+                topic, name, programs, sources, session.profile, as_of, broad_context, previous.get('catalog_program_id'),
+            )
         result = {
             "status": "catalog_answer", "message": answer, "topic": topic, "program_id": program_id,
             "citations": citations, "request_id": request_id, "run_id": run_id,
             "strategy": strategy, "data_mode": "snapshot", "profile_version": session.profile.profile_version,
-            "usage": [], "model_calls": 0, "model_status": "catalog_lookup", "model_config": settings.public(),
+            "usage": [], "model_calls": 0, "model_status": "catalog_lookup" if question is not None else "not_run",
+            "model_config": settings.public(),
             "service_latency_ms": round((monotonic() - started) * 1000, 2),
         }
-        session.messages.extend([
-            {"role": "user", "content": message},
-            {"role": "assistant", "content": answer, "catalog_program_id": program_id,
-             "topic": topic, "profile_version": session.profile.profile_version, "run_id": run_id},
-        ])
+        reply = {"role": "assistant", "content": answer, "topic": topic,
+                 "profile_version": profile_version, "run_id": run_id}
+        if question is not None:
+            reply["catalog_program_id"] = program_id
+        session.messages.extend([{"role": "user", "content": message}, reply])
         session.receipts[request_id] = result
         session.event("catalog_answered", run_id=run_id, topic=topic, program_id=program_id,
                       source_ids=[row["source_id"] for row in citations], model_calls=0)
@@ -162,8 +164,9 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
         raise ValueError("Unsupported execution strategy or data mode.")
     if (message and changes is None and unknown_fields is None
             and len(message) <= settings.limits["max_message_characters"]):
-        from gradmatch.program_questions import parse_catalog_question
-        if question := parse_catalog_question(message):
+        from gradmatch.program_questions import is_unhandled_question, parse_catalog_question
+        question = parse_catalog_question(message)
+        if question is not None or is_unhandled_question(message):
             return answer_catalog_question(session, question, message=message, request_id=request_id,
                 programs=programs, sources=sources, settings=settings, as_of=as_of,
                 strategy=strategy, broad_context=broad_context)

@@ -31,6 +31,26 @@ GRE_QUESTIONS = tuple(re.compile(r"(?:and\s+)?" + pattern, re.IGNORECASE) for pa
     r"(?:is\s+)?" + GRE_TEST + r"\s+(?:required|needed)(?:\s+for\s+(?P<name>.+))?",
 ))
 PROGRAM_REFERENCES = {"it", "this program", "that program", "the program"}
+UNVERIFIED_ANSWER = "I can't verify that from the available information."
+QUESTION_START = re.compile(
+    r"(?:(?:and|please)\s+)*(?:who|what|when|where|which|why|how|is|are|was|were|do(?!\s+not\b)|does|did|"
+    r"can|could|would|will|should|has|have|tell me|show me|explain|(?:check|verify) (?:if|whether))\b",
+    re.IGNORECASE,
+)
+ASSESSMENT_REQUEST = re.compile(
+    r"(?:(?:can|could|would|will) you\s+)?(?:please\s+)?"
+    r"(?:change|set|update|modify|raise|lower|increase|decrease|switch|replace|remove|clear|mark|"
+    r"generate|regenerate|rerun|recommend|reassess)\b"
+    r"|which (?:of the )?(?:(?:remaining|shortlisted|recommended) )?(?:candidates|programs) (?:best )?(?:fit|match)\b"
+    r"|explain (?:the |my )?(?:(?:remaining|shortlisted|recommended) )?(?:candidates|programs|shortlist)"
+    r"(?:[?.!]\s*(?:do not change my profile[.!]?)?)?$",
+    re.IGNORECASE,
+)
+FUNDING_TOPIC = re.compile(
+    r"(?:the\s+)?(?:financial aid|funding|scholarships?|assistantships?|stipends?|tuition waivers?)"
+    r"(?:\s+(?:for|at|of)\s+.+)?",
+    re.IGNORECASE,
+)
 
 
 def parse_catalog_question(message):
@@ -46,6 +66,15 @@ def parse_catalog_question(message):
         topic = TOPICS[match["topic"].lower()]
     name = match["name"]
     return topic, None if name and name.casefold() in PROGRAM_REFERENCES else name
+
+
+def is_unhandled_question(message):
+    """Keep informational chat outside the profile and recommendation workflow."""
+    text = " ".join(message.split())
+    if ASSESSMENT_REQUEST.match(text):
+        return False
+    return bool(text.endswith(("?", "？")) or QUESTION_START.match(text)
+                or FUNDING_TOPIC.fullmatch(text.rstrip(".!。！")))
 
 
 def normalized(text):
