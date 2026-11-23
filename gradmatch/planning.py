@@ -12,7 +12,7 @@ from gradmatch.constraints import evidence_ids
 from gradmatch.schemas import Record
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS
 from gradmatch.validation import blocking_validation_errors
-BROAD_ENGINE_VERSION = 2
+BROAD_ENGINE_VERSION = 3
 
 Criterion = Literal[
     "candidates_available",
@@ -307,6 +307,9 @@ class Planner:
                 self.trigger(
                     "EVIDENCE_CHANGED", evidence_version=self.t.evidence_version
                 )
+            elif (self.e.full_pool_required and self.revision["status"] == "completed"
+                  and self.t.validated and not self.t.validated.get("all_catalog_retrieved")):
+                self.trigger("FULL_CATALOG_REQUIRED")
         message = getattr(self.e, "request_message", None)
         intent = getattr(self.e, "input_intent", None)
         if (

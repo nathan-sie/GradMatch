@@ -14,7 +14,7 @@ _MODULES = ("gradmatch.coursework", "gradmatch.constraints", "gradmatch.catalog"
             "gradmatch.ui_m1", "gradmatch.ui_m2")
 _ENGINE_MODULES = ('gradmatch.ranking', 'gradmatch.agent_models', 'gradmatch.validation',
                    'gradmatch.service', 'gradmatch.agent', 'gradmatch.planning')
-_ENGINE_VERSIONS = {'gradmatch.ranking': 2, 'gradmatch.service': 2, 'gradmatch.agent': 4, 'gradmatch.planning': 2}
+_ENGINE_VERSIONS = {'gradmatch.ranking': 2, 'gradmatch.service': 2, 'gradmatch.agent': 6, 'gradmatch.planning': 3}
 _LOCK = Lock()
 _signature = None
 

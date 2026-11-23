@@ -2,6 +2,7 @@
 
 from collections import Counter
 from contextlib import closing
+from copy import deepcopy
 from datetime import date
 from decimal import Decimal
 import gzip
@@ -186,6 +187,33 @@ def test_followup_oracle_grades_the_pre_edit_profile_and_candidate_removal(suite
     assert checks['profile']
     assert not checks['turn:1:profile']
     assert not checks['candidates_removed']
+
+
+def test_grader_requires_actual_full_pool_checks_on_every_assessment(suite, tmp_path):
+    config, dataset, tasks, oracles = suite
+    case, oracle = tasks['dev04'], oracles['dev04']
+    turns, profile, sources = execute_task(case, 'react', config, dataset, tmp_path)
+    assert grade_task(case, oracle, turns, profile, sources)['full_pool_screened']
+
+    first = deepcopy(turns[0])
+    trace = next(event for event in first['task_usage']['tool_log'] if event['tool'] == 'check_constraints')
+    trace['result']['data']['reports'].pop()
+    assert not grade_task(case, oracle, [first, turns[1]], profile, sources)['full_pool_screened']
+
+
+def test_research_oracle_checks_matching_official_evidence_in_first_five(tmp_path):
+    root = PROJECT_ROOT / 'eval/formal'
+    config, dataset, tasks, oracles = load_suite(
+        root / 'tasks.jsonl', root / 'oracles.jsonl', PROJECT_ROOT / 'config/eval_formal.json', split='formal',
+    )
+    case, oracle = tasks['f-init-050'], oracles['f-init-050']
+    turns, profile, sources = execute_task(case, 'react', config, dataset, tmp_path)
+    assert oracle.research_evidence_top_k == 5
+    assert all(grade_task(case, oracle, turns, profile, sources).values())
+
+    edited = deepcopy(turns)
+    edited[0]['preliminary_recommendations'][0]['research_fit'] = edited[0]['preliminary_recommendations'][1]['research_fit']
+    assert not grade_task(case, oracle, edited, profile, sources)['top_research_evidence']
 
 
 def test_summary_counts_missing_and_failed_first_attempts():

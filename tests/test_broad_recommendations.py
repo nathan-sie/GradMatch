@@ -84,6 +84,13 @@ def test_every_strategy_searches_checks_and_ranks_all_83_with_real_community_fie
     assert any(r['test']=='toefl_120' and '90' in r['summary'] for r in report['reported_language'])
     assert all(r['personalized_tier'] is None for r in result['preliminary_recommendations'])
     assert export_session(session)['result']['recommendation_scope']=='broad'
+    if strategy == "react":
+        first_purpose, first_payload = provider.calls[0]
+        assert first_purpose == "act"
+        assert set(first_payload["retrieved_program_ids"]) == set(result["retrieved_program_ids"])
+        first_tool = result["task_usage"]["tool_log"][0]
+        assert first_tool["tool"] == "search_programs"
+        assert first_tool["result"]["usage"]["model_calls"] == 0
     if strategy=='plan':assert session.agent_task.plan_state.revisions[-1]['status']=='completed'
 
 
@@ -94,6 +101,38 @@ def test_explicit_search_finds_a_program_outside_the_old_top_ten():
     r=driver.dispatch('search_programs',{'program_ids':[STANFORD],'limit':1})
     assert r['ok'] and r['data']['programs'][0]['program_id']==STANFORD
     assert r['data']['programs'][0]['community_application_details']['reported_rounds'][0]['date']=='2026-12-08'
+
+
+@pytest.mark.parametrize("strategy", ["react", "plan"])
+def test_general_assessment_checks_and_ranks_full_pool_despite_model_filters(strategy):
+    class NarrowingFixture(BroadFixture):
+        def generate(self, kind, purpose, payload, session):
+            value = super().generate(kind, purpose, payload, session)
+            if purpose == "act":
+                if value.tool in {"check_constraints", "rank_programs"}:
+                    args = json.loads(value.arguments_json)
+                    args["program_ids"] = [STANFORD]
+                    return value.model_copy(update={"arguments_json": json.dumps(args)})
+            if purpose == "plan":
+                for step in value.steps:
+                    if step.tool in {"search_programs", "check_constraints", "rank_programs"}:
+                        step.program_ids = [STANFORD]
+            return value
+
+    provider, session = NarrowingFixture(), Session(profile=tiering_profile())
+    first = run(session, strategy, provider)
+    updated = run(session, strategy, provider, message="Change my tuition budget to 50000.")
+    assert first["task_id"] == updated["task_id"]
+    for result in (first, updated):
+        assert result["validation_passed"] and result["all_catalog_retrieved"]
+        current = [event for event in result["task_usage"]["tool_log"]
+                   if event["tool"] == "check_constraints" and event["profile_version"] == result["profile_version"]]
+        assert set(result["retrieved_program_ids"]) == {
+            report["program_id"] for report in current[-1]["result"]["data"]["reports"]
+        }
+        assert len(result["retrieved_program_ids"]) == 83
+    assert all(payload["all_catalog_retrieved"] for purpose, payload in provider.calls if purpose == "rank")
+    assert any(item["program_id"] == "cmu-msaii-pittsburgh" for item in updated["excluded"])
 
 
 def test_score_concerns_block_preliminary_recommendations_without_turning_community_into_verified_rules():

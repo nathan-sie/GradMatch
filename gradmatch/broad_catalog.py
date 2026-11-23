@@ -11,6 +11,9 @@ from gradmatch.schemas import ProgramRecord
 from gradmatch.storage import PROJECT_ROOT
 
 
+RESEARCH_PATHS_FILE = PROJECT_ROOT / "data/review/research_paths.json"
+
+
 MODEL_CONTRACTS = {
     'rank': " M6.3 BROAD CONTRACT: When recommendation_scope=broad, the same ranking call must also select up to eight useful preliminary program recommendations in suggestions. Each program belongs in only one of recommendations or suggestions. Choose suggestion program_id only from allowed_preliminary_program_ids, with reason_check_ids naming existing non-failing checks in preliminary_reports: english, deadline, gre, tuition, reviewed_eligibility or application_info. Community-backed or incomplete candidates are allowed in suggestions even when recommendation_ready=false; do not assign them a tier, probability, verified eligibility or budget pass. Their explanations and source dates are rendered by code from the selected check IDs. Use the full supplied pool, not only the officially reviewed programs. Only source IDs in the corresponding official report check can support an official observation. Keep suggestions=[] for reviewed-only scope. All existing formal tier rules remain in force.",
     'act': " M6.3 BROAD CONTRACT: In broad scope catalog_index contains all 83 program identities. The ranking step receives the community language, GRE and deadline facts. An initial unfiltered search may use limit=83; check and rank the retrieved pool, including unreviewed programs. An exact requested program ID can be searched anywhere in this index. Missing official GPA/tuition does not prevent preliminary suggestions from labelled community facts. Do not spend the task trying to officially verify all 83 records. Use the same shared rank_programs and validate_shortlist tools.",
@@ -33,9 +36,14 @@ MODEL_CONTRACTS["rank"] += (
     " supports exploring a topic; access to an advisor, lab, funding or a thesis place is unconfirmed."
 )
 MODEL_CONTRACTS["act"] += (
-    " In broad scope, set program_ids=[] in check_constraints and rank_programs to address the entire"
-    " retrieved set. Use explicit IDs when addressing a subset. catalog_index names programs;"
+    " When full_pool_required is true, search the full catalog without a discipline filter. Use"
+    " program_ids=[] for checks and ranking. Code enforces full-pool screening on these runs."
+    " Use explicit IDs for a focused informational request. catalog_index names programs;"
     " only live-mode rows with registered sources include source IDs."
+)
+MODEL_CONTRACTS["plan"] += (
+    " When full_pool_required is true, use empty program_ids for search, checks and ranking."
+    " The execution tools screen the full catalog in this mode."
 )
 
 
@@ -71,7 +79,7 @@ def build_broad_catalog(programs, sources):
         snapshot_date=directory['upstream_generated'], intake=directory['source_intake'],
         official_program_count=len(programs), official_source_count=len(sources))
     context['data_hash']=hashlib.sha256(json.dumps(context,sort_keys=True).encode()).hexdigest()
-    research_snapshot = (PROJECT_ROOT / "data/review/research_paths.json").read_bytes()
+    research_snapshot = RESEARCH_PATHS_FILE.read_bytes()
     context["research_paths"] = json.loads(research_snapshot)
     context["research_paths_hash"] = hashlib.sha256(research_snapshot).hexdigest()
     return result, context

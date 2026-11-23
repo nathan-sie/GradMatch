@@ -26,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 4
+BROAD_ENGINE_VERSION = 6
 
 
 class BudgetLimit(ValueError):
@@ -110,6 +110,7 @@ class Execution:
         self.provider, self.fetcher = provider, fetcher or read_page
         self.started = monotonic()
         self.prepared_questions = []
+        self.full_pool_required = False
 
     def remaining(self):
         elapsed = monotonic() - self.started
@@ -206,7 +207,8 @@ class Execution:
             if (getattr(t, "broad_context", None) and isinstance(arguments, dict)
                     and name in {"check_constraints", "rank_programs"}
                     and arguments.get("program_ids") == []):
-                effective_arguments = {**arguments, "program_ids": t.retrieved}
+                scope = [p.program_id for p in t.programs] if self.full_pool_required else t.retrieved
+                effective_arguments = {**arguments, "program_ids": scope}
             args = TOOL_ARGS[name].model_validate(effective_arguments)
             key = canonical(
                 [
@@ -321,12 +323,14 @@ class Execution:
         allowed = {p.program_id for p in t.programs}
         if not set(args.program_ids) <= allowed:
             raise ValueError("UNKNOWN_PROGRAM")
-        found = [
-            p
-            for p in retrieve(self.session.profile, t.programs, len(t.programs))
-            if (not args.program_ids or p.program_id in args.program_ids)
-            and (not args.discipline or p.discipline == args.discipline)
-        ][: (83 if getattr(t, 'broad_context', None) and 'limit' not in args.model_fields_set else args.limit)]
+        found = retrieve(self.session.profile, t.programs, len(t.programs))
+        if not self.full_pool_required:
+            limit = len(t.programs) if getattr(t, "broad_context", None) and "limit" not in args.model_fields_set else args.limit
+            found = [
+                p for p in found
+                if (not args.program_ids or p.program_id in args.program_ids)
+                and (not args.discipline or p.discipline == args.discipline)
+            ][:limit]
         t.has_searched = True
         t.retrieved = list(dict.fromkeys(t.retrieved + [p.program_id for p in found]))
         return (
@@ -604,12 +608,12 @@ class Execution:
         allowed = {p.program_id for p in t.programs}
         if not set(args.program_ids) <= allowed:
             raise ValueError("UNKNOWN_PROGRAM")
-        return [p for p in t.programs if p.program_id in args.program_ids]
+        return t.programs if self.full_pool_required else [p for p in t.programs if p.program_id in args.program_ids]
 
     def tool_check_constraints(self, args):
         programs = self.current(args)
         t = self.task
-        t.retrieved = list(dict.fromkeys(t.retrieved + args.program_ids))
+        t.retrieved = list(dict.fromkeys([*t.retrieved, *(p.program_id for p in programs)]))
         t.reports.update(
             {
                 p.program_id: check_constraints(
@@ -642,7 +646,7 @@ class Execution:
         if t.checked_version != (
             args.profile_version,
             args.evidence_version,
-        ) or not set(args.program_ids) <= set(t.reports):
+        ) or not {program.program_id for program in selected} <= t.reports.keys():
             raise ValueError("UNCHECKED_PROGRAMS")
         reports = [t.reports[p.program_id] for p in selected]
         broad = getattr(t, 'broad_context', None)
@@ -736,13 +740,14 @@ class Execution:
     def current_state(self):
         t = self.task
         version = self.session.profile.profile_version
-        checks_current = t.checked_version == (version, t.evidence_version)
+        checks_current = (t.checked_version == (version, t.evidence_version)
+                          and (not self.full_pool_required or len(t.reports) == len(t.programs)))
         ranking_current = bool(
             t.draft is not None
             and t.draft.profile_version == version
             and checks_current
         )
-        empty_search = t.has_searched and not t.retrieved
+        empty_search = not self.full_pool_required and t.has_searched and not t.retrieved
         validation_current = bool(
             t.validated is not None
             and t.validated.get("profile_version") == version
@@ -761,7 +766,9 @@ class Execution:
     def tool_validate_shortlist(self, args, *, allow_unranked=False):
         t = self.task
         deterministic_only = self.provider is None and not self.settings.ready
-        empty_search = t.has_searched and not t.retrieved
+        empty_search = not self.full_pool_required and t.has_searched and not t.retrieved
+        if self.full_pool_required and not allow_unranked and len(t.retrieved) != len(t.programs):
+            raise ValueError("UNCHECKED_PROGRAMS")
         if t.draft is None and not (
             allow_unranked or deterministic_only or empty_search
         ):
@@ -864,6 +871,7 @@ class Execution:
             retrieved_program_ids=t.retrieved,
             data_mode=t.mode,
             recommendation_scope='broad' if getattr(t, 'broad_context', None) else 'reviewed',
+            full_pool_required=self.full_pool_required,
             evidence_version=t.evidence_version,
             task={"tool_calls": t.tools, "model_calls": t.models, "limits": t.limits},
             tools=tools,
@@ -933,6 +941,11 @@ class Execution:
             from gradmatch.planning import Planner
 
             return Planner(self).choose()
+        if self.full_pool_required and not t.retrieved:
+            return {
+                "route": "tool",
+                "action": {"tool": "search_programs", "arguments": {}},
+            }
         version = self.session.profile.profile_version
         value = self.generate(Action, "act", self.decision_context(), self.session)
         self.session.event(
@@ -1059,7 +1072,7 @@ class Execution:
         if action["tool"] == "rank_programs" and result["ok"]:
             validation = self.dispatch("validate_shortlist", {})
             if (
-                not blocking_validation_errors(validation["data"])
+                validation["ok"] and not blocking_validation_errors(validation["data"])
                 and self.task.strategy != "plan"
             ):
                 self.task.stopped = "finished"
@@ -1179,6 +1192,7 @@ def run_task(
             provider=driver,
             settings=settings,
         )
+        driver.full_pool_required = bool(broad_context) and driver.input_intent != "explain_previous"
         driver.request_message = message
         driver.supplied_fields = set(changes or {})
         for event in session.events[event_start:]:

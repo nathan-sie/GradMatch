@@ -103,6 +103,7 @@ class ConstraintExpectation(Record):
 
 class AssessmentExpectation(Record):
     minimum_preliminary_count: int = Field(default=0, ge=0, le=8)
+    research_evidence_top_k: int = Field(default=0, ge=0, le=8)
     maximum_formal_count: int | None = Field(default=None, ge=0)
     expected_tier_counts: dict[Tier, Annotated[int, Field(ge=0, le=5)]] = Field(default_factory=dict)
     formal: list[ProgramExpectation] = Field(default_factory=list)

@@ -538,7 +538,10 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
 def render_broad_recommendations(result, *, history=None):
     items=result['preliminary_recommendations']
     st.subheader('Recommended programs from the broader pool')
-    st.caption(f"Recommendation pool: {result['recommendation_catalog_count']} programs · {result['reviewed_program_count']} with additional official records · Community snapshot {result['community_snapshot']['source_date']}")
+    st.caption(f"Recommendation pool: {result['recommendation_catalog_count']} programs · "
+               f"Programs screened: {len(result['retrieved_program_ids'])} · "
+               f"{result['reviewed_program_count']} with additional official records · "
+               f"Community snapshot {result['community_snapshot']['source_date']}")
     st.info('These recommendations can use preliminary CS Grad information. Missing GPA, costs and other requirements still need confirmation. A recommendation here does not establish complete eligibility or a personal admission tier.')
     history_ranking = result.get("admission_history_ranking", {})
     if history_ranking.get("enabled"):

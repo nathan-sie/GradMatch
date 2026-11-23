@@ -8,6 +8,7 @@ import json
 from traceback import extract_tb
 from uuid import uuid4
 
+from gradmatch.broad_catalog import RESEARCH_PATHS_FILE
 from gradmatch.config import ModelSettings
 from gradmatch.schemas import ApplicantProfile
 from gradmatch.service import start_task
@@ -20,6 +21,7 @@ from scripts.verify_broad_recommendations import BroadFixture
 
 STRATEGIES = {'fixed': 'fixed', 'react': 'react', 'plan_replan': 'plan'}
 FINAL_ASSESSMENTS = {'completed', 'insufficient_evidence', 'infeasible'}
+BROAD_POOL_SIZE = 83
 
 
 def write_json(path, record, *, compress=False):
@@ -135,6 +137,18 @@ def grade_assessment(oracle, final, initial, profile, sources):
             and (expect.reason_code is None or any(check['reason_code'] == expect.reason_code
                  for check in pending[expect.program_id]['report']['checks'])) for expect in oracle.pending),
     }
+    if oracle.research_evidence_top_k:
+        top = final.get('preliminary_recommendations', [])[:oracle.research_evidence_top_k]
+        snapshot = json_file(RESEARCH_PATHS_FILE)
+        paths = snapshot['programs']
+        checked_on = snapshot['reviewed_on']
+        checks['top_research_evidence'] = (
+            len(top) == oracle.research_evidence_top_k
+            and checked_on <= final.get('as_of_date', '')
+            and all(row['program_id'] in paths and row.get('research_fit') == {
+                **paths[row['program_id']], 'reviewed_on': checked_on,
+            } for row in top)
+        )
     if oracle.expected_tier_counts:
         actual_counts = Counter(row['tier'] for row in formal.values())
         lines = final.get('tier_shortfalls', [])
@@ -172,6 +186,22 @@ def grade_assessment(oracle, final, initial, profile, sources):
     return checks
 
 
+def full_pool_screened(turn):
+    retrieved = set(turn.get('retrieved_program_ids', []))
+    checked = {
+        report['program_id']
+        for event in turn.get('task_usage', {}).get('tool_log', [])
+        if event['tool'] == 'check_constraints' and event['result']['ok']
+        and event['profile_version'] == turn['profile_version']
+        and event['evidence_version'] == turn.get('evidence_version')
+        for report in event['result']['data']['reports']
+        if report['profile_version'] == turn['profile_version']
+    }
+    return (turn.get('all_catalog_retrieved') is True
+            and turn.get('catalog_program_count') == len(retrieved) == BROAD_POOL_SIZE
+            and checked == retrieved)
+
+
 def grade_task(case, oracle, turns, final_profile, sources):
     initial = case.profile().model_dump(exclude={'profile_version'})
     questions = set().union(*(requested_fields(turn) for turn in turns))
@@ -182,6 +212,7 @@ def grade_task(case, oracle, turns, final_profile, sources):
             turn.get('task_id') == turns[0]['task_id'] for turn in turns),
         'validated_results': all(turn.get('validation_passed', False) and not blocking_validation_errors(turn)
                                  for turn in turns if turn['status'] in FINAL_ASSESSMENTS),
+        'full_pool_screened': all(full_pool_screened(turn) for turn in turns if turn['status'] in FINAL_ASSESSMENTS),
         'snapshot_only': all(turn.get('task_usage', {}).get('page_requests') == 0
                              and turn.get('task_usage', {}).get('search_queries') == 0 for turn in turns),
         **grade_assessment(oracle, turns[-1], initial, final_profile, sources),
