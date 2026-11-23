@@ -16,7 +16,9 @@ from gradmatch.storage import PROJECT_ROOT
 
 PREVIEW_FILE = PROJECT_ROOT / "work/admissions_dp/recommendation_preview.json"
 BUNDLED_PREVIEW_FILE = PROJECT_ROOT / "data/review/admission_history_aggregates.json"
-BROAD_ENGINE_VERSION = 1
+BROAD_ENGINE_VERSION = 2
+OPENCS_DP_SOURCE = "OpenCS DataPoints"
+OPENCS_DP_URL = "https://opencs.app/datapoints/"
 GPA_BAND_COUNT = 16
 MINIMUM_BAND_REPORTS = 5
 PLANNING_TIERS = ("Reach", "Target", "Safer")
@@ -90,7 +92,7 @@ class HistoryComparison:
                     "evidence_id": f"history:{program_id}:{self.band}:{snapshot_hash[:12]}",
                     "program_id": program_id,
                     "basis": "self_reported",
-                    "source": "CS Grad applicant reports",
+                    "source": OPENCS_DP_SOURCE,
                     "snapshot_date": self.snapshot.snapshot_date.isoformat(),
                     "admission_cycles": self.snapshot.cycles,
                     "intake": self.snapshot.intake.key,

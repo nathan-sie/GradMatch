@@ -403,6 +403,10 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     assert all(item["planning_tier"]["history"]["gpa_band"] == "3.75 through 4"
                for item in suggestions if item["planning_tier"]["history"])
     assert any("Matched historical reports" in line.value for line in app.markdown)
+    assert any("[OpenCS DataPoints](https://opencs.app/datapoints/)" in line.value for line in app.caption)
+    assert {"Basics", "Degree and tests", "Preparation", "Shortlist", "Budget and changes", "Checks and sources"} <= {
+        tab.label for tab in app.tabs
+    }
     assert not session.usage
 
     app.chat_input(key="m2_chat").set_value("Change my tuition budget to 50000.").run()

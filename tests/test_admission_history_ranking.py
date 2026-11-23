@@ -108,6 +108,7 @@ def test_history_ab_reaches_each_shared_rank_tool_and_preserves_formal_tiers(cat
     options = rank_input["admission_history_options"]
     assert {item["program_id"] for item in options} == {USC, UCSD}
     usc_options = next(item for item in options if item["program_id"] == USC)
+    assert usc_options["source"] == "OpenCS DataPoints"
     assert set(usc_options) == {
         "evidence_id", "program_id", "basis", "source", "snapshot_date", "admission_cycles", "intake",
         "gpa_scale", "gpa_scope", "gpa_band", "admitted", "rejected", "assumed_overall",

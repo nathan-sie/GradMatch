@@ -1,6 +1,6 @@
 # Local admissions datapoint coverage pilot
 
-The pilot maps 13 program identities from a local applicant-reported export to GradMatch's recommendation pool. The [mapping](../../data/review/admission_dp_pilot.json) records each source program ID, degree, and track. The audit checks all bindings against the same identity lookup used by the 83-program recommendation service. Nine groups have reviewed program records, and four have community catalog identities for historical context.
+The pilot maps 13 program identities from a local [OpenCS DataPoints](https://opencs.app/datapoints/) export to GradMatch's recommendation pool. The [mapping](../../data/review/admission_dp_pilot.json) records each source program ID, degree, and track. The audit checks all bindings against the same identity lookup used by the 83-program recommendation service. Nine groups have reviewed program records, and four have community catalog identities for historical context.
 
 The expansion adds CMU MSAII, Illinois ECE MEng, UC Irvine MCS, Georgia Tech MSCS, Brown ScM CS, CMU MSCS, Northwestern MSCS, and Illinois thesis MSCS. Identical tracker IDs distinguish Illinois MCS, ECE MEng, and thesis MSCS. The UC Irvine export has separate professional MCS and MSCS entries. See [Illinois degree options](https://siebelschool.illinois.edu/admissions/graduate/degree-program-options) and [UC Irvine program distinctions](https://mcs.ics.uci.edu/mcs-vs-mscs/).
 

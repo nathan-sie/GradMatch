@@ -19,6 +19,10 @@ Source: **CS Grad contributors**, [project](https://csgrad.com/), [pinned tracke
 
 The project homepage displays **CC BY-NC-SA 4.0**, checked again on 2026-11-19. The reduced candidate index and its candidate-derived report metadata retain attribution and the [CC BY-NC-SA 4.0 notice](https://creativecommons.org/licenses/by-nc-sa/4.0/). Changes: reduction to identity leads/review flags, independent screening and explicit catalog links; no source risk labels are mapped to personalized tiers. This data notice does not change the license of application code or university pages. No restricted CS Grad DataPoints content is accessed or redistributed.
 
+## Admissions DataPoints attribution
+
+`admission_history_aggregates.json` adapts applicant-reported decisions from [OpenCS DataPoints](https://opencs.app/datapoints/), by Open CS Application contributors, under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). GradMatch matches program identities, deduplicates reports and publishes counts by GPA band. The published counts omit groups with fewer than five decisions.
+
 ## Offline reproduction
 
 ```powershell
