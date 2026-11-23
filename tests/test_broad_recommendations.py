@@ -456,6 +456,10 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     app.chat_input(key="m2_chat").set_value("what's the tuition of University of Washington — MSECE, Seattle").run()
     assert not app.exception and session.current_result is shortlist
     assert any("USD 50,850" in item.value and "USD 1,130" in item.value for item in app.markdown)
+    app.chat_input(key="m2_chat").set_value("what about the deadline").run()
+    app.chat_input(key="m2_chat").set_value("Does it need GRE?").run()
+    assert not app.exception and session.current_result is shortlist
+    assert "GRE scores are neither required nor accepted" in session.messages[-1]["content"]
     app.chat_input(key="m2_chat").set_value(
         "what is the tuition of New York University — Master of Science in Computer Science"
     ).run()
@@ -492,6 +496,11 @@ def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypa
     deadline = ask("What about its deadline?")
     assert deadline["program_id"] == reply["program_id"]
     assert deadline["topic"] == "deadline" and deadline["model_calls"] == 0
+    for prompt in ("Does it need GRE?", "Is the GRE required?", "Do I need to take the GRE?"):
+        gre = ask(prompt)
+        assert gre["program_id"] == reply["program_id"] and gre["model_calls"] == 0
+        assert "GRE scores are neither required nor accepted" in gre["message"]
+        assert any("/pmp/admissions/" in row["url"] for row in gre["citations"])
     nyu = ask("what is the tuition of New York University — Master of Science in Computer Science")
     assert nyu["program_id"] == "nyu-mscs-tandon-brooklyn" and "USD 78,780" in nyu["message"]
     # A session may still contain the old routing's generic reply after deployment.
@@ -510,8 +519,15 @@ def test_catalog_questions_answer_from_evidence_with_paid_react_enabled(monkeypa
     assert "Which program do you mean?" in gre["message"]
     assert gre["program_id"] is None
     assert ask("and the deadline?")["program_id"] is None
-    exact = ask("Does community-ss-cmu-mscs require the GRE?")
-    assert "strongly encouraged" in exact["message"] and exact["citations"]
+    assert ask("Does it need GRE?")["program_id"] is None
+    exact = ask("Do I need to take the GRE for community-ss-cmu-mscs?")
+    assert "strongly recommended" in exact["message"] and exact["citations"]
+    required = ask("Is a GRE score required for cmu-mcds-pittsburgh?")
+    assert "GRE is required" in required["message"] and "at-home test is accepted" in required["message"]
+    optional = ask("Does rice-mcs-houston require GRE scores?")
+    assert "GRE is optional" in optional["message"] and optional["citations"]
+    unverified = ask("Is GRE required for community-sss-mit-cse?")
+    assert "does not verify this policy" in unverified["message"] and not unverified["citations"]
 
     unknown = ask("What's the tuition of UW-MSCSS-Tacoma?")
     assert "unavailable in the reviewed evidence" in unknown["message"] and not unknown["citations"]

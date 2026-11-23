@@ -23,16 +23,29 @@ QUESTION = re.compile(
     r"(?:\s+(?:for|of|at)\s+(?P<name>.+))?",
     re.IGNORECASE,
 )
-GRE_QUESTION = re.compile(r"does\s+(.+?)\s+require\s+(?:the\s+)?gre", re.IGNORECASE)
+GRE_TEST = r"(?:a\s+|the\s+)?gre(?:\s+scores?)?"
+GRE_QUESTIONS = tuple(re.compile(r"(?:and\s+)?" + pattern, re.IGNORECASE) for pattern in (
+    r"do\s+i\s+(?:need(?:\s+to\s+(?:take|submit))?|have\s+to\s+(?:take|submit))\s+"
+    + GRE_TEST + r"(?:\s+to\s+apply)?(?:\s+for\s+(?P<name>.+))?",
+    r"(?:does|do)\s+(?P<name>.+?)\s+(?:need|require)\s+" + GRE_TEST,
+    r"(?:is\s+)?" + GRE_TEST + r"\s+(?:required|needed)(?:\s+for\s+(?P<name>.+))?",
+))
+PROGRAM_REFERENCES = {"it", "this program", "that program", "the program"}
 
 
 def parse_catalog_question(message):
     question = " ".join(message.strip().rstrip("?.").split())
-    if match := GRE_QUESTION.fullmatch(question):
-        return "gre", match[1]
-    if match := QUESTION.fullmatch(question):
-        return TOPICS[match["topic"].lower()], match["name"]
-    return None
+    for pattern in GRE_QUESTIONS:
+        if match := pattern.fullmatch(question):
+            topic = "gre"
+            break
+    else:
+        match = QUESTION.fullmatch(question)
+        if match is None:
+            return None
+        topic = TOPICS[match["topic"].lower()]
+    name = match["name"]
+    return topic, None if name and name.casefold() in PROGRAM_REFERENCES else name
 
 
 def normalized(text):
@@ -115,11 +128,24 @@ def deadline_answer(program, profile, sources, as_of):
 
 def gre_answer(program, profile, sources):
     source_ids = evidence_ids(program, "gre", sources, profile)
-    if not source_ids or program.gre_policy == "unknown":
+    policies, recommendations = {}, {}
+    for sid in evidence_ids(program, "directory_policies", sources, profile):
+        for note in sources[sid].verified_values["directory_policies"].values():
+            label, _, text = note.partition(": ")
+            if label == "GRE policy":
+                policies[text] = sid
+            elif label == "GRE recommendation":
+                recommendations[text] = sid
+
+    if policies:
+        detail = " ".join(policies)
+    elif source_ids and program.gre_policy != "unknown":
+        detail = "**GRE required.**" if program.gre_policy == "required" else "**GRE is not required.**"
+    else:
         return None, []
-    outcome = "requires the GRE" if program.gre_policy == "required" else "does not require the GRE"
-    summary = " ".join(dict.fromkeys(sources[sid].fact_summary for sid in source_ids))
-    return f"The reviewed policy **{outcome}**. {summary}", source_ids
+    if recommendations:
+        detail += " " + " ".join(recommendations)
+    return detail, list(dict.fromkeys([*source_ids, *policies.values(), *recommendations.values()]))
 
 
 def catalog_answer(topic, name, programs, sources, profile, as_of, broad_context, previous_id):
