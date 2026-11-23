@@ -14,7 +14,8 @@ from gradmatch.ranking import RankingDraft, retrieve
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 2
+BROAD_ENGINE_VERSION = 3
+_DEFAULT_HISTORY = object()
 
 
 def prepare_input(session, *, changes, unknown_fields, message, provider, settings):
@@ -73,13 +74,16 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
 def start_task(session: Session, *, request_id: str, programs, sources, settings, as_of: date,
                changes=None, unknown_fields=None, message=None, provider=None,
                strategy=None, data_mode="snapshot", new_task=False, fetcher=None, recommendation_scope='reviewed',
-               history_preview=None):
+               history_preview=_DEFAULT_HISTORY):
     if recommendation_scope not in {'reviewed', 'broad'}:
         raise ValueError('Unsupported recommendation scope.')
     broad_context = None
     if recommendation_scope == 'broad':
+        from gradmatch.admission_history import load_bundled_preview
         from gradmatch.broad_catalog import build_broad_catalog
         programs, broad_context = build_broad_catalog(programs, sources)
+        if history_preview is _DEFAULT_HISTORY:
+            history_preview = load_bundled_preview()
     legacy=strategy is None and data_mode=='snapshot' and broad_context is None
     strategy=strategy or 'fixed'
     if strategy not in {"fixed", "react", "plan"} or data_mode not in {"snapshot", "live"}:

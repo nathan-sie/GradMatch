@@ -1,4 +1,4 @@
-"""Optional local aggregates for showing applicant-reported admissions context."""
+"""Aggregate applicant reports and conservative application planning tiers."""
 
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -15,8 +15,11 @@ from gradmatch.storage import PROJECT_ROOT
 
 
 PREVIEW_FILE = PROJECT_ROOT / "work/admissions_dp/recommendation_preview.json"
+BUNDLED_PREVIEW_FILE = PROJECT_ROOT / "data/review/admission_history_aggregates.json"
+BROAD_ENGINE_VERSION = 1
 GPA_BAND_COUNT = 16
 MINIMUM_BAND_REPORTS = 5
+PLANNING_TIERS = ("Reach", "Target", "Safer")
 BandIndex = Annotated[int, Field(ge=0, lt=GPA_BAND_COUNT)]
 
 
@@ -147,6 +150,30 @@ def load_preview():
         return HistoryPreview.model_validate_json(PREVIEW_FILE.read_bytes())
     except (OSError, ValueError):
         return None
+
+
+def load_bundled_preview():
+    try:
+        return HistoryPreview.model_validate_json(BUNDLED_PREVIEW_FILE.read_bytes())
+    except (OSError, ValueError):
+        return None
+
+
+def planning_tier(history, *, hard_checks_passed):
+    """Assign an application planning label from matched self-reported counts."""
+    label = "Reach"
+    reason = "Fewer than five usable reports match this program, intake and GPA band. Treat it as a stretch option while checking the requirements."
+    if history is not None:
+        admitted, rejected = history["admitted"], history["rejected"]
+        total = admitted + rejected
+        reason = "The matched reports provide limited or mixed support for this application."
+        if total >= 12 and 5 * admitted >= 4 * total and rejected > 0 and hard_checks_passed:
+            label = "Safer"
+            reason = "At least 12 reports match, at least four in five report admission, and the official hard checks pass."
+        elif total >= 8 and 5 * admitted >= 3 * total:
+            label = "Target"
+            reason = "At least eight reports match and at least three in five report admission. Confirm the remaining application requirements."
+    return {"label": label, "reason": reason, "history": history}
 
 
 def read_preview(profile):

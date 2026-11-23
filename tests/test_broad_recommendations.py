@@ -10,6 +10,7 @@ from uuid import uuid4
 import pytest
 from streamlit.testing.v1 import AppTest
 
+from gradmatch import admission_history
 from gradmatch.agent import Execution, Task
 from gradmatch.broad_catalog import build_broad_catalog, screen_program, finish_broad_result
 from gradmatch.bootstrap import bootstrap_public_catalog
@@ -373,3 +374,38 @@ def test_saved_budget_can_be_retried_after_model_failure(tmp_path, monkeypatch, 
     counts = {metric.label: int(metric.value) for metric in app.metric}
     assert counts["Fails budget check"] >= 1 and counts["Budget fit unverified"] >= 1
     assert not any(button.key == "m2_retry" for button in app.button)
+
+
+def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(tmp_path, monkeypatch):
+    public = tmp_path / "public"
+    monkeypatch.setenv("GRADMATCH_DB_PATH", str(bootstrap_public_catalog(public)))
+    monkeypatch.setenv("GRADMATCH_PUBLIC_CACHE_DIR", str(public))
+    monkeypatch.setenv("MODEL_ENABLED", "false")
+    monkeypatch.setattr(admission_history, "PREVIEW_FILE", tmp_path / "local-preview-not-present.json")
+
+    app = AppTest.from_file(str(PROJECT_ROOT / "app.py"), default_timeout=30).run()
+    app.button(key="m35_load_example").click().run()
+    app.number_input(key="m2_input_gpa").set_value(3.80)
+    app.button(key="m2_save_profile").click().run()
+    assert not app.exception
+    session = app.session_state["m2_session"]
+    result = session.current_result
+    assert len(result["retrieved_program_ids"]) == 83
+    suggestions = result["preliminary_recommendations"]
+    assert suggestions and all(item["planning_tier"]["label"] in admission_history.PLANNING_TIERS for item in suggestions)
+    assert any(item["planning_tier"]["label"] == "Target" for item in suggestions)
+    assert any("Matched historical reports" in line.value for line in app.markdown)
+    assert not session.usage
+
+    app.chat_input(key="m2_chat").set_value("Change my tuition budget to 50000.").run()
+    assert not app.exception
+    rows = session.current_result["preliminary_recommendations"]
+    assert all(item["program_id"] not in {"nyu-mscs-tandon-brooklyn", "usc-mscs-general-los-angeles"} for item in rows)
+    assert all(item["planning_tier"]["label"] in admission_history.PLANNING_TIERS for item in rows)
+
+
+def test_planning_tier_requires_stronger_evidence_and_verified_checks_for_safer():
+    assert admission_history.planning_tier(None, hard_checks_passed=True)["label"] == "Reach"
+    history = {"admitted": 10, "rejected": 2}
+    assert admission_history.planning_tier(history, hard_checks_passed=False)["label"] == "Target"
+    assert admission_history.planning_tier(history, hard_checks_passed=True)["label"] == "Safer"

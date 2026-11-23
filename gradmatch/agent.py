@@ -26,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 6
+BROAD_ENGINE_VERSION = 7
 
 
 class BudgetLimit(ValueError):
@@ -710,11 +710,7 @@ class Execution:
                     {"program_id": pid, **{key: option[key] for key in ("pathway", "summary", "research_areas")}}
                     for pid, option in path_options.items()
                 ]
-            snapshot = getattr(t, "history_preview", None)
-            comparison = snapshot.compare(self.session.profile) if snapshot else None
-            if comparison:
-                history_options = comparison.ranking_options(
-                    payload["allowed_preliminary_program_ids"], t.history_snapshot_hash)
+            history_options = self.matching_history(payload["allowed_preliminary_program_ids"])
             if history_options:
                 payload["admission_history_options"] = list(history_options.values())
         else:
@@ -736,6 +732,11 @@ class Execution:
             [],
             [],
         )
+
+    def matching_history(self, program_ids):
+        snapshot = getattr(self.task, "history_preview", None)
+        comparison = snapshot.compare(self.session.profile) if snapshot and snapshot.snapshot_date <= self.as_of else None
+        return comparison.ranking_options(program_ids, self.task.history_snapshot_hash) if comparison else {}
 
     def current_state(self):
         t = self.task
@@ -790,6 +791,7 @@ class Execution:
             finish_broad_result(t.validated,t.draft,self.session.profile,t.programs,selected,t.broad_context,
                 self.preliminary_screens(selected),deterministic_only=deterministic_only,
                 history_options=history_options, history_snapshot_hash=getattr(t, "history_snapshot_hash", None),
+                planning_history=self.matching_history(p.program_id for p in selected),
                 prioritize_research=getattr(self, "input_intent", None) != "explain_previous")
         # An unvisited program is never silently presented as checked.
         t.validated.update(

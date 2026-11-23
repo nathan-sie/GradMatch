@@ -8,6 +8,7 @@ import json
 from traceback import extract_tb
 from uuid import uuid4
 
+from gradmatch.admission_history import PLANNING_TIERS
 from gradmatch.broad_catalog import RESEARCH_PATHS_FILE
 from gradmatch.config import ModelSettings
 from gradmatch.schemas import ApplicantProfile
@@ -240,6 +241,7 @@ def grade_task(case, oracle, turns, final_profile, sources):
             len(selected) == len(set(selected)) and not set(selected) & rejected
             and all(item['checks']['recommendation_ready'] for item in tiered)
             and all(item.get('personalized_tier') is None for item in tentative)
+            and all(item.get('planning_tier', {}).get('label') in PLANNING_TIERS for item in tentative)
         )
         checks.setdefault('official_citations_resolve', True)
         checks['official_citations_resolve'] &= all(

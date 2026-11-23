@@ -13,6 +13,7 @@ import sqlite3
 from unittest.mock import patch
 from uuid import uuid4
 
+from gradmatch.admission_history import BUNDLED_PREVIEW_FILE
 from gradmatch.broad_catalog import RESEARCH_PATHS_FILE
 from gradmatch.config import load_settings
 from gradmatch.providers import OpenAIProvider
@@ -34,7 +35,7 @@ def engine_hash():
         'verify_broad_recommendations.py', 'm5_fixtures.py',
     ]]
     paths += [PROJECT_ROOT / 'config' / name for name in ['agent.json', 'app.json', 'ranking_rubric.md']]
-    paths.append(RESEARCH_PATHS_FILE)
+    paths.extend([RESEARCH_PATHS_FILE, BUNDLED_PREVIEW_FILE])
     return hash_json({path.relative_to(PROJECT_ROOT).as_posix():
                       hashlib.sha256(path.read_text(encoding='utf-8').encode()).hexdigest() for path in paths})
 

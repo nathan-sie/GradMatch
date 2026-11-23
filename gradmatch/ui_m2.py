@@ -10,7 +10,9 @@ from zoneinfo import ZoneInfo
 from pydantic import ValidationError
 import streamlit as st
 
-from gradmatch.admission_history import MINIMUM_BAND_REPORTS, load_preview
+from gradmatch.admission_history import (
+    MINIMUM_BAND_REPORTS, PLANNING_TIERS, load_bundled_preview, load_preview, planning_tier,
+)
 from gradmatch.catalog import read_catalog
 from gradmatch.config import ConfigurationError, load_settings
 from gradmatch.schemas import GPA_SCOPE_LABELS, ApplicantProfile
@@ -46,15 +48,15 @@ def render_m2(database, *, directory=None):
     mode_label=st.selectbox('Evidence mode',['Catalog snapshots','Live official pages'],key='m4_mode',disabled=session.active)
     pool_label=st.selectbox('Recommendation pool', ['All 83 programs (official + community data)', 'Reviewed official records only'],key='m63_pool',disabled=session.active)
     recommendation_scope='broad' if pool_label.startswith('All 83') else 'reviewed'
-    history_snapshot = load_preview()
-    use_history = False
+    history_snapshot = load_preview() or load_bundled_preview()
     if history_snapshot is not None and recommendation_scope == "broad":
-        use_history = st.checkbox("Use historical reports in preliminary ranking", key="admission_history_ranking",
-            disabled=session.active, help="For model ranking, send aggregate counts from matching GPA bands. Generate again after changing this setting.")
+        intake = history_snapshot.intake
+        st.caption(f"Historical reports are used automatically for {intake.term.title()} {intake.year} profiles with "
+                   f"{history_snapshot.gpa_scale:g}-point {history_snapshot.gpa_scope.replace('_', ' ')} GPA.")
     strategy={'ReAct agent':'react','Plan-and-replan agent':'plan','Fixed baseline':'fixed'}[strategy_label]
     data_mode='live' if mode_label=='Live official pages' else 'snapshot'
     st.caption('ReAct chooses its next tool from observations. Plan-and-replan creates 3-6 steps and revises them after conditions change or execution fails (at most 3 revisions). Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
-    st.info("Pilot tiering uses reviewed official cohort statistics. Lottery / Reach are planning labels, not personal admission probabilities. Target / Safer require comparable cases and may remain empty. Other programs may still need verification.")
+    st.info("Preliminary recommendations receive an application planning tier. Formal tiers use reviewed program-specific evidence.")
     st.caption('The default recommendation pool includes all 83 programs. The agent may recommend unreviewed programs using labelled CS Grad language, GRE and deadline data. Missing GPA, tuition or admission cases remain explicit; personal tiers still require their separate evidence.')
     st.caption("When you enable model calls, your profile and submitted messages are sent to OpenAI. Use synthetic information for milestone testing. Session history lasts only for this browser connection and is not stored in the public catalog.")
     left, right = st.columns(2)
@@ -68,7 +70,7 @@ def render_m2(database, *, directory=None):
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
         for key in list(st.session_state):
-            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration", "admission_history_ranking"}:
+            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration"}:
                 del st.session_state[key]
         st.rerun()
     with st.expander("Model setup and usage", expanded=not settings.ready):
@@ -103,7 +105,7 @@ def render_m2(database, *, directory=None):
             response = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
                 settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(),
                 strategy=strategy,data_mode=data_mode,recommendation_scope=recommendation_scope,
-                history_preview=history_snapshot if use_history else None,**kwargs)
+                history_preview=history_snapshot,**kwargs)
         st.session_state["m2_last_response"] = response
         st.rerun()
     if form:
@@ -462,7 +464,7 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
         st.write(f"{tier}: {len(items)}")
         for item in items:
             st.markdown(f"[{names[item['program_id']]}]({item['identity']['official_url']})")
-            st.caption(item["identity"]["track"])
+            st.caption(f"Formal tier · {item['tier']} · {item['identity']['track']}")
             st.write(item["planning_reason"])
             render_admission_history(history, item["program_id"])
             tuition = item["checks"]["tuition"]
@@ -542,7 +544,7 @@ def render_broad_recommendations(result, *, history=None):
                f"Programs screened: {len(result['retrieved_program_ids'])} · "
                f"{result['reviewed_program_count']} with additional official records · "
                f"Community snapshot {result['community_snapshot']['source_date']}")
-    st.info('These recommendations can use preliminary CS Grad information. Missing GPA, costs and other requirements still need confirmation. A recommendation here does not establish complete eligibility or a personal admission tier.')
+    st.info("Use the planning tiers to balance your shortlist. They summarize available historical evidence and screening; confirm pending requirements before applying.")
     history_ranking = result.get("admission_history_ranking", {})
     if history_ranking.get("enabled"):
         st.caption(f"Historical reports offered to ranking: {history_ranking['offered_options']} programs · "
@@ -553,19 +555,26 @@ def render_broad_recommendations(result, *, history=None):
         st.caption("Documented research pathways link to the program and related research pages. Contact the program about advisor availability and access to research opportunities.")
     if not items:
         st.write('No preliminary program recommendation was selected in this run.')
-    for item in items:
+    tiers = [item.get("planning_tier") or planning_tier(None, hard_checks_passed=False) for item in items]
+    if tiers:
+        st.caption("Planning tiers · " + " · ".join(
+            f"{label} {sum(tier['label'] == label for tier in tiers)}" for label in PLANNING_TIERS
+        ))
+    for item, tier in zip(items, tiers):
         identity=item['identity']; checks=item['checks']
         st.markdown(f"[{identity['university']} — {identity['program_name']}]({identity['official_url']})")
         tuition_check = next(c for c in checks["checks"] if c["rule_id"] == "tuition")
-        st.caption(f"Preliminary recommendation · Personal tier: not assigned · {TUITION_LABELS[tuition_check['status']]}")
+        st.markdown(f"**Planning tier · {tier['label']}**")
+        st.caption(f"Preliminary recommendation · {TUITION_LABELS[tuition_check['status']]}")
+        st.write(tier["reason"])
         if fit := item.get("research_fit"):
             st.markdown(f"**Research fit · {fit['pathway']}**")
             st.write(fit["summary"])
             st.write(fit["research_areas"])
             st.caption(f"Reviewed {fit['reviewed_on']} · [Program requirements]({fit['program_source']}) · [Research groups and faculty]({fit['research_source']})")
-        if evidence := item.get("admission_history_evidence"):
+        if evidence := tier["history"] or item.get("admission_history_evidence"):
             years = "–".join(str(year) for year in sorted({min(evidence["admission_cycles"]), max(evidence["admission_cycles"])}))
-            st.markdown("**Historical reports used in this suggestion**")
+            st.markdown("**Matched historical reports**")
             st.write(f"GPA band {evidence['gpa_band']} · Reported admits ({evidence['admitted']}) "
                      f"· Reported rejects ({evidence['rejected']})")
             st.caption(f"{evidence['source']}, {years} · Snapshot {evidence['snapshot_date']}.")

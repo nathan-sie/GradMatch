@@ -27,13 +27,15 @@ Run `python -m streamlit run app.py` locally. Select **Load tiering example (USD
 
 **Compare candidates by historical sample coverage** orders current candidates by the number of explicit decisions in the applicant's GPA band. Each original scale is divided into 16 equal-width bands. On a 4-point scale, each band spans 0.25 points. Lower endpoints are included, and the maximum score belongs to the final band. The table shows candidates with at least five decisions and preserves assessment order among equal sample sizes. The program cards still show overall counts and indicate when the matching band has fewer than five reports. Re-run the preview command to add band data to an existing local preview.
 
-## Use historical reports in preliminary ranking
+## Use historical reports in the app
 
-Start the app with a local preview and choose the **All 83 programs** pool. **Use historical reports in preliminary ranking** defaults to off. Enable it and submit **Generate / rerun** with a matching profile and model ranking enabled. This gives all three strategies the same optional input to their shared ranking call.
+The **All 83 programs** pool automatically reads the [published aggregate snapshot](../../data/review/admission_history_aggregates.json). It contains 10 program summaries and 11 GPA-band rows, each with at least five decisions. The app matches Fall 2027 intake and a four-point overall GPA for this snapshot. A local audit preview can supply a different snapshot for testing.
 
 The code selects aggregates for eligible preliminary candidates in the applicant's GPA band, scale, scope and intake. Each option has at least five decisions. The model can use the added context when selecting or ordering preliminary suggestions. To cite a row it returns its program-specific evidence ID. The validator matches the ID to the exact options offered in the current draft, then attaches the original aggregate for display and audit. The applicable eligibility checks and formal tier rules still use their official evidence. The app records whether history was enabled, the aggregate snapshot fingerprint, and how many options were offered and cited.
 
-The local preview contains aggregate fields only. With model ranking enabled, aggregate options for matching candidates may be sent to the provider. Validated citations are included in that assessment's session export. The M6.4 evaluation suite uses the shared engine with this optional input off.
+Every preliminary recommendation receives a planning tier from code. **Target** requires at least eight matching decisions and three reported admits per five decisions. **Safer** requires at least twelve matching decisions, four reported admits per five decisions, at least one reported rejection, and all official hard checks to pass. **Reach** covers the remaining suggestions, including those with too few matching reports. Each card shows its basis and any matched counts. These labels support shortlist planning from self-reported samples.
+
+With model ranking enabled, aggregate options for matching candidates may be sent to the provider. The session export includes the planning labels and their evidence. The benchmark runner uses the published snapshot, while the paired pilot below explicitly compares history on and off.
 
 ```powershell
 python -m pytest -q tests/test_admission_history_ranking.py

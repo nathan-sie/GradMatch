@@ -214,6 +214,7 @@ def test_local_history_renders_on_actual_assessment_without_changing_result(mani
     monkeypatch.setenv("MODEL_ENABLED", "false")
     monkeypatch.setattr(OpenAIProvider, "generate", deny_model)
     monkeypatch.setattr(admission_history, "PREVIEW_FILE", tmp_path / "preview.json")
+    monkeypatch.setattr(admission_history, "BUNDLED_PREVIEW_FILE", tmp_path / "bundled.json")
     app = AppTest.from_file(str(PROJECT_ROOT / "app.py"), default_timeout=30).run()
     from gradmatch import ui_m2
     monkeypatch.setattr(ui_m2, "datetime", FrozenClock)

@@ -5,6 +5,7 @@ from decimal import Decimal
 import hashlib
 import json
 
+from gradmatch.admission_history import PLANNING_TIERS, planning_tier
 from gradmatch.community import application_fee_label
 from gradmatch.ranking import retrieve
 from gradmatch.schemas import ProgramRecord
@@ -31,6 +32,7 @@ MODEL_CONTRACTS["rank"] += (
     " not make a program more suitable. These reports establish neither odds nor an official eligibility or tier result."
     " If history informed a suggestion, set its history_evidence_id to the supplied ID for that exact program."
     " Otherwise set history_evidence_id to null. Never use these IDs as formal tier evidence or as an official citation."
+    " The application assigns preliminary planning labels separately using the available historical reports."
     " For a research goal, prioritize eligible programs in research_path_options. Use the documented route"
     " and the applicant's academic background to compare options. A departmental lab or faculty listing"
     " supports exploring a topic; access to an advisor, lab, funding or a thesis place is unconfirmed."
@@ -193,6 +195,7 @@ def screen_program(profile, program, report, context, *, as_of):
     add('tuition', tuition.status.value, tuition.explanation, 'reviewed_official')
     add('application_info', 'reported_information', 'A reported application portal and dated community policy snapshot are available.')
     return dict(program_id=program.program_id, profile_version=profile.profile_version, as_of_date=str(as_of),
+        official_hard_checks_passed=report.hard_checks_status == "pass",
         eligible_for_preliminary=not any(c['status'] == 'fail' for c in checks), checks=checks,
         next_listed_round=next_round, listed_rounds=facts['rounds'], application_url=facts['application_url'],
         application_fee=application_fee_label(facts), reported_gre=facts['reported_gre'],
@@ -260,7 +263,7 @@ def summarize_action_observation(observation):
 
 
 def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False,
-                        history_options=None, history_snapshot_hash=None, prioritize_research=True):
+                        history_options=None, history_snapshot_hash=None, planning_history=None, prioritize_research=True):
     """Validate model-selected IDs and attach actual recommendations to the assessment."""
     from gradmatch.validation import identity, blocking_validation_errors
 
@@ -268,6 +271,11 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
     formal_ids = {r['program_id'] for r in result['recommendations']}
     allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary']}
     history_options = history_options or {}
+    planning_history = planning_history or {}
+    planning = {
+        pid: planning_tier(planning_history.get(pid), hard_checks_passed=reports[pid]["official_hard_checks_passed"])
+        for pid in allowed - formal_ids
+    }
     suggestions = list(draft.suggestions) if draft else []
     method = 'model_selected'
     research_options = research_path_options(profile, retrieved, context, reports, date.fromisoformat(result["as_of_date"]))
@@ -276,7 +284,8 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
         def key(pid):
             checks = reports[pid]['checks']
             positives = sum(c['status'] in {'pass', 'not_applicable', 'reported_floor_met', 'reported_date_available', 'reported_optional'} for c in checks)
-            return (-positives, selected[pid].university.casefold(), selected[pid].program_name.casefold())
+            return (-PLANNING_TIERS.index(planning[pid]["label"]), -positives,
+                    selected[pid].university.casefold(), selected[pid].program_name.casefold())
         suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=['english', 'deadline', 'gre']) for pid in sorted(allowed - formal_ids,key=key)[:8]]
         method = 'deterministic_screening'
     accepted, seen = [], set()
@@ -320,6 +329,8 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             item["research_fit"] = research_options[pid]
             matching.append(item)
         accepted = (matching + [item for item in accepted if "research_fit" not in item])[:8]
+    for item in accepted:
+        item["planning_tier"] = planning[item["program_id"]]
     blocked = [dict(program_id=pid,identity=identity(p),reasons=[c for c in reports[pid]['checks'] if c['status']=='fail'])
         for pid,p in selected.items() if not reports[pid]['eligible_for_preliminary']]
     blocked_ids = {r['program_id'] for r in blocked}
@@ -338,6 +349,8 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             "snapshot_hash": history_snapshot_hash,
             "offered_options": len(history_options),
             "referenced_suggestions": sum("admission_history_evidence" in item for item in accepted),
+            "matched_planning_options": sum(pid in planning_history for pid in planning),
+            "suggestions_with_planning_evidence": sum(item["planning_tier"]["history"] is not None for item in accepted),
         })
     return result
 

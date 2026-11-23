@@ -1,0 +1,143 @@
+{
+  "intake": {
+    "year": 2027,
+    "term": "fall"
+  },
+  "cycles": [
+    2024,
+    2025,
+    2026
+  ],
+  "snapshot_date": "2026-10-25",
+  "gpa_scale": "4",
+  "gpa_scope": "overall",
+  "programs": {
+    "ucsd-ms-cs-la-jolla": {
+      "admitted": 17,
+      "rejected": 7,
+      "assumed_overall": 24
+    },
+    "usc-mscs-general-los-angeles": {
+      "admitted": 11,
+      "rejected": 1,
+      "assumed_overall": 12
+    },
+    "uiuc-mcs-urbana": {
+      "admitted": 8,
+      "rejected": 10,
+      "assumed_overall": 18
+    },
+    "uw-ece-msece-pmp-seattle": {
+      "admitted": 5,
+      "rejected": 1,
+      "assumed_overall": 6
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "admitted": 2,
+      "rejected": 7,
+      "assumed_overall": 9
+    },
+    "community-ss-uiuc-mscs": {
+      "admitted": 2,
+      "rejected": 3,
+      "assumed_overall": 5
+    },
+    "gatech-mscs-atlanta": {
+      "admitted": 2,
+      "rejected": 7,
+      "assumed_overall": 9
+    },
+    "community-a-minus-brown-scmcs": {
+      "admitted": 7,
+      "rejected": 2,
+      "assumed_overall": 9
+    },
+    "community-ss-cmu-mscs": {
+      "admitted": 2,
+      "rejected": 6,
+      "assumed_overall": 8
+    },
+    "community-b-plus-nwu-mscs": {
+      "admitted": 10,
+      "rejected": 2,
+      "assumed_overall": 12
+    }
+  },
+  "gpa_bands": {
+    "ucsd-ms-cs-la-jolla": {
+      "15": {
+        "admitted": 15,
+        "rejected": 4,
+        "assumed_overall": 19
+      }
+    },
+    "usc-mscs-general-los-angeles": {
+      "15": {
+        "admitted": 9,
+        "rejected": 0,
+        "assumed_overall": 9
+      }
+    },
+    "uiuc-mcs-urbana": {
+      "14": {
+        "admitted": 3,
+        "rejected": 2,
+        "assumed_overall": 5
+      },
+      "15": {
+        "admitted": 5,
+        "rejected": 8,
+        "assumed_overall": 13
+      }
+    },
+    "uw-ece-msece-pmp-seattle": {
+      "14": {
+        "admitted": 4,
+        "rejected": 1,
+        "assumed_overall": 5
+      }
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "15": {
+        "admitted": 1,
+        "rejected": 5,
+        "assumed_overall": 6
+      }
+    },
+    "community-ss-uiuc-mscs": {
+      "15": {
+        "admitted": 2,
+        "rejected": 3,
+        "assumed_overall": 5
+      }
+    },
+    "gatech-mscs-atlanta": {
+      "15": {
+        "admitted": 2,
+        "rejected": 6,
+        "assumed_overall": 8
+      }
+    },
+    "community-a-minus-brown-scmcs": {
+      "15": {
+        "admitted": 6,
+        "rejected": 2,
+        "assumed_overall": 8
+      }
+    },
+    "community-ss-cmu-mscs": {
+      "15": {
+        "admitted": 2,
+        "rejected": 4,
+        "assumed_overall": 6
+      }
+    },
+    "community-b-plus-nwu-mscs": {
+      "15": {
+        "admitted": 10,
+        "rejected": 2,
+        "assumed_overall": 12
+      }
+    }
+  }
+}
