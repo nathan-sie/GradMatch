@@ -12,7 +12,7 @@ from gradmatch.constraints import evidence_ids
 from gradmatch.schemas import Record
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS
 from gradmatch.validation import blocking_validation_errors
-BROAD_ENGINE_VERSION = 1
+BROAD_ENGINE_VERSION = 2
 
 Criterion = Literal[
     "candidates_available",
@@ -177,7 +177,19 @@ class Planner:
         context = self.e.decision_context()
         context.update(
             trigger={"reason_code": reason, "detail": detail},
-            plan_history=self.state.public()["revisions"],
+            plan_history=[
+                {
+                    **{key: revision[key] for key in ("revision", "reason_code", "status", "profile_version", "evidence_version")},
+                    "steps": [
+                        {key: step[key] for key in (
+                            "step_id", "tool", "status", "error_code", "depends_on", "program_ids",
+                            "target_fields", "source_id", "requested_fields"
+                        ) if step.get(key)}
+                        for step in revision["steps"]
+                    ],
+                }
+                for revision in self.state.revisions
+            ],
             plan_contract="3-6 pending steps. Empty program_ids binds to the retrieved scope. One rank step after checks, one validation after rank. No arbitrary code or URLs.",
         )
         draft = self.e.generate(PlanDraft, "plan", context, self.session)

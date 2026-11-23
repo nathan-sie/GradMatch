@@ -1,0 +1,12 @@
+{
+  "url": "https://siebelschool.illinois.edu/admissions/graduate/application-deadlines",
+  "retrieved_at": "2026-11-22T17:07:20.569255+00:00",
+  "raw_response_sha256": "ac450c8394aeaf28133dabc6f35b7c843bd156b1337550c2a74af51a43f6d036",
+  "verified_values": {
+    "directory_policies": {
+      "notes.14": "Recurring deadline: The department lists May 1 for the Urbana-Champaign fall MCS intake. Confirm the cycle-specific date before applying."
+    }
+  },
+  "source_excerpt": "May 1 (Fall)",
+  "fact_summary": "The department lists May 1 as the recurring fall application deadline for the Urbana-Champaign MCS. The table does not label a Fall 2027 instance."
+}

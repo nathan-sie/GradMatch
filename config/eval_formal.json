@@ -1,0 +1,6 @@
+{
+  "version": "m64-formal-v1",
+  "evaluation_date": "2026-11-22",
+  "catalog_seed": "data/catalog/dp_batch_review_seed.json",
+  "snapshot_hash": "216f9b310dc7de69efcebfb7ddd592d891b3ca99687642b63455d896bb09fee8"
+}

@@ -1,0 +1,49 @@
+{
+  "url": "https://www.grad.ucsd.edu/admissions/requirements/international-students/english-proficiency.html",
+  "retrieved_at": "2026-11-22T07:51:51.624764+00:00",
+  "raw_response_sha256": "7343d40d6d69677ee0c3aebe4dd532669cca0867291975a43ace75b03c34c081",
+  "verified_values": {
+    "english": {
+      "english": [
+        {
+          "version": "toefl_120",
+          "minimum_total": "85",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "toefl_6",
+          "minimum_total": "4.5",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": true,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        },
+        {
+          "version": "det_160",
+          "minimum_total": "120",
+          "recommended_total": null,
+          "minimum_subscores": {},
+          "validity_years": 2,
+          "valid_on_anniversary": false,
+          "condition_below_recommended": null,
+          "minimum_test_date": null,
+          "us_degree_minimum_test_date": null
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.6": "English policy: TOEFL iBT and DET include verified score and two-year reporting information. UC San Diego also lists IELTS Academic 7 and PTE Academic 65. Those paths and exemptions require manual confirmation in this planner."
+    }
+  },
+  "source_excerpt": "ETS will report scores no more than 2 years after the test date",
+  "fact_summary": "Standard graduate score reporting uses prior TOEFL iBT 85 or new TOEFL iBT 4.5. The university lists DET 120 with a two-year validity window. IELTS Academic 7 and PTE Academic 65 are documented for manual review. Exemptions need independent confirmation."
+}

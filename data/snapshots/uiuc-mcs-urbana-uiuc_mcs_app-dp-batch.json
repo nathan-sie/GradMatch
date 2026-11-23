@@ -1,0 +1,15 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/app-info",
+  "retrieved_at": "2026-11-22T17:09:16.341284+00:00",
+  "raw_response_sha256": "029d5ce70e2bec74bcda4d4522611ae9a281addac24f8f45bfa82eafe64eb182",
+  "verified_values": {
+    "gpa": {
+      "gpa.recommended": "3.2"
+    },
+    "directory_policies": {
+      "notes.13": "Recommended GPA: MCS recommends 3.2/4.0 alongside the Graduate College baseline."
+    }
+  },
+  "source_excerpt": "The recommended undergraduate GPA",
+  "fact_summary": "The professional MCS recommends an undergraduate GPA of 3.2/4. The MCS separately describes the Fall 2027 shift to self-supporting study."
+}

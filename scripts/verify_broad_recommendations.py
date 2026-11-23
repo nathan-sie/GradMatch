@@ -9,7 +9,7 @@ import socket
 from unittest.mock import patch
 from uuid import uuid4
 
-from gradmatch.catalog import load_seed
+from gradmatch.catalog import DEFAULT_SEED, load_seed
 from gradmatch.config import load_settings
 from gradmatch.providers import OpenAIProvider
 from gradmatch.ranking import PreliminaryRecommendationDraft
@@ -37,7 +37,7 @@ def main():
     output=args.output_dir or PROJECT_ROOT/'work/m63'/str(uuid4());output.mkdir(parents=True,exist_ok=False)
     originals=[p for p in [DEFAULT_DATABASE,PROJECT_ROOT/'work/csgrad_candidates.db'] if p.exists()]
     hashes=lambda:{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in originals}
-    before=hashes();p,s=load_seed();official_hash=data_hash(p,s)
+    before=hashes();p,s=load_seed(DEFAULT_SEED);official_hash=data_hash(p,s)
     def deny(*args,**kwargs):raise AssertionError('No paid or external request in broad verification')
     strategies={}
     with (patch.object(socket,'getaddrinfo',deny),patch.object(socket,'create_connection',deny),

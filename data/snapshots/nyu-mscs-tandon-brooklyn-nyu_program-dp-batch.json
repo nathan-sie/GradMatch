@@ -1,0 +1,32 @@
+{
+  "url": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+  "retrieved_at": "2026-11-22T17:07:21.562950+00:00",
+  "raw_response_sha256": "a93adb63d89daaa0206cf453f1ed1bd58be5ce732362ef3c5e4512a61b52c3e6",
+  "verified_values": {
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "nyu-mscs-tandon-brooklyn-professional",
+          "goal": "employment",
+          "statement": "Flexible advanced computing coursework and a capstone support preparation for applied computing careers; no placement outcome is promised.",
+          "source_ids": [
+            "nyu-mscs-tandon-brooklyn-nyu_program-dp-batch"
+          ]
+        },
+        {
+          "feature_id": "nyu-mscs-tandon-brooklyn-research",
+          "goal": "research",
+          "statement": "NYU Tandon lists MSCS research opportunities in algorithms, cybersecurity and other computing fields. Participation depends on access and individual arrangements.",
+          "source_ids": [
+            "nyu-mscs-tandon-brooklyn-nyu_program-dp-batch"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.9": "Research opportunities: Tandon lists algorithms, cybersecurity, responsible AI and other computing groups that MSCS students can explore."
+    }
+  },
+  "source_excerpt": "Algorithms and Foundations Group",
+  "fact_summary": "The Tandon MSCS page lists customizable computing electives and research groups in areas including algorithms and security."
+}

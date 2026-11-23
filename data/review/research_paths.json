@@ -1,0 +1,54 @@
+{
+  "reviewed_on": "2026-11-22",
+  "programs": {
+    "community-ss-uiuc-mscs": {
+      "pathway": "Required thesis",
+      "summary": "The Urbana-Champaign MS in Computer Science requires thesis research. Students must secure a thesis advisor.",
+      "program_source": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "research_areas": "Systems and networking faculty and groups include distributed systems, cloud computing, and systems for machine learning.",
+      "research_source": "https://siebelschool.illinois.edu/research/areas/systems-and-networking"
+    },
+    "ucsd-ms-cs-la-jolla": {
+      "pathway": "Optional thesis",
+      "summary": "The Computer Science MS offers a Plan I thesis with independent research and a thesis chair.",
+      "program_source": "https://cse.ucsd.edu/graduate/plan-i-thesis",
+      "research_areas": "CSE research areas include systems and networking, natural language processing, security and cryptography, and human-computer interaction through The Design Lab.",
+      "research_source": "https://cse.ucsd.edu/research"
+    },
+    "gatech-mscs-atlanta": {
+      "pathway": "Optional thesis",
+      "summary": "The on-campus MSCS offers a thesis option requiring advance approval from a College of Computing faculty advisor and the MSCS coordinator.",
+      "program_source": "https://www.cc.gatech.edu/degree-programs/master-science-computer-science",
+      "research_areas": "The Compiler Lab describes an MSCS student pursuing thesis research in the lab, one example of faculty-supervised research.",
+      "research_source": "https://compilerlab.cc.gatech.edu/news/new24/"
+    },
+    "uw-mscss-tacoma": {
+      "pathway": "Optional thesis",
+      "summary": "The Tacoma MS in Computer Science and Systems offers a thesis pathway. Students develop the proposal with a faculty advisor.",
+      "program_source": "https://www.tacoma.uw.edu/set/programs/graduate/mscss",
+      "research_areas": "The faculty directory lists Computer Science and Systems interests including cryptography, software engineering, and data science.",
+      "research_source": "https://www.tacoma.uw.edu/set/faculty_research"
+    },
+    "community-a-minus-brown-scmcs": {
+      "pathway": "Faculty-supervised research project",
+      "summary": "The Computer Science ScM has a research option built around a project with a faculty member.",
+      "program_source": "https://cs.brown.edu/degrees/masters/reqs/options/",
+      "research_areas": "Brown CS publishes research opportunities for master's students and links to prior master's project reports.",
+      "research_source": "https://cs.brown.edu/degrees/masters/research-opportunities-masters-students/"
+    },
+    "nyu-mscs-tandon-brooklyn": {
+      "pathway": "Graduate research opportunities",
+      "summary": "The Tandon MS in Computer Science lists research areas such as AI and machine learning, algorithms, cybersecurity, and computer systems.",
+      "program_source": "https://engineering.nyu.edu/academics/programs/computer-science-ms",
+      "research_areas": "Tandon's computer science department lists the Algorithms and Foundations Group and the Game Innovation Lab among its labs and centers.",
+      "research_source": "https://engineering.nyu.edu/academics/departments/computer-science-and-engineering/labs-and-centers"
+    },
+    "duke-ms-ece-durham": {
+      "pathway": "Optional thesis",
+      "summary": "The Duke MS in Electrical and Computer Engineering offers a thesis option based on faculty-led research.",
+      "program_source": "https://ece.duke.edu/academics/masters/",
+      "research_areas": "The program describes research clusters and study areas including systems for AI, quantum computing systems, and semiconductors.",
+      "research_source": "https://ece.duke.edu/academics/masters/"
+    }
+  }
+}

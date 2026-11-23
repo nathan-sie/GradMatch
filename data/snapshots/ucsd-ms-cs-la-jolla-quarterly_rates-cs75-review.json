@@ -1,0 +1,18 @@
+{
+  "url": "https://students.ucsd.edu/finances/fees/registration/2026-27/graduate.html",
+  "retrieved_at": "2026-11-22T07:51:51.713821+00:00",
+  "raw_response_sha256": "7ba40fbe49bbbfc7f1e0b4e5de469d6c22ada632a7f74c58cb4ebedc0664ae3b",
+  "verified_values": {
+    "tuition_minimum": {
+      "tuition.currency": "USD",
+      "tuition.basis": "per_term",
+      "tuition.unit_rate_lower": "4574",
+      "tuition.rate_year": "2026-2027"
+    },
+    "directory_policies": {
+      "notes.10": "Published quarterly tuition: USD 4,574 in base tuition and an additional USD 5,034 in nonresident supplemental tuition if applicable, at the 2026-2027 rates."
+    }
+  },
+  "source_excerpt": "$4,574.00",
+  "fact_summary": "Standard systemwide graduate tuition is USD 4,574 each regular quarter. A USD 5,034 Nonresident Supplemental Tuition charge applies when required. Campus fees, insurance and future rate changes are outside this minimum tuition computation."
+}

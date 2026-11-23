@@ -1,0 +1,24 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/professional-mcs/campus-master-computer-science",
+  "retrieved_at": "2026-11-22T17:07:20.840730+00:00",
+  "raw_response_sha256": "8bc1f786d47c575a4c2c89349bc249fb4966bf0e80d638e0f4dda902f055a210",
+  "verified_values": {
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uiuc-mcs-urbana-employment",
+          "goal": "employment",
+          "statement": "The Urbana-Champaign MCS develops professional computing skills through 32 credits of advanced coursework.",
+          "source_ids": [
+            "uiuc-mcs-urbana-uiuc_program-dp-batch"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.11": "Professional degree structure: Urbana-Champaign MCS has 32 credits without a thesis, with a possible full-time pace of three semesters."
+    }
+  },
+  "source_excerpt": "32 credit hours of coursework and no thesis",
+  "fact_summary": "The Urbana-Champaign on-campus MCS is coursework-only. The site describes a possible full-time pace of three semesters and distinguishes this degree from the online and Chicago variants."
+}

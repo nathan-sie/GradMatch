@@ -16,7 +16,7 @@ from gradmatch.bootstrap import bootstrap_public_catalog
 from gradmatch.catalog import load_seed
 from gradmatch.config import load_settings
 from gradmatch.constraints import check_constraints
-from gradmatch.providers import OpenAIProvider
+from gradmatch.providers import ModelUnavailable, OpenAIProvider
 from gradmatch.ranking import RankingDraft, PreliminaryRecommendationDraft
 from gradmatch.schemas import Intake
 from gradmatch.service import export_session, start_task
@@ -61,7 +61,7 @@ def test_pool_has_83_exact_ids_without_changing_official_facts_or_registering_co
     assert len(pool)==len({p.program_id for p in pool})==83
     assert sum(p.program_id.startswith('community-') for p in pool)==63
     assert {item.program_id:item for item in pool if not item.program_id.startswith('community-')}=={item.program_id:item for item in p}
-    assert len(s)==145 and data_hash(p,s)==before
+    assert data_hash(p,s)==before
     assert all(not p.allowed_official_hosts and not p.field_sources for p in pool if p.program_id.startswith('community-'))
     assert ctx['snapshot_date']=='2026-10-25'
     assert len(ctx['data_hash'])==64
@@ -171,11 +171,13 @@ def test_plan_and_rank_inputs_stay_compact_after_full_pool_checks():
     assert [purpose for purpose, _ in provider.calls] == ['plan', 'rank', 'plan', 'rank']
     for purpose, payload in provider.calls:
         # The provider wraps the serialized applicant input in a JSON request body.
-        encoded = json.dumps(json.dumps(payload, ensure_ascii=False), ensure_ascii=False).encode('utf-8')
-        assert len(encoded) < 120_000
+        body = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+        encoded = json.dumps(body, ensure_ascii=False).encode("utf-8")
         if purpose == 'plan':
+            assert len(encoded) < 32_000
             assert len(payload['catalog_index']) == 83
         else:
+            assert len(encoded) < 95_000
             stanford = next(row for row in payload['preliminary_reports'] if row['program_id'] == STANFORD)
             assert stanford['next_listed_round']['date'] == '2026-12-08'
             assert stanford['reported_language'] and stanford['reported_gre']
@@ -259,3 +261,76 @@ def test_actual_generate_uses_all_83_by_default_and_renders_unreviewed_recommend
     app.selectbox(key='m63_pool').set_value('Reviewed official records only').run()
     app.button(key='m2_generate').click().run()
     assert not app.exception and app.session_state['m2_session'].current_result['catalog_program_count']==20
+
+    session = app.session_state["m2_session"]
+    task = session.agent_task
+    task.turns = task.limits["max_turns"]
+    app.button(key="m2_generate").click().run()
+    assert not app.exception and session.current_result["status"] == "budget_exhausted"
+    assert any(item.value == "Partial assessment" for item in app.subheader)
+    assert app.button(key="m2_retry").label == "Start new assessment with saved profile"
+    app.button(key="m2_retry").click().run()
+    assert not app.exception and session.agent_task.task_id != task.task_id
+    assert session.profile.tuition_budget_usd == 140000 and not session.usage
+
+
+@pytest.mark.parametrize("method,decision,restarts_task", [
+    ("ReAct agent", "act", False),
+    ("Plan-and-replan agent", "plan", True),
+])
+def test_saved_budget_can_be_retried_after_model_failure(tmp_path, monkeypatch, method, decision, restarts_task):
+    monkeypatch.setenv("GRADMATCH_DB_PATH", str(bootstrap_public_catalog(tmp_path / "public")))
+    monkeypatch.setenv("GRADMATCH_PUBLIC_CACHE_DIR", str(tmp_path / "public"))
+    monkeypatch.setenv("MODEL_ENABLED", "true")
+    monkeypatch.setenv("MODEL_API_KEY", "test-key")
+    fixture = BroadFixture()
+    failed = False
+
+    def generate(_provider, kind, purpose, payload, session):
+        nonlocal failed
+        reply = fixture.generate(kind, purpose, payload, session)
+        if purpose == decision and session.profile.tuition_budget_usd == 50000 and not failed:
+            failed = True
+            session.usage[-1]["status"] = "error"
+            raise ModelUnavailable("Simulated model failure.")
+        return reply
+
+    monkeypatch.setattr(OpenAIProvider, "generate", generate)
+    app = AppTest.from_file(str(PROJECT_ROOT / "app.py"), default_timeout=30).run()
+    app.selectbox(key="m4_strategy").set_value(method).run()
+    app.checkbox(key="m2_allow_model").check().run()
+    app.button(key="m35_load_example").click().run()
+    app.button(key="m2_generate").click().run()
+    assert not app.exception
+    session = app.session_state["m2_session"]
+    original = session.current_result
+    assert any(item["program_id"] == "cmu-msaii-pittsburgh" for item in original["recommendations"])
+
+    app.chat_input(key="m2_chat").set_value("Change my tuition budget to 50000.").run()
+    assert not app.exception and failed
+    assert app.session_state["m2_last_response"]["status"] == "error"
+    assert session.profile.tuition_budget_usd == 50000
+    assert session.current_result is None and session.previous_result == original
+    assert any("USD 50,000" in caption.value and "Saved profile" in caption.value for caption in app.caption)
+    assert any("USD 140,000" in info.value and "Previous assessment" in info.value for info in app.info)
+    task_id = session.agent_task.task_id
+    usage_before_retry = list(session.usage)
+    user_messages = [message for message in session.messages if message["role"] == "user"]
+    app.run()
+    assert session.usage == usage_before_retry
+    expected_label = "Start new assessment with saved profile" if restarts_task else "Retry with saved profile"
+    assert app.button(key="m2_retry").label == expected_label
+
+    app.button(key="m2_retry").click().run()
+    assert not app.exception
+    assert (session.agent_task.task_id != task_id) is restarts_task
+    assert session.usage[:len(usage_before_retry)] == usage_before_retry
+    assert [message for message in session.messages if message["role"] == "user"] == user_messages
+    assert session.current_result["validation_passed"]
+    exclusions = {item["program_id"]: item["reason_codes"] for item in session.current_result["excluded"]}
+    assert "TUITION_EXCEEDS_BUDGET" in exclusions["cmu-msaii-pittsburgh"]
+    assert any("USD 140,000 → USD 50,000" in item.value for item in app.markdown)
+    assert any("Removed with a tuition budget failure" in item.value and "MSAII" in item.value for item in app.markdown)
+    counts = {metric.label: int(metric.value) for metric in app.metric}
+    assert counts["Fails budget check"] >= 1 and counts["Budget fit unverified"] >= 1
+    assert not any(button.key == "m2_retry" for button in app.button)

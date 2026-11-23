@@ -240,11 +240,13 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
     required_floor_paths={'tuition.currency','tuition.unit_rate_lower','tuition.required_units_lower','tuition.rate_year'}
     floor_paths={path for sid in floor_ids for path in sources[sid].verified_values.get('tuition_minimum',{})}
     policy=program.tuition
+    floor_applies = policy.basis not in {"per_term", "per_year"} or profile.study_mode == "full_time"
     if (estimate.upper_usd is None and required_floor_paths <= floor_paths
             and policy.currency=='USD' and policy.unit_rate_lower is not None
-            and policy.required_units_lower is not None and policy.rate_year):
+            and policy.required_units_lower is not None and policy.rate_year and floor_applies):
+        unit_label = {"per_term": "billing terms", "per_year": "academic years", "per_credit": "credits"}.get(policy.basis, "units")
         estimate=TuitionEstimate(lower_usd=policy.unit_rate_lower*policy.required_units_lower,
-            upper_usd=None,formula=f"At least {policy.required_units_lower} units × {policy.unit_rate_lower} USD; no verified upper bound",
+            upper_usd=None,formula=f"At least {policy.required_units_lower} {unit_label} × {policy.unit_rate_lower} USD; no verified upper bound",
             rate_year=policy.rate_year,reason_code='MINIMUM_ONLY_TUITION_BOUND',assumptions=list(policy.assumptions))
     if profile.tuition_budget_usd is None:
         add("tuition", "unknown", "MISSING_BUDGET", "A full-program tuition budget is missing.")
@@ -318,10 +320,18 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
             add("gre", "pass", "GRE_SELF_REPORTED", "The declared GRE report meets the reviewed presence/date/format rule; no unsupported score cutoff is imposed.")
     coverage_ids = evidence_ids(program, "remaining_eligibility", sources, profile)
     coverage_bound = bool(coverage_ids) and supported("degree") and supported("gre")
-    if program.eligibility_review_complete and coverage_bound:
-        add("remaining_eligibility", "pass", "REMAINING_ELIGIBILITY_REVIEWED", "The planning eligibility rules are covered by reviewed sources. Required application documents are listed separately; submission and admission are not asserted.")
-    else:
+    if not (program.eligibility_review_complete and coverage_bound):
         add("remaining_eligibility", "unknown", "M1_PARTIAL_RULE_COVERAGE", "Degree equivalency, complete application materials, and other program conditions still require review.")
+    elif "duplicate_advanced_degree" in program.field_sources and not (
+            supported("duplicate_advanced_degree") and supported("application_materials")):
+        add("remaining_eligibility", "unknown", "ADDITIONAL_ELIGIBILITY_EVIDENCE_INCOMPLETE",
+            "The application checklist or duplicate-degree policy needs applicable official evidence.")
+    elif supported("duplicate_advanced_degree") and (
+            getattr(profile.degree, "prior_academic_graduate_degree", "unknown") != "none"):
+        add("remaining_eligibility", "unknown", "PRIOR_ADVANCED_DEGREE_REQUIRES_REVIEW",
+            "Specify previous academic graduate degrees in the profile. If you hold or expect one, confirm with the university how its duplicate-degree policy applies.")
+    else:
+        add("remaining_eligibility", "pass", "REMAINING_ELIGIBILITY_REVIEWED", "The planning eligibility rules are covered by reviewed sources. Required application documents are listed separately; submission and admission are not asserted.")
     status = (CheckStatus.FAIL if any(check.status == CheckStatus.FAIL for check in checks)
               else CheckStatus.UNKNOWN if any(check.status == CheckStatus.UNKNOWN for check in checks)
               else CheckStatus.PASS)

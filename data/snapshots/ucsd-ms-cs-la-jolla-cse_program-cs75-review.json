@@ -1,0 +1,12 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/degree-programs/ms-program",
+  "retrieved_at": "2026-11-22T07:51:51.338891+00:00",
+  "raw_response_sha256": "e633deb0554dbe5707b9ecb31abd721a3a88d5a5453fe72f4fde3a451fd0cb8f",
+  "verified_values": {
+    "tuition_minimum": {
+      "tuition.required_units_lower": "3"
+    }
+  },
+  "source_excerpt": "register for a minimum of three quarters",
+  "fact_summary": "The CSE MS degree requires at least three quarters of residence in the ordinary route. The residency minimum does not set a maximum program length or fix future tuition."
+}

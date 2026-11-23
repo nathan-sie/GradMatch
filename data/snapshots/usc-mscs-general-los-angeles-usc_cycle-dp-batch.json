@@ -1,0 +1,44 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/",
+  "retrieved_at": "2026-11-22T17:07:20.522930+00:00",
+  "raw_response_sha256": "9c80d3fee604543ba393847829574e14dabec7b532fa5f00e97e78e4c25e96e7",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "closed_intakes": []
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-15",
+          "label": "Fall 2027 scholarship consideration",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-01-15",
+          "label": "Fall 2027 published final deadline",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": false
+    },
+    "directory_policies": {
+      "notes.4": "Deadlines: Fall 2027 scholarship consideration December 15, 2026 and published final January 15, 2027. Viterbi may still review late on-campus submissions."
+    }
+  },
+  "source_excerpt": "January 15, 2027 (Final Deadline)",
+  "fact_summary": "The school gives December 15, 2026 for Fall 2027 scholarship consideration and January 15, 2027 as the published final date. The school may still review late on-campus submissions."
+}

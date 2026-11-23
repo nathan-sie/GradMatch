@@ -44,6 +44,20 @@ def test_pilot_real_evidence_authorizes_only_msaii_not_incomplete_mcds():
     assert any(x["program_id"]=="cmu-mcds-pittsburgh" for x in result["pending_verification"])
     assert not any(x["tier"] in {"Target","Safer"} for x in result["recommendations"])
 
+
+def test_validated_recommendation_uses_code_owned_annotations():
+    programs, sources = load_seed()
+    profile = tiering_profile()
+    proposed = draft(profile, programs)
+    proposed.recommendations[0].limitations = ["This fixture says admission is guaranteed."]
+    proposed.recommendations[0].lower_risk_rationale = "This fixture says an offer was accepted."
+    result = validate_shortlist(proposed, profile, programs, programs, sources, as_of=AS_OF)
+    item = result["recommendations"][0]
+    assert result["validation_passed"] and item["tier"] == "Lottery"
+    assert "The university makes the admission decision." in item["limitations"][0]
+    assert item["lower_risk_rationale"] is None
+    assert "This fixture says" not in json.dumps(item)
+
 @pytest.mark.parametrize("offers,expected",[(0,"Lottery"),(15,"Lottery"),(16,"Reach"),(35,"Reach"),(36,None)])
 def test_exact_planning_thresholds(offers,expected):
     e=AdmissionEvidence(evidence_id="synthetic",kind="program_selectivity",source_ids=[],cycle_year=2025,

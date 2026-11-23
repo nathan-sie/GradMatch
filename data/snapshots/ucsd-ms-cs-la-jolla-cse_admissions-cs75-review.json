@@ -1,0 +1,20 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/admissions",
+  "retrieved_at": "2026-11-22T07:51:51.318795+00:00",
+  "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+  "verified_values": {
+    "gpa": {
+      "gpa.minimum": "3",
+      "gpa.scale": "4"
+    },
+    "prerequisites": {
+      "required_topics": [],
+      "prerequisites_complete": true
+    },
+    "prerequisite_background_review": {
+      "prerequisites_complete": true
+    }
+  },
+  "source_excerpt": "a B average (3.0 GPA)",
+  "fact_summary": "The external CSE graduate admissions page states a 3.0 admission minimum or equivalent. Preferred undergraduate fields include CS, computer engineering, electrical engineering, and mathematics. Other majors can be considered with equivalent CSE course preparation."
+}

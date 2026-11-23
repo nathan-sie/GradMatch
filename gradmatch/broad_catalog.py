@@ -6,7 +6,9 @@ import hashlib
 import json
 
 from gradmatch.community import application_fee_label
+from gradmatch.ranking import retrieve
 from gradmatch.schemas import ProgramRecord
+from gradmatch.storage import PROJECT_ROOT
 
 
 MODEL_CONTRACTS = {
@@ -14,6 +16,27 @@ MODEL_CONTRACTS = {
     'act': " M6.3 BROAD CONTRACT: In broad scope catalog_index contains all 83 program identities. The ranking step receives the community language, GRE and deadline facts. An initial unfiltered search may use limit=83; check and rank the retrieved pool, including unreviewed programs. An exact requested program ID can be searched anywhere in this index. Missing official GPA/tuition does not prevent preliminary suggestions from labelled community facts. Do not spend the task trying to officially verify all 83 records. Use the same shared rank_programs and validate_shortlist tools.",
     'plan': " M6.3 BROAD CONTRACT: In broad scope, an initial empty-scope search covers all 83 maintained programs. Use empty program_ids for following checks/ranking to refer to the retrieved pool. The ranking tool can propose preliminary suggestions from community facts; missing official GPA/tuition does not require fetching every program before ranking. Formal personal tiers still need their original evidence."
 }
+MODEL_CONTRACTS["rank"] += (
+    " Treat allowed_recommendation_program_ids as the allowlist for formal recommendations."
+    " Select a tier only when its matching ready_recommendation_options contains supporting"
+    " tier_evidence_options. If tier evidence is missing, leave the program pending or choose an"
+    " eligible preliminary suggestion."
+    " Optional admission_history_options contains program-specific, self-reported decision counts for the"
+    " applicant's GPA band, scale, and intake basis. Use eligibility screening and academic or goal fit first."
+    " Use this history only as secondary context when choosing, ordering, or explaining preliminary suggestions."
+    " Consider both reported admits and rejects and the sample size; a large sample or many admits alone does"
+    " not make a program more suitable. These reports establish neither odds nor an official eligibility or tier result."
+    " If history informed a suggestion, set its history_evidence_id to the supplied ID for that exact program."
+    " Otherwise set history_evidence_id to null. Never use these IDs as formal tier evidence or as an official citation."
+    " For a research goal, prioritize eligible programs in research_path_options. Use the documented route"
+    " and the applicant's academic background to compare options. A departmental lab or faculty listing"
+    " supports exploring a topic; access to an advisor, lab, funding or a thesis place is unconfirmed."
+)
+MODEL_CONTRACTS["act"] += (
+    " In broad scope, set program_ids=[] in check_constraints and rank_programs to address the entire"
+    " retrieved set. Use explicit IDs when addressing a subset. catalog_index names programs;"
+    " only live-mode rows with registered sources include source IDs."
+)
 
 
 def install_provider_instructions(instructions):
@@ -48,7 +71,22 @@ def build_broad_catalog(programs, sources):
         snapshot_date=directory['upstream_generated'], intake=directory['source_intake'],
         official_program_count=len(programs), official_source_count=len(sources))
     context['data_hash']=hashlib.sha256(json.dumps(context,sort_keys=True).encode()).hexdigest()
+    research_snapshot = (PROJECT_ROOT / "data/review/research_paths.json").read_bytes()
+    context["research_paths"] = json.loads(research_snapshot)
+    context["research_paths_hash"] = hashlib.sha256(research_snapshot).hexdigest()
     return result, context
+
+
+def research_path_options(profile, selected, context, reports, as_of):
+    snapshot = context.get("research_paths")
+    if not snapshot or profile.goal != "research" or as_of < date.fromisoformat(snapshot["reviewed_on"]):
+        return {}
+    paths = snapshot["programs"]
+    return {
+        program.program_id: {**paths[program.program_id], "reviewed_on": snapshot["reviewed_on"]}
+        for program in retrieve(profile, selected, len(selected))
+        if program.program_id in paths and reports[program.program_id]["eligible_for_preliminary"]
+    }
 
 
 def _rounds(facts, profile):
@@ -155,11 +193,13 @@ def screen_program(profile, program, report, context, *, as_of):
         source_status='community_unverified')
 
 
-def compact_program(program):
-    return program.model_dump(mode='json', include={
-        'program_id', 'university', 'program_name', 'campus', 'track', 'discipline',
-        'goal_features', 'admission_evidence',
-    })
+def compact_program(program, formal_ids):
+    fields = {"program_id", "university", "program_name", "discipline"}
+    if program.allowed_official_hosts:
+        fields.update({"campus", "track"})
+    if program.program_id in formal_ids:
+        fields.update({"goal_features", "admission_evidence"})
+    return program.model_dump(mode="json", include=fields)
 
 
 def compact_report(report):
@@ -181,7 +221,7 @@ def ranking_report(report):
 
 
 def compact_screen(screen, profile):
-    return dict(program_id=screen['program_id'],eligible_for_preliminary=screen['eligible_for_preliminary'],
+    return dict(program_id=screen['program_id'],
         checks={check['rule_id']: check['status'] for check in screen['checks']},
         next_listed_round=screen['next_listed_round'], reported_gre=screen['reported_gre'],
         reported_language=[{k:v for k,v in rule.items() if k in {'test','kind','summary'}}
@@ -211,15 +251,18 @@ def summarize_action_observation(observation):
     return item
 
 
-def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False):
+def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False,
+                        history_options=None, history_snapshot_hash=None, prioritize_research=True):
     """Validate model-selected IDs and attach actual recommendations to the assessment."""
     from gradmatch.validation import identity, blocking_validation_errors
 
     selected = {p.program_id:p for p in retrieved}
     formal_ids = {r['program_id'] for r in result['recommendations']}
     allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary']}
+    history_options = history_options or {}
     suggestions = list(draft.suggestions) if draft else []
     method = 'model_selected'
+    research_options = research_path_options(profile, retrieved, context, reports, date.fromisoformat(result["as_of_date"]))
     if deterministic_only:
         from gradmatch.ranking import PreliminaryRecommendationDraft
         def key(pid):
@@ -238,6 +281,10 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
         checks = {c['rule_id']:c for c in screen['checks']} if screen else {}
         if not item.reason_check_ids or any(k not in checks or checks[k]['status']=='fail' for k in item.reason_check_ids):
             codes.append('UNSUPPORTED_PRELIMINARY_REASON')
+        history_id = getattr(item, "history_evidence_id", None)
+        history = history_options.get(item.program_id)
+        if history_id is not None and (history is None or history_id != history["evidence_id"]):
+            codes.append("UNSUPPORTED_ADMISSION_HISTORY_REFERENCE")
         if codes:
             result['validation_errors'].append(dict(program_id=item.program_id,codes=codes))
             continue
@@ -246,11 +293,25 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
                 'program_id': item.program_id, 'code': 'PRELIMINARY_DUPLICATE_OF_FORMAL',
             })
             continue
-        p = selected[item.program_id]
-        accepted.append(dict(program_id=p.program_id,identity=identity(p),recommendation_basis='preliminary_community',
-            selection_method=method, personalized_tier=None, reasons=[checks[k] for k in dict.fromkeys(item.reason_check_ids)],
-            checks=screen, limitations=['This recommendation uses preliminary information and is not a verified eligibility pass.',
-                'Missing GPA, tuition, preparation or admission-case evidence remains unresolved. No personal admission tier is assigned.']))
+        suggestion = suggestion_record(selected[item.program_id], screen, method,
+                                       [checks[k] for k in dict.fromkeys(item.reason_check_ids)])
+        if history_id is not None:
+            suggestion["admission_history_evidence"] = history
+        accepted.append(suggestion)
+    for item in accepted:
+        if item["program_id"] in research_options:
+            item["research_fit"] = research_options[item["program_id"]]
+    if (prioritize_research and research_options and len(retrieved) == len(programs)
+            and (deterministic_only or (draft and draft.profile_version == profile.profile_version))):
+        matching = [item for item in accepted if "research_fit" in item]
+        supplemental = [pid for pid in research_options if pid not in formal_ids and pid not in seen]
+        for pid in supplemental[:max(0, 5 - len(matching))]:
+            screen = reports[pid]
+            item = suggestion_record(selected[pid], screen, "research_path_evidence",
+                                     [check for check in screen["checks"] if check["rule_id"] in {"english", "deadline", "gre"}])
+            item["research_fit"] = research_options[pid]
+            matching.append(item)
+        accepted = (matching + [item for item in accepted if "research_fit" not in item])[:8]
     blocked = [dict(program_id=pid,identity=identity(p),reasons=[c for c in reports[pid]['checks'] if c['status']=='fail'])
         for pid,p in selected.items() if not reports[pid]['eligible_for_preliminary']]
     blocked_ids = {r['program_id'] for r in blocked}
@@ -259,6 +320,24 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
         preliminary_selection_method=method, recommendation_catalog_count=len(programs),
         community_snapshot=dict(source_url=context['source_url'],source_date=context['snapshot_date'],intake=context['intake'],source_sha256=context['source_sha256']),
         community_data_hash=context['data_hash'],
-        recommendation_data_hash=hashlib.sha256(json.dumps({'programs':result['data_hash'],'community':context['data_hash']},sort_keys=True).encode()).hexdigest(),
-        reviewed_program_count=context['official_program_count'], validation_passed=not blocking_validation_errors(result))
+        recommendation_data_hash=hashlib.sha256(json.dumps({
+            "programs": result["data_hash"], "community": context["data_hash"],
+            "research_paths": context.get("research_paths_hash"),
+        }, sort_keys=True).encode()).hexdigest(),
+        reviewed_program_count=context['official_program_count'], validation_passed=not blocking_validation_errors(result),
+        admission_history_ranking={
+            "enabled": history_snapshot_hash is not None,
+            "snapshot_hash": history_snapshot_hash,
+            "offered_options": len(history_options),
+            "referenced_suggestions": sum("admission_history_evidence" in item for item in accepted),
+        })
     return result
+
+
+def suggestion_record(program, screen, method, reasons):
+    from gradmatch.validation import identity
+
+    return dict(program_id=program.program_id, identity=identity(program), recommendation_basis="preliminary_community",
+                selection_method=method, personalized_tier=None, reasons=reasons, checks=screen,
+                limitations=["This recommendation uses preliminary information and is not a verified eligibility pass.",
+                             "Missing GPA, tuition, preparation or admission-case evidence remains unresolved. No personal admission tier is assigned."])

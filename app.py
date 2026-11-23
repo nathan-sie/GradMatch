@@ -5,7 +5,7 @@ import sys
 import streamlit as st
 
 import gradmatch.release as release
-if getattr(release,'RELEASE_REFRESH_VERSION',0)<7:
+if getattr(release,'RELEASE_REFRESH_VERSION',0)<8:
     from importlib import reload
     reload(release)
 release.refresh_catalog_modules()
@@ -25,7 +25,7 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/m61j_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/dp_batch_review_seed.json", language="bash")
     st.stop()
 
 left, right = st.columns(2)

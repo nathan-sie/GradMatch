@@ -1,0 +1,21 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/cse-graduate-application-checklist",
+  "retrieved_at": "2026-11-22T07:52:50.804089+00:00",
+  "raw_response_sha256": "745b6076581f6689c6344de73399895178c53bcbef110c20c85a347fe26dd261",
+  "verified_values": {
+    "application_materials": {
+      "application_materials": [
+        "Complete the online graduate application for the external CSE MS program.",
+        "Upload academic transcripts for the institutions attended as required by the checklist.",
+        "Submit a statement of purpose, three recommendation letters, and a resume or CV.",
+        "Provide required English proficiency evidence or obtain confirmation of a qualifying exemption.",
+        "Confirm eligibility with UC San Diego if you already hold an advanced degree at the same level."
+      ]
+    },
+    "directory_policies": {
+      "notes.9": "Application checklist: Online application, transcripts, statement of purpose, three recommendations, resume or CV, and applicable English evidence. Duplicate advanced degrees and exemptions require separate review."
+    }
+  },
+  "source_excerpt": "Three (3) letters of recommendation are required",
+  "fact_summary": "The CSE checklist includes an online application, academic records, statement of purpose, three recommendation letters, resume or CV, and English proficiency documentation as applicable. Institutional eligibility and special-case review remain separate."
+}

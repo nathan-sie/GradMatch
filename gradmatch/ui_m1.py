@@ -8,7 +8,7 @@ from pydantic import ValidationError
 
 from gradmatch.catalog import coverage_rows, read_catalog
 from gradmatch.constraints import check_constraints, estimate_tuition
-from gradmatch.schemas import ApplicantProfile
+from gradmatch.schemas import GPA_SCOPE_LABELS, ApplicantProfile
 from gradmatch.coursework import TOPICS
 
 
@@ -62,8 +62,8 @@ def render_m1(database):
         left, right = st.columns(2)
         gpa = left.number_input("GPA", min_value=0.0, value=3.5, step=0.1, key="m1_gpa")
         scale = right.number_input("GPA scale maximum", min_value=0.1, value=4.0, step=0.1, key="m1_gpa_scale")
-        scope = st.selectbox("GPA calculation scope", ["overall", "last_60_semester", "last_90_quarter"],
-            format_func=lambda value: {"overall": "All undergraduate coursework", "last_60_semester": "Last 60 semester credits", "last_90_quarter": "Last 90 quarter credits"}[value], key="m1_gpa_scope")
+        scope = st.selectbox("GPA calculation scope", list(GPA_SCOPE_LABELS),
+            format_func=GPA_SCOPE_LABELS.__getitem__, key="m1_gpa_scope")
         budget = st.number_input("Full-program tuition budget (USD, excluding living costs)", min_value=0, value=70000, step=1000, key="m1_budget")
         basis = st.selectbox("Budget assessment basis", ["published_rate_estimate", "guaranteed_final"],
             format_func=lambda value: "Estimate using the stated year's published rates" if value == "published_rate_estimate" else "Require a guaranteed final future price", key="m1_budget_basis")

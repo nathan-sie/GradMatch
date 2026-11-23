@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ece.uw.edu/academics/pmp/",
+  "retrieved_at": "2026-11-22T17:07:20.375310+00:00",
+  "raw_response_sha256": "e2fcb3d0ade8a4363668e2e667770b131d9bcb0eeb3389fca9d395a312eadf19",
+  "verified_values": {
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uw-ece-msece-pmp-seattle-employment",
+          "goal": "employment",
+          "statement": "Seattle PMP offers industry-oriented evening coursework and career support such as employer recruiting sessions, industry visits, and student advising.",
+          "source_ids": [
+            "uw-ece-msece-pmp-seattle-uw_pmp-dp-batch"
+          ]
+        }
+      ]
+    },
+    "directory_policies": {
+      "notes.6": "Professional focus: Industry-oriented evening coursework, career services, and a usual four- to five-quarter full-time pace."
+    }
+  },
+  "source_excerpt": "career fairs, industry visits, company recruitment sessions",
+  "fact_summary": "The Seattle PMP describes industry-oriented evening instruction and career development. Full-time study usually takes four or five quarters."
+}

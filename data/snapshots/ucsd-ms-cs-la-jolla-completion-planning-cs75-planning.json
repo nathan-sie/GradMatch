@@ -1,0 +1,12 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/graduate-admissions-faq",
+  "retrieved_at": "2026-11-22T07:51:51.365397+00:00",
+  "raw_response_sha256": "9d39a048f3cdcc838c3439300f69a897060d8e0eedd392a8f0cb5bfb832e9601",
+  "verified_values": {
+    "directory_policies": {
+      "notes.11": "Typical completion: CSE reports completion within two years for its average MS student. Timing varies with study plan; six regular quarters are a budget example."
+    }
+  },
+  "source_excerpt": "Our average MS student completes the program within 2 years.",
+  "fact_summary": "The department describes a typical pace without a maximum. For the local illustration, six full-time quarters at unchanged registrar rates are multiplied as a two-academic-year case."
+}

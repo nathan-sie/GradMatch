@@ -8,6 +8,7 @@ from uuid import uuid4
 from openai import APIConnectionError, APITimeoutError, AuthenticationError, OpenAI, OpenAIError, RateLimitError
 from pydantic import ValidationError
 
+from gradmatch.agent_models import Action
 from gradmatch.config import ModelSettings, estimate_cost
 
 
@@ -36,7 +37,12 @@ def strict_schema(model):
 
 
 def decode_structured(output_type,text):
-    """Accept one JSON object, or exact repeated copies; never choose among conflicting objects."""
+    """Accept one structured decision, with safe normalization of repeated copies."""
+    value, copies, _ = _decode_structured(output_type, text)
+    return value, copies
+
+
+def _decode_structured(output_type,text):
     def unique(pairs):
         result={}
         for key,value in pairs:
@@ -49,9 +55,15 @@ def decode_structured(output_type,text):
         value,end=decoder.raw_decode(remaining)
         values.append(value);segments.append(remaining[:end]);remaining=remaining[end:].lstrip()
         if len(values)>3:raise ValueError('Too many output objects')
-    if not values or any(json.dumps(value,sort_keys=True)!=json.dumps(values[0],sort_keys=True) for value in values):
-        raise ValueError('Conflicting structured output objects')
-    return output_type.model_validate_json(segments[0]),len(values)
+    if not values:
+        raise ValueError('Missing structured output object')
+    if len({json.dumps(value, sort_keys=True) for value in values}) == 1:
+        return output_type.model_validate_json(segments[0]), len(values), 'identical_json_objects'
+    if output_type is Action:
+        actions = [Action.model_validate_json(segment) for segment in segments]
+        if len({(action.tool, action.arguments_json) for action in actions}) == 1:
+            return actions[0], len(actions), 'same_action_and_arguments'
+    raise ValueError('Conflicting structured output objects')
 
 
 class OpenAIProvider:
@@ -79,7 +91,7 @@ class OpenAIProvider:
             # Fixed endpoint, store=False, no built-in tools, no previous_response_id.
             response = client.responses.create(model=settings.model,
                 input=[{"role": "developer", "content": INSTRUCTIONS[purpose]},
-                       {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
+                       {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}],
                 text={"format": {"type": "json_schema", "name": output_type.__name__,
                                  "strict": True, "schema": strict_schema(output_type)}},
                 store=False, max_output_tokens=settings.limits["max_output_tokens"])
@@ -96,10 +108,10 @@ class OpenAIProvider:
             if response.status != "completed" or not response.output_text:
                 raise ModelUnavailable("The model response was refused or incomplete. No draft was accepted; the request was not retried.")
             try:
-                parsed,copies = decode_structured(output_type,response.output_text)
+                parsed,copies,normalization = _decode_structured(output_type,response.output_text)
                 if copies>1:
-                    usage['identical_output_copies']=copies
-                    session.event('output_normalized',purpose=purpose,reason='identical_json_objects',copies=copies)
+                    usage['identical_output_copies' if normalization == 'identical_json_objects' else 'equivalent_action_copies'] = copies
+                    session.event('output_normalized',purpose=purpose,reason=normalization,copies=copies)
             except (ValidationError,ValueError) as error:
                 usage['output_validation_errors']=([{'location':list(e['loc']),'type':e['type']} for e in error.errors()]
                     if isinstance(error,ValidationError) else [{'location':[],'type':'invalid_or_conflicting_json'}])

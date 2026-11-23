@@ -7,7 +7,7 @@ from gradmatch.schemas import Record
 
 
 Tier = Literal["Lottery", "Reach", "Target", "Safer"]
-BROAD_ENGINE_VERSION = 1
+BROAD_ENGINE_VERSION = 2
 TIERS = ["Lottery", "Reach", "Target", "Safer"]
 
 
@@ -30,6 +30,7 @@ class Observation(Record):
 class PreliminaryRecommendationDraft(Record):
     program_id: str
     reason_check_ids: list[Literal['english', 'deadline', 'gre', 'tuition', 'reviewed_eligibility', 'application_info']] = Field(min_length=1, max_length=4)
+    history_evidence_id: str | None = None
 
 
 class RankingDraft(Record):

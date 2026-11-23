@@ -106,8 +106,15 @@ def validate_shortlist(draft: RankingDraft | None, profile, all_programs, retrie
         # Names, URLs, dates, amounts and quotes come from the catalog, never model memory.
         source_ids = sorted({sid for f in program.goal_features if f.feature_id in item.goal_feature_ids for sid in f.source_ids}
             | {sid for e in program.admission_evidence if e.evidence_id in item.tier_evidence_ids for sid in e.source_ids})
-        accepted.append({**item.model_dump(mode="json"), "identity": identity(program),
+        accepted.append({**item.model_dump(mode="json", exclude={"limitations", "lower_risk_rationale"}),
+            "identity": identity(program),
             "planning_reason": planning_reason(item, program),
+            # Only code-owned annotations may accompany a validated recommendation.
+            "limitations": ["The university makes the admission decision. Confirm current application requirements before applying."],
+            "lower_risk_rationale": (
+                "The reviewed comparable cases provide planning context. Individual outcomes remain uncertain."
+                if item.tier == "Safer" else None
+            ),
             "application_materials": list(program.application_materials),
             "checks": reports[item.program_id].model_dump(mode="json"),
             "goal_features": [f.model_dump(mode="json") for f in program.goal_features if f.feature_id in item.goal_feature_ids],

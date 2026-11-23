@@ -14,7 +14,7 @@ from gradmatch.ranking import RankingDraft, retrieve
 from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 1
+BROAD_ENGINE_VERSION = 2
 
 
 def prepare_input(session, *, changes, unknown_fields, message, provider, settings):
@@ -72,7 +72,8 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
 
 def start_task(session: Session, *, request_id: str, programs, sources, settings, as_of: date,
                changes=None, unknown_fields=None, message=None, provider=None,
-               strategy=None, data_mode="snapshot", new_task=False, fetcher=None, recommendation_scope='reviewed'):
+               strategy=None, data_mode="snapshot", new_task=False, fetcher=None, recommendation_scope='reviewed',
+               history_preview=None):
     if recommendation_scope not in {'reviewed', 'broad'}:
         raise ValueError('Unsupported recommendation scope.')
     broad_context = None
@@ -87,7 +88,8 @@ def start_task(session: Session, *, request_id: str, programs, sources, settings
         from gradmatch.agent import run_task
         return run_task(session, request_id=request_id, programs=programs, sources=sources, settings=settings,
             as_of=as_of, changes=changes, unknown_fields=unknown_fields, message=message, provider=provider,
-            strategy=strategy, data_mode=data_mode, new_task=new_task, fetcher=fetcher, broad_context=broad_context)
+            strategy=strategy, data_mode=data_mode, new_task=new_task, fetcher=fetcher, broad_context=broad_context,
+            history_preview=history_preview if broad_context else None)
     if request_id in session.receipts:
         return session.receipts[request_id]
     if session.active:

@@ -1,0 +1,32 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science/",
+  "retrieved_at": "2026-11-22T17:07:20.593030+00:00",
+  "raw_response_sha256": "73ee66a2ed89fc8c8172bc76d1dd7d7d18d5f1d22ef55a715c7106665e892aa7",
+  "verified_values": {
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "usc-mscs-general-los-angeles-mixed",
+          "goal": "mixed",
+          "statement": "USC Viterbi general MSCS coursework and electives support professional development or further computing study.",
+          "source_ids": [
+            "usc-mscs-general-los-angeles-usc_program-dp-batch"
+          ]
+        }
+      ]
+    },
+    "application_materials": {
+      "application_materials": [
+        "Submit transcripts, a resume or CV, and a personal statement.",
+        "A recommendation letter is optional for this program.",
+        "Submit applicable English-proficiency evidence under the international application instructions."
+      ]
+    },
+    "directory_policies": {
+      "notes.2": "Degree background: A bachelor degree must be completed or in progress. Related-field and other-background applicants require review of the separate CS eligibility criteria.",
+      "notes.3": "GRE policy: GRE is not required for 2027 applications; this review does not establish later cycles."
+    }
+  },
+  "source_excerpt": "completion of 32 units of coursework",
+  "fact_summary": "The general MSCS lists 32 units and a separate thesis option. The program requires academic transcripts, a resume or CV and a personal statement. A recommendation letter is optional."
+}

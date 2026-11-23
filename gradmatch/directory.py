@@ -15,6 +15,7 @@ from gradmatch.catalog import read_catalog
 from gradmatch.catalog_audit import program_audit
 from gradmatch.community import load_community, reported_language_label, reported_rounds_label, application_fee_label
 from gradmatch.constraints import evidence_ids
+from gradmatch.schemas import GPA_SCOPE_LABELS
 from gradmatch.session import tiering_profile
 from gradmatch.tiers import reviewed_cohort_context
 from gradmatch.storage import PROJECT_ROOT, connect_read_only
@@ -47,7 +48,8 @@ def requirement_summaries(program, sources, fields, profile):
         elif gpa.minimum is not None or gpa.recommended is not None:
             result["GPA policy"] = (f"Minimum {gpa.minimum}/{gpa.scale}" if gpa.minimum is not None
                                     else f"Recommended {gpa.recommended}/{gpa.scale}; hard minimum needs verification")
-            scopes = {"overall": "overall", "last_60_semester": "last 60 semester credits", "last_90_quarter": "last 90 quarter credits"}
+            scopes = {key: label.lower() for key, label in GPA_SCOPE_LABELS.items()}
+            scopes["overall"] = "overall"
             result["GPA policy"] += "; scope: " + (", ".join(scopes.get(s, s) for s in gpa.accepted_scopes) or "needs verification")
             if gpa.below_minimum_review_possible:
                 result["GPA policy"] += "; below-minimum exceptions require review"

@@ -1,0 +1,123 @@
+{
+  "version": "admission-dp-pilot-v2",
+  "programs": [
+    {
+      "source_program_id": "aplus-ucsd-cs75",
+      "source_school": "UCSD",
+      "source_program": "CS75",
+      "source_degree": "Master",
+      "tracker_id": "a-plus-ucsd-cs75",
+      "program_id": "ucsd-ms-cs-la-jolla",
+      "basis": "Exact CS75 program code. The export lists CS76, DS75 and ECE tracks separately."
+    },
+    {
+      "source_program_id": "b-usc-cs28",
+      "source_school": "USC",
+      "source_program": "CS28",
+      "source_degree": "Master",
+      "tracker_id": "b-usc-cs28",
+      "program_id": "usc-mscs-general-los-angeles",
+      "basis": "Same tracker ID for the general MSCS. The export lists CS32 and CS37 separately."
+    },
+    {
+      "source_program_id": "a-uiuc-mcs",
+      "source_school": "UIUC",
+      "source_program": "MCS",
+      "source_degree": "Master",
+      "tracker_id": "a-uiuc-mcs",
+      "program_id": "uiuc-mcs-urbana",
+      "basis": "Same tracker ID for Urbana-Champaign MCS. The export lists MCS in Chicago and MSCS separately."
+    },
+    {
+      "source_program_id": "a-university-of-washington-ee-pmp",
+      "source_school": "UW",
+      "source_program": "EE PMP",
+      "source_degree": "Master",
+      "tracker_id": "a-uw-ee-pmp",
+      "program_id": "uw-ece-msece-pmp-seattle",
+      "basis": "The EE PMP alias maps to the Seattle professional track via the reviewed tracker link. The export lists MSEE separately."
+    },
+    {
+      "source_program_id": "pgm_0mpc5vdqw00009g0k6985xylg2",
+      "source_school": "NYU Tandon",
+      "source_program": "MSCS",
+      "source_degree": "Master",
+      "tracker_id": "b-plus-nyu-tandon",
+      "program_id": "nyu-mscs-tandon-brooklyn",
+      "basis": "The combined school and program labels identify Tandon MSCS. The export lists Courant MSCS and Tandon MSCE separately."
+    },
+    {
+      "source_program_id": "ss-uiuc-mscs",
+      "source_school": "UIUC",
+      "source_program": "MSCS",
+      "source_degree": "Master",
+      "tracker_id": "ss-uiuc-mscs",
+      "program_id": "community-ss-uiuc-mscs",
+      "basis": "The same tracker ID identifies the Urbana-Champaign thesis MSCS. The export lists professional MCS, Chicago MCS and ECE MEng separately."
+    },
+    {
+      "source_program_id": "s-carnegie-mellon-university-msaii",
+      "source_school": "CMU",
+      "source_program": "MSAII",
+      "source_degree": "Master",
+      "tracker_id": "s-cmu-msaii",
+      "program_id": "cmu-msaii-pittsburgh",
+      "basis": "The distinct MSAII degree code identifies the Pittsburgh professional program. Other CMU AI programs have separate identifiers."
+    },
+    {
+      "source_program_id": "b-uiuc-ece-meng",
+      "source_school": "UIUC",
+      "source_program": "ECE Meng",
+      "source_degree": "Master",
+      "tracker_id": "b-uiuc-ece-meng",
+      "program_id": "uiuc-meng-ece-urbana",
+      "basis": "The same tracker ID identifies the Urbana on-campus ECE MEng. The export lists MS ECE separately."
+    },
+    {
+      "source_program_id": "b-uc-irvine-mcs",
+      "source_school": "UCI",
+      "source_program": "MCS",
+      "source_degree": "Master",
+      "tracker_id": "b-uci-mcs",
+      "program_id": "uci-mcs-irvine",
+      "basis": "Matches the UC Irvine professional MCS identifier. The export lists MSCS and MSWE separately."
+    },
+    {
+      "source_program_id": "s-georgia-tech-mscs",
+      "source_school": "GaTech",
+      "source_program": "MSCS",
+      "source_degree": "Master",
+      "tracker_id": "s-gatech-mscs",
+      "program_id": "gatech-mscs-atlanta",
+      "basis": "Matches the on-campus MSCS tracker alias. Georgia Tech uses a separate OMSCS admissions route. The export distinguishes other computing and engineering degrees."
+    },
+    {
+      "source_program_id": "pgm_0mpc5vdqw00009a0bb2kdo9n5d",
+      "source_school": "Brown",
+      "source_program": "ScM CS",
+      "source_degree": "Master",
+      "tracker_id": "a-minus-brown-scmcs",
+      "program_id": "community-a-minus-brown-scmcs",
+      "latest_unambiguous_cycle": 2026,
+      "basis": "The Brown ScM CS label matches the historical residential program before the Fall 2027 launch of the separate AI/ML track."
+    },
+    {
+      "source_program_id": "ss-carnegie-mellon-university-mscs",
+      "source_school": "CMU",
+      "source_program": "MSCS",
+      "source_degree": "Master",
+      "tracker_id": "ss-cmu-mscs",
+      "program_id": "community-ss-cmu-mscs",
+      "basis": "The MSCS identifier denotes the Pittsburgh computer science degree. The export lists program-specific CMU masters separately."
+    },
+    {
+      "source_program_id": "bplus-northwestern-university-mscs",
+      "source_school": "NWU",
+      "source_program": "MSCS",
+      "source_degree": "Master",
+      "tracker_id": "b-plus-nwu-mscs",
+      "program_id": "community-b-plus-nwu-mscs",
+      "basis": "The Northwestern MSCS identifier corresponds to the McCormick program in Evanston. The export separates MSAI, MSIT and computer engineering."
+    }
+  ]
+}

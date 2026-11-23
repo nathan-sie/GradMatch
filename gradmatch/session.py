@@ -20,7 +20,7 @@ LEAF_FIELDS = {"gpa.value", "gpa.scale", "gpa.scope", "english.version", "englis
     "institution", "institution_country", "major", "research", "work_experience", "applicant_category", "study_mode"}
 LEAF_FIELDS |= {"english.subscores." + key for key in ["reading", "listening", "speaking", "writing"]}
 LEAF_FIELDS |= {"coursework." + key for key in TOPICS}
-LEAF_FIELDS |= {"degree.completion", "degree.recognition", "degree.field", "degree.country",
+LEAF_FIELDS |= {"degree.completion", "degree.recognition", "degree.field", "degree.country", "degree.prior_academic_graduate_degree",
     "gre.verbal", "gre.quantitative", "gre.writing", "gre.test_date", "gre.format"}
 
 
@@ -128,7 +128,8 @@ def tiering_profile():
     data = synthetic_profile().model_dump(exclude={"profile_version"})
     data.update(gpa={"value": "3.5", "scale": "4", "scope": "overall"},
         major="Computer Science", tuition_budget_usd="140000",
-        degree={"completion": "completed", "recognition": "recognized_bachelors_or_equivalent", "field": "CS", "country": "US"},
+        degree={"completion": "completed", "recognition": "recognized_bachelors_or_equivalent", "field": "CS",
+                "country": "US", "prior_academic_graduate_degree": "none"},
         english={"version": "toefl_120", "total": "110", "test_date": "2025-11-01"},
         gre={"verbal":160,"quantitative":165,"writing":"4","test_date":"2025-06-01","format":"in_person"})
     return ApplicantProfile.model_validate(data)

@@ -7,7 +7,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from gradmatch.bootstrap import bootstrap_public_catalog
-from gradmatch.catalog import M61I_SEED, load_seed
+from gradmatch.catalog import DEFAULT_SEED, M61I_SEED, load_seed
 from gradmatch.catalog_audit import audit_catalog
 from gradmatch.constraints import check_constraints
 from gradmatch.directory import build_directory
@@ -29,7 +29,7 @@ def report(pid,profile=None,programs=None,sources=None,as_of=AS_OF):
     return r,{c.rule_id:c for c in r.checks}
 
 def test_priority_batch_preserves_every_previous_source_and_prices():
-    programs,sources=load_seed();old_programs,old_sources=load_seed(M61I_SEED)
+    programs,sources=load_seed(DEFAULT_SEED);old_programs,old_sources=load_seed(M61I_SEED)
     assert len(programs)==20 and len(sources)==145
     assert all(sources[k]==v for k,v in old_sources.items())
     assert {p.program_id:p.tuition for p in programs}=={p.program_id:p.tuition for p in old_programs}
@@ -115,7 +115,7 @@ def test_cohort_context_rejects_unusable_evidence(mutation):
     assert not reviewed_cohort_context(p,sources,profile,AS_OF)
 
 def test_directory_counts_readiness_and_context_remain_separate():
-    programs,sources=load_seed();d=build_directory(programs,sources)
+    programs,sources=load_seed(DEFAULT_SEED);d=build_directory(programs,sources)
     assert d['total']==83 and d['official_records']==20
     contexts=[r for r in d['records'] if r['cohort_context']]
     assert len(contexts)==2 and all(not r['recommendation_eligible'] for r in contexts)

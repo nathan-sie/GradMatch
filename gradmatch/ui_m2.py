@@ -2,6 +2,7 @@
 
 from dataclasses import replace
 from datetime import date, datetime
+from decimal import Decimal
 import json
 from uuid import uuid4
 from zoneinfo import ZoneInfo
@@ -9,12 +10,23 @@ from zoneinfo import ZoneInfo
 from pydantic import ValidationError
 import streamlit as st
 
+from gradmatch.admission_history import MINIMUM_BAND_REPORTS, load_preview
 from gradmatch.catalog import read_catalog
 from gradmatch.config import ConfigurationError, load_settings
-from gradmatch.schemas import ApplicantProfile
+from gradmatch.schemas import GPA_SCOPE_LABELS, ApplicantProfile
 from gradmatch.service import export_session, start_task
 from gradmatch.session import Session, synthetic_profile, tiering_profile
 from gradmatch.ui_m1 import RULE_NAMES, STATUS, TOPICS, show_table
+
+
+PRIOR_DEGREE_LABELS = {
+    "unknown": "Unknown",
+    "none": "None",
+    "held_or_expected": "Already hold one or expect to complete one",
+}
+ASSESSMENT_INTERRUPTED = {"error", "stopped", "budget_exhausted"}
+TUITION_LIMIT_CODES = {"TUITION_EXCEEDS_BUDGET", "TUITION_MINIMUM_EXCEEDS_BUDGET"}
+TUITION_LABELS = {"pass": "Within budget", "fail": "Fails budget check", "unknown": "Budget fit unverified"}
 
 
 def render_m2(database, *, directory=None):
@@ -34,6 +46,11 @@ def render_m2(database, *, directory=None):
     mode_label=st.selectbox('Evidence mode',['Catalog snapshots','Live official pages'],key='m4_mode',disabled=session.active)
     pool_label=st.selectbox('Recommendation pool', ['All 83 programs (official + community data)', 'Reviewed official records only'],key='m63_pool',disabled=session.active)
     recommendation_scope='broad' if pool_label.startswith('All 83') else 'reviewed'
+    history_snapshot = load_preview()
+    use_history = False
+    if history_snapshot is not None and recommendation_scope == "broad":
+        use_history = st.checkbox("Use historical reports in preliminary ranking", key="admission_history_ranking",
+            disabled=session.active, help="For model ranking, send aggregate counts from matching GPA bands. Generate again after changing this setting.")
     strategy={'ReAct agent':'react','Plan-and-replan agent':'plan','Fixed baseline':'fixed'}[strategy_label]
     data_mode='live' if mode_label=='Live official pages' else 'snapshot'
     st.caption('ReAct chooses its next tool from observations. Plan-and-replan creates 3-6 steps and revises them after conditions change or execution fails (at most 3 revisions). Live mode may read registered university URLs; conflicts remain pending. Snapshot mode never reads external pages.')
@@ -51,7 +68,7 @@ def render_m2(database, *, directory=None):
     if right.button("Start new session", key="m2_reset", disabled=session.active):
         st.session_state["m2_session"] = Session()
         for key in list(st.session_state):
-            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration"}:
+            if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration", "admission_history_ranking"}:
                 del st.session_state[key]
         st.rerun()
     with st.expander("Model setup and usage", expanded=not settings.ready):
@@ -61,7 +78,7 @@ def render_m2(database, *, directory=None):
             st.code("# In the local .env file\nOPENAI_API_KEY=<your key, kept locally>\nMODEL_ENABLED=true", language="text")
         allow_model = st.checkbox("Allow paid model calls for this session", value=False,
             key="m2_allow_model", disabled=not settings.ready)
-        st.caption("Only profile submission, Generate / rerun, and chat submission start requests. Each method: up to 16 model calls and 20 tools per task, retained across follow-ups; all modes share the 20-model-call session limit. Model retries are disabled.")
+        st.caption("Profile submission, Generate / rerun, chat submission, and the recovery button can start requests. Each task allows up to 16 model calls and 20 tools across follow-ups. All tasks share the 20-model-call session limit. Retries require a click.")
         st.write(f"Model requests in this session: {len(session.usage)}")
         if session.usage:
             show_table([{"Purpose": u["purpose"], "Status": u["status"], "Input tokens": u["input_tokens"],
@@ -74,7 +91,7 @@ def render_m2(database, *, directory=None):
         sync_profile_inputs(session.profile)
         st.session_state["m2_form_version"] = session.profile.profile_version
     st.caption(f"Current profile version: {session.profile.profile_version} · Tuition budget: "
-        + (f"USD {session.profile.tuition_budget_usd:,.2f}" if session.profile.tuition_budget_usd is not None else "Unknown"))
+        + format_usd(session.profile.tuition_budget_usd))
     gpa_summary = (f"{session.profile.gpa.value} / {session.profile.gpa.scale} ({session.profile.gpa.scope.replace('_', ' ')})"
         if session.profile.gpa else "Unknown")
     st.caption(f"GPA: {gpa_summary} · Major: {session.profile.major or 'Unknown'}")
@@ -85,7 +102,8 @@ def render_m2(database, *, directory=None):
         with st.spinner("Checking the current profile and evidence..."):
             response = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
                 settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(),
-                strategy=strategy,data_mode=data_mode,recommendation_scope=recommendation_scope,**kwargs)
+                strategy=strategy,data_mode=data_mode,recommendation_scope=recommendation_scope,
+                history_preview=history_snapshot if use_history else None,**kwargs)
         st.session_state["m2_last_response"] = response
         st.rerun()
     if form:
@@ -102,6 +120,26 @@ def render_m2(database, *, directory=None):
             st.error("A GPA, test score, budget or date is invalid for the selected format. Correct the form and submit again.")
     if st.button("Generate / rerun", key="m2_generate", disabled=session.active):
         run()
+    latest = st.session_state.get("m2_last_response")
+    interrupted = (latest and latest.get("profile_version") == session.profile.profile_version
+                   and latest.get("status") in ASSESSMENT_INTERRUPTED)
+    if interrupted:
+        if latest["status"] == "budget_exhausted":
+            st.warning("The assessment stopped at an execution limit. Any validated checks from this run are shown as a partial assessment.")
+        else:
+            st.warning(latest["message"])
+        st.caption(f"Saved profile v{session.profile.profile_version} · Tuition budget {format_usd(session.profile.tuition_budget_usd)}")
+        usage = latest["task_usage"]
+        plan = usage.get("plan") or {}
+        revisions = plan.get("revisions", [])
+        needs_new_task = bool(usage["stop_reason"] not in {None, "finished"}
+                              or (revisions and revisions[-1]["status"] == "stopped"))
+        session_limit = active_settings.ready and len(session.usage) >= active_settings.limits["max_model_calls_per_session"]
+        if session_limit:
+            st.info("The session model-call limit has been reached. Turn off model calls to run deterministic checks.")
+        retry_label = "Start new assessment with saved profile" if needs_new_task else "Retry with saved profile"
+        if st.button(retry_label, key="m2_retry", disabled=session.active or session_limit):
+            run(new_task=needs_new_task)
     if session.agent_task:
         task=session.agent_task
         st.caption(f"Current task: {task.tools}/{task.limits['max_tools']} tools · {task.models}/{task.limits['max_models']} model calls · {task.pages}/{task.limits['max_pages']} page requests · {task.turns}/{task.limits['max_turns']} user turns")
@@ -131,17 +169,21 @@ def render_m2(database, *, directory=None):
             st.write(message["content"])
     if message := st.chat_input("Ask a question or explicitly update your profile", key="m2_chat", disabled=session.active):
         run(message=message)
-    latest = st.session_state.get("m2_last_response")
-    if latest and latest.get("status") in {"error", "needs_input"}:
+    if latest and latest.get("status") == "needs_input" and latest.get("profile_version") == session.profile.profile_version:
         st.warning(latest.get("message", "More information is needed."))
     result = session.current_result
     if result and result["profile_version"] == session.profile.profile_version:
         evidence_sources=session.agent_task.sources if session.agent_task and result.get('task_id')==session.agent_task.task_id else sources
         st.caption(f"Result method: {result['strategy']} · Evidence: {result['data_mode']} · Live receipt date: {result.get('live_verified_at') or 'No live field verification recorded'}")
         if result.get('evidence_notice'):st.caption(result['evidence_notice'])
-        render_result(result, programs, evidence_sources)
+        history = history_snapshot.compare(session.profile) if history_snapshot else None
+        render_result(result, programs, evidence_sources, history=history, previous=session.previous_result,
+                      earlier_run=bool(interrupted and result.get("run_id") != latest["run_id"]))
     elif session.previous_result:
-        st.info("Previous checks belong to an older profile and are no longer current. Submit the updated profile to recompute them.")
+        previous = session.previous_result
+        previous_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
+        st.info(f"Previous assessment used profile v{previous['profile_version']} with a tuition budget of "
+                f"{format_usd(previous_budget)}. Generate an assessment for the saved profile to see updated results.")
     if directory:
         from gradmatch.ui_directory import render_exploration
         render_exploration(directory, session.profile, programs, sources)
@@ -176,6 +218,7 @@ def sync_profile_inputs(profile):
         "degree_recognition": degree.recognition if degree else "unknown",
         "degree_field": degree.field if degree else "unknown",
         "degree_country": (degree.country or "") if degree else "",
+        "degree_prior_academic_graduate_degree": getattr(degree, "prior_academic_graduate_degree", "unknown"),
         "has_budget": profile.tuition_budget_usd is not None,
         "budget": str(profile.tuition_budget_usd) if profile.tuition_budget_usd is not None else "",
         "basis": profile.budget_basis, "has_intake": profile.intake is not None,
@@ -211,9 +254,9 @@ def profile_form(profile):
             value=float(profile.gpa.value) if profile.gpa else 0.0, key=key("gpa"))
         scale = right.number_input("GPA scale maximum", min_value=0.1,
             value=float(profile.gpa.scale) if profile.gpa else 4.0, key=key("scale"))
-        scopes = ["overall", "last_60_semester", "last_90_quarter"]
+        scopes = list(GPA_SCOPE_LABELS)
         scope = st.selectbox("GPA calculation scope", scopes, index=scopes.index(profile.gpa.scope) if profile.gpa else 0,
-            format_func=lambda value: {"overall": "All undergraduate coursework", "last_60_semester": "Last 60 semester credits", "last_90_quarter": "Last 90 quarter credits"}[value], key=key("scope"))
+            format_func=GPA_SCOPE_LABELS.__getitem__, key=key("scope"))
         institution = st.text_input("Undergraduate institution (optional)", value=profile.institution or "", key=key("institution"))
         country = st.text_input("Institution country (optional)", value=profile.institution_country or "", key=key("country"))
         major = st.text_input("Undergraduate major (blank means unknown)", value=profile.major or "", key=key("major"))
@@ -229,6 +272,11 @@ def profile_form(profile):
                 format_func=lambda v: v.replace("_", " ").capitalize() if v not in {"CS", "ECE", "STEM"} else v, key=key("degree_"+field))
         degree_values["country"] = st.text_input("Degree country (ISO code, e.g. US; blank means unknown)",
             value=degree.country or "" if degree else "", key=key("degree_country")).strip().upper() or None
+        previous = getattr(degree, "prior_academic_graduate_degree", "unknown")
+        degree_values["prior_academic_graduate_degree"] = st.selectbox("Previous academic graduate degree",
+            list(PRIOR_DEGREE_LABELS), index=list(PRIOR_DEGREE_LABELS).index(previous),
+            format_func=PRIOR_DEGREE_LABELS.__getitem__, key=key("degree_prior_academic_graduate_degree"),
+            help="Include an academic master's or doctoral degree already held or expected before enrollment. Professional degrees are excluded from this check.")
         st.caption("The university makes the final credential-equivalency decision. Application document preparation is listed separately.")
         goals = [None, "employment", "research", "mixed"]
         goal = st.selectbox("Main goal", goals, index=goals.index(profile.goal),
@@ -316,29 +364,98 @@ def profile_form(profile):
     return changes, unknown, 'explore' if explore else 'generate'
 
 
-def render_result(result, programs, sources):
+def format_usd(value):
+    if value is None:
+        return "Unknown"
+    amount = Decimal(value)
+    return f"USD {amount:,.0f}" if amount == amount.to_integral_value() else f"USD {amount:,.2f}"
+
+
+def format_tuition(tuition):
+    lower, upper = tuition["lower_usd"], tuition["upper_usd"]
+    if lower is None and upper is not None:
+        return f"Ceiling {format_usd(upper)}"
+    if lower is not None and upper is None:
+        return f"Known minimum {format_usd(lower)}"
+    if lower != upper:
+        return f"Estimated range {format_usd(lower)}–{format_usd(upper)}"
+    return format_usd(upper)
+
+
+def render_tuition_summary(result, names, previous):
+    """Summarize the existing tuition checks without re-evaluating a candidate."""
+    groups = {status: {} for status in TUITION_LABELS}
+    for field, report_key in (("recommendations", "checks"), ("pending_verification", "report")):
+        for item in result[field]:
+            report = item[report_key]
+            check = next(c for c in report["checks"] if c["rule_id"] == "tuition")
+            groups[check["status"]][item["program_id"]] = (format_tuition(report["tuition"]), check["explanation"])
+    for item in result["excluded"]:
+        for code, reason in zip(item["reason_codes"], item["reasons"]):
+            if code in TUITION_LIMIT_CODES:
+                groups["fail"][item["program_id"]] = ("See budget finding", reason)
+
+    st.write("**Tuition budget check**")
+    budget = result.get("profile_summary", {}).get("tuition_budget_usd")
+    delta = result["changes_from_previous"]
+    if previous and previous["profile_version"] == delta.get("previous_profile_version"):
+        old_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
+    else:
+        old_budget = budget
+    budget_changed = (Decimal(old_budget) if old_budget is not None else None) != (
+        Decimal(budget) if budget is not None else None)
+    if budget_changed:
+        st.write(f"Full-program tuition budget updated: {format_usd(old_budget)} → {format_usd(budget)}")
+    else:
+        st.write(f"Full-program tuition budget: {format_usd(budget)}")
+    for column, (status, label) in zip(st.columns(3), TUITION_LABELS.items()):
+        column.metric(label, len(groups[status]))
+    st.caption("Counts cover candidates under consideration and exclusions with a tuition finding. Estimates use published rates and exclude living costs. Mandatory fees may be separate or unknown.")
+    if budget_changed:
+        for item in delta["removed"]:
+            pid = item["program_id"]
+            if pid in groups["fail"]:
+                st.write(f"Removed with a tuition budget failure: {names[pid]}")
+    with st.expander("Tuition checks by program"):
+        show_table([{"Program": names[pid], "Budget status": TUITION_LABELS[status],
+                     "Full-program tuition": amount, "Finding": reason}
+                    for status, programs in groups.items()
+                    for pid, (amount, reason) in programs.items()])
+
+
+def render_result(result, programs, sources, *, history=None, previous=None, earlier_run=False):
     names = {p.program_id: f"{p.university} — {p.degree}, {p.campus}" for p in programs}
     for field in ['recommendations', 'preliminary_recommendations', 'pending_verification', 'excluded', 'preliminary_excluded']:
         for item in result.get(field, []):
             identity=item.get('identity',{})
             names.setdefault(item['program_id'], identity.get('university','') + ' — ' + identity.get('program_name',item['program_id']))
-    st.subheader("Current assessment")
+    if result["status"] == "budget_exhausted":
+        st.subheader("Partial assessment")
+    elif earlier_run:
+        st.subheader("Last completed assessment for this profile")
+    else:
+        st.subheader("Current assessment")
     st.caption(f"Profile v{result['profile_version']} · Assessed {result['as_of_date']} · Model: {result['model_status']}")
-    if result["model_status"] == "not_configured": st.warning(result["message"])
+    if result["model_status"] == "not_configured" and result.get("message"):
+        st.warning(result["message"])
     if result["status"] == "infeasible":
         st.warning("Every program in this catalog has a verified hard failure under your current conditions. This conclusion applies only to this catalog.")
     elif result["status"] == "insufficient_evidence" and result.get('recommendation_scope') != 'broad':
         st.warning("The evidence does not support a complete tiered shortlist. Unknown requirements are not passes, and pending candidates are not recommendations.")
-    if result.get('recommendation_scope') == 'broad':
-        render_broad_recommendations(result)
+    render_tuition_summary(result, names, previous)
+    broad = result.get('recommendation_scope') == 'broad'
     if result["changes_from_previous"].get("previous_profile_version") is not None:
         delta = result["changes_from_previous"]
-        with st.expander("Changes from the previous assessment", expanded=True):
+        with st.expander("Changes from the previous assessment"):
             st.write("Added:", "; ".join(names.get(pid, pid) for pid in delta["added"]) or "None")
             st.write("Retained:", "; ".join(names.get(pid, pid) for pid in delta["retained"]) or "None")
             for item in delta["removed"]:
                 st.write("Removed: " + names.get(item["program_id"], item["program_id"]))
                 for reason in item["reasons"]: st.caption(reason)
+    if history and history.snapshot.gpa_bands:
+        render_history_coverage(history, result, names)
+    if broad:
+        render_broad_recommendations(result, history=history)
     st.write("**Formal recommendations**")
     for tier in ["Lottery", "Reach", "Target", "Safer"]:
         items = [item for item in result["recommendations"] if item["tier"] == tier]
@@ -347,11 +464,9 @@ def render_result(result, programs, sources):
             st.markdown(f"[{names[item['program_id']]}]({item['identity']['official_url']})")
             st.caption(item["identity"]["track"])
             st.write(item["planning_reason"])
+            render_admission_history(history, item["program_id"])
             tuition = item["checks"]["tuition"]
-            if tuition['lower_usd'] is None:
-                st.write(f"Full-program tuition ceiling: USD {tuition['upper_usd']} (published-rate planning bound)")
-            else:
-                st.write(f"Estimated full-program tuition: USD {tuition['lower_usd']}–{tuition['upper_usd']}")
+            st.write(f"Full-program tuition: {format_tuition(tuition)}")
             st.caption(f"Published rate year: {tuition['rate_year']} · {tuition['formula']}")
             for assumption in tuition["assumptions"]: st.caption(assumption)
             for feature in item["goal_features"]: st.write(feature["statement"])
@@ -369,18 +484,29 @@ def render_result(result, programs, sources):
             st.caption("Shortfall: Target and Safer require at least two independent, recent comparable admission cases; this pilot has no qualifying cases." if tier in {"Target","Safer"} else "Shortfall: only reviewed cohort evidence supports these planning tiers; eligibility and budget must also pass.")
     st.write(f"**Pending verification ({len(result['pending_verification'])})**")
     pending_details=result['pending_verification']
-    if result.get('recommendation_scope')=='broad':
+    shown_on_recommendations = {item["program_id"] for item in result["recommendations"]}
+    if broad:
+        shown_on_recommendations.update(item["program_id"] for item in result["preliminary_recommendations"])
+    excluded = {item["program_id"] for item in result.get("preliminary_excluded", [])}
+    pending_history = set(history.snapshot.programs) - shown_on_recommendations - excluded if history else set()
+    if broad:
         show_table([{'Program':names[i['program_id']],'Missing evidence':', '.join(i['missing_fields'])} for i in pending_details])
-        pending_details=pending_details[:5]
-        st.caption('Detailed checks below show the first five pending records. The session JSON contains the complete assessed pool and all screening findings.')
+        pending_details = [item for index, item in enumerate(pending_details)
+                           if index < 5 or item["program_id"] in pending_history]
+        if len(pending_details) > 5:
+            st.caption('Detailed checks cover the first five pending records and additional records with local applicant history.')
+        else:
+            st.caption('Detailed checks cover the first five pending records. The session JSON contains the full assessment.')
     for item in pending_details:
         with st.expander(names[item["program_id"]]):
-            st.markdown(f"[Official program website]({item['identity']['official_url']})")
+            program_site_label = "Listed program website" if item["program_id"].startswith("community-") else "Official program website"
+            st.markdown(f"[{program_site_label}]({item['identity']['official_url']})")
             st.write("Needs verification:", ", ".join(item["missing_fields"]))
+            if item["program_id"] in pending_history:
+                render_admission_history(history, item["program_id"])
             report = item["report"]
             tuition = report["tuition"]
-            label = "Full-program tuition ceiling (USD)" if tuition['upper_usd'] is not None and tuition['lower_usd'] is None else "Estimated full-program tuition (USD)"
-            st.write(label + ":", tuition["upper_usd"] or "Unknown")
+            st.write(f"Full-program tuition: {format_tuition(tuition)}")
             st.caption(f"Rate year: {tuition['rate_year'] or 'Unknown'} · {tuition['formula'] or 'Full-program calculation unavailable'}")
             for assumption in tuition["assumptions"]: st.caption(assumption)
             st.caption("Published-rate estimate only. Future increases and living costs are excluded; mandatory fees may be separate or unknown.")
@@ -409,19 +535,41 @@ def render_result(result, programs, sources):
             st.json(result["validation_errors"])
 
 
-def render_broad_recommendations(result):
+def render_broad_recommendations(result, *, history=None):
     items=result['preliminary_recommendations']
     st.subheader('Recommended programs from the broader pool')
     st.caption(f"Recommendation pool: {result['recommendation_catalog_count']} programs · {result['reviewed_program_count']} with additional official records · Community snapshot {result['community_snapshot']['source_date']}")
     st.info('These recommendations can use preliminary CS Grad information. Missing GPA, costs and other requirements still need confirmation. A recommendation here does not establish complete eligibility or a personal admission tier.')
+    history_ranking = result.get("admission_history_ranking", {})
+    if history_ranking.get("enabled"):
+        st.caption(f"Historical reports offered to ranking: {history_ranking['offered_options']} programs · "
+                   f"Referenced in {history_ranking['referenced_suggestions']} suggestions.")
     if result['preliminary_selection_method']=='deterministic_screening':
         st.caption('Selection method: rule-based screening. No model ranking has run for these recommendations.')
+    if any("research_fit" in item for item in items):
+        st.caption("Documented research pathways link to the program and related research pages. Contact the program about advisor availability and access to research opportunities.")
     if not items:
         st.write('No preliminary program recommendation was selected in this run.')
     for item in items:
         identity=item['identity']; checks=item['checks']
         st.markdown(f"[{identity['university']} — {identity['program_name']}]({identity['official_url']})")
-        st.caption('Preliminary recommendation · Personal tier: not assigned')
+        tuition_check = next(c for c in checks["checks"] if c["rule_id"] == "tuition")
+        st.caption(f"Preliminary recommendation · Personal tier: not assigned · {TUITION_LABELS[tuition_check['status']]}")
+        if fit := item.get("research_fit"):
+            st.markdown(f"**Research fit · {fit['pathway']}**")
+            st.write(fit["summary"])
+            st.write(fit["research_areas"])
+            st.caption(f"Reviewed {fit['reviewed_on']} · [Program requirements]({fit['program_source']}) · [Research groups and faculty]({fit['research_source']})")
+        if evidence := item.get("admission_history_evidence"):
+            years = "–".join(str(year) for year in sorted({min(evidence["admission_cycles"]), max(evidence["admission_cycles"])}))
+            st.markdown("**Historical reports used in this suggestion**")
+            st.write(f"GPA band {evidence['gpa_band']} · Reported admits ({evidence['admitted']}) "
+                     f"· Reported rejects ({evidence['rejected']})")
+            st.caption(f"{evidence['source']}, {years} · Snapshot {evidence['snapshot_date']}.")
+            if evidence["assumed_overall"]:
+                st.caption(f"Overall GPA was assumed for {evidence['assumed_overall']} of these reports.")
+        else:
+            render_admission_history(history, item["program_id"])
         for reason in item['reasons']:
             st.write(reason['explanation'])
         if checks['next_listed_round']:
@@ -438,6 +586,49 @@ def render_broad_recommendations(result):
             st.write('Reported application fee:',checks['application_fee'])
             st.markdown(f"[Reported application portal]({checks['application_url']}) · [CS Grad source snapshot]({checks['source_url']})")
             st.caption(f"Community source date: {checks['source_date']} · Intake: {checks['source_intake']} · Not independently verified")
+
+
+def render_history_coverage(history, result, names):
+    covered = history.covered_candidates(result)
+    with st.expander("Compare candidates by historical sample coverage", expanded=bool(covered)):
+        st.caption(f"GPA band {history.band_label}. Includes candidates with at least {MINIMUM_BAND_REPORTS} "
+                   "reported decisions in this band, ordered by sample size.")
+        if covered:
+            show_table([{"Program": names[program_id], "Assessment": status, "Reports": counts.total,
+                         "Reported admits": counts.admitted, "Reported rejects": counts.rejected}
+                        for program_id, status, counts in covered])
+            if any(counts.assumed_overall for _, _, counts in covered):
+                st.caption("Where the calculation scope was missing, overall GPA was assumed.")
+        else:
+            st.write("The historical sample in this GPA band is too small to order the current candidates.")
+
+
+def render_admission_history(history, program_id):
+    counts = history.snapshot.programs.get(program_id) if history else None
+    if counts is None:
+        return
+    snapshot = history.snapshot
+    scope = "overall GPA" if snapshot.gpa_scope == "overall" else GPA_SCOPE_LABELS[snapshot.gpa_scope].lower()
+    cycles = "–".join(str(year) for year in sorted({min(snapshot.cycles), max(snapshot.cycles)}))
+    term = snapshot.intake.term.title()
+    scale = format(snapshot.gpa_scale.normalize(), "f")
+    st.markdown("**Historical applicant comparisons**")
+    st.caption(f"{term} {cycles} · GPA basis: {scale}-point scale, {scope} · Snapshot: {snapshot.snapshot_date}")
+    if not (counts.admitted or counts.rejected):
+        st.caption("No explicit admission decisions with this GPA basis in the local sample.")
+        return
+    st.write(f"Reported admits ({counts.admitted}) · Reported rejects ({counts.rejected})")
+    if counts.assumed_overall:
+        report_label = "report" if counts.assumed_overall == 1 else "reports"
+        st.caption(f"Overall GPA was assumed for {counts.assumed_overall} {report_label} with a missing calculation scope.")
+    st.caption("Self-reported sample counts use the GPA scale and calculation scope. Individual admission chances are unknown.")
+    band_counts = history.band_counts(program_id)
+    if band_counts is not None:
+        if band_counts.total >= MINIMUM_BAND_REPORTS:
+            st.write(f"GPA band {history.band_label} · Reported admits ({band_counts.admitted}) "
+                     f"· Reported rejects ({band_counts.rejected})")
+        else:
+            st.caption(f"GPA band {history.band_label} has fewer than {MINIMUM_BAND_REPORTS} reported decisions.")
 
 
 def show_citation(citation):

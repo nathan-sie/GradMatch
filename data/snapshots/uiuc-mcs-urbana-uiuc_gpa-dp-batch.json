@@ -1,0 +1,20 @@
+{
+  "url": "https://grad.illinois.edu/admissions/graduate-admissions-minimum-requirements",
+  "retrieved_at": "2026-11-22T17:07:20.391166+00:00",
+  "raw_response_sha256": "55d48cdcf4280c94d45a01f0bce69594155eb7efd230f6c563a5745a32ed5f46",
+  "verified_values": {
+    "gpa": {
+      "gpa.minimum": "3.0",
+      "gpa.scale": "4",
+      "gpa.accepted_scopes": [
+        "last_two_years"
+      ],
+      "gpa.below_minimum_review_possible": true
+    },
+    "directory_policies": {
+      "notes.12": "GPA policy: Graduate College baseline 3.0/4 over the last two undergraduate years. Below-floor limited-status and nonstandard cases require university review."
+    }
+  },
+  "source_excerpt": "for last two years of undergraduate study",
+  "fact_summary": "The Graduate College baseline is 3.0 on a 4.0 scale or a comparable GPA over the last two years of undergraduate study. Program-supported limited status can require Graduate College approval."
+}

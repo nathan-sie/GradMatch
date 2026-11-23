@@ -238,6 +238,12 @@ def test_identical_json_protocol_duplicates_execute_as_one_action_only():
     )
     value, copies = decode_structured(Action, action + action)
     assert copies == 2 and value.tool == "search_programs"
+    revised_summary = json.dumps({**json.loads(action), "summary": "Retrieve the same candidates."})
+    normalized, copies = decode_structured(Action, action + revised_summary)
+    assert copies == 2 and normalized == value
+    revised_arguments = json.dumps({**json.loads(action), "arguments_json": '{"limit":5}'})
+    with pytest.raises(ValueError):
+        decode_structured(Action, action + revised_arguments)
     different = json.dumps(
         {"tool": "finish", "arguments_json": "{}", "summary": "Different action."}
     )

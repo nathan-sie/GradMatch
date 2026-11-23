@@ -1,0 +1,21 @@
+{
+  "url": "https://viterbigradadmission.usc.edu/programs/masters/faq/",
+  "retrieved_at": "2026-11-22T17:07:20.724038+00:00",
+  "raw_response_sha256": "8cff49ad27ff15c2a20b307f539453c27f83ce0d2ff3931c8e664a0a8ecacc8c",
+  "verified_values": {
+    "gpa": {
+      "gpa": {
+        "minimum": null,
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "overall"
+        ],
+        "below_minimum_review_possible": false,
+        "no_hard_minimum": true
+      }
+    }
+  },
+  "source_excerpt": "or have minimum GPA requirements for admission to USC",
+  "fact_summary": "The Viterbi master’s FAQ describes holistic review without an admission GPA floor."
+}

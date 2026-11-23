@@ -32,10 +32,19 @@ class Intake(Record):
         return f"{self.year}-{self.term}"
 
 
+GPAScope = Literal["overall", "last_60_semester", "last_90_quarter", "last_two_years"]
+GPA_SCOPE_LABELS = {
+    "overall": "All undergraduate coursework",
+    "last_60_semester": "Last 60 semester credits",
+    "last_90_quarter": "Last 90 quarter credits",
+    "last_two_years": "Last two years of undergraduate study",
+}
+
+
 class GPA(Record):
     value: NonNegative
     scale: Positive
-    scope: Literal["overall", "last_60_semester", "last_90_quarter"] = "overall"
+    scope: GPAScope = "overall"
 
     @model_validator(mode="after")
     def within_scale(self):
@@ -100,6 +109,7 @@ class DegreeBackground(Record):
     recognition: Literal["recognized_bachelors_or_equivalent", "not_recognized", "unknown"]
     field: Literal["CS", "ECE", "STEM", "other", "unknown"]
     country: str | None = None
+    prior_academic_graduate_degree: Literal["none", "held_or_expected", "unknown"] = "unknown"
 
 
 class GREScore(Record):

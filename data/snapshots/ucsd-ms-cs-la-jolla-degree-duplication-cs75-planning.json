@@ -1,0 +1,18 @@
+{
+  "url": "https://cse.ucsd.edu/graduate/admissions",
+  "retrieved_at": "2026-11-22T07:51:51.318795+00:00",
+  "raw_response_sha256": "facc8fe7813b573532c1bcf9596f5dcd6de55ef6c888bf8da268a8e592b7f00c",
+  "verified_values": {
+    "remaining_eligibility": {
+      "eligibility_review_complete": true
+    },
+    "duplicate_advanced_degree": {
+      "notes.12": "Prior academic graduate degrees: UC San Diego normally restricts duplicate advanced degrees, with prior professional degrees excluded and individual review for possible exceptions."
+    },
+    "directory_policies": {
+      "notes.12": "Prior academic graduate degrees: UC San Diego normally restricts duplicate advanced degrees, with prior professional degrees excluded and individual review for possible exceptions."
+    }
+  },
+  "source_excerpt": "Normally, UCSD does not permit the duplication of advanced degrees.",
+  "fact_summary": "The standard CS75 eligibility review covers ordinary applicants with no prior academic graduate degree. Previous professional degrees are outside the restriction. Holders of an academic graduate degree or certain other routes need individual university review."
+}

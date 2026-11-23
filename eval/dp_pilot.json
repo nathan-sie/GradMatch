@@ -1,0 +1,47 @@
+{
+  "version": "dp-pilot-v1",
+  "as_of": "2026-11-22",
+  "catalog_seed": "data/catalog/dp_batch_review_seed.json",
+  "catalog_hash": "3f7336f506a16352b1b7e51eb2263045db8b3691e4213a923616b7cfc4b2a8f6",
+  "community_hash": "1d88ec3b2d2b92dbad83786715f580d1d58da80b30bb66dc3fe405658de821a7",
+  "history_snapshot_hash": "795e68888905cdd6683602966f00dc754eebbfeaff7d3d5560e860980ffbc8f0",
+  "cases": [
+    {
+      "id": "dp01-employment",
+      "description": "Reproduce the earlier CS employment pilot with a well-covered GPA band.",
+      "profile": {"gpa": {"value": "3.80", "scale": "4", "scope": "overall"}},
+      "expected_history_options": 9
+    },
+    {
+      "id": "dp02-research",
+      "description": "Use the same GPA band with a research goal.",
+      "profile": {"gpa": {"value": "3.80", "scale": "4", "scope": "overall"}, "goal": "research"},
+      "expected_history_options": 9
+    },
+    {
+      "id": "dp03-budget",
+      "description": "Check the 3.75 band boundary with a USD 50,000 budget.",
+      "profile": {"gpa": {"value": "3.75", "scale": "4", "scope": "overall"}, "tuition_budget_usd": "50000"},
+      "expected_history_options": 7,
+      "expected_budget_exclusions": ["nyu-mscs-tandon-brooklyn", "usc-mscs-general-los-angeles"]
+    },
+    {
+      "id": "dp04-ece",
+      "description": "Use an ECE applicant in the 3.50 to below 3.75 GPA band.",
+      "profile": {"gpa": {"value": "3.60", "scale": "4", "scope": "overall"}, "major": "Electrical and Computer Engineering", "degree": {"field": "ECE"}},
+      "expected_history_options": 2
+    },
+    {
+      "id": "dp05-sparse",
+      "description": "Use a matching GPA basis with fewer than five reports per program.",
+      "profile": {"gpa": {"value": "3.40", "scale": "4", "scope": "overall"}},
+      "expected_history_options": 0
+    },
+    {
+      "id": "dp06-scope",
+      "description": "Supply a last-60-semester GPA when the snapshot requires overall GPA.",
+      "profile": {"gpa": {"value": "3.80", "scale": "4", "scope": "last_60_semester"}},
+      "expected_history_options": 0
+    }
+  ]
+}

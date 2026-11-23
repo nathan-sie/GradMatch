@@ -15,6 +15,7 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.types import Command, interrupt
 from pydantic import ValidationError, TypeAdapter
 
+from gradmatch.admission_history import HistoryPreview
 from gradmatch.agent_models import Action, AskArgs, Extraction, TOOL_ARGS, GROUP_FIELDS
 from gradmatch.constraints import check_constraints
 from gradmatch.providers import OpenAIProvider, ModelUnavailable
@@ -25,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 2
+BROAD_ENGINE_VERSION = 4
 
 
 class BudgetLimit(ValueError):
@@ -44,6 +45,9 @@ class Task:
     sources: dict
     limits: dict
     broad_context: dict | None = None
+    history_preview: HistoryPreview | None = None
+    history_snapshot_hash: str | None = None
+    history_options: dict = field(default_factory=dict)
     task_id: str = field(default_factory=lambda: str(uuid4()))
     evidence_version: int = 0
     tools: int = 0
@@ -198,7 +202,12 @@ class Execution:
             "error": None,
         }
         try:
-            args = TOOL_ARGS[name].model_validate(arguments)
+            effective_arguments = arguments
+            if (getattr(t, "broad_context", None) and isinstance(arguments, dict)
+                    and name in {"check_constraints", "rank_programs"}
+                    and arguments.get("program_ids") == []):
+                effective_arguments = {**arguments, "program_ids": t.retrieved}
+            args = TOOL_ARGS[name].model_validate(effective_arguments)
             key = canonical(
                 [
                     name,
@@ -642,45 +651,33 @@ class Execution:
             (p, r) for p, r in zip(selected, reports) if r.hard_checks_status != "fail"
             and (not broad or preliminary[p.program_id]['eligible_for_preliminary'])
         ]
+        formal_options = []
+        for program, report in pairs:
+            if not report.recommendation_ready:
+                continue
+            goal_feature_ids = [
+                feature.feature_id for feature in program.goal_features
+                if feature.goal in {self.session.profile.goal, "mixed"}
+            ]
+            tier_options = [
+                {"evidence_id": evidence.evidence_id, "permitted_tiers": evidence.permitted_tiers}
+                for evidence in program.admission_evidence if evidence.reviewed
+            ]
+            if broad and (not goal_feature_ids or not any(option["permitted_tiers"] for option in tier_options)):
+                continue
+            formal_options.append({
+                "program_id": program.program_id,
+                "goal_feature_ids": goal_feature_ids,
+                "tier_evidence_options": tier_options,
+            })
         payload = {
             "profile": self.session.profile.model_dump(mode="json"),
             "as_of_date": str(self.as_of),
-            "programs": [p.model_dump(mode="json") for p, _ in pairs],
-            "reports": [r.model_dump(mode="json") for _, r in pairs],
             "allowed_recommendation_program_ids": [
-                p.program_id for p, r in pairs if r.recommendation_ready
+                option["program_id"] for option in formal_options
             ],
-            "ready_recommendation_options": [
-                {
-                    "program_id": p.program_id,
-                    "goal_feature_ids": [
-                        f.feature_id
-                        for f in p.goal_features
-                        if f.goal in {self.session.profile.goal, "mixed"}
-                    ],
-                    "tier_evidence_options": [
-                        {
-                            "evidence_id": e.evidence_id,
-                            "permitted_tiers": e.permitted_tiers,
-                        }
-                        for e in p.admission_evidence
-                        if e.reviewed
-                    ],
-                }
-                for p, r in pairs
-                if r.recommendation_ready
-            ],
+            "ready_recommendation_options": formal_options,
             "allowed_pending_program_ids": [p.program_id for p, _ in pairs],
-            "excluded_summary": [
-                r.model_dump(mode="json")
-                for r in reports
-                if r.hard_checks_status == "fail"
-            ],
-            "sources": [
-                s.model_dump(mode="json")
-                for s in t.sources.values()
-                if s.program_id in args.program_ids
-            ],
             "rubric": (PROJECT_ROOT / "config/ranking_rubric.md").read_text(
                 encoding="utf-8"
             ),
@@ -690,18 +687,42 @@ class Execution:
             else None,
             "referenced_program_ids": [],
         }
+        history_options = {}
         if broad:
-            from gradmatch.broad_catalog import compact_program, compact_screen, ranking_report
+            from gradmatch.broad_catalog import compact_program, compact_screen, ranking_report, research_path_options
+            formal_ids = set(payload["allowed_recommendation_program_ids"])
             payload.update(recommendation_scope='broad', recommendation_catalog_count=len(t.programs),
-                programs=[compact_program(p) for p,_ in pairs],
+                programs=[compact_program(p, formal_ids) for p,_ in pairs],
                 reports=[ranking_report(r) for _,r in pairs if any(c.source_ids for c in r.checks)],
                 excluded_summary=[dict(program_id=r.program_id, failed_checks=[c.rule_id for c in r.checks if c.status=='fail'])
                     for r in reports if r.hard_checks_status=='fail'],
                 sources=[],
                 preliminary_reports=[compact_screen(preliminary[p.program_id],self.session.profile) for p,_ in pairs],
                 allowed_preliminary_program_ids=[p.program_id for p,_ in pairs],
-                community_snapshot={k:v for k,v in broad.items() if k!='entries'})
+                community_snapshot={k: broad[k] for k in ("source_url", "snapshot_date", "intake")})
+            path_options = research_path_options(self.session.profile, selected, broad, preliminary, self.as_of)
+            if path_options:
+                payload["research_path_options"] = [
+                    {"program_id": pid, **{key: option[key] for key in ("pathway", "summary", "research_areas")}}
+                    for pid, option in path_options.items()
+                ]
+            snapshot = getattr(t, "history_preview", None)
+            comparison = snapshot.compare(self.session.profile) if snapshot else None
+            if comparison:
+                history_options = comparison.ranking_options(
+                    payload["allowed_preliminary_program_ids"], t.history_snapshot_hash)
+            if history_options:
+                payload["admission_history_options"] = list(history_options.values())
+        else:
+            selected_ids = set(args.program_ids)
+            payload.update(
+                programs=[p.model_dump(mode="json") for p, _ in pairs],
+                reports=[r.model_dump(mode="json") for _, r in pairs],
+                excluded_summary=[r.model_dump(mode="json") for r in reports if r.hard_checks_status == "fail"],
+                sources=[s.model_dump(mode="json") for s in t.sources.values() if s.program_id in selected_ids],
+            )
         t.draft = self.generate(RankingDraft, "rank", payload, self.session)
+        t.history_options = history_options
         t.validated = None
         return (
             {
@@ -757,8 +778,12 @@ class Execution:
         )
         if getattr(t, 'broad_context', None):
             from gradmatch.broad_catalog import finish_broad_result
+            history_options = (getattr(t, "history_options", {}) if t.draft is not None
+                               and t.draft.profile_version == self.session.profile.profile_version else {})
             finish_broad_result(t.validated,t.draft,self.session.profile,t.programs,selected,t.broad_context,
-                self.preliminary_screens(selected),deterministic_only=deterministic_only)
+                self.preliminary_screens(selected),deterministic_only=deterministic_only,
+                history_options=history_options, history_snapshot_hash=getattr(t, "history_snapshot_hash", None),
+                prioritize_research=getattr(self, "input_intent", None) != "explain_previous")
         # An unvisited program is never silently presented as checked.
         t.validated.update(
             data_mode=t.mode,
@@ -806,31 +831,36 @@ class Execution:
         tools = {name:model.model_json_schema() for name,model in TOOL_ARGS.items()}
         if broad:
             tools['search_programs']['properties']['limit']['default'] = 83
+            for tool in ("check_constraints", "rank_programs"):
+                tools[tool]["properties"]["program_ids"]["minItems"] = 0
+        source_index = {}
+        if not broad or t.mode == "live":
+            for source in t.sources.values():
+                source_index.setdefault(source.program_id, []).append(
+                    {"source_id": source.source_id, "field_groups": source.field_groups}
+                )
+        catalog_index = []
+        for program in t.programs:
+            identity = {"university": program.university, "program_name": program.program_name}
+            if not broad or program.allowed_official_hosts:
+                identity["campus"] = program.campus
+            if not broad:
+                identity["degree"] = program.degree
+            row = {"program_id": program.program_id, "identity": identity}
+            if not broad or program.program_id in source_index:
+                row["sources"] = source_index.get(program.program_id, [])
+            catalog_index.append(row)
         return dict(
             profile=self.session.profile.model_dump(mode="json"),
             declared_unknown_fields=sorted(self.session.unknown_fields),
             messages=messages[-4:],
             previous_programs=[
-                {"program_id": p["program_id"], "identity": p["identity"]}
+                {"program_id": p["program_id"], "identity": {
+                    key: p["identity"][key] for key in ("university", "program_name", "campus")
+                } if broad else p["identity"]}
                 for p in previous_programs
             ],
-            catalog_index=[
-                {
-                    "program_id": p.program_id,
-                    "identity": {
-                        "university": p.university,
-                        "program_name": p.program_name,
-                        "degree": p.degree,
-                        "campus": p.campus,
-                    },
-                    "sources": [
-                        {"source_id": s.source_id, "field_groups": s.field_groups}
-                        for s in t.sources.values()
-                        if s.program_id == p.program_id and (not broad or t.mode == 'live')
-                    ],
-                }
-                for p in t.programs
-            ],
+            catalog_index=catalog_index,
             retrieved_program_ids=t.retrieved,
             data_mode=t.mode,
             recommendation_scope='broad' if getattr(t, 'broad_context', None) else 'reviewed',
@@ -1080,6 +1110,7 @@ def run_task(
     new_task,
     fetcher,
     broad_context=None,
+    history_preview=None,
 ):
     from gradmatch.service import prepare_input, response_text
 
@@ -1090,6 +1121,7 @@ def run_task(
             "status": "busy",
             "message": "A request is already running in this session.",
         }
+    history_hash = history_preview.fingerprint() if history_preview else None
     session.active = True
     started = monotonic()
     usage_start = len(session.usage)
@@ -1097,7 +1129,9 @@ def run_task(
     task = session.agent_task
     if (task is None or new_task or (task.strategy, task.mode) != (strategy, data_mode)
             or bool(getattr(task, 'broad_context', None)) != bool(broad_context)
-            or (broad_context and getattr(task,'broad_context',{}).get('data_hash') != broad_context['data_hash'])):
+            or getattr(task, "history_snapshot_hash", None) != history_hash
+            or (broad_context and any(task.broad_context.get(key) != broad_context[key]
+                    for key in ("data_hash", "research_paths_hash")))):
         task = Task(
             strategy,
             data_mode,
@@ -1105,6 +1139,8 @@ def run_task(
             deepcopy(sources),
             json.loads((PROJECT_ROOT / "config/agent.json").read_text()),
             broad_context=deepcopy(broad_context),
+            history_preview=deepcopy(history_preview),
+            history_snapshot_hash=history_hash,
         )
         session.agent_task = task
     driver = Execution(task, session, settings, as_of, provider, fetcher)

@@ -2,7 +2,7 @@
 
 An evidence-grounded U.S. CS/ECE master's program matching course project.
 
-Current stage: **M6.3 all-program recommendations**. Public app: **https://gradmatch-nathan-sie.streamlit.app/**. The default **Generate / rerun** and **Save profile and generate** workflow now selects from **all 83 maintained programs**, using CS Grad language, GRE and deadline data alongside the 20 officially reviewed identities / 145 sources. Shared baseline, ReAct and plan-and-replan tools can search, check, rank and recommend programs outside those 20. Community-backed recommendations are labelled preliminary and do not invent GPA, tuition or personal admission tiers. See [verification](docs/verification/M63.md). Final-project evaluation remains incomplete.
+The default **Generate / rerun** and **Save profile and generate** workflow selects from **all 83 maintained programs** using official evidence alongside reported CS Grad language, GRE and deadline data. The local active catalog contains 20 reviewed identities and 163 official source records. Shared fixed baseline, ReAct and plan-and-replan tools assess the same pool. Community-backed recommendations are labelled preliminary. Final-project evaluation remains incomplete. [Public app](https://gradmatch-nathan-sie.streamlit.app/) · [M6.3 verification](docs/verification/M63.md) · [DP pilot catalog batch](docs/verification/DP_PILOT_CATALOG_BATCH.md)
 
 Keep **Recommendation pool: All 83 programs (official + community data)** to use the broad recommendation workflow. The agent selects a subset after screening, rather than recommending every program. **Reviewed official records only** preserves the original restricted workflow. With paid calls disabled, generation produces clearly labelled rule-based recommendations from the same broad pool; it does not simulate a model run. **Save profile and preview all programs** remains a separate free table of all 83 records. The [M6.2 data batch](docs/verification/M62.md) supplies language fields and portals for 83, known GRE markers for 82, listed rounds for 80 and application fees for 82.
 
@@ -37,7 +37,7 @@ Use [the deployment guide](docs/DEPLOYMENT.md): GitHub repository `nathan-sie/Gr
 The project uses an isolated Python 3.12 environment. If `.venv` is already prepared, run these commands from the repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/m61j_seed.json
+.\.venv\Scripts\python.exe -m scripts.build_catalog --input data/catalog/dp_batch_review_seed.json
 .\.venv\Scripts\python.exe -m scripts.verify_m61j
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
 ```
@@ -86,7 +86,7 @@ The seven computable cost estimates include the earlier UW ECE PMP, USC MSCS, No
 ## Data and secrets
 
 - `data/schema.sql` is versioned; the generated `data/gradmatch.db` is rebuildable and ignored.
-- `data/catalog/active.json` selects `m61j_seed.json` at call time, including after data updates. Earlier versioned seeds preserve historical catalogs. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding; full-page research material stays in ignored `work`. A valid older default local database is preserved; startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
+- `data/catalog/active.json` selects `dp_batch_review_seed.json` at call time, including after data updates. The M6.4 evaluation configuration continues to use `m61j_seed.json`. `data/snapshots/` contains immutable short evidence snapshots for offline rebuilding. Full-page research material stays in ignored `work`. A valid older default local database is preserved. Startup uses a rebuilt cache when its contents differ from the current seed. An explicitly selected `GRADMATCH_DB_PATH` retains the requested database.
 - Applicant profiles and sessions are not written into the public catalog.
 - `.venv`, `.tools`, temporary records, `.env`, and `.streamlit/secrets.toml` are ignored.
 - A real OpenAI key is needed for explicit M2 live checks. Never commit secrets.
