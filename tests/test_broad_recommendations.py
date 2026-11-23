@@ -270,7 +270,7 @@ def test_valid_formal_recommendation_takes_precedence_over_its_preliminary_dupli
     result = run(strategy='plan', provider=CrossListedFixture())
     assert result['validation_passed']
     assert [item['program_id'] for item in result['recommendations']] == ['cmu-msaii-pittsburgh']
-    assert len(result['preliminary_recommendations']) == 2
+    assert len(result['preliminary_recommendations']) >= 2
     assert result['validation_warnings'] == [{
         'program_id': 'cmu-msaii-pittsburgh', 'code': 'PRELIMINARY_DUPLICATE_OF_FORMAL',
     }]
@@ -433,8 +433,8 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     by_id = {item["program_id"]: item for item in suggestions}
     msaii = by_id["cmu-msaii-pittsburgh"]
     assert (msaii["opencs_grade"], msaii["planning_tier"]["label"]) == ("S", "Lottery")
-    usc = by_id["usc-mscs-general-los-angeles"]
-    assert (usc["opencs_grade"], usc["planning_tier"]["label"]) == ("B+", "Target")
+    assert result["shortlist_tier_counts"] == dict.fromkeys(admission_history.PLANNING_TIERS, 2)
+    assert any("**Target 2**" in line.value and "**Safer 2**" in line.value for line in app.markdown)
     assert all(item["planning_tier"]["history"]["gpa_band"] == "3.75 through 4"
                for item in suggestions if item["planning_tier"]["history"])
     assert any("Matched historical reports" in line.value for line in app.markdown)
@@ -460,14 +460,41 @@ def test_planning_tier_requires_stronger_evidence_and_verified_checks_for_safer(
     assert admission_history.planning_tier(history, hard_checks_passed=True)["label"] == "Safer"
 
 
-def test_higher_opencs_grade_cannot_have_an_easier_planning_tier():
+def test_opencs_planning_tiers_follow_category_order_and_include_matched_history():
     history = {"admitted": 10, "rejected": 2}
-    base_cases = [("B+", "Reach"), ("B+", "Target"), ("A-", "Target"), ("SSS", "Reach"), (None, "Target")]
-    rows = [
-        {"opencs_grade": grade, "planning_tier": {"label": label, "reason": "DP evidence", "history": history}}
-        for grade, label in base_cases
-    ]
-    admission_history.apply_opencs_grades(rows)
-    assert [row["planning_tier"]["label"] for row in rows] == ["Reach", "Target", "Reach", "Lottery", "Target"]
-    assert rows[2]["planning_tier"]["base_label"] == "Target"
-    assert rows[2]["planning_tier"]["history"] == history
+    rows = [admission_history.planning_tier(history, hard_checks_passed=False, opencs_grade=grade)
+            for grade in admission_history.OPENCS_PLANNING_TIERS]
+    positions = [admission_history.PLANNING_TIERS.index(row["label"]) for row in rows]
+    assert positions == sorted(positions)
+    assert all(row["basis"] == "opencs_relative" and row["history"] == history for row in rows)
+
+
+def test_model_drafting_only_lottery_candidates_still_gives_a_balanced_shortlist():
+    from gradmatch.broad_catalog import OPENCS_GRADES_FILE
+
+    grades = json.loads(OPENCS_GRADES_FILE.read_text(encoding="utf-8"))["programs"]
+
+    class LotteryFixture(FixtureProvider):
+        def generate(self, kind, purpose, payload, session):
+            draft = super().generate(kind, purpose, payload, session)
+            if purpose == "rank":
+                formal = {item.program_id for item in draft.recommendations}
+                lottery = [pid for pid in payload["allowed_preliminary_program_ids"]
+                           if grades.get(pid) in {"S", "SS", "SSS"} and pid not in formal]
+                assert len(lottery) >= 8
+                draft.suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=["english"])
+                                     for pid in lottery[:8]]
+            return draft
+
+    session = Session(profile=tiering_profile())
+    provider = LotteryFixture()
+    initial = run(session, provider=provider)
+    rows = initial["preliminary_recommendations"]
+    assert initial["validation_passed"] and initial["shortlist_tier_counts"] == dict.fromkeys(admission_history.PLANNING_TIERS, 2)
+    assert all(row["selection_method"] == "tier_coverage" for row in rows if row["planning_tier"]["label"] != "Lottery")
+    assert len({row["program_id"] for row in rows + initial["recommendations"]}) == 8
+
+    lowered = run(session, provider=provider, message="Change my tuition budget to 50000.")
+    blocked = {row["program_id"] for row in lowered["preliminary_excluded"]}
+    assert lowered["validation_passed"] and "cmu-msaii-pittsburgh" in blocked
+    assert blocked.isdisjoint(row["program_id"] for row in lowered["preliminary_recommendations"])

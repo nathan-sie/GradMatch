@@ -26,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 9
+BROAD_ENGINE_VERSION = 10
 
 
 class BudgetLimit(ValueError):
@@ -792,7 +792,7 @@ class Execution:
                 self.preliminary_screens(selected),deterministic_only=deterministic_only,
                 history_options=history_options, history_snapshot_hash=getattr(t, "history_snapshot_hash", None),
                 planning_history=self.matching_history(p.program_id for p in selected),
-                prioritize_research=getattr(self, "input_intent", None) != "explain_previous")
+                balance_shortlist=self.full_pool_required)
         # An unvisited program is never silently presented as checked.
         t.validated.update(
             data_mode=t.mode,
@@ -1146,7 +1146,7 @@ def run_task(
             or bool(getattr(task, 'broad_context', None)) != bool(broad_context)
             or getattr(task, "history_snapshot_hash", None) != history_hash
             or (broad_context and any(task.broad_context.get(key) != broad_context[key]
-                    for key in ("data_hash", "research_paths_hash", "opencs_grades_hash")))):
+                    for key in ("data_hash", "research_paths_hash", "opencs_grades_hash", "shortlist_policy_version")))):
         task = Task(
             strategy,
             data_mode,

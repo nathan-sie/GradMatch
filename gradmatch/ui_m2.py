@@ -475,6 +475,12 @@ def suggested_tier(item):
 
 
 def render_shortlist_overview(result, names):
+    if counts := result.get("shortlist_tier_counts"):
+        st.markdown(" · ".join(f"**{tier} {counts[tier]}**" for tier in PLANNING_TIERS))
+        empty = [tier for tier in PLANNING_TIERS if counts[tier] == 0]
+        if empty:
+            st.caption("No eligible planning or formal matches in " + ", ".join(empty)
+                       + " after screening for this profile. See Checks and sources for exclusions and evidence gaps.")
     rows = []
     for item in result["recommendations"]:
         rows.append({"Program": names[item["program_id"]], "Tier": f"{item['tier']} · Formal",
@@ -489,11 +495,13 @@ def render_shortlist_overview(result, names):
                      "Tuition budget": TUITION_LABELS[tuition["status"]],
                      "Next listed round": upcoming["date"] if upcoming else "Needs verification"})
     if rows:
+        rows.sort(key=lambda row: PLANNING_TIERS.index(row["Tier"].split(" · ", 1)[0]))
         show_table(rows)
         st.caption("Open a program below for its tier explanation, evidence and next steps.")
         if any(row["OpenCS"] != "—" for row in rows):
             st.caption(f"[OpenCS categories]({OPENCS_GRADE_URL}) reflect community judgments about "
                        "competitiveness for applicants with undergraduate degrees from mainland China.")
+            st.caption("Safer indicates lower relative competition. Budget and eligibility are checked separately.")
     else:
         st.info("No recommendations for this profile. Open Checks and sources to see what needs verification.")
 
@@ -592,7 +600,7 @@ def render_broad_recommendations(result, *, history=None):
     if not items:
         return
     st.markdown("**Planning matches**")
-    for item in items:
+    for item in sorted(items, key=lambda row: PLANNING_TIERS.index(suggested_tier(row)["label"])):
         identity, checks, tier = item["identity"], item["checks"], suggested_tier(item)
         name = f"{identity['university']} — {identity['program_name']}"
         with st.expander(f"{tier['label']} · {name}"):

@@ -16,7 +16,7 @@ from gradmatch.storage import PROJECT_ROOT
 
 PREVIEW_FILE = PROJECT_ROOT / "work/admissions_dp/recommendation_preview.json"
 BUNDLED_PREVIEW_FILE = PROJECT_ROOT / "data/review/admission_history_aggregates.json"
-BROAD_ENGINE_VERSION = 3
+BROAD_ENGINE_VERSION = 4
 OPENCS_DP_SOURCE = "OpenCS DataPoints"
 OPENCS_DP_URL = "https://opencs.app/datapoints/"
 OPENCS_GRADE_URL = "https://opencs.app/grade/"
@@ -24,7 +24,7 @@ GPA_BAND_COUNT = 16
 MINIMUM_BAND_REPORTS = 5
 PLANNING_TIERS = ("Lottery", "Reach", "Target", "Safer")
 # Ordered from the most competitive OpenCS category to the least competitive.
-OPENCS_TIER_FLOORS = {
+OPENCS_PLANNING_TIERS = {
     "SSS": "Lottery", "SS": "Lottery", "S": "Lottery",
     "A+": "Reach", "A": "Reach", "A-": "Target", "B+": "Target",
     "B": "Safer", "B-": "Safer", "C+": "Safer", "C": "Safer",
@@ -168,8 +168,13 @@ def load_bundled_preview():
         return None
 
 
-def planning_tier(history, *, hard_checks_passed):
-    """Assign an application planning label from matched self-reported counts."""
+def planning_tier(history, *, hard_checks_passed, opencs_grade=None):
+    """Assign a relative planning label and retain matched self-reported counts."""
+    if opencs_grade in OPENCS_PLANNING_TIERS:
+        relative_tier = OPENCS_PLANNING_TIERS[opencs_grade]
+        return {"label": relative_tier, "history": history, "basis": "opencs_relative",
+                "reason": f"OpenCS category {opencs_grade} places this program in the {relative_tier} planning group. "
+                          "Check the budget and requirements below before applying."}
     label = "Reach"
     reason = "Fewer than five usable reports match this program, intake and GPA band. Treat it as a stretch option while checking the requirements."
     if history is not None:
@@ -183,28 +188,6 @@ def planning_tier(history, *, hard_checks_passed):
             label = "Target"
             reason = "At least eight reports match and at least three in five report admission. Confirm the remaining application requirements."
     return {"label": label, "reason": reason, "history": history}
-
-
-def apply_opencs_grades(suggestions):
-    """Keep planning tiers at least as cautious as lower-ranked shortlist entries."""
-    lower_grade_floor = PLANNING_TIERS.index("Safer")
-    for grade, floor in reversed(OPENCS_TIER_FLOORS.items()):
-        grade_floor = PLANNING_TIERS.index(floor)
-        shortlist_floor = min(grade_floor, lower_grade_floor)
-        for item in suggestions:
-            if item.get("opencs_grade") != grade:
-                continue
-            tier = item["planning_tier"]
-            base = PLANNING_TIERS.index(tier["label"])
-            final = min(base, shortlist_floor)
-            if final < base:
-                label = PLANNING_TIERS[final]
-                reason = (f"OpenCS assigns category {grade}. GradMatch treats this category as {floor} or more competitive."
-                          if final == grade_floor else
-                          f"The OpenCS {grade} category is above a program already classified as {label} on your shortlist.")
-                item["planning_tier"] = {**tier, "label": label, "base_label": tier["label"],
-                                         "grade_adjustment": reason}
-            lower_grade_floor = min(lower_grade_floor, final)
 
 
 def read_preview(profile):

@@ -1,11 +1,12 @@
 """An 83-program recommendation pool with explicitly preliminary CS Grad facts."""
 
+from collections import Counter
 from datetime import date
 from decimal import Decimal
 import hashlib
 import json
 
-from gradmatch.admission_history import OPENCS_TIER_FLOORS, PLANNING_TIERS, apply_opencs_grades, planning_tier
+from gradmatch.admission_history import OPENCS_PLANNING_TIERS, PLANNING_TIERS, planning_tier
 from gradmatch.community import application_fee_label
 from gradmatch.constraints import applicable_deadline_rounds
 from gradmatch.ranking import retrieve
@@ -15,6 +16,10 @@ from gradmatch.storage import PROJECT_ROOT
 
 RESEARCH_PATHS_FILE = PROJECT_ROOT / "data/review/research_paths.json"
 OPENCS_GRADES_FILE = PROJECT_ROOT / "data/review/opencs_program_grades.json"
+SHORTLIST_POLICY_VERSION = 1
+SHORTLIST_PER_TIER = 2
+SUMMARY_CHECKS = {"english", "deadline", "gre"}
+POSITIVE_CHECKS = {"pass", "not_applicable", "reported_floor_met", "reported_date_available", "reported_optional"}
 
 
 MODEL_CONTRACTS = {
@@ -34,7 +39,8 @@ MODEL_CONTRACTS["rank"] += (
     " not make a program more suitable. These reports establish neither odds nor an official eligibility or tier result."
     " If history informed a suggestion, set its history_evidence_id to the supplied ID for that exact program."
     " Otherwise set history_evidence_id to null. Never use these IDs as formal tier evidence or as an official citation."
-    " The application assigns preliminary planning labels separately using the available historical reports."
+    " The application assigns planning labels from OpenCS category and available historical reports."
+    " Suggest a range of programs suited to the applicant. Code fills available planning tiers after validation."
     " For a research goal, prioritize eligible programs in research_path_options. Use the documented route"
     " and the applicant's academic background to compare options. A departmental lab or faculty listing"
     " supports exploring a topic; access to an advisor, lab, funding or a thesis place is unconfirmed."
@@ -89,9 +95,10 @@ def build_broad_catalog(programs, sources):
     grade_snapshot = OPENCS_GRADES_FILE.read_bytes()
     context["opencs_grades"] = {
         pid: grade for pid, grade in json.loads(grade_snapshot)["programs"].items()
-        if grade in OPENCS_TIER_FLOORS
+        if grade in OPENCS_PLANNING_TIERS
     }
     context["opencs_grades_hash"] = hashlib.sha256(grade_snapshot).hexdigest()
+    context["shortlist_policy_version"] = SHORTLIST_POLICY_VERSION
     return result, context
 
 
@@ -275,33 +282,43 @@ def summarize_action_observation(observation):
     return item
 
 
+def balanced_program_ids(ordered, selected, planning, formal):
+    counts = Counter(item["tier"] for item in formal)
+    universities = {selected[item["program_id"]].university.casefold() for item in formal}
+    chosen = set()
+    for tier in PLANNING_TIERS:
+        candidates = [pid for pid in ordered if planning[pid]["label"] == tier]
+        spaces = max(0, SHORTLIST_PER_TIER - counts[tier])
+        for _ in range(min(spaces, len(candidates))):
+            pid = next((pid for pid in candidates if selected[pid].university.casefold() not in universities),
+                       candidates[0])
+            candidates.remove(pid)
+            chosen.add(pid)
+            universities.add(selected[pid].university.casefold())
+    return [pid for pid in ordered if pid in chosen]
+
+
 def finish_broad_result(result, draft, profile, programs, retrieved, context, reports, *, deterministic_only=False,
-                        history_options=None, history_snapshot_hash=None, planning_history=None, prioritize_research=True):
+                        history_options=None, history_snapshot_hash=None, planning_history=None, balance_shortlist=True):
     """Validate model-selected IDs and attach actual recommendations to the assessment."""
     from gradmatch.validation import identity, blocking_validation_errors
 
     selected = {p.program_id:p for p in retrieved}
-    formal_ids = {r['program_id'] for r in result['recommendations']}
+    formal = result['recommendations']
+    formal_ids = {r['program_id'] for r in formal}
     allowed = {pid for pid in selected if reports[pid]['eligible_for_preliminary']}
     history_options = history_options or {}
     planning_history = planning_history or {}
+    grades = context['opencs_grades']
     planning = {
-        pid: planning_tier(planning_history.get(pid), hard_checks_passed=reports[pid]["official_hard_checks_passed"])
+        pid: planning_tier(planning_history.get(pid), hard_checks_passed=reports[pid]["official_hard_checks_passed"],
+                           opencs_grade=grades.get(pid))
         for pid in allowed - formal_ids
     }
-    suggestions = list(draft.suggestions) if draft else []
-    method = 'model_selected'
+    suggestions = draft.suggestions if draft and not deterministic_only else []
+    method = 'deterministic_screening' if deterministic_only else 'model_selected'
     research_options = research_path_options(profile, retrieved, context, reports, date.fromisoformat(result["as_of_date"]))
-    if deterministic_only:
-        from gradmatch.ranking import PreliminaryRecommendationDraft
-        def key(pid):
-            checks = reports[pid]['checks']
-            positives = sum(c['status'] in {'pass', 'not_applicable', 'reported_floor_met', 'reported_date_available', 'reported_optional'} for c in checks)
-            return (-PLANNING_TIERS.index(planning[pid]["label"]), -positives,
-                    selected[pid].university.casefold(), selected[pid].program_name.casefold())
-        suggestions = [PreliminaryRecommendationDraft(program_id=pid, reason_check_ids=['english', 'deadline', 'gre']) for pid in sorted(allowed - formal_ids,key=key)[:8]]
-        method = 'deterministic_screening'
-    accepted, seen = [], set()
+    accepted, seen = {}, set()
     for item in suggestions:
         codes = []
         if item.program_id in seen:codes.append('DUPLICATE_PRELIMINARY_PROGRAM')
@@ -327,33 +344,51 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
                                        [checks[k] for k in dict.fromkeys(item.reason_check_ids)])
         if history_id is not None:
             suggestion["admission_history_evidence"] = history
-        accepted.append(suggestion)
-    for item in accepted:
-        if item["program_id"] in research_options:
-            item["research_fit"] = research_options[item["program_id"]]
-    if (prioritize_research and research_options and len(retrieved) == len(programs)
-            and (deterministic_only or (draft and draft.profile_version == profile.profile_version))):
-        matching = [item for item in accepted if "research_fit" in item]
-        supplemental = [pid for pid in research_options if pid not in formal_ids and pid not in seen]
-        for pid in supplemental[:max(0, 5 - len(matching))]:
+        accepted[item.program_id] = suggestion
+    balance = (balance_shortlist and len(retrieved) == len(programs)
+               and (deterministic_only or (draft and draft.profile_version == profile.profile_version)))
+    ordered = list(accepted)
+    if balance or deterministic_only:
+        def fallback_key(program):
+            pid = program.program_id
             screen = reports[pid]
-            item = suggestion_record(selected[pid], screen, "research_path_evidence",
-                                     [check for check in screen["checks"] if check["rule_id"] in {"english", "deadline", "gre"}])
-            item["research_fit"] = research_options[pid]
-            matching.append(item)
-        accepted = (matching + [item for item in accepted if "research_fit" not in item])[:8]
-    grades = context["opencs_grades"]
-    for item in accepted + result["recommendations"]:
+            budget_passed = any(c['rule_id'] == 'tuition' and c['status'] == 'pass' for c in screen['checks'])
+            positives = sum(c['status'] in POSITIVE_CHECKS for c in screen['checks'])
+            history = planning_history.get(pid)
+            historical_share = history['admitted'] / (history['admitted'] + history['rejected']) if history else 0.5
+            return (not budget_passed, -positives, -historical_share)
+
+        remaining = [p for p in retrieve(profile, retrieved, len(retrieved))
+                     if p.program_id in planning and p.program_id not in seen]
+        ordered += [p.program_id for p in sorted(remaining, key=fallback_key)]
+    if balance:
+        ordered.sort(key=lambda pid: pid not in research_options)
+        ordered = balanced_program_ids(ordered, selected, planning, formal)
+    elif deterministic_only:
+        ordered = ordered[:8]
+    shortlist = []
+    for pid in ordered:
+        item = accepted.get(pid)
+        if item is None:
+            screen = reports[pid]
+            basis = method if deterministic_only else ('research_path_evidence' if pid in research_options else 'tier_coverage')
+            item = suggestion_record(selected[pid], screen, basis,
+                                     [c for c in screen['checks'] if c['rule_id'] in SUMMARY_CHECKS])
+        if pid in research_options:
+            item['research_fit'] = research_options[pid]
+        item['planning_tier'] = planning[pid]
+        shortlist.append(item)
+    for item in shortlist + formal:
         if item["program_id"] in grades:
             item["opencs_grade"] = grades[item["program_id"]]
-    for item in accepted:
-        item["planning_tier"] = planning[item["program_id"]]
-    apply_opencs_grades(accepted)
+    if balance:
+        counts = Counter([item['tier'] for item in formal] + [item['planning_tier']['label'] for item in shortlist])
+        result['shortlist_tier_counts'] = {tier: counts[tier] for tier in PLANNING_TIERS}
     blocked = [dict(program_id=pid,identity=identity(p),reasons=[c for c in reports[pid]['checks'] if c['status']=='fail'])
         for pid,p in selected.items() if not reports[pid]['eligible_for_preliminary']]
     blocked_ids = {r['program_id'] for r in blocked}
     result['pending_verification'] = [r for r in result['pending_verification'] if r['program_id'] not in blocked_ids]
-    result.update(recommendation_scope='broad', preliminary_recommendations=accepted, preliminary_excluded=blocked,
+    result.update(recommendation_scope='broad', preliminary_recommendations=shortlist, preliminary_excluded=blocked,
         preliminary_selection_method=method, recommendation_catalog_count=len(programs),
         community_snapshot=dict(source_url=context['source_url'],source_date=context['snapshot_date'],intake=context['intake'],source_sha256=context['source_sha256']),
         community_data_hash=context['data_hash'],
@@ -361,15 +396,16 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             "programs": result["data_hash"], "community": context["data_hash"],
             "research_paths": context.get("research_paths_hash"),
             "opencs_grades": context["opencs_grades_hash"],
+            "shortlist_policy": context["shortlist_policy_version"],
         }, sort_keys=True).encode()).hexdigest(),
         reviewed_program_count=context['official_program_count'], validation_passed=not blocking_validation_errors(result),
         admission_history_ranking={
             "enabled": history_snapshot_hash is not None,
             "snapshot_hash": history_snapshot_hash,
             "offered_options": len(history_options),
-            "referenced_suggestions": sum("admission_history_evidence" in item for item in accepted),
+            "referenced_suggestions": sum("admission_history_evidence" in item for item in shortlist),
             "matched_planning_options": sum(pid in planning_history for pid in planning),
-            "suggestions_with_planning_evidence": sum(item["planning_tier"]["history"] is not None for item in accepted),
+            "suggestions_with_planning_evidence": sum(item["planning_tier"]["history"] is not None for item in shortlist),
         })
     return result
 
