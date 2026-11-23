@@ -165,7 +165,7 @@ def render_m2(database, *, directory=None):
     with st.expander("Current structured profile", expanded=False):
         st.json(session.profile.model_dump(mode="json"))
     st.subheader("Conversation")
-    st.caption("Try: Change my tuition budget to 50000. With the model configured, you can also ask: Which remaining candidates fit employment goals?")
+    st.caption("Try “Change my GPA to 3.8” or “Change my tuition budget to 50000.” With the model configured, you can also ask which candidates fit your goal.")
     for message in session.messages:
         with st.chat_message(message["role"]):
             st.write(message["content"])

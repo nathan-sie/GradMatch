@@ -385,15 +385,23 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
 
     app = AppTest.from_file(str(PROJECT_ROOT / "app.py"), default_timeout=30).run()
     app.button(key="m35_load_example").click().run()
-    app.number_input(key="m2_input_gpa").set_value(3.80)
-    app.button(key="m2_save_profile").click().run()
-    assert not app.exception
+    app.button(key="m2_generate").click().run()
     session = app.session_state["m2_session"]
+    original = session.profile.model_dump(mode="json")
+    app.chat_input(key="m2_chat").set_value("change the gpa to 3.8").run()
+    assert not app.exception
+    assert session.profile.model_dump(mode="json") == {
+        **original, "profile_version": original["profile_version"] + 1, "gpa": {**original["gpa"], "value": "3.8"},
+    }
+    assert app.number_input(key="m2_input_gpa").value == 3.8
+    assert session.previous_result["profile_version"] == original["profile_version"]
     result = session.current_result
     assert len(result["retrieved_program_ids"]) == 83
     suggestions = result["preliminary_recommendations"]
     assert suggestions and all(item["planning_tier"]["label"] in admission_history.PLANNING_TIERS for item in suggestions)
     assert any(item["planning_tier"]["label"] == "Target" for item in suggestions)
+    assert all(item["planning_tier"]["history"]["gpa_band"] == "3.75 through 4"
+               for item in suggestions if item["planning_tier"]["history"])
     assert any("Matched historical reports" in line.value for line in app.markdown)
     assert not session.usage
 

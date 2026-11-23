@@ -96,6 +96,31 @@ def test_noop_patch_does_not_increment_version_and_goal_update_preserves_budget(
     assert session.profile.profile_version == 2 and session.profile.tuition_budget_usd == Decimal(70000)
 
 
+def test_direct_gpa_update_reuses_saved_scope_and_skips_interpretation():
+    session, stub = Session(profile=synthetic_profile()), Stub()
+    original = session.profile.model_dump(mode="json")
+    result = run(session, provider=stub, message="change the gpa to 3.8")
+    assert session.profile.model_dump(mode="json") == {
+        **original, "profile_version": 2, "gpa": {**original["gpa"], "value": "3.8"},
+    }
+    assert result["profile_version"] == 2 and [purpose for purpose, _ in stub.calls] == ["rank"]
+    run(session, provider=stub, request_id="same-gpa", message="Set my GPA to 3.80.")
+    assert session.profile.profile_version == 2
+
+
+@pytest.mark.parametrize("score,has_gpa,fragment", [
+    ("3.8", False, "original scale"),
+    ("4.1", True, "between 0 and 4"),
+    ("-1", True, "between 0 and 4"),
+])
+def test_direct_gpa_update_requires_a_saved_scale_and_valid_score(score, has_gpa, fragment):
+    applicant = synthetic_profile() if has_gpa else synthetic_profile().model_copy(update={"gpa": None})
+    session = Session(profile=applicant)
+    result = run(session, strategy="react", message=f"Change my GPA to {score}")
+    assert result["status"] == "error" and fragment in result["message"]
+    assert session.profile == applicant and result["model_calls"] == 0
+
+
 def test_invalid_patch_is_atomic_and_cannot_override_version_or_invent_support():
     session = Session(profile=synthetic_profile())
     old = session.profile.model_copy(deep=True)

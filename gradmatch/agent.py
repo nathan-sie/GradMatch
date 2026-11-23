@@ -26,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 7
+BROAD_ENGINE_VERSION = 8
 
 
 class BudgetLimit(ValueError):
@@ -1127,7 +1127,7 @@ def run_task(
     broad_context=None,
     history_preview=None,
 ):
-    from gradmatch.service import prepare_input, response_text
+    from gradmatch.service import GPACommandError, prepare_input, response_text
 
     if request_id in session.receipts:
         return session.receipts[request_id]
@@ -1268,6 +1268,8 @@ def run_task(
 
             Planner(driver).stop("MODEL_UNAVAILABLE")
         result = {"status": "error", "message": str(error)}
+    except GPACommandError as error:
+        result = {"status": "error", "message": str(error)}
     except (ValueError, ValidationError, TypeError, KeyError) as error:
         session.event(
             "run_rejected",
@@ -1331,8 +1333,9 @@ def run_task(
         and not settings.ready
         and result["model_status"] != "reused_validated"
     ):
-        result["message"] = (
-            "Deterministic checks only. Adaptive decisions and live extraction have not run; enable model calls to use them."
+        result.setdefault(
+            "message",
+            "Deterministic checks only. Adaptive decisions and live extraction have not run; enable model calls to use them.",
         )
     if "recommendations" in result:
         result["changes_from_previous"] = changes_from_previous(

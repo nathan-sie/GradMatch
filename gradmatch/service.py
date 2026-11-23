@@ -1,6 +1,7 @@
 """Shared UI/CLI task entry: patch -> questions -> fixed retrieval -> rank once -> validate."""
 
 from datetime import date
+from decimal import Decimal
 import json
 import re
 from time import monotonic
@@ -11,11 +12,40 @@ from pydantic import ValidationError
 from gradmatch.constraints import check_constraints
 from gradmatch.providers import ModelUnavailable, OpenAIProvider
 from gradmatch.ranking import RankingDraft, retrieve
-from gradmatch.session import LEAF_FIELDS, ROOT_FIELDS, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch
+from gradmatch.schemas import GPA
+from gradmatch.session import (
+    LEAF_FIELDS, ROOT_FIELDS, PatchOperation, ProfilePatch, Session, apply_patch, explanation_only, questions, quick_patch,
+)
 from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import changes_from_previous, data_hash, validate_shortlist
-BROAD_ENGINE_VERSION = 3
+BROAD_ENGINE_VERSION = 4
 _DEFAULT_HISTORY = object()
+
+
+class GPACommandError(ValueError):
+    """A direct score update needs a valid saved GPA scale and scope."""
+
+
+def gpa_patch(message: str, current: GPA | None) -> ProfilePatch | None:
+    match = re.fullmatch(
+        r"\s*(?:change|set|update)\s+(?:(?:my|the)\s+)?gpa\s+to\s+(-?\d+(?:\.\d+)?)\s*[.!。]?\s*",
+        message, re.I | re.ASCII,
+    )
+    if match is None:
+        return None
+    if current is None:
+        raise GPACommandError("Enter your GPA, original scale, and calculation scope in Applicant information before updating the score in chat.")
+    value = Decimal(match.group(1))
+    if not 0 <= value <= current.scale:
+        raise GPACommandError(f"Enter a GPA between 0 and {current.scale:g} on the saved GPA scale.")
+    if value == current.value:
+        value = current.value
+    return ProfilePatch(
+        intent="update_profile",
+        operations=[PatchOperation(field="gpa.value", value_json=json.dumps(str(value)), explicit_span=message)],
+        referenced_program_ids=[],
+        ambiguous_fields=[],
+    )
 
 
 def prepare_input(session, *, changes, unknown_fields, message, provider, settings):
@@ -28,7 +58,7 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
         if not message.strip() or len(message) > settings.limits["max_message_characters"]:
             raise ValueError("Enter a message between 1 and 4,000 characters.")
         session.messages.append({"role": "user", "content": message})
-        patch = quick_patch(message)
+        patch = gpa_patch(message, session.profile.gpa) or quick_patch(message)
         # Explicit read-only requests need no paid mutation interpreter in any strategy.
         marker=r"\b(?:do not|don't) (?:change|modify|update) my profile\b"
         remainder=re.sub(marker,'',message.lower())
@@ -39,7 +69,7 @@ def prepare_input(session, *, changes, unknown_fields, message, provider, settin
                 referenced_program_ids=[p['program_id'] for p in known if p['program_id'] in message])
         if patch is None and message.lower().strip() not in {"generate", "generate recommendations", "rerun checks"}:
             if not settings.ready and isinstance(provider, OpenAIProvider):
-                raise ModelUnavailable("Free-text interpretation needs the configured model. You can still edit the profile form or use 'Change my tuition budget to 50000'.")
+                raise ModelUnavailable("Free-text interpretation needs the configured model. You can still edit the profile form or use 'Change my GPA to 3.8' or 'Change my tuition budget to 50000'.")
             prior = session.current_result or session.previous_result or {}
             known = prior.get("recommendations", []) + prior.get('preliminary_recommendations', []) + prior.get("pending_verification", [])
             patch = provider.generate(ProfilePatch, "interpret", {"message": message,
