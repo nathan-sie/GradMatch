@@ -550,12 +550,13 @@ def render_verification(result, names, sources, history, broad):
             st.caption('Detailed checks cover the first five pending records. The session JSON contains the full assessment.')
     for item in pending_details:
         with st.expander(names[item["program_id"]]):
-            program_site_label = "Listed program website" if item["program_id"].startswith("community-") else "Official program website"
+            report = item["report"]
+            reviewed_identity = any(check["rule_id"] == "identity" and check["source_ids"] for check in report["checks"])
+            program_site_label = "Official program website" if reviewed_identity else "Listed program website"
             st.markdown(f"[{program_site_label}]({item['identity']['official_url']})")
             st.write("Needs verification:", ", ".join(item["missing_fields"]))
             if item["program_id"] in pending_history:
                 render_admission_history(history, item["program_id"])
-            report = item["report"]
             tuition = report["tuition"]
             st.write(f"Full-program tuition: {format_tuition(tuition)}")
             st.caption(f"Rate year: {tuition['rate_year'] or 'Unknown'} · {tuition['formula'] or 'Full-program calculation unavailable'}")
@@ -620,7 +621,8 @@ def render_broad_recommendations(result, *, history=None):
             else:
                 render_admission_history(history, item["program_id"])
             if upcoming := checks["next_listed_round"]:
-                st.write(f"Next listed application round · {upcoming['date']} — {upcoming['label']}")
+                source_label = "Official" if upcoming.get("basis") == "reviewed_official" else "Community-reported"
+                st.write(f"{source_label} application round · {upcoming['date']} — {upcoming['label']}")
             for reason in item["reasons"]:
                 st.write(reason["explanation"])
             show_table([{"Check": check["rule_id"].replace("_", " ").title(),

@@ -1,0 +1,50 @@
+{
+  "url": "https://csd.cs.cmu.edu/academics/masters/admissions",
+  "retrieved_at": "2026-11-23T20:33:36.331838+00:00",
+  "raw_response_sha256": "11ba7a6cb1bec804c6d0025ee6d817784357c53da607104578b37e0e9f58022d",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ]
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-18",
+          "label": "Early application, 3 p.m. Eastern",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-09",
+          "label": "Final application, 3 p.m. Eastern",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": true
+    },
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "english_policy": {
+      "notes.1": "English testing: CMU lists TOEFL, IELTS and Duolingo for the applicable visa and language group. Check the school-wide score requirements and test conditions."
+    },
+    "directory_policies": {
+      "notes.0": "GRE recommendation: Scores are strongly recommended. The department asks applicants omitting scores to explain why in the statement of purpose.",
+      "notes.1": "English testing: CMU lists TOEFL, IELTS and Duolingo for the applicable visa and language group. Check the school-wide score requirements and test conditions."
+    }
+  },
+  "source_excerpt": "Fall MSCS entry uses November 18 and December 9, 2026 rounds at 3 p.m. Eastern. The GRE is strongly encouraged, with an explanation requested when scores are omitted.",
+  "fact_summary": "Fall MSCS entry uses November 18 and December 9, 2026 rounds at 3 p.m. Eastern. The GRE is strongly encouraged, with an explanation requested when scores are omitted."
+}

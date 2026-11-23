@@ -1,0 +1,25 @@
+{
+  "url": "https://grad.illinois.edu/admissions/graduate-admissions-minimum-requirements",
+  "retrieved_at": "2026-11-23T20:33:36.731763+00:00",
+  "raw_response_sha256": "a9c5b5974de5530d5ef2408390e962abc65f7a3390315662e9fae85c334d7ab1",
+  "verified_values": {
+    "degree": {
+      "degree_required": true,
+      "accepted_degree_fields": []
+    },
+    "gpa": {
+      "gpa": {
+        "minimum": "3.0",
+        "recommended": null,
+        "scale": "4",
+        "accepted_scopes": [
+          "last_two_years"
+        ],
+        "below_minimum_review_possible": true,
+        "no_hard_minimum": false
+      }
+    }
+  },
+  "source_excerpt": "The Graduate College uses a bachelor's degree or equivalent and a 3.0/4.0 baseline over the last two undergraduate years. Certain sub-threshold applications can be reviewed individually.",
+  "fact_summary": "The Graduate College uses a bachelor's degree or equivalent and a 3.0/4.0 baseline over the last two undergraduate years. Certain sub-threshold applications can be reviewed individually."
+}

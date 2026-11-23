@@ -34,7 +34,7 @@ def main():
         database=bootstrap_directory(official,output/'public')
         d=read_directory(database);rows=d['records'];p,s=load_seed()
         assert data_hash(*read_catalog(official))==data_hash(p,s)
-        assert d['total']==d['community_records']==83 and d['official_records']==20
+        assert d['total']==d['community_records']==83 and d['official_records']==len(p)
         assert all(not r['recommendation_eligible'] for r in rows)
         expected=d;database.unlink()
         assert read_directory(bootstrap_directory(official,output/'public'))==expected
@@ -48,7 +48,7 @@ def main():
             with_application_portal=sum(bool(r['community_facts']['application_url']) for r in rows))
         assert list(coverage.values())==[83,83,82,80,82,83]
     assert hashes()==before
-    proof=dict(milestone='M6.2',status='passed',coverage=coverage,official_programs=20,official_sources=145,
+    proof=dict(milestone='M6.2',status='passed',coverage=coverage,official_programs=len(p),official_sources=len(s),
         official_data_hash=data_hash(p,s),source_sha256=d['source_sha256'],source_url=d['source_url'],
         snapshot_date=d['upstream_generated'],source_intake=d['source_intake'],
         reference_exploration_statuses={status:sum(r['status']==status for r in candidates) for status in sorted({r['status'] for r in candidates})},

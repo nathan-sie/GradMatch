@@ -1,0 +1,12 @@
+{
+  "url": "https://siebelschool.illinois.edu/admissions/graduate/application-deadlines",
+  "retrieved_at": "2026-11-23T20:33:36.841527+00:00",
+  "raw_response_sha256": "ac450c8394aeaf28133dabc6f35b7c843bd156b1337550c2a74af51a43f6d036",
+  "verified_values": {
+    "directory_policies": {
+      "notes.0": "Application cycle: The department lists December 1 for fall entry in its recurring thesis MS schedule. Confirm the cutoff for the selected intake."
+    }
+  },
+  "source_excerpt": "The recurring table gives December 1 for fall MS in Computer Science applications. Its Urbana MCS dates are separately listed.",
+  "fact_summary": "The recurring table gives December 1 for fall MS in Computer Science applications. Its Urbana MCS dates are separately listed."
+}

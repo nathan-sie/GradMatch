@@ -26,7 +26,7 @@ try:
     summary = inspect_catalog(database)
 except (CatalogNotReadyError, OSError, ValueError) as error:
     st.error(str(error))
-    st.code("python -m scripts.build_catalog --input data/catalog/dp_batch_review_seed.json", language="bash")
+    st.code("python -m scripts.build_catalog --input data/catalog/dp_official_overlap_seed.json", language="bash")
     st.stop()
 
 def catalog_counts(summary):

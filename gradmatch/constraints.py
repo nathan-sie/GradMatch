@@ -81,6 +81,18 @@ def evidence_ids(program: ProgramRecord, group: str, sources: dict[str, SourceRe
     return list(ids)
 
 
+def applicable_deadline_rounds(profile: ApplicantProfile, program: ProgramRecord):
+    if profile.intake is None:
+        return []
+    audiences = {"all", profile.applicant_category}
+    if profile.applicant_category == "international" and profile.study_mode == "full_time":
+        audiences.add("international_full_time")
+    if profile.study_mode == "part_time":
+        audiences.add("part_time")
+    return [round_ for round_ in program.deadlines
+            if round_.intake.key == profile.intake.key and round_.audience in audiences]
+
+
 def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
                       sources: dict[str, SourceRecord], *, as_of: date, data_mode="snapshot") -> ConstraintReport:
     checks = []
@@ -270,13 +282,7 @@ def check_constraints(profile: ApplicantProfile, program: ProgramRecord,
             warnings.append('This is a conservative ceiling for the documented ordinary study scope, not an exact price. Additional study or a different billing arrangement needs a new check.')
         add("tuition", "pass", "TUITION_WITHIN_PUBLISHED_RATE_BUDGET", "The upper bound of estimated full-program tuition is within the budget.", warnings)
 
-    def round_applies(round_):
-        audience = round_.audience
-        return (audience == "all" or audience == profile.applicant_category
-                or (audience == "international_full_time" and profile.applicant_category == "international" and profile.study_mode == "full_time")
-                or (audience == "part_time" and profile.study_mode == "part_time"))
-
-    rounds = [round_ for round_ in program.deadlines if profile.intake is not None and round_.intake.key == profile.intake.key and round_applies(round_)]
+    rounds = applicable_deadline_rounds(profile, program)
     if not supported("deadline") or not rounds:
         add("deadline", "unknown", "DEADLINE_NOT_VERIFIED", "No verified deadline applies to this intake and applicant category yet.")
     elif any(round_.date > as_of for round_ in rounds):

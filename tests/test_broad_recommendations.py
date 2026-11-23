@@ -2,6 +2,7 @@
 from copy import deepcopy
 from dataclasses import replace
 from datetime import date
+from decimal import Decimal
 import json
 import subprocess
 import sys
@@ -60,10 +61,11 @@ def screen(pid=STANFORD,profile=None,as_of=AS_OF,mutate=None):
 def test_pool_has_83_exact_ids_without_changing_official_facts_or_registering_community_as_official():
     p,s=load_seed();before=data_hash(p,s);pool,ctx=build_broad_catalog(p,s)
     assert len(pool)==len({p.program_id for p in pool})==83
-    assert sum(p.program_id.startswith('community-') for p in pool)==63
-    assert {item.program_id:item for item in pool if not item.program_id.startswith('community-')}=={item.program_id:item for item in p}
+    assert sum(entry['officially_linked'] for entry in ctx['entries'].values()) == 24
+    assert {item.program_id:item for item in pool if ctx['entries'][item.program_id]['officially_linked']}=={item.program_id:item for item in p}
     assert data_hash(p,s)==before
-    assert all(not p.allowed_official_hosts and not p.field_sources for p in pool if p.program_id.startswith('community-'))
+    assert all(not item.allowed_official_hosts and not item.field_sources for item in pool
+               if not ctx['entries'][item.program_id]['officially_linked'])
     assert ctx['snapshot_date']=='2026-10-25'
     assert len(ctx['data_hash'])==64
     grades = ctx['opencs_grades']
@@ -72,6 +74,29 @@ def test_pool_has_83_exact_ids_without_changing_official_facts_or_registering_co
     assert grades['uiuc-mcs-urbana'] == 'A+'
     assert grades['ucsd-ms-cs-la-jolla'] == 'A'
     assert 'neu-mscs-boston' not in grades
+
+
+def test_dp_programs_keep_exact_identity_and_use_new_official_evidence():
+    programs, sources = load_seed()
+    pool, context = build_broad_catalog(programs, sources)
+    profile = tiering_profile()
+    profile.gpa = profile.gpa.model_copy(update={"value": Decimal("3.8")})
+    preview = admission_history.load_bundled_preview()
+    comparison = preview.compare(profile)
+    assert preview.programs.keys() <= {p.program_id for p in programs} & context['opencs_grades'].keys()
+    new_ids = {
+        'community-a-minus-brown-scmcs', 'community-b-plus-nwu-mscs',
+        'community-ss-cmu-mscs', 'community-ss-uiuc-mscs',
+    }
+    assert new_ids <= comparison.ranking_options(new_ids, preview.fingerprint()).keys()
+    cmu, checks = screen('community-ss-cmu-mscs', profile)
+    assert cmu['next_listed_round'] == {
+        'date': '2026-12-09', 'label': 'Final application, 3 p.m. Eastern', 'basis': 'reviewed_official',
+    }
+    assert checks['deadline']['basis'] == 'reviewed_official'
+    nwu = next(p for p in pool if p.program_id == 'community-b-plus-nwu-mscs')
+    report = check_constraints(profile, nwu, sources, as_of=AS_OF)
+    assert report.tuition.upper_usd == 94648 and report.tuition.lower_usd is None
 
 
 @pytest.mark.parametrize('strategy',['fixed','react','plan'])
@@ -251,11 +276,11 @@ def test_valid_formal_recommendation_takes_precedence_over_its_preliminary_dupli
     }]
 
 
-def test_reviewed_scope_remains_the_original_catalog_for_existing_benchmarks():
+def test_reviewed_scope_uses_only_official_records():
     p,s=load_seed()
     r=start_task(Session(profile=tiering_profile()),request_id=str(uuid4()),programs=p,sources=s,
         settings=replace(load_settings(),enabled=False),as_of=AS_OF,strategy='fixed',provider=FixtureProvider())
-    assert r['catalog_program_count']==20 and 'preliminary_recommendations' not in r
+    assert r['catalog_program_count']==len(p) and 'preliminary_recommendations' not in r
 
 
 def test_hot_upgrade_keeps_session_and_provider_classes_in_an_isolated_process():
@@ -306,7 +331,7 @@ def test_actual_generate_uses_all_83_by_default_and_renders_unreviewed_recommend
     assert not app.session_state['m2_session'].usage
     app.selectbox(key='m63_pool').set_value('Reviewed official records only').run()
     app.button(key='m2_generate').click().run()
-    assert not app.exception and app.session_state['m2_session'].current_result['catalog_program_count']==20
+    assert not app.exception and app.session_state['m2_session'].current_result['catalog_program_count']==24
 
     session = app.session_state["m2_session"]
     task = session.agent_task

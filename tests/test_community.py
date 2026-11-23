@@ -21,7 +21,7 @@ AS_OF = date(2026, 11, 21)
 def test_all_83_records_have_usable_reported_fields_and_pinned_provenance():
     p,s=load_seed(); before=data_hash(p,s)
     d=build_directory(p,s);rows=d['records']
-    assert d['community_records']==d['total']==83 and d['official_records']==20
+    assert d['community_records']==d['total']==83 and d['official_records']==len(p)
     assert all(len(r['community_facts']['language'])==4 for r in rows)
     assert sum(r['community_facts']['reported_gre']!='unknown' for r in rows)==82
     assert sum(bool(r['community_facts']['rounds']) for r in rows)==80

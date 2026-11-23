@@ -1,0 +1,28 @@
+{
+  "url": "https://sfs.brown.edu/tuition-and-fees/graduate",
+  "retrieved_at": "2026-11-23T20:34:06.039451+00:00",
+  "raw_response_sha256": "e670d9e4462985758df6710f235fcaaf9bb5243a212a00da25087ea975b3d399",
+  "verified_values": {
+    "tuition": {
+      "tuition": {
+        "currency": "USD",
+        "basis": "full_program",
+        "unit_rate_lower": "87816",
+        "unit_rate_upper": "87816",
+        "required_units_lower": null,
+        "required_units_upper": null,
+        "rate_year": "2026-27",
+        "guaranteed_for_intake": null,
+        "mandatory_fees_usd": null,
+        "assumptions": [
+          "Eight courses at USD 10,977 each, using the 2026–27 published rate.",
+          "Residential Comprehensive track. Fees, living costs and future rate changes are excluded."
+        ],
+        "additional_required_tuition_lower_usd": "0",
+        "additional_required_tuition_upper_usd": "0"
+      }
+    }
+  },
+  "source_excerpt": "Student Financial Services estimates USD 87,816 for the eight-course Computer Science ScM using the USD 10,977 per-course rate.",
+  "fact_summary": "Student Financial Services estimates USD 87,816 for the eight-course Computer Science ScM using the USD 10,977 per-course rate."
+}

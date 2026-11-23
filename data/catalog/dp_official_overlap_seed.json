@@ -1,0 +1,947 @@
+{
+  "catalog_version": "dp-official-overlap-v1",
+  "base_seed": "dp_batch_review_seed.json",
+  "programs": [
+    {
+      "program_id": "community-a-minus-brown-scmcs",
+      "candidate_source_id": "a-minus-brown-scmcs",
+      "university": "Brown University",
+      "school": "Department of Computer Science",
+      "program_name": "Computer Science",
+      "degree": "Sc.M.",
+      "campus": "Providence",
+      "track": "Residential Comprehensive track",
+      "discipline": "CS",
+      "official_url": "https://cs.brown.edu/degrees/masters/reqs/",
+      "allowed_official_hosts": [
+        "cs.brown.edu",
+        "sfs.brown.edu"
+      ],
+      "catalog_version": "dp-official-overlap-v1",
+      "field_sources": {
+        "identity": [
+          "community-a-minus-brown-scmcs--brown-program--dp-official"
+        ],
+        "goal_features": [
+          "community-a-minus-brown-scmcs--brown-program--dp-official"
+        ],
+        "gre": [
+          "community-a-minus-brown-scmcs--brown-apply--dp-official"
+        ],
+        "english_policy": [
+          "community-a-minus-brown-scmcs--brown-apply--dp-official"
+        ],
+        "directory_policies": [
+          "community-a-minus-brown-scmcs--brown-apply--dp-official",
+          "community-a-minus-brown-scmcs--brown-overview--dp-official"
+        ],
+        "tuition": [
+          "community-a-minus-brown-scmcs--brown-rates--dp-official"
+        ]
+      },
+      "gre_policy": "not_required",
+      "tuition": {
+        "basis": "full_program",
+        "unit_rate_lower": "87816",
+        "unit_rate_upper": "87816",
+        "rate_year": "2026-27",
+        "assumptions": [
+          "Eight courses at USD 10,977 each, using the 2026–27 published rate.",
+          "Residential Comprehensive track. Fees, living costs and future rate changes are excluded."
+        ]
+      },
+      "notes": [
+        "English testing: Brown requires TOEFL or IELTS for applicants covered by its English testing policy. Exemptions and applicable scores need individual review.",
+        "Application cycle: The Comprehensive track accepts spring and fall entrants. Brown lists January 15 on the degree overview. Confirm the exact intake-specific cutoff in the application portal.",
+        "DP comparison: Historical admission reports through Fall 2026 refer to the residential program. The new AI/ML route has its own scope."
+      ],
+      "goal_features": [
+        {
+          "feature_id": "brown-comprehensive-curriculum",
+          "goal": "mixed",
+          "statement": "An eight-course curriculum combines CS pathways with flexibility to choose advanced electives aligned with the student's goals.",
+          "source_ids": [
+            "community-a-minus-brown-scmcs--brown-program--dp-official"
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "community-b-plus-nwu-mscs",
+      "candidate_source_id": "b-plus-nwu-mscs",
+      "university": "Northwestern University",
+      "school": "McCormick School of Engineering",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Evanston",
+      "track": "On-campus MS, thesis/project/course options",
+      "discipline": "CS",
+      "official_url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/curriculum.html",
+      "allowed_official_hosts": [
+        "www.mccormick.northwestern.edu",
+        "www.northwestern.edu"
+      ],
+      "catalog_version": "dp-official-overlap-v1",
+      "field_sources": {
+        "identity": [
+          "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+        ],
+        "credits": [
+          "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+        ],
+        "goal_features": [
+          "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+        ],
+        "tuition_upper": [
+          "community-b-plus-nwu-mscs--northwestern-program--dp-official",
+          "community-b-plus-nwu-mscs--northwestern-rates--dp-official"
+        ],
+        "intake": [
+          "community-b-plus-nwu-mscs--northwestern-apply--dp-official"
+        ],
+        "deadline": [
+          "community-b-plus-nwu-mscs--northwestern-apply--dp-official"
+        ],
+        "directory_policies": [
+          "community-b-plus-nwu-mscs--northwestern-apply--dp-official",
+          "community-b-plus-nwu-mscs--northwestern-faq--dp-official"
+        ],
+        "gre": [
+          "community-b-plus-nwu-mscs--northwestern-faq--dp-official"
+        ],
+        "tuition": [
+          "community-b-plus-nwu-mscs--northwestern-rates--dp-official"
+        ]
+      },
+      "required_credits": "12",
+      "gre_policy": "not_required",
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-30",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-31",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-28",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-06-15",
+          "label": "Listed late MS decision round, if space remains",
+          "audience": "all"
+        }
+      ],
+      "tuition": {
+        "basis": "per_term",
+        "unit_rate_upper": "23662",
+        "required_units_upper": "4",
+        "rate_year": "2026-27",
+        "assumptions": [
+          "Conservative ceiling at the 2026–27 full-time master's rate over four usual quarters.",
+          "Fewer quarters or different registration may cost less. Fees, living costs and future rate changes are excluded."
+        ]
+      },
+      "notes": [
+        "Application availability: Northwestern may close the Fall 2027 MS application portal early if the cohort fills.",
+        "Coursework preparation: The department describes CS-minor-equivalent preparation for competitive applicants. A CS undergraduate degree is optional."
+      ],
+      "goal_features": [
+        {
+          "feature_id": "nwu-thesis-project",
+          "goal": "mixed",
+          "statement": "The department offers a thesis or faculty-supervised project alongside the coursework-only route.",
+          "source_ids": [
+            "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "community-ss-cmu-mscs",
+      "candidate_source_id": "ss-cmu-mscs",
+      "university": "Carnegie Mellon University",
+      "school": "Computer Science Department",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Pittsburgh",
+      "track": "On-campus MSCS",
+      "discipline": "CS",
+      "official_url": "https://csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+      "allowed_official_hosts": [
+        "csd.cs.cmu.edu"
+      ],
+      "catalog_version": "dp-official-overlap-v1",
+      "field_sources": {
+        "identity": [
+          "community-ss-cmu-mscs--cmu-program--dp-official"
+        ],
+        "goal_features": [
+          "community-ss-cmu-mscs--cmu-program--dp-official"
+        ],
+        "intake": [
+          "community-ss-cmu-mscs--cmu-apply--dp-official"
+        ],
+        "deadline": [
+          "community-ss-cmu-mscs--cmu-apply--dp-official"
+        ],
+        "gre": [
+          "community-ss-cmu-mscs--cmu-apply--dp-official"
+        ],
+        "english_policy": [
+          "community-ss-cmu-mscs--cmu-apply--dp-official"
+        ],
+        "directory_policies": [
+          "community-ss-cmu-mscs--cmu-apply--dp-official"
+        ]
+      },
+      "gre_policy": "not_required",
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ],
+      "deadline_schedule_complete": true,
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-18",
+          "label": "Early application, 3 p.m. Eastern",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-09",
+          "label": "Final application, 3 p.m. Eastern",
+          "audience": "all"
+        }
+      ],
+      "notes": [
+        "GRE recommendation: Scores are strongly recommended. The department asks applicants omitting scores to explain why in the statement of purpose.",
+        "English testing: CMU lists TOEFL, IELTS and Duolingo for the applicable visa and language group. Check the school-wide score requirements and test conditions.",
+        "Tuition scope: The admissions page links to the general SCS rate. The MSCS-specific bill remains pending confirmation."
+      ],
+      "goal_features": [
+        {
+          "feature_id": "cmu-mscs-curriculum",
+          "goal": "mixed",
+          "statement": "The flexible curriculum spans systems, theoretical foundations and artificial intelligence. The department describes three or four semesters depending on preparation.",
+          "source_ids": [
+            "community-ss-cmu-mscs--cmu-program--dp-official"
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "community-ss-uiuc-mscs",
+      "candidate_source_id": "ss-uiuc-mscs",
+      "university": "University of Illinois Urbana-Champaign",
+      "school": "Siebel School of Computing and Data Science",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Urbana-Champaign",
+      "track": "On-campus research MS, thesis required",
+      "discipline": "CS",
+      "official_url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "allowed_official_hosts": [
+        "grad.illinois.edu",
+        "siebelschool.illinois.edu"
+      ],
+      "catalog_version": "dp-official-overlap-v1",
+      "field_sources": {
+        "identity": [
+          "community-ss-uiuc-mscs--uiuc-program--dp-official"
+        ],
+        "credits": [
+          "community-ss-uiuc-mscs--uiuc-program--dp-official"
+        ],
+        "goal_features": [
+          "community-ss-uiuc-mscs--uiuc-program--dp-official"
+        ],
+        "gre": [
+          "community-ss-uiuc-mscs--uiuc-apply--dp-official"
+        ],
+        "directory_policies": [
+          "community-ss-uiuc-mscs--uiuc-apply--dp-official",
+          "community-ss-uiuc-mscs--uiuc-deadlines--dp-official"
+        ],
+        "degree": [
+          "community-ss-uiuc-mscs--uiuc-gpa--dp-official"
+        ],
+        "gpa": [
+          "community-ss-uiuc-mscs--uiuc-gpa--dp-official"
+        ]
+      },
+      "required_credits": "32",
+      "gre_policy": "not_required",
+      "degree_required": true,
+      "gpa": {
+        "minimum": "3.0",
+        "scale": "4",
+        "accepted_scopes": [
+          "last_two_years"
+        ],
+        "below_minimum_review_possible": true
+      },
+      "notes": [
+        "Application cycle: The department lists December 1 for fall entry in its recurring thesis MS schedule. Confirm the cutoff for the selected intake.",
+        "Prior graduate degree: An equivalent computer science or computer engineering master's degree can make an applicant ineligible. The university determines equivalency.",
+        "Reference letters: The department requires three letters for the thesis MS."
+      ],
+      "goal_features": [
+        {
+          "feature_id": "uiuc-thesis",
+          "goal": "research",
+          "statement": "A research-oriented program with 28 coursework credits plus four thesis credits and a faculty thesis advisor.",
+          "source_ids": [
+            "community-ss-uiuc-mscs--uiuc-program--dp-official"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "community-a-minus-brown-scmcs--brown-program--dp-official",
+      "program_id": "community-a-minus-brown-scmcs",
+      "url": "https://cs.brown.edu/degrees/masters/reqs/",
+      "retrieved_at": "2026-11-23T20:33:35.837257+00:00",
+      "raw_response_sha256": "5c437d42d37dea206e6dd27e7b581f45a7374a2a96e67051e60bde3d4e5b2e6c",
+      "verified_values": {
+        "identity": {
+          "university": "Brown University",
+          "program_name": "Computer Science",
+          "degree": "Sc.M.",
+          "campus": "Providence",
+          "track": "Residential Comprehensive track",
+          "official_url": "https://cs.brown.edu/degrees/masters/reqs/",
+          "candidate_source_id": "a-minus-brown-scmcs"
+        },
+        "goal_features": {
+          "goal_features": [
+            {
+              "feature_id": "brown-comprehensive-curriculum",
+              "goal": "mixed",
+              "statement": "An eight-course curriculum combines CS pathways with flexibility to choose advanced electives aligned with the student's goals.",
+              "source_ids": [
+                "community-a-minus-brown-scmcs--brown-program--dp-official"
+              ]
+            }
+          ]
+        }
+      },
+      "source_excerpt": "The residential Comprehensive Sc.M. in Providence uses an eight-course graduate study plan. The department describes flexibility across several computing areas.",
+      "fact_summary": "The residential Comprehensive Sc.M. in Providence uses an eight-course graduate study plan. The department describes flexibility across several computing areas.",
+      "title": "Brown CS Comprehensive Track",
+      "source_type": "official_program",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Track overview and requirements",
+      "field_groups": [
+        "identity",
+        "goal_features"
+      ],
+      "snapshot_path": "data/snapshots/community-a-minus-brown-scmcs--brown-program--dp-official.json",
+      "content_hash": "7a0481334d2ae531cc8349943d23b0534986d3dcee5e8a1b50b6ee670d48b48b"
+    },
+    {
+      "source_id": "community-a-minus-brown-scmcs--brown-apply--dp-official",
+      "program_id": "community-a-minus-brown-scmcs",
+      "url": "https://cs.brown.edu/degrees/masters/applications/",
+      "retrieved_at": "2026-11-23T20:33:35.883692+00:00",
+      "raw_response_sha256": "9b8d6ab0d986aaf44e0a16fc251c18aa58520daaf03de05e1a0f1fccdefea414",
+      "verified_values": {
+        "gre": {
+          "gre_policy": "not_required"
+        },
+        "english_policy": {
+          "notes.0": "English testing: Brown requires TOEFL or IELTS for applicants covered by its English testing policy. Exemptions and applicable scores need individual review."
+        },
+        "directory_policies": {
+          "notes.0": "English testing: Brown requires TOEFL or IELTS for applicants covered by its English testing policy. Exemptions and applicable scores need individual review."
+        }
+      },
+      "source_excerpt": "Applicants may submit GRE results. Brown's English test requirement has exemptions and lists TOEFL and IELTS.",
+      "fact_summary": "Applicants may submit GRE results. Brown's English test requirement has exemptions and lists TOEFL and IELTS.",
+      "title": "Applying to Brown's CS master's program",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Application Requirements and Applying",
+      "field_groups": [
+        "gre",
+        "english_policy",
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-a-minus-brown-scmcs--brown-apply--dp-official.json",
+      "content_hash": "0f8d09034e06990381afa90998aa1842b57fd3ccee0ec4e99f31ecdfa87aaf3c"
+    },
+    {
+      "source_id": "community-a-minus-brown-scmcs--brown-overview--dp-official",
+      "program_id": "community-a-minus-brown-scmcs",
+      "url": "https://cs.brown.edu/degrees/masters/",
+      "retrieved_at": "2026-11-23T20:33:35.926400+00:00",
+      "raw_response_sha256": "ee3d892a1175b851064317dcb23f22e4e93289b472a4aa2899836727d54c5ebb",
+      "verified_values": {
+        "directory_policies": {
+          "notes.1": "Application cycle: The Comprehensive track accepts spring and fall entrants. Brown lists January 15 on the degree overview. Confirm the exact intake-specific cutoff in the application portal.",
+          "notes.2": "DP comparison: Historical admission reports through Fall 2026 refer to the residential program. The new AI/ML route has its own scope."
+        }
+      },
+      "source_excerpt": "The department lists spring and fall entry and January 15 on the general degree page. The Fall 2027 AI/ML option has separate residential and online routes.",
+      "fact_summary": "The department lists spring and fall entry and January 15 on the general degree page. The Fall 2027 AI/ML option has separate residential and online routes.",
+      "title": "Brown CS graduate program overview",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Key program information and academic tracks",
+      "field_groups": [
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-a-minus-brown-scmcs--brown-overview--dp-official.json",
+      "content_hash": "861b355a852a204c0348e3e3d208e9ec43a3fe6c9ef91c1bb3dc0c7aa0bec4c5"
+    },
+    {
+      "source_id": "community-a-minus-brown-scmcs--brown-rates--dp-official",
+      "program_id": "community-a-minus-brown-scmcs",
+      "url": "https://sfs.brown.edu/tuition-and-fees/graduate",
+      "retrieved_at": "2026-11-23T20:34:06.039451+00:00",
+      "raw_response_sha256": "e670d9e4462985758df6710f235fcaaf9bb5243a212a00da25087ea975b3d399",
+      "verified_values": {
+        "tuition": {
+          "tuition": {
+            "currency": "USD",
+            "basis": "full_program",
+            "unit_rate_lower": "87816",
+            "unit_rate_upper": "87816",
+            "required_units_lower": null,
+            "required_units_upper": null,
+            "rate_year": "2026-27",
+            "guaranteed_for_intake": null,
+            "mandatory_fees_usd": null,
+            "assumptions": [
+              "Eight courses at USD 10,977 each, using the 2026–27 published rate.",
+              "Residential Comprehensive track. Fees, living costs and future rate changes are excluded."
+            ],
+            "additional_required_tuition_lower_usd": "0",
+            "additional_required_tuition_upper_usd": "0"
+          }
+        }
+      },
+      "source_excerpt": "Student Financial Services estimates USD 87,816 for the eight-course Computer Science ScM using the USD 10,977 per-course rate.",
+      "fact_summary": "Student Financial Services estimates USD 87,816 for the eight-course Computer Science ScM using the USD 10,977 per-course rate.",
+      "title": "Brown graduate master's tuition",
+      "source_type": "official_tuition",
+      "applicable_intake": null,
+      "effective_period": "2026-27",
+      "verification_status": "verified",
+      "locator": "2026–2027 Computer Science ScM program row",
+      "field_groups": [
+        "tuition"
+      ],
+      "snapshot_path": "data/snapshots/community-a-minus-brown-scmcs--brown-rates--dp-official.json",
+      "content_hash": "18ac8f3a70c6aafc9a08b0e726eb877dd50349ef19bf149e2715b94d1232b538"
+    },
+    {
+      "source_id": "community-b-plus-nwu-mscs--northwestern-program--dp-official",
+      "program_id": "community-b-plus-nwu-mscs",
+      "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/curriculum.html",
+      "retrieved_at": "2026-11-23T20:33:35.757591+00:00",
+      "raw_response_sha256": "5311e20b5be809de9ca70d6fd2039a65d7e4c40f3ec232adbb58210e03f5ea23",
+      "verified_values": {
+        "identity": {
+          "university": "Northwestern University",
+          "program_name": "Computer Science",
+          "degree": "MS",
+          "campus": "Evanston",
+          "track": "On-campus MS, thesis/project/course options",
+          "official_url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/curriculum.html",
+          "candidate_source_id": "b-plus-nwu-mscs"
+        },
+        "credits": {
+          "required_credits": "12"
+        },
+        "goal_features": {
+          "goal_features": [
+            {
+              "feature_id": "nwu-thesis-project",
+              "goal": "mixed",
+              "statement": "The department offers a thesis or faculty-supervised project alongside the coursework-only route.",
+              "source_ids": [
+                "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+              ]
+            }
+          ]
+        },
+        "tuition_upper": {
+          "tuition.required_units_lower": null,
+          "tuition.required_units_upper": "4"
+        }
+      },
+      "source_excerpt": "The department requires 12 graduate units and describes a usual three-to-four-quarter schedule. Eligible students can do a thesis or project.",
+      "fact_summary": "The department requires 12 graduate units and describes a usual three-to-four-quarter schedule. Eligible students can do a thesis or project.",
+      "title": "Northwestern CS MS curriculum",
+      "source_type": "official_program",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "MS Program Requirements and Residency Requirement",
+      "field_groups": [
+        "identity",
+        "credits",
+        "goal_features",
+        "tuition_upper"
+      ],
+      "snapshot_path": "data/snapshots/community-b-plus-nwu-mscs--northwestern-program--dp-official.json",
+      "content_hash": "1f894b7040f990309545894b859679256a5999b637b0eee43945e166c6ac52fb"
+    },
+    {
+      "source_id": "community-b-plus-nwu-mscs--northwestern-apply--dp-official",
+      "program_id": "community-b-plus-nwu-mscs",
+      "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/admissions/",
+      "retrieved_at": "2026-11-23T20:33:35.760589+00:00",
+      "raw_response_sha256": "0f7df3139dd0e39a85ef63767f3695d377690811c57cdf328c520cb1eb8252c6",
+      "verified_values": {
+        "intake": {
+          "supported_intakes": [
+            {
+              "year": 2027,
+              "term": "fall"
+            }
+          ]
+        },
+        "deadline": {
+          "deadlines": [
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2026-11-30",
+              "label": "MS decision round",
+              "audience": "all"
+            },
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2026-12-31",
+              "label": "MS decision round",
+              "audience": "all"
+            },
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2027-02-28",
+              "label": "MS decision round",
+              "audience": "all"
+            },
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2027-06-15",
+              "label": "Listed late MS decision round, if space remains",
+              "audience": "all"
+            }
+          ],
+          "deadline_schedule_complete": false
+        },
+        "directory_policies": {
+          "notes.0": "Application availability: Northwestern may close the Fall 2027 MS application portal early if the cohort fills."
+        }
+      },
+      "source_excerpt": "The Fall 2027 MS schedule lists November 30, December 31, February 28 and June 15 decision rounds, with possible earlier closure when space fills.",
+      "fact_summary": "The Fall 2027 MS schedule lists November 30, December 31, February 28 and June 15 decision rounds, with possible earlier closure when space fills.",
+      "title": "Northwestern CS graduate admissions",
+      "source_type": "official_admissions",
+      "applicable_intake": "2027-fall",
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Fall 2027 MS decision schedule",
+      "field_groups": [
+        "intake",
+        "deadline",
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-b-plus-nwu-mscs--northwestern-apply--dp-official.json",
+      "content_hash": "9d93c97f4886fbcb420232ced3fb1a939c54909f86a36c5109d4ceeb295d99c0"
+    },
+    {
+      "source_id": "community-b-plus-nwu-mscs--northwestern-faq--dp-official",
+      "program_id": "community-b-plus-nwu-mscs",
+      "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/admissions/faq.html",
+      "retrieved_at": "2026-11-23T20:33:37.095228+00:00",
+      "raw_response_sha256": "fb74e11ea278bbbcf194e9b4a6668f10a4b216e15867d83a95e12ff722e3d1f6",
+      "verified_values": {
+        "gre": {
+          "gre_policy": "not_required"
+        },
+        "directory_policies": {
+          "notes.1": "Coursework preparation: The department describes CS-minor-equivalent preparation for competitive applicants. A CS undergraduate degree is optional."
+        }
+      },
+      "source_excerpt": "MS applicants can apply without the GRE or a CS undergraduate major. The department describes preparation equivalent to a CS minor for competitive candidates.",
+      "fact_summary": "MS applicants can apply without the GRE or a CS undergraduate major. The department describes preparation equivalent to a CS minor for competitive candidates.",
+      "title": "Northwestern CS graduate admissions FAQ",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "GRE and undergraduate background",
+      "field_groups": [
+        "gre",
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-b-plus-nwu-mscs--northwestern-faq--dp-official.json",
+      "content_hash": "7233e3d2cf6058c1b6454cb654cb4beea2aa415fd0bb3390e142856b7fc208c9"
+    },
+    {
+      "source_id": "community-b-plus-nwu-mscs--northwestern-rates--dp-official",
+      "program_id": "community-b-plus-nwu-mscs",
+      "url": "https://www.northwestern.edu/sfs/tuition/graduate/tgs.html",
+      "retrieved_at": "2026-11-23T20:34:06.412039+00:00",
+      "raw_response_sha256": "237ff38ccc26098365300e86cfe9cf46422c3b39b863e2fb3610c0909104dd86",
+      "verified_values": {
+        "tuition": {
+          "tuition": {
+            "currency": "USD",
+            "basis": "per_term",
+            "unit_rate_lower": null,
+            "unit_rate_upper": "23662",
+            "required_units_lower": null,
+            "required_units_upper": "4",
+            "rate_year": "2026-27",
+            "guaranteed_for_intake": null,
+            "mandatory_fees_usd": null,
+            "assumptions": [
+              "Conservative ceiling at the 2026–27 full-time master's rate over four usual quarters.",
+              "Fewer quarters or different registration may cost less. Fees, living costs and future rate changes are excluded."
+            ],
+            "additional_required_tuition_lower_usd": "0",
+            "additional_required_tuition_upper_usd": "0"
+          }
+        },
+        "tuition_upper": {
+          "tuition.currency": "USD",
+          "tuition.basis": "per_term",
+          "tuition.unit_rate_lower": null,
+          "tuition.unit_rate_upper": "23662",
+          "tuition.rate_year": "2026-27",
+          "tuition.assumptions": [
+            "Conservative ceiling at the 2026–27 full-time master's rate over four usual quarters.",
+            "Fewer quarters or different registration may cost less. Fees, living costs and future rate changes are excluded."
+          ]
+        }
+      },
+      "source_excerpt": "The Graduate School publishes USD 23,662 per quarter for full-time master's enrollment at three to four units.",
+      "fact_summary": "The Graduate School publishes USD 23,662 per quarter for full-time master's enrollment at three to four units.",
+      "title": "Northwestern The Graduate School tuition",
+      "source_type": "official_tuition",
+      "applicable_intake": null,
+      "effective_period": "2026-27",
+      "verification_status": "verified",
+      "locator": "2026–27 Master's Full-time Tuition",
+      "field_groups": [
+        "tuition",
+        "tuition_upper"
+      ],
+      "snapshot_path": "data/snapshots/community-b-plus-nwu-mscs--northwestern-rates--dp-official.json",
+      "content_hash": "b72a7da22bdd5a599d46326b0dc87c7ee4e96d778be236cd34bf2199bd747d52"
+    },
+    {
+      "source_id": "community-ss-cmu-mscs--cmu-program--dp-official",
+      "program_id": "community-ss-cmu-mscs",
+      "url": "https://csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+      "retrieved_at": "2026-11-23T20:33:36.418068+00:00",
+      "raw_response_sha256": "a871977acc2c4d5737c7be92a1f51c8d59c072b4c4df65c6a64679857df4bbbb",
+      "verified_values": {
+        "identity": {
+          "university": "Carnegie Mellon University",
+          "program_name": "Computer Science",
+          "degree": "MS",
+          "campus": "Pittsburgh",
+          "track": "On-campus MSCS",
+          "official_url": "https://csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+          "candidate_source_id": "ss-cmu-mscs"
+        },
+        "goal_features": {
+          "goal_features": [
+            {
+              "feature_id": "cmu-mscs-curriculum",
+              "goal": "mixed",
+              "statement": "The flexible curriculum spans systems, theoretical foundations and artificial intelligence. The department describes three or four semesters depending on preparation.",
+              "source_ids": [
+                "community-ss-cmu-mscs--cmu-program--dp-official"
+              ]
+            }
+          ]
+        }
+      },
+      "source_excerpt": "The Computer Science Department offers its Pittsburgh MSCS with an individualized curriculum in systems, theory and AI. Preparation affects whether the usual duration is three or four semesters.",
+      "fact_summary": "The Computer Science Department offers its Pittsburgh MSCS with an individualized curriculum in systems, theory and AI. Preparation affects whether the usual duration is three or four semesters.",
+      "title": "Carnegie Mellon MS in Computer Science",
+      "source_type": "official_program",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Program overview and curriculum requirements",
+      "field_groups": [
+        "identity",
+        "goal_features"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-cmu-mscs--cmu-program--dp-official.json",
+      "content_hash": "25edc961517b97568cc24bb0c82a30022ab1489f17133dc0172db7a24c324486"
+    },
+    {
+      "source_id": "community-ss-cmu-mscs--cmu-apply--dp-official",
+      "program_id": "community-ss-cmu-mscs",
+      "url": "https://csd.cs.cmu.edu/academics/masters/admissions",
+      "retrieved_at": "2026-11-23T20:33:36.331838+00:00",
+      "raw_response_sha256": "11ba7a6cb1bec804c6d0025ee6d817784357c53da607104578b37e0e9f58022d",
+      "verified_values": {
+        "intake": {
+          "supported_intakes": [
+            {
+              "year": 2027,
+              "term": "fall"
+            }
+          ]
+        },
+        "deadline": {
+          "deadlines": [
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2026-11-18",
+              "label": "Early application, 3 p.m. Eastern",
+              "audience": "all"
+            },
+            {
+              "intake": {
+                "year": 2027,
+                "term": "fall"
+              },
+              "date": "2026-12-09",
+              "label": "Final application, 3 p.m. Eastern",
+              "audience": "all"
+            }
+          ],
+          "deadline_schedule_complete": true
+        },
+        "gre": {
+          "gre_policy": "not_required"
+        },
+        "english_policy": {
+          "notes.1": "English testing: CMU lists TOEFL, IELTS and Duolingo for the applicable visa and language group. Check the school-wide score requirements and test conditions."
+        },
+        "directory_policies": {
+          "notes.0": "GRE recommendation: Scores are strongly recommended. The department asks applicants omitting scores to explain why in the statement of purpose.",
+          "notes.1": "English testing: CMU lists TOEFL, IELTS and Duolingo for the applicable visa and language group. Check the school-wide score requirements and test conditions."
+        }
+      },
+      "source_excerpt": "Fall MSCS entry uses November 18 and December 9, 2026 rounds at 3 p.m. Eastern. The GRE is strongly encouraged, with an explanation requested when scores are omitted.",
+      "fact_summary": "Fall MSCS entry uses November 18 and December 9, 2026 rounds at 3 p.m. Eastern. The GRE is strongly encouraged, with an explanation requested when scores are omitted.",
+      "title": "Carnegie Mellon MSCS admissions",
+      "source_type": "official_admissions",
+      "applicable_intake": "2027-fall",
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "MSCS Admissions and Application Process",
+      "field_groups": [
+        "intake",
+        "deadline",
+        "gre",
+        "english_policy",
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-cmu-mscs--cmu-apply--dp-official.json",
+      "content_hash": "205168aa8953543409c32ae6183eda946feeb44c7466aa130cacbcbfdd41426e"
+    },
+    {
+      "source_id": "community-ss-uiuc-mscs--uiuc-program--dp-official",
+      "program_id": "community-ss-uiuc-mscs",
+      "url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "retrieved_at": "2026-11-23T20:33:36.572223+00:00",
+      "raw_response_sha256": "2e3f3a416eaa0fbffca22162d48e837b95f26d2dec023ff76955d8b0454d0eb3",
+      "verified_values": {
+        "identity": {
+          "university": "University of Illinois Urbana-Champaign",
+          "program_name": "Computer Science",
+          "degree": "MS",
+          "campus": "Urbana-Champaign",
+          "track": "On-campus research MS, thesis required",
+          "official_url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+          "candidate_source_id": "ss-uiuc-mscs"
+        },
+        "credits": {
+          "required_credits": "32"
+        },
+        "goal_features": {
+          "goal_features": [
+            {
+              "feature_id": "uiuc-thesis",
+              "goal": "research",
+              "statement": "A research-oriented program with 28 coursework credits plus four thesis credits and a faculty thesis advisor.",
+              "source_ids": [
+                "community-ss-uiuc-mscs--uiuc-program--dp-official"
+              ]
+            }
+          ]
+        }
+      },
+      "source_excerpt": "The Urbana thesis MS comprises 28 credit hours of coursework and four thesis credit hours. A faculty advisor supervises thesis research.",
+      "fact_summary": "The Urbana thesis MS comprises 28 credit hours of coursework and four thesis credit hours. A faculty advisor supervises thesis research.",
+      "title": "Illinois Computer Science MS Program",
+      "source_type": "official_program",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Degree Requirements and Additional Requirements",
+      "field_groups": [
+        "identity",
+        "credits",
+        "goal_features"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-uiuc-mscs--uiuc-program--dp-official.json",
+      "content_hash": "ee52d023c39b9a20845bf1d6d2297a1c2776d86a06fb1513fc147fb940780ccf"
+    },
+    {
+      "source_id": "community-ss-uiuc-mscs--uiuc-apply--dp-official",
+      "program_id": "community-ss-uiuc-mscs",
+      "url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+      "retrieved_at": "2026-11-23T20:33:36.514243+00:00",
+      "raw_response_sha256": "125a92fb86cb4b8137cef2d9bb1c9902eb1ca4894cabcd0ccf94245a7f35cfb3",
+      "verified_values": {
+        "gre": {
+          "gre_policy": "not_required"
+        },
+        "directory_policies": {
+          "notes.1": "Prior graduate degree: An equivalent computer science or computer engineering master's degree can make an applicant ineligible. The university determines equivalency.",
+          "notes.2": "Reference letters: The department requires three letters for the thesis MS."
+        }
+      },
+      "source_excerpt": "The thesis MS requires three letters. GRE scores are optional and recommended. The school excludes prior equivalent master's degrees in CS or computer engineering.",
+      "fact_summary": "The thesis MS requires three letters. GRE scores are optional and recommended. The school excludes prior equivalent master's degrees in CS or computer engineering.",
+      "title": "Illinois Siebel graduate application requirements",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Eligibility, letters and GRE",
+      "field_groups": [
+        "gre",
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-uiuc-mscs--uiuc-apply--dp-official.json",
+      "content_hash": "271863e4776beaef6b2f10216a589a06e1182a4a7060fb1828236fab4441fec3"
+    },
+    {
+      "source_id": "community-ss-uiuc-mscs--uiuc-deadlines--dp-official",
+      "program_id": "community-ss-uiuc-mscs",
+      "url": "https://siebelschool.illinois.edu/admissions/graduate/application-deadlines",
+      "retrieved_at": "2026-11-23T20:33:36.841527+00:00",
+      "raw_response_sha256": "ac450c8394aeaf28133dabc6f35b7c843bd156b1337550c2a74af51a43f6d036",
+      "verified_values": {
+        "directory_policies": {
+          "notes.0": "Application cycle: The department lists December 1 for fall entry in its recurring thesis MS schedule. Confirm the cutoff for the selected intake."
+        }
+      },
+      "source_excerpt": "The recurring table gives December 1 for fall MS in Computer Science applications. Its Urbana MCS dates are separately listed.",
+      "fact_summary": "The recurring table gives December 1 for fall MS in Computer Science applications. Its Urbana MCS dates are separately listed.",
+      "title": "Illinois Siebel application deadlines",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "MS in Computer Science row",
+      "field_groups": [
+        "directory_policies"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-uiuc-mscs--uiuc-deadlines--dp-official.json",
+      "content_hash": "d847accd7973ed4ded1121d55040b2aae81cd1e361c342d27b752ec06f977aa5"
+    },
+    {
+      "source_id": "community-ss-uiuc-mscs--uiuc-gpa--dp-official",
+      "program_id": "community-ss-uiuc-mscs",
+      "url": "https://grad.illinois.edu/admissions/graduate-admissions-minimum-requirements",
+      "retrieved_at": "2026-11-23T20:33:36.731763+00:00",
+      "raw_response_sha256": "a9c5b5974de5530d5ef2408390e962abc65f7a3390315662e9fae85c334d7ab1",
+      "verified_values": {
+        "degree": {
+          "degree_required": true,
+          "accepted_degree_fields": []
+        },
+        "gpa": {
+          "gpa": {
+            "minimum": "3.0",
+            "recommended": null,
+            "scale": "4",
+            "accepted_scopes": [
+              "last_two_years"
+            ],
+            "below_minimum_review_possible": true,
+            "no_hard_minimum": false
+          }
+        }
+      },
+      "source_excerpt": "The Graduate College uses a bachelor's degree or equivalent and a 3.0/4.0 baseline over the last two undergraduate years. Certain sub-threshold applications can be reviewed individually.",
+      "fact_summary": "The Graduate College uses a bachelor's degree or equivalent and a 3.0/4.0 baseline over the last two undergraduate years. Certain sub-threshold applications can be reviewed individually.",
+      "title": "Illinois Graduate College minimum requirements",
+      "source_type": "official_admissions",
+      "applicable_intake": null,
+      "effective_period": null,
+      "verification_status": "verified",
+      "locator": "Minimum requirements and limited status",
+      "field_groups": [
+        "degree",
+        "gpa"
+      ],
+      "snapshot_path": "data/snapshots/community-ss-uiuc-mscs--uiuc-gpa--dp-official.json",
+      "content_hash": "aee9f1ae34e18840e7a6d24c085b63db96ae705a0e84eb49720c923fb79a331b"
+    }
+  ]
+}

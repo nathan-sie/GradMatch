@@ -157,8 +157,9 @@ def test_cornell_department_speaking_floor_overrides_general_table_without_a_fal
 
 
 def test_directory_distinguishes_current_fields_from_immutable_history():
-    document=build_directory(*load_seed());row=next(r for r in document['records'] if r['linked_program_id']=='uci-mcs-irvine')
-    assert document['total']==83 and document['official_records']==20
+    programs, sources = load_seed()
+    document=build_directory(programs, sources);row=next(r for r in document['records'] if r['linked_program_id']=='uci-mcs-irvine')
+    assert document['total']==83 and document['official_records']==len(programs)
     assert any('prerequisites' in s['historical_field_groups'] for s in row['official_sources'])
     assert 'Prerequisites' in row['verified_fields'] and 'Other eligibility' in row['verified_fields']
     assert not row['recommendation_eligible']

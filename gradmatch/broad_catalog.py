@@ -7,6 +7,7 @@ import json
 
 from gradmatch.admission_history import OPENCS_TIER_FLOORS, PLANNING_TIERS, apply_opencs_grades, planning_tier
 from gradmatch.community import application_fee_label
+from gradmatch.constraints import applicable_deadline_rounds
 from gradmatch.ranking import retrieve
 from gradmatch.schemas import ProgramRecord
 from gradmatch.storage import PROJECT_ROOT
@@ -169,7 +170,12 @@ def screen_program(profile, program, report, context, *, as_of):
 
     deadline = official.get('deadline')
     next_round = None
-    if deadline and deadline.status in {'pass', 'fail'}:
+    official_rounds = applicable_deadline_rounds(profile, program) if deadline and deadline.source_ids else []
+    if official_rounds:
+        upcoming = min((round_ for round_ in official_rounds if round_.date >= as_of),
+                       key=lambda round_: round_.date, default=None)
+        if upcoming is not None:
+            next_round = {'date': upcoming.date.isoformat(), 'label': upcoming.label, 'basis': 'reviewed_official'}
         add('deadline', deadline.status.value, deadline.explanation, 'reviewed_official')
     elif not same_cycle:
         add('deadline', 'unknown', 'No tracker deadline is carried over to another intake.')

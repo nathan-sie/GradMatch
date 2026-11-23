@@ -23,6 +23,7 @@ from gradmatch.storage import PROJECT_ROOT, connect_read_only
 
 INDEX = PROJECT_ROOT / "data/review/m61_candidate_index.json"
 LINKS = PROJECT_ROOT / "data/review/m61j_review_plan.json"
+DP_OFFICIAL_LINKS = PROJECT_ROOT / "data/review/dp_official_links.json"
 DIRECTORY_VERSION = "M6.2"
 REVIEW_DATE = date(2026, 11, 21)
 UNKNOWN = "Needs verification"
@@ -93,7 +94,9 @@ def _safe_url(value):
 def build_directory(programs, sources, index=None, links=None):
     """Keep all upstream identities; only explicit reviewed links supply official facts."""
     index = index if index is not None else json.loads(INDEX.read_text(encoding="utf-8"))
-    links = links if links is not None else json.loads(LINKS.read_text(encoding="utf-8"))
+    if links is None:
+        links = json.loads(LINKS.read_text(encoding="utf-8"))
+        links["catalog_links"] += json.loads(DP_OFFICIAL_LINKS.read_text(encoding="utf-8"))["catalog_links"]
     community = load_community(index)
     community_by_id = {r['source_id']: r for r in community['rows']}
     candidates = index["rows"]

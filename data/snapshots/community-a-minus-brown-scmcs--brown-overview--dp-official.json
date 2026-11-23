@@ -1,0 +1,13 @@
+{
+  "url": "https://cs.brown.edu/degrees/masters/",
+  "retrieved_at": "2026-11-23T20:33:35.926400+00:00",
+  "raw_response_sha256": "ee3d892a1175b851064317dcb23f22e4e93289b472a4aa2899836727d54c5ebb",
+  "verified_values": {
+    "directory_policies": {
+      "notes.1": "Application cycle: The Comprehensive track accepts spring and fall entrants. Brown lists January 15 on the degree overview. Confirm the exact intake-specific cutoff in the application portal.",
+      "notes.2": "DP comparison: Historical admission reports through Fall 2026 refer to the residential program. The new AI/ML route has its own scope."
+    }
+  },
+  "source_excerpt": "The department lists spring and fall entry and January 15 on the general degree page. The Fall 2027 AI/ML option has separate residential and online routes.",
+  "fact_summary": "The department lists spring and fall entry and January 15 on the general degree page. The Fall 2027 AI/ML option has separate residential and online routes."
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://siebelschool.illinois.edu/admissions/graduate/applications-process-requirements",
+  "retrieved_at": "2026-11-23T20:33:36.514243+00:00",
+  "raw_response_sha256": "125a92fb86cb4b8137cef2d9bb1c9902eb1ca4894cabcd0ccf94245a7f35cfb3",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.1": "Prior graduate degree: An equivalent computer science or computer engineering master's degree can make an applicant ineligible. The university determines equivalency.",
+      "notes.2": "Reference letters: The department requires three letters for the thesis MS."
+    }
+  },
+  "source_excerpt": "The thesis MS requires three letters. GRE scores are optional and recommended. The school excludes prior equivalent master's degrees in CS or computer engineering.",
+  "fact_summary": "The thesis MS requires three letters. GRE scores are optional and recommended. The school excludes prior equivalent master's degrees in CS or computer engineering."
+}

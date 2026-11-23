@@ -38,6 +38,15 @@ def current_seed() -> Path:
 def load_seed(path: Path | None = None) -> tuple[list[ProgramRecord], dict[str, SourceRecord]]:
     path = Path(path) if path is not None else current_seed()
     document = json.loads(Path(path).read_text(encoding="utf-8"))
+    if base_name := document.get("base_seed"):
+        base_path = (path.parent / base_name).resolve()
+        if base_path.parent != path.parent.resolve() or base_path.suffix != ".json" or base_path == path.resolve():
+            raise ValueError("A catalog extension must name a different seed in the same directory.")
+        base = json.loads(base_path.read_text(encoding="utf-8"))
+        if "base_seed" in base:
+            raise ValueError("A catalog extension requires a standalone base seed.")
+        for collection in ("programs", "sources"):
+            document[collection] = base[collection] + document[collection]
     programs = [ProgramRecord.model_validate(row) for row in document["programs"]]
     source_list = [SourceRecord.model_validate(row) for row in document["sources"]]
     if len({program.program_id for program in programs}) != len(programs):

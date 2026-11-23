@@ -1,0 +1,30 @@
+{
+  "url": "https://csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+  "retrieved_at": "2026-11-23T20:33:36.418068+00:00",
+  "raw_response_sha256": "a871977acc2c4d5737c7be92a1f51c8d59c072b4c4df65c6a64679857df4bbbb",
+  "verified_values": {
+    "identity": {
+      "university": "Carnegie Mellon University",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Pittsburgh",
+      "track": "On-campus MSCS",
+      "official_url": "https://csd.cs.cmu.edu/academics/masters/ms-in-computer-science",
+      "candidate_source_id": "ss-cmu-mscs"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "cmu-mscs-curriculum",
+          "goal": "mixed",
+          "statement": "The flexible curriculum spans systems, theoretical foundations and artificial intelligence. The department describes three or four semesters depending on preparation.",
+          "source_ids": [
+            "community-ss-cmu-mscs--cmu-program--dp-official"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "The Computer Science Department offers its Pittsburgh MSCS with an individualized curriculum in systems, theory and AI. Preparation affects whether the usual duration is three or four semesters.",
+  "fact_summary": "The Computer Science Department offers its Pittsburgh MSCS with an individualized curriculum in systems, theory and AI. Preparation affects whether the usual duration is three or four semesters."
+}

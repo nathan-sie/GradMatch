@@ -1,0 +1,61 @@
+{
+  "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/admissions/",
+  "retrieved_at": "2026-11-23T20:33:35.760589+00:00",
+  "raw_response_sha256": "0f7df3139dd0e39a85ef63767f3695d377690811c57cdf328c520cb1eb8252c6",
+  "verified_values": {
+    "intake": {
+      "supported_intakes": [
+        {
+          "year": 2027,
+          "term": "fall"
+        }
+      ]
+    },
+    "deadline": {
+      "deadlines": [
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-11-30",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2026-12-31",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-02-28",
+          "label": "MS decision round",
+          "audience": "all"
+        },
+        {
+          "intake": {
+            "year": 2027,
+            "term": "fall"
+          },
+          "date": "2027-06-15",
+          "label": "Listed late MS decision round, if space remains",
+          "audience": "all"
+        }
+      ],
+      "deadline_schedule_complete": false
+    },
+    "directory_policies": {
+      "notes.0": "Application availability: Northwestern may close the Fall 2027 MS application portal early if the cohort fills."
+    }
+  },
+  "source_excerpt": "The Fall 2027 MS schedule lists November 30, December 31, February 28 and June 15 decision rounds, with possible earlier closure when space fills.",
+  "fact_summary": "The Fall 2027 MS schedule lists November 30, December 31, February 28 and June 15 decision rounds, with possible earlier closure when space fills."
+}

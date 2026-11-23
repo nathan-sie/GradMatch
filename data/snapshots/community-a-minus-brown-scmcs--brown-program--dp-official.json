@@ -1,0 +1,30 @@
+{
+  "url": "https://cs.brown.edu/degrees/masters/reqs/",
+  "retrieved_at": "2026-11-23T20:33:35.837257+00:00",
+  "raw_response_sha256": "5c437d42d37dea206e6dd27e7b581f45a7374a2a96e67051e60bde3d4e5b2e6c",
+  "verified_values": {
+    "identity": {
+      "university": "Brown University",
+      "program_name": "Computer Science",
+      "degree": "Sc.M.",
+      "campus": "Providence",
+      "track": "Residential Comprehensive track",
+      "official_url": "https://cs.brown.edu/degrees/masters/reqs/",
+      "candidate_source_id": "a-minus-brown-scmcs"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "brown-comprehensive-curriculum",
+          "goal": "mixed",
+          "statement": "An eight-course curriculum combines CS pathways with flexibility to choose advanced electives aligned with the student's goals.",
+          "source_ids": [
+            "community-a-minus-brown-scmcs--brown-program--dp-official"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "The residential Comprehensive Sc.M. in Providence uses an eight-course graduate study plan. The department describes flexibility across several computing areas.",
+  "fact_summary": "The residential Comprehensive Sc.M. in Providence uses an eight-course graduate study plan. The department describes flexibility across several computing areas."
+}

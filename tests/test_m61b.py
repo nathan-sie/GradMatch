@@ -106,7 +106,7 @@ def test_stale_local_database_uses_new_cache_without_modifying_old_file(tmp_path
     monkeypatch.delenv('GRADMATCH_DB_PATH', raising=False)
     monkeypatch.setenv('GRADMATCH_PUBLIC_CACHE_DIR', str(tmp_path / 'cache'))
     current = resolve_app_database()
-    assert current != legacy and len(read_catalog(current)[0]) == len(load_seed(DEFAULT_SEED)[0])
+    assert current != legacy and read_catalog(current)[0] == sorted(load_seed()[0], key=lambda p: p.program_id)
     assert hashlib.sha256(legacy.read_bytes()).hexdigest() == before
     # Explicit database selections retain their original, user-chosen semantics.
     monkeypatch.setenv('GRADMATCH_DB_PATH', str(legacy))

@@ -1,0 +1,37 @@
+{
+  "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/curriculum.html",
+  "retrieved_at": "2026-11-23T20:33:35.757591+00:00",
+  "raw_response_sha256": "5311e20b5be809de9ca70d6fd2039a65d7e4c40f3ec232adbb58210e03f5ea23",
+  "verified_values": {
+    "identity": {
+      "university": "Northwestern University",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Evanston",
+      "track": "On-campus MS, thesis/project/course options",
+      "official_url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/masters/curriculum.html",
+      "candidate_source_id": "b-plus-nwu-mscs"
+    },
+    "credits": {
+      "required_credits": "12"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "nwu-thesis-project",
+          "goal": "mixed",
+          "statement": "The department offers a thesis or faculty-supervised project alongside the coursework-only route.",
+          "source_ids": [
+            "community-b-plus-nwu-mscs--northwestern-program--dp-official"
+          ]
+        }
+      ]
+    },
+    "tuition_upper": {
+      "tuition.required_units_lower": null,
+      "tuition.required_units_upper": "4"
+    }
+  },
+  "source_excerpt": "The department requires 12 graduate units and describes a usual three-to-four-quarter schedule. Eligible students can do a thesis or project.",
+  "fact_summary": "The department requires 12 graduate units and describes a usual three-to-four-quarter schedule. Eligible students can do a thesis or project."
+}

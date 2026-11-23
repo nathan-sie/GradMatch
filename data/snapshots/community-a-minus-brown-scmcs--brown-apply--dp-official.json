@@ -1,0 +1,18 @@
+{
+  "url": "https://cs.brown.edu/degrees/masters/applications/",
+  "retrieved_at": "2026-11-23T20:33:35.883692+00:00",
+  "raw_response_sha256": "9b8d6ab0d986aaf44e0a16fc251c18aa58520daaf03de05e1a0f1fccdefea414",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "english_policy": {
+      "notes.0": "English testing: Brown requires TOEFL or IELTS for applicants covered by its English testing policy. Exemptions and applicable scores need individual review."
+    },
+    "directory_policies": {
+      "notes.0": "English testing: Brown requires TOEFL or IELTS for applicants covered by its English testing policy. Exemptions and applicable scores need individual review."
+    }
+  },
+  "source_excerpt": "Applicants may submit GRE results. Brown's English test requirement has exemptions and lists TOEFL and IELTS.",
+  "fact_summary": "Applicants may submit GRE results. Brown's English test requirement has exemptions and lists TOEFL and IELTS."
+}

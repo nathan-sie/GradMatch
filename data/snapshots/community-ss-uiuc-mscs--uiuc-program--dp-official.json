@@ -1,0 +1,33 @@
+{
+  "url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+  "retrieved_at": "2026-11-23T20:33:36.572223+00:00",
+  "raw_response_sha256": "2e3f3a416eaa0fbffca22162d48e837b95f26d2dec023ff76955d8b0454d0eb3",
+  "verified_values": {
+    "identity": {
+      "university": "University of Illinois Urbana-Champaign",
+      "program_name": "Computer Science",
+      "degree": "MS",
+      "campus": "Urbana-Champaign",
+      "track": "On-campus research MS, thesis required",
+      "official_url": "https://siebelschool.illinois.edu/academics/graduate/ms-program",
+      "candidate_source_id": "ss-uiuc-mscs"
+    },
+    "credits": {
+      "required_credits": "32"
+    },
+    "goal_features": {
+      "goal_features": [
+        {
+          "feature_id": "uiuc-thesis",
+          "goal": "research",
+          "statement": "A research-oriented program with 28 coursework credits plus four thesis credits and a faculty thesis advisor.",
+          "source_ids": [
+            "community-ss-uiuc-mscs--uiuc-program--dp-official"
+          ]
+        }
+      ]
+    }
+  },
+  "source_excerpt": "The Urbana thesis MS comprises 28 credit hours of coursework and four thesis credit hours. A faculty advisor supervises thesis research.",
+  "fact_summary": "The Urbana thesis MS comprises 28 credit hours of coursework and four thesis credit hours. A faculty advisor supervises thesis research."
+}

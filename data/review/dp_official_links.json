@@ -1,0 +1,20 @@
+{
+  "catalog_links": [
+    {
+      "candidate_source_id": "a-minus-brown-scmcs",
+      "program_id": "community-a-minus-brown-scmcs"
+    },
+    {
+      "candidate_source_id": "b-plus-nwu-mscs",
+      "program_id": "community-b-plus-nwu-mscs"
+    },
+    {
+      "candidate_source_id": "ss-cmu-mscs",
+      "program_id": "community-ss-cmu-mscs"
+    },
+    {
+      "candidate_source_id": "ss-uiuc-mscs",
+      "program_id": "community-ss-uiuc-mscs"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ from uuid import uuid4
 from gradmatch.admission_history import BUNDLED_PREVIEW_FILE
 from gradmatch.broad_catalog import OPENCS_GRADES_FILE, RESEARCH_PATHS_FILE
 from gradmatch.config import load_settings
+from gradmatch.directory import DP_OFFICIAL_LINKS
 from gradmatch.providers import OpenAIProvider
 from gradmatch.storage import PROJECT_ROOT
 from scripts.benchmark_runtime import STRATEGIES, evaluate_attempt, write_json
@@ -35,7 +36,7 @@ def engine_hash():
         'verify_broad_recommendations.py', 'm5_fixtures.py',
     ]]
     paths += [PROJECT_ROOT / 'config' / name for name in ['agent.json', 'app.json', 'ranking_rubric.md']]
-    paths.extend([RESEARCH_PATHS_FILE, BUNDLED_PREVIEW_FILE, OPENCS_GRADES_FILE])
+    paths.extend([RESEARCH_PATHS_FILE, BUNDLED_PREVIEW_FILE, OPENCS_GRADES_FILE, DP_OFFICIAL_LINKS])
     return hash_json({path.relative_to(PROJECT_ROOT).as_posix():
                       hashlib.sha256(path.read_text(encoding='utf-8').encode()).hexdigest() for path in paths})
 

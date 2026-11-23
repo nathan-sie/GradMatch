@@ -1,0 +1,15 @@
+{
+  "url": "https://www.mccormick.northwestern.edu/computer-science/academics/graduate/admissions/faq.html",
+  "retrieved_at": "2026-11-23T20:33:37.095228+00:00",
+  "raw_response_sha256": "fb74e11ea278bbbcf194e9b4a6668f10a4b216e15867d83a95e12ff722e3d1f6",
+  "verified_values": {
+    "gre": {
+      "gre_policy": "not_required"
+    },
+    "directory_policies": {
+      "notes.1": "Coursework preparation: The department describes CS-minor-equivalent preparation for competitive applicants. A CS undergraduate degree is optional."
+    }
+  },
+  "source_excerpt": "MS applicants can apply without the GRE or a CS undergraduate major. The department describes preparation equivalent to a CS minor for competitive candidates.",
+  "fact_summary": "MS applicants can apply without the GRE or a CS undergraduate major. The department describes preparation equivalent to a CS minor for competitive candidates."
+}

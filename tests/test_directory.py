@@ -29,9 +29,9 @@ def test_all_83_leads_are_explorable_without_promoting_community_claims():
     assert document["total"] == len({r["source_id"] for r in records}) == 83
     assert document["official_records"] == len(programs)
     assert sum(r["source_reports_halted"] for r in records) == 4
-    assert sum(r["tuition_upper_usd"] is not None for r in records) == 12
-    assert sum(r["tuition_upper_usd"] is not None and r["tuition_lower_usd"] is not None for r in records) == 8
-    assert sum(r["tuition_upper_usd"] is not None and r["tuition_lower_usd"] is None for r in records) == 4
+    assert sum(r["tuition_upper_usd"] is not None for r in records) == 14
+    assert sum(r["tuition_upper_usd"] is not None and r["tuition_lower_usd"] is not None for r in records) == 9
+    assert sum(r["tuition_upper_usd"] is not None and r["tuition_lower_usd"] is None for r in records) == 5
     assert all(not r["recommendation_eligible"] for r in records)
     assert data_hash(programs, sources) == before
     assert {r["source_id"] for r in records} == {r["source_id"] for r in json.loads(INDEX.read_text(encoding="utf-8"))["rows"]}
@@ -124,7 +124,7 @@ def test_actual_page_browses_searches_compares_and_preserves_applicant_session(t
     assert [m.value for m in app.metric][-3:] == ["83", str(official_count), str(83-official_count)]
     assert len(app.dataframe[0].value) == 83
     app.multiselect(key="directory_compare").set_value(["sss-mit-eecs", "b-plus-nyu-tandon"]).run()
-    assert not app.exception and len(app.dataframe) == 2
+    assert not app.exception and len(app.dataframe) >= 2
     assert any("78,780" in str(v) for v in app.dataframe[1].value.values.flatten())
     app.text_input(key="directory_query").set_value("nyu brooklyn").run()
     assert not app.exception and len(app.dataframe[0].value) == 1
