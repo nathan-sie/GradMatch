@@ -5,7 +5,7 @@ from decimal import Decimal
 import hashlib
 import json
 
-from gradmatch.admission_history import PLANNING_TIERS, planning_tier
+from gradmatch.admission_history import OPENCS_TIER_FLOORS, PLANNING_TIERS, apply_opencs_grades, planning_tier
 from gradmatch.community import application_fee_label
 from gradmatch.ranking import retrieve
 from gradmatch.schemas import ProgramRecord
@@ -13,6 +13,7 @@ from gradmatch.storage import PROJECT_ROOT
 
 
 RESEARCH_PATHS_FILE = PROJECT_ROOT / "data/review/research_paths.json"
+OPENCS_GRADES_FILE = PROJECT_ROOT / "data/review/opencs_program_grades.json"
 
 
 MODEL_CONTRACTS = {
@@ -84,6 +85,12 @@ def build_broad_catalog(programs, sources):
     research_snapshot = RESEARCH_PATHS_FILE.read_bytes()
     context["research_paths"] = json.loads(research_snapshot)
     context["research_paths_hash"] = hashlib.sha256(research_snapshot).hexdigest()
+    grade_snapshot = OPENCS_GRADES_FILE.read_bytes()
+    context["opencs_grades"] = {
+        pid: grade for pid, grade in json.loads(grade_snapshot)["programs"].items()
+        if grade in OPENCS_TIER_FLOORS
+    }
+    context["opencs_grades_hash"] = hashlib.sha256(grade_snapshot).hexdigest()
     return result, context
 
 
@@ -329,8 +336,13 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
             item["research_fit"] = research_options[pid]
             matching.append(item)
         accepted = (matching + [item for item in accepted if "research_fit" not in item])[:8]
+    grades = context["opencs_grades"]
+    for item in accepted + result["recommendations"]:
+        if item["program_id"] in grades:
+            item["opencs_grade"] = grades[item["program_id"]]
     for item in accepted:
         item["planning_tier"] = planning[item["program_id"]]
+    apply_opencs_grades(accepted)
     blocked = [dict(program_id=pid,identity=identity(p),reasons=[c for c in reports[pid]['checks'] if c['status']=='fail'])
         for pid,p in selected.items() if not reports[pid]['eligible_for_preliminary']]
     blocked_ids = {r['program_id'] for r in blocked}
@@ -342,6 +354,7 @@ def finish_broad_result(result, draft, profile, programs, retrieved, context, re
         recommendation_data_hash=hashlib.sha256(json.dumps({
             "programs": result["data_hash"], "community": context["data_hash"],
             "research_paths": context.get("research_paths_hash"),
+            "opencs_grades": context["opencs_grades_hash"],
         }, sort_keys=True).encode()).hexdigest(),
         reviewed_program_count=context['official_program_count'], validation_passed=not blocking_validation_errors(result),
         admission_history_ranking={

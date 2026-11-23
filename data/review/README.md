@@ -23,6 +23,8 @@ The project homepage displays **CC BY-NC-SA 4.0**, checked again on 2026-11-19. 
 
 `admission_history_aggregates.json` adapts applicant-reported decisions from [OpenCS DataPoints](https://opencs.app/datapoints/), by Open CS Application contributors, under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). GradMatch matches program identities, deduplicates reports and publishes counts by GPA band. The published counts omit groups with fewer than five decisions.
 
+`opencs_program_grades.json` adapts [OpenCS program categories](https://opencs.app/grade/) by Open CS Application contributors under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The snapshot links 68 listed programs to maintained GradMatch IDs and leaves out special groupings and ambiguous matches. It derives its categories from the [pinned OpenCS source file](https://github.com/opencsapp/opencsapp.github.io/blob/d3e4bc3e260a1a4039bb73812c95a9826573fc16/programs_list.yml). The [OpenCS guide](https://opencs.app/guide/) describes the categories as community judgments about admission difficulty for applicants with undergraduate degrees from mainland China.
+
 ## Offline reproduction
 
 ```powershell

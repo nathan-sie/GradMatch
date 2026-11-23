@@ -66,6 +66,12 @@ def test_pool_has_83_exact_ids_without_changing_official_facts_or_registering_co
     assert all(not p.allowed_official_hosts and not p.field_sources for p in pool if p.program_id.startswith('community-'))
     assert ctx['snapshot_date']=='2026-10-25'
     assert len(ctx['data_hash'])==64
+    grades = ctx['opencs_grades']
+    assert len(grades) == 68 and grades.keys() <= {item.program_id for item in pool}
+    assert grades['community-ss-uiuc-mscs'] == 'S'
+    assert grades['uiuc-mcs-urbana'] == 'A+'
+    assert grades['ucsd-ms-cs-la-jolla'] == 'A'
+    assert 'neu-mscs-boston' not in grades
 
 
 @pytest.mark.parametrize('strategy',['fixed','react','plan'])
@@ -399,11 +405,17 @@ def test_cloud_profile_uses_bundled_dp_and_assigns_every_recommendation_a_tier(t
     assert len(result["retrieved_program_ids"]) == 83
     suggestions = result["preliminary_recommendations"]
     assert suggestions and all(item["planning_tier"]["label"] in admission_history.PLANNING_TIERS for item in suggestions)
-    assert any(item["planning_tier"]["label"] == "Target" for item in suggestions)
+    by_id = {item["program_id"]: item for item in suggestions}
+    msaii = by_id["cmu-msaii-pittsburgh"]
+    assert (msaii["opencs_grade"], msaii["planning_tier"]["label"]) == ("S", "Lottery")
+    usc = by_id["usc-mscs-general-los-angeles"]
+    assert (usc["opencs_grade"], usc["planning_tier"]["label"]) == ("B+", "Target")
     assert all(item["planning_tier"]["history"]["gpa_band"] == "3.75 through 4"
                for item in suggestions if item["planning_tier"]["history"])
     assert any("Matched historical reports" in line.value for line in app.markdown)
+    assert any("| Program | Tier | OpenCS |" in line.value for line in app.markdown)
     assert any("[OpenCS DataPoints](https://opencs.app/datapoints/)" in line.value for line in app.caption)
+    assert any("[OpenCS category S](https://opencs.app/grade/)" in line.value for line in app.caption)
     assert {"Basics", "Degree and tests", "Preparation", "Shortlist", "Budget and changes", "Checks and sources"} <= {
         tab.label for tab in app.tabs
     }
@@ -421,3 +433,16 @@ def test_planning_tier_requires_stronger_evidence_and_verified_checks_for_safer(
     history = {"admitted": 10, "rejected": 2}
     assert admission_history.planning_tier(history, hard_checks_passed=False)["label"] == "Target"
     assert admission_history.planning_tier(history, hard_checks_passed=True)["label"] == "Safer"
+
+
+def test_higher_opencs_grade_cannot_have_an_easier_planning_tier():
+    history = {"admitted": 10, "rejected": 2}
+    base_cases = [("B+", "Reach"), ("B+", "Target"), ("A-", "Target"), ("SSS", "Reach"), (None, "Target")]
+    rows = [
+        {"opencs_grade": grade, "planning_tier": {"label": label, "reason": "DP evidence", "history": history}}
+        for grade, label in base_cases
+    ]
+    admission_history.apply_opencs_grades(rows)
+    assert [row["planning_tier"]["label"] for row in rows] == ["Reach", "Target", "Reach", "Lottery", "Target"]
+    assert rows[2]["planning_tier"]["base_label"] == "Target"
+    assert rows[2]["planning_tier"]["history"] == history

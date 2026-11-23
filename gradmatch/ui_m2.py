@@ -11,7 +11,7 @@ from pydantic import ValidationError
 import streamlit as st
 
 from gradmatch.admission_history import (
-    MINIMUM_BAND_REPORTS, OPENCS_DP_SOURCE, OPENCS_DP_URL, PLANNING_TIERS,
+    MINIMUM_BAND_REPORTS, OPENCS_DP_SOURCE, OPENCS_DP_URL, OPENCS_GRADE_URL, PLANNING_TIERS,
     load_bundled_preview, load_preview, planning_tier,
 )
 from gradmatch.catalog import read_catalog
@@ -478,17 +478,22 @@ def render_shortlist_overview(result, names):
     rows = []
     for item in result["recommendations"]:
         rows.append({"Program": names[item["program_id"]], "Tier": f"{item['tier']} · Formal",
+                     "OpenCS": item.get("opencs_grade", "—"),
                      "Tuition budget": "Within budget", "Next listed round": "See program details"})
     for item in result.get("preliminary_recommendations", []):
         checks = item["checks"]
         tuition = next(check for check in checks["checks"] if check["rule_id"] == "tuition")
         upcoming = checks["next_listed_round"]
         rows.append({"Program": names[item["program_id"]], "Tier": f"{suggested_tier(item)['label']} · Planning",
+                     "OpenCS": item.get("opencs_grade", "—"),
                      "Tuition budget": TUITION_LABELS[tuition["status"]],
                      "Next listed round": upcoming["date"] if upcoming else "Needs verification"})
     if rows:
         show_table(rows)
-        st.caption("Use Reach, Target and Safer as planning labels. Open a program below for its evidence and next steps.")
+        st.caption("Open a program below for its tier explanation, evidence and next steps.")
+        if any(row["OpenCS"] != "—" for row in rows):
+            st.caption(f"[OpenCS categories]({OPENCS_GRADE_URL}) reflect community judgments about "
+                       "competitiveness for applicants with undergraduate degrees from mainland China.")
     else:
         st.info("No recommendations for this profile. Open Checks and sources to see what needs verification.")
 
@@ -500,6 +505,8 @@ def render_formal_recommendations(items, names, sources, history):
     for item in items:
         with st.expander(f"{item['tier']} · {names[item['program_id']]}"):
             st.markdown(f"[Official program website]({item['identity']['official_url']})")
+            if grade := item.get("opencs_grade"):
+                st.caption(f"[OpenCS category {grade}]({OPENCS_GRADE_URL})")
             st.write(item["planning_reason"])
             render_admission_history(history, item["program_id"])
             tuition = item["checks"]["tuition"]
@@ -590,6 +597,10 @@ def render_broad_recommendations(result, *, history=None):
         with st.expander(f"{tier['label']} · {name}"):
             st.markdown(f"[Program website]({identity['official_url']})")
             st.markdown(f"**Planning tier · {tier['label']}**")
+            if grade := item.get("opencs_grade"):
+                st.caption(f"[OpenCS category {grade}]({OPENCS_GRADE_URL})")
+            if adjustment := tier.get("grade_adjustment"):
+                st.write(adjustment)
             st.write(tier["reason"])
             if fit := item.get("research_fit"):
                 st.markdown(f"**Research fit · {fit['pathway']}**")

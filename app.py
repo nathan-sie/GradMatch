@@ -5,12 +5,12 @@ import sys
 import streamlit as st
 
 import gradmatch.release as release
-if getattr(release,'RELEASE_REFRESH_VERSION',0)<12:
+if getattr(release,'RELEASE_REFRESH_VERSION',0)<13:
     from importlib import reload
     reload(release)
 release.refresh_catalog_modules()
 
-from gradmatch.admission_history import OPENCS_DP_URL
+from gradmatch.admission_history import OPENCS_DP_URL, OPENCS_GRADE_URL
 from gradmatch.bootstrap import resolve_app_database
 from gradmatch.directory import bootstrap_directory, read_directory
 from gradmatch.storage import CatalogNotReadyError, inspect_catalog
@@ -53,6 +53,7 @@ else:
         catalog_counts(summary)
         st.markdown(f"Historical admissions counts are aggregated from [OpenCS DataPoints]({OPENCS_DP_URL}) "
                     "([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).")
+        st.markdown(f"Planning tiers also use the [OpenCS program categories]({OPENCS_GRADE_URL}).")
         st.markdown("Program listings and reported application details come from the [CS Grad tracker](https://csgrad.com/tracker). "
                     "Verified requirements and tuition link to university sources.")
         if directory:

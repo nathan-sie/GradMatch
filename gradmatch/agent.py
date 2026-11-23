@@ -26,7 +26,7 @@ from gradmatch.storage import PROJECT_ROOT
 from gradmatch.validation import validate_shortlist, changes_from_previous, data_hash
 from gradmatch.validation import blocking_validation_errors
 from gradmatch.web_reader import read_page, FetchError
-BROAD_ENGINE_VERSION = 8
+BROAD_ENGINE_VERSION = 9
 
 
 class BudgetLimit(ValueError):
@@ -1146,7 +1146,7 @@ def run_task(
             or bool(getattr(task, 'broad_context', None)) != bool(broad_context)
             or getattr(task, "history_snapshot_hash", None) != history_hash
             or (broad_context and any(task.broad_context.get(key) != broad_context[key]
-                    for key in ("data_hash", "research_paths_hash")))):
+                    for key in ("data_hash", "research_paths_hash", "opencs_grades_hash")))):
         task = Task(
             strategy,
             data_mode,

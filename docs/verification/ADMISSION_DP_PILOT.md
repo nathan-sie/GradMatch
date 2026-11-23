@@ -35,6 +35,8 @@ The code selects aggregates for eligible preliminary candidates in the applicant
 
 Every preliminary recommendation receives a planning tier from code. **Target** requires at least eight matching decisions and three reported admits per five decisions. **Safer** requires at least twelve matching decisions, four reported admits per five decisions, at least one reported rejection, and all official hard checks to pass. **Reach** covers the remaining suggestions, including those with too few matching reports. Each card shows its basis and any matched counts. These labels support shortlist planning from self-reported samples.
 
+The [OpenCS program categories](https://opencs.app/grade/) can make a planning label more cautious. SSS through S map to Lottery, A+ and A map to at least Reach, and A− and B+ map to at least Target. Across the matched recommendations on one shortlist, a higher OpenCS category receives a planning tier at least as cautious as the most cautious label in the lower categories. Recommendations with the same OpenCS category can have different planning tiers based on their evidence. Formal tiers use the official evidence rubric.
+
 With model ranking enabled, aggregate options for matching candidates may be sent to the provider. The session export includes the planning labels and their evidence. The benchmark runner uses the published snapshot, while the paired pilot below explicitly compares history on and off.
 
 ```powershell
