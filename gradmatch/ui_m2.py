@@ -53,7 +53,8 @@ def render_m2(database, *, directory=None):
     with st.expander("Assessment settings"):
         allow_model = st.checkbox("Use AI ranking (paid)", value=False,
             key="m2_allow_model", disabled=not settings.ready)
-        st.caption("AI ranking sends your profile and submitted messages to OpenAI."
+        provider_name = "DeepSeek" if settings.provider == "deepseek" else "OpenAI"
+        st.caption(f"AI ranking sends your profile and submitted messages to {provider_name}."
                    if settings.ready else "Rule-based screening is available. Configure the model to enable AI ranking.")
         strategy_label = st.selectbox("Execution method", ["ReAct agent", "Plan-and-replan agent", "Fixed baseline"],
                                       key="m4_strategy", disabled=session.active)

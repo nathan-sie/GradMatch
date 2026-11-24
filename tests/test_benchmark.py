@@ -10,14 +10,17 @@ import json
 import sqlite3
 from types import SimpleNamespace
 
+import httpx
+from openai import OpenAI
 import pytest
 
 from gradmatch.broad_catalog import build_broad_catalog
 from gradmatch.agent import BudgetLimit
 from gradmatch.catalog import load_seed
-from gradmatch.config import ModelSettings
+from gradmatch.config import ModelSettings, load_settings
 from gradmatch.constraints import check_constraints
-from gradmatch.providers import OpenAIProvider
+from gradmatch.providers import ModelUnavailable, OpenAIProvider
+from gradmatch.ranking import RankingDraft
 from gradmatch.session import tiering_profile
 from gradmatch.storage import PROJECT_ROOT
 from scripts import run_benchmark
@@ -257,9 +260,57 @@ def test_resume_rejects_different_schedule(tmp_path):
         run_benchmark.run(args)
 
 
+@pytest.mark.parametrize('finish_reason', ['stop', 'length'])
+def test_deepseek_json_output_and_usage(monkeypatch, finish_reason):
+    monkeypatch.setenv('MODEL_PROVIDER', 'openai')
+    monkeypatch.setenv('MODEL_NAME', 'other-openai-model')
+    monkeypatch.setenv('MODEL_ENABLED', 'true')
+    monkeypatch.setenv('DEEPSEEK_API_KEY', 'fixture-deepseek-key')
+    monkeypatch.setenv('DEEPSEEK_MODEL_NAME', 'deepseek-flash')
+    settings = load_settings(provider='deepseek')
+    draft = RankingDraft(profile_version=1, status='insufficient_evidence',
+                         recommendations=[], pending_order=[], observations=[])
+    events = []
+    session = SimpleNamespace(usage=[], event=lambda name, **data: events.append(name))
+
+    def respond(request):
+        assert str(request.url) == 'https://api.deepseek.com/chat/completions'
+        body = json.loads(request.content)
+        assert body['model'] == 'deepseek-flash'
+        assert body['response_format'] == {'type': 'json_object'}
+        assert body['thinking'] == {'type': 'disabled'}
+        assert 'RankingDraft' in body['messages'][0]['content']
+        return httpx.Response(200, json={
+            'id': 'deepseek-response', 'model': 'deepseek-flash',
+            'object': 'chat.completion', 'created': 0,
+            'choices': [{'index': 0, 'finish_reason': finish_reason,
+                         'message': {'role': 'assistant', 'content': draft.model_dump_json()}}],
+            'usage': {'prompt_tokens': 100, 'completion_tokens': 50, 'total_tokens': 150,
+                      'prompt_cache_hit_tokens': 80},
+        })
+
+    http_client = httpx.Client(transport=httpx.MockTransport(respond))
+    with OpenAI(api_key=settings.api_key, base_url='https://api.deepseek.com', http_client=http_client) as client:
+        provider = OpenAIProvider(settings, client=client)
+        if finish_reason == 'stop':
+            assert provider.generate(RankingDraft, 'rank', {}, session) == draft
+        else:
+            with pytest.raises(ModelUnavailable, match='incomplete'):
+                provider.generate(RankingDraft, 'rank', {}, session)
+    usage, = session.usage
+    assert usage['provider'] == 'deepseek' and usage['cached_input_tokens'] == 80
+    assert Decimal(usage['estimated_cost_usd']) == Decimal('0.00006648')
+    assert usage['status'] == ('completed' if finish_reason == 'stop' else 'error')
+    assert events == ['model_usage']
+
+
 def test_model_runner_meters_first_attempts_and_enforces_cap_across_resume(tmp_path, monkeypatch):
     settings = ModelSettings('openai', 'fixture-model', True, 'fixture-private-key', json_file(PROJECT_ROOT / 'config/app.json'))
-    monkeypatch.setattr(run_benchmark, 'load_settings', lambda: settings)
+    def load_test_settings(*, provider):
+        assert provider == 'deepseek'
+        return settings
+
+    monkeypatch.setattr(run_benchmark, 'load_settings', load_test_settings)
     adapter = BroadFixture()
 
     def transport(provider, kind, purpose, payload, session):

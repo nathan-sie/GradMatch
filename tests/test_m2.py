@@ -33,7 +33,7 @@ def no_paid_requests(monkeypatch):
 
 
 def settings():
-    return load_settings()
+    return load_settings(provider="openai")
 
 
 def draft_for(payload, **changes):

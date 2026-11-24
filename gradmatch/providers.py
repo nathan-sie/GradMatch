@@ -1,4 +1,4 @@
-"""One bounded, metered OpenAI request; no tools, implicit retries, or repair loop."""
+"""Bounded, metered model requests with shared structured-output validation."""
 
 import json
 from threading import BoundedSemaphore
@@ -71,60 +71,98 @@ class OpenAIProvider:
         self.settings = settings
         self.client = client
 
+    def _request(self, output_type, purpose, payload):
+        settings = self.settings
+        deepseek = settings.provider == "deepseek"
+        client = self.client or OpenAI(
+            api_key=settings.api_key,
+            base_url="https://api.deepseek.com" if deepseek else "https://api.openai.com/v1",
+            max_retries=0, timeout=settings.limits["model_timeout_seconds"],
+        )
+        instructions = INSTRUCTIONS[purpose]
+        content = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+        schema = strict_schema(output_type)
+        max_tokens = settings.limits["max_output_tokens"]
+        if deepseek:
+            response = client.chat.completions.create(
+                model=settings.model,
+                messages=[
+                    {"role": "system", "content": f"{instructions}\nReturn one JSON object matching this JSON Schema:\n{json.dumps(schema, separators=(',', ':'))}"},
+                    {"role": "user", "content": content},
+                ],
+                response_format={"type": "json_object"},
+                extra_body={"thinking": {"type": "disabled"}},
+                max_tokens=max_tokens,
+            )
+            choice = response.choices[0] if response.choices else None
+            usage = response.usage
+            counts = {} if usage is None else {
+                "input_tokens": usage.prompt_tokens,
+                "output_tokens": usage.completion_tokens,
+                "cached_input_tokens": getattr(usage, "prompt_cache_hit_tokens", None),
+                "reasoning_tokens": getattr(getattr(usage, "completion_tokens_details", None), "reasoning_tokens", None),
+            }
+            return response, choice.message.content if choice and choice.finish_reason == "stop" else None, counts
+
+        response = client.responses.create(
+            model=settings.model,
+            input=[{"role": "developer", "content": instructions}, {"role": "user", "content": content}],
+            text={"format": {"type": "json_schema", "name": output_type.__name__, "strict": True, "schema": schema}},
+            store=False, max_output_tokens=max_tokens,
+        )
+        usage = response.usage
+        counts = {} if usage is None else {
+            "input_tokens": usage.input_tokens,
+            "output_tokens": usage.output_tokens,
+            "cached_input_tokens": getattr(usage.input_tokens_details, "cached_tokens", None),
+            "reasoning_tokens": getattr(usage.output_tokens_details, "reasoning_tokens", None),
+        }
+        return response, response.output_text if response.status == "completed" else None, counts
+
     def generate(self, output_type, purpose: str, payload: dict, session):
         settings = self.settings
+        provider = "DeepSeek" if settings.provider == "deepseek" else "OpenAI"
         if not settings.ready:
-            raise ModelUnavailable("Model calls are disabled or the OpenAI API key is missing. Configure .env and enable MODEL_ENABLED locally.")
+            raise ModelUnavailable(f"Model calls are disabled or the {provider} API key is missing. Configure .env and enable MODEL_ENABLED locally.")
         if len(session.usage) >= settings.limits["max_model_calls_per_session"]:
             raise ModelUnavailable("The session model-call limit has been reached. Start a new session to continue.")
         start = monotonic()
         if not _PAID_SLOTS.acquire(timeout=1):
             raise ModelUnavailable("Both model slots are busy. Please try again shortly.")
-        usage = {"call_id": str(uuid4()), "purpose": purpose, "provider": "openai", "model": settings.model,
+        usage = {"call_id": str(uuid4()), "purpose": purpose, "provider": settings.provider, "model": settings.model,
             "input_tokens": None, "output_tokens": None, "cached_input_tokens": None,
             "reasoning_tokens": None, "estimated_cost_usd": None, "cost_status": "unknown",
             "status": "error", "duration_ms": 0}
         session.usage.append(usage)
         try:
-            client = self.client or OpenAI(api_key=settings.api_key, base_url="https://api.openai.com/v1",
-                max_retries=0, timeout=settings.limits["model_timeout_seconds"])
-            # Fixed endpoint, store=False, no built-in tools, no previous_response_id.
-            response = client.responses.create(model=settings.model,
-                input=[{"role": "developer", "content": INSTRUCTIONS[purpose]},
-                       {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}],
-                text={"format": {"type": "json_schema", "name": output_type.__name__,
-                                 "strict": True, "schema": strict_schema(output_type)}},
-                store=False, max_output_tokens=settings.limits["max_output_tokens"])
+            response, output_text, counts = self._request(output_type, purpose, payload)
             usage["model"] = response.model
             usage["response_id"] = response.id
-            if response.usage is not None:
-                provider_usage = response.usage
-                usage.update(input_tokens=provider_usage.input_tokens, output_tokens=provider_usage.output_tokens,
-                    cached_input_tokens=getattr(provider_usage.input_tokens_details, "cached_tokens", None),
-                    reasoning_tokens=getattr(provider_usage.output_tokens_details, "reasoning_tokens", None))
+            if counts:
+                usage.update(counts)
                 cost = estimate_cost(settings, response.model, usage["input_tokens"], usage["output_tokens"], usage["cached_input_tokens"])
                 usage.update(estimated_cost_usd=str(cost) if cost is not None else None,
                     cost_status="estimated_from_published_prices" if cost is not None else "unknown")
-            if response.status != "completed" or not response.output_text:
+            if not output_text or not output_text.strip():
                 raise ModelUnavailable("The model response was refused or incomplete. No draft was accepted; the request was not retried.")
             try:
-                parsed,copies,normalization = _decode_structured(output_type,response.output_text)
+                parsed,copies,normalization = _decode_structured(output_type,output_text)
                 if copies>1:
                     usage['identical_output_copies' if normalization == 'identical_json_objects' else 'equivalent_action_copies'] = copies
                     session.event('output_normalized',purpose=purpose,reason=normalization,copies=copies)
             except (ValidationError,ValueError) as error:
                 usage['output_validation_errors']=([{'location':list(e['loc']),'type':e['type']} for e in error.errors()]
                     if isinstance(error,ValidationError) else [{'location':[],'type':'invalid_or_conflicting_json'}])
-                session.event('rejected_model_output',purpose=purpose,raw_output=response.output_text[:16000])
+                session.event('rejected_model_output',purpose=purpose,raw_output=output_text[:16000])
                 raise ModelUnavailable('The model structured output was rejected. No unvalidated draft was displayed.') from None
             usage["status"] = "completed"
             return parsed
         except AuthenticationError:
-            raise ModelUnavailable("OpenAI rejected the API key. Check your local configuration.") from None
+            raise ModelUnavailable(f"{provider} rejected the API key. Check your local configuration.") from None
         except RateLimitError:
-            raise ModelUnavailable("OpenAI quota or rate limit reached. Check API billing and limits; no automatic retry was made.") from None
+            raise ModelUnavailable(f"{provider} quota or rate limit reached. Check API billing and limits; no automatic retry was made.") from None
         except (APIConnectionError, APITimeoutError):
-            raise ModelUnavailable("The OpenAI request could not complete. Check the connection and retry explicitly.") from None
+            raise ModelUnavailable(f"The {provider} request could not complete. Check the connection and retry explicitly.") from None
         except (OpenAIError, ValidationError, ValueError):
             raise ModelUnavailable("The model request or structured output was invalid. No unvalidated draft was displayed.") from None
         finally:

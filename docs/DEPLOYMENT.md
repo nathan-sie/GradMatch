@@ -27,6 +27,17 @@ MODEL_ENABLED = "true"
 
 The blank template is `.streamlit/secrets.example.toml`. A private ready-to-paste local copy can be prepared at `work/streamlit_cloud_secrets.toml`; never commit/share it. Top-level Secrets are available in the server environment. Do not put `.env` in GitHub.
 
+To enable DeepSeek instead, set these top-level values in Streamlit Cloud Secrets and reboot the app after deploying the code:
+
+```toml
+MODEL_PROVIDER = "deepseek"
+DEEPSEEK_MODEL_NAME = "deepseek-flash"
+DEEPSEEK_API_KEY = "<your key, only in Cloud Secrets>"
+MODEL_ENABLED = "true"
+```
+
+In the hosted app, **Assessment settings** should identify DeepSeek and offer the **Use AI ranking (paid)** checkbox. Verify with a synthetic profile and check that the recorded model is `deepseek-flash`.
+
 6. Save and deploy. Choose a subdomain if available; record only the URL actually assigned by Streamlit. Make the app public so classmates do not need the owner's account. Writer-only cloud build logs diagnose startup failures.
 
 ## Real URL acceptance

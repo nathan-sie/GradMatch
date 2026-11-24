@@ -13,6 +13,9 @@ from dotenv import dotenv_values
 from gradmatch.storage import PROJECT_ROOT
 
 
+DEFAULT_MODELS = {"openai": "gpt-5.4-mini-2026-03-17", "deepseek": "deepseek-flash"}
+
+
 class ConfigurationError(RuntimeError):
     """Safe to show without exposing file contents or secret values."""
 
@@ -27,7 +30,7 @@ class ModelSettings:
 
     @property
     def ready(self):
-        return self.enabled and self.provider == "openai" and bool(self.api_key)
+        return self.enabled and self.provider in DEFAULT_MODELS and bool(self.api_key)
 
     def public(self):
         return {"provider": self.provider, "model": self.model, "enabled": self.enabled,
@@ -36,7 +39,7 @@ class ModelSettings:
                     "limits": self.limits}, sort_keys=True).encode()).hexdigest()}
 
 
-def load_settings(root: Path = PROJECT_ROOT) -> ModelSettings:
+def load_settings(root: Path = PROJECT_ROOT, *, provider: str | None = None) -> ModelSettings:
     # Local .env < Streamlit secrets < process environment. Do not modify os.environ.
     try:
         values = dict(dotenv_values(root / ".env"))
@@ -47,11 +50,21 @@ def load_settings(root: Path = PROJECT_ROOT) -> ModelSettings:
     except (OSError, UnicodeError, ValueError):
         raise ConfigurationError("The server model configuration could not be read. Please ask the app owner to check the Secrets format.") from None
     values.update({key: os.environ[key] for key in
-        ["MODEL_PROVIDER", "MODEL_NAME", "MODEL_API_KEY", "OPENAI_API_KEY", "MODEL_ENABLED"] if key in os.environ})
-    return ModelSettings(provider=values.get("MODEL_PROVIDER") or "openai",
-        model=values.get("MODEL_NAME") or "gpt-5.4-mini-2026-03-17",
+        ["MODEL_PROVIDER", "MODEL_NAME", "MODEL_API_KEY", "OPENAI_API_KEY", "DEEPSEEK_API_KEY",
+         "DEEPSEEK_MODEL_NAME", "MODEL_ENABLED"] if key in os.environ})
+    configured_provider = values.get("MODEL_PROVIDER") or "openai"
+    provider = provider or configured_provider
+    model = values.get("MODEL_NAME") if provider == configured_provider else None
+    if provider == "deepseek":
+        model = values.get("DEEPSEEK_MODEL_NAME") or model
+        api_key = values.get("DEEPSEEK_API_KEY")
+        limits["pricing"] = limits["deepseek_pricing"]
+    else:
+        api_key = values.get("MODEL_API_KEY") or values.get("OPENAI_API_KEY")
+    return ModelSettings(provider=provider,
+        model=model or DEFAULT_MODELS.get(provider, DEFAULT_MODELS["openai"]),
         enabled=str(values.get("MODEL_ENABLED", "false")).lower() == "true",
-        api_key=values.get("MODEL_API_KEY") or values.get("OPENAI_API_KEY") or "", limits=limits)
+        api_key=api_key or "", limits=limits)
 
 
 def estimate_cost(settings: ModelSettings, model: str, input_tokens, output_tokens, cached_tokens):

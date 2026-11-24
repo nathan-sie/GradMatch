@@ -14,5 +14,14 @@
     "cached_input_usd_per_million": "0.075",
     "output_usd_per_million": "4.50",
     "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini"
+  },
+  "deepseek_pricing": {
+    "model": "deepseek-flash",
+    "as_of": "2026-11-23",
+    "basis": "peak_rates_upper_estimate",
+    "input_usd_per_million": "0.30",
+    "cached_input_usd_per_million": "0.006",
+    "output_usd_per_million": "1.20",
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/"
   }
 }

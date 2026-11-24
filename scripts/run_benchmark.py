@@ -90,11 +90,16 @@ def run(args):
         oracles = {task_id: oracles[task_id] for task_id in selected}
     directory = args.run_dir or PROJECT_ROOT / 'runs' / f'm64-{uuid4()}'
     manifest = manifest_for(config, tasks, oracles, args.strategies, args.split)
+    if getattr(args, 'audit_first', False):
+        if args.split != 'formal':
+            raise ValueError('--audit-first requires the formal split.')
+        audit_ids = {task_id for ids in manifest['audit_task_ids'].values() for task_id in ids}
+        manifest['entries'].sort(key=lambda entry: entry['task_id'] not in audit_ids)
     settings = None
     if getattr(args, 'live_model', False):
-        settings = load_settings()
+        settings = load_settings(provider=getattr(args, 'model_provider', 'deepseek'))
         if not args.dry_run and not settings.ready:
-            raise ValueError('An enabled local model configuration is required.')
+            raise ValueError(f'Enable MODEL_ENABLED and configure a {settings.provider} API key for live runs.')
         session_limit = min(args.max_requests_per_task, settings.limits['max_model_calls_per_session'])
         settings = replace(settings, limits={**settings.limits, 'max_model_calls_per_session': session_limit})
         manifest.update(execution_mode='live_model', model={
@@ -166,10 +171,14 @@ def main():
     parser.add_argument('--strategies', nargs='+', choices=STRATEGIES, default=list(STRATEGIES))
     parser.add_argument('--run-dir', type=Path)
     parser.add_argument('--task-ids', nargs='+', help='Run a selected development pilot.')
+    parser.add_argument('--audit-first', action='store_true',
+                        help='Schedule the fixed formal audit sample before all remaining tasks.')
     parser.add_argument('--resume', action='store_true')
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--max-new-runs', type=int)
     parser.add_argument('--live-model', action='store_true', help='Use the configured model in snapshot mode.')
+    parser.add_argument('--model-provider', choices=['deepseek', 'openai'], default='deepseek',
+                        help='Provider for --live-model (default: deepseek).')
     parser.add_argument('--max-model-requests', type=int, help='Maximum cumulative model requests, including resumes.')
     parser.add_argument('--max-requests-per-task', type=int, default=16, help='Maximum model requests per task session.')
     args = parser.parse_args()
