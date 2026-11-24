@@ -102,6 +102,8 @@ def render_m2(database, *, directory=None):
         generate = btn_col2.button("Generate from saved profile", key="m2_generate", disabled=session.active,
                                    type="primary", use_container_width=True)
 
+    if notice := st.session_state.pop("m2_form_notice", None):
+        st.warning(notice)
     with st.expander("Applicant information", expanded=session.current_result is None):
         form = profile_form(session.profile)
 
@@ -163,7 +165,8 @@ def render_m2(database, *, directory=None):
             evidence_sources = session.agent_task.sources if session.agent_task and result.get('task_id') == session.agent_task.task_id else sources
             history = history_snapshot.compare(session.profile) if history_snapshot else None
             render_result(result, programs, evidence_sources, history=history, previous=session.previous_result,
-                          earlier_run=bool(interrupted and result.get("run_id") != latest["run_id"]))
+                          earlier_run=bool(interrupted and result.get("run_id") != latest["run_id"]),
+                          session=session, settings=settings, latest=latest)
         elif session.previous_result:
             previous = session.previous_result
             previous_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
@@ -200,10 +203,6 @@ def render_m2(database, *, directory=None):
 def render_session_details(session, settings, latest, result):
     with st.expander("Session and execution details"):
         st.caption(f"Model {settings.model} · Model requests in this session: {len(session.usage)}")
-        if session.usage:
-            show_table([{"Purpose": u["purpose"], "Status": u["status"], "Input tokens": u["input_tokens"],
-                "Output tokens": u["output_tokens"], "Cached input tokens": u["cached_input_tokens"],
-                "Elapsed ms": u["duration_ms"], "Estimated USD": u["estimated_cost_usd"] or "Unknown"} for u in session.usage])
         if result:
             st.caption(f"Result method {result['strategy']} · Evidence mode {result['data_mode']}")
             if result.get("evidence_notice"):
@@ -211,27 +210,59 @@ def render_session_details(session, settings, latest, result):
         if task := session.agent_task:
             st.caption(f"Tools {task.tools}/{task.limits['max_tools']} · Model calls {task.models}/{task.limits['max_models']} "
                        f"· Page requests {task.pages}/{task.limits['max_pages']} · User turns {task.turns}/{task.limits['max_turns']}")
-            if task.plan_state:
-                plan = task.plan_state.public()
-                st.write("**Execution plan**")
-                st.caption(f"Replans {plan['replans']}/{task.limits['max_replans']}")
-                if plan["revisions"]:
-                    revision = plan["revisions"][-1]
-                    st.write(revision["summary"])
-                    st.caption(f"Revision {revision['revision']} · {revision['reason_code']} · {revision['status']}")
-                    show_table([{"Step": step["step_id"], "Action": step["tool"], "Status": step["status"]}
-                                for step in revision["steps"]])
-                st.json(plan, expanded=False)
             if st.button("Start new task (keep profile)", key="m4_new_task", disabled=session.active, use_container_width=True):
                 session.agent_task = None
                 st.info("The next submission starts a fresh task. Your profile and session model limit are retained.")
         if latest:
-            st.write(f"Status: {latest['status']} · Model: {latest['model_status']} · Model calls: {latest['model_calls']} · Service time: {latest['service_latency_ms']:,.0f} ms")
-            st.json({key: latest.get(key) for key in ["request_id", "run_id", "profile_version", "validation_errors", "model_config"]},
-                    expanded=False)
+            st.caption(f"Status: {latest['status']} · Model: {latest['model_status']} · Model calls: {latest['model_calls']} · Service time: {latest['service_latency_ms']:,.0f} ms")
+        st.caption("Open the Execution trace tab in the main panel for full plan revisions, tool calls, and token usage.")
         st.download_button("Download current session JSON", json.dumps(export_session(session), ensure_ascii=False, indent=2),
             file_name="gradmatch_m2_session.json", mime="application/json", key="m2_export", use_container_width=True)
         st.caption("The download includes the profile and messages from this browser session.")
+
+
+def render_execution_trace(session, settings, latest, result):
+    st.write("**Execution summary**")
+    if result:
+        st.caption(f"Method: {result['strategy']} · Evidence mode: {result['data_mode']} · Model: {settings.model}")
+        if result.get("evidence_notice"):
+            st.caption(result["evidence_notice"])
+    if task := session.agent_task:
+        c1, c2, c3, c4 = st.columns(4)
+        c1.markdown(f"**Tool calls**  \n{task.tools} / {task.limits['max_tools']}")
+        c2.markdown(f"**Model calls**  \n{task.models} / {task.limits['max_models']}")
+        c3.markdown(f"**Page reads**  \n{task.pages} / {task.limits['max_pages']}")
+        c4.markdown(f"**User turns**  \n{task.turns} / {task.limits['max_turns']}")
+        if task.plan_state:
+            plan = task.plan_state.public()
+            st.write("**Execution plan**")
+            st.caption(f"Replans: {plan['replans']}/{task.limits['max_replans']}")
+            if plan["revisions"]:
+                revision = plan["revisions"][-1]
+                st.write(revision["summary"])
+                st.caption(f"Revision {revision['revision']} · {revision['reason_code']} · {revision['status']}")
+                show_table([{"Step": step["step_id"], "Action": step["tool"], "Status": step["status"]}
+                            for step in revision["steps"]])
+            with st.expander("Full plan history JSON", expanded=False):
+                st.json(plan)
+        tool_log = (latest or {}).get("task_usage", {}).get("tool_log") or getattr(task, "tool_log", None) or []
+        if tool_log:
+            st.write("**Tool calls in this task**")
+            show_table([{
+                "#": idx + 1,
+                "Tool": entry.get("tool", "—"),
+                "Profile v": entry.get("profile_version", "—"),
+                "OK": "Yes" if entry.get("result", {}).get("ok", True) else "No",
+            } for idx, entry in enumerate(tool_log[-12:])])
+    if session.usage:
+        st.write("**Model usage in this session**")
+        show_table([{"Purpose": u["purpose"], "Status": u["status"], "Input tokens": u["input_tokens"],
+            "Output tokens": u["output_tokens"], "Cached input": u["cached_input_tokens"],
+            "Elapsed ms": u["duration_ms"], "Est. USD": u["estimated_cost_usd"] or "Unknown"} for u in session.usage])
+    if latest:
+        st.caption(f"Latest status: {latest['status']} · Model status: {latest['model_status']} · Service time: {latest['service_latency_ms']:,.0f} ms")
+        with st.expander("Raw run metadata", expanded=False):
+            st.json({key: latest.get(key) for key in ["request_id", "run_id", "profile_version", "validation_errors", "model_config"]})
 
 
 def sync_profile_inputs(profile):
@@ -388,6 +419,16 @@ def profile_form(profile):
     if set(courses) & set(absent):
         st.error("A course cannot be both completed and explicitly missing.")
         return None
+    unchecked = []
+    if gpa > 0 and not has_gpa:
+        unchecked.append("GPA is known")
+    if budget.strip() and not has_budget:
+        unchecked.append("Tuition budget is known")
+    if unchecked:
+        st.session_state["m2_form_notice"] = (
+            "You entered values without checking " + " / ".join(f"'{item}'" for item in unchecked)
+            + ". Check the box in Applicant information if you want those values applied."
+        )
     changes = {"gpa": {"value": str(gpa), "scale": str(scale), "scope": scope} if has_gpa else None,
         "institution": institution.strip() or None, "institution_country": country.strip() or None,
         "major": major.strip() or None, "goal": goal, "degree": degree_values,
@@ -467,7 +508,8 @@ def render_tuition_summary(result, names, previous):
                     for pid, (amount, reason) in programs.items()])
 
 
-def render_result(result, programs, sources, *, history=None, previous=None, earlier_run=False):
+def render_result(result, programs, sources, *, history=None, previous=None, earlier_run=False,
+                  session=None, settings=None, latest=None):
     names = {p.program_id: f"{p.university} — {p.degree}, {p.campus}" for p in programs}
     for field in ['recommendations', 'preliminary_recommendations', 'pending_verification', 'excluded', 'preliminary_excluded']:
         for item in result.get(field, []):
@@ -489,9 +531,9 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
     if broad:
         st.caption(f"Recommendation pool: {result['recommendation_catalog_count']} programs · "
                    f"Programs screened: {len(result['retrieved_program_ids'])}")
-    shortlist, budget, evidence = st.tabs(["Shortlist", "Budget and changes", "Checks and sources"])
+    shortlist, budget, evidence, trace = st.tabs(["Shortlist", "Budget and changes", "Checks and sources", "Execution trace"])
     with shortlist:
-        selected_tier = render_shortlist_overview(result, names)
+        selected_tier = render_shortlist_overview(result, names, previous=previous)
         if broad:
             render_broad_recommendations(result, history=history, selected_tier=selected_tier)
         render_formal_recommendations(result["recommendations"], names, sources, history, selected_tier=selected_tier)
@@ -499,7 +541,7 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
         render_tuition_summary(result, names, previous)
         if result["changes_from_previous"].get("previous_profile_version") is not None:
             delta = result["changes_from_previous"]
-            with st.expander("Changes from the previous assessment"):
+            with st.expander("Changes from the previous assessment", expanded=True):
                 st.write("Added:", "; ".join(names.get(pid, pid) for pid in delta["added"]) or "None")
                 st.write("Retained:", "; ".join(names.get(pid, pid) for pid in delta["retained"]) or "None")
                 for item in delta["removed"]:
@@ -509,13 +551,32 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
         if history and history.snapshot.gpa_bands:
             render_history_coverage(history, result, names)
         render_verification(result, names, sources, history, broad)
+    with trace:
+        if session is not None and settings is not None:
+            render_execution_trace(session, settings, latest, result)
 
 
 def suggested_tier(item):
     return item.get("planning_tier") or planning_tier(None, hard_checks_passed=False)
 
 
-def render_shortlist_overview(result, names):
+def render_shortlist_overview(result, names, *, previous=None):
+    delta = result.get("changes_from_previous") or {}
+    if delta.get("previous_profile_version") is not None:
+        parts = []
+        cur_budget = result.get("profile_summary", {}).get("tuition_budget_usd")
+        if previous and previous["profile_version"] == delta.get("previous_profile_version"):
+            old_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
+            if (Decimal(old_budget) if old_budget is not None else None) != (Decimal(cur_budget) if cur_budget is not None else None):
+                parts.append(f"Budget updated: {format_usd(old_budget)} → {format_usd(cur_budget)}")
+        removed_names = [names.get(item["program_id"], item["program_id"]) for item in delta.get("removed", [])]
+        added_names = [names.get(pid, pid) for pid in delta.get("added", [])]
+        if removed_names:
+            parts.append("Removed: " + ", ".join(removed_names[:3]) + (f" (+{len(removed_names) - 3} more)" if len(removed_names) > 3 else ""))
+        if added_names:
+            parts.append("Added: " + ", ".join(added_names[:3]) + (f" (+{len(added_names) - 3} more)" if len(added_names) > 3 else ""))
+        if parts:
+            st.info(" · ".join(parts))
     if counts := result.get("shortlist_tier_counts"):
         st.markdown(" · ".join(f"**{tier} {counts[tier]}**" for tier in PLANNING_TIERS))
         empty = [tier for tier in PLANNING_TIERS if counts[tier] == 0]
@@ -573,10 +634,13 @@ def render_formal_recommendations(items, names, sources, history, *, selected_ti
         return
     st.markdown("**Formal matches**")
     for item in filtered:
-        with st.expander(f"{item['tier']} · {names[item['program_id']]}"):
+        prog_name = names[item["program_id"]]
+        with st.expander(f"{item['tier']} · {prog_name}"):
             b1, b2, _ = st.columns([1, 1.4, 3])
             b1.badge(item["tier"], color=TIER_COLORS.get(item["tier"], "gray"))
             b2.badge("Official verified", color="green")
+            st.caption("Copy program name to ask in Conversation:")
+            st.code(prog_name, language=None)
             st.markdown(f"[Official program website]({item['identity']['official_url']})")
             if grade := item.get("opencs_grade"):
                 st.caption(f"[OpenCS category {grade}]({OPENCS_GRADE_URL})")
@@ -673,6 +737,8 @@ def render_broad_recommendations(result, *, history=None, selected_tier="All"):
             b1, b2, _ = st.columns([1, 1.4, 3])
             b1.badge(tier["label"], color=TIER_COLORS.get(tier["label"], "gray"))
             b2.badge("Preliminary", color="gray")
+            st.caption("Copy program name to ask in Conversation:")
+            st.code(name, language=None)
             st.markdown(f"[Program website]({identity['official_url']})")
             st.markdown(f"**Planning tier · {tier['label']}**")
             if grade := item.get("opencs_grade"):
