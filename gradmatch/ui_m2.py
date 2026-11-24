@@ -30,6 +30,7 @@ PRIOR_DEGREE_LABELS = {
 ASSESSMENT_INTERRUPTED = {"error", "stopped", "budget_exhausted"}
 TUITION_LIMIT_CODES = {"TUITION_EXCEEDS_BUDGET", "TUITION_MINIMUM_EXCEEDS_BUDGET"}
 TUITION_LABELS = {"pass": "Within budget", "fail": "Fails budget check", "unknown": "Budget fit unverified"}
+TIER_COLORS = {"Lottery": "violet", "Reach": "orange", "Target": "blue", "Safer": "green"}
 
 
 def render_m2(database, *, directory=None):
@@ -43,36 +44,31 @@ def render_m2(database, *, directory=None):
         st.session_state["m2_session"] = Session()
     session = st.session_state["m2_session"]
     history_snapshot = load_preview() or load_bundled_preview()
-    st.subheader("Applicant profile")
-    left, right = st.columns(2)
-    if left.button("Try a sample profile", key="m35_load_example", disabled=session.active):
-        session.update(tiering_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
-        st.session_state.pop("m2_form_version", None)
-    generate = right.button("Generate from saved profile", key="m2_generate", disabled=session.active,
-                            type="primary" if session.current_result else "secondary")
-    with st.expander("Assessment settings"):
-        allow_model = st.checkbox("Use AI ranking (paid)", value=False,
-            key="m2_allow_model", disabled=not settings.ready)
-        provider_name = "DeepSeek" if settings.provider == "deepseek" else "OpenAI"
-        st.caption(f"AI ranking sends your profile and submitted messages to {provider_name}."
-                   if settings.ready else "Rule-based screening is available. Configure the model to enable AI ranking.")
-        strategy_label = st.selectbox("Execution method", ["ReAct agent", "Plan-and-replan agent", "Fixed baseline"],
-                                      key="m4_strategy", disabled=session.active)
-        if st.session_state.get("m4_mode") == "Reviewed snapshots":
-            st.session_state["m4_mode"] = "Catalog snapshots"
-        mode_label = st.selectbox("Evidence mode", ["Catalog snapshots", "Live official pages"],
-                                  key="m4_mode", disabled=session.active)
-        pool_label = st.selectbox("Recommendation pool", ["All 83 programs (official + community data)", "Reviewed official records only"],
-                                  key="m63_pool", disabled=session.active)
-        if st.button("Load synthetic example", key="m2_load_example", disabled=session.active):
-            session.update(synthetic_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
-            st.session_state.pop("m2_form_version", None)
-        if st.button("Start new session", key="m2_reset", disabled=session.active):
-            st.session_state["m2_session"] = Session()
-            for key in list(st.session_state):
-                if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration"}:
-                    del st.session_state[key]
-            st.rerun()
+    with st.sidebar:
+        with st.expander("Assessment settings", expanded=False):
+            allow_model = st.checkbox("Use AI ranking (paid)", value=False,
+                key="m2_allow_model", disabled=not settings.ready)
+            provider_name = "DeepSeek" if settings.provider == "deepseek" else "OpenAI"
+            st.caption(f"AI ranking sends your profile and submitted messages to {provider_name}."
+                       if settings.ready else "Rule-based screening is available. Configure the model to enable AI ranking.")
+            strategy_label = st.selectbox("Execution method", ["ReAct agent", "Plan-and-replan agent", "Fixed baseline"],
+                                          key="m4_strategy", disabled=session.active)
+            if st.session_state.get("m4_mode") == "Reviewed snapshots":
+                st.session_state["m4_mode"] = "Catalog snapshots"
+            mode_label = st.selectbox("Evidence mode", ["Catalog snapshots", "Live official pages"],
+                                      key="m4_mode", disabled=session.active)
+            pool_label = st.selectbox("Recommendation pool", ["All 83 programs (official + community data)", "Reviewed official records only"],
+                                      key="m63_pool", disabled=session.active)
+            if st.button("Load synthetic example", key="m2_load_example", disabled=session.active, use_container_width=True):
+                session.update(synthetic_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+                st.session_state.pop("m2_form_version", None)
+                st.toast("Synthetic example loaded.")
+            if st.button("Start new session", key="m2_reset", disabled=session.active, use_container_width=True):
+                st.session_state["m2_session"] = Session()
+                for key in list(st.session_state):
+                    if key.startswith("m2_input_") or key in {"m2_form_version", "m2_allow_model", "m2_last_response", "m6_show_exploration", "ui_tier_filter"}:
+                        del st.session_state[key]
+                st.rerun()
     strategy = {"ReAct agent": "react", "Plan-and-replan agent": "plan", "Fixed baseline": "fixed"}[strategy_label]
     data_mode = "live" if mode_label == "Live official pages" else "snapshot"
     recommendation_scope = "broad" if pool_label.startswith("All 83") else "reviewed"
@@ -81,22 +77,43 @@ def render_m2(database, *, directory=None):
     if st.session_state.get("m2_form_version") != session.profile.profile_version:
         sync_profile_inputs(session.profile)
         st.session_state["m2_form_version"] = session.profile.profile_version
-    gpa_summary = (f"{session.profile.gpa.value} / {session.profile.gpa.scale} ({session.profile.gpa.scope.replace('_', ' ')})"
-        if session.profile.gpa else "Unknown")
-    if session.profile.gpa or session.profile.major:
-        st.caption(f"GPA: {gpa_summary} · {session.profile.major or 'Major unknown'} · "
-                   f"Tuition budget: {format_usd(session.profile.tuition_budget_usd)}")
-    st.caption("AI ranking enabled." if allow_model else "Free screening. Enable AI ranking in Assessment settings.")
+
+    with st.container(border=True):
+        info_col, btn_col1, btn_col2 = st.columns([2.4, 1, 1.1], vertical_alignment="center")
+        with info_col:
+            st.markdown("**Applicant profile**")
+            gpa_summary = (f"{session.profile.gpa.value} / {session.profile.gpa.scale} ({session.profile.gpa.scope.replace('_', ' ')})"
+                if session.profile.gpa else "Unknown")
+            intake_summary = (f"{session.profile.intake.term.title()} {session.profile.intake.year}"
+                if session.profile.intake else "Intake unknown")
+            goal_summary = session.profile.goal.title() if session.profile.goal else "Goal unknown"
+            if session.profile.gpa or session.profile.major:
+                st.caption(f"GPA: {gpa_summary} · {session.profile.major or 'Major unknown'} · "
+                           f"Tuition budget: {format_usd(session.profile.tuition_budget_usd)} · "
+                           f"{intake_summary} · {goal_summary}")
+            else:
+                st.caption("No profile saved yet. Fill Applicant information below or try a sample profile.")
+            st.caption("AI ranking enabled." if allow_model else "Free screening. Enable AI ranking in Assessment settings.")
+        if btn_col1.button("Try a sample profile", key="m35_load_example", disabled=session.active, use_container_width=True):
+            session.update(tiering_profile().model_dump(exclude={"profile_version"}), unknown_fields=set())
+            st.session_state.pop("m2_form_version", None)
+            st.toast("Sample profile loaded. Click 'Generate from saved profile' to run.")
+            st.rerun()
+        generate = btn_col2.button("Generate from saved profile", key="m2_generate", disabled=session.active,
+                                   type="primary", use_container_width=True)
+
     with st.expander("Applicant information", expanded=session.current_result is None):
         form = profile_form(session.profile)
+
     def run(**kwargs):
         with st.spinner("Checking the current profile and evidence..."):
             response = start_task(session, request_id=str(uuid4()), programs=programs, sources=sources,
                 settings=active_settings, as_of=datetime.now(ZoneInfo("America/Los_Angeles")).date(),
-                strategy=strategy,data_mode=data_mode,recommendation_scope=recommendation_scope,
-                history_preview=history_snapshot,**kwargs)
+                strategy=strategy, data_mode=data_mode, recommendation_scope=recommendation_scope,
+                history_preview=history_snapshot, **kwargs)
         st.session_state["m2_last_response"] = response
         st.rerun()
+
     if form:
         try:
             changes, unknown, action = form
@@ -111,53 +128,71 @@ def render_m2(database, *, directory=None):
             st.error("A GPA, test score, budget or date is invalid for the selected format. Correct the form and submit again.")
     if generate:
         run()
+
     latest = st.session_state.get("m2_last_response")
     interrupted = (latest and latest.get("profile_version") == session.profile.profile_version
                    and latest.get("status") in ASSESSMENT_INTERRUPTED)
-    if interrupted:
-        if latest["status"] == "budget_exhausted":
-            st.warning("The assessment stopped at an execution limit. Any validated checks from this run are shown as a partial assessment.")
-        else:
-            st.warning(latest["message"])
-        st.caption(f"Saved profile v{session.profile.profile_version} · Tuition budget {format_usd(session.profile.tuition_budget_usd)}")
-        usage = latest["task_usage"]
-        plan = usage.get("plan") or {}
-        revisions = plan.get("revisions", [])
-        needs_new_task = bool(usage["stop_reason"] not in {None, "finished"}
-                              or (revisions and revisions[-1]["status"] == "stopped"))
-        session_limit = active_settings.ready and len(session.usage) >= active_settings.limits["max_model_calls_per_session"]
-        if session_limit:
-            st.info("The session model-call limit has been reached. Turn off model calls to run deterministic checks.")
-        retry_label = "Start new assessment with saved profile" if needs_new_task else "Retry with saved profile"
-        if st.button(retry_label, key="m2_retry", disabled=session.active or session_limit):
-            run(new_task=needs_new_task)
-    if latest and latest.get("status") == "needs_input" and latest.get("profile_version") == session.profile.profile_version:
-        st.warning(latest.get("message", "More information is needed."))
-        for question in latest.get("pending_questions", []):
-            st.write(question["text"])
     result = session.current_result
-    if result and result["profile_version"] == session.profile.profile_version:
-        evidence_sources=session.agent_task.sources if session.agent_task and result.get('task_id')==session.agent_task.task_id else sources
-        history = history_snapshot.compare(session.profile) if history_snapshot else None
-        render_result(result, programs, evidence_sources, history=history, previous=session.previous_result,
-                      earlier_run=bool(interrupted and result.get("run_id") != latest["run_id"]))
-    elif session.previous_result:
-        previous = session.previous_result
-        previous_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
-        st.info(f"Previous assessment used profile v{previous['profile_version']} with a tuition budget of "
-                f"{format_usd(previous_budget)}. Generate an assessment for the saved profile to see updated results.")
-    st.caption("Ask about a program's tuition, deadline or GRE policy using its name from the shortlist. "
-               "You can also say “Change my GPA to 3.8” or “Change my tuition budget to 50000.”")
-    if session.messages:
-        with st.expander("Conversation", expanded=bool(latest and latest.get("status") == "catalog_answer")):
-            for message in session.messages:
-                with st.chat_message(message["role"]):
-                    st.write(message["content"])
-    if directory:
-        from gradmatch.ui_directory import render_exploration
-        with st.expander("Browse candidates", expanded=bool(st.session_state.get("m6_show_exploration"))):
-            render_exploration(directory, session.profile, programs, sources)
-    render_session_details(session, settings, latest, result)
+    has_current_result = bool(result and result["profile_version"] == session.profile.profile_version)
+
+    main_col, chat_col = st.columns([1.65, 1], gap="large")
+
+    with main_col:
+        if interrupted:
+            if latest["status"] == "budget_exhausted":
+                st.warning("The assessment stopped at an execution limit. Any validated checks from this run are shown as a partial assessment.")
+            else:
+                st.warning(latest["message"])
+            st.caption(f"Saved profile v{session.profile.profile_version} · Tuition budget {format_usd(session.profile.tuition_budget_usd)}")
+            usage = latest["task_usage"]
+            plan = usage.get("plan") or {}
+            revisions = plan.get("revisions", [])
+            needs_new_task = bool(usage["stop_reason"] not in {None, "finished"}
+                                  or (revisions and revisions[-1]["status"] == "stopped"))
+            session_limit = active_settings.ready and len(session.usage) >= active_settings.limits["max_model_calls_per_session"]
+            if session_limit:
+                st.info("The session model-call limit has been reached. Turn off model calls to run deterministic checks.")
+            retry_label = "Start new assessment with saved profile" if needs_new_task else "Retry with saved profile"
+            if st.button(retry_label, key="m2_retry", disabled=session.active or session_limit):
+                run(new_task=needs_new_task)
+        if latest and latest.get("status") == "needs_input" and latest.get("profile_version") == session.profile.profile_version:
+            st.warning(latest.get("message", "More information is needed."))
+            for question in latest.get("pending_questions", []):
+                st.write(question["text"])
+        if has_current_result:
+            evidence_sources = session.agent_task.sources if session.agent_task and result.get('task_id') == session.agent_task.task_id else sources
+            history = history_snapshot.compare(session.profile) if history_snapshot else None
+            render_result(result, programs, evidence_sources, history=history, previous=session.previous_result,
+                          earlier_run=bool(interrupted and result.get("run_id") != latest["run_id"]))
+        elif session.previous_result:
+            previous = session.previous_result
+            previous_budget = previous.get("profile_summary", {}).get("tuition_budget_usd")
+            st.info(f"Previous assessment used profile v{previous['profile_version']} with a tuition budget of "
+                    f"{format_usd(previous_budget)}. Generate an assessment for the saved profile to see updated results.")
+        elif not interrupted and not (latest and latest.get("status") == "needs_input"):
+            st.info("Click **Try a sample profile** and **Generate from saved profile** above to screen all 83 programs.")
+        if directory:
+            from gradmatch.ui_directory import render_exploration
+            with st.expander("Browse candidates", expanded=bool(st.session_state.get("m6_show_exploration"))):
+                render_exploration(directory, session.profile, programs, sources)
+
+    with chat_col:
+        with st.container(border=True):
+            st.markdown("**Conversation**")
+            st.caption("Ask about a program's tuition, deadline or GRE policy using its name from the shortlist. "
+                       "You can also say \u201cChange my GPA to 3.8\u201d or \u201cChange my tuition budget to 50000.\u201d")
+            with st.container(height=420, border=False):
+                if session.messages:
+                    for msg in session.messages:
+                        with st.chat_message(msg["role"]):
+                            st.write(msg["content"])
+                else:
+                    with st.chat_message("assistant"):
+                        st.write("Ask me about any shortlisted program's tuition, deadlines, or GRE policy, or tell me to update your GPA or tuition budget.")
+
+    with st.sidebar:
+        render_session_details(session, settings, latest, result)
+
     if message := st.chat_input("Ask a question or update your profile", key="m2_chat", disabled=session.active):
         run(message=message)
 
@@ -187,7 +222,7 @@ def render_session_details(session, settings, latest, result):
                     show_table([{"Step": step["step_id"], "Action": step["tool"], "Status": step["status"]}
                                 for step in revision["steps"]])
                 st.json(plan, expanded=False)
-            if st.button("Start new task (keep profile)", key="m4_new_task", disabled=session.active):
+            if st.button("Start new task (keep profile)", key="m4_new_task", disabled=session.active, use_container_width=True):
                 session.agent_task = None
                 st.info("The next submission starts a fresh task. Your profile and session model limit are retained.")
         if latest:
@@ -195,7 +230,7 @@ def render_session_details(session, settings, latest, result):
             st.json({key: latest.get(key) for key in ["request_id", "run_id", "profile_version", "validation_errors", "model_config"]},
                     expanded=False)
         st.download_button("Download current session JSON", json.dumps(export_session(session), ensure_ascii=False, indent=2),
-            file_name="gradmatch_m2_session.json", mime="application/json", key="m2_export")
+            file_name="gradmatch_m2_session.json", mime="application/json", key="m2_export", use_container_width=True)
         st.caption("The download includes the profile and messages from this browser session.")
 
 
@@ -250,36 +285,40 @@ def profile_form(profile):
     with st.form("m2_profile_form"):
         basics, tests, preparation = st.tabs(["Basics", "Degree and tests", "Preparation"])
         with basics:
-            major = st.text_input("Undergraduate major (blank means unknown)", value=profile.major or "", key=key("major"))
+            st.caption("Tip: Check the 'is known' boxes for GPA, tuition budget, or intake so your entered values are included.")
+            c1, c2 = st.columns(2)
+            major = c1.text_input("Undergraduate major (blank means unknown)", value=profile.major or "", key=key("major"))
+            goals = [None, "employment", "research", "mixed"]
+            goal = c2.selectbox("Main goal", goals, index=goals.index(profile.goal),
+                format_func=lambda value: value.title() if value else "Unknown", key=key("goal"))
             has_gpa = st.checkbox("GPA is known", value=profile.gpa is not None, key=key("has_gpa"))
-            left, right = st.columns(2)
-            gpa = left.number_input("GPA (original scale)", min_value=0.0,
+            g1, g2, g3 = st.columns([1, 1, 1.4])
+            gpa = g1.number_input("GPA (original scale)", min_value=0.0,
                 value=float(profile.gpa.value) if profile.gpa else 0.0, key=key("gpa"))
-            scale = right.number_input("GPA scale maximum", min_value=0.1,
+            scale = g2.number_input("GPA scale maximum", min_value=0.1,
                 value=float(profile.gpa.scale) if profile.gpa else 4.0, key=key("scale"))
             scopes = list(GPA_SCOPE_LABELS)
-            scope = st.selectbox("GPA calculation scope", scopes, index=scopes.index(profile.gpa.scope) if profile.gpa else 0,
+            scope = g3.selectbox("GPA calculation scope", scopes, index=scopes.index(profile.gpa.scope) if profile.gpa else 0,
                 format_func=GPA_SCOPE_LABELS.__getitem__, key=key("scope"))
-            goals = [None, "employment", "research", "mixed"]
-            goal = st.selectbox("Main goal", goals, index=goals.index(profile.goal),
-                format_func=lambda value: value.title() if value else "Unknown", key=key("goal"))
             has_budget = st.checkbox("Tuition budget is known", value=profile.tuition_budget_usd is not None, key=key("has_budget"))
-            budget = st.text_input("Full-program tuition budget (USD, excluding living costs)",
+            b1, b2 = st.columns(2)
+            budget = b1.text_input("Full-program tuition budget (USD, excluding living costs)",
                 value=str(profile.tuition_budget_usd) if profile.tuition_budget_usd is not None else "", key=key("budget"),
                 help="Enter an exact USD amount such as 50000 or 50000.25, without commas.")
             bases = ["published_rate_estimate", "guaranteed_final"]
-            basis = st.selectbox("Budget basis", bases, index=bases.index(profile.budget_basis),
+            basis = b2.selectbox("Budget basis", bases, index=bases.index(profile.budget_basis),
                 format_func=lambda value: "Published-rate estimate; future increases not guaranteed" if value == "published_rate_estimate" else "Require a guaranteed final tuition price", key=key("basis"))
             has_intake = st.checkbox("Intake is known", value=profile.intake is not None, key=key("has_intake"))
-            year = st.number_input("Intake year", min_value=2020, max_value=2100,
+            i1, i2, i3, i4 = st.columns(4)
+            year = i1.number_input("Intake year", min_value=2020, max_value=2100,
                 value=profile.intake.year if profile.intake else 2027, key=key("year"))
             terms = ["fall", "spring", "summer", "winter"]
-            term = st.selectbox("Intake term", terms, index=terms.index(profile.intake.term) if profile.intake else 0, format_func=str.title, key=key("term"))
+            term = i2.selectbox("Intake term", terms, index=terms.index(profile.intake.term) if profile.intake else 0, format_func=str.title, key=key("term"))
             categories = ["international", "domestic"]
-            category = st.selectbox("Applicant category", categories, index=categories.index(profile.applicant_category),
+            category = i3.selectbox("Applicant category", categories, index=categories.index(profile.applicant_category),
                 format_func=lambda value: "International applicant" if value == "international" else "U.S. domestic applicant", key=key("category"))
             modes = ["full_time", "part_time"]
-            mode = st.selectbox("Study mode", modes, index=modes.index(profile.study_mode),
+            mode = i4.selectbox("Study mode", modes, index=modes.index(profile.study_mode),
                 format_func=lambda value: "Full-time" if value == "full_time" else "Part-time", key=key("mode"))
         with tests:
             institution = st.text_input("Undergraduate institution (optional)", value=profile.institution or "", key=key("institution"))
@@ -452,10 +491,10 @@ def render_result(result, programs, sources, *, history=None, previous=None, ear
                    f"Programs screened: {len(result['retrieved_program_ids'])}")
     shortlist, budget, evidence = st.tabs(["Shortlist", "Budget and changes", "Checks and sources"])
     with shortlist:
-        render_shortlist_overview(result, names)
+        selected_tier = render_shortlist_overview(result, names)
         if broad:
-            render_broad_recommendations(result, history=history)
-        render_formal_recommendations(result["recommendations"], names, sources, history)
+            render_broad_recommendations(result, history=history, selected_tier=selected_tier)
+        render_formal_recommendations(result["recommendations"], names, sources, history, selected_tier=selected_tier)
     with budget:
         render_tuition_summary(result, names, previous)
         if result["changes_from_previous"].get("previous_profile_version") is not None:
@@ -483,37 +522,61 @@ def render_shortlist_overview(result, names):
         if empty:
             st.caption("No eligible planning or formal matches in " + ", ".join(empty)
                        + " after screening for this profile. See Checks and sources for exclusions and evidence gaps.")
+    selected_tier = st.segmented_control(
+        "Filter by tier",
+        ["All", *PLANNING_TIERS],
+        default="All",
+        key="ui_tier_filter",
+        label_visibility="collapsed",
+    ) or "All"
     rows = []
     for item in result["recommendations"]:
-        rows.append({"Program": names[item["program_id"]], "Tier": f"{item['tier']} · Formal",
+        tier_label = item["tier"]
+        if selected_tier != "All" and tier_label != selected_tier:
+            continue
+        url = item.get("identity", {}).get("official_url")
+        prog_cell = f"[{names[item['program_id']]}]({url})" if url else names[item["program_id"]]
+        rows.append({"Program": prog_cell, "Tier": f"{tier_label} · Formal",
                      "OpenCS": item.get("opencs_grade", "—"),
                      "Tuition budget": "Within budget", "Next listed round": "See program details"})
     for item in result.get("preliminary_recommendations", []):
+        tier_label = suggested_tier(item)["label"]
+        if selected_tier != "All" and tier_label != selected_tier:
+            continue
         checks = item["checks"]
         tuition = next(check for check in checks["checks"] if check["rule_id"] == "tuition")
         upcoming = checks["next_listed_round"]
-        rows.append({"Program": names[item["program_id"]], "Tier": f"{suggested_tier(item)['label']} · Planning",
+        url = item.get("identity", {}).get("official_url")
+        prog_cell = f"[{names[item['program_id']]}]({url})" if url else names[item["program_id"]]
+        rows.append({"Program": prog_cell, "Tier": f"{tier_label} · Planning",
                      "OpenCS": item.get("opencs_grade", "—"),
                      "Tuition budget": TUITION_LABELS[tuition["status"]],
                      "Next listed round": upcoming["date"] if upcoming else "Needs verification"})
     if rows:
         rows.sort(key=lambda row: PLANNING_TIERS.index(row["Tier"].split(" · ", 1)[0]))
         show_table(rows)
-        st.caption("Open a program below for its tier explanation, evidence and next steps.")
+        st.caption("Formal = officially verified tier & checks. Planning = preliminary match using official + community data. Open a card below for details.")
         if any(row["OpenCS"] != "—" for row in rows):
             st.caption(f"[OpenCS categories]({OPENCS_GRADE_URL}) reflect community judgments about "
                        "competitiveness for applicants with undergraduate degrees from mainland China.")
             st.caption("Safer indicates lower relative competition. Budget and eligibility are checked separately.")
+    elif selected_tier != "All":
+        st.info(f"No matches in the {selected_tier} tier for this profile.")
     else:
         st.info("No recommendations for this profile. Open Checks and sources to see what needs verification.")
+    return selected_tier
 
 
-def render_formal_recommendations(items, names, sources, history):
-    if not items:
+def render_formal_recommendations(items, names, sources, history, *, selected_tier="All"):
+    filtered = [item for item in items if selected_tier == "All" or item["tier"] == selected_tier]
+    if not filtered:
         return
     st.markdown("**Formal matches**")
-    for item in items:
+    for item in filtered:
         with st.expander(f"{item['tier']} · {names[item['program_id']]}"):
+            b1, b2, _ = st.columns([1, 1.4, 3])
+            b1.badge(item["tier"], color=TIER_COLORS.get(item["tier"], "gray"))
+            b2.badge("Official verified", color="green")
             st.markdown(f"[Official program website]({item['identity']['official_url']})")
             if grade := item.get("opencs_grade"):
                 st.caption(f"[OpenCS category {grade}]({OPENCS_GRADE_URL})")
@@ -597,8 +660,9 @@ def render_verification(result, names, sources, history, broad):
             st.json(result["validation_errors"])
 
 
-def render_broad_recommendations(result, *, history=None):
-    items = result["preliminary_recommendations"]
+def render_broad_recommendations(result, *, history=None, selected_tier="All"):
+    items = [item for item in result["preliminary_recommendations"]
+             if selected_tier == "All" or suggested_tier(item)["label"] == selected_tier]
     if not items:
         return
     st.markdown("**Planning matches**")
@@ -606,6 +670,9 @@ def render_broad_recommendations(result, *, history=None):
         identity, checks, tier = item["identity"], item["checks"], suggested_tier(item)
         name = f"{identity['university']} — {identity['program_name']}"
         with st.expander(f"{tier['label']} · {name}"):
+            b1, b2, _ = st.columns([1, 1.4, 3])
+            b1.badge(tier["label"], color=TIER_COLORS.get(tier["label"], "gray"))
+            b2.badge("Preliminary", color="gray")
             st.markdown(f"[Program website]({identity['official_url']})")
             st.markdown(f"**Planning tier · {tier['label']}**")
             if grade := item.get("opencs_grade"):
